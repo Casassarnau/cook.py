@@ -1,0 +1,9 @@
+# Recipes project – rules for Cursor
+
+Please see the contributor guide in `README.md` for:
+- How to add a new recipe
+- JSON structure and multilingual fields
+- Regenerating `public/index.json`
+- Pre-commit setup that enforces the generator
+
+Quick link: open `README.md` in the repo root.

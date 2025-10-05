@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Cheesecake",
+    "categories": [
+      "desserts"
+    ],
+    "path": "recipes/cheesecake.json",
+    "image": "/images/cheesecake.jpg"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Spanish Omelette",
+    "es": "Tortilla de patatas",
+    "cat": "Truita de patates"
+  },
+  "categories": ["desserts"],
+  "image": "https://example.com/omelette.jpg",
+  "description": {
+    "en": "A classic omelette with potatoes and eggs.",
+    "es": "Una tortilla clásica con patatas y huevos.",
+    "cat": "Una truita clàssica amb patates i ous."
+  },
+  "ingredients": {
+    "en": ["4 eggs", "3 potatoes", "olive oil", "salt"],
+    "es": ["4 huevos", "3 patatas", "aceite de oliva", "sal"],
+    "cat": ["4 ous", "3 patates", "oli d'oliva", "sal"]
+  },
+  "instructions": {
+    "en": ["Slice potatoes", "Fry in oil", "Add beaten eggs", "Cook both sides"],
+    "es": ["Corta las patatas", "Fríe en aceite", "Añade huevos batidos", "Cocina por ambos lados"],
+    "cat": ["Talla les patates", "Fregix en oli", "Afegeix ous batuts", "Cuina pels dos costats"]
+  }
+}

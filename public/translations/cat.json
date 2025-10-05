@@ -1,0 +1,22 @@
+{
+    "search_placeholder": "Buscar receptes...",
+    "all_categories": "Totes",
+    "ingredients": "Ingredients",
+    "instructions": "Instruccions",
+    "hero_title": "Cuina fàcil. Menja feliç.",
+    "hero_subtitle": "Un receptari minimalista per als teus plats casolans preferits.",
+    "hero_point_discover": "Descobreix receptes navegant per targetes boniques.",
+    "hero_point_filter": "Filtra per categoria i cerca pel nom a l'instant.",
+    "hero_point_cook": "Obre una recepta per veure ingredients i instruccions pas a pas.",
+    "hero_badge": "La teva capsa de receptes personal",
+    "lang": {
+        "en": "Anglès",
+        "es": "Espanyol",
+        "cat": "Català"
+    },
+    "cat": {
+        "desserts": "Postres"
+    },
+    "variation": "Variació"
+  }
+  

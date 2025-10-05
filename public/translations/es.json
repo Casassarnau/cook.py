@@ -1,0 +1,22 @@
+{
+    "search_placeholder": "Buscar recetas...",
+    "all_categories": "Todas",
+    "ingredients": "Ingredientes",
+    "instructions": "Instrucciones",
+    "hero_title": "Cocina fácil. Come feliz.",
+    "hero_subtitle": "Un recetario minimalista para tus platos caseros favoritos.",
+    "hero_point_discover": "Descubre recetas navegando por tarjetas bonitas.",
+    "hero_point_filter": "Filtra por categoría y busca por nombre al instante.",
+    "hero_point_cook": "Abre una receta para ver ingredientes e instrucciones paso a paso.",
+    "hero_badge": "Tu caja de recetas personal",
+    "lang": {
+        "en": "Inglés",
+        "es": "Español",
+        "cat": "Catalán"
+    },
+    "cat": {
+        "desserts": "Postres"
+    },
+    "variation": "Variación"
+  }
+  

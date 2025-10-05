@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" x-data="recipeApp()" x-init="init()" :class="{ dark: darkMode }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes.py</title>
+    <meta name="description" content="A minimal recipe book for your favorite homemade dishes.">
+    <meta name="keywords" content="recipes, Arnau, Arnau Casas, Arnau Casas Saez">
+    <meta name="author" content="Arnau Casas Saez">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+      /* Smooth color transitions for all elements within .transition-smooth */
+      .transition-smooth, .transition-smooth * {
+        transition-property: background-color, border-color, color, fill, stroke;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .transition-smooth, .transition-smooth * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="min-h-screen relative transition-colors duration-300"
+    :class="darkMode
+      ? 'text-gray-100'
+      : 'text-gray-800'"
+  >
+    <!-- Background overlay to avoid white flashes on hover in dark mode -->
+    <div
+      class="fixed inset-0 -z-10 transition-colors duration-300"
+      :class="darkMode
+        ? 'bg-gradient-to-b from-gray-900 via-slate-900 to-blue-950'
+        : 'bg-gradient-to-b from-blue-50 via-sky-50 to-indigo-100'"
+    ></div>
+    <!-- Background uses a simple linear gradient; no decorative blobs -->
+    <div class="max-w-5xl mx-auto p-6">
+
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-4xl font-bold">Recipes.py</h1>
+
+        <div class="flex items-center gap-3">
+          <button
+            @click="toggleDarkMode"
+            class="h-9 px-3 rounded-lg border font-semibold inline-flex items-center transition-colors duration-300 cursor-pointer"
+            :class="darkMode
+              ? 'bg-gray-800 border-gray-700 text-yellow-300 hover:bg-gray-700'
+              : 'bg-white border-gray-300 text-gray-800 hover:bg-gray-100'"
+          >
+            <span x-text="darkMode ? '🌙' : '☀️'"></span>
+          </button>
+
+          <select
+            x-model="lang"
+            @change="loadTranslations()"
+            class="h-9 px-3 rounded-lg border font-semibold transition-colors duration-300 cursor-pointer"
+            :class="darkMode
+              ? 'bg-gray-800 border-gray-600 text-gray-100'
+              : 'bg-white border-gray-300 text-gray-800'"
+          >
+            <option value="en" x-text="t('lang.en')"></option>
+            <option value="es" x-text="t('lang.es')"></option>
+            <option value="cat" x-text="t('lang.cat')"></option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Main View -->
+      <template x-if="!selectedRecipe">
+        <div>
+          <!-- Hero -->
+          <!-- <section
+            class="rounded-2xl border p-6 md:p-10 mb-8 shadow-sm transition-all"
+            :class="darkMode
+              ? 'bg-blue-950 border-blue-900 text-blue-100'
+              : 'bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200 text-blue-700'"
+          >
+            <div class="flex flex-col md:flex-row items-center gap-6">
+              <div class="flex-1">
+                <h2
+                  class="text-3xl md:text-4xl font-extrabold mb-3"
+                  x-text="t('hero_title')"
+                ></h2>
+                <p class="text-lg md:text-xl mb-4" x-text="t('hero_subtitle')"></p>
+                <ul class="list-disc list-inside space-y-1">
+                  <li x-text="t('hero_point_discover')"></li>
+                  <li x-text="t('hero_point_filter')"></li>
+                  <li x-text="t('hero_point_cook')"></li>
+                </ul>
+              </div>
+              <div class="md:w-56 w-40 shrink-0">
+                <div class="relative">
+                  <div
+                    class="absolute -inset-2 rounded-3xl blur-lg opacity-70"
+                    :class="darkMode ? 'bg-blue-700' : 'bg-blue-200'"
+                  ></div>
+                  <div
+                    class="relative rounded-3xl border shadow p-4"
+                    :class="darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'"
+                  >
+                    <div class="text-6xl text-center">🥗</div>
+                    <p
+                      class="text-center mt-2 text-sm"
+                      :class="darkMode ? 'text-blue-200' : 'text-blue-600'"
+                      x-text="t('hero_badge')"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> -->
+
+          <!-- Search -->
+          <div class="flex justify-center mb-6">
+            <input
+              x-model="searchQuery"
+              type="text"
+              :placeholder="t('search_placeholder')"
+              class="w-full md:w-1/2 p-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition-colors duration-300"
+              :class="darkMode
+                ? 'bg-gray-800 border-gray-700 text-gray-100 placeholder-gray-400'
+                : 'bg-white border border-gray-300 text-gray-800 placeholder-gray-500'"
+            />
+          </div>
+
+          <!-- Category Menu -->
+          <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <template x-for="category in categories" :key="category">
+              <button
+                @click="filterCategory = category"
+                class="px-4 py-2 rounded-lg font-semibold shadow transition-colors duration-300"
+                :class="filterCategory === category
+                  ? 'bg-orange-500 text-white'
+                  : darkMode
+                    ? 'bg-gray-800 border border-gray-600 text-gray-100 hover:bg-gray-700'
+                    : 'bg-white border border-gray-300 text-gray-800 hover:bg-orange-100'"
+              >
+                <span x-text="t(`cat.${category}`)"></span>
+              </button>
+            </template>
+
+            <button
+              @click="filterCategory = ''"
+              class="px-4 py-2 rounded-lg font-semibold shadow-lg transition-colors duration-300"
+              :class="filterCategory === ''
+                ? 'bg-orange-500 text-white'
+                : darkMode
+                  ? 'bg-gray-800 border border-gray-600 text-gray-100 hover:bg-gray-700'
+                  : 'bg-white border border-gray-300 text-gray-800 hover:bg-orange-100'"
+            >
+              <span x-text="t('all_categories')"></span>
+            </button>
+          </div>
+
+          <!-- Recipe Cards (from index) -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <template x-for="item in filteredCards()" :key="item.path">
+              <a
+                :href="'#/recipe/' + slugify(item.title)"
+                class="block rounded-xl shadow transition-colors duration-300 overflow-hidden"
+                :class="darkMode
+                  ? 'bg-gray-800 text-gray-100 border border-gray-700 hover:shadow-gray-700'
+                  : 'bg-white text-gray-900 border border-gray-200 hover:shadow-lg'"
+              >
+                <img :src="item.image" alt="" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h2 class="text-xl font-bold mb-2" x-text="item.title"></h2>
+                </div>
+              </a>
+            </template>
+          </div>
+        </div>
+      </template>
+
+      <!-- Recipe Detail -->
+      <template x-if="selectedRecipe">
+        <div class="p-4">
+          <button
+            @click="goHome()"
+            class="mb-4 font-semibold transition-colors duration-300 cursor-pointer"
+            :class="darkMode
+              ? 'text-orange-300 hover:text-orange-200'
+              : 'text-orange-600 hover:text-orange-700'"
+          >
+            &larr; <span x-text="t('back') || 'Back'"></span>
+          </button>
+
+          <img :src="selectedRecipe.image" alt="" class="w-full h-96 object-cover rounded-lg mb-4" />
+          <h2 class="text-3xl font-bold mb-2" x-text="translateField(selectedRecipe.title)"></h2>
+          <p class="mb-4  transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'" x-text="translateField(selectedRecipe.description)"></p>
+
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-semibold" x-text="t('ingredients')"></h3>
+            <template x-if="hasIngredientVariations()">
+              <div class="flex items-center gap-2">
+                <label class="text-sm" :class="darkMode ? 'text-gray-300' : 'text-gray-600'" x-text="t('variation')"></label>
+                <select
+                  x-model.number="selectedVariationIndex"
+                  class="h-9 px-3 rounded-lg border font-semibold transition-colors duration-300 cursor-pointer"
+                  :class="darkMode
+                    ? 'bg-gray-800 border-gray-600 text-gray-100'
+                    : 'bg-white border-gray-300 text-gray-800'"
+                >
+                  <template x-for="(name, idx) in variationNames()" :key="idx">
+                    <option :value="idx" x-text="name"></option>
+                  </template>
+                </select>
+              </div>
+            </template>
+          </div>
+          <ul class="list-disc list-inside mb-4">
+            <template x-for="item in currentIngredients()">
+              <li x-text="item"></li>
+            </template>
+          </ul>
+
+          <h3 class="text-xl font-semibold mb-2" x-text="t('instructions')"></h3>
+          <ol class="list-decimal list-inside">
+            <template x-for="step in currentInstructions()">
+              <li x-text="step"></li>
+            </template>
+          </ol>
+        </div>
+      </template>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
