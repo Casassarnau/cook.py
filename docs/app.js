@@ -13,8 +13,8 @@ function recipeApp() {
     basePath: '',
 
     async init() {
-      // Determine base path: empty on localhost, '/recipes.py' elsewhere
-      this.basePath = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : '/recipes.py';
+      // Determine base path: empty on localhost, '/cook.py' elsewhere
+      this.basePath = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : '/cook.py';
 
       // Load saved theme ('dark' | 'light') and apply
       const savedTheme = localStorage.getItem('theme');

@@ -4,6 +4,7 @@
     "es": "Tarta de queso",
     "cat": "Pastís de formatge"
   },
+  "author": "Arnau",
   "categories": ["desserts"],
   "image": "/images/cheesecake.jpg",
   "description": {

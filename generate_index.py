@@ -23,12 +23,14 @@ for file in os.listdir(BASE_DIR):
         title = data["title"]["en"] if isinstance(data["title"], dict) else data["title"]
         categories = data.get("categories", [])
         image = data.get("image", "")
+        author = data.get("author", "")
         index.append({
             "title": title,
             "categories": categories,
             # paths in index.json should be relative to `docs/`
             "path": f"recipes/{file}",
-            "image": image
+            "image": image,
+            "author": author
         })
 
 index.sort(key=lambda x: x["title"].lower())

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipes.py</title>
+    <title>cook.py</title>
     <meta name="description" content="A minimal recipe book for your favorite homemade dishes.">
     <meta name="keywords" content="recipes, Arnau, Arnau Casas, Arnau Casas Saez">
     <meta name="author" content="Arnau Casas Saez">
@@ -43,7 +43,7 @@
 
       <!-- Header -->
       <div class="flex justify-between items-center mb-4 md:mb-6">
-        <h1 class="text-2xl md:text-4xl font-bold">Recipes.py</h1>
+        <h1 class="text-2xl md:text-4xl font-bold">Cook.py</h1>
 
         <div class="flex items-center gap-3">
           <button
@@ -170,7 +170,8 @@
               >
                 <img :src="withBase(item.image)" alt="" class="w-full h-40 object-cover" />
                 <div class="p-4">
-                  <h2 class="text-xl font-bold mb-2" x-text="item.title"></h2>
+                  <h2 class="text-xl font-bold mb-1" x-text="item.title"></h2>
+                  <p class="text-sm opacity-80" x-text="item.author ? '👩‍🍳 ' + item.author : ''"></p>
                 </div>
               </a>
             </template>
@@ -192,12 +193,10 @@
           </button>
 
           <img :src="withBase(selectedRecipe.image)" alt="" class="w-full h-56 sm:h-72 md:h-96 object-cover rounded-lg mb-4" />
-          <h2 class="text-2xl md:text-3xl font-bold mb-2" x-text="translateField(selectedRecipe.title)"></h2>
-          <p
-            class="mb-3 md:mb-4 text-base md:text-lg leading-relaxed transition-colors duration-300"
-            :class="darkMode
-              ? 'text-gray-200'
-              : 'text-gray-800'"
+          <h2 class="text-2xl md:text-3xl font-bold mb-1" x-text="translateField(selectedRecipe.title)"></h2>
+          <p class="text-sm mb-3 opacity-80" x-text="selectedRecipe.author ? '👩‍🍳 ' + selectedRecipe.author : ''"></p>
+          <p class="mb-3 md:mb-4 text-base md:text-lg leading-relaxed transition-colors duration-300"
+            :class="darkMode ? 'text-gray-200' : 'text-gray-800'"
             x-text="translateField(selectedRecipe.description)"
           ></p>
 
