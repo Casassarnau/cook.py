@@ -168,7 +168,7 @@
                   ? 'bg-gray-800 text-gray-100 border border-gray-700 hover:shadow-gray-700'
                   : 'bg-white text-gray-900 border border-gray-200 hover:shadow-lg'"
               >
-                <img :src="withBase(item.image)" alt="" class="w-full h-40 object-cover" />
+                <img :src="getImageUrl(item.image, 'lower')" alt="" class="w-full h-40 object-cover" loading="lazy" />
                 <div class="p-4">
                   <h2 class="text-xl font-bold mb-1" x-text="item.title"></h2>
                   <p class="text-sm opacity-80" x-text="item.author ? '👩‍🍳 ' + item.author : ''"></p>
@@ -192,7 +192,7 @@
             &larr; <span x-text="t('back') || 'Back'"></span>
           </button>
 
-          <img :src="withBase(selectedRecipe.image)" alt="" class="w-full h-56 sm:h-72 md:h-96 object-cover rounded-lg mb-4" />
+          <img :src="getImageUrl(selectedRecipe.image, 'lower')" alt="" class="w-full h-56 sm:h-72 md:h-96 object-cover rounded-lg mb-4" loading="lazy" />
           <h2 class="text-2xl md:text-3xl font-bold mb-1" x-text="translateField(selectedRecipe.title)"></h2>
           <p class="text-sm mb-3 opacity-80" x-text="selectedRecipe.author ? '👩‍🍳 ' + selectedRecipe.author : ''"></p>
           <p class="mb-3 md:mb-4 text-base md:text-lg leading-relaxed transition-colors duration-300"
@@ -200,48 +200,77 @@
             x-text="translateField(selectedRecipe.description)"
           ></p>
 
-          <div class="mb-4 md:mb-5">
+          <!-- INGREDIENTS -->
+          <div class="mb-8">
             <div class="flex items-center justify-between mb-3">
               <h3 class="text-xl font-semibold" x-text="t('ingredients')"></h3>
-              <template x-if="hasIngredientVariations()">
-                <div class="flex items-center gap-2">
-                  <select
-                    x-model.number="selectedVariationIndex"
-                    class="h-9 px-3 rounded-lg font-medium transition-colors duration-300 cursor-pointer focus:outline-none"
-                    :class="darkMode
-                      ? 'bg-orange-300 text-orange-900 hover:bg-orange-200'
-                      : 'bg-orange-600 text-orange-100 hover:bg-orange-700'"
-                  >
-                    <template x-for="(name, idx) in variationNames()" :key="idx">
-                      <option :value="idx" x-text="name"></option>
-                    </template>
-                  </select>
-
-                </div>
+              <template x-if="hasVariants()">
+                <select
+                  x-model.number="selectedVariationIndex"
+                  class="h-9 px-3 rounded-lg font-medium cursor-pointer transition-colors duration-300 focus:outline-none"
+                  :class="darkMode
+                    ? 'bg-orange-300 text-orange-900 hover:bg-orange-200'
+                    : 'bg-orange-600 text-orange-100 hover:bg-orange-700'"
+                >
+                  <template x-for="(name, idx) in variantNames()" :key="idx">
+                    <option :value="idx" x-text="name"></option>
+                  </template>
+                </select>
               </template>
             </div>
-            <ul class="grid gap-2 sm:grid-cols-2 list-none mb-0">
-              <template x-for="(item, index) in currentIngredients()">
+
+            <ul class="grid gap-2 sm:grid-cols-2 list-none">
+              <template x-for="(item, index) in currentIngredients()" :key="index">
                 <li
-                  class="flex items-start gap-2 rounded-md md:rounded-lg border p-2 text-base transition-colors duration-300"
-                  :class="darkMode ? 'bg-gray-800/60 border-gray-700' : 'bg-gray-50 border-gray-200'"
+                  class="flex items-start gap-2 rounded-lg border p-2 md:p-3 text-base transition-colors duration-300"
+                  :class="darkMode
+                    ? 'bg-gray-800/60 border-gray-700 hover:bg-gray-800'
+                    : 'bg-gray-50 border-gray-200 hover:bg-orange-50'"
                 >
-                  <span class="mt-0.5" x-text="ingredientIcon(currentIngredientsAll()['en'][index])" aria-hidden="true"></span>
-                  <span x-text="item"></span>
+                  <span class="mt-0.5" x-text="item.icon" aria-hidden="true"></span>
+                  <span x-text="item.text"></span>
                 </li>
               </template>
             </ul>
           </div>
 
+          <!-- INSTRUCTIONS -->
           <div>
-            <h3 class="text-xl font-semibold mb-3" x-text="t('instructions')"></h3>
-            <ol class="list-decimal list-inside space-y-2 md:space-y-3">
-              <template x-for="step in currentInstructions()">
+            <h3 class="text-xl font-semibold mb-4" x-text="t('instructions')"></h3>
+
+            <ol class="space-y-4">
+              <template x-for="(step, idx) in currentInstructions()" :key="idx">
                 <li
-                  class="rounded-md md:rounded-lg border p-2 md:p-3 leading-relaxed transition-colors duration-300"
-                  :class="darkMode ? 'bg-gray-800/60 border-gray-700' : 'bg-gray-50 border-gray-200'"
-                  x-text="step"
-                ></li>
+                  role="listitem"
+                  class="relative overflow-hidden rounded-xl border shadow-sm transition-all duration-300"
+                  :class="darkMode
+                    ? 'bg-gray-800/70 border-gray-700 hover:bg-gray-800'
+                    : 'bg-white/80 border-gray-200 hover:bg-gray-50'"
+                >
+                  <!-- Step text area -->
+                  <div class="p-4 md:p-5 flex items-start gap-3">
+                    <div
+                      class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm"
+                      :class="darkMode
+                        ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40'
+                        : 'bg-orange-100 text-orange-700 border border-orange-200'"
+                      x-text="idx + 1"
+                    ></div>
+                    <p class="flex-1 text-base md:text-lg" x-text="step.text"></p>
+                  </div>
+
+                  <!-- Embedded image, touching borders -->
+                  <template x-if="step.image">
+                    <img
+                      :src="getImageUrl(step.image, 'lower')"
+                      alt="Step illustration"
+                      class="block w-full max-h-80 object-cover border-t"
+                      :class="darkMode
+                        ? 'border-gray-700'
+                        : 'border-gray-200'"
+                    />
+                  </template>
+                </li>
               </template>
             </ol>
           </div>

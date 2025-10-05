@@ -5,7 +5,7 @@
       "desserts"
     ],
     "path": "recipes/cheesecake.json",
-    "image": "/images/cheesecake.jpg",
+    "image": "/images/cheesecake/main.webp",
     "author": "Arnau"
   }
 ]

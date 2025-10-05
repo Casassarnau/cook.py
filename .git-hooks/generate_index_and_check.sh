@@ -6,7 +6,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
 # Run the generator
-./generate_index.py
+python3 generate_index.py
 
 # Fail if index.json has unstaged changes
 if ! git diff --quiet -- docs/index.json; then

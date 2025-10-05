@@ -13,27 +13,26 @@ function recipeApp() {
     basePath: '',
 
     async init() {
-      // Determine base path: empty on localhost, '/cook.py' elsewhere
       this.basePath = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : '/cook.py';
-
-      // Load saved theme ('dark' | 'light') and apply
       const savedTheme = localStorage.getItem('theme');
       this.darkMode = savedTheme ? savedTheme === 'dark' : false;
       document.documentElement.classList.toggle('dark', this.darkMode);
-
-      // Initialize language from local storage and keep it in sync
       this.lang = localStorage.getItem('lang') || 'en';
-      this.$watch('lang', value => {
-        localStorage.setItem('lang', value);
-        // Reload translations when language changes
+      this.$watch('lang', v => {
+        localStorage.setItem('lang', v);
         this.loadTranslations();
       });
-
       await this.loadTranslations();
       await this.loadIndex();
-
       window.addEventListener('hashchange', () => this.handleRoute());
       this.handleRoute();
+    },
+
+    getImageUrl(path, type) {
+      if (type === 'lower') {
+        path = path.replace('.webp', '_lower.webp');
+      }
+      return this.withBase(path);
     },
 
     withBase(path) {
@@ -55,21 +54,14 @@ function recipeApp() {
     async loadIndex() {
       const res = await fetch(this.withBase('index.json'));
       this.index = await res.json();
-      // Gather unique categories from items that may include multiple categories
       const allCategories = this.index.flatMap(i => i.categories || []);
       this.categories = [...new Set(allCategories)];
     },
 
     async fetchRecipeBySlug(slug) {
-      // Find the index item by slug of its title
       const item = this.index.find(i => this.slugify(i.title) === slug);
       if (!item) return null;
-
-      // Use in-memory cache by path
-      if (this.recipesCache[item.path]) {
-        return this.recipesCache[item.path];
-      }
-
+      if (this.recipesCache[item.path]) return this.recipesCache[item.path];
       const res = await fetch(this.withBase(item.path));
       const data = await res.json();
       this.recipesCache[item.path] = data;
@@ -77,26 +69,16 @@ function recipeApp() {
     },
 
     t(key) {
-      // Support nested translation keys like "group.subkey"
-      const value = key.split('.').reduce((acc, part) => {
-        if (acc === undefined || acc === null) return undefined;
-        return acc[part];
-      }, this.translations);
-      return value !== undefined ? value : key;
+      return key.split('.').reduce((acc, part) => acc?.[part], this.translations) ?? key;
     },
 
     translateField(field) {
+      if (!field) return '';
       if (typeof field === 'string') return field;
-      return field[this.lang] || field['en'];
-    },
-
-    translateFieldToLang(field, lang) {
-      if (typeof field === 'string') return field;
-      return (field && field[lang]) || (field && field['en']);
+      return field[this.lang] || field['en'] || '';
     },
 
     filteredCards() {
-      // Filter using index items (no translations here, title is a string)
       return this.index.filter(i => {
         const title = (i.title || '').toLowerCase();
         const matchSearch = title.includes(this.searchQuery.toLowerCase());
@@ -106,8 +88,8 @@ function recipeApp() {
       });
     },
 
-    slugify(text) {
-      return text.toString().toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+    slugify(t) {
+      return t.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
     },
 
     async handleRoute() {
@@ -132,59 +114,52 @@ function recipeApp() {
       document.documentElement.classList.toggle('dark', this.darkMode);
     },
 
-    hasIngredientVariations() {
+    hasVariants() {
       const r = this.selectedRecipe;
-      return r && Array.isArray(r.ingredientVariations) && r.ingredientVariations.length > 0;
+      return r && Array.isArray(r.variants) && r.variants.length > 0;
     },
 
-    variationNames() {
-      if (!this.hasIngredientVariations()) return [];
-      return this.selectedRecipe.ingredientVariations.map(v => this.translateField(v.name));
+    variantNames() {
+      if (!this.hasVariants()) return [];
+      return this.selectedRecipe.variants.map(v => this.translateField(v.name));
     },
 
-
-    currentIngredientsAll() {
-      if (this.hasIngredientVariations()) {
-        const v = this.selectedRecipe.ingredientVariations[this.selectedVariationIndex] || this.selectedRecipe.ingredientVariations[0];
-        return v.ingredients || [];
-      }
-      return this.selectedRecipe.ingredients || [];
-    },
-
-    currentIngredients() {
-      if (this.hasIngredientVariations()) {
-        const v = this.selectedRecipe.ingredientVariations[this.selectedVariationIndex] || this.selectedRecipe.ingredientVariations[0];
-        return this.translateField(v.ingredients) || [];
-      }
-      return this.translateField(this.selectedRecipe.ingredients) || [];
-    },
-
-    selectedVariationKey() {
-      if (!this.hasIngredientVariations()) return undefined;
-      const v = this.selectedRecipe.ingredientVariations[this.selectedVariationIndex] || this.selectedRecipe.ingredientVariations[0];
+    selectedVariantKey() {
+      if (!this.hasVariants()) return undefined;
+      const v = this.selectedRecipe.variants[this.selectedVariationIndex] || this.selectedRecipe.variants[0];
       return v.key;
     },
 
-    normalizeInstructionEntry(entry) {
-      // Accept plain string or object { text: localizedStringOrObject, onlyForVariation?: string | string[] }
-      if (typeof entry === 'string') {
-        return { text: entry };
-      }
-      return entry || {};
-    },
-
-    currentInstructions() {
-      const raw = this.translateField(this.selectedRecipe.instructions) || [];
-      // raw might be an array of strings or an array of objects with localizable text
-      const variationKey = this.selectedVariationKey();
+    currentIngredients() {
+      const raw = this.selectedRecipe.ingredients || [];
+      const variationKey = this.selectedVariantKey();
       return raw
-        .map(e => this.normalizeInstructionEntry(e))
         .filter(e => {
           if (!e.onlyForVariation) return true;
           const allowed = Array.isArray(e.onlyForVariation) ? e.onlyForVariation : [e.onlyForVariation];
           return variationKey && allowed.includes(variationKey);
         })
-        .map(e => this.translateField(e.text ?? e));
+        .map(e => {
+          return {
+            text: this.translateField(e.text),
+            icon: this.ingredientIcon(e.text.en)
+          };
+        });
+    },
+
+    currentInstructions() {
+      const raw = this.selectedRecipe.instructions || [];
+      const variationKey = this.selectedVariantKey();
+      return raw
+        .filter(e => {
+          if (!e.onlyForVariation) return true;
+          const allowed = Array.isArray(e.onlyForVariation) ? e.onlyForVariation : [e.onlyForVariation];
+          return variationKey && allowed.includes(variationKey);
+        })
+        .map(e => ({
+          text: this.translateField(e.text),
+          image: e.image ? this.withBase(e.image) : null
+        }));
     },
 
     ingredientIcon(text) {

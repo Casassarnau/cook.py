@@ -4,21 +4,70 @@
     "es": "Tortilla de patatas",
     "cat": "Truita de patates"
   },
-  "categories": ["desserts"],
-  "image": "https://example.com/omelette.jpg",
+  "author": "Arnau",
+  "categories": ["mains"],
+  "image": "/images/omelette.jpg",
   "description": {
     "en": "A classic omelette with potatoes and eggs.",
     "es": "Una tortilla clásica con patatas y huevos.",
     "cat": "Una truita clàssica amb patates i ous."
   },
-  "ingredients": {
-    "en": ["4 eggs", "3 potatoes", "olive oil", "salt"],
-    "es": ["4 huevos", "3 patatas", "aceite de oliva", "sal"],
-    "cat": ["4 ous", "3 patates", "oli d'oliva", "sal"]
-  },
-  "instructions": {
-    "en": ["Slice potatoes", "Fry in oil", "Add beaten eggs", "Cook both sides"],
-    "es": ["Corta las patatas", "Fríe en aceite", "Añade huevos batidos", "Cocina por ambos lados"],
-    "cat": ["Talla les patates", "Fregix en oli", "Afegeix ous batuts", "Cuina pels dos costats"]
-  }
+
+  "variants": [
+    { "key": "classic", "name": { "en": "Classic", "es": "Clásica", "cat": "Clàssica" } },
+    { "key": "onion", "name": { "en": "With onion", "es": "Con cebolla", "cat": "Amb ceba" } }
+  ],
+
+  "ingredients": [
+    {
+      "text": { "en": "4 eggs", "es": "4 huevos", "cat": "4 ous" }
+    },
+    {
+      "text": { "en": "3 potatoes", "es": "3 patatas", "cat": "3 patates" }
+    },
+    {
+      "text": { "en": "1 onion", "es": "1 cebolla", "cat": "1 ceba" },
+      "onlyForVariation": "onion"
+    },
+    {
+      "text": { "en": "Olive oil", "es": "Aceite de oliva", "cat": "Oli d'oliva" }
+    },
+    {
+      "text": { "en": "Salt", "es": "Sal", "cat": "Sal" }
+    }
+  ],
+
+  "instructions": [
+    {
+      "text": {
+        "en": "Peel and slice the potatoes thinly.",
+        "es": "Pela y corta las patatas en rodajas finas.",
+        "cat": "Pela i talla les patates en rodanxes fines."
+      }
+    },
+    {
+      "text": {
+        "en": "Slice the onion and cook it gently with the potatoes.",
+        "es": "Corta la cebolla y cocínala suavemente con las patatas.",
+        "cat": "Talla la ceba i cuina-la suaument amb les patates."
+      },
+      "onlyForVariation": "onion",
+      "image": "/images/steps/omelette_onion.jpg"
+    },
+    {
+      "text": {
+        "en": "Fry the mixture in olive oil until soft.",
+        "es": "Fríe la mezcla en aceite de oliva hasta que esté tierna.",
+        "cat": "Fregix la barreja en oli d'oliva fins que sigui tendra."
+      }
+    },
+    {
+      "text": {
+        "en": "Add beaten eggs and cook both sides until golden.",
+        "es": "Añade los huevos batidos y cocina por ambos lados hasta dorar.",
+        "cat": "Afegeix els ous batuts i cou pels dos costats fins que estigui daurada."
+      },
+      "image": "/images/steps/flip_omelette.jpg"
+    }
+  ]
 }
