@@ -193,39 +193,64 @@
 
           <img :src="withBase(selectedRecipe.image)" alt="" class="w-full h-96 object-cover rounded-lg mb-4" />
           <h2 class="text-3xl font-bold mb-2" x-text="translateField(selectedRecipe.title)"></h2>
-          <p class="mb-4  transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'" x-text="translateField(selectedRecipe.description)"></p>
+          <p
+            class="mb-6 text-lg leading-relaxed rounded-xl border p-4 transition-colors duration-300"
+            :class="darkMode
+              ? 'bg-gray-800/60 border-gray-700 text-gray-200'
+              : 'bg-white border-gray-200 text-gray-700'"
+            x-text="translateField(selectedRecipe.description)"
+          ></p>
 
-          <div class="flex items-center justify-between mb-2">
-            <h3 class="text-xl font-semibold" x-text="t('ingredients')"></h3>
-            <template x-if="hasIngredientVariations()">
-              <div class="flex items-center gap-2">
-                <label class="text-sm" :class="darkMode ? 'text-gray-300' : 'text-gray-600'" x-text="t('variation')"></label>
-                <select
-                  x-model.number="selectedVariationIndex"
-                  class="h-9 px-3 rounded-lg border font-semibold transition-colors duration-300 cursor-pointer"
-                  :class="darkMode
-                    ? 'bg-gray-800 border-gray-600 text-gray-100'
-                    : 'bg-white border-gray-300 text-gray-800'"
+          <div
+            class="rounded-2xl border p-4 mb-6 transition-colors duration-300"
+            :class="darkMode ? 'bg-gray-900/50 border-gray-800' : 'bg-white border-gray-200'"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-xl font-semibold" x-text="t('ingredients')"></h3>
+              <template x-if="hasIngredientVariations()">
+                <div class="flex items-center gap-2">
+                  <select
+                    x-model.number="selectedVariationIndex"
+                    class="h-9 px-3 rounded-lg border font-semibold transition-colors duration-300 cursor-pointer"
+                    :class="darkMode
+                      ? 'bg-gray-800 border-gray-600 text-gray-100'
+                      : 'bg-white border-gray-300 text-gray-800'"
+                  >
+                    <template x-for="(name, idx) in variationNames()" :key="idx">
+                      <option :value="idx" x-text="name"></option>
+                    </template>
+                  </select>
+                </div>
+              </template>
+            </div>
+            <ul class="grid gap-2 sm:grid-cols-2 list-none mb-0">
+              <template x-for="(item, index) in currentIngredients()">
+                <li
+                  class="flex items-start gap-2 rounded-lg border p-2 text-sm transition-colors duration-300"
+                  :class="darkMode ? 'bg-gray-800/60 border-gray-700' : 'bg-gray-50 border-gray-200'"
                 >
-                  <template x-for="(name, idx) in variationNames()" :key="idx">
-                    <option :value="idx" x-text="name"></option>
-                  </template>
-                </select>
-              </div>
-            </template>
+                  <span class="mt-0.5" x-text="ingredientIcon(currentIngredientsAll()['en'][index])" aria-hidden="true"></span>
+                  <span x-text="item"></span>
+                </li>
+              </template>
+            </ul>
           </div>
-          <ul class="list-disc list-inside mb-4">
-            <template x-for="item in currentIngredients()">
-              <li x-text="item"></li>
-            </template>
-          </ul>
 
-          <h3 class="text-xl font-semibold mb-2" x-text="t('instructions')"></h3>
-          <ol class="list-decimal list-inside">
-            <template x-for="step in currentInstructions()">
-              <li x-text="step"></li>
-            </template>
-          </ol>
+          <div
+            class="rounded-2xl border p-4 transition-colors duration-300"
+            :class="darkMode ? 'bg-gray-900/50 border-gray-800' : 'bg-white border-gray-200'"
+          >
+            <h3 class="text-xl font-semibold mb-3" x-text="t('instructions')"></h3>
+            <ol class="list-decimal list-inside space-y-3">
+              <template x-for="step in currentInstructions()">
+                <li
+                  class="rounded-lg border p-3 leading-relaxed transition-colors duration-300"
+                  :class="darkMode ? 'bg-gray-800/60 border-gray-700' : 'bg-gray-50 border-gray-200'"
+                  x-text="step"
+                ></li>
+              </template>
+            </ol>
+          </div>
         </div>
       </template>
     </div>
