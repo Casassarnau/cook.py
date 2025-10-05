@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import os, json, sys
 
-BASE_DIR = os.path.join("public", "recipes")
-INDEX_FILE = os.path.join("public", "index.json")
+BASE_DIR = os.path.join("docs", "recipes")
+INDEX_FILE = os.path.join("docs", "index.json")
 
 if not os.path.exists(BASE_DIR):
     print(f"❌ Error: {BASE_DIR} folder not found.")
@@ -26,7 +26,7 @@ for file in os.listdir(BASE_DIR):
         index.append({
             "title": title,
             "categories": categories,
-            # paths in index.json should be relative to `public/`
+            # paths in index.json should be relative to `docs/`
             "path": f"recipes/{file}",
             "image": image
         })
