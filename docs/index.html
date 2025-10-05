@@ -168,7 +168,7 @@
                   ? 'bg-gray-800 text-gray-100 border border-gray-700 hover:shadow-gray-700'
                   : 'bg-white text-gray-900 border border-gray-200 hover:shadow-lg'"
               >
-                <img :src="item.image" alt="" class="w-full h-40 object-cover" />
+                <img :src="withBase(item.image)" alt="" class="w-full h-40 object-cover" />
                 <div class="p-4">
                   <h2 class="text-xl font-bold mb-2" x-text="item.title"></h2>
                 </div>
@@ -191,7 +191,7 @@
             &larr; <span x-text="t('back') || 'Back'"></span>
           </button>
 
-          <img :src="selectedRecipe.image" alt="" class="w-full h-96 object-cover rounded-lg mb-4" />
+          <img :src="withBase(selectedRecipe.image)" alt="" class="w-full h-96 object-cover rounded-lg mb-4" />
           <h2 class="text-3xl font-bold mb-2" x-text="translateField(selectedRecipe.title)"></h2>
           <p class="mb-4  transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'" x-text="translateField(selectedRecipe.description)"></p>
 

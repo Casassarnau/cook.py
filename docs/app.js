@@ -10,8 +10,12 @@ function recipeApp() {
     lang: 'en',
     translations: {},
     darkMode: false,
+    basePath: '',
 
     async init() {
+      // Determine base path: empty on localhost, '/recipes.py' elsewhere
+      this.basePath = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : '/recipes.py';
+
       // Load saved theme
       this.darkMode = localStorage.getItem('darkMode') === 'true';
       document.documentElement.classList.toggle('dark', this.darkMode);
@@ -31,9 +35,16 @@ function recipeApp() {
       this.handleRoute();
     },
 
+    withBase(path) {
+      if (!path) return path;
+      const base = this.basePath.replace(/\/$/, '');
+      const p = String(path).replace(/^\//, '');
+      return base ? `${base}/${p}` : p;
+    },
+
     async loadTranslations() {
       try {
-        const res = await fetch(`translations/${this.lang}.json`);
+        const res = await fetch(this.withBase(`translations/${this.lang}.json`));
         this.translations = await res.json();
       } catch {
         console.warn('No translation file found for', this.lang);
@@ -41,7 +52,7 @@ function recipeApp() {
     },
 
     async loadIndex() {
-      const res = await fetch('index.json');
+      const res = await fetch(this.withBase('index.json'));
       this.index = await res.json();
       // Gather unique categories from items that may include multiple categories
       const allCategories = this.index.flatMap(i => i.categories || []);
@@ -58,7 +69,7 @@ function recipeApp() {
         return this.recipesCache[item.path];
       }
 
-      const res = await fetch(item.path);
+      const res = await fetch(this.withBase(item.path));
       const data = await res.json();
       this.recipesCache[item.path] = data;
       return data;
