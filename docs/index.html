@@ -28,8 +28,8 @@
   <body
     class="min-h-screen relative transition-colors duration-300"
     :class="darkMode
-      ? 'text-gray-100'
-      : 'text-gray-800'"
+      ? 'bg-gradient-to-b from-gray-900 via-slate-900 to-blue-950 text-gray-100'
+      : 'bg-gradient-to-b from-blue-50 via-sky-50 to-indigo-100 text-gray-800'"
   >
     <!-- Background overlay to avoid white flashes on hover in dark mode -->
     <div
@@ -39,11 +39,11 @@
         : 'bg-gradient-to-b from-blue-50 via-sky-50 to-indigo-100'"
     ></div>
     <!-- Background uses a simple linear gradient; no decorative blobs -->
-    <div class="max-w-5xl mx-auto p-6">
+    <div class="max-w-5xl mx-auto px-4 py-5 md:p-6">
 
       <!-- Header -->
-      <div class="flex justify-between items-center mb-6">
-        <h1 class="text-4xl font-bold">Recipes.py</h1>
+      <div class="flex justify-between items-center mb-4 md:mb-6">
+        <h1 class="text-2xl md:text-4xl font-bold">Recipes.py</h1>
 
         <div class="flex items-center gap-3">
           <button
@@ -117,7 +117,7 @@
           </section> -->
 
           <!-- Search -->
-          <div class="flex justify-center mb-6">
+          <div class="flex justify-center mb-5 md:mb-6">
             <input
               x-model="searchQuery"
               type="text"
@@ -130,11 +130,11 @@
           </div>
 
           <!-- Category Menu -->
-          <div class="flex flex-wrap justify-center gap-3 mb-10">
+          <div class="flex flex-wrap justify-center gap-2.5 md:gap-3 mb-6 md:mb-10">
             <template x-for="category in categories" :key="category">
               <button
                 @click="filterCategory = category"
-                class="px-4 py-2 rounded-lg font-semibold shadow transition-colors duration-300"
+                class="px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold shadow transition-colors duration-300"
                 :class="filterCategory === category
                   ? 'bg-orange-500 text-white'
                   : darkMode
@@ -147,7 +147,7 @@
 
             <button
               @click="filterCategory = ''"
-              class="px-4 py-2 rounded-lg font-semibold shadow-lg transition-colors duration-300"
+              class="px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold shadow-lg transition-colors duration-300"
               :class="filterCategory === ''
                 ? 'bg-orange-500 text-white'
                 : darkMode
@@ -180,7 +180,7 @@
 
       <!-- Recipe Detail -->
       <template x-if="selectedRecipe">
-        <div class="p-4">
+        <div>
           <button
             @click="goHome()"
             class="mb-4 font-semibold transition-colors duration-300 cursor-pointer"
@@ -191,42 +191,40 @@
             &larr; <span x-text="t('back') || 'Back'"></span>
           </button>
 
-          <img :src="withBase(selectedRecipe.image)" alt="" class="w-full h-96 object-cover rounded-lg mb-4" />
-          <h2 class="text-3xl font-bold mb-2" x-text="translateField(selectedRecipe.title)"></h2>
+          <img :src="withBase(selectedRecipe.image)" alt="" class="w-full h-56 sm:h-72 md:h-96 object-cover rounded-lg mb-4" />
+          <h2 class="text-2xl md:text-3xl font-bold mb-2" x-text="translateField(selectedRecipe.title)"></h2>
           <p
-            class="mb-6 text-lg leading-relaxed rounded-xl border p-4 transition-colors duration-300"
+            class="mb-3 md:mb-4 text-base md:text-lg leading-relaxed transition-colors duration-300"
             :class="darkMode
-              ? 'bg-gray-800/60 border-gray-700 text-gray-200'
-              : 'bg-white border-gray-200 text-gray-700'"
+              ? 'text-gray-200'
+              : 'text-gray-800'"
             x-text="translateField(selectedRecipe.description)"
           ></p>
 
-          <div
-            class="rounded-2xl border p-4 mb-6 transition-colors duration-300"
-            :class="darkMode ? 'bg-gray-900/50 border-gray-800' : 'bg-white border-gray-200'"
-          >
+          <div class="mb-4 md:mb-5">
             <div class="flex items-center justify-between mb-3">
               <h3 class="text-xl font-semibold" x-text="t('ingredients')"></h3>
               <template x-if="hasIngredientVariations()">
                 <div class="flex items-center gap-2">
                   <select
                     x-model.number="selectedVariationIndex"
-                    class="h-9 px-3 rounded-lg border font-semibold transition-colors duration-300 cursor-pointer"
+                    class="h-9 px-3 rounded-lg font-medium transition-colors duration-300 cursor-pointer focus:outline-none"
                     :class="darkMode
-                      ? 'bg-gray-800 border-gray-600 text-gray-100'
-                      : 'bg-white border-gray-300 text-gray-800'"
+                      ? 'bg-orange-300 text-orange-900 hover:bg-orange-200'
+                      : 'bg-orange-600 text-orange-100 hover:bg-orange-700'"
                   >
                     <template x-for="(name, idx) in variationNames()" :key="idx">
                       <option :value="idx" x-text="name"></option>
                     </template>
                   </select>
+
                 </div>
               </template>
             </div>
             <ul class="grid gap-2 sm:grid-cols-2 list-none mb-0">
               <template x-for="(item, index) in currentIngredients()">
                 <li
-                  class="flex items-start gap-2 rounded-lg border p-2 text-sm transition-colors duration-300"
+                  class="flex items-start gap-2 rounded-md md:rounded-lg border p-2 text-base transition-colors duration-300"
                   :class="darkMode ? 'bg-gray-800/60 border-gray-700' : 'bg-gray-50 border-gray-200'"
                 >
                   <span class="mt-0.5" x-text="ingredientIcon(currentIngredientsAll()['en'][index])" aria-hidden="true"></span>
@@ -236,15 +234,12 @@
             </ul>
           </div>
 
-          <div
-            class="rounded-2xl border p-4 transition-colors duration-300"
-            :class="darkMode ? 'bg-gray-900/50 border-gray-800' : 'bg-white border-gray-200'"
-          >
+          <div>
             <h3 class="text-xl font-semibold mb-3" x-text="t('instructions')"></h3>
-            <ol class="list-decimal list-inside space-y-3">
+            <ol class="list-decimal list-inside space-y-2 md:space-y-3">
               <template x-for="step in currentInstructions()">
                 <li
-                  class="rounded-lg border p-3 leading-relaxed transition-colors duration-300"
+                  class="rounded-md md:rounded-lg border p-2 md:p-3 leading-relaxed transition-colors duration-300"
                   :class="darkMode ? 'bg-gray-800/60 border-gray-700' : 'bg-gray-50 border-gray-200'"
                   x-text="step"
                 ></li>

@@ -242,7 +242,7 @@ function recipeApp() {
         [/bagel/, '🥯'],
         [/pancake|pancakes/, '🥞'],
         [/waffle|waffles/, '🧇'],
-        [/cheese|parmesan|mozzarella|cheddar|gouda|brie|feta|roquefort|gorgonzola|ricotta/, '🧀'],
+        [/cheese|parmesan|mozzarella|cheddar|gouda|brie|feta|roquefort|gorgonzola|ricotta|philadelphia|mascarpone/, '🧀'],
         [/ham\b|ribs|pork\s*shoulder/, '🍖'],
         [/chicken\s*leg|drumstick/, '🍗'],
         [/beef|steak|sirloin|ribeye/, '🥩'],

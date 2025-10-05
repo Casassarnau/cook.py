@@ -7,9 +7,9 @@
   "categories": ["desserts"],
   "image": "/images/cheesecake.jpg",
   "description": {
-    "en": "Quantities for a 15 cm (6 in) pan; double for a 23 cm (9 in) pan.",
-    "es": "Cantidades para un molde de 15 cm; duplica para uno de 23 cm.",
-    "cat": "Quantitats per a un motlle de 15 cm; duplica per a un de 23 cm."
+    "en": "Quantities for a ø 15 cm (6 in) mold; double for a ø 23 cm (9 in) mold.",
+    "es": "Cantidades para un molde de ø 15 cm; duplica para uno de ø 23 cm.",
+    "cat": "Quantitats per a un motlle de ø 15 cm; duplica per a un de ø 23 cm."
   },
   "ingredientVariations": [
     {
@@ -17,7 +17,7 @@
       "name": { "en": "Classic", "es": "Clásica", "cat": "Clàssica" },
       "ingredients": {
         "en": [
-          "200 g cream cheese (Philadelphia or mascarpone)",
+          "200 g philadelphia or mascarpone",
           "100 g ricotta or mató",
           "40 g grated Parmesan",
           "2 eggs",
@@ -28,7 +28,7 @@
           "Butter"
         ],
         "es": [
-          "200 g de Philadelphia o mascarpone",
+          "200 g de philadelphia o mascarpone",
           "100 g de ricotta o requesón",
           "40 g de parmesano rallado",
           "2 huevos",
@@ -39,7 +39,7 @@
           "Mantequilla"
         ],
         "cat": [
-          "200 g de Philadelphia o mascarpone",
+          "200 g de philadelphia o mascarpone",
           "100 g de ricotta o mató",
           "40 g de parmesà ratllat",
           "2 ous",
@@ -56,7 +56,7 @@
       "name": { "en": "Blue cheese", "es": "Queso azul", "cat": "Formatge blau" },
       "ingredients": {
         "en": [
-          "200 g cream cheese (Philadelphia or mascarpone)",
+          "200 g philadelphia or mascarpone",
           "100 g ricotta or mató",
           "20 g grated Parmesan",
           "20 g gorgonzola or roquefort",
@@ -68,7 +68,7 @@
           "Butter"
         ],
         "es": [
-          "200 g de Philadelphia o mascarpone",
+          "200 g de philadelphia o mascarpone",
           "100 g de ricotta o requesón",
           "20 g de parmesano rallado",
           "20 g de gorgonzola o roquefort",
@@ -80,7 +80,7 @@
           "Mantequilla"
         ],
         "cat": [
-          "200 g de Philadelphia o mascarpone",
+          "200 g de philadelphia o mascarpone",
           "100 g de ricotta o mató",
           "20 g de parmesà ratllat",
           "20 g gorgonzola o roquefort",
