@@ -1,42 +1,51 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 # === Configuration ===
 PYTHON_VERSION="3.13.1"
-VENV_NAME="cook-env"
+VENV_DIR=".venv"
+PROJECT_ROOT="$(pwd)"
 
 echo "🔍 Checking for pyenv installation..."
-if ! command -v pyenv &> /dev/null; then
-  echo "❌ pyenv is not installed. Please install pyenv first: https://github.com/pyenv/pyenv"
+if ! command -v pyenv &>/dev/null; then
+  echo "❌ pyenv is not installed. Please install pyenv first:"
+  echo "   https://github.com/pyenv/pyenv"
   exit 1
 fi
 
-# Initialize pyenv in this shell
-export PATH="$HOME/.pyenv/bin:$PATH"
+# === Initialize pyenv for this shell ===
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:${PATH}"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# === Ensure the desired Python version is installed ===
-if ! pyenv versions --bare | grep -q "^${PYTHON_VERSION}$"; then
+# === Ensure Python version is installed ===
+if ! pyenv versions --bare | grep -qx "${PYTHON_VERSION}"; then
   echo "📦 Installing Python ${PYTHON_VERSION}..."
   pyenv install "${PYTHON_VERSION}"
 else
   echo "✅ Python ${PYTHON_VERSION} already installed."
 fi
 
-# === Remove existing virtual environment if it exists ===
-if pyenv virtualenvs --bare | grep -q "^${VENV_NAME}$"; then
-  echo "♻️ Removing existing virtual environment: ${VENV_NAME}"
-  pyenv uninstall -f "${VENV_NAME}"
+# === Remove old .venv if it exists ===
+if [ -d "${PROJECT_ROOT}/${VENV_DIR}" ]; then
+  echo "♻️ Removing old virtual environment at ${VENV_DIR}..."
+  rm -rf "${PROJECT_ROOT:?}/${VENV_DIR}"
 fi
 
-# === Create new virtual environment ===
-echo "🐍 Creating new virtual environment: ${VENV_NAME}"
-pyenv virtualenv "${PYTHON_VERSION}" "${VENV_NAME}"
+# === Create new pyenv virtualenv in .venv ===
+echo "🐍 Creating new virtual environment in ${VENV_DIR}..."
+mkdir -p "${PROJECT_ROOT}/${VENV_DIR}"
+pyenv shell "${PYTHON_VERSION}"
+python -m venv "${PROJECT_ROOT}/${VENV_DIR}"
 
-# === Activate the environment ===
+# === Activate .venv ===
 echo "🔧 Activating virtual environment..."
-pyenv activate "${VENV_NAME}"
+# shellcheck disable=SC1091
+source "${PROJECT_ROOT}/${VENV_DIR}/bin/activate"
+
+# === Upgrade pip ===
+pip install --upgrade pip setuptools wheel
 
 # === Install project dependencies ===
 if [ -f "requirements.txt" ]; then
@@ -47,7 +56,7 @@ else
 fi
 
 # === Install and configure pre-commit hooks ===
-if ! command -v pre-commit &> /dev/null; then
+if ! command -v pre-commit &>/dev/null; then
   echo "📦 Installing pre-commit..."
   pip install pre-commit
 fi
@@ -60,5 +69,8 @@ else
 fi
 
 # === Finalize ===
-echo "✅ Setup complete! Environment '${VENV_NAME}' is ready to use."
-echo "💡 To activate it in a new terminal: pyenv activate ${VENV_NAME}"
+echo "✅ Setup complete!"
+echo "💡 To activate your environment manually, run:"
+echo ""
+echo "    source ${VENV_DIR}/bin/activate"
+echo ""
