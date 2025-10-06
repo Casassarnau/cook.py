@@ -1,8 +1,9 @@
 repos:
   - repo: local
     hooks:
-      - id: generate-index-and-verify-clean
-        name: Generate index.json and verify no unstaged changes
-        entry: bash -c "./.git-hooks/generate_index_and_check.sh"
+      - id: generate-index
+        name: Generate index
+        entry: bash .git-hooks/generate_index_and_check.sh
         language: system
         pass_filenames: false
+        files: ^

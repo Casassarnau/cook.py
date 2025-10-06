@@ -5,19 +5,33 @@
     "cat": "Pastís de formatge"
   },
   "author": "Arnau",
-  "categories": ["desserts"],
+  "categories": [
+    "desserts"
+  ],
   "image": "/images/cheesecake/main.webp",
   "description": {
     "en": "Quantities for a ø 15 cm (6 in) mold; double for a ø 23 cm (9 in) mold.",
     "es": "Cantidades para un molde de ø 15 cm; duplica para uno de ø 23 cm.",
     "cat": "Quantitats per a un motlle de ø 15 cm; duplica per a un de ø 23 cm."
   },
-
   "variants": [
-    { "key": "classic", "name": { "en": "Classic", "es": "Clásica", "cat": "Clàssica" } },
-    { "key": "blue", "name": { "en": "Blue cheese", "es": "Queso azul", "cat": "Formatge blau" } }
+    {
+      "key": "classic",
+      "name": {
+        "en": "Classic",
+        "es": "Clásica",
+        "cat": "Clàssica"
+      }
+    },
+    {
+      "key": "blue",
+      "name": {
+        "en": "Blue cheese",
+        "es": "Queso azul",
+        "cat": "Formatge blau"
+      }
+    }
   ],
-
   "ingredients": [
     {
       "text": {
@@ -100,7 +114,6 @@
       }
     }
   ],
-
   "instructions": [
     {
       "text": {
