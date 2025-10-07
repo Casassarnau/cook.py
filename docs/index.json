@@ -1,5 +1,14 @@
 [
   {
+    "title": "Bolognese Macaroni",
+    "categories": [
+      "mains"
+    ],
+    "path": "recipes/bolognese_macaroni.json",
+    "image": "/images/bolognese_macaroni/main.webp",
+    "author": "Arnau"
+  },
+  {
     "title": "Cheesecake",
     "categories": [
       "desserts"

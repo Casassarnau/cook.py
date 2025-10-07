@@ -15,7 +15,8 @@
         "cat": "Catalán"
     },
     "cat": {
-        "desserts": "Postres"
+        "desserts": "Postres",
+        "mains": "Primeros"
     },
     "variation": "Variación"
   }

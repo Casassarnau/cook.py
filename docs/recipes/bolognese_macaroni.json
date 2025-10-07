@@ -1,0 +1,228 @@
+{
+  "title": {
+    "en": "Bolognese Macaroni",
+    "es": "Macarrones a la boloñesa",
+    "cat": "Macarrons a la bolonyesa"
+  },
+  "author": "Arnau",
+  "categories": ["mains"],
+  "image": "/images/bolognese_macaroni/main.webp",
+  "description": {
+    "en": "A refined version of the traditional Bolognese macaroni, made with minced pork and tomato sauce. Perfectly balanced and ideal for four servings.",
+    "es": "Una versión refinada de los clásicos macarrones a la boloñesa, elaborados con carne picada de cerdo y salsa de tomate. Un plato equilibrado e ideal para cuatro raciones.",
+    "cat": "Una versió refinada dels clàssics macarrons a la bolonyesa, elaborats amb carn picada de porc i salsa de tomàquet. Un plat equilibrat i ideal per a quatre racions."
+  },
+
+  "variants": [
+    { "key": "classic", "name": { "en": "Classic", "es": "Clásica", "cat": "Clàssica" } },
+    { "key": "gratin", "name": { "en": "Oven-Gratinated", "es": "Gratinados al horno", "cat": "Gratinats al forn" } }
+  ],
+
+  "ingredients": [
+    {
+      "text": {
+        "en": "500 g of minced pork",
+        "es": "500 g de carne picada de cerdo",
+        "cat": "500 g de carn picada de porc"
+      }
+    },
+    {
+      "text": {
+        "en": "8 g of salt",
+        "es": "8 g de sal",
+        "cat": "8 g de sal"
+      }
+    },
+    {
+      "text": {
+        "en": "0.5 g of ground black pepper",
+        "es": "0,5 g de pimienta negra molida",
+        "cat": "0,5 g de pebre negre mòlt"
+      }
+    },
+    {
+      "text": {
+        "en": "1 onion",
+        "es": "1 cebolla",
+        "cat": "1 ceba"
+      }
+    },
+    {
+      "text": {
+        "en": "1 carrot (or 2 if small)",
+        "es": "1 zanahoria (o 2 si son pequeñas)",
+        "cat": "1 pastanaga (o 2 si són petites)"
+      }
+    },
+    {
+      "text": {
+        "en": "250 g of crushed tomato",
+        "es": "250 g de tomate triturado",
+        "cat": "250 g de tomàquet triturat"
+      }
+    },
+    {
+      "text": {
+        "en": "50 g of water",
+        "es": "50 g de agua",
+        "cat": "50 g d'aigua"
+      }
+    },
+    {
+      "text": {
+        "en": "500 g of macaroni",
+        "es": "500 g de macarrones",
+        "cat": "500 g de macarrons"
+      }
+    },
+    {
+      "text": {
+        "en": "Olive oil, as needed",
+        "es": "Aceite de oliva, según sea necesario",
+        "cat": "Oli d'oliva, segons calgui"
+      }
+    },
+    {
+      "text": {
+        "en": "Sugar (to balance acidity)",
+        "es": "Azúcar (para equilibrar la acidez)",
+        "cat": "Sucre (per equilibrar l'acidesa)"
+      }
+    },
+    {
+      "text": {
+        "en": "Cheese that melts easily (for the gratin version)",
+        "es": "Queso que funda fácilmente (para la versión gratinada)",
+        "cat": "Formatge que es fongui bé (per a la versió gratinada)"
+      },
+      "onlyForVariation": "gratin"
+    },
+    {
+      "text": {
+        "en": "Parmesan cheese (for additional flavor)",
+        "es": "Queso parmesano (para aportar más sabor)",
+        "cat": "Formatge parmesà (per donar més gust)"
+      },
+      "onlyForVariation": "gratin"
+    }
+  ],
+
+  "instructions": [
+    {
+      "text": {
+        "en": "Finely dice the onion and carrot, and set aside.",
+        "es": "Corta finamente a dados la cebolla y la zanahoria, y resérvalas.",
+        "cat": "Talla finament a daus la ceba i la pastanaga, i reserva-les."
+      }
+    },
+    {
+      "text": {
+        "en": "Combine the minced meat with the salt and pepper, mixing well to season evenly.",
+        "es": "Mezcla la carne picada con la sal y la pimienta, asegurando un aderezo homogéneo.",
+        "cat": "Barreja la carn picada amb la sal i el pebre, procurant que quedi ben amanida."
+      }
+    },
+    {
+      "text": {
+        "en": "In a pot, cook the meat over medium heat, stirring and pressing continuously so that it remains finely crumbled instead of forming a solid block.",
+        "es": "En una olla, cocina la carne a fuego medio, removiendo y presionando constantemente para que quede suelta y no se compacte.",
+        "cat": "En una olla, cou la carn a foc mitjà, remenant i aixafant constantment perquè quedi esmicolada i no compacta."
+      }
+    },
+    {
+      "text": {
+        "en": "Once the meat is cooked, remove it from the heat without discarding the fat. A useful tip is to transfer everything to a bowl and then pour the liquid fat back into the pot.",
+        "es": "Una vez cocida, retira la carne del fuego sin desechar la grasa. Un buen truco es pasarlo todo a un bol y verter de nuevo la grasa líquida a la olla.",
+        "cat": "Un cop la carn estigui cuita, retira-la del foc sense treure el greix. Un bon truc és posar-ho tot en un bol i tornar a afegir el greix líquid a l'olla."
+      }
+    },
+    {
+      "text": {
+        "en": "Add the diced vegetables to the pot. If necessary, incorporate a small amount of olive oil.",
+        "es": "Añade las verduras en dados a la olla. Si es necesario, incorpora una pequeña cantidad de aceite de oliva.",
+        "cat": "Afegeix la verdura tallada a daus a l'olla. Si cal, afegeix una mica d'oli d'oliva."
+      }
+    },
+    {
+      "text": {
+        "en": "When the onion appears translucent but not browned, add the crushed tomato.",
+        "es": "Cuando la cebolla esté translúcida pero no dorada, añade el tomate triturado.",
+        "cat": "Quan la ceba estigui transparent però no marró, afegeix el tomàquet triturat."
+      }
+    },
+    {
+      "text": {
+        "en": "Add a pinch of sugar to reduce the tomato's acidity, and adjust the seasoning with salt to taste.",
+        "es": "Añade una pizca de azúcar para reducir la acidez del tomate y ajusta la sal al gusto.",
+        "cat": "Afegeix una mica de sucre per reduir l'acidesa del tomàquet i ajusta la sal al gust."
+      }
+    },
+    {
+      "text": {
+        "en": "Cover the pot and stir every two minutes to ensure even cooking.",
+        "es": "Tapa la olla y remueve cada dos minutos para asegurar una cocción homogénea.",
+        "cat": "Tapa l'olla i remena cada dos minuts per garantir una cocció homogènia."
+      }
+    },
+    {
+      "text": {
+        "en": "Once the sauce no longer tastes of raw tomato, incorporate the cooked meat and water, and simmer gently.",
+        "es": "Cuando la salsa haya perdido el sabor a tomate crudo, incorpora la carne cocida y el agua, y deja cocer suavemente.",
+        "cat": "Quan la salsa ja no tingui gust a tomàquet cru, afegeix la carn cuita i l'aigua, i deixa coure suaument."
+      }
+    },
+    {
+      "text": {
+        "en": "Meanwhile, cook the macaroni following the instructions on the package until al dente.",
+        "es": "Mientras tanto, cocina los macarrones siguiendo las instrucciones del envase hasta que estén al dente.",
+        "cat": "Mentrestant, cou els macarrons seguint les instruccions de l'envàs fins que quedin al dente."
+      }
+    },
+    {
+      "text": {
+        "en": "Drain the pasta and mix it thoroughly with the Bolognese sauce.",
+        "es": "Escurre la pasta y mézclala cuidadosamente con la salsa boloñesa.",
+        "cat": "Escorre la pasta i barreja-la bé amb la salsa bolonyesa."
+      }
+    },
+    {
+      "text": {
+        "en": "Transfer the macaroni mixture into an oven-safe dish.",
+        "es": "Coloca los macarrones en un recipiente apto para horno.",
+        "cat": "Posa els macarrons en un recipient apte per al forn."
+      },
+      "onlyForVariation": "gratin"
+    },
+    {
+      "text": {
+        "en": "Add a layer of melting cheese and sprinkle Parmesan on top for extra flavor.",
+        "es": "Añade una capa de queso que funda bien y espolvorea parmesano por encima para dar más sabor.",
+        "cat": "Afegeix-hi una capa de formatge que es fongui bé i espolvoreja parmesà per sobre per donar més gust."
+      },
+      "onlyForVariation": "gratin"
+    },
+    {
+      "text": {
+        "en": "Bake in a preheated oven at 200°C with the upper grill on, until the surface is golden and gratinated.",
+        "es": "Hornea en un horno precalentado a 200 °C con el gratinador superior activado, hasta que la superficie esté dorada y gratinada.",
+        "cat": "Enforna en un forn preescalfat a 200 °C amb el gratinat superior activat, fins que la superfície estigui daurada i gratinada."
+      },
+      "onlyForVariation": "gratin"
+    },
+    {
+      "text": {
+        "en": "Monitor the gratin closely and remove from the oven once it reaches the desired level of browning.",
+        "es": "Vigila el gratinado y retíralo del horno cuando alcance el punto de dorado deseado.",
+        "cat": "Vigila el gratinat i retira'l del forn quan arribi al punt de daurat desitjat."
+      },
+      "onlyForVariation": "gratin"
+    },
+    {
+      "text": {
+        "en": "Serve immediately and enjoy.",
+        "es": "Sirve de inmediato y disfruta.",
+        "cat": "Serveix immediatament i gaudeix."
+      }
+    }
+  ]
+}

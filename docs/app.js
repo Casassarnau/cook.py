@@ -218,9 +218,9 @@ function recipeApp() {
         [/pancake|pancakes/, '🥞'],
         [/waffle|waffles/, '🧇'],
         [/cheese|parmesan|mozzarella|cheddar|gouda|brie|feta|roquefort|gorgonzola|ricotta|philadelphia|mascarpone/, '🧀'],
-        [/ham\b|ribs|pork\s*shoulder/, '🍖'],
+        [/ham\b|ribs|pork/, '🍖'],
         [/chicken\s*leg|drumstick/, '🍗'],
-        [/beef|steak|sirloin|ribeye/, '🥩'],
+        [/beef|steak|sirloin|ribeye|meat/, '🥩'],
         [/bacon|pancetta/, '🥓'],
         [/burger|hamburger/, '🍔'],
         [/fries|chips\b(?!\s*and)/, '🍟'],
@@ -241,9 +241,9 @@ function recipeApp() {
         [/salad|greens\s*salad/, '🥗'],
         [/popcorn/, '🍿'],
         [/butter/, '🧈'],
-        [/\bsalt\b/, '🧂'],
+        [/\bsalt\b|pepper/, '🧂'],
         [/canned|tin\s*can/, '🥫'],
-        [/pasta|spaghetti|noodles?/, '🍝'],
+        [/pasta|spaghetti|noodles|macaroni?/, '🍝'],
 
         // Asian foods
         [/bento/, '🍱'],

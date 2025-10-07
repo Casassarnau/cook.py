@@ -7,7 +7,7 @@
     "hero_subtitle": "A minimal recipe book for your favorite homemade dishes.",
     "hero_point_discover": "Discover recipes by browsing beautiful cards.",
     "hero_point_filter": "Filter by category and search by name instantly.",
-    "hero_point_cook": "Open a recipe to see ingredients and step‑by‑step instructions.",
+    "hero_point_cook": "Open a recipe to see ingredients and step-by-step instructions.",
     "hero_badge": "Your personal recipe box",
     "lang": {
         "en": "English",
@@ -15,7 +15,8 @@
         "cat": "Catalan"
     },
     "cat": {
-        "desserts": "Desserts"
+        "desserts": "Desserts",
+        "mains": "Mains"
     },
     "variation": "Variation"
   }
