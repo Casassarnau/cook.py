@@ -5,10 +5,9 @@ A minimal static recipe book powered by HTML + Alpine.js. Recipes are JSON files
 ## Quick start
 
 ```bash
-# Serve the static site (any static server works)
-# Example with Python 3:
-python3 -m http.server -d docs 5173
-# Then open http://localhost:5173
+# Start the development server
+./dev.sh
+# Then open http://localhost:8000
 ```
 
 ## Add a new recipe
@@ -17,86 +16,154 @@ python3 -m http.server -d docs 5173
 2. Use the structure below. `title`, `description`, `ingredients`, and `instructions` can be:
    - a plain string/list (single-language), or
    - an object keyed by language codes (`en`, `es`, `cat`).
-3. Optionally add named ingredient variations via `ingredientVariations` (see advanced schema below).
-4. Add one or more categories using existing keys in translations: see `docs/translations/*` under `cat.*`.
-5. Set `image` to a URL or a path under `docs/`.
-6. Run `./generate_index.py` to refresh `docs/index.json`.
-7. Commit both your recipe file and the updated `docs/index.json`.
+3. Add one or more categories using existing keys in translations: see `docs/translations/*` under `cat.*`.
+4. Set `image` to a URL or a path under `docs/`.
+5. Run `./sync.sh` to generate images and refresh `docs/index.json`, or run individually:
+   - `./generate_images.py` - Generate optimized images
+   - `./generate_index.py` - Update the recipe index
+6. Commit both your recipe file and the updated `docs/index.json`.
 
-### JSON schema (example)
+### Complete JSON Schema
+
+Here's the complete schema with all possible properties:
 
 ```json
 {
-  "title": { "en": "Spanish Omelette", "es": "Tortilla de patatas", "cat": "Truita de patates" },
-  "categories": ["desserts"],
-  "image": "https://example.com/omelette.jpg",
+  // REQUIRED FIELDS
+  "title": { "en": "Recipe Name", "es": "Nombre de la Receta", "cat": "Nom de la Recepta" },
+  "categories": ["mains", "desserts"],
+  "image": "/images/recipe/main.webp",
   "description": {
-    "en": "A classic omelette with potatoes and eggs.",
-    "es": "Una tortilla clásica con patatas y huevos.",
-    "cat": "Una truita clàssica amb patates i ous."
+    "en": "Recipe description in English.",
+    "es": "Descripción de la receta en español.",
+    "cat": "Descripció de la recepta en català."
   },
-  "ingredients": {
-    "en": ["4 eggs", "3 potatoes", "olive oil", "salt"],
-    "es": ["4 huevos", "3 patatas", "aceite de oliva", "sal"],
-    "cat": ["4 ous", "3 patates", "oli d'oliva", "sal"]
-  },
-  "ingredientVariations": [
+  "ingredients": [
     {
-      "key": "classic",                       // stable id used for conditionals
-      "name": { "en": "Classic", "es": "Clásica", "cat": "Clàssica" },
-      "ingredients": {
-        "en": ["4 eggs", "3 potatoes", "olive oil", "salt"],
-        "es": ["4 huevos", "3 patatas", "aceite de oliva", "sal"],
-        "cat": ["4 ous", "3 patates", "oli d'oliva", "sal"]
-      }
-    },
-    {
-      "key": "onion",
-      "name": { "en": "With onion", "es": "Con cebolla", "cat": "Amb ceba" },
-      "ingredients": {
-        "en": ["4 eggs", "3 potatoes", "1 onion", "olive oil", "salt"],
-        "es": ["4 huevos", "3 patatas", "1 cebolla", "aceite de oliva", "sal"],
-        "cat": ["4 ous", "3 patates", "1 ceba", "oli d'oliva", "sal"]
-      }
+      "ingredient": "ingredient_key",
+      "value": 250,
+      "unit": "g",
+      "text": { "en": "additional info", "es": "información adicional", "cat": "informació addicional" },
+      "onlyForVariation": "variant_key"
     }
   ],
-  "instructions": {
-    "en": [
-      "Slice potatoes",
-      { "text": "Slice the onion and cook it gently with the potatoes.", "onlyForVariation": "onion" },
-      "Fry in oil",
-      "Add beaten eggs",
-      "Cook both sides"
-    ],
-    "es": [
-      "Corta las patatas",
-      { "text": "Corta la cebolla y cocínala suavemente con las patatas.", "onlyForVariation": "onion" },
-      "Fríe en aceite",
-      "Añade huevos batidos",
-      "Cocina por ambos lados"
-    ],
-    "cat": [
-      "Talla les patates",
-      { "text": "Talla la ceba i cuina-la suaument amb les patates.", "onlyForVariation": "onion" },
-      "Fregix en oli",
-      "Afegeix ous batuts",
-      "Cuina pels dos costats"
-    ]
-  }
+  "instructions": [
+    {
+      "text": {
+        "en": "Instruction text in English.",
+        "es": "Texto de instrucción en español.",
+        "cat": "Text d'instrucció en català."
+      },
+      "onlyForVariation": "variant_key",
+      "image": "/images/steps/step_image.jpg"
+    }
+  ],
+
+  // OPTIONAL FIELDS
+  "author": "Author Name",
+  "servings": {
+    "value": 4,
+    "unit": "servings"
+  },
+  "diameter": {
+    "value": 15,
+    "unit": "cm"
+  },
+  "variants": [
+    {
+      "key": "variant_key",
+      "name": {
+        "en": "Variant Name",
+        "es": "Nombre de Variante",
+        "cat": "Nom de Variant"
+      }
+    }
+  ]
 }
 ```
 
-Notes:
-- `generate_index.py` reads the English `title` for `docs/index.json`. If `title` is an object, ensure it has an `en` key.
-- Categories must exist in translations under `cat.*` (see `docs/translations/en.json`, `es.json`, `cat.json`).
-- `ingredientVariations` is optional. When present, the UI shows a selector and uses the chosen variation's localized `ingredients`. Each variation must have:
-  - `key`: a stable string identifier (e.g., `classic`, `blue`)
-  - `name`: localized display name
-  - `ingredients`: localized list of strings
-- `instructions` entries can be either plain strings or objects:
-  - `{ "text": <string|localized object>, "onlyForVariation": <string | string[]> }`
-  - `onlyForVariation` filters that step to the active variation `key`. Omit it to show the step for all variations.
- - Backwards compatibility: If `ingredientVariations` is omitted, the app falls back to top-level `ingredients`.
+### Field Descriptions
+
+#### Required Fields
+
+- **`title`** (object): Recipe name in multiple languages. Must include `en` key.
+- **`categories`** (array): Recipe categories. Must use keys from `docs/translations/*` under `cat.*`.
+- **`image`** (string): Image path relative to `docs/` or full URL.
+- **`description`** (object): Recipe description in multiple languages.
+- **`ingredients`** (array): List of ingredient objects (see below).
+- **`instructions`** (array): List of instruction objects (see below).
+
+#### Optional Fields
+
+- **`author`** (string): Recipe author name.
+- **`servings`** (object): Recipe serving size with value and unit.
+- **`diameter`** (object): Recipe diameter for circular dishes (e.g., cakes) with value and unit.
+- **`variants`** (array): Recipe variations with key and localized names.
+
+#### Ingredient Object Properties
+
+- **`ingredient`** (string, required): Ingredient key from translations.
+- **`value`** (number, required): Quantity (use 0 for "as needed").
+- **`unit`** (string, optional): Unit key from translations (`g`, `kg`, `ml`, `l`, `servings`, `cm`, `as_needed`, `to_taste`).
+- **`text`** (object, optional): Additional ingredient information in multiple languages.
+- **`onlyForVariation`** (string|array, optional): Show ingredient only for specific variant(s).
+
+#### Instruction Object Properties
+
+- **`text`** (object, required): Instruction text in multiple languages.
+- **`onlyForVariation`** (string|array, optional): Show instruction only for specific variant(s).
+- **`image`** (string, optional): Step image path relative to `docs/` or full URL.
+
+#### Multilingual Fields
+
+Fields that support multiple languages use this structure:
+```json
+{
+  "en": "English text",
+  "es": "Spanish text", 
+  "cat": "Catalan text"
+}
+```
+
+#### Units
+
+Available units (defined in `docs/translations/*` under `units.*`):
+- `g` - grams
+- `kg` - kilograms  
+- `ml` - milliliters
+- `l` - liters
+- `servings` - servings
+- `cm` - centimeters
+- `as_needed` - as needed
+- `to_taste` - to taste
+
+#### Categories
+
+Available categories (defined in `docs/translations/*` under `cat.*`):
+- `mains` - Main dishes
+- `desserts` - Desserts
+
+### Important Notes
+
+- **`generate_index.py`** reads the English `title` for `docs/index.json`. If `title` is an object, ensure it has an `en` key.
+- **Categories** must exist in translations under `cat.*` (see `docs/translations/en.json`, `es.json`, `cat.json`).
+- **Ingredient keys** must be defined in translation files under `ingredients.*`.
+- **Variants** are optional. When present, the UI shows a dropdown selector.
+- **`onlyForVariation`** can be a string or array of strings to show content for specific variants.
+- **Multilingual fields** fall back to English if the current language is not available.
+
+## Available Scripts
+
+### Development Scripts
+
+- **`./dev.sh`** - Start the development server on port 8000
+- **`./setup.sh`** - Set up the development environment (Python virtual environment, dependencies, pre-commit hooks)
+- **`./sync.sh`** - Generate images and update the index (runs both `generate_images.py` and `generate_index.py`)
+
+### Python Scripts
+
+- **`./generate_index.py`** - Regenerate the recipe index
+- **`./generate_images.py`** - Generate optimized images for recipes
 
 ## Index generator
 
@@ -112,11 +179,40 @@ This updates `docs/index.json` with:
 - `path` (relative to `docs/`)
 - `image`
 
+## Development Setup
+
+### First-time setup
+
+Run the setup script to configure your development environment:
+
+```bash
+./setup.sh
+```
+
+This script will:
+- Install the required Python version (3.13.1) using pyenv
+- Create a virtual environment in `.venv/`
+- Install dependencies from `requirements.txt`
+- Install and configure pre-commit hooks
+
+### Manual setup (alternative)
+
+If you prefer to set up manually:
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Install pre-commit hooks
+pip install pre-commit
+pre-commit install
+```
+
 ## Pre-commit hook
 
 This repo includes a pre-commit hook that runs the generator and blocks commits if `docs/index.json` changes but is not staged.
 
-Enable it once:
+The setup script automatically installs pre-commit hooks, or you can install them manually:
 
 ```bash
 pip install pre-commit
