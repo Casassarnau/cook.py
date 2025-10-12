@@ -194,7 +194,7 @@ function recipeApp() {
     },
 
     goHome() {
-      location.hash = '#/';
+      location.hash = '';
     },
 
     toggleDarkMode() {
