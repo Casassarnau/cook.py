@@ -10,9 +10,13 @@
   ],
   "image": "/images/cheesecake/main.webp",
   "description": {
-    "en": "Quantities for a ø 15 cm (6 in) mold; double for a ø 23 cm (9 in) mold.",
-    "es": "Cantidades para un molde de ø 15 cm; duplica para uno de ø 23 cm.",
-    "cat": "Quantitats per a un motlle de ø 15 cm; duplica per a un de ø 23 cm."
+    "en": "A creamy and delicious cheesecake with a perfect balance of flavors. The original recipe is for a ø 15 cm (6 in) mold.",
+    "es": "Una tarta de queso cremosa y deliciosa con un equilibrio perfecto de sabores. La receta original es para un molde de ø 15 cm.",
+    "cat": "Un pastís de formatge cremós i deliciós amb un equilibri perfecte de sabors. La recepta original és per a un motlle de ø 15 cm."
+  },
+  "diameter": {
+    "value": 15,
+    "unit": "cm"
   },
   "variants": [
     {
@@ -34,84 +38,66 @@
   ],
   "ingredients": [
     {
-      "text": {
-        "en": "200 g - 250 g philadelphia or mascarpone",
-        "es": "200 g - 250 g de philadelphia o mascarpone",
-        "cat": "200 g - 250 g de philadelphia o mascarpone"
-      }
+      "ingredient": "philadelphia_or_mascarpone",
+      "value": 225,
+      "unit": "g",
+      "text": { "en": "200-250 g", "es": "200-250 g", "cat": "200-250 g" }
     },
     {
-      "text": {
-        "en": "50 g - 100 g ricotta or mató",
-        "es": "50 g - 100 g de ricotta o requesón",
-        "cat": "50 g - 100 g de ricotta o mató"
-      }
+      "ingredient": "ricotta_or_mato",
+      "value": 75,
+      "unit": "g",
+      "text": { "en": "50-100 g", "es": "50-100 g", "cat": "50-100 g" }
     },
     {
-      "text": {
-        "en": "40 g grated Parmesan",
-        "es": "40 g de parmesano rallado",
-        "cat": "40 g de parmesà ratllat"
-      },
+      "ingredient": "parmesan_cheese",
+      "value": 40,
+      "unit": "g",
+      "text": { "en": "grated", "es": "rallado", "cat": "ratllat" },
       "onlyForVariation": "classic"
     },
     {
-      "text": {
-        "en": "20 g grated Parmesan",
-        "es": "20 g de parmesano rallado",
-        "cat": "20 g de parmesà ratllat"
-      },
+      "ingredient": "parmesan_cheese",
+      "value": 20,
+      "unit": "g",
+      "text": { "en": "grated", "es": "rallado", "cat": "ratllat" },
       "onlyForVariation": "blue"
     },
     {
-      "text": {
-        "en": "20 g gorgonzola or roquefort",
-        "es": "20 g de gorgonzola o roquefort",
-        "cat": "20 g gorgonzola o roquefort"
-      },
+      "ingredient": "blue_cheese",
+      "value": 20,
+      "unit": "g",
+      "text": { "en": "gorgonzola or roquefort", "es": "gorgonzola o roquefort", "cat": "gorgonzola o roquefort" },
       "onlyForVariation": "blue"
     },
     {
-      "text": {
-        "en": "2 eggs",
-        "es": "2 huevos",
-        "cat": "2 ous"
-      }
+      "ingredient": "eggs",
+      "value": 2
     },
     {
-      "text": {
-        "en": "125 g heavy cream",
-        "es": "125 g de nata líquida",
-        "cat": "125 g de nata líquida"
-      }
+      "ingredient": "heavy_cream",
+      "value": 125,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "75 g sugar",
-        "es": "75 g de azúcar",
-        "cat": "75 g de sucre"
-      }
+      "ingredient": "sugar",
+      "value": 75,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "10 g flour",
-        "es": "10 g de harina",
-        "cat": "10 g de farina"
-      }
+      "ingredient": "flour",
+      "value": 10,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "Digestive cookies",
-        "es": "Galletas Digestive",
-        "cat": "Galetes Digestive"
-      }
+      "ingredient": "digestive_cookies",
+      "value": 0,
+      "unit": "as_needed"
     },
     {
-      "text": {
-        "en": "Butter",
-        "es": "Mantequilla",
-        "cat": "Mantega"
-      }
+      "ingredient": "butter",
+      "value": 0,
+      "unit": "as_needed"
     }
   ],
   "instructions": [

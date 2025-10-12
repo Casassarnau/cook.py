@@ -12,6 +12,10 @@
     "es": "Una tortilla clásica con patatas y huevos.",
     "cat": "Una truita clàssica amb patates i ous."
   },
+  "servings": {
+    "value": 4,
+    "unit": "servings"
+  },
 
   "variants": [
     { "key": "classic", "name": { "en": "Classic", "es": "Clásica", "cat": "Clàssica" } },
@@ -20,20 +24,32 @@
 
   "ingredients": [
     {
-      "text": { "en": "4 eggs", "es": "4 huevos", "cat": "4 ous" }
+      "ingredient": "eggs",
+      "value": 4
     },
     {
-      "text": { "en": "3 potatoes", "es": "3 patatas", "cat": "3 patates" }
+      "ingredient": "potatoes",
+      "value": 3
     },
     {
-      "text": { "en": "1 onion", "es": "1 cebolla", "cat": "1 ceba" },
+      "ingredient": "onion",
+      "value": 1,
       "onlyForVariation": "onion"
     },
     {
-      "text": { "en": "Olive oil", "es": "Aceite de oliva", "cat": "Oli d'oliva" }
+      "ingredient": "olive_oil",
+      "value": 0,
+      "unit": "as_needed"
     },
     {
-      "text": { "en": "Salt", "es": "Sal", "cat": "Sal" }
+      "ingredient": "salt",
+      "value": 0,
+      "unit": "to_taste"
+    },
+    {
+      "ingredient": "fresh_herbs",
+      "value": 0,
+      "text": { "en": "for garnish", "es": "para decorar", "cat": "per decorar" }
     }
   ],
 

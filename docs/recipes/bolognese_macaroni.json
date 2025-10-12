@@ -8,9 +8,13 @@
   "categories": ["mains"],
   "image": "/images/bolognese_macaroni/main.webp",
   "description": {
-    "en": "A refined version of the traditional Bolognese macaroni, made with minced pork and tomato sauce. Perfectly balanced and ideal for four servings.",
-    "es": "Una versión refinada de los clásicos macarrones a la boloñesa, elaborados con carne picada de cerdo y salsa de tomate. Un plato equilibrado e ideal para cuatro raciones.",
-    "cat": "Una versió refinada dels clàssics macarrons a la bolonyesa, elaborats amb carn picada de porc i salsa de tomàquet. Un plat equilibrat i ideal per a quatre racions."
+    "en": "A refined version of the traditional Bolognese macaroni, made with minced pork and tomato sauce. Original recipe is for 4 servings.",
+    "es": "Una versión refinada de los clásicos macarrones a la boloñesa, elaborados con carne picada de cerdo y salsa de tomate. La recepta original es para 4 raciones.",
+    "cat": "Una versió refinada dels clàssics macarrons a la bolonyesa, elaborats amb carn picada de porc i salsa de tomàquet. La recepta original és per a 4 racions."
+  },
+  "servings": {
+    "value": 4,
+    "unit": "servings"
   },
 
   "variants": [
@@ -20,89 +24,67 @@
 
   "ingredients": [
     {
-      "text": {
-        "en": "500 g of minced pork",
-        "es": "500 g de carne picada de cerdo",
-        "cat": "500 g de carn picada de porc"
-      }
+      "ingredient": "minced_pork",
+      "value": 500,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "8 g of salt",
-        "es": "8 g de sal",
-        "cat": "8 g de sal"
-      }
+      "ingredient": "salt",
+      "value": 8,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "0.5 g of ground black pepper",
-        "es": "0,5 g de pimienta negra molida",
-        "cat": "0,5 g de pebre negre mòlt"
-      }
+      "ingredient": "black_pepper",
+      "value": 0.5,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "1 onion",
-        "es": "1 cebolla",
-        "cat": "1 ceba"
-      }
+      "ingredient": "onion",
+      "value": 1
     },
     {
-      "text": {
-        "en": "1 carrot (or 2 if small)",
-        "es": "1 zanahoria (o 2 si son pequeñas)",
-        "cat": "1 pastanaga (o 2 si són petites)"
-      }
+      "ingredient": "carrot",
+      "value": 1,
+      "text": { "en": "or 2 if small", "es": "o 2 si son pequeñas", "cat": "o 2 si són petites" }
     },
     {
-      "text": {
-        "en": "250 g of crushed tomato",
-        "es": "250 g de tomate triturado",
-        "cat": "250 g de tomàquet triturat"
-      }
+      "ingredient": "crushed_tomato",
+      "value": 250,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "50 g of water",
-        "es": "50 g de agua",
-        "cat": "50 g d'aigua"
-      }
+      "ingredient": "water",
+      "value": 50,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "500 g of macaroni",
-        "es": "500 g de macarrones",
-        "cat": "500 g de macarrons"
-      }
+      "ingredient": "macaroni",
+      "value": 500,
+      "unit": "g"
     },
     {
-      "text": {
-        "en": "Olive oil, as needed",
-        "es": "Aceite de oliva, según sea necesario",
-        "cat": "Oli d'oliva, segons calgui"
-      }
+      "ingredient": "olive_oil",
+      "value": 0,
+      "unit": "as_needed"
     },
     {
-      "text": {
-        "en": "Sugar (to balance acidity)",
-        "es": "Azúcar (para equilibrar la acidez)",
-        "cat": "Sucre (per equilibrar l'acidesa)"
-      }
+      "ingredient": "sugar",
+      "value": 0,
+      "unit": "to_taste",
+      "text": { "en": "to balance acidity", "es": "para equilibrar la acidez", "cat": "per equilibrar l'acidesa" }
     },
     {
-      "text": {
-        "en": "Cheese that melts easily (for the gratin version)",
-        "es": "Queso que funda fácilmente (para la versión gratinada)",
-        "cat": "Formatge que es fongui bé (per a la versió gratinada)"
-      },
+      "ingredient": "melting_cheese",
+      "value": 0,
+      "unit": "as_needed",
+      "text": { "en": "for the gratin version", "es": "para la versión gratinada", "cat": "per a la versió gratinada" },
       "onlyForVariation": "gratin"
     },
     {
-      "text": {
-        "en": "Parmesan cheese (for additional flavor)",
-        "es": "Queso parmesano (para aportar más sabor)",
-        "cat": "Formatge parmesà (per donar més gust)"
-      },
+      "ingredient": "parmesan_cheese",
+      "value": 0,
+      "unit": "as_needed",
+      "text": { "en": "for additional flavor", "es": "para aportar más sabor", "cat": "per donar més gust" },
       "onlyForVariation": "gratin"
     }
   ],

@@ -66,8 +66,8 @@
               : 'bg-white border-gray-300 text-gray-800'"
           >
             <option value="en" x-text="t('lang.en')"></option>
-            <option value="es" x-text="t('lang.es')"></option>
             <option value="cat" x-text="t('lang.cat')"></option>
+            <option value="es" x-text="t('lang.es')"></option>
           </select>
         </div>
       </div>
@@ -161,17 +161,17 @@
 
           <!-- Recipe Cards (from index) -->
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <template x-for="item in filteredCards()" :key="item.path">
-              <a
-                :href="'#/recipe/' + slugify(item.title)"
-                class="block rounded-xl shadow transition-colors duration-300 overflow-hidden"
+              <template x-for="item in filteredCards()" :key="item.path">
+                <a
+                  :href="'#recipe=' + item.path.replace('recipes/', '').replace('.json', '')"
+                  class="block rounded-xl shadow transition-colors duration-300 overflow-hidden"
                 :class="darkMode
                   ? 'bg-gray-800 text-gray-100 border border-gray-700 hover:shadow-gray-700'
                   : 'bg-white text-gray-900 border border-gray-200 hover:shadow-lg'"
               >
                 <img :src="getImageUrl(item.image, 'lower')" alt="" class="w-full h-40 object-cover" loading="lazy" />
                 <div class="p-4">
-                  <h2 class="text-xl font-bold mb-1" x-text="item.title"></h2>
+                  <h2 class="text-xl font-bold mb-1" x-text="translateField(item.title)"></h2>
                   <p class="text-sm opacity-80" x-text="item.author ? '👩‍🍳 ' + item.author : ''"></p>
                 </div>
               </a>
@@ -201,35 +201,84 @@
             x-text="translateField(selectedRecipe.description)"
           ></p>
 
+
           <!-- INGREDIENTS -->
           <div class="mb-8">
             <div class="flex items-center justify-between mb-3">
-              <h3 class="text-xl font-semibold" x-text="t('ingredients')"></h3>
+              <div class="flex items-center gap-3">
+                <h3 class="text-xl font-semibold" x-text="getIngredientsTitle()"></h3>
+                <template x-if="hasServings() || hasDiameter()">
+                  <div class="flex items-center gap-2">
+                    <button
+                      @click="decrementServings()"
+                      class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg transition-colors duration-300 cursor-pointer"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                    >
+                      -
+                    </button>
+                    <button
+                      @click="incrementServings()"
+                      class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg transition-colors duration-300 cursor-pointer"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                    >
+                      +
+                    </button>
+                  </div>
+                </template>
+              </div>
               <template x-if="hasVariants()">
                 <select
-                  x-model.number="selectedVariationIndex"
+                  x-model="selectedVariation"
+                  x-init="selectedVariation = selectedRecipe.variants[0].key"
+                  @change="updateURL()"
                   class="h-9 px-3 rounded-lg font-medium cursor-pointer transition-colors duration-300 focus:outline-none"
                   :class="darkMode
                     ? 'bg-orange-300 text-orange-900 hover:bg-orange-200'
                     : 'bg-orange-600 text-orange-100 hover:bg-orange-700'"
                 >
-                  <template x-for="(name, idx) in variantNames()" :key="idx">
-                    <option :value="idx" x-text="name"></option>
+                  <template x-for="item in selectedRecipe.variants" :key="item.key">
+                    <option :value="item.key" x-text="translateField(item.name)"></option>
                   </template>
                 </select>
               </template>
             </div>
 
-            <ul class="grid gap-2 sm:grid-cols-2 list-none">
+            <ul class="grid gap-3 sm:grid-cols-2 list-none">
               <template x-for="(item, index) in currentIngredients()" :key="index">
                 <li
-                  class="flex items-start gap-2 rounded-lg border p-2 md:p-3 text-base transition-colors duration-300"
+                  class="flex items-start gap-3 rounded-lg border p-3 md:p-4 text-base transition-colors duration-300 font-medium"
                   :class="darkMode
                     ? 'bg-gray-800/60 border-gray-700 hover:bg-gray-800'
                     : 'bg-gray-50 border-gray-200 hover:bg-orange-50'"
                 >
-                  <span class="mt-0.5" x-text="item.icon" aria-hidden="true"></span>
-                  <span x-text="item.text"></span>
+                  <span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline gap-1 flex-wrap">
+                      <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.value" x-show="item.value"></span>
+
+                      <!-- For as_needed and to_taste: name + unit -->
+                      <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
+                        <span class="flex items-baseline gap-1 flex-wrap">
+                          <span x-text="item.name"></span>
+                          <span x-text="item.unit"></span>
+                        </span>
+                      </template>
+
+                      <!-- For other units: unit + connector + name -->
+                      <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
+                        <span class="flex items-baseline gap-1 flex-wrap">
+                          <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.unit"></span>
+                          <span x-text="item.connector" x-show="item.connector"></span>
+                          <span x-text="item.name"></span>
+                        </span>
+                      </template>
+                      <span x-text="item.text" x-show="item.text"></span>
+                    </div>
+                  </div>
                 </li>
               </template>
             </ul>

@@ -20,7 +20,12 @@ for file in os.listdir(BASE_DIR):
                 print(f"⚠️ Skipping {file}: invalid JSON ({e})")
                 continue
 
-        title = data["title"]["en"] if isinstance(data["title"], dict) else data["title"]
+        # Extract title (should be a translation object)
+        if isinstance(data["title"], dict):
+            title = data["title"]
+        else:
+            title = {"en": data["title"]}
+            
         categories = data.get("categories", [])
         image = data.get("image", "")
         author = data.get("author", "")
@@ -33,7 +38,7 @@ for file in os.listdir(BASE_DIR):
             "author": author
         })
 
-index.sort(key=lambda x: x["title"].lower())
+index.sort(key=lambda x: x["title"].get("en", "").lower())
 
 with open(INDEX_FILE, "w", encoding="utf-8") as f:
     json.dump(index, f, ensure_ascii=False, indent=2)

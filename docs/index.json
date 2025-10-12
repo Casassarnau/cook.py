@@ -1,6 +1,10 @@
 [
   {
-    "title": "Bolognese Macaroni",
+    "title": {
+      "en": "Bolognese Macaroni",
+      "es": "Macarrones a la boloñesa",
+      "cat": "Macarrons a la bolonyesa"
+    },
     "categories": [
       "mains"
     ],
@@ -9,7 +13,11 @@
     "author": "Arnau"
   },
   {
-    "title": "Cheesecake",
+    "title": {
+      "en": "Cheesecake",
+      "es": "Tarta de queso",
+      "cat": "Pastís de formatge"
+    },
     "categories": [
       "desserts"
     ],
