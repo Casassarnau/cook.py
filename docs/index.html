@@ -204,6 +204,25 @@
 
           <!-- INGREDIENTS -->
           <div class="mb-8">
+            <!-- Variant dropdown - above on mobile, hidden on desktop -->
+            <template x-if="hasVariants()">
+              <div class="mb-3 sm:hidden">
+                <select
+                  x-model="selectedVariation"
+                  x-init="selectedVariation = selectedRecipe.variants[0].key"
+                  @change="updateURL()"
+                  class="w-full h-9 px-3 rounded-lg font-medium cursor-pointer transition-colors duration-300 focus:outline-none"
+                  :class="darkMode
+                    ? 'bg-orange-300 text-orange-900 hover:bg-orange-200'
+                    : 'bg-orange-600 text-orange-100 hover:bg-orange-700'"
+                >
+                  <template x-for="item in selectedRecipe.variants" :key="item.key">
+                    <option :value="item.key" x-text="translateField(item.name)"></option>
+                  </template>
+                </select>
+              </div>
+            </template>
+
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-3">
                 <h3 class="text-xl font-semibold" x-text="getIngredientsTitle()"></h3>
@@ -230,12 +249,13 @@
                   </div>
                 </template>
               </div>
+              <!-- Variant dropdown - hidden on mobile, visible on desktop -->
               <template x-if="hasVariants()">
                 <select
                   x-model="selectedVariation"
                   x-init="selectedVariation = selectedRecipe.variants[0].key"
                   @change="updateURL()"
-                  class="h-9 px-3 rounded-lg font-medium cursor-pointer transition-colors duration-300 focus:outline-none"
+                  class="hidden sm:block h-9 px-3 rounded-lg font-medium cursor-pointer transition-colors duration-300 focus:outline-none"
                   :class="darkMode
                     ? 'bg-orange-300 text-orange-900 hover:bg-orange-200'
                     : 'bg-orange-600 text-orange-100 hover:bg-orange-700'"

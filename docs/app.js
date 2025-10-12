@@ -128,8 +128,8 @@ function recipeApp() {
       location.hash = this.selectedVariation ? `#recipe=${recipeName}&variant=${this.selectedVariation}` : `#recipe=${recipeName}`;
     },
 
-    t(key) {
-      return key.split('.').reduce((acc, part) => acc?.[part], this.translations) ?? key;
+    t(key, defaultValue = key) {
+      return key.split('.').reduce((acc, part) => acc?.[part], this.translations) ?? defaultValue;
     },
 
     translateField(field) {
@@ -138,12 +138,74 @@ function recipeApp() {
       return field[this.lang] || field['en'] || '';
     },
 
+    // Helper function to normalize text for accent-insensitive search
+    normalizeText(text) {
+      if (!text) return '';
+      return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, ''); // Remove diacritics
+    },
+
+    // Helper function to check if search query contains ingredient search prefix
+    isIngredientSearch(query) {
+      const prefix = this.t("ingredients._") + ":";
+      return query.toLowerCase().startsWith(prefix.toLowerCase())
+    },
+
+    // Helper function to extract search terms from query (comma-separated)
+    getSearchTerms(query) {
+      if (this.isIngredientSearch(query)) {
+        // Extract the part after the colon
+        const colonIndex = query.indexOf(':');
+        const searchPart = colonIndex !== -1 ? query.substring(colonIndex + 1).trim() : query;
+        return searchPart.split(',').map(term => term.trim()).filter(term => term.length > 0);
+      }
+      return query.split(',').map(term => term.trim()).filter(term => term.length > 0);
+    },
+
+    // Helper function to check if recipe matches search terms
+    matchesSearchTerms(recipe, searchTerms, isIngredientSearch) {
+      if (isIngredientSearch) {
+        // Search in ingredient keys
+        const ingredientKeys = recipe.ingredient_keys || [];
+        const ingredientNames = ingredientKeys.flatMap(key => {
+          const names = [this.t(`ingredients.${key}`)];
+          const singular = this.t(`ingredients.${key}_single`, null);
+          // If singular exists and isn't the same as plural, include it
+          if (singular && singular !== names[0]) {
+            names.push(singular);
+          }
+          return names;
+        });
+        return searchTerms.every(term => 
+          ingredientNames.some(key => 
+            this.normalizeText(key).includes(this.normalizeText(term))
+          )
+        );
+      } else {
+        // Search in title
+        const title = this.translateField(recipe.title);
+        return searchTerms.some(term => 
+          this.normalizeText(title).includes(this.normalizeText(term))
+        );
+      }
+    },
+
     filteredCards() {
       return this.index.filter(i => {
-        const title = (this.translateField(i.title) || '').toLowerCase();
-        const matchSearch = title.includes(this.searchQuery.toLowerCase());
+        // Handle search query
+        let matchSearch = true;
+        if (this.searchQuery.trim()) {
+          const isIngredientSearch = this.isIngredientSearch(this.searchQuery);
+          const searchTerms = this.getSearchTerms(this.searchQuery);
+          matchSearch = this.matchesSearchTerms(i, searchTerms, isIngredientSearch);
+        }
+        
+        // Handle category filter
         const cats = i.categories || [];
         const matchCat = this.filterCategory ? cats.includes(this.filterCategory) : true;
+        
         return matchSearch && matchCat;
       });
     },
@@ -158,7 +220,6 @@ function recipeApp() {
         if (recipeName) {
           const recipe = await this.fetchRecipeByName(recipeName);
           this.selectedRecipe = recipe || null;
-          console.log('Recipe loaded:', this.selectedRecipe ? 'yes' : 'no');
           
           if (this.selectedRecipe) {
             // Use saved preferences or fall back to recipe defaults
@@ -171,11 +232,9 @@ function recipeApp() {
             
             // Set variant from URL or localStorage after recipe is loaded
             if (variantKey) {
-              console.log('Setting variant from URL:', variantKey);
               this.selectedVariation = variantKey;
               this.saveVariantPreference(recipeName, variantKey);
             } else {
-              console.log('Loading variant from localStorage');
               const variantPrefs = JSON.parse(localStorage.getItem('variantPreferences') || '{}');
               const savedVariant = variantPrefs[recipeName];
               if (savedVariant) {
@@ -183,7 +242,6 @@ function recipeApp() {
               } else if (this.selectedRecipe.variants && this.selectedRecipe.variants.length > 0) {
                 // Set default to first variant if no preference is saved
                 this.selectedVariation = this.selectedRecipe.variants[0].key;
-                console.log('Setting default variant:', this.selectedVariation);
               }
             }
           }

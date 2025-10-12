@@ -29,13 +29,22 @@ for file in os.listdir(BASE_DIR):
         categories = data.get("categories", [])
         image = data.get("image", "")
         author = data.get("author", "")
+        
+        # Extract ingredient keys for search functionality
+        ingredient_keys = []
+        ingredients = data.get("ingredients", [])
+        for ingredient in ingredients:
+            if isinstance(ingredient, dict) and "ingredient" in ingredient:
+                ingredient_keys.append(ingredient["ingredient"])
+        
         index.append({
             "title": title,
             "categories": categories,
             # paths in index.json should be relative to `docs/`
             "path": f"recipes/{file}",
             "image": image,
-            "author": author
+            "author": author,
+            "ingredient_keys": ingredient_keys
         })
 
 index.sort(key=lambda x: x["title"].get("en", "").lower())

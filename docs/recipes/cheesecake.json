@@ -38,16 +38,16 @@
   ],
   "ingredients": [
     {
-      "ingredient": "philadelphia_or_mascarpone",
-      "value": 225,
+      "ingredient": "cream_cheese",
+      "value": 250,
       "unit": "g",
-      "text": { "en": "200-250 g", "es": "200-250 g", "cat": "200-250 g" }
+      "text": { "en": "(Philadelphia or Mascarpone)", "es": "(Philadelphia o Mascarpone)", "cat": "(Philadelphia o Mascarpone)" }
     },
     {
-      "ingredient": "ricotta_or_mato",
-      "value": 75,
+      "ingredient": "fresh_cheese",
+      "value": 50,
       "unit": "g",
-      "text": { "en": "50-100 g", "es": "50-100 g", "cat": "50-100 g" }
+      "text": { "en": "(Ricotta or Mató)", "es": "(Ricotta o Mató)", "cat": "(Ricotta o Mató)" }
     },
     {
       "ingredient": "parmesan_cheese",

@@ -10,7 +10,21 @@
     ],
     "path": "recipes/bolognese_macaroni.json",
     "image": "/images/bolognese_macaroni/main.webp",
-    "author": "Arnau"
+    "author": "Arnau",
+    "ingredient_keys": [
+      "minced_pork",
+      "salt",
+      "black_pepper",
+      "onion",
+      "carrot",
+      "crushed_tomato",
+      "water",
+      "macaroni",
+      "olive_oil",
+      "sugar",
+      "melting_cheese",
+      "parmesan_cheese"
+    ]
   },
   {
     "title": {
@@ -23,6 +37,19 @@
     ],
     "path": "recipes/cheesecake.json",
     "image": "/images/cheesecake/main.webp",
-    "author": "Arnau"
+    "author": "Arnau",
+    "ingredient_keys": [
+      "cream_cheese",
+      "fresh_cheese",
+      "parmesan_cheese",
+      "parmesan_cheese",
+      "blue_cheese",
+      "eggs",
+      "heavy_cream",
+      "sugar",
+      "flour",
+      "digestive_cookies",
+      "butter"
+    ]
   }
 ]
