@@ -38,66 +38,84 @@
   ],
   "ingredients": [
     {
-      "ingredient": "cream_cheese",
-      "value": 250,
-      "unit": "g",
-      "text": { "en": "(Philadelphia or Mascarpone)", "es": "(Philadelphia o Mascarpone)", "cat": "(Philadelphia o Mascarpone)" }
+      "group": {
+        "en": "Cookie Base",
+        "es": "Base de Galleta",
+        "cat": "Base de Galeta"
+      },
+      "items": [
+        {
+          "ingredient": "digestive_cookies",
+          "value": 0,
+          "unit": "as_needed"
+        },
+        {
+          "ingredient": "butter",
+          "value": 0,
+          "unit": "as_needed"
+        }
+      ]
     },
     {
-      "ingredient": "fresh_cheese",
-      "value": 50,
-      "unit": "g",
-      "text": { "en": "(Ricotta or Mató)", "es": "(Ricotta o Mató)", "cat": "(Ricotta o Mató)" }
-    },
-    {
-      "ingredient": "parmesan_cheese",
-      "value": 40,
-      "unit": "g",
-      "text": { "en": "grated", "es": "rallado", "cat": "ratllat" },
-      "onlyForVariation": "classic"
-    },
-    {
-      "ingredient": "parmesan_cheese",
-      "value": 20,
-      "unit": "g",
-      "text": { "en": "grated", "es": "rallado", "cat": "ratllat" },
-      "onlyForVariation": "blue"
-    },
-    {
-      "ingredient": "blue_cheese",
-      "value": 20,
-      "unit": "g",
-      "text": { "en": "gorgonzola or roquefort", "es": "gorgonzola o roquefort", "cat": "gorgonzola o roquefort" },
-      "onlyForVariation": "blue"
-    },
-    {
-      "ingredient": "eggs",
-      "value": 2
-    },
-    {
-      "ingredient": "heavy_cream",
-      "value": 125,
-      "unit": "g"
-    },
-    {
-      "ingredient": "sugar",
-      "value": 75,
-      "unit": "g"
-    },
-    {
-      "ingredient": "flour",
-      "value": 10,
-      "unit": "g"
-    },
-    {
-      "ingredient": "digestive_cookies",
-      "value": 0,
-      "unit": "as_needed"
-    },
-    {
-      "ingredient": "butter",
-      "value": 0,
-      "unit": "as_needed"
+      "group": {
+        "en": "Filling",
+        "es": "Relleno",
+        "cat": "Farcit"
+      },
+      "items": [
+        {
+          "ingredient": "cream_cheese",
+          "value": 250,
+          "unit": "g",
+          "text": { "en": "(Philadelphia or Mascarpone)", "es": "(Philadelphia o Mascarpone)", "cat": "(Philadelphia o Mascarpone)" }
+        },
+        {
+          "ingredient": "fresh_cheese",
+          "value": 50,
+          "unit": "g",
+          "text": { "en": "(Ricotta or Mató)", "es": "(Ricotta o Mató)", "cat": "(Ricotta o Mató)" }
+        },
+        {
+          "ingredient": "parmesan_cheese",
+          "value": 40,
+          "unit": "g",
+          "text": { "en": "grated", "es": "rallado", "cat": "ratllat" },
+          "onlyForVariation": "classic"
+        },
+        {
+          "ingredient": "parmesan_cheese",
+          "value": 20,
+          "unit": "g",
+          "text": { "en": "grated", "es": "rallado", "cat": "ratllat" },
+          "onlyForVariation": "blue"
+        },
+        {
+          "ingredient": "blue_cheese",
+          "value": 20,
+          "unit": "g",
+          "text": { "en": "gorgonzola or roquefort", "es": "gorgonzola o roquefort", "cat": "gorgonzola o roquefort" },
+          "onlyForVariation": "blue"
+        },
+        {
+          "ingredient": "eggs",
+          "value": 2
+        },
+        {
+          "ingredient": "heavy_cream",
+          "value": 125,
+          "unit": "g"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 75,
+          "unit": "g"
+        },
+        {
+          "ingredient": "flour",
+          "value": 10,
+          "unit": "g"
+        }
+      ]
     }
   ],
   "instructions": [

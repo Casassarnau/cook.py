@@ -47,6 +47,25 @@ Here's the complete schema with all possible properties:
       "onlyForVariation": "variant_key"
     }
   ],
+  // OR grouped ingredients:
+  "ingredients": [
+    {
+      "group": {
+        "en": "Group Name",
+        "es": "Nombre del Grupo",
+        "cat": "Nom del Grup"
+      },
+      "items": [
+        {
+          "ingredient": "ingredient_key",
+          "value": 250,
+          "unit": "g",
+          "text": { "en": "additional info", "es": "información adicional", "cat": "informació addicional" },
+          "onlyForVariation": "variant_key"
+        }
+      ]
+    }
+  ],
   "instructions": [
     {
       "text": {
@@ -107,6 +126,15 @@ Here's the complete schema with all possible properties:
 - **`unit`** (string, optional): Unit key from translations (`g`, `kg`, `ml`, `l`, `servings`, `cm`, `as_needed`, `to_taste`).
 - **`text`** (object, optional): Additional ingredient information in multiple languages.
 - **`onlyForVariation`** (string|array, optional): Show ingredient only for specific variant(s).
+
+#### Ingredient Grouping
+
+Ingredients can be organized into groups for better readability:
+
+- **`group`** (object, optional): Group name in multiple languages. When present, ingredients are displayed in groups.
+- **`items`** (array, required when using groups): Array of ingredient objects within the group.
+
+**Legacy Support**: Recipes without groups continue to work as before. The system automatically detects whether ingredients are grouped or flat.
 
 #### Instruction Object Properties
 

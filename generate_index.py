@@ -33,9 +33,20 @@ for file in os.listdir(BASE_DIR):
         # Extract ingredient keys for search functionality
         ingredient_keys = []
         ingredients = data.get("ingredients", [])
-        for ingredient in ingredients:
-            if isinstance(ingredient, dict) and "ingredient" in ingredient:
-                ingredient_keys.append(ingredient["ingredient"])
+        
+        # Check if ingredients are grouped (new format)
+        if ingredients and isinstance(ingredients[0], dict) and "group" in ingredients[0]:
+            # Grouped ingredients: extract from each group's items
+            for group in ingredients:
+                if isinstance(group, dict) and "items" in group:
+                    for ingredient in group["items"]:
+                        if isinstance(ingredient, dict) and "ingredient" in ingredient:
+                            ingredient_keys.append(ingredient["ingredient"])
+        else:
+            # Flat ingredients (legacy format)
+            for ingredient in ingredients:
+                if isinstance(ingredient, dict) and "ingredient" in ingredient:
+                    ingredient_keys.append(ingredient["ingredient"])
         
         index.append({
             "title": title,

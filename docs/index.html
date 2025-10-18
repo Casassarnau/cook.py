@@ -267,41 +267,55 @@
               </template>
             </div>
 
-            <ul class="grid gap-3 sm:grid-cols-2 list-none">
-              <template x-for="(item, index) in currentIngredients()" :key="index">
-                <li
-                  class="flex items-start gap-3 rounded-lg border p-3 md:p-4 text-base transition-colors duration-300 font-medium"
-                  :class="darkMode
-                    ? 'bg-gray-800/60 border-gray-700 hover:bg-gray-800'
-                    : 'bg-gray-50 border-gray-200 hover:bg-orange-50'"
-                >
-                  <span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
-                  <div class="flex-1 min-w-0">
-                    <div class="flex items-baseline gap-1 flex-wrap">
-                      <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.value" x-show="item.value"></span>
+            <div class="space-y-6">
+              <template x-for="(group, groupIndex) in currentIngredients()" :key="groupIndex">
+                <div>
+                  <!-- Group header (only show if it's a grouped recipe) -->
+                  <template x-if="group.isGroup && group.groupName">
+                    <h4 class="text-lg font-semibold mb-3 px-1" 
+                        :class="darkMode ? 'text-orange-300' : 'text-orange-600'"
+                        x-text="group.groupName"></h4>
+                  </template>
+                  
+                  <!-- Ingredients list -->
+                  <ul class="grid gap-3 sm:grid-cols-2 list-none">
+                    <template x-for="(item, index) in group.items" :key="index">
+                      <li
+                        class="flex items-start gap-3 rounded-lg border p-3 md:p-4 text-base transition-colors duration-300 font-medium"
+                        :class="darkMode
+                          ? 'bg-gray-800/60 border-gray-700 hover:bg-gray-800'
+                          : 'bg-gray-50 border-gray-200 hover:bg-orange-50'"
+                      >
+                        <span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex items-baseline gap-1 flex-wrap">
+                            <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.value" x-show="item.value"></span>
 
-                      <!-- For as_needed and to_taste: name + unit -->
-                      <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
-                        <span class="flex items-baseline gap-1 flex-wrap">
-                          <span x-text="item.name"></span>
-                          <span x-text="item.unit"></span>
-                        </span>
-                      </template>
+                            <!-- For as_needed and to_taste: name + unit -->
+                            <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
+                              <span class="flex items-baseline gap-1 flex-wrap">
+                                <span x-text="item.name"></span>
+                                <span x-text="item.unit"></span>
+                              </span>
+                            </template>
 
-                      <!-- For other units: unit + connector + name -->
-                      <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
-                        <span class="flex items-baseline gap-1 flex-wrap">
-                          <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.unit"></span>
-                          <span x-text="item.connector" x-show="item.connector"></span>
-                          <span x-text="item.name"></span>
-                        </span>
-                      </template>
-                      <span x-text="item.text" x-show="item.text"></span>
-                    </div>
-                  </div>
-                </li>
+                            <!-- For other units: unit + connector + name -->
+                            <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
+                              <span class="flex items-baseline gap-1 flex-wrap">
+                                <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.unit"></span>
+                                <span x-text="item.connector" x-show="item.connector"></span>
+                                <span x-text="item.name"></span>
+                              </span>
+                            </template>
+                            <span x-text="item.text" x-show="item.text"></span>
+                          </div>
+                        </div>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
               </template>
-            </ul>
+            </div>
           </div>
 
           <!-- INSTRUCTIONS -->

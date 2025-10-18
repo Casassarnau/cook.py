@@ -19,9 +19,9 @@
       "carrot",
       "crushed_tomato",
       "water",
-      "macaroni",
       "olive_oil",
       "sugar",
+      "macaroni",
       "melting_cheese",
       "parmesan_cheese"
     ]
@@ -39,6 +39,8 @@
     "image": "/images/cheesecake/main.webp",
     "author": "Arnau",
     "ingredient_keys": [
+      "digestive_cookies",
+      "butter",
       "cream_cheese",
       "fresh_cheese",
       "parmesan_cheese",
@@ -47,9 +49,7 @@
       "eggs",
       "heavy_cream",
       "sugar",
-      "flour",
-      "digestive_cookies",
-      "butter"
+      "flour"
     ]
   }
 ]

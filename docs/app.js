@@ -354,7 +354,26 @@ function recipeApp() {
       const variationKey = this.selectedVariation;
       const multiplier = this.getMultiplier();
       
-      return raw
+      // Check if ingredients are grouped
+      if (raw.length > 0 && raw[0].group) {
+        // Grouped ingredients
+        return raw.map(group => ({
+          isGroup: true,
+          groupName: this.translateField(group.group),
+          items: this.processIngredientList(group.items || [], variationKey, multiplier)
+        }));
+      } else {
+        // Legacy flat ingredients
+        return [{
+          isGroup: false,
+          groupName: null,
+          items: this.processIngredientList(raw, variationKey, multiplier)
+        }];
+      }
+    },
+
+    processIngredientList(ingredients, variationKey, multiplier) {
+      return ingredients
         .filter(e => {
           if (!e.onlyForVariation) return true;
           const allowed = Array.isArray(e.onlyForVariation) ? e.onlyForVariation : [e.onlyForVariation];
