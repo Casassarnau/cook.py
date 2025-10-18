@@ -51,5 +51,31 @@
       "sugar",
       "flour"
     ]
+  },
+  {
+    "title": {
+      "en": "Homemade Pizza",
+      "es": "Pizza Casera",
+      "cat": "Pizza Casolana"
+    },
+    "categories": [
+      "mains"
+    ],
+    "path": "recipes/pizza.json",
+    "image": "/images/pizza/main.webp",
+    "author": "Arnau",
+    "ingredient_keys": [
+      "strong_flour",
+      "salt",
+      "water",
+      "dry_yeast",
+      "sugar",
+      "extra_virgin_olive_oil",
+      "crushed_tomato",
+      "oregano",
+      "fresh_mozzarella",
+      "grated_gouda",
+      "parmesan_cheese"
+    ]
   }
 ]

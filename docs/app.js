@@ -14,6 +14,7 @@ function recipeApp() {
     basePath: '',
     currentServings: 4,
     currentDiameter: 15,
+    currentUnits: 1,
 
     async init() {
       this.basePath = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : '/cook.py';
@@ -73,6 +74,7 @@ function recipeApp() {
     loadServingsPreferences() {
       const savedServings = localStorage.getItem('preferredServings');
       const savedDiameter = localStorage.getItem('preferredDiameter');
+      const savedUnits = localStorage.getItem('preferredUnits');
       
       if (savedServings) {
         this.currentServings = parseInt(savedServings, 10) || 4;
@@ -80,11 +82,15 @@ function recipeApp() {
       if (savedDiameter) {
         this.currentDiameter = parseInt(savedDiameter, 10) || 15;
       }
+      if (savedUnits) {
+        this.currentUnits = parseInt(savedUnits, 10) || 1;
+      }
     },
 
     saveServingsPreferences() {
       localStorage.setItem('preferredServings', this.currentServings.toString());
       localStorage.setItem('preferredDiameter', this.currentDiameter.toString());
+      localStorage.setItem('preferredUnits', this.currentUnits.toString());
     },
 
     async loadIndex() {
@@ -226,6 +232,9 @@ function recipeApp() {
             if (this.selectedRecipe.servings) {
               this.currentServings = this.currentServings || this.selectedRecipe.servings.value || 4;
             }
+            if (this.selectedRecipe.units) {
+              this.currentUnits = this.currentUnits || this.selectedRecipe.units.value || 1;
+            }
             if (this.selectedRecipe.diameter) {
               this.currentDiameter = this.currentDiameter || this.selectedRecipe.diameter.value || 15;
             }
@@ -271,6 +280,8 @@ function recipeApp() {
       
       if (this.selectedRecipe.servings) {
         return this.currentServings / this.selectedRecipe.servings.value;
+      } else if (this.selectedRecipe.units) {
+        return this.currentUnits / this.selectedRecipe.units.value;
       } else if (this.selectedRecipe.diameter) {
         // For diameter, we need to calculate area ratio (diameter^2)
         const originalDiameter = this.selectedRecipe.diameter.value;
@@ -288,6 +299,10 @@ function recipeApp() {
       return this.selectedRecipe && this.selectedRecipe.diameter;
     },
 
+    hasUnits() {
+      return this.selectedRecipe && this.selectedRecipe.units;
+    },
+
     getIngredientsTitle() {
       if (!this.selectedRecipe) return '';
 
@@ -295,10 +310,21 @@ function recipeApp() {
         const unit = this.t(`units.${this.selectedRecipe.servings.unit}`);
         const forConnector = this.t('connectors.for');
         return `${this.t('ingredients._')} ${forConnector} ${this.currentServings} ${unit}`;
+      } else if (this.hasUnits()) {
+        const forConnector = this.t('connectors.for');
+        return `${this.t('ingredients._')} ${forConnector} ${this.currentUnits} units`;
       } else if (this.hasDiameter()) {
         const unit = this.t(`units.${this.selectedRecipe.diameter.unit}`);
         const forConnector = this.t('connectors.for');
-        return `${this.t('ingredients._')} ${forConnector} ø ${this.currentDiameter} ${unit} 🍰`;
+        const connector = this.t(`connectors.${this.selectedRecipe.diameter.unit}`);
+        
+        // For circular measurements (cm), show diameter symbol
+        if (this.selectedRecipe.diameter.unit === 'cm') {
+          return `${this.t('ingredients._')} ${forConnector} ø ${this.currentDiameter} ${unit} 🍰`;
+        } else {
+          // For other units (like pizza), show without diameter symbol
+          return `${this.t('ingredients._')} ${forConnector} ${this.currentDiameter} ${connector} ${unit}`;
+        }
       }
       
       return this.t('ingredients._');
@@ -312,6 +338,9 @@ function recipeApp() {
       if (this.hasServings()) {
         this.currentServings = Math.min(this.currentServings + 1, 20);
         this.saveServingsPreferences();
+      } else if (this.hasUnits()) {
+        this.currentUnits = Math.min(this.currentUnits + 1, 20);
+        this.saveServingsPreferences();
       } else if (this.hasDiameter()) {
         this.currentDiameter = Math.min(this.currentDiameter + 1, 50);
         this.saveServingsPreferences();
@@ -321,6 +350,9 @@ function recipeApp() {
     decrementServings() {
       if (this.hasServings()) {
         this.currentServings = Math.max(this.currentServings - 1, 1);
+        this.saveServingsPreferences();
+      } else if (this.hasUnits()) {
+        this.currentUnits = Math.max(this.currentUnits - 1, 1);
         this.saveServingsPreferences();
       } else if (this.hasDiameter()) {
         this.currentDiameter = Math.max(this.currentDiameter - 1, 5);

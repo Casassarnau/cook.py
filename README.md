@@ -116,6 +116,7 @@ Here's the complete schema with all possible properties:
 
 - **`author`** (string): Recipe author name.
 - **`servings`** (object): Recipe serving size with value and unit.
+- **`units`** (object): Recipe unit count for non-serving items (e.g., pizzas) with value and unit.
 - **`diameter`** (object): Recipe diameter for circular dishes (e.g., cakes) with value and unit.
 - **`variants`** (array): Recipe variations with key and localized names.
 
@@ -162,6 +163,7 @@ Available units (defined in `docs/translations/*` under `units.*`):
 - `l` - liters
 - `servings` - servings
 - `cm` - centimeters
+- `pizza` - pizza (for non-circular items)
 - `as_needed` - as needed
 - `to_taste` - to taste
 

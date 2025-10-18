@@ -87,7 +87,15 @@
         "tamale_single": "tamal",
         "fries_single": "patates fregides",
         "chips_single": "patates fregides",
-        "beers_single": "cerveses"
+        "beers_single": "cerveses",
+        "strong_flour": "farina de força",
+        "dry_yeast": "llevat sec de flequer",
+        "extra_virgin_olive_oil": "oli d'oliva verge extra",
+        "crushed_tomato_single": "tomàquet triturat",
+        "oregano": "orenga",
+        "fresh_mozzarella": "Mozzarellas fresques",
+        "fresh_mozzarella_single": "Mozzarella fresca",
+        "grated_gouda": "Gouda ratllat"
     },
     "units": {
         "g": "g",

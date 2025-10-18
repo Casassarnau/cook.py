@@ -87,7 +87,15 @@
         "tamale_single": "tamale",
         "fries_single": "fries",
         "chips_single": "chips",
-        "beers_single": "beers"
+        "beers_single": "beers",
+        "strong_flour": "strong flour",
+        "dry_yeast": "dry yeast",
+        "extra_virgin_olive_oil": "extra virgin olive oil",
+        "crushed_tomato_single": "crushed tomato",
+        "oregano": "oregano",
+        "fresh_mozzarella": "fresh mozzarellas",
+        "fresh_mozzarella_single": "fresh mozzarella",
+        "grated_gouda": "grated Gouda"
     },
     "units": {
         "g": "g",

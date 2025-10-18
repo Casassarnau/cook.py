@@ -87,7 +87,15 @@
         "tamale_single": "tamal",
         "fries_single": "patatas fritas",
         "chips_single": "patatas fritas",
-        "beers_single": "cervezas"
+        "beers_single": "cervezas",
+        "strong_flour": "harina de fuerza",
+        "dry_yeast": "levadura seca de panadería",
+        "extra_virgin_olive_oil": "aceite de oliva virgen extra",
+        "crushed_tomato_single": "tomate triturado",
+        "oregano": "orégano",
+        "fresh_mozzarella": "Mozzarellas frescas",
+        "fresh_mozzarella_single": "Mozzarella fresca",
+        "grated_gouda": "Gouda rallado"
     },
     "units": {
         "g": "g",

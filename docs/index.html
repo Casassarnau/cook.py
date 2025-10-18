@@ -226,7 +226,7 @@
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-3">
                 <h3 class="text-xl font-semibold" x-text="getIngredientsTitle()"></h3>
-                <template x-if="hasServings() || hasDiameter()">
+                <template x-if="hasServings() || hasUnits() || hasDiameter()">
                   <div class="flex items-center gap-2">
                     <button
                       @click="decrementServings()"
