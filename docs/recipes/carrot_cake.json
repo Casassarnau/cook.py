@@ -1,0 +1,204 @@
+{
+  "title": {
+    "en": "Carrot Cake",
+    "es": "Tarta de Zanahoria",
+    "cat": "Pastís de Pastanaga"
+  },
+  "author": "Arnau",
+  "categories": [
+    "desserts"
+  ],
+  "image": "/images/carrot_cake/main.webp",
+  "description": {
+    "en": "A moist and flavorful carrot cake with warm spices and a creamy white chocolate frosting",
+    "es": "Una tarta de zanahoria húmeda y sabrosa con especias cálidas y un glaseado cremoso de chocolate blanco",
+    "cat": "Un pastís de pastanaga humit i saborós amb espècies càlides i un glaçat cremós de xocolata blanca"
+  },
+  "diameter": {
+    "value": 15,
+    "unit": "cm"
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Cake Batter",
+        "es": "Masa del Pastel",
+        "cat": "Massa del Pastís"
+      },
+      "items": [
+        {
+          "ingredient": "sugar",
+          "value": 75,
+          "unit": "g"
+        },
+        {
+          "ingredient": "orange_zest",
+          "value": 0,
+          "unit": "to_taste"
+        },
+        {
+          "ingredient": "carrot",
+          "value": 200,
+          "unit": "g"
+        },
+        {
+          "ingredient": "eggs",
+          "value": 2
+        },
+        {
+          "ingredient": "sunflower_oil",
+          "value": 120,
+          "unit": "g"
+        },
+        {
+          "ingredient": "flour",
+          "value": 125,
+          "unit": "g"
+        },
+        {
+          "ingredient": "baking_soda",
+          "value": 1,
+          "unit": "tsp"
+        },
+        {
+          "ingredient": "baking_powder",
+          "value": 1,
+          "unit": "tsp"
+        },
+        {
+          "ingredient": "cinnamon",
+          "value": 1,
+          "unit": "tsp"
+        },
+        {
+          "ingredient": "nutmeg",
+          "value": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "ingredient": "cardamom",
+          "value": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "ingredient": "salt",
+          "value": 0.5,
+          "unit": "tsp"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Frosting",
+        "es": "Glaseado",
+        "cat": "Glaçat"
+      },
+      "items": [
+        {
+          "ingredient": "cream_cheese",
+          "value": 200,
+          "unit": "g",
+          "text": {
+            "en": "Philadelphia",
+            "es": "Philadelphia",
+            "cat": "Philadelphia"
+          }
+        },
+        {
+          "ingredient": "white_chocolate",
+          "value": 50,
+          "unit": "g"
+        },
+        {
+          "ingredient": "orange_juice",
+          "value": 15,
+          "unit": "g"
+        },
+        {
+          "ingredient": "walnuts",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "chopped, for decoration",
+            "es": "troceadas, para decorar",
+            "cat": "trossejades, per decorar"
+          }
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Preheat the oven to 180°C (356°F) with fan assistance.",
+        "es": "Precalienta el horno a 180°C (356°F) con ventilador.",
+        "cat": "Preescalfa el forn a 180°C (356°F) amb ventilador."
+      }
+    },
+    {
+      "text": {
+        "en": "Crush the orange zest with the sugar to help release the aromas more quickly.",
+        "es": "Tritura la ralladura de naranja con el azúcar para que ayude a aromatizar más rápido.",
+        "cat": "Tritura la ratlladura de taronja amb el sucre perquè ajudi a aromatitzar més ràpid."
+      }
+    },
+    {
+      "text": {
+        "en": "Add the eggs and sunflower oil, then beat until well incorporated.",
+        "es": "Añade los huevos y el aceite de girasol, luego bate hasta que esté bien incorporado.",
+        "cat": "Afegeix els ous i l'oli de gira-sol, després batega fins que estigui ben incorporat."
+      }
+    },
+    {
+      "text": {
+        "en": "In a separate bowl, mix the flour, spices, baking powder, and baking soda, then add to the previous mixture until homogeneous.",
+        "es": "En un bol aparte, mezcla la harina, las especias, la levadura y el bicarbonato, luego añádelo a la mezcla anterior hasta que sea homogéneo.",
+        "cat": "En un bol a part, barreja la farina, les espècies, el llevat i el bicarbonat, després afegeix-ho a la barreja anterior fins que sigui homogeni."
+      }
+    },
+    {
+      "text": {
+        "en": "Grate the carrots and add them to the mixture. Use a hand blender to partially blend the mixture so it's not completely grated carrot but still has visible grated pieces.",
+        "es": "Ralla las zanahorias y añádelas. Con un minipimer, tritura un poco la mezcla para que no quede todo con zanahoria rallada pero sí que aún queden ralladuras visibles.",
+        "cat": "Ratlla les pastanagues i afegeix-les. Amb un minipimer, tritura una mica la barreja perquè no quedi tot amb pastanaga ratllada però sí que encara quedin ratlladures visibles."
+      }
+    },
+    {
+      "text": {
+        "en": "Pour the mixture into the prepared mold and bake in the preheated oven for 1 hour.",
+        "es": "Ponlo en el molde y mételo en el horno precalentado por 1 hora.",
+        "cat": "Posa-ho al motlle i fica-ho al forn preescalfat per 1 hora."
+      }
+    },
+    {
+      "text": {
+        "en": "Once the time has passed, remove from the oven and wait for it to cool before removing from the mold. Refrigerate for at least 1 hour. This step is necessary so the frosting doesn't melt.",
+        "es": "Una vez pasado el tiempo, sácalo del horno y espera a que esté frío para quitarle el molde y mételo al menos 1 hora en la nevera. Este paso es necesario para que el glaseado no se derrita.",
+        "cat": "Un cop passat el temps, treu-ho del forn i espera que estigui fred per treure-li el motlle i fica-ho almenys 1 hora a la nevera. Aquest pas és necessari perquè el glaçat no es fongui."
+      },
+      "image": "/images/carrot_cake/cake.webp"
+    },
+    {
+      "text": {
+        "en": "Meanwhile, melt the white chocolate and put it in a bowl with the cream cheese.",
+        "es": "Mientras tanto, derrite el chocolate blanco y ponlo en un bol con el queso crema.",
+        "cat": "Mentrestant, fong la xocolata blanca i posa-ho en un bol amb el formatge cremós."
+      }
+    },
+    {
+      "text": {
+        "en": "Once well incorporated, add the orange juice and mix again.",
+        "es": "Una vez bien incorporado, añade el zumo de naranja y vuelve a mezclar.",
+        "cat": "Un cop ben incorporat, afegeix el suc de taronja i torna a barrejar."
+      }
+    },
+    {
+      "text": {
+        "en": "Once the frosting is ready and the cake is cold, cut the cake in half with a knife and fill the interior with frosting. Add chopped walnuts to the frosting in the middle layer. Cover the surface with frosting and add chopped walnuts on top for decoration.",
+        "es": "Una vez el glaseado está hecho y el pastel frío, corta el pastel por la mitad con un cuchillo y rellena con glaseado el interior. Añade nueces troceadas al glaseado en la capa del medio. Cubre la superficie con glaseado y añade nueces troceadas encima para decorar.",
+        "cat": "Un cop el glaçat està fet i el pastís fred, talla el pastís per la meitat amb un ganivet i farceix amb glaçat l'interior. Afegeix nous trossejades al glaçat a la capa del mig. Cobreix la superfície amb glaçat i afegeix nous trossejades a dalt per decorar."
+      },
+      "image": "/images/carrot_cake/filling.webp"
+    }
+  ]
+}

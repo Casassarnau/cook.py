@@ -95,7 +95,17 @@
         "oregano": "orégano",
         "fresh_mozzarella": "Mozzarellas frescas",
         "fresh_mozzarella_single": "Mozzarella fresca",
-        "grated_gouda": "Gouda rallado"
+        "grated_gouda": "Gouda rallado",
+        "orange_zest": "ralladura de naranja",
+        "sunflower_oil": "aceite de girasol",
+        "baking_soda": "bicarbonato de sodio",
+        "baking_powder": "levadura química en polvo",
+        "cinnamon": "canela",
+        "nutmeg": "nuez moscada",
+        "cardamom": "cardamomo",
+        "white_chocolate": "chocolate blanco",
+        "orange_juice": "zumo de naranja",
+        "walnuts": "nueces"
     },
     "units": {
         "g": "g",
@@ -105,7 +115,9 @@
         "servings": "raciones",
         "cm": "cm",
         "as_needed": "según sea necesario",
-        "to_taste": "al gusto"
+        "to_taste": "al gusto",
+        "tsp": "cucharadita",
+        "tbsp": "cucharada"
     },
     "connectors": {
         "g": "de",
@@ -115,6 +127,8 @@
         "cm": "de",
         "as_needed": "",
         "to_taste": "",
+        "tsp": "de",
+        "tbsp": "de",
         "for": "para"
     }
   }

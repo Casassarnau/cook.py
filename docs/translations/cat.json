@@ -95,7 +95,17 @@
         "oregano": "orenga",
         "fresh_mozzarella": "Mozzarellas fresques",
         "fresh_mozzarella_single": "Mozzarella fresca",
-        "grated_gouda": "Gouda ratllat"
+        "grated_gouda": "Gouda ratllat",
+        "orange_zest": "ratlladura de taronja",
+        "sunflower_oil": "oli de gira-sol",
+        "baking_soda": "bicarbonat de sodi",
+        "baking_powder": "llevat químic en pols",
+        "cinnamon": "canyella",
+        "nutmeg": "nou moscada",
+        "cardamom": "cardamom",
+        "white_chocolate": "xocolata blanca",
+        "orange_juice": "suc de taronja",
+        "walnuts": "nous"
     },
     "units": {
         "g": "g",
@@ -105,7 +115,9 @@
         "servings": "racions",
         "cm": "cm",
         "as_needed": "segons calgui",
-        "to_taste": "al gust"
+        "to_taste": "al gust",
+        "tsp": "culleradeta",
+        "tbsp": "cullera"
     },
     "connectors": {
         "g": "de",
@@ -115,6 +127,8 @@
         "cm": "de",
         "as_needed": "",
         "to_taste": "",
+        "tsp": "de",
+        "tbsp": "de",
         "for": "per a"
     }
   }

@@ -95,7 +95,17 @@
         "oregano": "oregano",
         "fresh_mozzarella": "fresh Mozzarellas",
         "fresh_mozzarella_single": "fresh Mozzarella",
-        "grated_gouda": "grated Gouda"
+        "grated_gouda": "grated Gouda",
+        "orange_zest": "orange zest",
+        "sunflower_oil": "sunflower oil",
+        "baking_soda": "baking soda",
+        "baking_powder": "baking powder",
+        "cinnamon": "cinnamon",
+        "nutmeg": "nutmeg",
+        "cardamom": "cardamom",
+        "white_chocolate": "white chocolate",
+        "orange_juice": "orange juice",
+        "walnuts": "walnuts"
     },
     "units": {
         "g": "g",
@@ -105,7 +115,9 @@
         "servings": "servings",
         "cm": "cm",
         "as_needed": "as needed",
-        "to_taste": "to taste"
+        "to_taste": "to taste",
+        "tsp": "tsp",
+        "tbsp": "tbsp"
     },
     "connectors": {
         "g": "of",
@@ -115,6 +127,8 @@
         "cm": "of",
         "as_needed": "",
         "to_taste": "",
+        "tsp": "of",
+        "tbsp": "of",
         "for": "for"
     }
   }

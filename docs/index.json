@@ -28,6 +28,37 @@
   },
   {
     "title": {
+      "en": "Carrot Cake",
+      "es": "Tarta de Zanahoria",
+      "cat": "Pastís de Pastanaga"
+    },
+    "categories": [
+      "desserts"
+    ],
+    "path": "recipes/carrot_cake.json",
+    "image": "/images/carrot_cake/main.webp",
+    "author": "Arnau",
+    "ingredient_keys": [
+      "sugar",
+      "orange_zest",
+      "carrot",
+      "eggs",
+      "sunflower_oil",
+      "flour",
+      "baking_soda",
+      "baking_powder",
+      "cinnamon",
+      "nutmeg",
+      "cardamom",
+      "salt",
+      "cream_cheese",
+      "white_chocolate",
+      "orange_juice",
+      "walnuts"
+    ]
+  },
+  {
+    "title": {
       "en": "Cheesecake",
       "es": "Tarta de queso",
       "cat": "Pastís de formatge"
