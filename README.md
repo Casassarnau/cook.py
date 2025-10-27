@@ -80,13 +80,29 @@ Here's the complete schema with all possible properties:
 
   // OPTIONAL FIELDS
   "author": "Author Name",
-  "servings": {
+  "portion": {
+    "type": "servings",
     "value": 4,
     "unit": "servings"
   },
-  "diameter": {
-    "value": 15,
-    "unit": "cm"
+  // OR for area-based recipes:
+  "portion": {
+    "type": "area",
+    "shape": "circular",
+    "dimensions": {
+      "diameter": 15,
+      "unit": "cm"
+    }
+  },
+  // OR for rectangular/square pans:
+  "portion": {
+    "type": "area",
+    "shape": "rectangular",
+    "dimensions": {
+      "width": 20,
+      "height": 20,
+      "unit": "cm"
+    }
   },
   "variants": [
     {
@@ -115,9 +131,15 @@ Here's the complete schema with all possible properties:
 #### Optional Fields
 
 - **`author`** (string): Recipe author name.
-- **`servings`** (object): Recipe serving size with value and unit.
-- **`units`** (object): Recipe unit count for non-serving items (e.g., pizzas) with value and unit.
-- **`diameter`** (object): Recipe diameter for circular dishes (e.g., cakes) with value and unit.
+- **`portion`** (object): Recipe yield information with type and configuration.
+  - **`type`**: One of `"servings"`, `"units"`, `"diameter"`, or `"area"`
+  - **`value`**: The numeric value (for servings, units, diameter types)
+  - **`unit`**: The unit key (e.g., `"servings"`, `"cm"`, `"pizza"`, `"pan"`)
+  - **`shape`**: For `type: "area"` - either `"circular"` or `"rectangular"` (or `"square"`)
+  - **`dimensions`**: For `type: "area"` - object containing:
+    - For circular: `{"diameter": 15, "unit": "cm"}`
+    - For rectangular: `{"width": 20, "height": 20, "unit": "cm"}`
+  - **`text`** (object, optional): Additional localized text (e.g., pan size)
 - **`variants`** (array): Recipe variations with key and localized names.
 
 #### Ingredient Object Properties
@@ -162,16 +184,48 @@ Available units (defined in `docs/translations/*` under `units.*`):
 - `ml` - milliliters
 - `l` - liters
 - `servings` - servings
-- `cm` - centimeters
-- `pizza` - pizza (for non-circular items)
+- `cm` - centimeters (for diameter)
+- `pizza` - pizzas
+- `pan` - pans/baking dishes
 - `as_needed` - as needed
 - `to_taste` - to taste
+- `tsp` - teaspoon
+- `tbsp` - tablespoon
 
 #### Categories
 
 Available categories (defined in `docs/translations/*` under `cat.*`):
 - `mains` - Main dishes
 - `desserts` - Desserts
+
+### Portion Types
+
+The `portion` field describes how much the recipe yields:
+
+1. **`type: "servings"`**: For recipes that serve multiple people
+   - Example: `{"type": "servings", "value": 4, "unit": "servings"}`
+   - User can adjust number of servings
+   - Ingredients scale linearly with servings
+
+2. **`type: "area"`**: For items with specific pan/baking dish dimensions
+   - **`shape: "circular"`**: For round cakes and pies
+     - Example: `{"type": "area", "shape": "circular", "dimensions": {"diameter": 15, "unit": "cm"}}`
+     - User can adjust diameter (ingredients scale by area: π×radius²)
+     - Display shows ø symbol and 🍰 emoji
+   - **`shape: "rectangular"`** or **`"square"`**: For rectangular/square baking dishes
+     - Example: `{"type": "area", "shape": "rectangular", "dimensions": {"width": 20, "height": 20, "unit": "cm"}}`
+     - User can adjust dimensions (ingredients scale by area: width×height)
+     - Display shows dimensions as "20×20 cm 📐"
+   - Both area types scale ingredients proportionally to the baking dish area
+
+3. **`type: "units"`**: For countable items like pizzas or batches
+   - Example: `{"type": "units", "value": 1, "unit": "pizza"}`
+   - User can adjust number of units
+   - Ingredients scale linearly with units
+
+4. **`type: "diameter"`**: Legacy format for circular items (still supported)
+   - Example: `{"type": "diameter", "value": 15, "unit": "cm"}`
+   - Use `type: "area"` with `shape: "circular"` for new recipes
 
 ### Important Notes
 
@@ -181,6 +235,7 @@ Available categories (defined in `docs/translations/*` under `cat.*`):
 - **Variants** are optional. When present, the UI shows a dropdown selector.
 - **`onlyForVariation`** can be a string or array of strings to show content for specific variants.
 - **Multilingual fields** fall back to English if the current language is not available.
+- **Legacy support**: Old recipes using `servings`, `units`, and `diameter` (without `type`) still work for backwards compatibility.
 
 ## Available Scripts
 

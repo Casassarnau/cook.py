@@ -12,8 +12,10 @@
     "es": "Una pizza casera tradicional con una masa que requiere preparación anticipada. Esta receta rinde una pizza grande con base crujiente y sabores auténticos italianos.",
     "cat": "Una pizza casolana tradicional amb una massa que requereix preparació anticipada. Aquesta recepta rendeix una pizza gran amb base cruixent i sabors autèntics italians."
   },
-  "units": {
-    "value": 1
+  "portion": {
+    "type": "units",
+    "value": 1,
+    "unit": "pizza"
   },
   "ingredients": [
     {

@@ -23,6 +23,16 @@
           transition: none !important;
         }
       }
+      /* Hide number input spinners */
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
     </style>
   </head>
 
@@ -226,10 +236,10 @@
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-3">
                 <h3 class="text-xl font-semibold" x-text="getIngredientsTitle()"></h3>
-                <template x-if="hasServings() || hasUnits() || hasDiameter()">
+                <template x-if="hasServings() || hasUnits() || hasDiameter() || hasArea()">
                   <div class="flex items-center gap-2">
                     <button
-                      @click="decrementServings()"
+                      @click="hasArea() ? decrementDimensions() : decrementServings()"
                       class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg transition-colors duration-300 cursor-pointer"
                       :class="darkMode
                         ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
@@ -238,13 +248,24 @@
                       -
                     </button>
                     <button
-                      @click="incrementServings()"
+                      @click="hasArea() ? incrementDimensions() : incrementServings()"
                       class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg transition-colors duration-300 cursor-pointer"
                       :class="darkMode
                         ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
                         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
                     >
                       +
+                    </button>
+                    <button
+                      x-show="hasArea()"
+                      @click="openDimensionConfig()"
+                      class="w-8 h-8 rounded flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                      title="Configure dimensions"
+                    >
+                      ⚙️
                     </button>
                   </div>
                 </template>
@@ -361,6 +382,189 @@
         </div>
       </template>
     </div>
+
+    <!-- Dimension Configuration Modal -->
+    <template x-if="showDimensionConfig && hasArea()">
+      <div 
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+        @click.self="showDimensionConfig = false"
+      >
+        <div 
+          class="max-w-md w-full rounded-2xl shadow-xl transform transition-all"
+          :class="darkMode ? 'bg-gray-800' : 'bg-white'"
+        >
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-4" 
+                :class="darkMode ? 'text-white' : 'text-gray-900'">
+              Configure Pan Dimensions
+            </h3>
+            
+            <!-- Shape Selector -->
+            <div class="mb-4">
+              <label class="block text-sm font-medium mb-2"
+                     :class="darkMode ? 'text-gray-300' : 'text-gray-700'">
+                Shape
+              </label>
+              <div class="flex gap-2">
+                <button
+                  @click="setAreaShape('circular')"
+                  class="flex-1 p-3 rounded-lg border-2 transition-all"
+                  :class="dimensionConfigShape === 'circular'
+                    ? (darkMode ? 'border-orange-500 bg-orange-500/20' : 'border-orange-500 bg-orange-50')
+                    : (darkMode ? 'border-gray-700 hover:border-gray-600' : 'border-gray-300 hover:border-gray-400')"
+                >
+                  <div class="text-3xl mb-1">🍰</div>
+                  <div class="text-sm font-medium" 
+                       :class="darkMode ? 'text-white' : 'text-gray-900'">
+                    Circular
+                  </div>
+                </button>
+                <button
+                  @click="setAreaShape('rectangular')"
+                  class="flex-1 p-3 rounded-lg border-2 transition-all"
+                  :class="dimensionConfigShape === 'rectangular'
+                    ? (darkMode ? 'border-orange-500 bg-orange-500/20' : 'border-orange-500 bg-orange-50')
+                    : (darkMode ? 'border-gray-700 hover:border-gray-600' : 'border-gray-300 hover:border-gray-400')"
+                >
+                  <div class="text-3xl mb-1">📐</div>
+                  <div class="text-sm font-medium" 
+                       :class="darkMode ? 'text-white' : 'text-gray-900'">
+                    Rectangular
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Circular Dimensions -->
+            <template x-if="dimensionConfigShape === 'circular'">
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                         :class="darkMode ? 'text-gray-300' : 'text-gray-700'">
+                    Diameter (cm)
+                  </label>
+                  <div class="flex items-center gap-2">
+                    <button
+                      @click="if (dimensionConfigDiameter > 1) dimensionConfigDiameter--"
+                      class="w-10 h-10 rounded flex items-center justify-center font-bold text-lg transition-colors"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                    >-</button>
+                    <input
+                      type="number"
+                      x-model="dimensionConfigDiameter"
+                      min="1"
+                      class="flex-1 px-4 py-2 rounded-lg border text-center font-semibold"
+                      :class="darkMode
+                        ? 'bg-gray-700 border-gray-600 text-white'
+                        : 'bg-white border-gray-300 text-gray-900'"
+                    />
+                    <button
+                      @click="dimensionConfigDiameter++"
+                      class="w-10 h-10 rounded flex items-center justify-center font-bold text-lg transition-colors"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                    >+</button>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <!-- Rectangular Dimensions -->
+            <template x-if="dimensionConfigShape === 'rectangular'">
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                         :class="darkMode ? 'text-gray-300' : 'text-gray-700'">
+                    Width (cm)
+                  </label>
+                  <div class="flex items-center gap-2">
+                    <button
+                      @click="if (dimensionConfigWidth > 5) dimensionConfigWidth--"
+                      class="w-10 h-10 rounded flex items-center justify-center font-bold text-lg transition-colors"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                    >-</button>
+                    <input
+                      type="number"
+                      x-model="dimensionConfigWidth"
+                      min="5"
+                      class="flex-1 px-4 py-2 rounded-lg border text-center font-semibold"
+                      :class="darkMode
+                        ? 'bg-gray-700 border-gray-600 text-white'
+                        : 'bg-white border-gray-300 text-gray-900'"
+                    />
+                    <button
+                      @click="dimensionConfigWidth++"
+                      class="w-10 h-10 rounded flex items-center justify-center font-bold text-lg transition-colors"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                    >+</button>
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                         :class="darkMode ? 'text-gray-300' : 'text-gray-700'">
+                    Height (cm)
+                  </label>
+                  <div class="flex items-center gap-2">
+                    <button
+                      @click="if (dimensionConfigHeight > 5) dimensionConfigHeight--"
+                      class="w-10 h-10 rounded flex items-center justify-center font-bold text-lg transition-colors"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                    >-</button>
+                    <input
+                      type="number"
+                      x-model="dimensionConfigHeight"
+                      min="5"
+                      class="flex-1 px-4 py-2 rounded-lg border text-center font-semibold"
+                      :class="darkMode
+                        ? 'bg-gray-700 border-gray-600 text-white'
+                        : 'bg-white border-gray-300 text-gray-900'"
+                    />
+                    <button
+                      @click="dimensionConfigHeight++"
+                      class="w-10 h-10 rounded flex items-center justify-center font-bold text-lg transition-colors"
+                      :class="darkMode
+                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+                    >+</button>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <!-- Buttons -->
+            <div class="flex gap-3 mt-6">
+              <button
+                @click="showDimensionConfig = false"
+                class="flex-1 py-2 px-4 rounded-lg font-medium transition-colors"
+                :class="darkMode
+                  ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
+              >
+                Cancel
+              </button>
+              <button
+                @click="applyDimensionChanges()"
+                class="flex-1 py-2 px-4 rounded-lg font-medium transition-colors"
+                :class="darkMode
+                  ? 'bg-orange-600 text-white hover:bg-orange-700'
+                  : 'bg-orange-500 text-white hover:bg-orange-600'"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
 
     <script src="app.js"></script>
   </body>

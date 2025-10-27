@@ -12,7 +12,8 @@
     "es": "Una versión refinada de los clásicos macarrones a la boloñesa, elaborados con carne picada de cerdo y salsa de tomate. La recepta original es para 4 raciones.",
     "cat": "Una versió refinada dels clàssics macarrons a la bolonyesa, elaborats amb carn picada de porc i salsa de tomàquet. La recepta original és per a 4 racions."
   },
-  "servings": {
+  "portion": {
+    "type": "servings",
     "value": 4,
     "unit": "servings"
   },

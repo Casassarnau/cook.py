@@ -105,7 +105,17 @@
         "cardamom": "cardamomo",
         "white_chocolate": "chocolate blanco",
         "orange_juice": "zumo de naranja",
-        "walnuts": "nueces"
+        "walnuts": "nueces",
+        "coconut_oil": "aceite de coco",
+        "panela_powder": "panela en polvo",
+        "brown_sugar": "azúcar moreno",
+        "greek_yogurt": "yogur griego",
+        "vanilla_extract": "extracto de vainilla",
+        "whole_wheat_pastry_flour": "harina integral",
+        "oat_flour": "harina de avena",
+        "unsweetened_cocoa_powder": "cacao en polvo sin azúcar",
+        "espresso_powder": "café espresso en polvo",
+        "dark_chocolate_chips": "chips de chocolate negro"
     },
     "units": {
         "g": "g",
@@ -117,7 +127,9 @@
         "as_needed": "según sea necesario",
         "to_taste": "al gusto",
         "tsp": "cucharadita",
-        "tbsp": "cucharada"
+        "tbsp": "cucharada",
+        "pizza": "pizza",
+        "pan": "bandeja"
     },
     "connectors": {
         "g": "de",
@@ -129,6 +141,8 @@
         "to_taste": "",
         "tsp": "de",
         "tbsp": "de",
+        "pizza": "",
+        "pan": "",
         "for": "para"
     }
   }

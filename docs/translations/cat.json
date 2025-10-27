@@ -105,7 +105,17 @@
         "cardamom": "cardamom",
         "white_chocolate": "xocolata blanca",
         "orange_juice": "suc de taronja",
-        "walnuts": "nous"
+        "walnuts": "nous",
+        "coconut_oil": "oli de coco",
+        "panela_powder": "panela en pols",
+        "brown_sugar": "sucre moreno",
+        "greek_yogurt": "iogurt grec",
+        "vanilla_extract": "extracte de vainilla",
+        "whole_wheat_pastry_flour": "farina integral",
+        "oat_flour": "farina d'avena",
+        "unsweetened_cocoa_powder": "cacau en pols sense sucre",
+        "espresso_powder": "cafè espresso en pols",
+        "dark_chocolate_chips": "xips de xocolata negra"
     },
     "units": {
         "g": "g",
@@ -117,7 +127,9 @@
         "as_needed": "segons calgui",
         "to_taste": "al gust",
         "tsp": "culleradeta",
-        "tbsp": "cullera"
+        "tbsp": "cullera",
+        "pizza": "pizza",
+        "pan": "safata"
     },
     "connectors": {
         "g": "de",
@@ -129,6 +141,8 @@
         "to_taste": "",
         "tsp": "de",
         "tbsp": "de",
+        "pizza": "",
+        "pan": "",
         "for": "per a"
     }
   }

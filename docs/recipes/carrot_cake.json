@@ -14,9 +14,13 @@
     "es": "Una tarta de zanahoria húmeda y sabrosa con especias cálidas y un glaseado cremoso de chocolate blanco",
     "cat": "Un pastís de pastanaga humit i saborós amb espècies càlides i un glaçat cremós de xocolata blanca"
   },
-  "diameter": {
-    "value": 15,
-    "unit": "cm"
+  "portion": {
+    "type": "area",
+    "shape": "circular",
+    "dimensions": {
+      "diameter": 15,
+      "unit": "cm"
+    }
   },
   "ingredients": [
     {

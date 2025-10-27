@@ -85,6 +85,33 @@
   },
   {
     "title": {
+      "en": "Fudgy Chocolate Brownie",
+      "es": "Brownie de Chocolate",
+      "cat": "Brownie de Xocolata"
+    },
+    "categories": [
+      "desserts"
+    ],
+    "path": "recipes/chocolate_brownie.json",
+    "image": "/images/chocolate_brownie/main.webp",
+    "author": "Arnau",
+    "ingredient_keys": [
+      "coconut_oil",
+      "olive_oil",
+      "panela_powder",
+      "eggs",
+      "greek_yogurt",
+      "vanilla_extract",
+      "whole_wheat_pastry_flour",
+      "unsweetened_cocoa_powder",
+      "salt",
+      "espresso_powder",
+      "dark_chocolate_chips",
+      "walnuts"
+    ]
+  },
+  {
+    "title": {
       "en": "Homemade Pizza",
       "es": "Pizza Casera",
       "cat": "Pizza Casolana"

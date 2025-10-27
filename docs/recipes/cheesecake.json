@@ -14,9 +14,13 @@
     "es": "Una tarta de queso cremosa y deliciosa con un equilibrio perfecto de sabores. La receta original es para un molde de ø 15 cm.",
     "cat": "Un pastís de formatge cremós i deliciós amb un equilibri perfecte de sabors. La recepta original és per a un motlle de ø 15 cm."
   },
-  "diameter": {
-    "value": 15,
-    "unit": "cm"
+  "portion": {
+    "type": "area",
+    "shape": "circular",
+    "dimensions": {
+      "diameter": 15,
+      "unit": "cm"
+    }
   },
   "variants": [
     {

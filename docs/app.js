@@ -13,8 +13,14 @@ function recipeApp() {
     darkMode: false,
     basePath: '',
     currentServings: 4,
+    currentDimensions: { width: 20, height: 20, diameter: 15 },
     currentDiameter: 15,
     currentUnits: 1,
+    showDimensionConfig: false,
+    dimensionConfigShape: 'rectangular',
+    dimensionConfigDiameter: 15,
+    dimensionConfigWidth: 20,
+    dimensionConfigHeight: 20,
 
     async init() {
       this.basePath = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : '/cook.py';
@@ -72,9 +78,11 @@ function recipeApp() {
     },
 
     loadServingsPreferences() {
+      // Load global fallbacks (for backwards compatibility)
       const savedServings = localStorage.getItem('preferredServings');
       const savedDiameter = localStorage.getItem('preferredDiameter');
       const savedUnits = localStorage.getItem('preferredUnits');
+      const savedDimensions = localStorage.getItem('preferredDimensions');
       
       if (savedServings) {
         this.currentServings = parseInt(savedServings, 10) || 4;
@@ -85,12 +93,93 @@ function recipeApp() {
       if (savedUnits) {
         this.currentUnits = parseInt(savedUnits, 10) || 1;
       }
+      if (savedDimensions) {
+        try {
+          this.currentDimensions = JSON.parse(savedDimensions);
+        } catch (e) {
+          console.error('Failed to parse saved dimensions:', e);
+        }
+      }
+    },
+
+    loadRecipePreferences(recipeName) {
+      if (!recipeName) return;
+      
+      const key = `recipePreferences_${recipeName}`;
+      const saved = localStorage.getItem(key);
+      
+      if (saved) {
+        try {
+          const prefs = JSON.parse(saved);
+          if (prefs.servings !== undefined) this.currentServings = prefs.servings;
+          if (prefs.units !== undefined) this.currentUnits = prefs.units;
+          if (prefs.diameter !== undefined) this.currentDiameter = prefs.diameter;
+          if (prefs.dimensions) {
+            Object.assign(this.currentDimensions, prefs.dimensions);
+          }
+        } catch (e) {
+          console.error('Failed to parse recipe preferences:', e);
+        }
+      }
+    },
+
+    saveRecipePreferences(recipeName) {
+      if (!recipeName) return;
+      
+      const key = `recipePreferences_${recipeName}`;
+      const prefs = {
+        servings: this.currentServings,
+        units: this.currentUnits,
+        diameter: this.currentDiameter,
+        dimensions: { ...this.currentDimensions }
+      };
+      
+      localStorage.setItem(key, JSON.stringify(prefs));
     },
 
     saveServingsPreferences() {
+      // Save global preferences (shared across all recipes)
       localStorage.setItem('preferredServings', this.currentServings.toString());
       localStorage.setItem('preferredDiameter', this.currentDiameter.toString());
       localStorage.setItem('preferredUnits', this.currentUnits.toString());
+      localStorage.setItem('preferredDimensions', JSON.stringify(this.currentDimensions));
+      
+      // Only save per-recipe preferences for units-based recipes
+      if (this.selectedRecipe) {
+        const portion = this.selectedRecipe.portion;
+        const isUnitsRecipe = portion?.type === 'units' || this.selectedRecipe.units;
+        
+        if (isUnitsRecipe) {
+          const recipeName = this.getRecipeName();
+          if (recipeName) {
+            this.saveRecipePreferences(recipeName);
+          }
+        }
+      }
+    },
+
+    getRecipeName() {
+      if (!this.selectedRecipe) return null;
+      
+      // Check hash first (current route format)
+      const hash = location.hash;
+      if (hash && hash.startsWith('#recipe=')) {
+        const params = new URLSearchParams(hash.substring(1));
+        const recipe = params.get('recipe');
+        if (recipe) return recipe;
+      }
+      
+      // Try to get from URL search params (alternative format)
+      const urlParams = new URLSearchParams(window.location.search);
+      const recipe = urlParams.get('recipe');
+      if (recipe) return recipe;
+      
+      // Try to get from recipe path
+      const path = this.selectedRecipe.path;
+      if (path && path.includes('recipes/')) {
+        return path.replace('recipes/', '').replace('.json', '');
+      }
+      return null;
     },
 
     async loadIndex() {
@@ -229,10 +318,32 @@ function recipeApp() {
           
           if (this.selectedRecipe) {
             // Use saved preferences or fall back to recipe defaults
+            if (this.selectedRecipe.portion) {
+              const portion = this.selectedRecipe.portion;
+              if (portion.type === 'servings') {
+                this.currentServings = this.currentServings || portion.value || 4;
+              } else if (portion.type === 'units') {
+                // Load per-recipe preferences only for units-based recipes
+                this.loadRecipePreferences(recipeName);
+                this.currentUnits = this.currentUnits || portion.value || 1;
+              } else if (portion.type === 'area') {
+                if (portion.shape === 'circular') {
+                  this.currentDimensions.diameter = this.currentDimensions.diameter || portion.dimensions.diameter || 15;
+                } else if (portion.shape === 'rectangular' || portion.shape === 'square') {
+                  this.currentDimensions.width = this.currentDimensions.width || portion.dimensions.width || 20;
+                  this.currentDimensions.height = this.currentDimensions.height || portion.dimensions.height || 20;
+                }
+              } else if (portion.type === 'diameter') {
+                this.currentDiameter = this.currentDiameter || portion.value || 15;
+              }
+            }
+            // Legacy support for old structure
             if (this.selectedRecipe.servings) {
               this.currentServings = this.currentServings || this.selectedRecipe.servings.value || 4;
             }
             if (this.selectedRecipe.units) {
+              // Load per-recipe preferences only for units-based recipes
+              this.loadRecipePreferences(recipeName);
               this.currentUnits = this.currentUnits || this.selectedRecipe.units.value || 1;
             }
             if (this.selectedRecipe.diameter) {
@@ -278,6 +389,30 @@ function recipeApp() {
     getMultiplier() {
       if (!this.selectedRecipe) return 1;
       
+      // New unified structure
+      if (this.selectedRecipe.portion) {
+        const portion = this.selectedRecipe.portion;
+        if (portion.type === 'servings') {
+          return this.currentServings / portion.value;
+        } else if (portion.type === 'units') {
+          return this.currentUnits / portion.value;
+        } else if (portion.type === 'area') {
+          if (portion.shape === 'circular') {
+            const originalDiameter = portion.dimensions.diameter;
+            return Math.pow(this.currentDimensions.diameter / originalDiameter, 2);
+          } else if (portion.shape === 'rectangular' || portion.shape === 'square') {
+            const originalArea = portion.dimensions.width * portion.dimensions.height;
+            const currentArea = this.currentDimensions.width * this.currentDimensions.height;
+            return currentArea / originalArea;
+          }
+        } else if (portion.type === 'diameter') {
+          // Legacy diameter type
+          const originalDiameter = portion.value;
+          return Math.pow(this.currentDiameter / originalDiameter, 2);
+        }
+      }
+      
+      // Legacy support for old structure
       if (this.selectedRecipe.servings) {
         return this.currentServings / this.selectedRecipe.servings.value;
       } else if (this.selectedRecipe.units) {
@@ -292,42 +427,179 @@ function recipeApp() {
     },
 
     hasServings() {
-      return this.selectedRecipe && this.selectedRecipe.servings;
+      if (!this.selectedRecipe) return false;
+      if (this.selectedRecipe.portion?.type === 'servings') return true;
+      return !!this.selectedRecipe.servings; // Legacy support
+    },
+
+    hasArea() {
+      if (!this.selectedRecipe) return false;
+      if (this.selectedRecipe.portion?.type === 'area') return true;
+      return false;
+    },
+
+    hasCircularArea() {
+      if (!this.selectedRecipe) return false;
+      return this.selectedRecipe.portion?.type === 'area' && this.selectedRecipe.portion?.shape === 'circular';
+    },
+
+    hasRectangularArea() {
+      if (!this.selectedRecipe) return false;
+      return this.selectedRecipe.portion?.type === 'area' && (this.selectedRecipe.portion?.shape === 'rectangular' || this.selectedRecipe.portion?.shape === 'square');
     },
 
     hasDiameter() {
-      return this.selectedRecipe && this.selectedRecipe.diameter;
+      if (!this.selectedRecipe) return false;
+      if (this.selectedRecipe.portion?.type === 'diameter') return true;
+      if (this.selectedRecipe.portion?.type === 'area' && this.selectedRecipe.portion?.shape === 'circular') return true;
+      return !!this.selectedRecipe.diameter; // Legacy support
     },
 
     hasUnits() {
-      return this.selectedRecipe && this.selectedRecipe.units;
+      if (!this.selectedRecipe) return false;
+      if (this.selectedRecipe.portion?.type === 'units') return true;
+      return !!this.selectedRecipe.units; // Legacy support
     },
 
     getIngredientsTitle() {
       if (!this.selectedRecipe) return '';
 
+      const portion = this.selectedRecipe.portion;
+
       if (this.hasServings()) {
-        const unit = this.t(`units.${this.selectedRecipe.servings.unit}`);
+        const unit = portion?.unit || this.selectedRecipe.servings?.unit || 'servings';
+        const unitText = this.t(`units.${unit}`);
         const forConnector = this.t('connectors.for');
-        return `${this.t('ingredients._')} ${forConnector} ${this.currentServings} ${unit}`;
+        return `${this.t('ingredients._')} ${forConnector} ${this.currentServings} ${unitText}`;
       } else if (this.hasUnits()) {
+        const unit = portion?.unit || this.selectedRecipe.units?.unit || 'unit';
         const forConnector = this.t('connectors.for');
-        return `${this.t('ingredients._')} ${forConnector} ${this.currentUnits} units`;
+        const unitText = this.t(`units.${unit}`) || unit;
+        return `${this.t('ingredients._')} ${forConnector} ${this.currentUnits} ${unitText}`;
+      } else if (this.hasCircularArea()) {
+        const unit = portion?.dimensions?.unit || 'cm';
+        const unitText = this.t(`units.${unit}`);
+        const forConnector = this.t('connectors.for');
+        return `${this.t('ingredients._')} ${forConnector} ø ${this.currentDimensions.diameter} ${unitText} 🍰`;
+      } else if (this.hasRectangularArea()) {
+        const unit = portion?.dimensions?.unit || 'cm';
+        const unitText = this.t(`units.${unit}`);
+        const forConnector = this.t('connectors.for');
+        return `${this.t('ingredients._')} ${forConnector} ${this.currentDimensions.width}×${this.currentDimensions.height} ${unitText} 📐`;
       } else if (this.hasDiameter()) {
-        const unit = this.t(`units.${this.selectedRecipe.diameter.unit}`);
+        const unit = portion?.unit || this.selectedRecipe.diameter?.unit || 'cm';
+        const unitText = this.t(`units.${unit}`);
         const forConnector = this.t('connectors.for');
-        const connector = this.t(`connectors.${this.selectedRecipe.diameter.unit}`);
+        const connector = this.t(`connectors.${unit}`);
         
         // For circular measurements (cm), show diameter symbol
-        if (this.selectedRecipe.diameter.unit === 'cm') {
-          return `${this.t('ingredients._')} ${forConnector} ø ${this.currentDiameter} ${unit} 🍰`;
+        if (unit === 'cm') {
+          return `${this.t('ingredients._')} ${forConnector} ø ${this.currentDiameter} ${unitText} 🍰`;
         } else {
           // For other units (like pizza), show without diameter symbol
-          return `${this.t('ingredients._')} ${forConnector} ${this.currentDiameter} ${connector} ${unit}`;
+          return `${this.t('ingredients._')} ${forConnector} ${this.currentDiameter} ${connector} ${unitText}`;
         }
       }
       
       return this.t('ingredients._');
+    },
+
+    incrementDimensions() {
+      if (this.hasCircularArea()) {
+        this.currentDimensions.diameter += 1;
+        this.saveServingsPreferences();
+      } else if (this.hasRectangularArea()) {
+        // For rectangular, increment both dimensions to maintain CURRENT aspect ratio
+        const aspectRatio = this.currentDimensions.width / this.currentDimensions.height;
+        this.currentDimensions.width += 1;
+        this.currentDimensions.height = Math.round(this.currentDimensions.width / aspectRatio);
+        this.saveServingsPreferences();
+      } else {
+        this.incrementServings();
+      }
+    },
+
+    decrementDimensions() {
+      if (this.hasCircularArea()) {
+        if (this.currentDimensions.diameter > 1) {
+          this.currentDimensions.diameter -= 1;
+          this.saveServingsPreferences();
+        }
+      } else if (this.hasRectangularArea()) {
+        if (this.currentDimensions.width > 5) {
+          // For rectangular, decrement both dimensions to maintain CURRENT aspect ratio
+          const aspectRatio = this.currentDimensions.width / this.currentDimensions.height;
+          this.currentDimensions.width -= 1;
+          this.currentDimensions.height = Math.round(this.currentDimensions.width / aspectRatio);
+          this.saveServingsPreferences();
+        }
+      } else {
+        this.decrementServings();
+      }
+    },
+
+    openDimensionConfig() {
+      if (!this.selectedRecipe?.portion) return;
+      
+      const portion = this.selectedRecipe.portion;
+      
+      // Initialize config values from current state
+      if (portion.type === 'area') {
+        this.dimensionConfigShape = portion.shape;
+        
+        if (portion.shape === 'circular') {
+          this.dimensionConfigDiameter = this.currentDimensions.diameter || portion.dimensions.diameter;
+        } else {
+          this.dimensionConfigWidth = this.currentDimensions.width || portion.dimensions.width;
+          this.dimensionConfigHeight = this.currentDimensions.height || portion.dimensions.height;
+        }
+      }
+      
+      this.showDimensionConfig = true;
+    },
+
+    setAreaShape(shape) {
+      this.dimensionConfigShape = shape;
+      
+      // Auto-adjust dimensions when switching shapes
+      if (shape === 'circular') {
+        // Convert rectangular to circular area: estimate diameter from area
+        const area = this.dimensionConfigWidth * this.dimensionConfigHeight;
+        this.dimensionConfigDiameter = Math.round(Math.sqrt(area / Math.PI) * 2);
+      } else {
+        // Convert circular to square area: estimate sides from area
+        const area = Math.PI * Math.pow(this.dimensionConfigDiameter / 2, 2);
+        const side = Math.round(Math.sqrt(area));
+        this.dimensionConfigWidth = side;
+        this.dimensionConfigHeight = side;
+      }
+    },
+
+    applyDimensionChanges() {
+      if (!this.selectedRecipe?.portion) {
+        this.showDimensionConfig = false;
+        return;
+      }
+      
+      const portion = this.selectedRecipe.portion;
+      
+      if (portion.type === 'area') {
+        // Update the original portion's shape
+        portion.shape = this.dimensionConfigShape;
+        
+        if (this.dimensionConfigShape === 'circular') {
+          portion.dimensions.diameter = this.dimensionConfigDiameter;
+          this.currentDimensions.diameter = this.dimensionConfigDiameter;
+        } else {
+          portion.dimensions.width = this.dimensionConfigWidth;
+          portion.dimensions.height = this.dimensionConfigHeight;
+          this.currentDimensions.width = this.dimensionConfigWidth;
+          this.currentDimensions.height = this.dimensionConfigHeight;
+        }
+      }
+      
+      this.saveServingsPreferences();
+      this.showDimensionConfig = false;
     },
 
     getIngredientEmoji(ingredientKey) {

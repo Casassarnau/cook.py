@@ -105,7 +105,17 @@
         "cardamom": "cardamom",
         "white_chocolate": "white chocolate",
         "orange_juice": "orange juice",
-        "walnuts": "walnuts"
+        "walnuts": "walnuts",
+        "coconut_oil": "coconut oil",
+        "panela_powder": "panela powder",
+        "brown_sugar": "brown sugar",
+        "greek_yogurt": "Greek yogurt",
+        "vanilla_extract": "vanilla extract",
+        "whole_wheat_pastry_flour": "whole wheat pastry flour",
+        "oat_flour": "oat flour",
+        "unsweetened_cocoa_powder": "unsweetened cocoa powder",
+        "espresso_powder": "espresso powder",
+        "dark_chocolate_chips": "dark chocolate chips"
     },
     "units": {
         "g": "g",
@@ -117,7 +127,9 @@
         "as_needed": "as needed",
         "to_taste": "to taste",
         "tsp": "tsp",
-        "tbsp": "tbsp"
+        "tbsp": "tbsp",
+        "pizza": "pizza",
+        "pan": "pan"
     },
     "connectors": {
         "g": "of",
@@ -129,6 +141,8 @@
         "to_taste": "",
         "tsp": "of",
         "tbsp": "of",
+        "pizza": "",
+        "pan": "",
         "for": "for"
     }
   }
