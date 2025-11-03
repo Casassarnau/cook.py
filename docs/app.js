@@ -21,6 +21,8 @@ function recipeApp() {
     dimensionConfigDiameter: 15,
     dimensionConfigWidth: 20,
     dimensionConfigHeight: 20,
+    showQRModal: false,
+    urlCopied: false,
 
     async init() {
       this.basePath = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : '/cook.py';
@@ -733,6 +735,106 @@ function recipeApp() {
           text: this.translateField(e.text),
           image: e.image ? this.withBase(e.image) : null
         }));
+    },
+
+    showQRCode() {
+      this.showQRModal = true;
+      this.urlCopied = false;
+      
+      // Generate QR code after modal is shown
+      this.$nextTick(() => {
+        const recipeUrl = window.location.href.split('#')[0] + window.location.hash;
+        const qrElement = document.getElementById('qrcode');
+        
+        if (!qrElement) return;
+        
+        // Clear previous QR code
+        qrElement.innerHTML = '';
+        
+        try {
+          // Generate QR code with colors that match the current theme
+          // In dark mode: white QR on dark background (gray-800)
+          // In light mode: dark QR on light background (white)
+          const colorDark = this.darkMode ? '#FFFFFF' : '#000000';
+          const colorLight = this.darkMode ? '#1F2937' : '#FFFFFF'; // gray-800 for dark mode bg to match dialog
+          
+          // Generate new QR code using QRCode constructor
+          new QRCode(qrElement, {
+            text: recipeUrl,
+            width: 256,
+            height: 256,
+            colorDark: colorDark,
+            colorLight: colorLight,
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        } catch (error) {
+          console.error('Error generating QR code:', error);
+          qrElement.innerHTML = '<p class="text-red-500">Error generating QR code</p>';
+        }
+      });
+    },
+
+    copyRecipeUrl() {
+      const recipeUrl = window.location.href.split('#')[0] + window.location.hash;
+      const recipeTitle = this.selectedRecipe ? this.translateField(this.selectedRecipe.title) : '';
+      
+      // Check if Web Share API is available (mobile devices)
+      if (navigator.share) {
+        navigator.share({
+          title: recipeTitle || 'Recipe',
+          text: recipeTitle || 'Check out this recipe',
+          url: recipeUrl
+        }).then(() => {
+          // Share was successful
+          this.urlCopied = true;
+          setTimeout(() => {
+            this.urlCopied = false;
+          }, 2000);
+        }).catch(err => {
+          // User cancelled or error occurred, fall back to clipboard
+          if (err.name !== 'AbortError') {
+            this.fallbackCopyToClipboard(recipeUrl);
+          }
+        });
+      } else {
+        // Fall back to clipboard copy for desktop
+        this.fallbackCopyToClipboard(recipeUrl);
+      }
+    },
+
+    fallbackCopyToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          this.urlCopied = true;
+          setTimeout(() => {
+            this.urlCopied = false;
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy URL:', err);
+        });
+      } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          this.urlCopied = true;
+          setTimeout(() => {
+            this.urlCopied = false;
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy URL:', err);
+        }
+        document.body.removeChild(textArea);
+      }
+    },
+
+    canUseWebShare() {
+      return navigator.share !== undefined;
     },
   };
 }

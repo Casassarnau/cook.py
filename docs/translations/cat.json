@@ -20,6 +20,12 @@
     "variation": "Variació",
     "servings": "Racions",
     "diameter": "Diàmetre",
+    "back": "Tornar",
+    "share": "Compartir",
+    "share_qr": "Compartir Recepta",
+    "qr_instructions": "Escaneja aquest codi QR per compartir la recepta",
+    "copy_url": "Copiar URL",
+    "copied": "Copiat!",
     "ingredients": {
         "_": "Ingredients",
         "eggs": "ous",

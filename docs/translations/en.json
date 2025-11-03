@@ -20,6 +20,12 @@
     "variation": "Variation",
     "servings": "Servings",
     "diameter": "Diameter",
+    "back": "Back",
+    "share": "Share",
+    "share_qr": "Share Recipe",
+    "qr_instructions": "Scan this QR code to share the recipe",
+    "copy_url": "Copy URL",
+    "copied": "Copied!",
     "ingredients": {
         "_": "Ingredients",
         "eggs": "eggs",

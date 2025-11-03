@@ -11,6 +11,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
       /* Smooth color transitions for all elements within .transition-smooth */
       .transition-smooth, .transition-smooth * {
@@ -204,8 +205,22 @@
           </button>
 
           <img :src="getImageUrl(selectedRecipe.image, 'lower')" alt="" class="w-full h-56 sm:h-72 md:h-96 object-cover rounded-lg mb-4" loading="lazy" />
-          <h2 class="text-2xl md:text-3xl font-bold mb-1" x-text="translateField(selectedRecipe.title)"></h2>
-          <p class="text-sm mb-3 opacity-80" x-text="selectedRecipe.author ? '👩‍🍳 ' + selectedRecipe.author : ''"></p>
+          <div class="flex items-start justify-between mb-2">
+            <div class="flex-1">
+              <h2 class="text-2xl md:text-3xl font-bold mb-1" x-text="translateField(selectedRecipe.title)"></h2>
+              <p class="text-sm mb-3 opacity-80" x-text="selectedRecipe.author ? '👩‍🍳 ' + selectedRecipe.author : ''"></p>
+            </div>
+            <button
+              @click="showQRCode()"
+              class="ml-4 p-2 rounded-lg border font-semibold transition-colors duration-300 cursor-pointer flex items-center gap-2"
+              :class="darkMode
+                ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700'
+                : 'bg-white border-gray-300 text-gray-800 hover:bg-gray-100'"
+              :title="t('share_qr') || 'Share recipe'"
+            >
+              <span>🔗</span>
+            </button>
+          </div>
           <p class="mb-3 md:mb-4 text-base md:text-lg leading-relaxed transition-colors duration-300"
             :class="darkMode ? 'text-gray-200' : 'text-gray-800'"
             x-text="translateField(selectedRecipe.description)"
@@ -561,6 +576,58 @@
                 Apply
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- QR Code Modal -->
+    <template x-if="showQRModal">
+      <div 
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+        @click.self="showQRModal = false"
+      >
+        <div 
+          class="max-w-md w-full rounded-2xl shadow-xl transform transition-all border p-6"
+          :class="darkMode 
+            ? 'bg-gray-800 border-gray-700' 
+            : 'bg-white border-gray-200'"
+        >
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold" 
+                :class="darkMode ? 'text-white' : 'text-gray-900'">
+              <span x-text="t('share_qr') || 'Share Recipe'"></span>
+            </h3>
+            <button
+              @click="showQRModal = false"
+              class="p-1 rounded-lg transition-colors cursor-pointer"
+              :class="darkMode
+                ? 'text-gray-400 hover:bg-gray-700 hover:text-white'
+                : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'"
+            >
+              ✕
+            </button>
+          </div>
+          
+          <div class="flex flex-col items-center gap-4">
+            <div 
+              id="qrcode"
+              class="p-4 rounded-lg transition-colors duration-300"
+              :class="darkMode ? 'bg-gray-800' : 'bg-white'"
+            ></div>
+            <p class="text-sm text-center"
+               :class="darkMode ? 'text-gray-300' : 'text-gray-600'">
+              <span x-text="t('qr_instructions') || 'Scan this QR code to share the recipe'"></span>
+            </p>
+            <button
+              @click="copyRecipeUrl()"
+              class="w-full py-2 px-4 rounded-lg font-medium transition-colors cursor-pointer"
+              :class="darkMode
+                ? 'bg-orange-600 text-white hover:bg-orange-700'
+                : 'bg-orange-500 text-white hover:bg-orange-600'"
+            >
+              <span x-text="urlCopied ? (t('copied') || 'Copied!') : (canUseWebShare() ? (t('share') || 'Share') : (t('copy_url') || 'Copy URL'))"></span>
+            </button>
           </div>
         </div>
       </div>
