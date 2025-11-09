@@ -2,7 +2,8 @@
   "title": {
     "en": "Cheesecake",
     "es": "Tarta de queso",
-    "cat": "Pastís de formatge"
+    "cat": "Pastís de formatge",
+    "sv": "Ostkaka"
   },
   "author": "Arnau",
   "categories": [
@@ -12,7 +13,8 @@
   "description": {
     "en": "A creamy and delicious cheesecake with a perfect balance of flavors. The original recipe is for a ø 15 cm (6 in) mold.",
     "es": "Una tarta de queso cremosa y deliciosa con un equilibrio perfecto de sabores. La receta original es para un molde de ø 15 cm.",
-    "cat": "Un pastís de formatge cremós i deliciós amb un equilibri perfecte de sabors. La recepta original és per a un motlle de ø 15 cm."
+    "cat": "Un pastís de formatge cremós i deliciós amb un equilibri perfecte de sabors. La recepta original és per a un motlle de ø 15 cm.",
+    "sv": "En krämig och utsökt ostkaka med en perfekt balans av smaker. Originalreceptet är för en ø 15 cm (6 tum) form."
   },
   "portion": {
     "type": "area",
@@ -28,7 +30,8 @@
       "name": {
         "en": "Classic",
         "es": "Clásica",
-        "cat": "Clàssica"
+        "cat": "Clàssica",
+        "sv": "Klassisk"
       }
     },
     {
@@ -36,7 +39,8 @@
       "name": {
         "en": "Blue cheese",
         "es": "Queso azul",
-        "cat": "Formatge blau"
+        "cat": "Formatge blau",
+        "sv": "Blåmögelost"
       }
     }
   ],
@@ -45,7 +49,8 @@
       "group": {
         "en": "Cookie Base",
         "es": "Base de Galleta",
-        "cat": "Base de Galeta"
+        "cat": "Base de Galeta",
+        "sv": "Kexbotten"
       },
       "items": [
         {
@@ -64,40 +69,66 @@
       "group": {
         "en": "Filling",
         "es": "Relleno",
-        "cat": "Farcit"
+        "cat": "Farcit",
+        "sv": "Fyllning"
       },
       "items": [
         {
           "ingredient": "cream_cheese",
           "value": 250,
           "unit": "g",
-          "text": { "en": "(Philadelphia or Mascarpone)", "es": "(Philadelphia o Mascarpone)", "cat": "(Philadelphia o Mascarpone)" }
+          "text": {
+            "en": "(Philadelphia or Mascarpone)",
+            "es": "(Philadelphia o Mascarpone)",
+            "cat": "(Philadelphia o Mascarpone)",
+            "sv": "(Philadelphia eller Mascarpone)"
+          }
         },
         {
           "ingredient": "fresh_cheese",
           "value": 50,
           "unit": "g",
-          "text": { "en": "(Ricotta or Mató)", "es": "(Ricotta o Mató)", "cat": "(Ricotta o Mató)" }
+          "text": {
+            "en": "(Ricotta or Mató)",
+            "es": "(Ricotta o Mató)",
+            "cat": "(Ricotta o Mató)",
+            "sv": "(Ricotta eller Mató)"
+          }
         },
         {
           "ingredient": "parmesan_cheese",
           "value": 40,
           "unit": "g",
-          "text": { "en": "grated", "es": "rallado", "cat": "ratllat" },
+          "text": {
+            "en": "grated",
+            "es": "rallado",
+            "cat": "ratllat",
+            "sv": "riven"
+          },
           "onlyForVariation": "classic"
         },
         {
           "ingredient": "parmesan_cheese",
           "value": 20,
           "unit": "g",
-          "text": { "en": "grated", "es": "rallado", "cat": "ratllat" },
+          "text": {
+            "en": "grated",
+            "es": "rallado",
+            "cat": "ratllat",
+            "sv": "riven"
+          },
           "onlyForVariation": "blue"
         },
         {
           "ingredient": "blue_cheese",
           "value": 20,
           "unit": "g",
-          "text": { "en": "gorgonzola or roquefort", "es": "gorgonzola o roquefort", "cat": "gorgonzola o roquefort" },
+          "text": {
+            "en": "gorgonzola or roquefort",
+            "es": "gorgonzola o roquefort",
+            "cat": "gorgonzola o roquefort",
+            "sv": "gorgonzola eller roquefort"
+          },
           "onlyForVariation": "blue"
         },
         {
@@ -127,42 +158,48 @@
       "text": {
         "en": "Bring the filling ingredients to room temperature.",
         "es": "Lleva los ingredientes del relleno a temperatura ambiente.",
-        "cat": "Porta els ingredients del farcit a temperatura ambient."
+        "cat": "Porta els ingredients del farcit a temperatura ambient.",
+        "sv": "Ta fyllningsingredienserna till rumstemperatur."
       }
     },
     {
       "text": {
         "en": "Preheat a fan-assisted oven to 200°C (390°F).",
         "es": "Precalienta el horno con ventilador a 200°C (390°F).",
-        "cat": "Preescalfa el forn amb ventilador a 200°C (390°F)."
+        "cat": "Preescalfa el forn amb ventilador a 200°C (390°F).",
+        "sv": "Värm en fläktassisterad ugn till 200°C (390°F)."
       }
     },
     {
       "text": {
         "en": "Crush the Digestive biscuits with butter to form the base.",
         "es": "Tritura las galletas Digestive con mantequilla para la base.",
-        "cat": "Tritura les galetes Digestive amb mantega per a la base."
+        "cat": "Tritura les galetes Digestive amb mantega per a la base.",
+        "sv": "Krossa Digestive-kexen med smör för att bilda botten."
       }
     },
     {
       "text": {
         "en": "Press the crumb mixture firmly into the pan; use a flat-bottomed glass to compact.",
         "es": "Presiona la mezcla de galleta firmemente en el molde; usa un vaso de fondo plano para compactar.",
-        "cat": "Prem la base de galeta fermament dins del motlle; fes servir un got de fons pla per compactar."
+        "cat": "Prem la base de galeta fermament dins del motlle; fes servir un got de fons pla per compactar.",
+        "sv": "Pressa smulblandningen hårt i formen; använd ett glas med platt botten för att komprimera."
       }
     },
     {
       "text": {
         "en": "Bake the base for 5 minutes (10 minutes if the oven is not fully preheated).",
         "es": "Hornea la base 5 minutos (10 minutos si el horno no estaba completamente caliente).",
-        "cat": "Enforna la base 5 minuts (10 minuts si el forn no era ben calent)."
+        "cat": "Enforna la base 5 minuts (10 minuts si el forn no era ben calent).",
+        "sv": "Grädda botten i 5 minuter (10 minuter om ugnen inte är helt förvärmd)."
       }
     },
     {
       "text": {
         "en": "Using a fork, soften the blue cheese until creamy.",
         "es": "Con un tenedor, ablanda el queso azul hasta que quede cremoso.",
-        "cat": "Amb una forquilla, estova el formatge blau fins que quedi cremós."
+        "cat": "Amb una forquilla, estova el formatge blau fins que quedi cremós.",
+        "sv": "Med en gaffel, mjuka upp blåmögelosten tills den blir krämig."
       },
       "onlyForVariation": "blue"
     },
@@ -170,14 +207,16 @@
       "text": {
         "en": "In a clean bowl, combine the mild cheeses with the sugar (reserve the Parmesan).",
         "es": "En un bol limpio, mezcla los quesos suaves con el azúcar (reserva el parmesano).",
-        "cat": "En un bol net, barreja els formatges suaus amb el sucre (reserva el parmesà)."
+        "cat": "En un bol net, barreja els formatges suaus amb el sucre (reserva el parmesà).",
+        "sv": "I en ren skål, kombinera de milda ostarna med sockret (spara parmesanen)."
       }
     },
     {
       "text": {
         "en": "Incorporate the Parmesan gradually, tasting to avoid an overpowering flavor.",
         "es": "Incorpora el parmesano poco a poco, probando para evitar un sabor demasiado intenso.",
-        "cat": "Incorpora el parmesà a poc a poc, tastant per evitar un gust massa intens."
+        "cat": "Incorpora el parmesà a poc a poc, tastant per evitar un gust massa intens.",
+        "sv": "Inkorporera parmesanen gradvis, smaka för att undvika en överväldigande smak."
       },
       "onlyForVariation": "classic"
     },
@@ -185,7 +224,8 @@
       "text": {
         "en": "Gradually incorporate the Parmesan and the creamed blue cheese, tasting to avoid an overpowering flavor.",
         "es": "Incorpora poco a poco el parmesano y el queso azul cremoso, probando para evitar un sabor demasiado intenso.",
-        "cat": "Incorpora a poc a poc el parmesà i el formatge blau cremós, tastant per evitar un gust massa intens."
+        "cat": "Incorpora a poc a poc el parmesà i el formatge blau cremós, tastant per evitar un gust massa intens.",
+        "sv": "Inkorporera gradvis parmesanen och den krämiga blåmögelosten, smaka för att undvika en överväldigande smak."
       },
       "onlyForVariation": "blue"
     },
@@ -193,63 +233,72 @@
       "text": {
         "en": "Add the eggs and heavy cream; mix until smooth.",
         "es": "Añade los huevos y la nata líquida; mezcla hasta obtener una crema homogénea.",
-        "cat": "Afegeix els ous i la nata líquida; barreja fins a obtenir una crema homogènia."
+        "cat": "Afegeix els ous i la nata líquida; barreja fins a obtenir una crema homogènia.",
+        "sv": "Tillsätt äggen och vispgrädden; blanda tills slätt."
       }
     },
     {
       "text": {
         "en": "Add the flour and mix just to combine.",
         "es": "Añade la harina y mezcla solo hasta integrar.",
-        "cat": "Afegeix la farina i barreja només fins a integrar."
+        "cat": "Afegeix la farina i barreja només fins a integrar.",
+        "sv": "Tillsätt mjölet och blanda bara för att kombinera."
       }
     },
     {
       "text": {
         "en": "Pour the filling into the pan using a spoon close to the crust to avoid damaging the base.",
         "es": "Vierte el relleno en el molde ayudándote de una cuchara cerca de la galleta para no dañar la base.",
-        "cat": "Aboca el farcit al motlle ajudant-te d'una cullera a tocar de la crosta per no danyar la base."
+        "cat": "Aboca el farcit al motlle ajudant-te d'una cullera a tocar de la crosta per no danyar la base.",
+        "sv": "Häll fyllningen i formen med en sked nära kanten för att undvika att skada botten."
       }
     },
     {
       "text": {
         "en": "Bake for about 20 minutes.",
         "es": "Hornea durante unos 20 minutos.",
-        "cat": "Enforna uns 20 minuts."
+        "cat": "Enforna uns 20 minuts.",
+        "sv": "Grädda i cirka 20 minuter."
       }
     },
     {
       "text": {
         "en": "Switch on the top heat/grill to brown the surface.",
         "es": "Activa el grill o la resistencia superior para dorar la superficie.",
-        "cat": "Activa el grill o la resistència superior per enrossir la superfície."
+        "cat": "Activa el grill o la resistència superior per enrossir la superfície.",
+        "sv": "Sätt på övre värme/grillen för att bruna ytan."
       }
     },
     {
       "text": {
         "en": "Brown for 5 minutes or until golden.",
         "es": "Dora durante 5 minutos o hasta que esté dorada.",
-        "cat": "Enrosseix durant 5 minuts o fins que sigui ben daurada."
+        "cat": "Enrosseix durant 5 minuts o fins que sigui ben daurada.",
+        "sv": "Bruna i 5 minuter eller tills guldgul."
       }
     },
     {
       "text": {
         "en": "Remove from the oven and cool to room temperature.",
         "es": "Retira del horno y deja templar a temperatura ambiente.",
-        "cat": "Retira del forn i deixa temperar a temperatura ambient."
+        "cat": "Retira del forn i deixa temperar a temperatura ambient.",
+        "sv": "Ta bort från ugnen och svalna till rumstemperatur."
       }
     },
     {
       "text": {
         "en": "Refrigerate for at least 3 hours.",
         "es": "Refrigera al menos 3 horas.",
-        "cat": "Refreda a la nevera almenys 3 hores."
+        "cat": "Refreda a la nevera almenys 3 hores.",
+        "sv": "Kyl i minst 3 timmar."
       }
     },
     {
       "text": {
         "en": "Serve plain or with jam.",
         "es": "Sirve sola o con mermelada.",
-        "cat": "Serveix sola o amb melmelada."
+        "cat": "Serveix sola o amb melmelada.",
+        "sv": "Servera ren eller med sylt."
       }
     }
   ]

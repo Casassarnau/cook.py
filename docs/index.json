@@ -3,7 +3,8 @@
     "title": {
       "en": "Bolognese Macaroni",
       "es": "Macarrones a la boloñesa",
-      "cat": "Macarrons a la bolonyesa"
+      "cat": "Macarrons a la bolonyesa",
+      "sv": "Bolognese Makaroner"
     },
     "categories": [
       "mains"
@@ -31,7 +32,8 @@
     "title": {
       "en": "Carrot Cake",
       "es": "Tarta de Zanahoria",
-      "cat": "Pastís de Pastanaga"
+      "cat": "Pastís de Pastanaga",
+      "sv": "Morotstårta"
     },
     "categories": [
       "desserts"
@@ -63,7 +65,8 @@
     "title": {
       "en": "Cheesecake",
       "es": "Tarta de queso",
-      "cat": "Pastís de formatge"
+      "cat": "Pastís de formatge",
+      "sv": "Ostkaka"
     },
     "categories": [
       "desserts"
@@ -90,7 +93,8 @@
     "title": {
       "en": "Fudgy Chocolate Brownie",
       "es": "Brownie de Chocolate",
-      "cat": "Brownie de Xocolata"
+      "cat": "Brownie de Xocolata",
+      "sv": "Kladdig Chokladbrownie"
     },
     "categories": [
       "desserts"
@@ -118,7 +122,8 @@
     "title": {
       "en": "Homemade Pizza",
       "es": "Pizza Casera",
-      "cat": "Pizza Casolana"
+      "cat": "Pizza Casolana",
+      "sv": "Hemgjord Pizza"
     },
     "categories": [
       "mains"

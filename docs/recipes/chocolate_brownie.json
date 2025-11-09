@@ -2,7 +2,8 @@
   "title": {
     "en": "Fudgy Chocolate Brownie",
     "es": "Brownie de Chocolate",
-    "cat": "Brownie de Xocolata"
+    "cat": "Brownie de Xocolata",
+    "sv": "Kladdig Chokladbrownie"
   },
   "author": "Arnau",
   "development": true,
@@ -13,7 +14,8 @@
   "description": {
     "en": "A rich, fudgy chocolate brownie with a dense, melt-in-your-mouth texture. Made with whole wheat pastry flour, Greek yogurt, and optional espresso powder for enhanced chocolate flavor.",
     "es": "Un brownie de chocolate rico y denso con una textura que se derrite en la boca. Preparado con harina integral, yogur griego y café espresso opcional para realzar el sabor del chocolate.",
-    "cat": "Un brownie de xocolata ric i dens amb una textura que es fongui a la boca. Preparat amb farina integral, iogurt grec i cafè espresso opcional per realçar el sabor del xocolate."
+    "cat": "Un brownie de xocolata ric i dens amb una textura que es fongui a la boca. Preparat amb farina integral, iogurt grec i cafè espresso opcional per realçar el sabor del xocolate.",
+    "sv": "En rik, kladdig chokladbrownie med en tät, smält-i-munnen-textur. Tillagad med fullkornsmjöl, grekisk yoghurt och valfritt espressopulver för förbättrad chokladsmak."
   },
   "portion": {
     "type": "area",
@@ -29,7 +31,8 @@
       "group": {
         "en": "Wet Ingredients",
         "es": "Ingredientes Húmedos",
-        "cat": "Ingredients Humits"
+        "cat": "Ingredients Humits",
+        "sv": "Våta Ingredienser"
       },
       "items": [
         {
@@ -39,7 +42,8 @@
           "text": {
             "en": "melted",
             "es": "derretido",
-            "cat": "fos"
+            "cat": "fos",
+            "sv": "smält"
           }
         },
         {
@@ -54,7 +58,8 @@
           "text": {
             "en": "or brown sugar",
             "es": "o azúcar moreno",
-            "cat": "o sucre moreno"
+            "cat": "o sucre moreno",
+            "sv": "eller brunt socker"
           }
         },
         {
@@ -63,7 +68,8 @@
           "text": {
             "en": "large",
             "es": "grandes",
-            "cat": "grans"
+            "cat": "grans",
+            "sv": "stora"
           }
         },
         {
@@ -78,7 +84,8 @@
           "text": {
             "en": "approximately 5 ml",
             "es": "aproximadamente 5 ml",
-            "cat": "aproximadament 5 ml"
+            "cat": "aproximadament 5 ml",
+            "sv": "ungefär 5 ml"
           }
         }
       ]
@@ -87,7 +94,8 @@
       "group": {
         "en": "Dry Ingredients",
         "es": "Ingredientes Secos",
-        "cat": "Ingredients Secs"
+        "cat": "Ingredients Secs",
+        "sv": "Torra Ingredienser"
       },
       "items": [
         {
@@ -107,7 +115,8 @@
           "text": {
             "en": "approximately 1.5 g",
             "es": "aproximadamente 1.5 g",
-            "cat": "aproximadament 1.5 g"
+            "cat": "aproximadament 1.5 g",
+            "sv": "ungefär 1.5 g"
           }
         },
         {
@@ -117,7 +126,8 @@
           "text": {
             "en": "optional, enhances chocolate flavor",
             "es": "opcional, realza el sabor del chocolate",
-            "cat": "opcional, realça el sabor del xocolate"
+            "cat": "opcional, realça el sabor del xocolate",
+            "sv": "valfritt, förbättrar chokladsmaken"
           }
         }
       ]
@@ -126,7 +136,8 @@
       "group": {
         "en": "Optional Add-ins",
         "es": "Adicionales Opcionales",
-        "cat": "Addicionals Opcionals"
+        "cat": "Addicionals Opcionals",
+        "sv": "Valfria Tillsatser"
       },
       "items": [
         {
@@ -136,7 +147,8 @@
           "text": {
             "en": "or chunks",
             "es": "o en trozos",
-            "cat": "o en trossos"
+            "cat": "o en trossos",
+            "sv": "eller bitar"
           }
         },
         {
@@ -146,7 +158,8 @@
           "text": {
             "en": "chopped, or pecans",
             "es": "troceadas, o nueces pecanas",
-            "cat": "trossejades, o nous pecanes"
+            "cat": "trossejades, o nous pecanes",
+            "sv": "hackade, eller pekannötter"
           }
         }
       ]
@@ -157,70 +170,80 @@
       "text": {
         "en": "Preheat oven to 175°C (350°F). Line a 20×20 cm baking pan with parchment paper.",
         "es": "Precalienta el horno a 175°C (350°F). Forra un molde de 20×20 cm con papel de hornear.",
-        "cat": "Preescalfa el forn a 175°C (350°F). Forra un motlle de 20×20 cm amb paper d'forn."
+        "cat": "Preescalfa el forn a 175°C (350°F). Forra un motlle de 20×20 cm amb paper d'forn.",
+        "sv": "Värm ugnen till 175°C (350°F). Lägg bakplåtspapper i en 20×20 cm bakform."
       }
     },
     {
       "text": {
         "en": "Melt coconut oil and olive oil together. Allow to cool slightly until warm to the touch, not hot.",
         "es": "Derrite el aceite de coco y el aceite de oliva juntos. Deja enfriar un poco hasta que esté tibio al tacto, no caliente.",
-        "cat": "Fon l'oli de coco i l'oli d'oliva junts. Deixa refredar una mica fins que estigui tibiant al tacte, no calent."
+        "cat": "Fon l'oli de coco i l'oli d'oliva junts. Deixa refredar una mica fins que estigui tibiant al tacte, no calent.",
+        "sv": "Smält kokosfett och olivolja tillsammans. Låt svalna lite tills det är ljummet vid beröring, inte hett."
       }
     },
     {
       "text": {
         "en": "In a large bowl, whisk together the melted oils, panela powder, eggs, vanilla extract, and Greek yogurt until glossy and smooth, about 1–2 minutes.",
         "es": "En un bol grande, bate los aceites derretidos, la panela, los huevos, el extracto de vainilla y el yogur griego hasta obtener una mezcla brillante y lisa, aproximadamente 1–2 minutos.",
-        "cat": "En un bol gran, batega els olis fosos, la panela, els ous, l'extracte de vainilla i l'iogurt grec fins obtenir una barreja brillant i llisa, aproximadament 1–2 minuts."
+        "cat": "En un bol gran, batega els olis fosos, la panela, els ous, l'extracte de vainilla i l'iogurt grec fins obtenir una barreja brillant i llisa, aproximadament 1–2 minuts.",
+        "sv": "I en stor skål, vispa ihop de smälta fettena, panelapulvret, äggen, vaniljextraktet och den grekiska yoghurten tills det är glansigt och slätt, cirka 1–2 minuter."
       }
     },
     {
       "text": {
         "en": "In a separate bowl, combine the flour, cocoa powder, salt, and espresso powder (if using). Whisk until well blended.",
         "es": "En un bol aparte, combina la harina, el cacao en polvo, la sal y el café espresso (si se usa). Bate hasta que esté bien mezclado.",
-        "cat": "En un bol a part, combina la farina, el cacau en pols, la sal i el cafè espresso (si s'usa). Batega fins que estigui ben barrejat."
+        "cat": "En un bol a part, combina la farina, el cacau en pols, la sal i el cafè espresso (si s'usa). Batega fins que estigui ben barrejat.",
+        "sv": "I en separat skål, blanda mjölet, kakaopulvret, saltet och espressopulvret (om du använder det). Vispa tills det är väl blandat."
       }
     },
     {
       "text": {
         "en": "Gently fold the dry ingredients into the wet mixture until just combined. Do not overmix.",
         "es": "Incorpora suavemente los ingredientes secos a la mezcla húmeda hasta que se combinen. No mezcles en exceso.",
-        "cat": "Incorporau suaument els ingredients secs a la barreja humida fins que es combinen. No barregis en excés."
+        "cat": "Incorporau suaument els ingredients secs a la barreja humida fins que es combinen. No barregis en excés.",
+        "sv": "Vik försiktigt ner de torra ingredienserna i den våta blandningen tills de bara är kombinerade. Blanda inte för mycket."
       }
     },
     {
       "text": {
         "en": "If desired, gently fold in chocolate chips or chopped nuts.",
         "es": "Si lo deseas, incorpora suavemente los chips de chocolate o las nueces troceadas.",
-        "cat": "Si ho desitges, incorpora suaument els xips de xocolata o les nous trossejades."
+        "cat": "Si ho desitges, incorpora suaument els xips de xocolata o les nous trossejades.",
+        "sv": "Om du vill, vik försiktigt ner chokladchips eller hackade nötter."
       }
     },
     {
       "text": {
         "en": "Pour the batter into the prepared pan and spread evenly with a spatula.",
         "es": "Vierte la masa en el molde preparado y extiéndela uniformemente con una espátula.",
-        "cat": "Aboca la massa al motlle preparat i estén-la uniformement amb una espàtula."
+        "cat": "Aboca la massa al motlle preparat i estén-la uniformement amb una espàtula.",
+        "sv": "Häll smeten i den förberedda formen och breda ut jämnt med en spatel."
       }
     },
     {
       "text": {
         "en": "Bake for 20–25 minutes. The center should appear slightly underdone—a toothpick inserted should come out with moist crumbs, not clean.",
         "es": "Hornea durante 20–25 minutos. El centro debe verse ligeramente crudo—un palillo insertado debe salir con migas húmedas, no limpio.",
-        "cat": "Forn durante 20–25 minuts. El centre ha de semblar lleugerament cru—un pal insertat ha de sortir amb engrunes humides, no net."
+        "cat": "Forn durante 20–25 minuts. El centre ha de semblar lleugerament cru—un pal insertat ha de sortir amb engrunes humides, no net.",
+        "sv": "Grädda i 20–25 minuter. Mitten ska se lite undergräddad ut—en tandpetare som stickas in ska komma ut med fuktiga smulor, inte ren."
       }
     },
     {
       "text": {
         "en": "Cool completely in the pan for at least 1 hour before slicing.",
         "es": "Deja enfriar completamente en el molde durante al menos 1 hora antes de cortar.",
-        "cat": "Deixa refredar completament al motlle durant almenys 1 hora abans de tallar."
+        "cat": "Deixa refredar completament al motlle durant almenys 1 hora abans de tallar.",
+        "sv": "Låt svalna helt i formen i minst 1 timme innan du skär."
       }
     },
     {
       "text": {
         "en": "For the best fudgy, block-like texture, refrigerate for 1–2 hours, then slice and serve at room temperature.",
         "es": "Para obtener la mejor textura densa y tipo bloque, refrigera durante 1–2 horas, luego corta y sirve a temperatura ambiente.",
-        "cat": "Per obtenir la millor textura densa i tipus bloc, refreda durant 1–2 hores, després talla i serveix a temperatura ambient."
+        "cat": "Per obtenir la millor textura densa i tipus bloc, refreda durant 1–2 hores, després talla i serveix a temperatura ambient.",
+        "sv": "För bästa kladdiga, blockliknande textur, kyl i 1–2 timmar, skär sedan och servera vid rumstemperatur."
       }
     }
   ]

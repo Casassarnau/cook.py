@@ -2,15 +2,19 @@
   "title": {
     "en": "Homemade Pizza",
     "es": "Pizza Casera",
-    "cat": "Pizza Casolana"
+    "cat": "Pizza Casolana",
+    "sv": "Hemgjord Pizza"
   },
   "author": "Arnau",
-  "categories": ["mains"],
+  "categories": [
+    "mains"
+  ],
   "image": "/images/pizza/main.webp",
   "description": {
     "en": "A traditional homemade pizza with a dough that requires preparation in advance. This recipe yields one large pizza with a crispy crust and authentic Italian flavors.",
     "es": "Una pizza casera tradicional con una masa que requiere preparación anticipada. Esta receta rinde una pizza grande con base crujiente y sabores auténticos italianos.",
-    "cat": "Una pizza casolana tradicional amb una massa que requereix preparació anticipada. Aquesta recepta rendeix una pizza gran amb base cruixent i sabors autèntics italians."
+    "cat": "Una pizza casolana tradicional amb una massa que requereix preparació anticipada. Aquesta recepta rendeix una pizza gran amb base cruixent i sabors autèntics italians.",
+    "sv": "En traditionell hemgjord pizza med en deg som kräver förberedelse i förväg. Detta recept ger en stor pizza med en krispig botten och autentiska italienska smaker."
   },
   "portion": {
     "type": "units",
@@ -22,7 +26,8 @@
       "group": {
         "en": "Pizza Dough",
         "es": "Masa de Pizza",
-        "cat": "Massa de Pizza"
+        "cat": "Massa de Pizza",
+        "sv": "Pizzadeg"
       },
       "items": [
         {
@@ -61,20 +66,31 @@
       "group": {
         "en": "Toppings",
         "es": "Ingredientes",
-        "cat": "Ingredients"
+        "cat": "Ingredients",
+        "sv": "Toppingar"
       },
       "items": [
         {
           "ingredient": "crushed_tomato",
           "value": 0,
           "unit": "as_needed",
-          "text": { "en": "for the base", "es": "para la base", "cat": "per a la base" }
+          "text": {
+            "en": "for the base",
+            "es": "para la base",
+            "cat": "per a la base",
+            "sv": "för botten"
+          }
         },
         {
           "ingredient": "oregano",
           "value": 0,
           "unit": "to_taste",
-          "text": { "en": "to sprinkle", "es": "para espolvorear", "cat": "per espolvorejar" }
+          "text": {
+            "en": "to sprinkle",
+            "es": "para espolvorear",
+            "cat": "per espolvorejar",
+            "sv": "att strö"
+          }
         },
         {
           "ingredient": "fresh_mozzarella",
@@ -89,7 +105,12 @@
           "ingredient": "parmesan_cheese",
           "value": 0,
           "unit": "as_needed",
-          "text": { "en": "to grate on top", "es": "para rallar por encima", "cat": "per ratllar per sobre" }
+          "text": {
+            "en": "to grate on top",
+            "es": "para rallar por encima",
+            "cat": "per ratllar per sobre",
+            "sv": "att riva ovanpå"
+          }
         }
       ]
     }
@@ -99,91 +120,104 @@
       "text": {
         "en": "At least 10 hours in advance, prepare the dough. Mix water, sugar, and dry yeast until no lumps remain.",
         "es": "Con al menos 10 horas de antelación, preparar la masa. Mezclar el agua, azúcar y levadura seca hasta que no haya grumos.",
-        "cat": "Amb almenys 10 hores d'antelació, preparar la massa. Barrejar l'aigua, sucre i llevat sec fins que no hi hagi grumolls."
+        "cat": "Amb almenys 10 hores d'antelació, preparar la massa. Barrejar l'aigua, sucre i llevat sec fins que no hi hagi grumolls.",
+        "sv": "Minst 10 timmar i förväg, förbered degen. Blanda vatten, socker och torrjäst tills inga klumpar återstår."
       }
     },
     {
       "text": {
         "en": "Pour the liquid mixture into the flour and salt, which should be pre-mixed. This is important because salt can break down the yeast if added directly.",
         "es": "Verter el contenido líquido sobre la harina y la sal, que deben estar premezcladas. Es importante porque si no, la sal rompe la levadura y no quedará bien.",
-        "cat": "Abocar el contingut líquid sobre la farina i la sal, que han d'estar premesclades. És important perquè si no, la sal trenca el llevat i no quedarà bé."
+        "cat": "Abocar el contingut líquid sobre la farina i la sal, que han d'estar premesclades. És important perquè si no, la sal trenca el llevat i no quedarà bé.",
+        "sv": "Häll den flytande blandningen i mjölet och saltet, som bör vara förblandade. Detta är viktigt eftersom salt kan bryta ner jästen om det tillsätts direkt."
       }
     },
     {
       "text": {
         "en": "When well combined and you have a ball of dough, add the oil and knead with your hands.",
         "es": "Cuando esté bien agrupado y ya tengas una bola de masa, añadir el aceite y amasar con las manos.",
-        "cat": "Quan estigui ben agrupat i ja tinguis una bola de massa, afegir l'oli i amassar amb les mans."
+        "cat": "Quan estigui ben agrupat i ja tinguis una bola de massa, afegir l'oli i amassar amb les mans.",
+        "sv": "När det är väl kombinerat och du har en degboll, tillsätt oljan och knåda med händerna."
       }
     },
     {
       "text": {
         "en": "Once the oil is incorporated, stretch the dough into an elongated shape with your hands. Then fold it in half and repeat the process several times. This process helps make it easier to flatten later.",
         "es": "Cuando el aceite esté incorporado, estira la masa en forma alargada con las manos. Luego pliégala en dos y repite el proceso varias veces. Este proceso ayuda a que luego sea más fácil de aplanar.",
-        "cat": "Quan l'oli estigui incorporat, estira la massa en forma allargada amb les mans. Després plegar-la en dos i repetir el procés diverses vegades. Aquest procés ajuda que després sigui més fàcil d'aplanar."
+        "cat": "Quan l'oli estigui incorporat, estira la massa en forma allargada amb les mans. Després plegar-la en dos i repetir el procés diverses vegades. Aquest procés ajuda que després sigui més fàcil d'aplanar.",
+        "sv": "När oljan är inblandad, sträck ut degen till en långsträckt form med händerna. Vik den sedan på mitten och upprepa processen flera gånger. Denna process hjälper till att göra det lättare att platta ut senare."
       }
     },
     {
       "text": {
         "en": "Finally, shape into a ball and place in a bowl covered with a clean cloth.",
         "es": "Finalmente haz forma de bola y métela en un bol tapado con un pañuelo de ropa.",
-        "cat": "Finalment fes forma de bola i posa-la en un bol tapat amb un mocador de roba."
+        "cat": "Finalment fes forma de bola i posa-la en un bol tapat amb un mocador de roba.",
+        "sv": "Slutligen, forma till en boll och lägg i en skål täckt med en ren trasa."
       }
     },
     {
       "text": {
         "en": "Meanwhile, take the mozzarella and break it into small, elongated pieces with your hands. Place it in the refrigerator with a strainer and bowl underneath. This dries it out and prevents the pizza from becoming soggy.",
         "es": "Mientras tanto, coge la mozzarella y desmenúzala con las manos en trozos pequeños y alargados. Déjala en la nevera con un colador y un bol debajo. Así se seca y no queda la pizza empapada de agua.",
-        "cat": "Mentrestant, agafa la mozzarella i desmenúza-la amb les mans en trossos petits i allargats. Deixa-la a la nevera amb un colador i un bol a sota. Així s'eixuga i no queda la pizza xopada d'aigua."
+        "cat": "Mentrestant, agafa la mozzarella i desmenúza-la amb les mans en trossos petits i allargats. Deixa-la a la nevera amb un colador i un bol a sota. Així s'eixuga i no queda la pizza xopada d'aigua.",
+        "sv": "Under tiden, ta mozzarellan och bryt den i små, långsträckta bitar med händerna. Lägg den i kylskåpet med en sil och en skål under. Detta torkar ut den och förhindrar att pizzan blir blöt."
       }
     },
     {
       "text": {
         "en": "After 4-5 hours, the dough will have grown in size. Flatten it with your hands. At this point, if making more than one pizza, divide into different balls. If you don't want to make it right away, you can store them in the refrigerator in different containers for up to 3 days.",
         "es": "A las 4-5 horas habrá crecido de tamaño y con las manos la aplastas. En este punto si es para más de una pizza las divides en diferentes bolas y si no quieres hacerla en ese momento las puedes dejar en la nevera cerradas en diferentes tuppers por 3 días.",
-        "cat": "A les 4-5 hores haurà crescut de mida i amb les mans l'aplanes. En aquest punt si és per a més d'una pizza les divideixes en diferents boles i si no vols fer-la en aquell moment les pots deixar a la nevera tancades en diferents tuppers per 3 dies."
+        "cat": "A les 4-5 hores haurà crescut de mida i amb les mans l'aplanes. En aquest punt si és per a més d'una pizza les divideixes en diferents boles i si no vols fer-la en aquell moment les pots deixar a la nevera tancades en diferents tuppers per 3 dies.",
+        "sv": "Efter 4-5 timmar kommer degen att ha vuxit i storlek. Platta ut den med händerna. Vid denna tidpunkt, om du gör mer än en pizza, dela i olika bollar. Om du inte vill göra den direkt, kan du förvara dem i kylskåpet i olika behållare i upp till 3 dagar."
       }
     },
     {
       "text": {
         "en": "When ready to use, remove the dough from the refrigerator and place it on parchment paper with flour. Wait 20 minutes for the dough to reach room temperature. Dust with flour and flatten with your hands or a rolling pin. Try to use the rolling pin in vertical and horizontal movements, but not diagonally.",
         "es": "Cuando se quiere usar, quita la masa de la nevera y la metes encima de un papel de horno con harina. Espera 20 minutos a que la masa tenga una temperatura ambiente. La espolvoreas con harina y la aplanas con la ayuda de las manos o un rodillo. Intenta usar el rodillo en movimientos verticales y horizontales pero no en diagonal.",
-        "cat": "Quan es vol usar, treu la massa de la nevera i la poses a sobre d'un paper de forn amb farina. Espera 20 minuts a que la massa tingui una temperatura ambient. L'espolvoreges amb farina i l'aplanes amb l'ajuda de les mans o un rodillo. Intenta usar el rodillo en moviments verticals i horitzontals però no en diagonal."
+        "cat": "Quan es vol usar, treu la massa de la nevera i la poses a sobre d'un paper de forn amb farina. Espera 20 minuts a que la massa tingui una temperatura ambient. L'espolvoreges amb farina i l'aplanes amb l'ajuda de les mans o un rodillo. Intenta usar el rodillo en moviments verticals i horitzontals però no en diagonal.",
+        "sv": "När du är redo att använda, ta bort degen från kylskåpet och lägg den på bakplåtspapper med mjöl. Vänta 20 minuter för att degen ska nå rumstemperatur. Pudra med mjöl och platta ut med händerna eller en kavel. Försök använda kaveln i vertikala och horisontella rörelser, men inte diagonalt."
       }
     },
     {
       "text": {
         "en": "Once flattened, add a thin layer of crushed tomato and oregano. Add the desired toppings, mozzarella, and Gouda.",
         "es": "Una vez plana, añade una capa fina de tomate triturado y orégano. Los toppings deseados, la mozzarella y el Gouda.",
-        "cat": "Un cop plana, afegeix una capa fina de tomàquet triturat i orenga. Els toppings desitjats, la mozzarella i el Gouda."
+        "cat": "Un cop plana, afegeix una capa fina de tomàquet triturat i orenga. Els toppings desitjats, la mozzarella i el Gouda.",
+        "sv": "När den är platt, tillsätt ett tunt lager krossad tomat och oregano. Tillsätt önskade toppingar, mozzarella och Gouda."
       }
     },
     {
       "text": {
         "en": "Place in a preheated oven at maximum power possible for both top and bottom (without fan) at 250°C.",
         "es": "La metemos en el horno precalentado a la máxima potencia posible por arriba y abajo (sin ventilador) 250 grados.",
-        "cat": "La posem al forn preescalfat a la màxima potència possible per dalt i per baix (sense ventilador) 250 graus."
+        "cat": "La posem al forn preescalfat a la màxima potència possible per dalt i per baix (sense ventilador) 250 graus.",
+        "sv": "Lägg i en förvärmd ugn på maximal effekt möjlig för både topp och botten (utan fläkt) vid 250°C."
       }
     },
     {
       "text": {
         "en": "Cooking time will depend on your oven and whether you're making one or two pizzas at once. If only one, place it in the middle of the oven for about 12 minutes. If two, place one higher and one lower for 8 minutes, then switch them.",
         "es": "El tiempo dependerá del horno que uséis y si hacéis una o dos pizzas a la vez. Si solo hay una déjala en la mitad del horno por unos 12 minutos. Si son dos mételas una arriba y otra más abajo por 8 min y luego cámbialas.",
-        "cat": "El temps dependrà del forn que useu i si feu una o dues pizzas a la vegada. Si només n'hi ha una deixa-la a la meitat del forn per uns 12 minuts. Si són dues posa-les una a dalt i una més avall per 8 min i després canvieu-les."
+        "cat": "El temps dependrà del forn que useu i si feu una o dues pizzas a la vegada. Si només n'hi ha una deixa-la a la meitat del forn per uns 12 minuts. Si són dues posa-les una a dalt i una més avall per 8 min i després canvieu-les.",
+        "sv": "Tillagningstiden beror på din ugn och om du gör en eller två pizzor samtidigt. Om bara en, placera den i mitten av ugnen i cirka 12 minuter. Om två, placera en högre och en lägre i 8 minuter, byt sedan plats."
       }
     },
     {
       "text": {
         "en": "When ready, remove from the oven and grate some Parmesan on top.",
         "es": "Cuando estén listas, sácalas y ralla un poco de parmesano por encima.",
-        "cat": "Quan estiguin fetes, treu-les i ratlla una mica de parmesà per sobre."
+        "cat": "Quan estiguin fetes, treu-les i ratlla una mica de parmesà per sobre.",
+        "sv": "När den är klar, ta bort från ugnen och riva lite parmesan ovanpå."
       }
     },
     {
       "text": {
         "en": "Cut and serve immediately.",
         "es": "Córtalas y sirve.",
-        "cat": "Talla-les i serveix."
+        "cat": "Talla-les i serveix.",
+        "sv": "Skär och servera omedelbart."
       }
     }
   ]
