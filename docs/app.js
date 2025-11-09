@@ -14,6 +14,8 @@ function recipeApp() {
     basePath: '',
     currentServings: 4,
     currentDimensions: { width: 20, height: 20, diameter: 15 },
+    originalDimensions: null, // Store original recipe dimensions (never change)
+    originalShape: null, // Store original recipe shape (never change)
     currentDiameter: 15,
     currentUnits: 1,
     showDimensionConfig: false,
@@ -119,6 +121,10 @@ function recipeApp() {
           if (prefs.dimensions) {
             Object.assign(this.currentDimensions, prefs.dimensions);
           }
+          // Restore shape preference if available
+          if (prefs.shape && this.selectedRecipe?.portion?.type === 'area') {
+            this.selectedRecipe.portion.shape = prefs.shape;
+          }
         } catch (e) {
           console.error('Failed to parse recipe preferences:', e);
         }
@@ -136,6 +142,11 @@ function recipeApp() {
         dimensions: { ...this.currentDimensions }
       };
       
+      // Save shape preference if this is an area-based recipe
+      if (this.selectedRecipe?.portion?.type === 'area') {
+        prefs.shape = this.selectedRecipe.portion.shape;
+      }
+      
       localStorage.setItem(key, JSON.stringify(prefs));
     },
 
@@ -146,12 +157,13 @@ function recipeApp() {
       localStorage.setItem('preferredUnits', this.currentUnits.toString());
       localStorage.setItem('preferredDimensions', JSON.stringify(this.currentDimensions));
       
-      // Only save per-recipe preferences for units-based recipes
+      // Save per-recipe preferences for units-based and area-based recipes
       if (this.selectedRecipe) {
         const portion = this.selectedRecipe.portion;
         const isUnitsRecipe = portion?.type === 'units' || this.selectedRecipe.units;
+        const isAreaRecipe = portion?.type === 'area';
         
-        if (isUnitsRecipe) {
+        if (isUnitsRecipe || isAreaRecipe) {
           const recipeName = this.getRecipeName();
           if (recipeName) {
             this.saveRecipePreferences(recipeName);
@@ -319,6 +331,15 @@ function recipeApp() {
           this.selectedRecipe = recipe || null;
           
           if (this.selectedRecipe) {
+            // Store original dimensions for multiplier calculation (never change these)
+            if (this.selectedRecipe.portion) {
+              const portion = this.selectedRecipe.portion;
+              if (portion.type === 'area') {
+                this.originalShape = portion.shape;
+                this.originalDimensions = { ...portion.dimensions };
+              }
+            }
+            
             // Use saved preferences or fall back to recipe defaults
             if (this.selectedRecipe.portion) {
               const portion = this.selectedRecipe.portion;
@@ -329,11 +350,21 @@ function recipeApp() {
                 this.loadRecipePreferences(recipeName);
                 this.currentUnits = this.currentUnits || portion.value || 1;
               } else if (portion.type === 'area') {
+                // Load saved preferences if available (this may restore shape preference)
+                this.loadRecipePreferences(recipeName);
+                // Set current dimensions only if not already set by preferences
+                // Use the current shape (which may have been restored from preferences)
                 if (portion.shape === 'circular') {
-                  this.currentDimensions.diameter = this.currentDimensions.diameter || portion.dimensions.diameter || 15;
+                  if (!this.currentDimensions.diameter) {
+                    this.currentDimensions.diameter = portion.dimensions.diameter || 15;
+                  }
                 } else if (portion.shape === 'rectangular' || portion.shape === 'square') {
-                  this.currentDimensions.width = this.currentDimensions.width || portion.dimensions.width || 20;
-                  this.currentDimensions.height = this.currentDimensions.height || portion.dimensions.height || 20;
+                  if (!this.currentDimensions.width) {
+                    this.currentDimensions.width = portion.dimensions.width || 20;
+                  }
+                  if (!this.currentDimensions.height) {
+                    this.currentDimensions.height = portion.dimensions.height || 20;
+                  }
                 }
               } else if (portion.type === 'diameter') {
                 this.currentDiameter = this.currentDiameter || portion.value || 15;
@@ -399,14 +430,26 @@ function recipeApp() {
         } else if (portion.type === 'units') {
           return this.currentUnits / portion.value;
         } else if (portion.type === 'area') {
-          if (portion.shape === 'circular') {
-            const originalDiameter = portion.dimensions.diameter;
-            return Math.pow(this.currentDimensions.diameter / originalDiameter, 2);
-          } else if (portion.shape === 'rectangular' || portion.shape === 'square') {
-            const originalArea = portion.dimensions.width * portion.dimensions.height;
-            const currentArea = this.currentDimensions.width * this.currentDimensions.height;
-            return currentArea / originalArea;
+          // Use original dimensions for baseline calculation
+          if (!this.originalDimensions) return 1;
+          
+          // Calculate original area based on original shape
+          let originalArea;
+          if (this.originalShape === 'circular') {
+            originalArea = Math.PI * Math.pow(this.originalDimensions.diameter / 2, 2);
+          } else {
+            originalArea = this.originalDimensions.width * this.originalDimensions.height;
           }
+          
+          // Calculate current area based on current shape (from portion.shape which may have changed)
+          let currentArea;
+          if (portion.shape === 'circular') {
+            currentArea = Math.PI * Math.pow(this.currentDimensions.diameter / 2, 2);
+          } else {
+            currentArea = this.currentDimensions.width * this.currentDimensions.height;
+          }
+          
+          return currentArea / originalArea;
         } else if (portion.type === 'diameter') {
           // Legacy diameter type
           const originalDiameter = portion.value;
@@ -547,13 +590,14 @@ function recipeApp() {
       
       // Initialize config values from current state
       if (portion.type === 'area') {
+        // Use current shape (may have been changed by user)
         this.dimensionConfigShape = portion.shape;
         
         if (portion.shape === 'circular') {
-          this.dimensionConfigDiameter = this.currentDimensions.diameter || portion.dimensions.diameter;
+          this.dimensionConfigDiameter = this.currentDimensions.diameter || (this.originalDimensions?.diameter || 15);
         } else {
-          this.dimensionConfigWidth = this.currentDimensions.width || portion.dimensions.width;
-          this.dimensionConfigHeight = this.currentDimensions.height || portion.dimensions.height;
+          this.dimensionConfigWidth = this.currentDimensions.width || (this.originalDimensions?.width || 20);
+          this.dimensionConfigHeight = this.currentDimensions.height || (this.originalDimensions?.height || 20);
         }
       }
       
@@ -563,14 +607,19 @@ function recipeApp() {
     setAreaShape(shape) {
       this.dimensionConfigShape = shape;
       
-      // Auto-adjust dimensions when switching shapes
+      // Auto-adjust dimensions when switching shapes based on current area
       if (shape === 'circular') {
         // Convert rectangular to circular area: estimate diameter from area
-        const area = this.dimensionConfigWidth * this.dimensionConfigHeight;
+        // Use current dimensions if available, otherwise use config dimensions
+        const width = this.currentDimensions.width || this.dimensionConfigWidth;
+        const height = this.currentDimensions.height || this.dimensionConfigHeight;
+        const area = width * height;
         this.dimensionConfigDiameter = Math.round(Math.sqrt(area / Math.PI) * 2);
       } else {
-        // Convert circular to square area: estimate sides from area
-        const area = Math.PI * Math.pow(this.dimensionConfigDiameter / 2, 2);
+        // Convert circular to rectangular area: estimate sides from area
+        // Use current diameter if available, otherwise use config diameter
+        const diameter = this.currentDimensions.diameter || this.dimensionConfigDiameter;
+        const area = Math.PI * Math.pow(diameter / 2, 2);
         const side = Math.round(Math.sqrt(area));
         this.dimensionConfigWidth = side;
         this.dimensionConfigHeight = side;
@@ -586,18 +635,19 @@ function recipeApp() {
       const portion = this.selectedRecipe.portion;
       
       if (portion.type === 'area') {
-        // Update the original portion's shape
+        // Update the portion's shape (for UI display)
         portion.shape = this.dimensionConfigShape;
         
+        // Update current dimensions (user's selection)
         if (this.dimensionConfigShape === 'circular') {
-          portion.dimensions.diameter = this.dimensionConfigDiameter;
           this.currentDimensions.diameter = this.dimensionConfigDiameter;
         } else {
-          portion.dimensions.width = this.dimensionConfigWidth;
-          portion.dimensions.height = this.dimensionConfigHeight;
           this.currentDimensions.width = this.dimensionConfigWidth;
           this.currentDimensions.height = this.dimensionConfigHeight;
         }
+        
+        // Note: We do NOT update portion.dimensions or originalDimensions
+        // The multiplier calculation uses originalDimensions as the baseline
       }
       
       this.saveServingsPreferences();
