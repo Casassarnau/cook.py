@@ -5,6 +5,7 @@
     "cat": "Truita de patates"
   },
   "author": "Arnau",
+  "development": false,
   "categories": ["mains"],
   "image": "/images/omelette.jpg",
   "description": {

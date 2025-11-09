@@ -11,6 +11,7 @@
     "path": "recipes/bolognese_macaroni.json",
     "image": "/images/bolognese_macaroni/main.webp",
     "author": "Arnau",
+    "development": false,
     "ingredient_keys": [
       "minced_pork",
       "salt",
@@ -38,6 +39,7 @@
     "path": "recipes/carrot_cake.json",
     "image": "/images/carrot_cake/main.webp",
     "author": "Arnau",
+    "development": false,
     "ingredient_keys": [
       "sugar",
       "orange_zest",
@@ -69,6 +71,7 @@
     "path": "recipes/cheesecake.json",
     "image": "/images/cheesecake/main.webp",
     "author": "Arnau",
+    "development": false,
     "ingredient_keys": [
       "digestive_cookies",
       "butter",
@@ -95,6 +98,7 @@
     "path": "recipes/chocolate_brownie.json",
     "image": "/images/chocolate_brownie/main.webp",
     "author": "Arnau",
+    "development": true,
     "ingredient_keys": [
       "coconut_oil",
       "olive_oil",
@@ -122,6 +126,7 @@
     "path": "recipes/pizza.json",
     "image": "/images/pizza/main.webp",
     "author": "Arnau",
+    "development": false,
     "ingredient_keys": [
       "strong_flour",
       "salt",

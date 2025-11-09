@@ -80,6 +80,7 @@ Here's the complete schema with all possible properties:
 
   // OPTIONAL FIELDS
   "author": "Author Name",
+  "development": true,
   "portion": {
     "type": "servings",
     "value": 4,
@@ -131,6 +132,7 @@ Here's the complete schema with all possible properties:
 #### Optional Fields
 
 - **`author`** (string): Recipe author name.
+- **`development`** (boolean): Set to `true` to mark a recipe as under development (being tested and modified). When set, a visual indicator will be displayed on the recipe.
 - **`portion`** (object): Recipe yield information with type and configuration.
   - **`type`**: One of `"servings"`, `"units"`, `"diameter"`, or `"area"`
   - **`value`**: The numeric value (for servings, units, diameter types)

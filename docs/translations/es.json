@@ -26,6 +26,7 @@
     "qr_instructions": "Escanea este código QR para compartir la receta",
     "copy_url": "Copiar URL",
     "copied": "¡Copiado!",
+    "under_development": "En Desarrollo",
     "ingredients": {
         "_": "Ingredientes",
         "eggs": "huevos",

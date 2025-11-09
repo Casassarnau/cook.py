@@ -29,6 +29,7 @@ for file in os.listdir(BASE_DIR):
         categories = data.get("categories", [])
         image = data.get("image", "")
         author = data.get("author", "")
+        development = data.get("development", False)
         
         # Extract ingredient keys for search functionality
         ingredient_keys = []
@@ -55,6 +56,7 @@ for file in os.listdir(BASE_DIR):
             "path": f"recipes/{file}",
             "image": image,
             "author": author,
+            "development": development,
             "ingredient_keys": ingredient_keys
         })
 

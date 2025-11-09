@@ -5,6 +5,7 @@
     "cat": "Brownie de Xocolata"
   },
   "author": "Arnau",
+  "development": true,
   "categories": [
     "desserts"
   ],

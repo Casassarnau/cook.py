@@ -26,6 +26,7 @@
     "qr_instructions": "Scan this QR code to share the recipe",
     "copy_url": "Copy URL",
     "copied": "Copied!",
+    "under_development": "Under Development",
     "ingredients": {
         "_": "Ingredients",
         "eggs": "eggs",
