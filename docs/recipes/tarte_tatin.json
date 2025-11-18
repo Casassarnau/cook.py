@@ -1,0 +1,185 @@
+{
+  "title": {
+    "en": "Tarte Tatin",
+    "es": "Tarta Tatin",
+    "cat": "Tarta Tatin"
+  },
+  "author": "Arnau",
+  "development": true,
+  "categories": [
+    "desserts"
+  ],
+  "image": "/images/tarte_tatin/main.webp",
+  "description": {
+    "en": "A classic French upside-down apple tart with caramelized apples and a buttery pastry crust. The apples are cooked in caramel before being topped with pastry and baked, then inverted to reveal the beautiful caramelized top.",
+    "es": "Una tarta de manzana francesa clásica al revés con manzanas caramelizadas y una base de masa quebrada mantecosa. Las manzanas se cocinan en caramelo antes de cubrirse con la masa y hornearse, luego se voltea para revelar la hermosa parte superior caramelizada.",
+    "cat": "Una coca de poma francesa clàssica al revés amb pomes caramelitzades i una base de massa quebrada mantegosa. Les pomes es couen en caramel abans de cobrir-se amb la massa i fornar-se, després es dona la volta per revelar la bonica part superior caramelitzada."
+  },
+  "portion": {
+    "type": "area",
+    "shape": "circular",
+    "dimensions": {
+      "diameter": 15,
+      "unit": "cm"
+    }
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Pastry",
+        "es": "Masa",
+        "cat": "Massa"
+      },
+      "items": [
+        {
+          "ingredient": "flour",
+          "value": 90,
+          "unit": "g"
+        },
+        {
+          "ingredient": "butter",
+          "value": 50,
+          "unit": "g",
+          "text": {
+            "en": "cold",
+            "es": "fría",
+            "cat": "freda"
+          }
+        },
+        {
+          "ingredient": "eggs",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Apple Filling",
+        "es": "Relleno de Manzanas",
+        "cat": "Farcit de Pomes"
+      },
+      "items": [
+        {
+          "ingredient": "apple",
+          "value": 3,
+          "text": {
+            "en": "or 4 depending on size",
+            "es": "o 4 dependiendo del tamaño",
+            "cat": "o 4 depenent de la mida"
+          }
+        },
+        {
+          "ingredient": "sugar",
+          "value": 75,
+          "unit": "g"
+        },
+        {
+          "ingredient": "butter",
+          "value": 30,
+          "unit": "g"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Mix the flour with the cold butter until it reaches a sandy consistency. Use your fingertips or a pastry cutter to work the butter into the flour.",
+        "es": "Mezcla la harina con la mantequilla fría hasta que alcance una consistencia arenosa. Usa las yemas de los dedos o un cortador de masa para trabajar la mantequilla en la harina.",
+        "cat": "Barreja la farina amb la mantega freda fins que arribi a una consistència sorrenca. Utilitza les puntes dels dits o un tallador de massa per treballar la mantega a la farina."
+      }
+    },
+    {
+      "text": {
+        "en": "Add the egg and mix until you have a homogeneous dough. Be careful not to overwork the dough.",
+        "es": "Añade el huevo y mezcla hasta obtener una masa homogénea. Ten cuidado de no trabajar demasiado la masa.",
+        "cat": "Afegeix l'ou i barreja fins obtenir una massa homogènia. Tingues cura de no treballar massa la massa."
+      }
+    },
+    {
+      "text": {
+        "en": "Place the dough in a bowl, cover with plastic wrap, and refrigerate for one hour.",
+        "es": "Coloca la masa en un bol, tápala con film transparente y refrigérala durante una hora.",
+        "cat": "Col·loca la massa en un bol, cobreix-la amb paper film i refreda-la durant una hora."
+      }
+    },
+    {
+      "text": {
+        "en": "While the dough chills, peel the apples and cut them into quarters, then cut each quarter in half lengthwise.",
+        "es": "Mientras la masa se enfría, pela las manzanas y córtalas en cuartos, luego corta cada cuarto por la mitad a lo largo.",
+        "cat": "Mentre la massa es refreda, pela les pomes i talla-les en quarts, després talla cada quart per la meitat a llarg."
+      }
+    },
+    {
+      "text": {
+        "en": "Place the sugar in a saucepan over low heat and let it melt slowly, stirring occasionally. Do not let it burn.",
+        "es": "Coloca el azúcar en una cazuela a fuego lento y déjalo fundir lentamente, removiendo ocasionalmente. No dejes que se queme.",
+        "cat": "Col·loca el sucre en una cassola a foc lent i deixa'l fondre lentament, remenant ocasionalment. No deixis que es cremi."
+      }
+    },
+    {
+      "text": {
+        "en": "Once the sugar has melted (but not burned), add the butter and stir until fully incorporated.",
+        "es": "Una vez que el azúcar se haya fundido (pero no quemado), añade la mantequilla y remueve hasta que esté completamente incorporada.",
+        "cat": "Un cop el sucre s'hagi fos (però no cremat), afegeix la mantega i remena fins que estigui completament incorporada."
+      }
+    },
+    {
+      "text": {
+        "en": "Add the apples to the caramel and cook for 20 minutes, turning them occasionally to ensure even cooking.",
+        "es": "Añade las manzanas al caramelo y cocínalas durante 20 minutos, dándoles la vuelta ocasionalmente para asegurar una cocción uniforme.",
+        "cat": "Afegeix les pomes al caramel i cou-les durant 20 minuts, donant-los la volta ocasionalment per assegurar una cocció uniforme."
+      }
+    },
+    {
+      "text": {
+        "en": "Let the caramel with apples cool slightly, then transfer to a 15 cm diameter circular baking pan.",
+        "es": "Deja enfriar un poco el caramelo con las manzanas y luego transfiérelo a un molde circular de 15 cm de diámetro.",
+        "cat": "Deixa refredar una mica el caramel amb les pomes i després transfereix-lo a un motlle circular de 15 cm de diàmetre."
+      }
+    },
+    {
+      "text": {
+        "en": "Preheat the oven to 180°C (350°F).",
+        "es": "Precalienta el horno a 180°C (350°F).",
+        "cat": "Preescalfa el forn a 180°C (350°F)."
+      }
+    },
+    {
+      "text": {
+        "en": "Remove the dough from the refrigerator. Roll it out with a rolling pin to form a circle slightly larger than the pan, with extra margins to fold over the edges.",
+        "es": "Saca la masa de la nevera. Estírala con un rodillo formando un círculo ligeramente más grande que el molde, con márgenes extra para doblar sobre los bordes.",
+        "cat": "Treure la massa de la nevera. Estira-la amb un corró formant un cercle lleugerament més gran que el motlle, amb marges extres per doblegar sobre les vores."
+      }
+    },
+    {
+      "text": {
+        "en": "Place the pastry over the apples and tuck the edges down into the pan, creating a bowl shape. This prevents the apples from falling out when you flip the tart later.",
+        "es": "Coloca la masa sobre las manzanas y mete los bordes hacia abajo del molde, creando una forma de bol. Esto evita que las manzanas se caigan cuando des la vuelta a la tarta más tarde.",
+        "cat": "Col·loca la massa sobre les pomes i fica les vores cap avall del motlle, creant una forma de bol. Això evita que les pomes es caiguin quan donis la volta a la coca més tard."
+      }
+    },
+    {
+      "text": {
+        "en": "Bake the tart in the preheated oven for 25 minutes. If the pastry is not golden brown after this time, activate the top heating element of the oven and continue baking until the pastry is golden.",
+        "es": "Hornea la tarta en el horno precalentado durante 25 minutos. Si la masa no está dorada después de este tiempo, activa la parte superior del horno y continúa horneando hasta que la masa esté dorada.",
+        "cat": "Forna la coca al forn preescalfat durant 25 minuts. Si la massa no està daurada després d'aquest temps, activa la part superior del forn i continua fornant fins que la massa estigui daurada."
+      }
+    },
+    {
+      "text": {
+        "en": "Remove from the oven and let cool slightly. Carefully invert the tart onto a serving plate to reveal the caramelized apple top.",
+        "es": "Saca del horno y deja enfriar un poco. Voltea cuidadosamente la tarta sobre un plato de servir para revelar la parte superior de manzanas caramelizadas.",
+        "cat": "Treure del forn i deixa refredar una mica. Volta acuradament la coca sobre un plat de servir per revelar la part superior de pomes caramelitzades."
+      }
+    },
+    {
+      "text": {
+        "en": "Serve warm, recommended with vanilla ice cream.",
+        "es": "Sirve caliente, recomendado con helado de vainilla.",
+        "cat": "Serveix calenta, recomanat amb gelat de vainilla."
+      }
+    }
+  ]
+}
+

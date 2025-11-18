@@ -146,5 +146,27 @@
       "grated_gouda",
       "parmesan_cheese"
     ]
+  },
+  {
+    "title": {
+      "en": "Tarte Tatin",
+      "es": "Tarta Tatin",
+      "cat": "Tarta Tatin"
+    },
+    "categories": [
+      "desserts"
+    ],
+    "path": "recipes/tarte_tatin.json",
+    "image": "/images/tarte_tatin/main.webp",
+    "author": "Arnau",
+    "development": true,
+    "ingredient_keys": [
+      "flour",
+      "butter",
+      "eggs",
+      "apple",
+      "sugar",
+      "butter"
+    ]
   }
 ]
