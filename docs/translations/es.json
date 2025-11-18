@@ -68,6 +68,7 @@
         "strawberry_single": "fresa",
         "blueberry_single": "arándano",
         "raspberry_single": "frambuesa",
+        "raspberry": "frambuesas",
         "grape_single": "uva",
         "mushroom_single": "seta",
         "bean_single": "judía",
@@ -121,6 +122,7 @@
         "vanilla_extract": "extracto de vainilla",
         "whole_wheat_pastry_flour": "harina integral",
         "oat_flour": "harina de avena",
+        "almond_flour": "harina de almendras",
         "unsweetened_cocoa_powder": "cacao en polvo sin azúcar",
         "espresso_powder": "café espresso en polvo",
         "dark_chocolate_chips": "chips de chocolate negro"

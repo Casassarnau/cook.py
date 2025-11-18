@@ -68,6 +68,7 @@
         "strawberry_single": "maduixa",
         "blueberry_single": "nabiu",
         "raspberry_single": "gerd",
+        "raspberry": "gerds",
         "grape_single": "raïm",
         "mushroom_single": "bolet",
         "bean_single": "mongeta",
@@ -121,6 +122,7 @@
         "vanilla_extract": "extracte de vainilla",
         "whole_wheat_pastry_flour": "farina integral",
         "oat_flour": "farina d'avena",
+        "almond_flour": "farina d'ametlles",
         "unsweetened_cocoa_powder": "cacau en pols sense sucre",
         "espresso_powder": "cafè espresso en pols",
         "dark_chocolate_chips": "xips de xocolata negra"

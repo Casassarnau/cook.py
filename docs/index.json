@@ -104,18 +104,19 @@
     "author": "Arnau",
     "development": true,
     "ingredient_keys": [
-      "coconut_oil",
-      "olive_oil",
-      "panela_powder",
-      "eggs",
-      "greek_yogurt",
-      "vanilla_extract",
-      "whole_wheat_pastry_flour",
-      "unsweetened_cocoa_powder",
-      "salt",
-      "espresso_powder",
+      "butter",
       "dark_chocolate_chips",
-      "walnuts"
+      "sugar",
+      "eggs",
+      "unsweetened_cocoa_powder",
+      "flour",
+      "almond_flour",
+      "espresso_powder",
+      "salt",
+      "baking_powder",
+      "walnuts",
+      "dark_chocolate_chips",
+      "raspberry"
     ]
   },
   {

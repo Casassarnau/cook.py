@@ -68,6 +68,7 @@
         "strawberry_single": "strawberry",
         "blueberry_single": "blueberry",
         "raspberry_single": "raspberry",
+        "raspberry": "raspberries",
         "grape_single": "grape",
         "mushroom_single": "mushroom",
         "bean_single": "bean",
@@ -121,6 +122,7 @@
         "vanilla_extract": "vanilla extract",
         "whole_wheat_pastry_flour": "whole wheat pastry flour",
         "oat_flour": "oat flour",
+        "almond_flour": "almond flour",
         "unsweetened_cocoa_powder": "unsweetened cocoa powder",
         "espresso_powder": "espresso powder",
         "dark_chocolate_chips": "dark chocolate chips"
