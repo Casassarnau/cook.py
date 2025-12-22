@@ -783,7 +783,7 @@ function recipeApp() {
         })
         .map(e => ({
           text: this.translateField(e.text),
-          image: e.image ? this.withBase(e.image) : null
+          image: e.image || null
         }));
     },
 
