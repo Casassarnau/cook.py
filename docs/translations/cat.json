@@ -126,7 +126,13 @@
         "almond_flour": "farina d'ametlles",
         "unsweetened_cocoa_powder": "cacau en pols sense sucre",
         "espresso_powder": "cafè espresso en pols",
-        "dark_chocolate_chips": "xips de xocolata negra"
+        "dark_chocolate_chips": "xips de xocolata negra",
+        "ham": "pernil salat ibèric",
+        "chicken": "pollastre",
+        "mushrooms": "bolets",
+        "milk": "llet",
+        "panko": "panko",
+        "white_pepper": "pebre blanc"
     },
     "units": {
         "g": "g",

@@ -91,6 +91,39 @@
   },
   {
     "title": {
+      "en": "Croquetas",
+      "es": "Croquetas",
+      "cat": "Croquetes",
+      "sv": "Kroketter"
+    },
+    "categories": [
+      "mains"
+    ],
+    "path": "recipes/croquetas.json",
+    "image": "/images/croquetas/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "butter",
+      "onion",
+      "flour",
+      "milk",
+      "salt",
+      "ham",
+      "chicken",
+      "mushrooms",
+      "olive_oil",
+      "butter",
+      "salt",
+      "white_pepper",
+      "flour",
+      "eggs",
+      "panko",
+      "sunflower_oil"
+    ]
+  },
+  {
+    "title": {
       "en": "Fudgy Chocolate Brownie",
       "es": "Brownie de Chocolate",
       "cat": "Brownie de Xocolata",

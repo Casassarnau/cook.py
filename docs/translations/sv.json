@@ -126,7 +126,13 @@
         "almond_flour": "mandelmjöl",
         "unsweetened_cocoa_powder": "osötat kakaopulver",
         "espresso_powder": "espressopulver",
-        "dark_chocolate_chips": "mörka chokladchips"
+        "dark_chocolate_chips": "mörka chokladchips",
+        "ham": "iberisk skinka",
+        "chicken": "kyckling",
+        "mushrooms": "svampar",
+        "milk": "mjölk",
+        "panko": "panko",
+        "white_pepper": "vitpeppar"
     },
     "units": {
         "g": "g",

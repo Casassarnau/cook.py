@@ -126,7 +126,13 @@
         "almond_flour": "almond flour",
         "unsweetened_cocoa_powder": "unsweetened cocoa powder",
         "espresso_powder": "espresso powder",
-        "dark_chocolate_chips": "dark chocolate chips"
+        "dark_chocolate_chips": "dark chocolate chips",
+        "ham": "Iberian cured ham",
+        "chicken": "chicken",
+        "mushrooms": "mushrooms",
+        "milk": "milk",
+        "panko": "panko",
+        "white_pepper": "white pepper"
     },
     "units": {
         "g": "g",

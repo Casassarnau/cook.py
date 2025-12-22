@@ -126,7 +126,13 @@
         "almond_flour": "harina de almendras",
         "unsweetened_cocoa_powder": "cacao en polvo sin azúcar",
         "espresso_powder": "café espresso en polvo",
-        "dark_chocolate_chips": "chips de chocolate negro"
+        "dark_chocolate_chips": "chips de chocolate negro",
+        "ham": "jamón ibérico",
+        "chicken": "pollo",
+        "mushrooms": "setas",
+        "milk": "leche",
+        "panko": "panko",
+        "white_pepper": "pimienta blanca"
     },
     "units": {
         "g": "g",
