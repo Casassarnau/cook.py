@@ -1,6 +1,33 @@
 [
   {
     "title": {
+      "en": "Basque Cheesecake",
+      "es": "Tarta de queso vasca",
+      "cat": "Pastís de formatge basc",
+      "sv": "Baskisk ostkaka"
+    },
+    "categories": [
+      "desserts"
+    ],
+    "path": "recipes/cheesecake.json",
+    "image": "/images/cheesecake/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "digestive_cookies",
+      "butter",
+      "cream_cheese",
+      "parmesan_cheese",
+      "parmesan_cheese",
+      "blue_cheese",
+      "eggs",
+      "heavy_cream",
+      "sugar",
+      "flour"
+    ]
+  },
+  {
+    "title": {
       "en": "Bolognese Macaroni",
       "es": "Macarrones a la boloñesa",
       "cat": "Macarrons a la bolonyesa",
@@ -59,34 +86,6 @@
       "white_chocolate",
       "orange_juice",
       "walnuts"
-    ]
-  },
-  {
-    "title": {
-      "en": "Cheesecake",
-      "es": "Tarta de queso",
-      "cat": "Pastís de formatge",
-      "sv": "Ostkaka"
-    },
-    "categories": [
-      "desserts"
-    ],
-    "path": "recipes/cheesecake.json",
-    "image": "/images/cheesecake/main.webp",
-    "author": "Arnau",
-    "development": false,
-    "ingredient_keys": [
-      "digestive_cookies",
-      "butter",
-      "cream_cheese",
-      "fresh_cheese",
-      "parmesan_cheese",
-      "parmesan_cheese",
-      "blue_cheese",
-      "eggs",
-      "heavy_cream",
-      "sugar",
-      "flour"
     ]
   },
   {
