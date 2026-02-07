@@ -16,7 +16,10 @@
     },
     "cat": {
         "desserts": "Desserts",
-        "mains": "Mains"
+        "mains": "Mains",
+        "seconds": "Seconds",
+        "snacks": "Snacks",
+        "drinks": "Drinks"
     },
     "variation": "Variation",
     "servings": "Servings",

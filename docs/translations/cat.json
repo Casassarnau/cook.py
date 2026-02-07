@@ -16,7 +16,10 @@
     },
     "cat": {
         "desserts": "Postres",
-        "mains": "Primers"
+        "mains": "Primers",
+        "seconds": "Segon",
+        "snacks": "Aperitius",
+        "drinks": "Begudes"
     },
     "variation": "Variació",
     "servings": "Racions",

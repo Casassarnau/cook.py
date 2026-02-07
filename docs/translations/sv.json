@@ -16,7 +16,10 @@
     },
     "cat": {
         "desserts": "Efterrätter",
-        "mains": "Huvudrätter"
+        "mains": "Huvudrätter",
+        "seconds": "Sidrätter",
+        "snacks": "Snacks",
+        "drinks": "Drycker"
     },
     "variation": "Variation",
     "servings": "Portioner",

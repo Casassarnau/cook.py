@@ -1,0 +1,141 @@
+{
+    "title": {
+      "en": "Spanish Potato Omelette",
+      "es": "Tortilla de patatas",
+      "cat": "Truita de patates",
+      "sv": "Spansk potatisomelett"
+    },
+    "author": "Arnau",
+    "categories": ["seconds"],
+    "image": "/images/tortilla_patata/main.webp",
+    "description": {
+      "en": "A classic Spanish tortilla made with potatoes and onions. Tortilla de patatas always includes onion. Other opinions are just wrong.",
+      "es": "La clásica tortilla de patatas española hecha con patatas y cebolla. La tortilla de patatas siempre lleva cebolla. Otras opiniones son simplemente incorrectas.",
+      "cat": "La clàssica truita de patates espanyola feta amb patates i ceba. La truita de patates sempre porta ceba. Altres opinions són simplement incorrectes.",
+      "sv": "En klassisk spansk potatisomelett gjord på potatis och lök. Tortilla de patatas innehåller alltid lök. Andra åsikter är bara felaktiga."
+    },
+    "ingredients": [
+      {
+        "group": {
+          "en": "Ingredients",
+          "es": "Ingredientes",
+          "cat": "Ingredients",
+          "sv": "Ingredienser"
+        },
+        "items": [
+          {
+            "ingredient": "potatoes",
+            "value": 3,
+            "text": {
+              "en": "or more if small",
+              "es": "o más si son pequeñas",
+              "cat": "o més si són petites",
+              "sv": "eller mer om små"
+            }
+          },
+          {
+            "ingredient": "onion",
+            "value": 2
+          },
+          {
+            "ingredient": "eggs",
+            "value": 4
+          },
+          {
+            "ingredient": "olive_oil",
+            "value": 0,
+            "unit": "as_needed"
+          },
+          {
+            "ingredient": "salt",
+            "value": 0,
+            "unit": "to_taste"
+          }
+        ]
+      }
+    ],
+    "instructions": [
+      {
+        "text": {
+          "en": "Cut the onion into julienne strips. Slice the potatoes thinly; the thinner they are, the faster they will cook.",
+          "es": "Corta la cebolla en juliana y la patata en rodajas finas; cuanto más finas, más rápido se cocinarán.",
+          "cat": "Talla la ceba a juliana i les patates a rodanxes fines; com més fines, més ràpid es cuinaran.",
+          "sv": "Skär löken i tunna strimlor och potatisen i tunna skivor; ju tunnare, desto snabbare tillagas de."
+        }
+      },
+      {
+        "text": {
+          "en": "Place the potatoes and onion in a pan with salt and enough olive oil to prevent sticking. Cook over medium heat. If it starts sticking, add a bit more oil.",
+          "es": "Pon la patata y la cebolla en una sartén con sal y aceite suficiente para que no se pegue. Cocina a fuego medio. Si se pega, añade un poco más de aceite.",
+          "cat": "Posa les patates i la ceba en una paella amb sal i prou oli perquè no s’enganxi. Cuina a foc mitjà. Si s’enganxa, afegeix una mica més d’oli.",
+          "sv": "Lägg potatis och lök i en stekpanna med salt och tillräckligt med olivolja för att det inte ska fastna. Tillaga på medelvärme. Tillsätt mer olja vid behov."
+        }
+      },
+      {
+        "text": {
+          "en": "Meanwhile, beat the eggs in a bowl. If there is a lot of potato and onion, add more eggs.",
+          "es": "Mientras tanto, bate los huevos en un bol. Si ves que hay mucha patata y cebolla, añade más huevos.",
+          "cat": "Mentrestant, bat els ous en un bol. Si veus que hi ha molta patata i ceba, afegeix més ous.",
+          "sv": "Under tiden, vispa äggen i en skål. Om det är mycket potatis och lök, tillsätt fler ägg."
+        }
+      },
+      {
+        "text": {
+          "en": "When the potatoes are soft and lightly golden, remove them from the pan and mix them with the beaten eggs.",
+          "es": "Cuando la patata esté pochada y empezando a dorarse, retírala y mézclala con el huevo batido.",
+          "cat": "Quan la patata estigui tova i comenci a daurar-se, retira-la i barreja-la amb els ous batuts.",
+          "sv": "När potatisen är mjuk och lätt gyllene, ta bort den från pannan och blanda med de vispade äggen."
+        }
+      },
+      {
+        "text": {
+          "en": "Let the mixture rest for 15–30 minutes, or even a few hours in the fridge. This step is optional but improves the flavor.",
+          "es": "Deja reposar la mezcla entre 15 y 30 minutos, o incluso unas horas en la nevera. Es opcional, pero da más sabor.",
+          "cat": "Deixa reposar la barreja entre 15 i 30 minuts, o fins i tot unes hores a la nevera. És opcional, però aporta més sabor.",
+          "sv": "Låt blandningen vila i 15–30 minuter, eller några timmar i kylskåpet. Valfritt, men det ger mer smak."
+        }
+      },
+      {
+        "text": {
+          "en": "Heat a oiled pan, add the mixture, flatten it gently and do not stir during cooking.",
+          "es": "Calienta una sartén engrasada, añade la mezcla, aplánala ligeramente y no la remuevas durante la cocción.",
+          "cat": "Escalfa una paella engrasada, afegeix la barreja, aplana-la suaument i no la remenis durant la cocció.",
+          "sv": "Värm en stekpanna i olja, tillsätt blandningen, platta till den försiktigt och rör inte under tillagningen."
+        }
+      },
+      {
+        "text": {
+          "en": "When the edges are set and a crust forms, loosen the edges with a silicone spatula to prevent breaking when flipping.",
+          "es": "Cuando los bordes estén cuajados y se forme una costra, sepáralos con una espátula de silicona para que no se rompa al girar.",
+          "cat": "Quan les vores estiguin quallades i es formi una crosta, separa-les amb una espàtula de silicona perquè no es trenqui en girar.",
+          "sv": "När kanterna har stelnat och en yta bildas, lossa dem med en silikonspatel så att tortillan inte går sönder vid vändning."
+        }
+      },
+      {
+        "text": {
+          "en": "Place a plate the size of the pan on top and flip decisively, holding the plate firmly.",
+          "es": "Coloca un plato del tamaño de la sartén encima y dale la vuelta sin dudar, sujetando bien el plato.",
+          "cat": "Col·loca un plat de la mida de la paella a sobre i gira-la sense dubtar, subjectant bé el plat.",
+          "sv": "Placera en tallrik i samma storlek som pannan ovanpå och vänd bestämt medan du håller tallriken stadigt."
+        }
+      },
+      {
+        "text": {
+          "en": "Slide the tortilla back into the pan to cook the other side, using the spatula if needed.",
+          "es": "Vuelve a poner la tortilla en la sartén por el otro lado con ayuda de la espátula.",
+          "cat": "Torna a posar la truita a la paella per l’altra banda amb l’ajuda de l’espàtula.",
+          "sv": "Lägg tillbaka tortillan i pannan för att tillaga den andra sidan, med hjälp av spateln."
+        }
+      },
+      {
+        "text": {
+          "en": "After 2–3 minutes, gently shake the pan; if it moves freely, let it cook a few minutes more depending on how runny you like the center. Serve on a plate.",
+          "es": "Al cabo de 2–3 minutos, mueve la sartén; si la tortilla se desplaza libremente, deja unos minutos más según lo jugosa que te guste y sirve.",
+          "cat": "Al cap de 2–3 minuts, mou la paella; si la truita es desplaça lliurement, deixa-la uns minuts més segons com t’agradi de sucosa i serveix.",
+          "sv": "Efter 2–3 minuter, skaka pannan försiktigt; om tortillan rör sig fritt, låt den steka några minuter till beroende på hur krämig du vill ha mitten. Servera."
+        },
+        "image": "/images/tortilla_patata/final.webp"
+      }
+    ]
+  }
+  

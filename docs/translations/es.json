@@ -16,7 +16,10 @@
     },
     "cat": {
         "desserts": "Postres",
-        "mains": "Primeros"
+        "mains": "Primeros",
+        "seconds": "Segundos",
+        "snacks": "Aperitivos",
+        "drinks": "Bebidas"
     },
     "variation": "Variación",
     "servings": "Raciones",

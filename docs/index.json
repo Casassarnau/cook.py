@@ -96,7 +96,7 @@
       "sv": "Kroketter"
     },
     "categories": [
-      "mains"
+      "seconds"
     ],
     "path": "recipes/croquetas.json",
     "image": "/images/croquetas/main.webp",
@@ -177,6 +177,28 @@
       "fresh_mozzarella",
       "grated_gouda",
       "parmesan_cheese"
+    ]
+  },
+  {
+    "title": {
+      "en": "Spanish Potato Omelette",
+      "es": "Tortilla de patatas",
+      "cat": "Truita de patates",
+      "sv": "Spansk potatisomelett"
+    },
+    "categories": [
+      "seconds"
+    ],
+    "path": "recipes/tortilla_patata.json",
+    "image": "/images/tortilla_patata/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "potatoes",
+      "onion",
+      "eggs",
+      "olive_oil",
+      "salt"
     ]
   },
   {
