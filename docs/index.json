@@ -99,7 +99,8 @@
     },
     "categories": [
       "desserts",
-      "baking"
+      "baking",
+      "thermomix"
     ],
     "path": "recipes/doowaps.json",
     "image": "/images/doowaps/main.webp",
@@ -125,7 +126,8 @@
       "sv": "Kroketter"
     },
     "categories": [
-      "seconds"
+      "mains",
+      "thermomix"
     ],
     "path": "recipes/croquetas.json",
     "image": "/images/croquetas/main.webp",
@@ -190,24 +192,25 @@
     },
     "categories": [
       "mains",
-      "baking"
+      "baking",
+      "thermomix"
     ],
     "path": "recipes/pizza.json",
     "image": "/images/pizza/main.webp",
     "author": "Arnau",
     "development": false,
     "ingredient_keys": [
-      "strong_flour",
-      "salt",
       "water",
+      "flour",
       "dry_yeast",
-      "sugar",
+      "flour",
+      "flour",
+      "water",
+      "water",
       "extra_virgin_olive_oil",
-      "crushed_tomato",
-      "oregano",
-      "fresh_mozzarella",
-      "grated_gouda",
-      "parmesan_cheese"
+      "salt",
+      "sugar",
+      "pizza_toppings"
     ]
   },
   {
@@ -218,7 +221,7 @@
       "sv": "Spansk potatisomelett"
     },
     "categories": [
-      "seconds"
+      "mains"
     ],
     "path": "recipes/tortilla_patata.json",
     "image": "/images/tortilla_patata/main.webp",

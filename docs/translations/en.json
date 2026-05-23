@@ -2,6 +2,13 @@
     "search_placeholder": "Search recipes...",
     "all_categories": "All",
     "instructions": "Instructions",
+    "thermomix": "Thermomix",
+    "thermomix_speed": "Speed",
+    "thermomix_min": "min",
+    "thermomix_sec": "sec",
+    "thermomix_rotation_reverse": "Reverse",
+    "thermomix_rotation_normal": "Normal",
+    "thermomix_mode_knead": "Knead",
     "hero_title": "Cook simply. Eat happily.",
     "hero_subtitle": "A minimal recipe book for your favorite homemade dishes.",
     "hero_point_discover": "Discover recipes by browsing beautiful cards.",
@@ -17,10 +24,10 @@
     "cat": {
         "desserts": "Desserts",
         "mains": "Mains",
-        "seconds": "Seconds",
         "snacks": "Snacks",
         "drinks": "Drinks",
-        "baking": "Baking"
+        "baking": "Baking",
+        "thermomix": "Thermomix"
     },
     "variation": "Variation",
     "servings": "Servings",
@@ -136,7 +143,8 @@
         "mushrooms": "mushrooms",
         "milk": "milk",
         "panko": "panko",
-        "white_pepper": "white pepper"
+        "white_pepper": "white pepper",
+        "pizza_toppings": "toppings"
     },
     "units": {
         "g": "g",

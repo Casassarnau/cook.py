@@ -2,6 +2,13 @@
     "search_placeholder": "Buscar recetas...",
     "all_categories": "Todas",
     "instructions": "Instrucciones",
+    "thermomix": "Thermomix",
+    "thermomix_speed": "Velocidad",
+    "thermomix_min": "min",
+    "thermomix_sec": "seg",
+    "thermomix_rotation_reverse": "Marcha atrás",
+    "thermomix_rotation_normal": "Normal",
+    "thermomix_mode_knead": "Amasar",
     "hero_title": "Cocina fácil. Come feliz.",
     "hero_subtitle": "Un recetario minimalista para tus platos caseros favoritos.",
     "hero_point_discover": "Descubre recetas navegando por tarjetas bonitas.",
@@ -17,10 +24,10 @@
     "cat": {
         "desserts": "Postres",
         "mains": "Primeros",
-        "seconds": "Segundos",
         "snacks": "Aperitivos",
         "drinks": "Bebidas",
-        "baking": "Repostería"
+        "baking": "Repostería",
+        "thermomix": "Thermomix"
     },
     "variation": "Variación",
     "servings": "Raciones",
@@ -136,7 +143,8 @@
         "mushrooms": "setas",
         "milk": "leche",
         "panko": "panko",
-        "white_pepper": "pimienta blanca"
+        "white_pepper": "pimienta blanca",
+        "pizza_toppings": "ingredientes"
     },
     "units": {
         "g": "g",

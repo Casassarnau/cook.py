@@ -3,6 +3,29 @@ import os, json, sys
 
 BASE_DIR = os.path.join("docs", "recipes")
 INDEX_FILE = os.path.join("docs", "index.json")
+THERMOMIX_CATEGORY = "thermomix"
+
+
+def recipe_has_thermomix_instructions(data):
+    instructions_thermomix = data.get("instructionsThermomix")
+    if isinstance(instructions_thermomix, list) and instructions_thermomix:
+        return True
+    for step in data.get("instructions") or []:
+        if not isinstance(step, dict):
+            continue
+        if step.get("thermomix") or step.get("onlyForMode") == "thermomix":
+            return True
+    return False
+
+
+def build_categories(data):
+    categories = list(data.get("categories", []))
+    has_thermomix = recipe_has_thermomix_instructions(data)
+    if has_thermomix and THERMOMIX_CATEGORY not in categories:
+        categories.append(THERMOMIX_CATEGORY)
+    elif not has_thermomix and THERMOMIX_CATEGORY in categories:
+        categories.remove(THERMOMIX_CATEGORY)
+    return categories
 
 if not os.path.exists(BASE_DIR):
     print(f"❌ Error: {BASE_DIR} folder not found.")
@@ -26,7 +49,7 @@ for file in os.listdir(BASE_DIR):
         else:
             title = {"en": data["title"]}
             
-        categories = data.get("categories", [])
+        categories = build_categories(data)
         image = data.get("image", "")
         author = data.get("author", "")
         development = data.get("development", False)

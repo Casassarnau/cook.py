@@ -341,7 +341,27 @@
 
           <!-- INSTRUCTIONS -->
           <div>
-            <h3 class="text-xl font-semibold mb-4" x-text="t('instructions')"></h3>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-semibold" x-text="t('instructions')"></h3>
+              <div x-show="thermomixAvailable" class="flex items-center gap-2 select-none">
+                <span class="text-sm font-medium" x-text="t('thermomix')"></span>
+                <button
+                  type="button"
+                  role="switch"
+                  :aria-checked="thermomixEnabled"
+                  @click="toggleThermomix()"
+                  class="relative inline-flex h-7 w-12 flex-shrink-0 rounded-full border-2 border-transparent transition-colors duration-300 cursor-pointer focus:outline-none"
+                  :class="thermomixEnabled
+                    ? 'bg-orange-500'
+                    : (darkMode ? 'bg-gray-700' : 'bg-gray-300')"
+                >
+                  <span
+                    class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-300"
+                    :class="thermomixEnabled ? 'translate-x-5' : 'translate-x-0'"
+                  ></span>
+                </button>
+              </div>
+            </div>
 
             <ol class="space-y-4">
               <template x-for="(step, idx) in currentInstructions()" :key="idx">
@@ -361,7 +381,22 @@
                         : 'bg-orange-300 text-orange-700 border border-orange-400'"
                       x-text="idx + 1"
                     ></div>
-                    <p class="flex-1 text-base md:text-lg" x-text="step.text"></p>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-base md:text-lg" x-text="step.text"></p>
+                      <template x-if="step.settingsBadges && step.settingsBadges.length > 0">
+                        <div class="flex flex-wrap gap-2 mt-3">
+                          <template x-for="(badge, badgeIdx) in step.settingsBadges" :key="badgeIdx">
+                            <span
+                              class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold"
+                              :class="darkMode
+                                ? 'bg-orange-500/15 text-orange-200 border border-orange-500/30'
+                                : 'bg-orange-100 text-orange-800 border border-orange-200'"
+                              x-text="badge"
+                            ></span>
+                          </template>
+                        </div>
+                      </template>
+                    </div>
                   </div>
 
                   <!-- Embedded image, touching borders -->

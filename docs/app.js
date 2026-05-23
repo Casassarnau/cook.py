@@ -7,6 +7,8 @@ function recipeApp() {
     filterCategory: '',
     selectedRecipe: null,
     selectedVariation: '',
+    thermomixEnabled: false,
+    thermomixAvailable: false,
     lang: 'en',
     translations: {},
     emojis: {},
@@ -206,17 +208,30 @@ function recipeApp() {
     async fetchRecipeByName(recipeName) {
       const item = this.index.find(i => i.path === `recipes/${recipeName}.json`);
       if (!item) return null;
-      if (this.recipesCache[item.path]) return this.recipesCache[item.path];
+      const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+      if (!isDev && this.recipesCache[item.path]) return this.recipesCache[item.path];
       const res = await fetch(this.withBase(item.path));
       const data = await res.json();
       this.recipesCache[item.path] = data;
       return data;
     },
 
+    recipeHasThermomixInstructions(recipe) {
+      if (!recipe) return false;
+      if (Array.isArray(recipe.instructionsThermomix) && recipe.instructionsThermomix.length > 0) return true;
+      return (recipe.instructions || []).some(step => step.thermomix || step.onlyForMode === 'thermomix');
+    },
+
     saveVariantPreference(recipeName, variantKey) {
       const variantPrefs = JSON.parse(localStorage.getItem('variantPreferences') || '{}');
       variantPrefs[recipeName] = variantKey;
       localStorage.setItem('variantPreferences', JSON.stringify(variantPrefs));
+    },
+
+    saveThermomixPreference(recipeName, enabled) {
+      const prefs = JSON.parse(localStorage.getItem('thermomixPreferences') || '{}');
+      prefs[recipeName] = enabled;
+      localStorage.setItem('thermomixPreferences', JSON.stringify(prefs));
     },
 
     getRecipeName() {
@@ -234,7 +249,11 @@ function recipeApp() {
       const recipeName = this.getRecipeName();
       if (!recipeName) return;
 
-      location.hash = this.selectedVariation ? `#recipe=${recipeName}&variant=${this.selectedVariation}` : `#recipe=${recipeName}`;
+      const params = new URLSearchParams();
+      params.set('recipe', recipeName);
+      if (this.selectedVariation) params.set('variant', this.selectedVariation);
+      if (this.thermomixEnabled) params.set('thermomix', '1');
+      location.hash = `#${params.toString()}`;
     },
 
     t(key, defaultValue = key) {
@@ -325,10 +344,12 @@ function recipeApp() {
         const params = new URLSearchParams(hash.substring(1));
         const recipeName = params.get('recipe');
         const variantKey = params.get('variant');
+        const thermomixParam = params.get('thermomix');
         
         if (recipeName) {
           const recipe = await this.fetchRecipeByName(recipeName);
           this.selectedRecipe = recipe || null;
+          this.thermomixAvailable = this.recipeHasThermomixInstructions(this.selectedRecipe);
           
           if (this.selectedRecipe) {
             // Store original dimensions for multiplier calculation (never change these)
@@ -397,10 +418,24 @@ function recipeApp() {
                 this.selectedVariation = this.selectedRecipe.variants[0].key;
               }
             }
+
+            if (this.thermomixAvailable) {
+              if (thermomixParam === '1') {
+                this.thermomixEnabled = true;
+                this.saveThermomixPreference(recipeName, true);
+              } else {
+                const thermomixPrefs = JSON.parse(localStorage.getItem('thermomixPreferences') || '{}');
+                this.thermomixEnabled = !!thermomixPrefs[recipeName];
+              }
+            } else {
+              this.thermomixEnabled = false;
+            }
           }
         }
       } else {
         this.selectedRecipe = null;
+        this.thermomixAvailable = false;
+        this.thermomixEnabled = false;
       }
     },
 
@@ -417,6 +452,84 @@ function recipeApp() {
     hasVariants() {
       const r = this.selectedRecipe;
       return r && Array.isArray(r.variants) && r.variants.length > 0;
+    },
+
+    hasThermomixInstructions() {
+      return this.thermomixAvailable;
+    },
+
+    toggleThermomix() {
+      this.thermomixEnabled = !this.thermomixEnabled;
+      const recipeName = this.getRecipeName();
+      if (recipeName) {
+        this.saveThermomixPreference(recipeName, this.thermomixEnabled);
+      }
+      this.updateURL();
+    },
+
+    matchesInstructionMode(step, thermomixEnabled, usesInlineThermomix) {
+      const modes = step.onlyForMode
+        ? (Array.isArray(step.onlyForMode) ? step.onlyForMode : [step.onlyForMode])
+        : null;
+
+      if (thermomixEnabled) {
+        if (modes && !modes.includes('thermomix')) return false;
+        if (usesInlineThermomix && modes == null && !step.thermomix) return true;
+        return true;
+      }
+
+      if (modes) return modes.includes('classic');
+      if (usesInlineThermomix && step.thermomix && !step.text) return false;
+      return true;
+    },
+
+    formatThermomixTime(seconds) {
+      if (seconds == null) return '';
+      if (seconds >= 60 && seconds % 60 === 0) {
+        const minutes = seconds / 60;
+        return `${minutes} ${this.t('thermomix_min')}`;
+      }
+      if (seconds >= 60) {
+        const minutes = Math.floor(seconds / 60);
+        const remaining = seconds % 60;
+        return `${minutes} ${this.t('thermomix_min')} ${remaining} ${this.t('thermomix_sec')}`;
+      }
+      return `${seconds} ${this.t('thermomix_sec')}`;
+    },
+
+    formatThermomixSettings(settings) {
+      if (!settings) return [];
+      const badges = [];
+      if (settings.temperature != null) {
+        badges.push(`${settings.temperature}°C`);
+      }
+      if (settings.time != null) {
+        badges.push(this.formatThermomixTime(settings.time));
+      }
+      if (settings.speed != null) {
+        badges.push(`${this.t('thermomix_speed')} ${settings.speed}`);
+      }
+      if (settings.rotation) {
+        badges.push(this.t(`thermomix_rotation_${settings.rotation}`, settings.rotation));
+      }
+      if (settings.mode) {
+        badges.push(this.t(`thermomix_mode_${settings.mode}`, settings.mode));
+      }
+      return badges;
+    },
+
+    mapInstructionStep(step, thermomixEnabled, usesInlineThermomix) {
+      const inlineThermomix = usesInlineThermomix && thermomixEnabled && step.thermomix;
+      const textSource = inlineThermomix && step.thermomix.text ? step.thermomix.text : step.text;
+      const settings = inlineThermomix
+        ? step.thermomix.settings
+        : (thermomixEnabled ? step.settings : null);
+
+      return {
+        text: this.translateField(textSource),
+        image: step.image || null,
+        settingsBadges: this.formatThermomixSettings(settings)
+      };
     },
 
     getMultiplier() {
@@ -773,18 +886,24 @@ function recipeApp() {
     },
 
     currentInstructions() {
-      const raw = this.selectedRecipe.instructions || [];
       const variationKey = this.selectedVariation;
+      const thermomixEnabled = this.thermomixEnabled;
+      const hasDedicatedThermomix = Array.isArray(this.selectedRecipe.instructionsThermomix)
+        && this.selectedRecipe.instructionsThermomix.length > 0;
+      const usesInlineThermomix = !hasDedicatedThermomix;
+      const raw = thermomixEnabled && hasDedicatedThermomix
+        ? this.selectedRecipe.instructionsThermomix
+        : (this.selectedRecipe.instructions || []);
+
       return raw
         .filter(e => {
-          if (!e.onlyForVariation) return true;
-          const allowed = Array.isArray(e.onlyForVariation) ? e.onlyForVariation : [e.onlyForVariation];
-          return variationKey && allowed.includes(variationKey);
+          if (e.onlyForVariation) {
+            const allowed = Array.isArray(e.onlyForVariation) ? e.onlyForVariation : [e.onlyForVariation];
+            if (!variationKey || !allowed.includes(variationKey)) return false;
+          }
+          return this.matchesInstructionMode(e, thermomixEnabled, usesInlineThermomix);
         })
-        .map(e => ({
-          text: this.translateField(e.text),
-          image: e.image || null
-        }));
+        .map(e => this.mapInstructionStep(e, thermomixEnabled, usesInlineThermomix));
     },
 
     showQRCode() {

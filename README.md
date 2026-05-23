@@ -74,7 +74,40 @@ Here's the complete schema with all possible properties:
         "cat": "Text d'instrucció en català."
       },
       "onlyForVariation": "variant_key",
-      "image": "/images/steps/step_image.jpg"
+      "onlyForMode": "classic",
+      "image": "/images/steps/step_image.jpg",
+      "thermomix": {
+        "text": {
+          "en": "Thermomix instruction text in English.",
+          "es": "Texto Thermomix en español.",
+          "cat": "Text Thermomix en català."
+        },
+        "settings": {
+          "temperature": 90,
+          "time": 180,
+          "speed": 2,
+          "rotation": "reverse"
+        }
+      },
+      "settings": {
+        "temperature": 90,
+        "time": 180,
+        "speed": 2
+      }
+    }
+  ],
+  "instructionsThermomix": [
+    {
+      "text": {
+        "en": "Optional full Thermomix-only instruction list.",
+        "es": "Lista opcional completa de instrucciones Thermomix.",
+        "cat": "Llista opcional completa d'instruccions Thermomix."
+      },
+      "settings": {
+        "temperature": 90,
+        "time": 180,
+        "speed": 2
+      }
     }
   ],
 
@@ -165,7 +198,39 @@ Ingredients can be organized into groups for better readability:
 
 - **`text`** (object, required): Instruction text in multiple languages.
 - **`onlyForVariation`** (string|array, optional): Show instruction only for specific variant(s).
+- **`onlyForMode`** (string|array, optional): Show instruction only for `"classic"` or `"thermomix"`. Omit to show in both modes.
 - **`image`** (string, optional): Step image path relative to `docs/` or full URL.
+- **`thermomix`** (object, optional): Inline Thermomix override on a classic step. When the Thermomix toggle is on, `thermomix.text` replaces `text` and `thermomix.settings` are shown as badges. Steps without this block stay visible in both modes.
+- **`settings`** (object, optional): Thermomix machine settings shown as badges when Thermomix mode is active. Used on steps inside `instructionsThermomix`, or on classic steps that only exist in Thermomix mode.
+  - **`temperature`** (number): Temperature in °C.
+  - **`time`** (number): Duration in seconds.
+  - **`speed`** (number): Speed level.
+  - **`rotation`** (string, optional): `"normal"` or `"reverse"`.
+
+#### Thermomix Instructions
+
+Thermomix mode is optional and appears as a toggle next to the Instructions heading when a recipe provides Thermomix content. Classic recipes need no changes.
+
+**Option A — inline override (best when most steps are shared):** add a `thermomix` block to individual steps in `instructions`:
+
+```json
+{
+  "text": { "en": "Heat the milk in a separate pan." },
+  "thermomix": {
+    "text": { "en": "Heat milk 90°C / 3 min / speed 2." },
+    "settings": { "temperature": 90, "time": 180, "speed": 2 }
+  }
+}
+```
+
+**Option B — separate list (best when the Thermomix flow is very different):** copy `instructions` to `instructionsThermomix` and edit the copy:
+
+```json
+"instructions": [ ... ],
+"instructionsThermomix": [ ... ]
+```
+
+When `instructionsThermomix` exists, enabling Thermomix replaces the whole instruction list with that array. Otherwise the app uses inline `thermomix` overrides on the classic steps.
 
 #### Multilingual Fields
 

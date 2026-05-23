@@ -7,7 +7,7 @@
   },
   "author": "Arnau",
   "categories": [
-    "seconds"
+    "mains"
   ],
   "image": "/images/croquetas/main.webp",
   "description": {
@@ -264,6 +264,15 @@
         "cat": "Quan la ceba estigui poxada però no marró, afegir la farina i coure perquè la farina es cuini (creant un roux).",
         "sv": "När löken är genomskinlig men inte brunad, tillsätt mjölet och koka det så att mjölet kokar igenom (skapar en roux)."
       },
+      "thermomix": {
+        "text": {
+          "en": "Add the flour and mix 3 min / 120°C / speed 2 to make a roux.",
+          "es": "Añadir la harina y mezclar 3 min / 120°C / velocidad 2 para hacer el roux.",
+          "cat": "Afegir la farina i barrejar 3 min / 120°C / velocitat 2 per fer el roux.",
+          "sv": "Tillsätt mjölet och mixa 3 min / 120°C / hastighet 2 för att göra en roux."
+        },
+        "settings": { "temperature": 120, "time": 180, "speed": 2 }
+      },
       "image": "/images/croquetas/2.webp"
     },
     {
@@ -272,6 +281,15 @@
         "es": "Al mismo tiempo calentar la leche.",
         "cat": "Al mateix temps escalfar la llet.",
         "sv": "Under tiden, värm mjölken i en separat kastrull."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Heat the milk, mixing 5 min / 90°C / speed 2.",
+          "es": "Calentar la leche, mezclando 5 min / 90°C / velocidad 2.",
+          "cat": "Escalfar la llet, barrejant 5 min / 90°C / velocitat 2.",
+          "sv": "Värm mjölken under mixning 5 min / 90°C / hastighet 2."
+        },
+        "settings": { "temperature": 90, "time": 300, "speed": 2 }
       }
     },
     {
@@ -280,6 +298,15 @@
         "es": "Cuando el roux esté cocinado, añadimos la leche caliente poco a poco mezclando con varillas para que no queden grumos.",
         "cat": "Quan el roux estigui cuit, afegim la llet calenta poc a poc barrejant amb batedors perquè no quedin grumolls.",
         "sv": "När rouxen är kokad, tillsätt den varma mjölken lite i taget under ständig vispning för att förhindra att klumpar bildas."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the hot milk through the lid opening and mix 6 min / 90°C / speed 4.",
+          "es": "Añadir la leche caliente por la tapa y mezclar 6 min / 90°C / velocidad 4.",
+          "cat": "Afegir la llet calenta per la tapa i barrejar 6 min / 90°C / velocitat 4.",
+          "sv": "Tillsätt den varma mjölken genom locköppningen och mixa 6 min / 90°C / hastighet 4."
+        },
+        "settings": { "temperature": 90, "time": 360, "speed": 4 }
       }
     },
     {
@@ -289,6 +316,15 @@
             "cat": "Coure la beixamel durant 10 minuts, remenant regularment.",
             "sv": "Koka bechamelsåsen i 10 minuter under frekvent omrörning."
         },
+        "thermomix": {
+          "text": {
+            "en": "Mix the béchamel 10 min / 90°C / speed 3, stirring with the spatula.",
+            "es": "Mezclar la bechamel 10 min / 90°C / velocidad 3, removiendo con la espátula.",
+            "cat": "Barrejar la beixamel 10 min / 90°C / velocitat 3, remenant amb l'espàtula.",
+            "sv": "Mixa bechamelsåsen 10 min / 90°C / hastighet 3, rör med spatel."
+          },
+          "settings": { "temperature": 90, "time": 600, "speed": 3 }
+        },
         "image": "/images/croquetas/3.webp"
     },
     {
@@ -297,6 +333,15 @@
         "es": "Añadir el relleno y cocinar durante 15 min y añadir sal al gusto probando la bechamel.",
         "cat": "Afegir el farcit i coure durant 15 min i afegir sal al gust provant la beixamel.",
         "sv": "Tillsätt fyllningen och koka i 15 minuter, sedan tillsätt salt efter smak genom att smaka på bechamelsåsen."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the filling and mix 15 min / 90°C / speed 3, stirring with the spatula. Add salt to taste at the end.",
+          "es": "Añadir el relleno y mezclar 15 min / 90°C / velocidad 3, removiendo con la espátula. Añadir sal al gusto al final.",
+          "cat": "Afegir el farcit i barrejar 15 min / 90°C / velocitat 3, remenant amb l'espàtula. Afegir sal al gust al final.",
+          "sv": "Tillsätt fyllningen och mixa 15 min / 90°C / hastighet 3, rör med spatel. Tillsätt salt efter smak till slut."
+        },
+        "settings": { "temperature": 90, "time": 900, "speed": 3 }
       },
       "image": "/images/croquetas/4.webp"
     },

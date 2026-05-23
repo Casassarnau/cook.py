@@ -2,6 +2,13 @@
     "search_placeholder": "Buscar receptes...",
     "all_categories": "Totes",
     "instructions": "Instruccions",
+    "thermomix": "Thermomix",
+    "thermomix_speed": "Velocitat",
+    "thermomix_min": "min",
+    "thermomix_sec": "seg",
+    "thermomix_rotation_reverse": "Marxa enrere",
+    "thermomix_rotation_normal": "Normal",
+    "thermomix_mode_knead": "Amasar",
     "hero_title": "Cuina fàcil. Menja feliç.",
     "hero_subtitle": "Un receptari minimalista per als teus plats casolans preferits.",
     "hero_point_discover": "Descobreix receptes navegant per targetes boniques.",
@@ -17,10 +24,10 @@
     "cat": {
         "desserts": "Postres",
         "mains": "Primers",
-        "seconds": "Segon",
         "snacks": "Aperitius",
         "drinks": "Begudes",
-        "baking": "Forn"
+        "baking": "Forn",
+        "thermomix": "Thermomix"
     },
     "variation": "Variació",
     "servings": "Racions",
@@ -136,7 +143,8 @@
         "mushrooms": "bolets",
         "milk": "llet",
         "panko": "panko",
-        "white_pepper": "pebre blanc"
+        "white_pepper": "pebre blanc",
+        "pizza_toppings": "ingredients"
     },
     "units": {
         "g": "g",

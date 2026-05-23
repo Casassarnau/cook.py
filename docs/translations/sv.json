@@ -2,6 +2,13 @@
     "search_placeholder": "Sök recept...",
     "all_categories": "Alla",
     "instructions": "Instruktioner",
+    "thermomix": "Thermomix",
+    "thermomix_speed": "Hastighet",
+    "thermomix_min": "min",
+    "thermomix_sec": "sek",
+    "thermomix_rotation_reverse": "Omvänd",
+    "thermomix_rotation_normal": "Normal",
+    "thermomix_mode_knead": "Knåda",
     "hero_title": "Laga enkelt. Ät lyckligt.",
     "hero_subtitle": "En minimal receptbok för dina favorithemlagade rätter.",
     "hero_point_discover": "Upptäck recept genom att bläddra bland vackra kort.",
@@ -17,10 +24,10 @@
     "cat": {
         "desserts": "Efterrätter",
         "mains": "Huvudrätter",
-        "seconds": "Sidrätter",
         "snacks": "Snacks",
         "drinks": "Drycker",
-        "baking": "Bakning"
+        "baking": "Bakning",
+        "thermomix": "Thermomix"
     },
     "variation": "Variation",
     "servings": "Portioner",
@@ -136,7 +143,8 @@
         "mushrooms": "svampar",
         "milk": "mjölk",
         "panko": "panko",
-        "white_pepper": "vitpeppar"
+        "white_pepper": "vitpeppar",
+        "pizza_toppings": "toppingar"
     },
     "units": {
         "g": "g",

@@ -78,6 +78,19 @@
       "es": "En un bol grande, disuelve la levadura en la leche y mezcla bien.",
       "cat": "En un bol gran, dissolu el llevat en la llet i barreja bé.",
       "sv": "Lös upp jästen i mjölken i en stor skål och blanda väl."
+    },
+    "thermomix": {
+      "text": {
+        "en": "Pour the milk and yeast into the Thermomix bowl and dissolve.",
+        "es": "Vierte en el vaso la leche junto a la levadura y dilúyelo.",
+        "cat": "Aboca al got la llet juntament amb el llevat i dilueix-lo.",
+        "sv": "Häll mjölken och jästen i Thermomix-skålen och lös upp."
+      },
+      "settings": {
+        "temperature": 37,
+        "time": 60,
+        "speed": 2
+      }
     }
   },
   {
@@ -86,6 +99,18 @@
       "es": "Agrega el aceite, la yema de huevo, la vainilla, la harina, el azúcar y la pizca de sal. Amasa bien la mezcla hasta obtener una masa suave y homogénea.",
       "cat": "Afegeix l'oli, el rovell d'ou, la vainilla, la farina, el sucre i el pèl de sal. Pasta bé la barreja fins a obtenir una massa suau i homogènia.",
       "sv": "Tillsätt olja, äggula, vanilj, mjöl, socker och en nypa salt. Knåda blandningen ordentligt tills du får en smidig och homogen deg."
+    },
+    "thermomix": {
+      "text": {
+        "en": "Add the oil, egg yolk, vanilla, flour, sugar, and a pinch of salt. Knead with the lid on.",
+        "es": "Agrega el aceite, la yema de huevo, la vainilla, la harina, el azúcar y la pizca de sal y amasa, con el vaso cerrado.",
+        "cat": "Afegeix l'oli, el rovell d'ou, la vainilla, la farina, el sucre i el pèl de sal i amassa, amb el got tancat.",
+        "sv": "Tillsätt olja, äggula, vanilj, mjöl, socker och en nypa salt. Knåda med locket på."
+      },
+      "settings": {
+        "mode": "knead",
+        "time": 180
+      }
     }
   },
   {
