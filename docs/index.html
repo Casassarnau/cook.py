@@ -150,11 +150,8 @@
                         : 'bg-yellow-200/90 border-yellow-300/50 text-yellow-800'"
                       :title="t('under_development') || 'Under Development'"
                     >
-                      <!-- Shows on mobile, hides on small screens and up -->
-                      <span class="text-xs font-semibold sm:hidden">Dev</span>
-                      
-                      <!-- Hides on mobile, shows on small screens and up -->
-                      <span class="text-xs font-semibold hidden sm:inline" x-text="t('under_development') || 'Under Development'"></span>
+                      <!-- Displays the full translation text consistently across all screen sizes -->
+                      <span class="text-xs font-semibold" x-text="t('under_development') || 'Under Development'"></span>
                     </div>
                   </template>
                 </div>
