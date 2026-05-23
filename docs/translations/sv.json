@@ -149,7 +149,10 @@
         "tsp": "tsk",
         "tbsp": "msk",
         "pizza": "pizza",
-        "pan": "form"
+        "pan": "form",
+        "unit": "enheter",
+        "unit_single": "enhet",
+        "pinch": "En nypa"
     },
     "connectors": {
         "g": "av",
@@ -163,7 +166,8 @@
         "tbsp": "av",
         "pizza": "",
         "pan": "",
-        "for": "för"
+        "for": "för",
+        "pinch": "av"
     }
 }
 

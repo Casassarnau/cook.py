@@ -149,7 +149,10 @@
         "tsp": "culleradeta",
         "tbsp": "cullera",
         "pizza": "pizza",
-        "pan": "safata"
+        "pan": "safata",
+        "unit": "unitats",
+        "unit_single": "unitat",
+        "pinch": "Un pèl"
     },
     "connectors": {
         "g": "de",
@@ -163,7 +166,8 @@
         "tbsp": "de",
         "pizza": "",
         "pan": "",
-        "for": "per a"
+        "for": "per a",
+        "pinch": "de"
     }
   }
   

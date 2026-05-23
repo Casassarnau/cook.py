@@ -1,0 +1,140 @@
+{
+    "title": {
+      "en": "Chocolate Chip Milk Bread Buns (Doowaps)",
+      "es": "Pan de leche con chocolate (Doowaps)",
+      "cat": "Pa de llet amb xocolata (Doowaps)",
+      "sv": "Mjölkbröd med chokladknappar (Doowaps)"
+    },
+    "author": "Arnau",
+    "development": false,
+    "categories": ["desserts", "baking"],
+    "image": "/images/doowaps/main.webp",
+    "description": {
+      "en": "Soft and fluffy homemade milk bread buns loaded with chocolate chips.",
+      "es": "Panecillos de leche caseros, tiernos y esponjosos, repletos de pepitas de chocolate.",
+      "cat": "Panets de llet casolans, blancs i esponjosos, plens de pepites de xocolata.",
+      "sv": "Mjuka och fluffiga hemmagjorda mjölkbradsbullar fyllda med chokladknappar."
+    },
+    "portion": {
+        "type": "units",
+        "value": 12
+    },
+    "ingredients": [
+    {
+      "ingredient": "milk",
+      "value": 110,
+      "unit": "g"
+    },
+    {
+      "ingredient": "dry_yeast",
+      "value": 10,
+      "unit": "g"
+    },
+    {
+      "ingredient": "olive_oil",
+      "value": 30,
+      "unit": "g"
+    },
+    {
+    "ingredient": "eggs",
+    "value": 1,
+    "text": {
+        "en": "separated into yolk and white",
+        "es": "separado en yema y clara",
+        "cat": "separat en rovell i clara",
+        "sv": "delat i gula och vita"
+    }
+    },
+    {
+      "ingredient": "vanilla_extract",
+      "value": 1,
+      "unit": "tbsp"
+    },
+    {
+      "ingredient": "strong_flour",
+      "value": 250,
+      "unit": "g"
+    },
+    {
+      "ingredient": "sugar",
+      "value": 40,
+      "unit": "g"
+    },
+    {
+      "ingredient": "dark_chocolate_chips",
+      "value": 50,
+      "unit": "g"
+    },
+    {
+      "ingredient": "salt",
+      "value": 0,
+      "unit": "pinch"
+    }
+  ],
+  "instructions": [
+  {
+    "text": {
+      "en": "In a large bowl, dissolve the yeast into the milk and mix well.",
+      "es": "En un bol grande, disuelve la levadura en la leche y mezcla bien.",
+      "cat": "En un bol gran, dissolu el llevat en la llet i barreja bé.",
+      "sv": "Lös upp jästen i mjölken i en stor skål och blanda väl."
+    }
+  },
+  {
+    "text": {
+      "en": "Add the oil, egg yolk, vanilla, flour, sugar, and a pinch of salt. Knead the mixture thoroughly until you get a smooth, homogenous dough.",
+      "es": "Agrega el aceite, la yema de huevo, la vainilla, la harina, el azúcar y la pizca de sal. Amasa bien la mezcla hasta obtener una masa suave y homogénea.",
+      "cat": "Afegeix l'oli, el rovell d'ou, la vainilla, la farina, el sucre i el pèl de sal. Pasta bé la barreja fins a obtenir una massa suau i homogènia.",
+      "sv": "Tillsätt olja, äggula, vanilj, mjöl, socker och en nypa salt. Knåda blandningen ordentligt tills du får en smidig och homogen deg."
+    }
+  },
+  {
+    "text": {
+      "en": "Place the dough in an oiled bowl, cover it with plastic wrap, and let it rise for about 2 to 4 hours until it doubles in volume.",
+      "es": "Coloca la masa en un bol aceitado, cúbrela con film transparente y déjala leudar entre 2 y 4 horas hasta que doble su volumen.",
+      "cat": "Col·loca la massa en un bol oliat, cobreix-la amb film transparent i deixa-la lleudar entre 2 i 4 hores fins que dobli el seu volum.",
+      "sv": "Placera degen i en oljad skål, täck med plastfolie och låt jäsa i ungefär 2 till 4 timmar tills den har dubblat sin storlek."
+    }
+  },
+  {
+    "text": {
+      "en": "Divide the dough into small buns weighing between 50g and 75g each, depending on your preferred size. To keep them uniform, weigh the total dough and divide it accordingly.",
+      "es": "Divide la masa en panecillos de entre 50g y 75g cada uno, según el tamaño que prefieras. Para que queden uniformes, pesa la masa total y divídela en partes iguales.",
+      "cat": "Divideix la massa en panets d'entre 50g i 75g cadascun, segons la mida que prefereixis. Perquè quedin uniformes, pesa la massa total i divideix-la en parts iguals.",
+      "sv": "Dela degen i småbullar som väger mellan 50g och 75g styck, beroende på vilken storlek du föredrar. För att få dem jämna, väg hela degen och dela upp den i lika stora delar."
+    }
+  },
+  {
+    "text": {
+      "en": "Shape each piece into a ball, tucking some chocolate chips inside the dough. Place the buns on a baking sheet lined with parchment paper.",
+      "es": "Bolea cada trozo dando forma de bola e integrando parte de las pepitas de chocolate por dentro de la masa. Coloca los panecillos en una bandeja de horno forrada con papel de horno.",
+      "cat": "Enbola cada tros donant forma de bola i integrant part de les pepites de xocolata per dins de la massa. Col·loca els panets en una col·lecció de forn coberta amb paper de forn.",
+      "sv": "Forma varje bit till en boll och arbeta in en del av chokladknapparna i degen. Placera bullarna på en bakplåt med bakplåtspapper."
+    }
+  },
+  {
+    "text": {
+      "en": "To help them rise a second time, put the buns into the oven and turn it on for just 2 minutes to make the interior warm. Turn it off, cover the buns with a clean cloth, and let them rise inside until they double in volume.",
+      "es": "Para el segundo leudado, mete los panecillos en el horno y enciéndelo solo 2 minutos para que el interior quede templado. Apágalo, cubre los panecillos con un paño limpio y déjalos leudar dentro hasta que dupliquen su volumen.",
+      "cat": "Per al segon lleudat, fica els panets al forn i encén-lo només 2 minuts perquè l'interior quedi tebi. Apaga'l, cobreix els panets amb un dany net i deixa'ls lleudar dins fins que dupliquin el seu volum.",
+      "sv": "För den andra jäsningen, sätt in bullarna i ugnen och slå på den i endast 2 minuter så att insidan blir varm. Stäng av ugnen, täck bullarna med en ren bakduk och låt dem jäsa där inne tills de har dubblat sin storlek."
+    }
+  },
+  {
+    "text": {
+      "en": "Once risen, use a cooking brush to coat the buns with the beaten egg whites to make them shiny, then press the remaining chocolate chips onto the outside.",
+      "es": "Una vez leudados, usa un pincel de cocina para pintar los panecillos con las claras de huevo batidas para que queden brillantes, y luego coloca las pepitas de chocolate restantes por fuera.",
+      "cat": "Un cop lleudats, usa un pinzell de cuina per pintar els panets amb les clares d'ou batudes perquè quedin brillants, i després col·loca les pepites de xocolata restants per fora.",
+      "sv": "När de har jäst, använd en bakpensel för att pensla bullarna med den uppvispade äggvitan så att de blir glansiga, och tryck sedan fast resten av chokladknapparna på utsidan."
+    }
+  },
+  {
+    "text": {
+      "en": "Bake for 10 to 12 minutes at 180ºC with top and bottom heat, depending on the chosen size, or until they are golden brown. Time to eat!",
+      "es": "Hornea entre 10 y 12 minutos a 180ºC con calor arriba y abajo, según el tamaño elegido, o hasta que estén doraditos. ¡A comer!",
+      "cat": "Enforna entre 10 i 12 minuts a 180ºC amb calor a dalt i a baix, segons la mida triada, o fins que estiguin dauradets. A menjar!",
+      "sv": "Grädda i 10 till 12 minuter på 180ºC med över- och undervärme, beroende på vald storlek, eller tills de är gyllenbruna. Smaklig måltid!"
+    }
+  }
+]
+}

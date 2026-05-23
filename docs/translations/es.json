@@ -149,7 +149,10 @@
         "tsp": "cucharadita",
         "tbsp": "cucharada",
         "pizza": "pizza",
-        "pan": "bandeja"
+        "pan": "bandeja",
+        "unit": "unidades",
+        "unit_single": "unidad",
+        "pinch": "Una pizca"
     },
     "connectors": {
         "g": "de",
@@ -163,7 +166,8 @@
         "tbsp": "de",
         "pizza": "",
         "pan": "",
-        "for": "para"
+        "for": "para",
+        "pinch": "de"
     }
   }
   

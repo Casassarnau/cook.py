@@ -149,7 +149,10 @@
         "tsp": "tsp",
         "tbsp": "tbsp",
         "pizza": "pizza",
-        "pan": "pan"
+        "pan": "pan",
+        "unit": "units",
+        "unit_single": "unit",
+        "pinch": "A pinch"
     },
     "connectors": {
         "g": "of",
@@ -163,7 +166,8 @@
         "tbsp": "of",
         "pizza": "",
         "pan": "",
-        "for": "for"
+        "for": "for",
+        "pinch": "of"
     }
   }
   

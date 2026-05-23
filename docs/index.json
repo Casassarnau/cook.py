@@ -90,6 +90,33 @@
   },
   {
     "title": {
+      "en": "Chocolate Chip Milk Bread Buns (Doowaps)",
+      "es": "Pan de leche con chocolate (Doowaps)",
+      "cat": "Pa de llet amb xocolata (Doowaps)",
+      "sv": "Mjölkbröd med chokladknappar (Doowaps)"
+    },
+    "categories": [
+      "desserts",
+      "baking"
+    ],
+    "path": "recipes/doowaps.json",
+    "image": "/images/doowaps/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "milk",
+      "dry_yeast",
+      "olive_oil",
+      "eggs",
+      "vanilla_extract",
+      "strong_flour",
+      "sugar",
+      "dark_chocolate_chips",
+      "salt"
+    ]
+  },
+  {
+    "title": {
       "en": "Croquetas",
       "es": "Croquetas",
       "cat": "Croquetes",
