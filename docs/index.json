@@ -7,7 +7,8 @@
       "sv": "Baskisk ostkaka"
     },
     "categories": [
-      "desserts"
+      "desserts",
+      "baking"
     ],
     "path": "recipes/cheesecake.json",
     "image": "/images/cheesecake/main.webp",
@@ -63,7 +64,8 @@
       "sv": "Morotstårta"
     },
     "categories": [
-      "desserts"
+      "desserts",
+      "baking"
     ],
     "path": "recipes/carrot_cake.json",
     "image": "/images/carrot_cake/main.webp",
@@ -156,7 +158,8 @@
       "sv": "Kladdig Chokladbrownie"
     },
     "categories": [
-      "desserts"
+      "desserts",
+      "baking"
     ],
     "path": "recipes/chocolate_brownie.json",
     "image": "/images/chocolate_brownie/main.webp",
@@ -186,7 +189,8 @@
       "sv": "Hemgjord Pizza"
     },
     "categories": [
-      "mains"
+      "mains",
+      "baking"
     ],
     "path": "recipes/pizza.json",
     "image": "/images/pizza/main.webp",
@@ -235,7 +239,8 @@
       "cat": "Tarta Tatin"
     },
     "categories": [
-      "desserts"
+      "desserts",
+      "baking"
     ],
     "path": "recipes/tarte_tatin.json",
     "image": "/images/tarte_tatin/main.webp",
