@@ -112,34 +112,34 @@
           "onlyForVariation": "pollo"
         },
         {
-        "ingredient": "mushrooms",
-        "value": 200,
-        "unit": "g",
-        "onlyForVariation": "setas"
+          "ingredient": "mushrooms",
+          "value": 200,
+          "unit": "g",
+          "onlyForVariation": "setas"
         },
         {
-        "ingredient": "olive_oil",
-        "value": 0,
-        "unit": "as_needed",
-        "onlyForVariation": "setas"
+          "ingredient": "olive_oil",
+          "value": 0,
+          "unit": "as_needed",
+          "onlyForVariation": "setas"
         },
         {
-        "ingredient": "butter",
-        "value": 0,
-        "unit": "to_taste",
-        "onlyForVariation": "setas"
+          "ingredient": "butter",
+          "value": 0,
+          "unit": "to_taste",
+          "onlyForVariation": "setas"
         },
         {
-        "ingredient": "salt",
-        "value": 0,
-        "unit": "to_taste",
-        "onlyForVariation": "setas"
+          "ingredient": "salt",
+          "value": 0,
+          "unit": "to_taste",
+          "onlyForVariation": "setas"
         },
         {
-        "ingredient": "white_pepper",
-        "value": 0,
-        "unit": "to_taste",
-        "onlyForVariation": "setas"
+          "ingredient": "white_pepper",
+          "value": 0,
+          "unit": "to_taste",
+          "onlyForVariation": "setas"
         }
       ]
     },
@@ -240,22 +240,22 @@
       "onlyForVariation": "jamon"
     },
     {
-        "text": {
-          "en": "In a large pot, add butter. Once melted, add the diced onion.",
-          "es": "En una olla grande añadir mantequilla y cuando esté derretida añade la cebolla troceada.",
-          "cat": "En una olla gran afegir mantega i quan estigui fosa afegeix la ceba tallada.",
-          "sv": "I en stor kastrull, tillsätt smör. När det är smält, tillsätt den hackade löken."
-        },
-        "onlyForVariation": "pollo"
+      "text": {
+        "en": "In a large pot, add butter. Once melted, add the diced onion.",
+        "es": "En una olla grande añadir mantequilla y cuando esté derretida añade la cebolla troceada.",
+        "cat": "En una olla gran afegir mantega i quan estigui fosa afegeix la ceba tallada.",
+        "sv": "I en stor kastrull, tillsätt smör. När det är smält, tillsätt den hackade löken."
+      },
+      "onlyForVariation": "pollo"
     },
     {
-        "text": {
-          "en": "In a large pot, add butter. Once melted, add the diced onion.",
-          "es": "En una olla grande añadir mantequilla y cuando esté derretida añade la cebolla troceada.",
-          "cat": "En una olla gran afegir mantega i quan estigui fosa afegeix la ceba tallada.",
-          "sv": "I en stor kastrull, tillsätt smör. När det är smält, tillsätt den hackade löken."
-        },
-        "onlyForVariation": "setas"
+      "text": {
+        "en": "In a large pot, add butter. Once melted, add the diced onion.",
+        "es": "En una olla grande añadir mantequilla y cuando esté derretida añade la cebolla troceada.",
+        "cat": "En una olla gran afegir mantega i quan estigui fosa afegeix la ceba tallada.",
+        "sv": "I en stor kastrull, tillsätt smör. När det är smält, tillsätt den hackade löken."
+      },
+      "onlyForVariation": "setas"
     },
     {
       "text": {
@@ -271,7 +271,11 @@
           "cat": "Afegir la farina i barrejar 3 min / 120°C / velocitat 2 per fer el roux.",
           "sv": "Tillsätt mjölet och mixa 3 min / 120°C / hastighet 2 för att göra en roux."
         },
-        "settings": { "temperature": 120, "time": 180, "speed": 2 }
+        "settings": {
+          "temperature": 120,
+          "time": 180,
+          "speed": 2
+        }
       },
       "image": "/images/croquetas/2.webp"
     },
@@ -289,7 +293,11 @@
           "cat": "Escalfar la llet, barrejant 5 min / 90°C / velocitat 2.",
           "sv": "Värm mjölken under mixning 5 min / 90°C / hastighet 2."
         },
-        "settings": { "temperature": 90, "time": 300, "speed": 2 }
+        "settings": {
+          "temperature": 90,
+          "time": 300,
+          "speed": 2
+        }
       }
     },
     {
@@ -306,26 +314,34 @@
           "cat": "Afegir la llet calenta per la tapa i barrejar 6 min / 90°C / velocitat 4.",
           "sv": "Tillsätt den varma mjölken genom locköppningen och mixa 6 min / 90°C / hastighet 4."
         },
-        "settings": { "temperature": 90, "time": 360, "speed": 4 }
+        "settings": {
+          "temperature": 90,
+          "time": 360,
+          "speed": 4
+        }
       }
     },
     {
+      "text": {
+        "en": "Cook the béchamel for 10 minutes, stirring frequently.",
+        "es": "Cocinar la bechamel durante 10 minutos, mezclando frecuentemente.",
+        "cat": "Coure la beixamel durant 10 minuts, remenant regularment.",
+        "sv": "Koka bechamelsåsen i 10 minuter under frekvent omrörning."
+      },
+      "thermomix": {
         "text": {
-            "en": "Cook the béchamel for 10 minutes, stirring frequently.",
-            "es": "Cocinar la bechamel durante 10 minutos, mezclando frecuentemente.",
-            "cat": "Coure la beixamel durant 10 minuts, remenant regularment.",
-            "sv": "Koka bechamelsåsen i 10 minuter under frekvent omrörning."
+          "en": "Mix the béchamel 10 min / 90°C / speed 3, stirring with the spatula.",
+          "es": "Mezclar la bechamel 10 min / 90°C / velocidad 3, removiendo con la espátula.",
+          "cat": "Barrejar la beixamel 10 min / 90°C / velocitat 3, remenant amb l'espàtula.",
+          "sv": "Mixa bechamelsåsen 10 min / 90°C / hastighet 3, rör med spatel."
         },
-        "thermomix": {
-          "text": {
-            "en": "Mix the béchamel 10 min / 90°C / speed 3, stirring with the spatula.",
-            "es": "Mezclar la bechamel 10 min / 90°C / velocidad 3, removiendo con la espátula.",
-            "cat": "Barrejar la beixamel 10 min / 90°C / velocitat 3, remenant amb l'espàtula.",
-            "sv": "Mixa bechamelsåsen 10 min / 90°C / hastighet 3, rör med spatel."
-          },
-          "settings": { "temperature": 90, "time": 600, "speed": 3 }
-        },
-        "image": "/images/croquetas/3.webp"
+        "settings": {
+          "temperature": 90,
+          "time": 600,
+          "speed": 3
+        }
+      },
+      "image": "/images/croquetas/3.webp"
     },
     {
       "text": {
@@ -341,7 +357,11 @@
           "cat": "Afegir el farcit i barrejar 15 min / 90°C / velocitat 3, remenant amb l'espàtula. Afegir sal al gust al final.",
           "sv": "Tillsätt fyllningen och mixa 15 min / 90°C / hastighet 3, rör med spatel. Tillsätt salt efter smak till slut."
         },
-        "settings": { "temperature": 90, "time": 900, "speed": 3 }
+        "settings": {
+          "temperature": 90,
+          "time": 900,
+          "speed": 3
+        }
       },
       "image": "/images/croquetas/4.webp"
     },
@@ -404,4 +424,3 @@
     }
   ]
 }
-

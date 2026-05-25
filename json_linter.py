@@ -29,7 +29,7 @@ def autofix_recipe_folder(folder_path):
             # 2. Overwrite it with beautiful, standardized formatting
             with open(file_path, 'w', encoding='utf-8') as f:
                 # indent=4 formats it neatly, ensure_ascii=False keeps special characters intact
-                json.dump(data, f, indent=4, ensure_ascii=False)
+                json.dump(data, f, indent=2, ensure_ascii=False)
             
             print(f"✨ Fixed & Formatted: {file_path.name}")
             success_count += 1

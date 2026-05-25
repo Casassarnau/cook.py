@@ -6,7 +6,10 @@
     "sv": "Baskisk ostkaka"
   },
   "author": "Arnau",
-  "categories": ["desserts", "baking"],
+  "categories": [
+    "desserts",
+    "baking"
+  ],
   "image": "/images/cheesecake/main.webp",
   "description": {
     "en": "A creamy and delicious cheesecake with a perfect balance of flavors. The original recipe is for a ø 15 cm (6 in) mold.",
@@ -17,16 +20,29 @@
   "portion": {
     "type": "area",
     "shape": "circular",
-    "dimensions": { "diameter": 15, "unit": "cm" }
+    "dimensions": {
+      "diameter": 15,
+      "unit": "cm"
+    }
   },
   "variants": [
     {
       "key": "classic",
-      "name": { "en": "Classic", "es": "Clásica", "cat": "Clàssica", "sv": "Klassisk" }
+      "name": {
+        "en": "Classic",
+        "es": "Clásica",
+        "cat": "Clàssica",
+        "sv": "Klassisk"
+      }
     },
     {
       "key": "blue",
-      "name": { "en": "Blue cheese", "es": "Queso azul", "cat": "Formatge blau", "sv": "Blåmögelost" }
+      "name": {
+        "en": "Blue cheese",
+        "es": "Queso azul",
+        "cat": "Formatge blau",
+        "sv": "Blåmögelost"
+      }
     }
   ],
   "ingredients": [
@@ -38,8 +54,16 @@
         "sv": "Kexbotten"
       },
       "items": [
-        { "ingredient": "digestive_cookies", "value": 0, "unit": "as_needed" },
-        { "ingredient": "butter", "value": 0, "unit": "as_needed" }
+        {
+          "ingredient": "digestive_cookies",
+          "value": 0,
+          "unit": "as_needed"
+        },
+        {
+          "ingredient": "butter",
+          "value": 0,
+          "unit": "as_needed"
+        }
       ]
     },
     {
@@ -97,10 +121,25 @@
           },
           "onlyForVariation": "blue"
         },
-        { "ingredient": "eggs", "value": 2 },
-        { "ingredient": "heavy_cream", "value": 200, "unit": "ml" },
-        { "ingredient": "sugar", "value": 75, "unit": "g" },
-        { "ingredient": "flour", "value": 10, "unit": "g" }
+        {
+          "ingredient": "eggs",
+          "value": 2
+        },
+        {
+          "ingredient": "heavy_cream",
+          "value": 200,
+          "unit": "ml"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 75,
+          "unit": "g"
+        },
+        {
+          "ingredient": "flour",
+          "value": 10,
+          "unit": "g"
+        }
       ]
     }
   ],
