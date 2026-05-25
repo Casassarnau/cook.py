@@ -370,14 +370,11 @@
   "whole_wheat_pastry_flour": "🌾",
   "oat_flour": "🌾",
   "almond_flour": "🥜",
-        "unsweetened_cocoa_powder": "🍫",
-        "espresso_powder": "☕",
-        "dark_chocolate_chips": "🍫",
-        "ham": "🍖",
-        "chicken": "🍗",
-        "mushrooms": "🍄",
-        "milk": "🥛",
-        "panko": "🍞",
-        "white_pepper": "🧂",
-        "herbacol": "🌸"
+  "unsweetened_cocoa_powder": "🍫",
+  "espresso_powder": "☕",
+  "dark_chocolate_chips": "🍫",
+  "chicken": "🍗",
+  "panko": "🍞",
+  "white_pepper": "🧂",
+  "herbacol": "🌸"
 }

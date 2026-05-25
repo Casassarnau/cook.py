@@ -50,3 +50,4 @@ def autofix_recipe_folder(folder_path):
 if __name__ == "__main__":
     # Target your specific recipes folder
     autofix_recipe_folder("docs/recipes")
+    autofix_recipe_folder("docs/translations")
