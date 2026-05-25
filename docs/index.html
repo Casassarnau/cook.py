@@ -9,6 +9,19 @@
     <meta name="author" content="Arnau Casas Saez">
     <meta name="google-site-verification" content="XKrQhWw8e8nNtXft1NjZv9Ao-CbL10l5ZnHfRk7SAkg" />
 
+    <script>
+      (function () {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+        var hash = location.hash;
+        if (hash.indexOf('#recipe=') === 0) {
+          var recipe = new URLSearchParams(hash.slice(1)).get('recipe');
+          if (recipe) document.documentElement.classList.add('route-pending');
+        }
+      })();
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -34,6 +47,9 @@
         -moz-appearance: textfield;
         appearance: textfield;
       }
+      #route-loading { display: none; }
+      html.route-pending #app-shell { display: none; }
+      html.route-pending #route-loading { display: block; }
     </style>
   </head>
 
@@ -84,8 +100,21 @@
         </div>
       </div>
 
+      <div
+        id="route-loading"
+        class="flex justify-center items-center py-24"
+        aria-busy="true"
+        aria-label="Loading recipe"
+      >
+        <div
+          class="h-10 w-10 rounded-full border-4 border-orange-500/30 border-t-orange-500 animate-spin"
+          role="status"
+        ></div>
+      </div>
+
+      <div id="app-shell">
       <!-- Main View -->
-      <template x-if="!selectedRecipe">
+      <template x-if="!routePending && !selectedRecipe">
         <div>
 
 
@@ -166,7 +195,7 @@
       </template>
 
       <!-- Recipe Detail -->
-      <template x-if="selectedRecipe">
+      <template x-if="!routePending && selectedRecipe">
         <div>
           <button
             @click="goHome()"
@@ -416,6 +445,7 @@
           </div>
         </div>
       </template>
+      </div>
     </div>
 
     <!-- Dimension Configuration Modal -->

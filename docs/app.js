@@ -27,6 +27,28 @@ function recipeApp() {
     dimensionConfigHeight: 20,
     showQRModal: false,
     urlCopied: false,
+    routePending: (() => {
+      const hash = location.hash;
+      if (!hash.startsWith('#recipe=')) return false;
+      return !!new URLSearchParams(hash.substring(1)).get('recipe');
+    })(),
+
+    hasRecipeHash() {
+      const hash = location.hash;
+      if (!hash.startsWith('#recipe=')) return false;
+      return !!new URLSearchParams(hash.substring(1)).get('recipe');
+    },
+
+    getActiveRecipeSlug() {
+      if (!this.selectedRecipe || !this.index.length) return null;
+      const item = this.index.find(i => i.title?.en === this.selectedRecipe.title?.en);
+      return item ? item.path.replace('recipes/', '').replace('.json', '') : null;
+    },
+
+    finishRoutePending() {
+      this.routePending = false;
+      document.documentElement.classList.remove('route-pending');
+    },
 
     async init() {
       this.basePath = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : '/cook.py';
@@ -48,7 +70,8 @@ function recipeApp() {
       await this.loadEmojis();
       await this.loadIndex();
       window.addEventListener('hashchange', () => this.handleRoute());
-      this.handleRoute();
+      await this.handleRoute();
+      this.finishRoutePending();
     },
 
     getImageUrl(path, type) {
@@ -347,9 +370,17 @@ function recipeApp() {
         const thermomixParam = params.get('thermomix');
         
         if (recipeName) {
-          const recipe = await this.fetchRecipeByName(recipeName);
-          this.selectedRecipe = recipe || null;
-          this.thermomixAvailable = this.recipeHasThermomixInstructions(this.selectedRecipe);
+          const needsFetch = this.getActiveRecipeSlug() !== recipeName;
+          if (needsFetch) {
+            this.routePending = true;
+            document.documentElement.classList.add('route-pending');
+          }
+
+          if (needsFetch) {
+            const recipe = await this.fetchRecipeByName(recipeName);
+            this.selectedRecipe = recipe || null;
+            this.thermomixAvailable = this.recipeHasThermomixInstructions(this.selectedRecipe);
+          }
           
           if (this.selectedRecipe) {
             // Store original dimensions for multiplier calculation (never change these)
@@ -431,11 +462,14 @@ function recipeApp() {
               this.thermomixEnabled = false;
             }
           }
+
+          this.finishRoutePending();
         }
       } else {
         this.selectedRecipe = null;
         this.thermomixAvailable = false;
         this.thermomixEnabled = false;
+        this.finishRoutePending();
       }
     },
 
