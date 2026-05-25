@@ -23,7 +23,7 @@
     },
     "cat": {
         "desserts": "Postres",
-        "mains": "Primers",
+        "mains": "Principals",
         "snacks": "Aperitius",
         "drinks": "Begudes",
         "baking": "Forn",
@@ -144,6 +144,7 @@
         "milk": "llet",
         "panko": "panko",
         "white_pepper": "pebre blanc",
+        "herbacol": "brots d'herbacol",
         "pizza_toppings": "ingredients"
     },
     "units": {

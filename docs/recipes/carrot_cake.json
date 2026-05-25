@@ -221,5 +221,138 @@
       },
       "image": "/images/carrot_cake/filling.webp"
     }
+  ],
+  "instructionsThermomix": [
+    {
+      "text": {
+        "en": "Preheat the oven to 180°C (356°F) with fan assistance.",
+        "es": "Precalienta el horno a 180°C (356°F) con ventilador.",
+        "cat": "Preescalfa el forn a 180°C (356°F) amb ventilador.",
+        "sv": "Värm ugnen till 180°C (356°F) med fläkt."
+      }
+    },
+    {
+      "text": {
+        "en": "Put the sugar and orange zest in the bowl and pulverize.",
+        "es": "Ponga en el vaso el azúcar y la piel de naranja y pulverice.",
+        "cat": "Poseu al got el sucre i la pell de taronja i pulveritzeu.",
+        "sv": "Lägg sockret och apelsinskal i skålen och pulverisera."
+      },
+      "settings": {
+        "time": 20,
+        "speed": 10
+      }
+    },
+    {
+      "text": {
+        "en": "Add the carrots and chop.",
+        "es": "Añada las zanahorias y triture.",
+        "cat": "Afegiu les pastanagues i tritureu.",
+        "sv": "Tillsätt morötterna och hacka."
+      },
+      "settings": {
+        "time": 5,
+        "speed": 5
+      }
+    },
+    {
+      "text": {
+        "en": "Add the eggs and sunflower oil and mix.",
+        "es": "Agregue los huevos y el aceite de girasol y mezcle.",
+        "cat": "Afegiu els ous i l'oli de gira-sol i barregeu.",
+        "sv": "Tillsätt äggen och solrosoljan och mixa."
+      },
+      "settings": {
+        "time": 30,
+        "speed": 5
+      }
+    },
+    {
+      "text": {
+        "en": "Add the flour, baking soda, baking powder, cinnamon, nutmeg, cardamom, and salt and mix. Finish mixing with the spatula. Pour the mixture into the baking mold.",
+        "es": "Incorpore la harina, el bicarbonato, la levadura química, la canela, la nuez moscada, el cardamomo y la sal y mezcle. Termine de mezclar con la espátula. Vierta la mezcla en el molde para hornear.",
+        "cat": "Incorporeu la farina, el bicarbonat, el llevat químic, la canyella, el nou moscada, el cardamom i la sal i barregeu. Acabeu de barrejar amb l'espàtula. Aboqueu la barreja al motlle per coure al forn.",
+        "sv": "Tillsätt mjöl, bikarbonat, bakpulver, kanel, muskot, kardemumma och salt och mixa. Blanda färdigt med spateln. Häll blandningen i bakformen."
+      },
+      "settings": {
+        "time": 3,
+        "speed": 6
+      }
+    },
+    {
+      "text": {
+        "en": "Bake in the preheated oven for 1 hour.",
+        "es": "Hornee en el horno precalentado durante 1 hora.",
+        "cat": "Cou al forn preescalfat durant 1 hora.",
+        "sv": "Grädda i den förvärmda ugnen i 1 timme."
+      }
+    },
+    {
+      "text": {
+        "en": "Once the time has passed, remove from the oven and wait for it to cool before removing from the mold. Refrigerate for at least 1 hour. This step is necessary so the frosting doesn't melt.",
+        "es": "Una vez pasado el tiempo, sácalo del horno y espera a que esté frío para quitarle el molde y mételo al menos 1 hora en la nevera. Este paso es necesario para que el glaseado no se derrita.",
+        "cat": "Un cop passat el temps, treu-ho del forn i espera que estigui fred per treure-li el motlle i fica-ho almenys 1 hora a la nevera. Aquest pas és necessari perquè el glaçat no es fongui.",
+        "sv": "När tiden har gått, ta bort från ugnen och vänta tills den svalnat innan du tar bort den från formen. Kyl i minst 1 timme. Detta steg är nödvändigt så att glasyren inte smälter."
+      },
+      "image": "/images/carrot_cake/cake.webp"
+    },
+    {
+      "text": {
+        "en": "Put the white chocolate in the bowl and grate.",
+        "es": "Ponga en el vaso el chocolate blanco y ralle.",
+        "cat": "Poseu al got la xocolata blanca i ratlleu.",
+        "sv": "Lägg den vita chokladen i skålen och riv."
+      },
+      "settings": {
+        "time": 8,
+        "speed": 8
+      }
+    },
+    {
+      "text": {
+        "en": "With the spatula, scrape the chocolate down to the bottom of the bowl. Add the butter and melt.",
+        "es": "Con la espátula, baje el chocolate hacia el fondo del vaso. Añada la mantequilla y funda.",
+        "cat": "Amb l'espàtula, baixeu la xocolata cap al fons del got. Afegiu la mantega i fongueu.",
+        "sv": "Skrapa ned chokladen till botten av skålen med spateln. Tillsätt smöret och smält."
+      },
+      "settings": {
+        "temperature": 50,
+        "time": 60,
+        "speed": 3
+      }
+    },
+    {
+      "text": {
+        "en": "Add the cream cheese, orange juice, and icing sugar and mix.",
+        "es": "Incorpore el queso cremoso, el zumo de naranja y el azúcar glas y mezcle.",
+        "cat": "Incorporeu el formatge cremós, el suc de taronja i el sucre glaç i barregeu.",
+        "sv": "Tillsätt gräddosten, apelsinjuicen och florsockret och mixa."
+      },
+      "settings": {
+        "time": 30,
+        "speed": 3
+      }
+    },
+    {
+      "text": {
+        "en": "With the spatula, scrape the ingredients down to the bottom of the bowl and mix again.",
+        "es": "Con la espátula, baje los ingredientes hacia el fondo del vaso y vuelva a mezclar.",
+        "cat": "Amb l'espàtula, baixeu els ingredients cap al fons del got i torneu a barrejar.",
+        "sv": "Skrapa ned ingredienserna till botten av skålen med spateln och mixa igen."
+      },
+      "settings": {
+        "time": 30,
+        "speed": 4
+      }
+    },
+    {
+      "text": {
+        "en": "Once the frosting is ready and the cake is cold, cut the cake in half with a knife and fill the interior with frosting. Add chopped walnuts to the frosting in the middle layer. Cover the surface with frosting and add chopped walnuts on top for decoration.",
+        "es": "Una vez el glaseado está hecho y el pastel frío, corta el pastel por la mitad con un cuchillo y rellena con glaseado el interior. Añade nueces troceadas al glaseado en la capa del medio. Cubre la superficie con glaseado y añade nueces troceadas encima para decorar.",
+        "cat": "Un cop el glaçat està fet i el pastís fred, talla el pastís per la meitat amb un ganivet i farceix amb glaçat l'interior. Afegeix nous trossejades al glaçat a la capa del mig. Cobreix la superfície amb glaçat i afegeix nous trossejades a dalt per decorar.",
+        "sv": "När glasyren är klar och tårtan är kall, skär tårtan på mitten med en kniv och fyll insidan med glasyr. Tillsätt hackade valnötter till glasyren i mellanlagret. Täck ytan med glasyr och tillsätt hackade valnötter ovanpå för dekoration."
+      },
+      "image": "/images/carrot_cake/filling.webp"
+    }
   ]
 }

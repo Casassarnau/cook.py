@@ -1,0 +1,239 @@
+{
+  "title": {
+    "en": "Mató (Fresh Cheese)",
+    "es": "Mató",
+    "cat": "Mató",
+    "sv": "Mató (färskost)"
+  },
+  "author": "Arnau",
+  "categories": [
+    "desserts"
+  ],
+  "image": "/images/mato/main.webp",
+  "description": {
+    "en": "Traditional Catalan fresh cheese coagulated with wild crocus pistils (herbacol). Soft, delicate, and best served as mel i mató with honey and walnuts. Each serving is about 100 g. Consume within 3–4 days.",
+    "es": "Queso fresco catalán tradicional cuajado con brotes de herbacol. Suave y delicado; lo clásico es tomarlo con miel y nueces (mel i mató). Cada ración es de unos 100 g. Consúmelo en un máximo de 3 o 4 días.",
+    "cat": "Formatge fresc català tradicional quallat amb brots d'herbacol. Tou i delicat; el clàssic és el mel i mató amb mel i nous. Cada ració és d'uns 100 g. Consumeix-lo en un màxim de 3 o 4 dies.",
+    "sv": "Traditionell katalansk färskost som koaguleras med herbacol (vild krokus). Mjuk och mild; serveras klassiskt med honung och valnötter. Varje portion är cirka 100 g. Ät inom 3–4 dagar."
+  },
+  "portion": {
+    "type": "servings",
+    "value": 2,
+    "unit": "servings"
+  },
+  "variants": [
+    {
+      "key": "original",
+      "name": {
+        "en": "Original (herbacol)",
+        "es": "Original (herbacol)",
+        "cat": "Original (herbacol)",
+        "sv": "Original (herbacol)"
+      }
+    },
+    {
+      "key": "lemon",
+      "name": {
+        "en": "With lemon",
+        "es": "Con limón",
+        "cat": "Amb llimona",
+        "sv": "Med citron"
+      }
+    }
+  ],
+  "ingredients": [
+    {
+      "group": {
+        "en": "Basic ingredients",
+        "es": "Ingredientes básicos",
+        "cat": "Ingredients bàsics",
+        "sv": "Grundingredienser"
+      },
+      "items": [
+        {
+          "ingredient": "milk",
+          "value": 1,
+          "unit": "l",
+          "text": {
+            "en": "fresh and whole",
+            "es": "fresca y entera",
+            "cat": "fresca i sencera",
+            "sv": "färsk och hel"
+          }
+        },
+        {
+          "ingredient": "herbacol",
+          "value": 1,
+          "unit": "g",
+          "onlyForVariation": "original",
+          "text": {
+            "en": "dried pistils",
+            "es": "pistilos secos",
+            "cat": "pistils secs",
+            "sv": "torkade pistiller"
+          }
+        },
+        {
+          "ingredient": "water",
+          "value": 50,
+          "unit": "ml",
+          "onlyForVariation": "original",
+          "text": {
+            "en": "lukewarm, for the vegetable rennet",
+            "es": "templada, para el cuajo vegetal",
+            "cat": "tèbia, per al quall vegetal",
+            "sv": "ljummen, till vegetabilisk löpe"
+          }
+        },
+        {
+          "ingredient": "lemon",
+          "value": 0.5,
+          "onlyForVariation": "lemon",
+          "text": {
+            "en": "juice only",
+            "es": "solo el zumo",
+            "cat": "només el suc",
+            "sv": "endast saften"
+          }
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Prepare the vegetable rennet: put the herbacol pistils in a mortar with the lukewarm water. Crush well and let rest 15–30 minutes until the water turns a dark brownish-green. Strain through a fine mesh sieve or cheesecloth, squeezing the pistils to extract all the liquid. This liquid is your rennet.",
+        "es": "Prepara el cuajo vegetal: pon los brotes de herbacol en un mortero con el agua templada. Machácalos bien y deja reposar 15–30 min hasta que el agua adquiera un color amarronado/verdoso oscuro. Cuela el líquido con un colador de malla fina (o una gasa), estrujando bien los brotes. Este líquido es tu cuajo.",
+        "cat": "Prepara el quall vegetal: posa els brots d'herbacol en un morter amb l'aigua tèbia. Tritura'ls bé i deixa reposar 15–30 min fins que l'aigua prengui un color marró fosc. Cola el líquid amb un colador de malla fina (o una gasa), eixugant bé els brots. Aquest líquid és el teu quall.",
+        "sv": "Förbered vegetabilisk löpe: lägg herbacol-pistillerna i en mortel med ljummet vatten. Krossa väl och låt vila 15–30 min tills vattnet blir mörk brungrön. Sila genom fin maska eller ostduk och pressa ut all vätska. Detta är din löpe."
+      },
+      "onlyForVariation": "original"
+    },
+    {
+      "text": {
+        "en": "Pasteurize and heat the milk to 75°C in a heavy pot over low heat, stirring occasionally, for about 8 minutes. Do not boil.",
+        "es": "Pasteuriza y calienta la leche a 75°C en una olla a fuego suave, removiendo de vez en cuando, unos 8 minutos. No la hiervas.",
+        "cat": "Pasteuritza i escalfa la llet a 75°C en una cassola a foc suau, remenant de tant en tant, uns 8 minuts. No la bullis.",
+        "sv": "Pastörisera och värm mjölken till 75°C i en tjockbottnad kastrull på låg värme under omrörning, ca 8 minuter. Låt den inte koka."
+      }
+    },
+    {
+      "text": {
+        "en": "Remove from the heat and let the milk cool to 37–40°C (about 15–20 minutes). Important: do not add the rennet above 45°C or it will be inactivated.",
+        "es": "Retira del fuego y deja enfriar la leche hasta 37–40°C (unos 15–20 minutos). Importante: no añadas el cuajo por encima de 45°C o se inactivará.",
+        "cat": "Retira del foc i deixa refredar la llet fins a 37–40°C (uns 15–20 minuts). Important: no afegeixis el quall per sobre de 45°C o s'inactivarà.",
+        "sv": "Ta bort från värmen och låt mjölken svalna till 37–40°C (ca 15–20 minuter). Viktigt: tillsätt inte löpen över 45°C — då inaktiveras den."
+      },
+      "onlyForVariation": "original"
+    },
+    {
+      "text": {
+        "en": "Right after heating, add the juice of half a lemon and stir gently for about 15 seconds until evenly mixed. Do not wait for the milk to cool.",
+        "es": "Justo después de calentar, añade el zumo de media limón y remueve suavemente unos 15 segundos hasta que quede homogéneo. No esperes a que enfríe la leche.",
+        "cat": "Just després d'escalfar, afegeix el suc de mitja llimona i remena suaument uns 15 segons fins que quedi homogeni. No esperis que refredi la llet.",
+        "sv": "Strax efter uppvärmningen, tillsätt saften från en halv citron och rör försiktigt i ca 15 sekunder. Vänta inte med att låta mjölken svalna."
+      },
+      "onlyForVariation": "lemon"
+    },
+    {
+      "text": {
+        "en": "Add the reserved herbacol liquid and stir gently for about 15 seconds until evenly mixed.",
+        "es": "Añade el líquido del herbacol reservado y remueve suavemente unos 15 segundos hasta que quede homogéneo.",
+        "cat": "Afegeix el líquid de l'herbacol reservat i remena suaument uns 15 segons fins que quedi homogeni.",
+        "sv": "Tillsätt den sparade herbacol-löpen och rör försiktigt i ca 15 sekunder tills den är jämnt blandad."
+      },
+      "onlyForVariation": "original"
+    },
+    {
+      "text": {
+        "en": "Cover and leave completely still for 1 hour so the milk sets. Do not move the container.",
+        "es": "Tapar y dejar completamente quieto durante 1 hora para que cuaje. No muevas el recipiente.",
+        "cat": "Tapar i deixar completament quiet durant 1 hora perquè es qualli. No moguis el recipient.",
+        "sv": "Täck och låt stå helt stilla i 1 timme så mjölken stelnar. Flytta inte behållaren."
+      }
+    },
+    {
+      "text": {
+        "en": "Gently break up the curd and pour into a very fine strainer (a coffee-cloth strainer works well). In the first minutes the whey will separate; if the strainer clogs, use a spoon to move the mató aside so the whey can drain. When lukewarm, after about 2 hours of draining, cover and refrigerate until serving.",
+        "es": "Rompe suavemente la cuajada y vuelca en un colador muy fino (recomiendo un colador de tela de café). En los primeros minutos verás que el suero se separa; si el colador se taponó, aparta el mató con una cuchara para que el suero pueda filtrarse. Cuando esté tibio, tras unas 2 horas de reposo escurriendo, tapa y guarda en la nevera hasta consumir.",
+        "cat": "Trenca suaument la quallada i bolca en un colador molt fi (recomano un de tela de cafè). Als primers minuts veuràs que el sèrum es separa; si el colador s'obstrueix, aparta el mató amb una cullera perquè el sèrum pugui filtrar-se. Quan estigui tebi, després d'unes 2 hores escorrent, tapa i guarda a la nevera fins consumir.",
+        "sv": "Bryt försiktigt upp koagel och häll i ett mycket finmaskigt durk (kaffefilterduk fungerar bra). Under de första minuterna skiljer sig vasslan; om durken täpps till, flytta matón åt sidan med en sked så vasslan kan rinna av. När den är ljummen, efter ca 2 timmars avrinning, täck och förvara i kylskåp tills servering."
+      }
+    }
+  ],
+  "instructionsThermomix": [
+    {
+      "text": {
+        "en": "Prepare the vegetable rennet: put the herbacol pistils in a mortar with the lukewarm water. Crush well and let rest 15–30 minutes until the water turns a dark brownish-green. Strain through a fine mesh sieve or cheesecloth, squeezing the pistils to extract all the liquid. Reserve this liquid.",
+        "es": "Prepara el cuajo vegetal: pon los brotes de herbacol en un mortero con el agua templada. Machácalos bien y deja reposar 15–30 min hasta que el agua adquiera un color amarronado/verdoso oscuro. Cuela el líquido con un colador de malla fina (o una gasa), estrujando bien los brotes. Reserva este líquido.",
+        "cat": "Prepara el quall vegetal: posa els brots d'herbacol en un morter amb l'aigua tèbia. Tritura'ls bé i deixa reposar 15–30 min fins que l'aigua prengui un color bru-verd fosc. Cola el líquid amb un colador de malla fina (o una gasa), eixugant bé els brots. Reserva aquest líquid.",
+        "sv": "Förbered vegetabilisk löpe: lägg herbacol-pistillerna i en mortel med ljummet vatten. Krossa väl och låt vila 15–30 min. Sila och spara vätskan."
+      },
+      "onlyForVariation": "original"
+    },
+    {
+      "text": {
+        "en": "Pour 1 liter of whole milk into the Thermomix bowl.",
+        "es": "Vierte 1 litro de leche entera en el vaso.",
+        "cat": "Aboca 1 litre de llet sencera al got.",
+        "sv": "Häll 1 liter helmjölk i Thermomix-skålen."
+      },
+      "settings": {
+        "temperature": 75,
+        "time": 480,
+        "speed": 1
+      }
+    },
+    {
+      "text": {
+        "en": "Remove the bowl from the base and take off the lid. Let it rest on the counter until the display reads 37–40°C (usually 15–20 minutes). Do not add the rennet above 45°C.",
+        "es": "Retira el vaso de la máquina y quita la tapa. Deja reposar sobre la encimera hasta que la pantalla marque 37°C o 40°C (suele tardar unos 15–20 minutos). No añadas el cuajo por encima de 45°C.",
+        "cat": "Retira el got de la base i treu la tapa. Deixa reposar sobre la encimera fins que la pantalla marqui 37°C o 40°C (solen ser uns 15–20 minuts). No afegeixis el quall per sobre de 45°C.",
+        "sv": "Ta bort skålen från basen och lyft av locket. Låt vila på bänken tills displayen visar 37–40°C (ca 15–20 min). Tillsätt inte löpen över 45°C."
+      },
+      "onlyForVariation": "original"
+    },
+    {
+      "text": {
+        "en": "Return the bowl to the base, add the juice of half a lemon, and mix. Do not wait for the milk to cool to 40°C.",
+        "es": "Vuelve a colocar el vaso en la base, añade el zumo de media limón y mezcla. No esperes a que la leche baje a 40°C.",
+        "cat": "Torna a col·locar el got a la base, afegeix el suc de mitja llimona i barreja. No esperis que la llet baixi a 40°C.",
+        "sv": "Sätt tillbaka skålen, tillsätt saften från en halv citron och mixa. Vänta inte tills mjölken svalnar till 40°C."
+      },
+      "onlyForVariation": "lemon",
+      "settings": {
+        "time": 15,
+        "speed": 2
+      }
+    },
+    {
+      "text": {
+        "en": "Return the bowl to the base, add the reserved herbacol liquid, and mix.",
+        "es": "Vuelve a colocar el vaso en la base, añade el líquido del herbacol reservado y mezcla.",
+        "cat": "Torna a col·locar el got a la base, afegeix el líquid de l'herbacol reservat i barreja.",
+        "sv": "Sätt tillbaka skålen, tillsätt den sparade herbacol-löpen och mixa."
+      },
+      "onlyForVariation": "original",
+      "settings": {
+        "time": 15,
+        "speed": 2
+      }
+    },
+    {
+      "text": {
+        "en": "Leave the bowl closed on the base, covered with a kitchen towel to keep residual heat. Do not move the machine for 1 hour.",
+        "es": "Deja el vaso cerrado en su base, tapado con un paño de cocina para mantener el calor residual. No muevas la máquina durante 1 hora.",
+        "cat": "Deixa el got tancat a la base, tapat amb un drap de cuina per mantenir la calor residual. No moguis la màquina durant 1 hora.",
+        "sv": "Låt skålen stå stängd på basen, täckt med en kökshandduk för att behålla värmen. Rör inte maskinen på 1 timme."
+      }
+    },
+    {
+      "text": {
+        "en": "Shake the Thermomix gently to break up the curd, then pour into a very fine strainer (a coffee-cloth strainer works well). If the strainer clogs, use a spoon to move the mató aside so the whey can drain. When lukewarm, after about 2 hours of draining, cover and refrigerate until serving.",
+        "es": "Sacude un poco la Thermomix para romper la cuajada y vuelca en un colador muy fino (recomiendo un colador de tela de café). Si el colador se taponó, aparta el mató con una cuchara para que el suero pueda filtrarse. Cuando esté tibio, tras unas 2 horas de reposo escurriendo, tapa y guarda en la nevera hasta consumir.",
+        "cat": "Sacseja una mica la Thermomix per trencar la quallada i bolca en un colador molt fi (recomano un de tela de cafè). Si el colador s'obstrueix, aparta el mató amb una cullera perquè el sèrum pugui filtrar-se. Quan estigui tebi, després d'unes 2 hores escorrent, tapa i guarda a la nevera fins consumir.",
+        "sv": "Skaka Thermomix försiktigt för att bryta koaglet och häll i ett mycket finmaskigt durk. Flytta matón med en sked om durken täpps till. Efter ca 2 timmars avrinning, täck och kyl."
+      }
+    }
+  ]
+}

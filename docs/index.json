@@ -65,7 +65,8 @@
     },
     "categories": [
       "desserts",
-      "baking"
+      "baking",
+      "thermomix"
     ],
     "path": "recipes/carrot_cake.json",
     "image": "/images/carrot_cake/main.webp",
@@ -211,6 +212,28 @@
       "salt",
       "sugar",
       "pizza_toppings"
+    ]
+  },
+  {
+    "title": {
+      "en": "Mató (Fresh Cheese)",
+      "es": "Mató",
+      "cat": "Mató",
+      "sv": "Mató (färskost)"
+    },
+    "categories": [
+      "desserts",
+      "thermomix"
+    ],
+    "path": "recipes/mato.json",
+    "image": "/images/mato/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "milk",
+      "herbacol",
+      "water",
+      "lemon"
     ]
   },
   {
