@@ -5,6 +5,11 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
+# === Step 0: Auto-lint and fix JSON files ===
+echo "🧹 Auto-linting and fixing JSON files in docs/recipes..."
+# Run the python script we created earlier
+python3 json_linter.py
+
 # === Step 1: Generate images ===
 echo "🖼️  Running image generation..."
 python3 generate_images.py
