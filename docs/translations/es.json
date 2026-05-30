@@ -145,7 +145,8 @@
     "panko": "panko",
     "white_pepper": "pimienta blanca",
     "herbacol": "brotes de herbacol",
-    "pizza_toppings": "ingredientes"
+    "pizza_toppings": "ingredientes",
+    "pearl_sugar": "azúcar perlado"
   },
   "units": {
     "g": "g",
@@ -159,6 +160,7 @@
     "tsp": "cucharadita",
     "tbsp": "cucharada",
     "pizza": "pizza",
+    "waffle": "gofres",
     "pan": "bandeja",
     "unit": "unidades",
     "unit_single": "unidad",
@@ -175,6 +177,7 @@
     "tsp": "de",
     "tbsp": "de",
     "pizza": "",
+    "waffle": "",
     "pan": "",
     "for": "para",
     "pinch": "de"

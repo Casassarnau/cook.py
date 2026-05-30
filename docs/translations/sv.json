@@ -145,7 +145,8 @@
     "panko": "panko",
     "white_pepper": "vitpeppar",
     "herbacol": "herbacol (vild krokus)",
-    "pizza_toppings": "toppingar"
+    "pizza_toppings": "toppingar",
+    "pearl_sugar": "pärlsocker"
   },
   "units": {
     "g": "g",
@@ -159,6 +160,7 @@
     "tsp": "tsk",
     "tbsp": "msk",
     "pizza": "pizza",
+    "waffle": "våfflor",
     "pan": "form",
     "unit": "enheter",
     "unit_single": "enhet",
@@ -175,6 +177,7 @@
     "tsp": "av",
     "tbsp": "av",
     "pizza": "",
+    "waffle": "",
     "pan": "",
     "for": "för",
     "pinch": "av"

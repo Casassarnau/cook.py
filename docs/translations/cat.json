@@ -145,7 +145,8 @@
     "panko": "panko",
     "white_pepper": "pebre blanc",
     "herbacol": "brots d'herbacol",
-    "pizza_toppings": "ingredients"
+    "pizza_toppings": "ingredients",
+    "pearl_sugar": "sucre perlat"
   },
   "units": {
     "g": "g",
@@ -159,6 +160,7 @@
     "tsp": "culleradeta",
     "tbsp": "cullera",
     "pizza": "pizza",
+    "waffle": "gofres",
     "pan": "safata",
     "unit": "unitats",
     "unit_single": "unitat",
@@ -175,6 +177,7 @@
     "tsp": "de",
     "tbsp": "de",
     "pizza": "",
+    "waffle": "",
     "pan": "",
     "for": "per a",
     "pinch": "de"

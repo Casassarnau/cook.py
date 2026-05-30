@@ -1,0 +1,207 @@
+{
+  "title": {
+    "en": "Liège-style Waffles",
+    "es": "Gofres estilo Lieja",
+    "cat": "Gofres de Lieja",
+    "sv": "Liège-våfflor"
+  },
+  "categories": [
+    "desserts"
+  ],
+  "image": "/images/liege_waffles/main.webp",
+  "description": {
+    "en": "Soft, buttery yeast dough with pearl sugar — the Liège touch.",
+    "es": "Masa de levadura suave y mantecosa con azúcar perlado — el toque de Lieja.",
+    "cat": "Massa de llevat suau i mantegosa amb sucre perlat — el toc de Lieja.",
+    "sv": "Mjuk, smörig jästdeg med pärlsocker — Liège-känslan."
+  },
+  "author": "Arnau",
+  "portion": {
+    "type": "units",
+    "value": 4,
+    "unit": "waffle"
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Balanced base (more buttery)",
+        "es": "Base equilibrada (más sabor a mantequilla)",
+        "cat": "La base equilibrada (amb més gust a mantega)",
+        "sv": "Balanserad bas (mer smörsmak)"
+      },
+      "items": [
+        {
+          "ingredient": "flour",
+          "value": 150,
+          "unit": "g",
+          "text": {
+            "en": "wheat; strong or all-purpose",
+            "es": "de trigo; de fuerza o normal",
+            "cat": "de blat; de força o normal",
+            "sv": "vetemjöl; durum eller vetemjöl"
+          }
+        },
+        {
+          "ingredient": "butter",
+          "value": 50,
+          "unit": "g",
+          "text": {
+            "en": "softened, at room temperature",
+            "es": "en pomada, blanda",
+            "cat": "en pomada, tova",
+            "sv": "rumsvarm, mjuk"
+          }
+        },
+        {
+          "ingredient": "greek_yogurt",
+          "value": 40,
+          "unit": "g",
+          "text": {
+            "en": "plain",
+            "es": "natural",
+            "cat": "natural",
+            "sv": "naturell"
+          }
+        },
+        {
+          "ingredient": "eggs",
+          "value": 1,
+          "text": {
+            "en": "large",
+            "es": "grande (L)",
+            "cat": "gran (L)",
+            "sv": "stor (L)"
+          }
+        },
+        {
+          "ingredient": "milk",
+          "value": 30,
+          "unit": "ml",
+          "text": {
+            "en": "warm",
+            "es": "tibia",
+            "cat": "tèbia",
+            "sv": "ljummen"
+          }
+        },
+        {
+          "ingredient": "dry_yeast",
+          "value": 4,
+          "unit": "g"
+        },
+        {
+          "ingredient": "salt",
+          "value": 1,
+          "unit": "pinch"
+        },
+        {
+          "ingredient": "vanilla_extract",
+          "value": 0,
+          "unit": "to_taste"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "The Liège touch",
+        "es": "El toque de Lieja",
+        "cat": "El toc de Lieja",
+        "sv": "Liège-känslan"
+      },
+      "items": [
+        {
+          "ingredient": "pearl_sugar",
+          "value": 50,
+          "unit": "g"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Activate the yeast: dissolve the dry yeast in the warm milk. Let it rest about 5 minutes until it starts to foam or bubble slightly.",
+        "es": "Activar la levadura: disuelve la levadura seca en la leche tibia. Déjala reposar unos 5 minutos hasta que empiece a hacer un poco de espuma o burbujas.",
+        "cat": "Activar el llevat: dissol el llevat sec en els 30 ml de llet tèbia. Deixa-ho reposar uns 5 minuts fins que comenci a fer una mica d'escuma o bombolles.",
+        "sv": "Aktivera jästen: lös den torra jästen i den ljumna mjölken. Låt vila cirka 5 minuter tills det börjar skumma eller bubbla lite."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Pour the warm milk and dry yeast into the Thermomix bowl and dissolve.",
+          "es": "Vierte la leche tibia y la levadura seca en el vaso de la Thermomix y disuélvelas.",
+          "cat": "Aboca la llet tèbia i el llevat sec al got de la Thermomix i dissol-los.",
+          "sv": "Häll den ljumna mjölken och den torra jästen i Thermomix-skålen och lös upp."
+        },
+        "settings": {
+          "temperature": 37,
+          "time": 120,
+          "speed": 2
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Mix the wet ingredients: in a bowl, beat the soft butter with the Greek yogurt until creamy and smooth. Then add the egg and vanilla and mix well.",
+        "es": "Mezclar los húmedos: en un bol, bate la mantequilla blanda con el yogur griego hasta obtener una crema homogénea. Después, añade el huevo y la vainilla y mézclalo bien.",
+        "cat": "Barrejar els humits: en un bol, bat la mantega tova amb el iogurt grec fins que quedi una crema homogènia. Després, afegeix l'ou i la vainilla, i barreja-ho bé.",
+        "sv": "Blanda de våta ingredienserna: i en skål, vispa det mjuka smöret med den grekiska yoghurten till en slät kräm. Tillsätt sedan ägget och vaniljen och blanda väl."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Put the soft butter and Greek yogurt in the Thermomix bowl. Mix until creamy, then add the egg and vanilla and mix again.",
+          "es": "Mete la mantequilla blanda y el yogur griego en el vaso de la Thermomix. Mezcla hasta obtener una crema y añade el huevo y la vainilla; mezcla de nuevo.",
+          "cat": "Posa la mantega tova i el iogurt grec al got de la Thermomix. Barreja fins obtenir una crema, afegeix l'ou i la vainilla i torna a barrejar.",
+          "sv": "Lägg det mjuka smöret och den grekiska yoghurten i Thermomix-skålen. Blanda till en kräm, tillsätt ägget och vaniljen och blanda igen."
+        },
+        "settings": {
+          "time": 30,
+          "speed": 4
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Form the dough: add the flour, the milk with yeast, and the salt to the bowl. Knead for a few minutes. With the extra butter, the dough becomes more elastic, soft, and easy to handle than a leaner mix.",
+        "es": "Formar la masa: incorpora la harina, la leche con la levadura y la sal al bol. Amasa unos minutos. Con un poco más de mantequilla, verás que la masa queda más elástica, suave y fácil de manejar.",
+        "cat": "Formar la massa: incorpora la farina, la llet amb el llevat i la sal al bol. Amassa-ho tot durant uns minuts. Com que hem posat una mica més de mantega, veuràs que la massa es torna molt més elàstica, suau i fàcil de manejar que abans.",
+        "sv": "Forma degen: blanda i mjölet, mjölken med jäst och saltet i skålen. Knåda några minuter. Med lite extra smör blir degen mer elastisk, mjuk och lättare att hantera."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the flour, activated milk with yeast, and salt to the Thermomix bowl. Knead with the lid on until the dough is smooth and elastic.",
+          "es": "Añade la harina, la leche activada con levadura y la sal al vaso de la Thermomix. Amasa con el vaso cerrado hasta obtener una masa lisa y elástica.",
+          "cat": "Afegeix la farina, la llet activada amb llevat i la sal al got de la Thermomix. Amassa amb el got tancat fins obtenir una massa llisa i elàstica.",
+          "sv": "Tillsätt mjöl, aktiverad mjölk med jäst och salt i Thermomix-skålen. Knåda med lock tills degen är slät och elastisk."
+        },
+        "settings": {
+          "mode": "knead",
+          "time": 180
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "First rise: cover the bowl with a clean cloth and let the dough rise in a warm place for 1 hour, or until it has doubled in volume.",
+        "es": "Primer reposo: cubre el bol con un paño limpio y deja levar la masa en un lugar cálido durante 1 hora (o hasta que haya doblado su volumen).",
+        "cat": "Primer repòs: cobreix el bol amb un drap net i deixa llevar la massa en un lloc càlid durant 1 hora (o fins que hagi doblat el seu volum).",
+        "sv": "Första jäsningen: täck skålen med en ren duk och låt degen jäsa på en varm plats i 1 timme (eller tills den har fördubblats)."
+      }
+    },
+    {
+      "text": {
+        "en": "The sugar: after the hour, add the pearl sugar to the dough. Knead just enough by hand to distribute it well without crushing the sugar too much.",
+        "es": "El azúcar: pasada la hora, añade el azúcar perlado a la masa. Amasa solo lo necesario con las manos para repartirlo bien sin aplastar demasiado el azúcar.",
+        "cat": "El sucre: passada l'hora, afegeix el sucre perlat a la massa. Amassa el just i necessari amb les mans per distribuir-lo bé sense aixafar gaire el sucre.",
+        "sv": "Sockret: efter timmen, blanda i pärlsockret. Knåda bara så mycket som behövs för hand för att fördela det utan att krossa sockret för mycket."
+      }
+    },
+    {
+      "text": {
+        "en": "Cook: preheat your waffle iron. Divide the dough into balls of 90–100 g per waffle and place them directly on the hot plates. Cook about 4–5 minutes.",
+        "es": "Cocinar: precalienta tu gofrera. Divide la masa en bolas de 90–100 g por gofre y colócalas directamente en las placas calientes. Déjalas cocer unos 4–5 minutos.",
+        "cat": "Cuinar: escalfa la teva gofrera. Divideix la massa en boles de 90–100 g per gofre i posa-les directament a les plaques calentes. Deixa-les coure uns 4-5 minuts.",
+        "sv": "Grädda: förvärm våffeljärnet. Dela degen i bollar på 90–100 g per våffla och lägg dem direkt på de varma plattorna. Grädda cirka 4–5 minuter."
+      }
+    }
+  ]
+}

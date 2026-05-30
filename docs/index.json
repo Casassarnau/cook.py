@@ -216,6 +216,33 @@
   },
   {
     "title": {
+      "en": "Liège-style Waffles",
+      "es": "Gofres estilo Lieja",
+      "cat": "Gofres de Lieja",
+      "sv": "Liège-våfflor"
+    },
+    "categories": [
+      "desserts",
+      "thermomix"
+    ],
+    "path": "recipes/liege_waffles.json",
+    "image": "/images/liege_waffles/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "flour",
+      "butter",
+      "greek_yogurt",
+      "eggs",
+      "milk",
+      "dry_yeast",
+      "salt",
+      "vanilla_extract",
+      "pearl_sugar"
+    ]
+  },
+  {
+    "title": {
       "en": "Mató (Fresh Cheese)",
       "es": "Mató",
       "cat": "Mató",

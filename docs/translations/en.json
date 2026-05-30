@@ -145,7 +145,8 @@
     "panko": "panko",
     "white_pepper": "white pepper",
     "herbacol": "wild crocus pistils (herbacol)",
-    "pizza_toppings": "toppings"
+    "pizza_toppings": "toppings",
+    "pearl_sugar": "pearl sugar"
   },
   "units": {
     "g": "g",
@@ -159,6 +160,7 @@
     "tsp": "tsp",
     "tbsp": "tbsp",
     "pizza": "pizza",
+    "waffle": "waffles",
     "pan": "pan",
     "unit": "units",
     "unit_single": "unit",
@@ -175,6 +177,7 @@
     "tsp": "of",
     "tbsp": "of",
     "pizza": "",
+    "waffle": "",
     "pan": "",
     "for": "for",
     "pinch": "of"
