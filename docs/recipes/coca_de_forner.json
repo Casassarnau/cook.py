@@ -21,26 +21,6 @@
     "type": "units",
     "value": 2
   },
-  "variants": [
-    {
-      "key": "mixed",
-      "name": {
-        "en": "50/50 type 00 and rustic flour",
-        "es": "50/50 harina tipo 00 y rústica",
-        "cat": "50/50 farina tipus 00 i rústica",
-        "sv": "50/50 typ 00 och rustikt mjöl"
-      }
-    },
-    {
-      "key": "rustic",
-      "name": {
-        "en": "All rustic flour",
-        "es": "Toda harina rústica",
-        "cat": "Tot farina rústica",
-        "sv": "Helt rustikt mjöl"
-      }
-    }
-  ],
   "ingredients": [
     {
       "group": {
@@ -80,12 +60,11 @@
           "value": 200,
           "unit": "g",
           "text": {
-            "en": "type 00",
-            "es": "tipo 00",
-            "cat": "tipus 00",
-            "sv": "typ 00"
-          },
-          "onlyForVariation": "mixed"
+            "en": "type 00 or rustic",
+            "es": "tipo 00 o rústico",
+            "cat": "tipus 00 o rústic",
+            "sv": "typ 00 eller rustik"
+          }
         },
         {
           "ingredient": "flour",
@@ -96,20 +75,7 @@
             "es": "rústica",
             "cat": "rústica",
             "sv": "rustik"
-          },
-          "onlyForVariation": "mixed"
-        },
-        {
-          "ingredient": "flour",
-          "value": 400,
-          "unit": "g",
-          "text": {
-            "en": "rustic",
-            "es": "rústica",
-            "cat": "rústica",
-            "sv": "rustik"
-          },
-          "onlyForVariation": "rustic"
+          }
         },
         {
           "ingredient": "water",
