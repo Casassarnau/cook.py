@@ -41,6 +41,13 @@
   "under_development": "Under Development",
   "view_image": "View image",
   "close": "Close",
+  "start_cooking": "Start cooking",
+  "exit_cook_mode": "Exit cook mode",
+  "cook_step": "Step",
+  "cook_of": "of",
+  "cook_prev": "Previous",
+  "cook_next": "Next",
+  "cook_adjust": "Adjust",
   "ingredients": {
     "_": "Ingredients",
     "eggs": "eggs",

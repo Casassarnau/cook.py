@@ -41,6 +41,13 @@
   "under_development": "En Desenvolupament",
   "view_image": "Veure imatge",
   "close": "Tancar",
+  "start_cooking": "Començar a cuinar",
+  "exit_cook_mode": "Sortir del mode cuina",
+  "cook_step": "Pas",
+  "cook_of": "de",
+  "cook_prev": "Anterior",
+  "cook_next": "Següent",
+  "cook_adjust": "Ajustar",
   "ingredients": {
     "_": "Ingredients",
     "eggs": "ous",

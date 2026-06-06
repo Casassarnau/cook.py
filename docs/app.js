@@ -27,6 +27,12 @@ function recipeApp() {
     dimensionConfigHeight: 20,
     showQRModal: false,
     showImageModal: false,
+    showCookAdjustModal: false,
+    cookMode: false,
+    cookStepIndex: 0,
+    cookTouchStartX: null,
+    cookTouchStartY: null,
+    cookTouchScrolling: false,
     urlCopied: false,
     routePending: (() => {
       const hash = location.hash;
@@ -277,6 +283,10 @@ function recipeApp() {
       params.set('recipe', recipeName);
       if (this.selectedVariation) params.set('variant', this.selectedVariation);
       if (this.thermomixEnabled) params.set('thermomix', '1');
+      if (this.cookMode) {
+        params.set('cook', '1');
+        params.set('step', String(this.cookStepIndex + 1));
+      }
       location.hash = `#${params.toString()}`;
     },
 
@@ -369,6 +379,8 @@ function recipeApp() {
         const recipeName = params.get('recipe');
         const variantKey = params.get('variant');
         const thermomixParam = params.get('thermomix');
+        const cookParam = params.get('cook');
+        const stepParam = params.get('step');
         
         if (recipeName) {
           const needsFetch = this.getActiveRecipeSlug() !== recipeName;
@@ -462,6 +474,20 @@ function recipeApp() {
             } else {
               this.thermomixEnabled = false;
             }
+
+            if (cookParam === '1') {
+              this.cookMode = true;
+              document.body.classList.add('overflow-hidden');
+              const parsedStep = parseInt(stepParam, 10);
+              if (parsedStep >= 1) {
+                this.cookStepIndex = parsedStep - 1;
+              } else {
+                this.cookStepIndex = this.loadCookStepIndex(recipeName);
+              }
+              this.clampCookStepIndex();
+            } else if (this.cookMode) {
+              this.exitCookMode(false);
+            }
           }
 
           this.finishRoutePending();
@@ -470,12 +496,179 @@ function recipeApp() {
         this.selectedRecipe = null;
         this.thermomixAvailable = false;
         this.thermomixEnabled = false;
+        if (this.cookMode) this.exitCookMode(false);
         this.finishRoutePending();
       }
     },
 
     goHome() {
+      if (this.cookMode) this.exitCookMode(false);
       location.hash = '';
+    },
+
+    cookStepStorageKey(recipeName) {
+      return `cookProgress_${recipeName}`;
+    },
+
+    loadCookStepIndex(recipeName) {
+      const saved = sessionStorage.getItem(this.cookStepStorageKey(recipeName));
+      if (saved == null) return 0;
+      const index = parseInt(saved, 10);
+      return Number.isFinite(index) && index >= 0 ? index : 0;
+    },
+
+    saveCookStepIndex(recipeName, index) {
+      sessionStorage.setItem(this.cookStepStorageKey(recipeName), String(index));
+    },
+
+    clampCookStepIndex() {
+      const count = this.cookStepCount();
+      if (count === 0) {
+        this.cookStepIndex = 0;
+        return;
+      }
+      this.cookStepIndex = Math.max(0, Math.min(this.cookStepIndex, count - 1));
+    },
+
+    cookStepCount() {
+      return this.currentInstructions().length;
+    },
+
+    currentCookStep() {
+      const steps = this.currentInstructions();
+      return steps[this.cookStepIndex] || null;
+    },
+
+    formatCookStepLabel() {
+      const current = this.cookStepIndex + 1;
+      const total = this.cookStepCount();
+      return `${this.t('cook_step')} ${current} ${this.t('cook_of')} ${total}`;
+    },
+
+    cookProgressPercent() {
+      const total = this.cookStepCount();
+      if (total <= 1) return 100;
+      return ((this.cookStepIndex) / (total - 1)) * 100;
+    },
+
+    isCompactCookStep() {
+      const step = this.currentCookStep();
+      if (!step) return true;
+      if (step.image) return false;
+      const textLen = (step.text || '').length;
+      const badgeCount = (step.settingsBadges || []).length;
+      return textLen <= 160 && badgeCount <= 2;
+    },
+
+    cookMobileStepAreaClass() {
+      if (this.isCompactCookStep()) {
+        return 'flex-none shrink-0';
+      }
+      return 'flex-1 min-h-0 overflow-y-auto';
+    },
+
+    cookMobileIngredientsAreaClass() {
+      if (this.isCompactCookStep()) {
+        return 'flex-1 min-h-0 overflow-y-auto border-t';
+      }
+      return 'flex-none max-h-[36vh] min-h-[8rem] overflow-y-auto border-t';
+    },
+
+    enterCookMode() {
+      const recipeName = this.getRecipeName();
+      if (!recipeName || this.cookStepCount() === 0) return;
+      this.cookStepIndex = this.loadCookStepIndex(recipeName);
+      this.clampCookStepIndex();
+      this.cookMode = true;
+      document.body.classList.add('overflow-hidden');
+      this.updateURL();
+    },
+
+    exitCookMode(updateUrl = true) {
+      this.cookMode = false;
+      this.showCookAdjustModal = false;
+      document.body.classList.remove('overflow-hidden');
+      if (updateUrl) this.updateURL();
+    },
+
+    goToCookStep(index) {
+      const count = this.cookStepCount();
+      if (count === 0) return;
+      this.cookStepIndex = Math.max(0, Math.min(index, count - 1));
+      const recipeName = this.getRecipeName();
+      if (recipeName) this.saveCookStepIndex(recipeName, this.cookStepIndex);
+      this.updateURL();
+    },
+
+    nextCookStep() {
+      if (this.cookStepIndex < this.cookStepCount() - 1) {
+        this.goToCookStep(this.cookStepIndex + 1);
+      }
+    },
+
+    prevCookStep() {
+      if (this.cookStepIndex > 0) {
+        this.goToCookStep(this.cookStepIndex - 1);
+      }
+    },
+
+    handleCookKeydown(event) {
+      if (!this.cookMode || this.showCookAdjustModal) return;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        this.nextCookStep();
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        this.prevCookStep();
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        this.exitCookMode();
+      }
+    },
+
+    handleCookTouchStart(event) {
+      const touch = event.touches[0];
+      if (!touch) return;
+      this.cookTouchStartX = touch.clientX;
+      this.cookTouchStartY = touch.clientY;
+      this.cookTouchScrolling = false;
+    },
+
+    handleCookTouchMove(event) {
+      if (this.cookTouchStartX == null || this.cookTouchStartY == null) return;
+      const touch = event.touches[0];
+      if (!touch) return;
+      const deltaY = Math.abs(touch.clientY - this.cookTouchStartY);
+      const deltaX = Math.abs(touch.clientX - this.cookTouchStartX);
+      if (deltaY > 12 && deltaY > deltaX) this.cookTouchScrolling = true;
+    },
+
+    handleCookTouchEnd(event) {
+      if (this.cookTouchStartX == null || this.cookTouchStartY == null) return;
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+      const deltaX = touch.clientX - this.cookTouchStartX;
+      const deltaY = touch.clientY - this.cookTouchStartY;
+      const wasScrolling = this.cookTouchScrolling;
+      this.cookTouchStartX = null;
+      this.cookTouchStartY = null;
+      this.cookTouchScrolling = false;
+      if (wasScrolling) return;
+      if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) return;
+      if (deltaX < 0) this.nextCookStep();
+      else this.prevCookStep();
+    },
+
+    getCookSummaryChips() {
+      const chips = [];
+      if (this.hasVariants() && this.selectedVariation) {
+        const variant = this.selectedRecipe.variants.find(v => v.key === this.selectedVariation);
+        if (variant) chips.push(this.translateField(variant.name));
+      }
+      if (this.thermomixEnabled) chips.push(this.t('thermomix'));
+      const title = this.getIngredientsTitle();
+      if (title && title !== this.t('ingredients._')) chips.push(title);
+      return chips;
     },
 
     toggleDarkMode() {
@@ -499,6 +692,7 @@ function recipeApp() {
       if (recipeName) {
         this.saveThermomixPreference(recipeName, this.thermomixEnabled);
       }
+      if (this.cookMode) this.clampCookStepIndex();
       this.updateURL();
     },
 

@@ -41,6 +41,13 @@
   "under_development": "Under Utveckling",
   "view_image": "Visa bild",
   "close": "Stäng",
+  "start_cooking": "Börja laga",
+  "exit_cook_mode": "Avsluta köksläge",
+  "cook_step": "Steg",
+  "cook_of": "av",
+  "cook_prev": "Föregående",
+  "cook_next": "Nästa",
+  "cook_adjust": "Justera",
   "ingredients": {
     "_": "Ingredienser",
     "eggs": "ägg",

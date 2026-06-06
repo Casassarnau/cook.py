@@ -50,6 +50,14 @@
       #route-loading { display: none; }
       html.route-pending #app-shell { display: none; }
       html.route-pending #route-loading { display: block; }
+      .cook-step-swipe { touch-action: pan-y; }
+      @media (prefers-reduced-motion: no-preference) {
+        .cook-step-enter { animation: cook-step-in 0.2s ease-out; }
+        @keyframes cook-step-in {
+          from { opacity: 0; transform: translateX(8px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+      }
     </style>
   </head>
 
@@ -381,25 +389,38 @@
 
           <!-- INSTRUCTIONS -->
           <div>
-            <div class="flex items-center justify-between mb-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
               <h3 class="text-xl font-semibold" x-text="t('instructions')"></h3>
-              <div x-show="thermomixAvailable" class="flex items-center gap-2 select-none">
-                <span class="text-sm font-medium" x-text="t('thermomix')"></span>
+              <div class="flex items-center gap-3 flex-wrap">
                 <button
                   type="button"
-                  role="switch"
-                  :aria-checked="thermomixEnabled"
-                  @click="toggleThermomix()"
-                  class="relative inline-flex h-7 w-12 flex-shrink-0 rounded-full border-2 border-transparent transition-colors duration-300 cursor-pointer focus:outline-none"
-                  :class="thermomixEnabled
-                    ? 'bg-orange-500'
-                    : (darkMode ? 'bg-gray-700' : 'bg-gray-300')"
+                  @click="enterCookMode()"
+                  x-show="cookStepCount() > 0"
+                  class="h-9 px-4 rounded-lg font-semibold shadow transition-colors duration-300 cursor-pointer"
+                  :class="darkMode
+                    ? 'bg-orange-500 text-white hover:bg-orange-600'
+                    : 'bg-orange-600 text-white hover:bg-orange-700'"
                 >
-                  <span
-                    class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-300"
-                    :class="thermomixEnabled ? 'translate-x-5' : 'translate-x-0'"
-                  ></span>
+                  <span x-text="t('start_cooking')"></span>
                 </button>
+                <div x-show="thermomixAvailable" class="flex items-center gap-2 select-none">
+                  <span class="text-sm font-medium" x-text="t('thermomix')"></span>
+                  <button
+                    type="button"
+                    role="switch"
+                    :aria-checked="thermomixEnabled"
+                    @click="toggleThermomix()"
+                    class="relative inline-flex h-7 w-12 flex-shrink-0 rounded-full border-2 border-transparent transition-colors duration-300 cursor-pointer focus:outline-none"
+                    :class="thermomixEnabled
+                      ? 'bg-orange-500'
+                      : (darkMode ? 'bg-gray-700' : 'bg-gray-300')"
+                  >
+                    <span
+                      class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-300"
+                      :class="thermomixEnabled ? 'translate-x-5' : 'translate-x-0'"
+                    ></span>
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -714,6 +735,390 @@
             >
               <span x-text="urlCopied ? (t('copied') || 'Copied!') : (canUseWebShare() ? (t('share') || 'Share') : (t('copy_url') || 'Copy URL'))"></span>
             </button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Cook Mode -->
+    <template x-if="cookMode && selectedRecipe">
+      <div
+        class="fixed inset-0 z-[60] flex flex-col cook-step-swipe transition-colors duration-300"
+        :class="darkMode
+          ? 'bg-gray-900 text-gray-100'
+          : 'bg-gray-50 text-gray-900'"
+        @keydown.window="handleCookKeydown($event)"
+        @touchstart="handleCookTouchStart($event)"
+        @touchmove="handleCookTouchMove($event)"
+        @touchend="handleCookTouchEnd($event)"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="translateField(selectedRecipe.title)"
+      >
+        <!-- Header -->
+        <div
+          class="flex-shrink-0 px-3 py-2.5 md:px-5 md:py-3 border-b transition-colors duration-300"
+          :class="darkMode ? 'border-gray-700 bg-gray-900/95' : 'border-gray-200 bg-white/95'"
+        >
+          <div class="flex items-center gap-2 md:gap-3">
+            <button
+              type="button"
+              @click="exitCookMode()"
+              class="flex-shrink-0 p-2 rounded-lg transition-colors cursor-pointer"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-gray-100 text-gray-600'"
+              :aria-label="t('exit_cook_mode')"
+            >
+              ✕
+            </button>
+            <div class="flex-1 min-w-0">
+              <h2 class="text-base md:text-lg font-bold truncate" x-text="translateField(selectedRecipe.title)"></h2>
+              <p class="text-xs md:text-sm opacity-70 truncate" x-text="formatCookStepLabel()"></p>
+            </div>
+            <button
+              type="button"
+              @click="showCookAdjustModal = true"
+              class="flex-shrink-0 h-9 px-3 rounded-lg text-sm font-medium border transition-colors cursor-pointer"
+              :class="darkMode
+                ? 'border-gray-600 hover:bg-gray-800'
+                : 'border-gray-300 hover:bg-gray-100'"
+            >
+              <span x-text="t('cook_adjust')"></span>
+            </button>
+          </div>
+          <div class="mt-2 h-1 rounded-full overflow-hidden" :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'">
+            <div
+              class="h-full bg-orange-500 transition-all duration-300"
+              :style="`width: ${cookProgressPercent()}%`"
+            ></div>
+          </div>
+          <div class="mt-2 flex flex-wrap gap-1.5" x-show="getCookSummaryChips().length > 0">
+            <template x-for="(chip, chipIdx) in getCookSummaryChips()" :key="chipIdx">
+              <span
+                class="text-xs px-2 py-0.5 rounded-full font-medium"
+                :class="darkMode
+                  ? 'bg-gray-800 text-gray-300 border border-gray-700'
+                  : 'bg-gray-100 text-gray-600 border border-gray-200'"
+                x-text="chip"
+              ></span>
+            </template>
+          </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex-1 min-h-0 flex flex-col md:flex-row">
+          <!-- Desktop ingredients sidebar -->
+          <aside
+            class="hidden md:flex md:flex-col md:w-80 lg:w-96 md:flex-shrink-0 border-r overflow-y-auto transition-colors duration-300"
+            :class="darkMode ? 'border-gray-700 bg-gray-900/50' : 'border-gray-200 bg-white/80'"
+          >
+            <div class="p-4 sticky top-0 z-10 border-b" :class="darkMode ? 'border-gray-700 bg-gray-900/95' : 'border-gray-200 bg-white/95'">
+              <h3 class="text-lg font-semibold" x-text="getIngredientsTitle()"></h3>
+            </div>
+            <div class="p-4 space-y-4">
+              <template x-for="(group, groupIndex) in currentIngredients()" :key="'cook-d-' + groupIndex">
+                <div>
+                  <template x-if="group.isGroup && group.groupName">
+                    <h4 class="text-sm font-semibold mb-2 px-1"
+                        :class="darkMode ? 'text-orange-300' : 'text-orange-600'"
+                        x-text="group.groupName"></h4>
+                  </template>
+                  <ul class="space-y-2 list-none">
+                    <template x-for="(item, index) in group.items" :key="'cook-d-' + groupIndex + '-' + index">
+                      <li
+                        class="flex items-start gap-2.5 rounded-lg border p-2.5 text-sm font-medium transition-colors duration-300"
+                        :class="darkMode
+                          ? 'bg-gray-800/60 border-gray-700'
+                          : 'bg-gray-50 border-gray-200'"
+                      >
+                        <span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex items-baseline gap-1 flex-wrap">
+                            <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.value" x-show="item.value"></span>
+                            <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
+                              <span class="flex items-baseline gap-1 flex-wrap">
+                                <span x-text="item.name"></span>
+                                <span x-text="item.unit"></span>
+                              </span>
+                            </template>
+                            <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
+                              <span class="flex items-baseline gap-1 flex-wrap">
+                                <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.unit"></span>
+                                <span x-text="item.connector" x-show="item.connector"></span>
+                                <span x-text="item.name"></span>
+                              </span>
+                            </template>
+                            <span x-text="item.text" x-show="item.text"></span>
+                          </div>
+                        </div>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+              </template>
+            </div>
+          </aside>
+
+          <!-- Step area -->
+          <div class="flex-1 min-h-0 flex flex-col relative">
+            <!-- Desktop side arrows -->
+            <button
+              type="button"
+              @click="prevCookStep()"
+              :disabled="cookStepIndex === 0"
+              class="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full items-center justify-center text-2xl font-bold border shadow-lg transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+              :class="darkMode
+                ? 'bg-gray-800 border-gray-600 hover:bg-gray-700 text-gray-100'
+                : 'bg-white border-gray-300 hover:bg-gray-50 text-gray-900'"
+              :aria-label="t('cook_prev')"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              @click="nextCookStep()"
+              :disabled="cookStepIndex >= cookStepCount() - 1"
+              class="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full items-center justify-center text-2xl font-bold border shadow-lg transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+              :class="darkMode
+                ? 'bg-gray-800 border-gray-600 hover:bg-gray-700 text-gray-100'
+                : 'bg-white border-gray-300 hover:bg-gray-50 text-gray-900'"
+              :aria-label="t('cook_next')"
+            >
+              ›
+            </button>
+
+            <!-- Mobile: step + ingredients stack -->
+            <div class="flex-1 min-h-0 flex flex-col md:overflow-y-auto">
+              <!-- Step panel (mobile adaptive) -->
+              <div
+                class="md:flex-1 md:min-h-0 md:overflow-y-auto px-4 py-4 md:px-12 md:py-8"
+                :class="cookMobileStepAreaClass() + ' md:!flex-1 md:!max-h-none'"
+              >
+                <template x-if="currentCookStep()">
+                  <div class="cook-step-enter max-w-2xl mx-auto" :key="cookStepIndex">
+                    <div
+                      class="flex items-start gap-3 md:gap-4 rounded-xl border p-4 md:p-6 shadow-sm transition-colors duration-300"
+                      :class="darkMode
+                        ? 'bg-gray-800/70 border-gray-700'
+                        : 'bg-white border-gray-200'"
+                    >
+                      <div
+                        class="flex-shrink-0 flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full font-bold text-sm md:text-base"
+                        :class="darkMode
+                          ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40'
+                          : 'bg-orange-300 text-orange-700 border border-orange-400'"
+                        x-text="cookStepIndex + 1"
+                      ></div>
+                      <div class="flex-1 min-w-0">
+                        <p
+                          class="text-lg md:text-xl leading-relaxed"
+                          x-text="currentCookStep().text"
+                          aria-live="polite"
+                        ></p>
+                        <template x-if="currentCookStep().settingsBadges && currentCookStep().settingsBadges.length > 0">
+                          <div class="flex flex-wrap gap-2 mt-4">
+                            <template x-for="(badge, badgeIdx) in currentCookStep().settingsBadges" :key="badgeIdx">
+                              <span
+                                class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-semibold"
+                                :class="darkMode
+                                  ? 'bg-orange-500/20 text-orange-200 border border-orange-500/40'
+                                  : 'bg-orange-100 text-orange-800 border border-orange-200'"
+                                x-text="badge"
+                              ></span>
+                            </template>
+                          </div>
+                        </template>
+                      </div>
+                    </div>
+                    <template x-if="currentCookStep().image">
+                      <img
+                        :src="getImageUrl(currentCookStep().image, 'lower')"
+                        alt=""
+                        class="mt-4 block w-full max-h-64 md:max-h-96 object-cover object-center rounded-xl border"
+                        :class="darkMode ? 'border-gray-700' : 'border-gray-300'"
+                      />
+                    </template>
+                  </div>
+                </template>
+              </div>
+
+              <!-- Mobile ingredients panel (adaptive height) -->
+              <div
+                class="md:hidden flex flex-col transition-all duration-300"
+                :class="cookMobileIngredientsAreaClass() + ' ' + (darkMode ? 'border-gray-700 bg-gray-900/80' : 'border-gray-200 bg-white/90')"
+              >
+                <div class="flex-shrink-0 px-3 py-2 border-b" :class="darkMode ? 'border-gray-700' : 'border-gray-200'">
+                  <h3 class="font-semibold text-sm" x-text="getIngredientsTitle()"></h3>
+                </div>
+                <div class="flex-1 min-h-0 overflow-y-auto px-2 pb-2 space-y-2">
+                  <template x-for="(group, groupIndex) in currentIngredients()" :key="'cook-m-' + groupIndex">
+                    <div>
+                      <template x-if="group.isGroup && group.groupName">
+                        <h4 class="text-sm font-semibold mb-1 px-1"
+                            :class="darkMode ? 'text-orange-300' : 'text-orange-600'"
+                            x-text="group.groupName"></h4>
+                      </template>
+                      <ul class="grid gap-1.5 list-none">
+                        <template x-for="(item, index) in group.items" :key="'cook-m-' + groupIndex + '-' + index">
+                          <li
+                            class="flex items-start gap-1.5 rounded-md border p-2.5 text-sm font-medium transition-colors duration-300"
+                            :class="darkMode
+                              ? 'bg-gray-800/60 border-gray-700'
+                              : 'bg-gray-50 border-gray-200'"
+                          >
+                            <span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
+                            <div class="flex-1 min-w-0">
+                              <div class="flex items-baseline gap-1 flex-wrap">
+                                <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.value" x-show="item.value"></span>
+                                <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
+                                  <span class="flex items-baseline gap-1 flex-wrap">
+                                    <span x-text="item.name"></span>
+                                    <span x-text="item.unit"></span>
+                                  </span>
+                                </template>
+                                <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
+                                  <span class="flex items-baseline gap-1 flex-wrap">
+                                    <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.unit"></span>
+                                    <span x-text="item.connector" x-show="item.connector"></span>
+                                    <span x-text="item.name"></span>
+                                  </span>
+                                </template>
+                                <span x-text="item.text" x-show="item.text"></span>
+                              </div>
+                            </div>
+                          </li>
+                        </template>
+                      </ul>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile bottom navigation -->
+        <div
+          class="md:hidden flex-shrink-0 flex items-center gap-3 px-4 py-3 border-t safe-area-pb transition-colors duration-300"
+          :class="darkMode ? 'border-gray-700 bg-gray-900/95' : 'border-gray-200 bg-white/95'"
+        >
+          <button
+            type="button"
+            @click="prevCookStep()"
+            :disabled="cookStepIndex === 0"
+            class="flex-1 h-12 rounded-xl font-semibold border transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+            :class="darkMode
+              ? 'bg-gray-800 border-gray-600 hover:bg-gray-700'
+              : 'bg-gray-100 border-gray-300 hover:bg-white'"
+          >
+            <span x-text="t('cook_prev')"></span>
+          </button>
+          <button
+            type="button"
+            @click="nextCookStep()"
+            :disabled="cookStepIndex >= cookStepCount() - 1"
+            class="flex-1 h-12 rounded-xl font-semibold transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+            :class="darkMode
+              ? 'bg-orange-500 text-white hover:bg-orange-600 disabled:bg-orange-500/50'
+              : 'bg-orange-600 text-white hover:bg-orange-700 disabled:bg-orange-600/50'"
+          >
+            <span x-text="t('cook_next')"></span>
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Cook Adjust Modal -->
+    <template x-if="showCookAdjustModal && cookMode">
+      <div
+        class="fixed inset-0 z-[70] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50"
+        @click.self="showCookAdjustModal = false"
+      >
+        <div
+          class="w-full sm:max-w-md rounded-t-2xl sm:rounded-2xl shadow-xl max-h-[85vh] overflow-y-auto"
+          :class="darkMode ? 'bg-gray-800' : 'bg-white'"
+        >
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-semibold" x-text="t('cook_adjust')"></h3>
+              <button
+                type="button"
+                @click="showCookAdjustModal = false"
+                class="p-1 rounded-lg transition-colors cursor-pointer"
+                :class="darkMode ? 'text-gray-400 hover:bg-gray-700' : 'text-gray-500 hover:bg-gray-100'"
+              >
+                ✕
+              </button>
+            </div>
+
+            <template x-if="hasVariants()">
+              <div class="mb-4">
+                <label class="block text-sm font-medium mb-2" x-text="t('variation')"></label>
+                <select
+                  x-model="selectedVariation"
+                  @change="clampCookStepIndex(); updateURL()"
+                  class="w-full h-10 px-3 rounded-lg font-medium cursor-pointer transition-colors duration-300 focus:outline-none"
+                  :class="darkMode
+                    ? 'bg-gray-700 border border-gray-600 text-white'
+                    : 'bg-gray-100 border border-gray-300 text-gray-900'"
+                >
+                  <template x-for="item in selectedRecipe.variants" :key="item.key">
+                    <option :value="item.key" x-text="translateField(item.name)"></option>
+                  </template>
+                </select>
+              </div>
+            </template>
+
+            <template x-if="hasServings() || hasUnits() || hasDiameter() || hasArea()">
+              <div class="mb-4">
+                <label class="block text-sm font-medium mb-2" x-text="getIngredientsTitle()"></label>
+                <div class="flex items-center gap-2">
+                  <button
+                    @click="hasArea() ? decrementDimensions() : decrementServings()"
+                    class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border"
+                    :class="darkMode
+                      ? 'bg-gray-700 border-gray-600 hover:bg-gray-600'
+                      : 'bg-gray-100 border-gray-300 hover:bg-white'"
+                  >−</button>
+                  <button
+                    @click="hasArea() ? incrementDimensions() : incrementServings()"
+                    class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border"
+                    :class="darkMode
+                      ? 'bg-gray-700 border-gray-600 hover:bg-gray-600'
+                      : 'bg-gray-100 border-gray-300 hover:bg-white'"
+                  >+</button>
+                  <button
+                    x-show="hasArea()"
+                    @click="openDimensionConfig(); showCookAdjustModal = false"
+                    class="w-10 h-10 rounded-full flex items-center justify-center transition-colors cursor-pointer border"
+                    :class="darkMode
+                      ? 'bg-gray-700 border-gray-600 hover:bg-gray-600'
+                      : 'bg-gray-100 border-gray-300 hover:bg-white'"
+                    title="Configure dimensions"
+                  >⚙️</button>
+                </div>
+              </div>
+            </template>
+
+            <template x-if="thermomixAvailable">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-medium" x-text="t('thermomix')"></span>
+                <button
+                  type="button"
+                  role="switch"
+                  :aria-checked="thermomixEnabled"
+                  @click="toggleThermomix()"
+                  class="relative inline-flex h-7 w-12 flex-shrink-0 rounded-full border-2 border-transparent transition-colors duration-300 cursor-pointer focus:outline-none"
+                  :class="thermomixEnabled
+                    ? 'bg-orange-500'
+                    : (darkMode ? 'bg-gray-700' : 'bg-gray-300')"
+                >
+                  <span
+                    class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-300"
+                    :class="thermomixEnabled ? 'translate-x-5' : 'translate-x-0'"
+                  ></span>
+                </button>
+              </div>
+            </template>
           </div>
         </div>
       </div>

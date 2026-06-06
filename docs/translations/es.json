@@ -41,6 +41,13 @@
   "under_development": "En Desarrollo",
   "view_image": "Ver imagen",
   "close": "Cerrar",
+  "start_cooking": "Empezar a cocinar",
+  "exit_cook_mode": "Salir del modo cocina",
+  "cook_step": "Paso",
+  "cook_of": "de",
+  "cook_prev": "Anterior",
+  "cook_next": "Siguiente",
+  "cook_adjust": "Ajustar",
   "ingredients": {
     "_": "Ingredientes",
     "eggs": "huevos",
