@@ -39,6 +39,8 @@
   "copy_url": "Kopiera URL",
   "copied": "Kopierat!",
   "under_development": "Under Utveckling",
+  "view_image": "Visa bild",
+  "close": "Stäng",
   "ingredients": {
     "_": "Ingredienser",
     "eggs": "ägg",
@@ -146,7 +148,9 @@
     "white_pepper": "vitpeppar",
     "herbacol": "herbacol (vild krokus)",
     "pizza_toppings": "toppingar",
-    "pearl_sugar": "pärlsocker"
+    "pearl_sugar": "pärlsocker",
+    "anise_seeds": "anisfrön",
+    "anise_liqueur": "anislikör"
   },
   "units": {
     "g": "g",

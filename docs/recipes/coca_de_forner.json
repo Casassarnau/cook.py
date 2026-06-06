@@ -1,0 +1,334 @@
+{
+  "title": {
+    "en": "Coca de Forner",
+    "es": "Coca de Forner",
+    "cat": "Coca de Forner",
+    "sv": "Coca de Forner"
+  },
+  "author": "Arnau",
+  "categories": [
+    "desserts",
+    "baking"
+  ],
+  "image": "/images/coca_de_forner/main.webp",
+  "description": {
+    "en": "80% hydration dough with poolish, stretched thin to preserve the air bubbles. Topped with sugar and oil, then brushed with an anise glaze after baking.",
+    "es": "Masa al 80% de hidratación con poolish, estirada fina para conservar los alveolos. Se cubre con azúcar y aceite y, al salir del horno, se pincela con un almíbar de anís.",
+    "cat": "Massa al 80% d'hidratació amb poolish, estirada fina per conservar els alveols. Es cobreix amb sucre i oli i, en sortir del forn, es pinzella amb un almívar d'anís.",
+    "sv": "Deg med 80% hydrering och poolish, utdragen tunn för att bevara luftbubblorna. Toppas med socker och olja och penslas med en anisglasyr efter gräddning."
+  },
+  "portion": {
+    "type": "units",
+    "value": 2
+  },
+  "variants": [
+    {
+      "key": "mixed",
+      "name": {
+        "en": "50/50 type 00 and rustic flour",
+        "es": "50/50 harina tipo 00 y rústica",
+        "cat": "50/50 farina tipus 00 i rústica",
+        "sv": "50/50 typ 00 och rustikt mjöl"
+      }
+    },
+    {
+      "key": "rustic",
+      "name": {
+        "en": "All rustic flour",
+        "es": "Toda harina rústica",
+        "cat": "Tot farina rústica",
+        "sv": "Helt rustikt mjöl"
+      }
+    }
+  ],
+  "ingredients": [
+    {
+      "group": {
+        "en": "Poolish (day before)",
+        "es": "Poolish (día anterior)",
+        "cat": "Poolish (dia anterior)",
+        "sv": "Poolish (dagen innan)"
+      },
+      "items": [
+        {
+          "ingredient": "water",
+          "value": 50,
+          "unit": "g"
+        },
+        {
+          "ingredient": "flour",
+          "value": 50,
+          "unit": "g"
+        },
+        {
+          "ingredient": "dry_yeast",
+          "value": 7,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Dough",
+        "es": "Masa",
+        "cat": "Massa",
+        "sv": "Deg"
+      },
+      "items": [
+        {
+          "ingredient": "flour",
+          "value": 200,
+          "unit": "g",
+          "text": {
+            "en": "type 00",
+            "es": "tipo 00",
+            "cat": "tipus 00",
+            "sv": "typ 00"
+          },
+          "onlyForVariation": "mixed"
+        },
+        {
+          "ingredient": "flour",
+          "value": 200,
+          "unit": "g",
+          "text": {
+            "en": "rustic",
+            "es": "rústica",
+            "cat": "rústica",
+            "sv": "rustik"
+          },
+          "onlyForVariation": "mixed"
+        },
+        {
+          "ingredient": "flour",
+          "value": 400,
+          "unit": "g",
+          "text": {
+            "en": "rustic",
+            "es": "rústica",
+            "cat": "rústica",
+            "sv": "rustik"
+          },
+          "onlyForVariation": "rustic"
+        },
+        {
+          "ingredient": "water",
+          "value": 275,
+          "unit": "g"
+        },
+        {
+          "ingredient": "water",
+          "value": 35,
+          "unit": "g",
+          "text": {
+            "en": "reserved for later",
+            "es": "reservada para después",
+            "cat": "reservada per després",
+            "sv": "reserverat till senare"
+          }
+        },
+        {
+          "ingredient": "extra_virgin_olive_oil",
+          "value": 20,
+          "unit": "g"
+        },
+        {
+          "ingredient": "salt",
+          "value": 10,
+          "unit": "g"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 4,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Topping (before baking)",
+        "es": "Cobertura (antes de hornear)",
+        "cat": "Cobertura (abans de coure)",
+        "sv": "Topping (före gräddning)"
+      },
+      "items": [
+        {
+          "ingredient": "sugar",
+          "value": 0,
+          "unit": "as_needed"
+        },
+        {
+          "ingredient": "extra_virgin_olive_oil",
+          "value": 0,
+          "unit": "as_needed"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Anise glaze (after baking)",
+        "es": "Almíbar de anís (después de hornear)",
+        "cat": "Almívar d'anís (després de coure)",
+        "sv": "Anisglasyr (efter gräddning)"
+      },
+      "items": [
+        {
+          "ingredient": "water",
+          "value": 50,
+          "unit": "ml",
+          "text": {
+            "en": "for infusion",
+            "es": "para la infusión",
+            "cat": "per a la infusió",
+            "sv": "för infusion"
+          }
+        },
+        {
+          "ingredient": "anise_seeds",
+          "value": 0,
+          "unit": "to_taste"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "for the glaze",
+            "es": "para el almíbar",
+            "cat": "per a l'almívar",
+            "sv": "till glasyren"
+          }
+        },
+        {
+          "ingredient": "anise_liqueur",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "alternative: diluted with water",
+            "es": "alternativa: rebajado con agua",
+            "cat": "alternativa: rebaixat amb aigua",
+            "sv": "alternativ: utspätt med vatten"
+          }
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "The day before, prepare the poolish by mixing the water, flour, and dry yeast. Cover and refrigerate until the next day.",
+        "es": "El día anterior, prepara el poolish mezclando el agua, la harina y la levadura seca. Tápalo y déjalo en la nevera hasta el día siguiente.",
+        "cat": "El dia anterior, prepara el poolish barrejant l'aigua, la farina i el llevat sec. Tapar-lo i deixar-lo a la nevera fins l'endemà.",
+        "sv": "Dagen innan, förbered poolish genom att blanda vatten, mjöl och torrjäst. Täck och förvara i kylskåp till nästa dag."
+      }
+    },
+    {
+      "text": {
+        "en": "Mix the flours with the water, reserving 35 g for later. Let rest for at least 1 hour.",
+        "es": "Mezcla las harinas con el agua, reservando 35 g para después. Déjalo reposar al menos 1 hora.",
+        "cat": "Barreja les farines amb l'aigua, reservant 35 g per després. Deixa reposar almenys 1 hora.",
+        "sv": "Blanda mjölen med vattnet och spara 35 g till senare. Låt vila i minst 1 timme."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Put the flours and water (except the 35 g reserved) in the Thermomix. Knead until combined.",
+          "es": "Mete las harinas y el agua (excepto los 35 g reservados) en la Thermomix. Amasa hasta que esté integrado.",
+          "cat": "Posa les farines i l'aigua (excepte els 35 g reservats) a la Thermomix. Amassa fins que estigui integrat.",
+          "sv": "Lägg mjölen och vattnet (utom de 35 g som sparats) i Thermomix. Knåda tills det är blandat."
+        },
+        "settings": {
+          "mode": "knead",
+          "time": 90
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Take the poolish from the fridge. Mix the reserved water, salt, poolish, and sugar together first, then incorporate into the dough.",
+        "es": "Coge el poolish de la nevera. Mezcla primero el agua reservada, la sal, el poolish y el azúcar, y después incorpóralo a la masa.",
+        "cat": "Agafa el poolish de la nevera. Barreja primer l'aigua reservada, la sal, el poolish i el sucre, i després incorpora-ho a la massa.",
+        "sv": "Ta poolish från kylskåpet. Blanda först det reserverade vattnet, saltet, poolish och sockret, och blanda sedan in det i degen."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Mix the reserved water, salt, poolish, and sugar together in a bowl first. Add to the dough in the Thermomix and knead until incorporated.",
+          "es": "Mezcla primero el agua reservada, la sal, el poolish y el azúcar en un bol. Añádelo a la masa en la Thermomix y amasa hasta que esté incorporado.",
+          "cat": "Barreja primer l'aigua reservada, la sal, el poolish i el sucre en un bol. Afegeix-ho a la massa a la Thermomix i amassa fins que estigui incorporat.",
+          "sv": "Blanda först det reserverade vattnet, saltet, poolish och sockret i en skål. Tillsätt till degen i Thermomix och knåda tills det är inblandat."
+        },
+        "settings": {
+          "mode": "knead",
+          "time": 120
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "When incorporated, add the oil and knead the dough.",
+        "es": "Cuando esté incorporado, añade el aceite y amasa la masa.",
+        "cat": "Quan estigui incorporat, afegeix l'oli i amassa la massa.",
+        "sv": "När det är inblandat, tillsätt oljan och knåda degen."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the oil to the Thermomix and knead until the dough is smooth.",
+          "es": "Añade el aceite a la Thermomix y amasa hasta que la masa quede lisa.",
+          "cat": "Afegeix l'oli a la Thermomix i amassa fins que la massa quedi llisa.",
+          "sv": "Tillsätt oljan i Thermomix och knåda tills degen är slät."
+        },
+        "settings": {
+          "mode": "knead",
+          "time": 180
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Form a ball using flour on your hands and work surface — with this hydration the dough sticks very easily. Let rest for at least 4 hours. Then refrigerate for 1–2 days — this step is optional, but 12 hours is recommended.",
+        "es": "Forma una bola usando harina en las manos y la superficie de trabajo — con tanta hidratación la masa se pega con mucha facilidad. Déjala reposar al menos 4 horas. Después en nevera hasta 1 o 2 días — es opcional, pero se recomiendan 12 horas.",
+        "cat": "Forma una bola amb farina a les mans i a la superfície de treball — amb tanta hidratació la massa s'enganxa molt fàcilment. Deixa reposar almenys 4 hores. Després a la nevera fins a 1 o 2 dies — és opcional, però es recomanen 12 hores.",
+        "sv": "Forma en boll med mjöl på händerna och arbetsytan — med den här hydreringen klistrar degen lätt. Låt vila i minst 4 timmar. Förvara sedan i kylskåp i upp till 1–2 dagar — detta steg är valfritt, men 12 timmar rekommenderas."
+      }
+    },
+    {
+      "text": {
+        "en": "Stretch the dough on the baking tray with flour so it doesn't stick. Try not to crush the air bubbles. Make it thin, but not too thin.",
+        "es": "Estira la masa en la bandeja con harina para que no se pegue. Intenta no aplastar los alveolos. Déjala fina, pero sin pasarte.",
+        "cat": "Estira la massa a la safata amb farina perquè no s'enganxi. Intenta no aixafar els alveols. Deixa-la fina, però sense passar-te.",
+        "sv": "Dra ut degen på plåten med mjöl så den inte klistrar. Försök inte krossa luftbubblorna. Gör den tunn, men inte för tunn."
+      }
+    },
+    {
+      "text": {
+        "en": "Place the tray in the turned-off oven. Turn the oven on for only 2–3 minutes at the start to keep it warm, then leave the dough to rise for 2–3 hours.",
+        "es": "Mete la bandeja en el horno apagado. Enciende el horno solo 2–3 minutos al principio para que mantenga el calor, y deja que la masa suba 2–3 horas.",
+        "cat": "Posa la safata al forn apagat. Encén el forn només 2–3 minuts al principi perquè mantingui la calor, i deixa que la massa pugi 2–3 hores.",
+        "sv": "Ställ plåten i den avstängda ugnen. Sätt på ugnen bara 2–3 minuter i början så den håller värmen, och låt degen jäsa i 2–3 timmar."
+      }
+    },
+    {
+      "text": {
+        "en": "Meanwhile, prepare the anise glaze: infuse a little water with anise seeds, then add sugar. Alternatively, dilute anise liqueur with water and sweeten to taste.",
+        "es": "Mientras tanto, prepara el almíbar de anís: haz una infusión con poca agua y anís, y añade azúcar. También se puede hacer con licor de anís rebajado con agua.",
+        "cat": "Mentrestant, prepara l'almívar d'anís: fes una infusió amb poca aigua i anís, i afegeix sucre. També es pot fer amb licor d'anís rebaixat amb aigua.",
+        "sv": "Under tiden, förbered anisglasyren: gör en infusion med lite vatten och anisfrön, och tillsätt socker. Alternativt kan anislikör utspädas med vatten och sötas efter smak."
+      }
+    },
+    {
+      "text": {
+        "en": "When the dough has risen, sprinkle sugar and drizzle oil on top. Preheat the oven to 250°C on both top and bottom (no fan) and bake until golden.",
+        "es": "Cuando la masa haya subido, espolvorea azúcar y aceite por encima. Precalienta el horno a 250 °C arriba y abajo (sin turbo) y hornéala hasta que se dore.",
+        "cat": "Quan la massa hagi pujat, espolsa sucre i oli per damunt. Preescalfa el forn a 250 °C per dalt i per baix (sense turbo) i cou-la fins que es dauri.",
+        "sv": "När degen har jäst, strö socker och ringla olja ovanpå. Förvärm ugnen till 250 °C upptill och nedtill (utan fläkt) och grädda tills den är gyllene."
+      }
+    },
+    {
+      "text": {
+        "en": "As soon as it comes out of the oven, brush the anise glaze over the top. Let cool slightly and enjoy.",
+        "es": "Nada más sacarla del horno, pincela el almíbar de anís por encima. Déjala templar un poco y disfruta.",
+        "cat": "Tot just en treure-la del forn, pinzella l'almívar d'anís per damunt. Deixa-la refredar una mica i gaudeix.",
+        "sv": "Strax när den kommer ut ur ugnen, pensla anisglasyren ovanpå. Låt svalna lite och njut."
+      }
+    }
+  ]
+}

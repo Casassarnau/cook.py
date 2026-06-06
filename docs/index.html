@@ -209,8 +209,19 @@
 
           <div class="relative mb-4">
             <img :src="getImageUrl(selectedRecipe.image, 'lower')" alt="" class="w-full h-56 sm:h-72 md:h-96 object-cover rounded-lg" loading="lazy" />
+            <button
+              type="button"
+              @click="showImageModal = true"
+              class="absolute top-3 right-3 p-1 cursor-pointer transition-opacity duration-200 opacity-40 hover:opacity-90 focus:opacity-90 focus:outline-none"
+              :title="t('view_image') || 'View image'"
+              :aria-label="t('view_image') || 'View image'"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
             <template x-if="selectedRecipe.development">
-              <div class="absolute top-3 right-3 flex items-center gap-2 px-3 py-1.5 rounded-lg backdrop-blur-sm border transition-colors duration-300 shadow-md"
+              <div class="absolute top-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-lg backdrop-blur-sm border transition-colors duration-300 shadow-md"
                 :class="darkMode
                   ? 'bg-yellow-900/80 border-yellow-700/60 text-yellow-200'
                   : 'bg-yellow-200/95 border-yellow-300/60 text-yellow-800'"
@@ -628,6 +639,31 @@
             </div>
           </div>
         </div>
+      </div>
+    </template>
+
+    <!-- Recipe Image Lightbox -->
+    <template x-if="showImageModal && selectedRecipe">
+      <div
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85"
+        @click.self="showImageModal = false"
+        @keydown.escape.window="showImageModal = false"
+      >
+        <button
+          type="button"
+          @click="showImageModal = false"
+          class="absolute top-4 right-4 p-1 cursor-pointer transition-opacity duration-200 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none"
+          :aria-label="t('close') || 'Close'"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+        <img
+          :src="getImageUrl(selectedRecipe.image)"
+          alt=""
+          class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+        />
       </div>
     </template>
 

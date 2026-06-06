@@ -39,6 +39,8 @@
   "copy_url": "Copy URL",
   "copied": "Copied!",
   "under_development": "Under Development",
+  "view_image": "View image",
+  "close": "Close",
   "ingredients": {
     "_": "Ingredients",
     "eggs": "eggs",
@@ -146,7 +148,9 @@
     "white_pepper": "white pepper",
     "herbacol": "wild crocus pistils (herbacol)",
     "pizza_toppings": "toppings",
-    "pearl_sugar": "pearl sugar"
+    "pearl_sugar": "pearl sugar",
+    "anise_seeds": "anise seeds",
+    "anise_liqueur": "anise liqueur"
   },
   "units": {
     "g": "g",

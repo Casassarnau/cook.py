@@ -121,6 +121,42 @@
   },
   {
     "title": {
+      "en": "Coca de Forner",
+      "es": "Coca de Forner",
+      "cat": "Coca de Forner",
+      "sv": "Coca de Forner"
+    },
+    "categories": [
+      "desserts",
+      "baking",
+      "thermomix"
+    ],
+    "path": "recipes/coca_de_forner.json",
+    "image": "/images/coca_de_forner/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "water",
+      "flour",
+      "dry_yeast",
+      "flour",
+      "flour",
+      "flour",
+      "water",
+      "water",
+      "extra_virgin_olive_oil",
+      "salt",
+      "sugar",
+      "sugar",
+      "extra_virgin_olive_oil",
+      "water",
+      "anise_seeds",
+      "sugar",
+      "anise_liqueur"
+    ]
+  },
+  {
+    "title": {
       "en": "Croquetas",
       "es": "Croquetas",
       "cat": "Croquetes",

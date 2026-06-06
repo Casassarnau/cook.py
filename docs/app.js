@@ -26,6 +26,7 @@ function recipeApp() {
     dimensionConfigWidth: 20,
     dimensionConfigHeight: 20,
     showQRModal: false,
+    showImageModal: false,
     urlCopied: false,
     routePending: (() => {
       const hash = location.hash;

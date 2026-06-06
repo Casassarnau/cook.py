@@ -39,6 +39,8 @@
   "copy_url": "Copiar URL",
   "copied": "¡Copiado!",
   "under_development": "En Desarrollo",
+  "view_image": "Ver imagen",
+  "close": "Cerrar",
   "ingredients": {
     "_": "Ingredientes",
     "eggs": "huevos",
@@ -146,7 +148,9 @@
     "white_pepper": "pimienta blanca",
     "herbacol": "brotes de herbacol",
     "pizza_toppings": "ingredientes",
-    "pearl_sugar": "azúcar perlado"
+    "pearl_sugar": "azúcar perlado",
+    "anise_seeds": "anís",
+    "anise_liqueur": "licor de anís"
   },
   "units": {
     "g": "g",

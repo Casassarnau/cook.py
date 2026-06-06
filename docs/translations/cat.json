@@ -39,6 +39,8 @@
   "copy_url": "Copiar URL",
   "copied": "Copiat!",
   "under_development": "En Desenvolupament",
+  "view_image": "Veure imatge",
+  "close": "Tancar",
   "ingredients": {
     "_": "Ingredients",
     "eggs": "ous",
@@ -146,7 +148,9 @@
     "white_pepper": "pebre blanc",
     "herbacol": "brots d'herbacol",
     "pizza_toppings": "ingredients",
-    "pearl_sugar": "sucre perlat"
+    "pearl_sugar": "sucre perlat",
+    "anise_seeds": "anís",
+    "anise_liqueur": "licor d'anís"
   },
   "units": {
     "g": "g",
