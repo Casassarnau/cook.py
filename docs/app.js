@@ -33,6 +33,17 @@ function recipeApp() {
     cookTouchStartX: null,
     cookTouchStartY: null,
     cookTouchScrolling: false,
+    cookSwipeOffset: 0,
+    cookSwipeTransition: false,
+    cookSwipeActive: false,
+    cookSwipeAnimating: false,
+    cookAnimPreviewIndex: null,
+    cookPreviewOffset: 0,
+    cookPreviewTransition: false,
+    cookLayoutStepHeight: null,
+    cookLayoutIngredientsHeight: null,
+    cookLayoutTransitionEnabled: false,
+    cookLayoutResizeHandler: null,
     urlCopied: false,
     routePending: (() => {
       const hash = location.hash;
@@ -539,6 +550,24 @@ function recipeApp() {
       return steps[this.cookStepIndex] || null;
     },
 
+    getCookStepAt(index) {
+      const steps = this.currentInstructions();
+      return steps[index] ?? null;
+    },
+
+    cookSwipePreviewStepIndex() {
+      if (this.cookAnimPreviewIndex != null) return this.cookAnimPreviewIndex;
+      if (!this.cookSwipeActive) return null;
+      if (this.cookSwipeOffset > 0 && this.cookStepIndex > 0) return this.cookStepIndex - 1;
+      if (this.cookSwipeOffset < 0 && this.cookStepIndex < this.cookStepCount() - 1) return this.cookStepIndex + 1;
+      return null;
+    },
+
+    showCookSwipePreview() {
+      if (!this.isCookMobileView()) return false;
+      return this.cookSwipePreviewStepIndex() != null && (this.cookSwipeActive || this.cookSwipeAnimating);
+    },
+
     formatCookStepLabel() {
       const current = this.cookStepIndex + 1;
       const total = this.cookStepCount();
@@ -560,18 +589,93 @@ function recipeApp() {
       return textLen <= 160 && badgeCount <= 2;
     },
 
-    cookMobileStepAreaClass() {
-      if (this.isCompactCookStep()) {
-        return 'flex-none shrink-0';
-      }
-      return 'flex-1 min-h-0 overflow-y-auto';
+    scheduleCookMobileLayout(enableTransition = true) {
+      if (!this.cookMode || !this.isCookMobileView()) return;
+      this.$nextTick(() => {
+        requestAnimationFrame(() => {
+          this.updateCookMobileLayout(enableTransition);
+        });
+      });
     },
 
-    cookMobileIngredientsAreaClass() {
-      if (this.isCompactCookStep()) {
-        return 'flex-1 min-h-0 overflow-y-auto border-t';
+    updateCookMobileLayout(enableTransition = true) {
+      if (!this.cookMode || !this.isCookMobileView()) {
+        this.cookLayoutStepHeight = null;
+        this.cookLayoutIngredientsHeight = null;
+        this.cookLayoutTransitionEnabled = false;
+        return;
       }
-      return 'flex-none max-h-[36vh] min-h-[8rem] overflow-y-auto border-t';
+
+      const stack = document.getElementById('cook-mobile-stack');
+      const stepPanel = document.getElementById('cook-step-panel');
+      const measureEl = document.getElementById('cook-step-measure');
+      if (!stack || !stepPanel) return;
+
+      const totalH = stack.clientHeight;
+      if (totalH <= 0) return;
+
+      const minIngredientsH = 128;
+      const maxIngredientsH = Math.round(totalH * 0.42);
+      const panelPaddingY = 32;
+
+      let stepH;
+      if (this.isCompactCookStep()) {
+        const contentH = measureEl ? measureEl.offsetHeight : stepPanel.scrollHeight;
+        stepH = Math.min(contentH + panelPaddingY, totalH - minIngredientsH);
+      } else {
+        stepH = Math.max(totalH - maxIngredientsH, Math.round(totalH * 0.55));
+      }
+
+      let ingredientsH = totalH - stepH;
+      if (!this.isCompactCookStep()) {
+        ingredientsH = Math.min(Math.max(ingredientsH, minIngredientsH), maxIngredientsH);
+        stepH = totalH - ingredientsH;
+      } else {
+        ingredientsH = Math.max(totalH - stepH, minIngredientsH);
+        stepH = totalH - ingredientsH;
+      }
+
+      this.cookLayoutStepHeight = Math.round(stepH);
+      this.cookLayoutIngredientsHeight = Math.round(ingredientsH);
+      if (enableTransition && !this.prefersReducedMotion()) {
+        this.cookLayoutTransitionEnabled = true;
+      }
+    },
+
+    cookStepPanelLayoutStyle() {
+      if (!this.isCookMobileView() || this.cookLayoutStepHeight == null) return '';
+      return `height: ${this.cookLayoutStepHeight}px`;
+    },
+
+    cookIngredientsPanelLayoutStyle() {
+      if (!this.isCookMobileView() || this.cookLayoutIngredientsHeight == null) return '';
+      return `height: ${this.cookLayoutIngredientsHeight}px`;
+    },
+
+    cookMobileLayoutPanelClass() {
+      if (!this.isCookMobileView() || !this.cookLayoutTransitionEnabled || this.prefersReducedMotion()) {
+        return '';
+      }
+      return 'cook-mobile-layout-panel';
+    },
+
+    bindCookMobileLayoutListeners() {
+      if (this.cookLayoutResizeHandler) return;
+      this.cookLayoutResizeHandler = () => this.scheduleCookMobileLayout();
+      window.addEventListener('resize', this.cookLayoutResizeHandler);
+    },
+
+    unbindCookMobileLayoutListeners() {
+      if (!this.cookLayoutResizeHandler) return;
+      window.removeEventListener('resize', this.cookLayoutResizeHandler);
+      this.cookLayoutResizeHandler = null;
+    },
+
+    resetCookMobileLayout() {
+      this.cookLayoutStepHeight = null;
+      this.cookLayoutIngredientsHeight = null;
+      this.cookLayoutTransitionEnabled = false;
+      this.unbindCookMobileLayoutListeners();
     },
 
     enterCookMode() {
@@ -579,37 +683,152 @@ function recipeApp() {
       if (!recipeName || this.cookStepCount() === 0) return;
       this.cookStepIndex = this.loadCookStepIndex(recipeName);
       this.clampCookStepIndex();
+      this.resetCookSwipe();
       this.cookMode = true;
       document.body.classList.add('overflow-hidden');
+      this.bindCookMobileLayoutListeners();
+      this.scheduleCookMobileLayout(false);
       this.updateURL();
     },
 
     exitCookMode(updateUrl = true) {
       this.cookMode = false;
+      this.resetCookSwipe();
+      this.resetCookMobileLayout();
       this.showCookAdjustModal = false;
       document.body.classList.remove('overflow-hidden');
       if (updateUrl) this.updateURL();
     },
 
-    goToCookStep(index) {
+    goToCookStep(index, options = {}) {
       const count = this.cookStepCount();
       if (count === 0) return;
       this.cookStepIndex = Math.max(0, Math.min(index, count - 1));
-      const recipeName = this.getRecipeName();
-      if (recipeName) this.saveCookStepIndex(recipeName, this.cookStepIndex);
-      this.updateURL();
+      if (!options.skipPersist) {
+        const recipeName = this.getRecipeName();
+        if (recipeName) this.saveCookStepIndex(recipeName, this.cookStepIndex);
+        this.updateURL();
+      }
+      if (!options.skipLayout) {
+        this.scheduleCookMobileLayout();
+      }
+    },
+
+    isCookMobileView() {
+      return window.matchMedia('(max-width: 767px)').matches;
+    },
+
+    prefersReducedMotion() {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    },
+
+    cookStepTransformStyle() {
+      if (!this.isCookMobileView()) return '';
+      return `transform: translateX(${this.cookSwipeOffset}px)`;
+    },
+
+    cookStepSlideClass() {
+      if (!this.isCookMobileView()) return '';
+      return this.cookSwipeTransition ? 'cook-step-slide-transition' : '';
+    },
+
+    cookPreviewTransformStyle() {
+      if (!this.isCookMobileView()) return '';
+      const width = this.getCookStepPanelWidth();
+      if (this.cookAnimPreviewIndex != null) {
+        return `transform: translateX(${this.cookPreviewOffset}px)`;
+      }
+      if (this.cookSwipeOffset > 0) {
+        return `transform: translateX(${-width + this.cookSwipeOffset}px)`;
+      }
+      if (this.cookSwipeOffset < 0) {
+        return `transform: translateX(${width + this.cookSwipeOffset}px)`;
+      }
+      return '';
+    },
+
+    cookPreviewSlideClass() {
+      if (!this.isCookMobileView()) return '';
+      return this.cookPreviewTransition ? 'cook-step-slide-transition' : '';
+    },
+
+    resetCookSwipe(animated = false) {
+      this.cookSwipeActive = false;
+      this.cookAnimPreviewIndex = null;
+      this.cookPreviewOffset = 0;
+      this.cookPreviewTransition = false;
+      if (animated) {
+        this.cookSwipeTransition = true;
+        this.cookSwipeOffset = 0;
+        setTimeout(() => { this.cookSwipeTransition = false; }, 280);
+      } else {
+        this.cookSwipeTransition = false;
+        this.cookSwipeOffset = 0;
+      }
+    },
+
+    getCookStepPanelWidth() {
+      const panel = document.getElementById('cook-step-panel');
+      return panel ? panel.offsetWidth : window.innerWidth;
+    },
+
+    commitCookSwipe(direction) {
+      if (this.cookSwipeAnimating) return;
+      const count = this.cookStepCount();
+      const isPrev = direction === 'prev';
+      const targetIndex = this.cookStepIndex + (isPrev ? -1 : 1);
+      if (targetIndex < 0 || targetIndex >= count) {
+        this.resetCookSwipe(true);
+        return;
+      }
+
+      if (!this.isCookMobileView() || this.prefersReducedMotion()) {
+        this.goToCookStep(targetIndex);
+        this.resetCookSwipe();
+        return;
+      }
+
+      const width = this.getCookStepPanelWidth();
+      this.cookSwipeAnimating = true;
+      this.cookAnimPreviewIndex = targetIndex;
+      this.cookSwipeTransition = true;
+      this.cookPreviewTransition = true;
+
+      // L→R (prev): incoming step starts on the left; R→L (next): incoming from the right
+      if (isPrev) {
+        this.cookPreviewOffset = -width + this.cookSwipeOffset;
+      } else {
+        this.cookPreviewOffset = width + this.cookSwipeOffset;
+      }
+
+      requestAnimationFrame(() => {
+        this.cookSwipeOffset = isPrev ? width : -width;
+        this.cookPreviewOffset = 0;
+      });
+
+      setTimeout(() => {
+        this.goToCookStep(targetIndex, { skipLayout: true });
+        this.cookAnimPreviewIndex = null;
+        this.cookPreviewOffset = 0;
+        this.cookSwipeOffset = 0;
+        this.cookSwipeTransition = false;
+        this.cookPreviewTransition = false;
+        this.cookSwipeAnimating = false;
+        this.cookSwipeActive = false;
+        this.scheduleCookMobileLayout();
+      }, 280);
     },
 
     nextCookStep() {
-      if (this.cookStepIndex < this.cookStepCount() - 1) {
-        this.goToCookStep(this.cookStepIndex + 1);
-      }
+      if (this.cookStepIndex >= this.cookStepCount() - 1) return;
+      if (this.isCookMobileView()) this.commitCookSwipe('next');
+      else this.goToCookStep(this.cookStepIndex + 1);
     },
 
     prevCookStep() {
-      if (this.cookStepIndex > 0) {
-        this.goToCookStep(this.cookStepIndex - 1);
-      }
+      if (this.cookStepIndex <= 0) return;
+      if (this.isCookMobileView()) this.commitCookSwipe('prev');
+      else this.goToCookStep(this.cookStepIndex - 1);
     },
 
     handleCookKeydown(event) {
@@ -627,20 +846,37 @@ function recipeApp() {
     },
 
     handleCookTouchStart(event) {
+      if (this.cookSwipeAnimating) return;
       const touch = event.touches[0];
       if (!touch) return;
       this.cookTouchStartX = touch.clientX;
       this.cookTouchStartY = touch.clientY;
       this.cookTouchScrolling = false;
+      this.cookSwipeActive = false;
     },
 
     handleCookTouchMove(event) {
-      if (this.cookTouchStartX == null || this.cookTouchStartY == null) return;
+      if (this.cookSwipeAnimating || this.cookTouchStartX == null || this.cookTouchStartY == null) return;
       const touch = event.touches[0];
       if (!touch) return;
-      const deltaY = Math.abs(touch.clientY - this.cookTouchStartY);
-      const deltaX = Math.abs(touch.clientX - this.cookTouchStartX);
-      if (deltaY > 12 && deltaY > deltaX) this.cookTouchScrolling = true;
+      const deltaX = touch.clientX - this.cookTouchStartX;
+      const deltaY = touch.clientY - this.cookTouchStartY;
+
+      if (!this.cookSwipeActive && Math.abs(deltaY) > 12 && Math.abs(deltaY) > Math.abs(deltaX)) {
+        this.cookTouchScrolling = true;
+        return;
+      }
+
+      if (!this.isCookMobileView() || this.cookTouchScrolling) return;
+
+      if (Math.abs(deltaX) > 10) {
+        this.cookSwipeActive = true;
+        this.cookSwipeTransition = false;
+        let offset = deltaX;
+        if (offset > 0 && this.cookStepIndex === 0) offset *= 0.35;
+        if (offset < 0 && this.cookStepIndex >= this.cookStepCount() - 1) offset *= 0.35;
+        this.cookSwipeOffset = offset;
+      }
     },
 
     handleCookTouchEnd(event) {
@@ -650,13 +886,33 @@ function recipeApp() {
       const deltaX = touch.clientX - this.cookTouchStartX;
       const deltaY = touch.clientY - this.cookTouchStartY;
       const wasScrolling = this.cookTouchScrolling;
+      const wasSwipeActive = this.cookSwipeActive;
       this.cookTouchStartX = null;
       this.cookTouchStartY = null;
       this.cookTouchScrolling = false;
+
+      if (this.cookSwipeAnimating) return;
+
+      if (wasSwipeActive && this.isCookMobileView() && !wasScrolling) {
+        const threshold = 60;
+        if (this.cookSwipeOffset < -threshold) this.commitCookSwipe('next');
+        else if (this.cookSwipeOffset > threshold) this.commitCookSwipe('prev');
+        else this.resetCookSwipe(true);
+        return;
+      }
+
       if (wasScrolling) return;
-      if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) return;
-      if (deltaX < 0) this.nextCookStep();
-      else this.prevCookStep();
+      if (!this.isCookMobileView()) {
+        if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) return;
+        if (deltaX < 0) this.nextCookStep();
+        else this.prevCookStep();
+        return;
+      }
+
+      if (Math.abs(deltaX) >= 50 && Math.abs(deltaX) >= Math.abs(deltaY)) {
+        if (deltaX < 0) this.commitCookSwipe('next');
+        else this.commitCookSwipe('prev');
+      }
     },
 
     getCookSummaryChips() {
@@ -693,6 +949,7 @@ function recipeApp() {
         this.saveThermomixPreference(recipeName, this.thermomixEnabled);
       }
       if (this.cookMode) this.clampCookStepIndex();
+      if (this.cookMode) this.scheduleCookMobileLayout();
       this.updateURL();
     },
 

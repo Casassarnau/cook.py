@@ -51,12 +51,18 @@
       html.route-pending #app-shell { display: none; }
       html.route-pending #route-loading { display: block; }
       .cook-step-swipe { touch-action: pan-y; }
-      @media (prefers-reduced-motion: no-preference) {
-        .cook-step-enter { animation: cook-step-in 0.2s ease-out; }
-        @keyframes cook-step-in {
-          from { opacity: 0; transform: translateX(8px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
+      #cook-step-panel { overflow: hidden; }
+      .cook-step-slide-transition {
+        transition: transform 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .cook-mobile-layout-panel {
+        transition: height 320ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        min-height: 0;
+        flex-shrink: 0;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cook-step-slide-transition { transition: none !important; }
+        .cook-mobile-layout-panel { transition: none !important; }
       }
     </style>
   </head>
@@ -204,7 +210,7 @@
 
       <!-- Recipe Detail -->
       <template x-if="!routePending && selectedRecipe">
-        <div>
+        <div class="pb-24">
           <button
             @click="goHome()"
             class="mb-4 font-semibold transition-colors duration-300 cursor-pointer"
@@ -391,36 +397,23 @@
           <div>
             <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
               <h3 class="text-xl font-semibold" x-text="t('instructions')"></h3>
-              <div class="flex items-center gap-3 flex-wrap">
+              <div x-show="thermomixAvailable" class="flex items-center gap-2 select-none">
+                <span class="text-sm font-medium" x-text="t('thermomix')"></span>
                 <button
                   type="button"
-                  @click="enterCookMode()"
-                  x-show="cookStepCount() > 0"
-                  class="h-9 px-4 rounded-lg font-semibold shadow transition-colors duration-300 cursor-pointer"
-                  :class="darkMode
-                    ? 'bg-orange-500 text-white hover:bg-orange-600'
-                    : 'bg-orange-600 text-white hover:bg-orange-700'"
+                  role="switch"
+                  :aria-checked="thermomixEnabled"
+                  @click="toggleThermomix()"
+                  class="relative inline-flex h-7 w-12 flex-shrink-0 rounded-full border-2 border-transparent transition-colors duration-300 cursor-pointer focus:outline-none"
+                  :class="thermomixEnabled
+                    ? 'bg-orange-500'
+                    : (darkMode ? 'bg-gray-700' : 'bg-gray-300')"
                 >
-                  <span x-text="t('start_cooking')"></span>
+                  <span
+                    class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-300"
+                    :class="thermomixEnabled ? 'translate-x-5' : 'translate-x-0'"
+                  ></span>
                 </button>
-                <div x-show="thermomixAvailable" class="flex items-center gap-2 select-none">
-                  <span class="text-sm font-medium" x-text="t('thermomix')"></span>
-                  <button
-                    type="button"
-                    role="switch"
-                    :aria-checked="thermomixEnabled"
-                    @click="toggleThermomix()"
-                    class="relative inline-flex h-7 w-12 flex-shrink-0 rounded-full border-2 border-transparent transition-colors duration-300 cursor-pointer focus:outline-none"
-                    :class="thermomixEnabled
-                      ? 'bg-orange-500'
-                      : (darkMode ? 'bg-gray-700' : 'bg-gray-300')"
-                  >
-                    <span
-                      class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-300"
-                      :class="thermomixEnabled ? 'translate-x-5' : 'translate-x-0'"
-                    ></span>
-                  </button>
-                </div>
               </div>
             </div>
 
@@ -474,6 +467,29 @@
                 </li>
               </template>
             </ol>
+          </div>
+
+          <!-- Fixed start cooking bar -->
+          <div
+            x-show="!cookMode && cookStepCount() > 0"
+            class="fixed bottom-0 inset-x-0 z-40 border-t transition-colors duration-300"
+            :class="darkMode
+              ? 'border-gray-700 bg-gray-900/95 backdrop-blur-sm'
+              : 'border-gray-200 bg-white/95 backdrop-blur-sm'"
+            style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom));"
+          >
+            <div class="max-w-5xl mx-auto px-4 pt-3">
+              <button
+                type="button"
+                @click="enterCookMode()"
+                class="w-full h-12 rounded-xl font-semibold shadow-lg transition-colors duration-300 cursor-pointer"
+                :class="darkMode
+                  ? 'bg-orange-500 text-white hover:bg-orange-600'
+                  : 'bg-orange-600 text-white hover:bg-orange-700'"
+              >
+                <span x-text="t('start_cooking')"></span>
+              </button>
+            </div>
           </div>
         </div>
       </template>
@@ -887,64 +903,123 @@
             </button>
 
             <!-- Mobile: step + ingredients stack -->
-            <div class="flex-1 min-h-0 flex flex-col md:overflow-y-auto">
+            <div id="cook-mobile-stack" class="flex-1 min-h-0 flex flex-col md:overflow-y-auto">
               <!-- Step panel (mobile adaptive) -->
               <div
-                class="md:flex-1 md:min-h-0 md:overflow-y-auto px-4 py-4 md:px-12 md:py-8"
-                :class="cookMobileStepAreaClass() + ' md:!flex-1 md:!max-h-none'"
+                id="cook-step-panel"
+                class="px-4 py-4 md:flex-1 md:min-h-0 md:overflow-y-auto md:px-12 md:py-8 md:!h-auto"
+                :class="cookMobileLayoutPanelClass() + (isCompactCookStep() ? ' overflow-hidden' : ' overflow-y-auto')"
+                :style="cookStepPanelLayoutStyle()"
               >
-                <template x-if="currentCookStep()">
-                  <div class="cook-step-enter max-w-2xl mx-auto" :key="cookStepIndex">
+                <div id="cook-step-measure" class="relative max-w-2xl mx-auto">
+                  <!-- Incoming step (peeks in from swipe direction) -->
+                  <template x-if="showCookSwipePreview() && getCookStepAt(cookSwipePreviewStepIndex())">
                     <div
-                      class="flex items-start gap-3 md:gap-4 rounded-xl border p-4 md:p-6 shadow-sm transition-colors duration-300"
-                      :class="darkMode
-                        ? 'bg-gray-800/70 border-gray-700'
-                        : 'bg-white border-gray-200'"
+                      class="md:hidden absolute inset-0 z-0"
+                      :class="cookPreviewSlideClass()"
+                      :style="cookPreviewTransformStyle()"
                     >
                       <div
-                        class="flex-shrink-0 flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full font-bold text-sm md:text-base"
+                        class="flex items-start gap-3 rounded-xl border p-4 shadow-sm transition-colors duration-300"
                         :class="darkMode
-                          ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40'
-                          : 'bg-orange-300 text-orange-700 border border-orange-400'"
-                        x-text="cookStepIndex + 1"
-                      ></div>
-                      <div class="flex-1 min-w-0">
-                        <p
-                          class="text-lg md:text-xl leading-relaxed"
-                          x-text="currentCookStep().text"
-                          aria-live="polite"
-                        ></p>
-                        <template x-if="currentCookStep().settingsBadges && currentCookStep().settingsBadges.length > 0">
-                          <div class="flex flex-wrap gap-2 mt-4">
-                            <template x-for="(badge, badgeIdx) in currentCookStep().settingsBadges" :key="badgeIdx">
-                              <span
-                                class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-semibold"
-                                :class="darkMode
-                                  ? 'bg-orange-500/20 text-orange-200 border border-orange-500/40'
-                                  : 'bg-orange-100 text-orange-800 border border-orange-200'"
-                                x-text="badge"
-                              ></span>
-                            </template>
-                          </div>
-                        </template>
+                          ? 'bg-gray-800/70 border-gray-700'
+                          : 'bg-white border-gray-200'"
+                      >
+                        <div
+                          class="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-full font-bold text-sm"
+                          :class="darkMode
+                            ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40'
+                            : 'bg-orange-300 text-orange-700 border border-orange-400'"
+                          x-text="cookSwipePreviewStepIndex() + 1"
+                        ></div>
+                        <div class="flex-1 min-w-0">
+                          <p class="text-lg leading-relaxed" x-text="getCookStepAt(cookSwipePreviewStepIndex()).text"></p>
+                          <template x-if="getCookStepAt(cookSwipePreviewStepIndex()).settingsBadges?.length > 0">
+                            <div class="flex flex-wrap gap-2 mt-4">
+                              <template x-for="(badge, badgeIdx) in getCookStepAt(cookSwipePreviewStepIndex()).settingsBadges" :key="'pv-' + badgeIdx">
+                                <span
+                                  class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-semibold"
+                                  :class="darkMode
+                                    ? 'bg-orange-500/20 text-orange-200 border border-orange-500/40'
+                                    : 'bg-orange-100 text-orange-800 border border-orange-200'"
+                                  x-text="badge"
+                                ></span>
+                              </template>
+                            </div>
+                          </template>
+                        </div>
                       </div>
+                      <template x-if="getCookStepAt(cookSwipePreviewStepIndex()).image">
+                        <img
+                          :src="getImageUrl(getCookStepAt(cookSwipePreviewStepIndex()).image, 'lower')"
+                          alt=""
+                          class="mt-4 block w-full max-h-64 object-cover object-center rounded-xl border"
+                          :class="darkMode ? 'border-gray-700' : 'border-gray-300'"
+                        />
+                      </template>
                     </div>
-                    <template x-if="currentCookStep().image">
-                      <img
-                        :src="getImageUrl(currentCookStep().image, 'lower')"
-                        alt=""
-                        class="mt-4 block w-full max-h-64 md:max-h-96 object-cover object-center rounded-xl border"
-                        :class="darkMode ? 'border-gray-700' : 'border-gray-300'"
-                      />
-                    </template>
-                  </div>
-                </template>
+                  </template>
+
+                  <!-- Current step -->
+                  <template x-if="currentCookStep()">
+                    <div
+                      class="relative z-10 md:!transform-none"
+                      :class="cookStepSlideClass()"
+                      :style="cookStepTransformStyle()"
+                    >
+                      <div
+                        class="flex items-start gap-3 md:gap-4 rounded-xl border p-4 md:p-6 shadow-sm transition-colors duration-300"
+                        :class="darkMode
+                          ? 'bg-gray-800/70 border-gray-700'
+                          : 'bg-white border-gray-200'"
+                      >
+                        <div
+                          class="flex-shrink-0 flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full font-bold text-sm md:text-base"
+                          :class="darkMode
+                            ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40'
+                            : 'bg-orange-300 text-orange-700 border border-orange-400'"
+                          x-text="cookStepIndex + 1"
+                        ></div>
+                        <div class="flex-1 min-w-0">
+                          <p
+                            class="text-lg md:text-xl leading-relaxed"
+                            x-text="currentCookStep().text"
+                            aria-live="polite"
+                          ></p>
+                          <template x-if="currentCookStep().settingsBadges && currentCookStep().settingsBadges.length > 0">
+                            <div class="flex flex-wrap gap-2 mt-4">
+                              <template x-for="(badge, badgeIdx) in currentCookStep().settingsBadges" :key="badgeIdx">
+                                <span
+                                  class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-semibold"
+                                  :class="darkMode
+                                    ? 'bg-orange-500/20 text-orange-200 border border-orange-500/40'
+                                    : 'bg-orange-100 text-orange-800 border border-orange-200'"
+                                  x-text="badge"
+                                ></span>
+                              </template>
+                            </div>
+                          </template>
+                        </div>
+                      </div>
+                      <template x-if="currentCookStep().image">
+                        <img
+                          :src="getImageUrl(currentCookStep().image, 'lower')"
+                          alt=""
+                          class="mt-4 block w-full max-h-64 md:max-h-96 object-cover object-center rounded-xl border"
+                          :class="darkMode ? 'border-gray-700' : 'border-gray-300'"
+                        />
+                      </template>
+                    </div>
+                  </template>
+                </div>
               </div>
 
               <!-- Mobile ingredients panel (adaptive height) -->
               <div
-                class="md:hidden flex flex-col transition-all duration-300"
-                :class="cookMobileIngredientsAreaClass() + ' ' + (darkMode ? 'border-gray-700 bg-gray-900/80' : 'border-gray-200 bg-white/90')"
+                id="cook-ingredients-panel"
+                class="md:hidden flex flex-col border-t"
+                :class="cookMobileLayoutPanelClass() + ' ' + (darkMode ? 'border-gray-700 bg-gray-900/80' : 'border-gray-200 bg-white/90')"
+                :style="cookIngredientsPanelLayoutStyle()"
               >
                 <div class="flex-shrink-0 px-3 py-2 border-b" :class="darkMode ? 'border-gray-700' : 'border-gray-200'">
                   <h3 class="font-semibold text-sm" x-text="getIngredientsTitle()"></h3>
