@@ -908,7 +908,7 @@
               <div
                 id="cook-step-panel"
                 class="px-4 py-4 md:flex-1 md:min-h-0 md:overflow-y-auto md:px-12 md:py-8 md:!h-auto"
-                :class="cookMobileLayoutPanelClass() + (isCompactCookStep() ? ' overflow-hidden' : ' overflow-y-auto')"
+                :class="cookMobileLayoutPanelClass() + cookStepPanelOverflowClass()"
                 :style="cookStepPanelLayoutStyle()"
               >
                 <div id="cook-step-measure" class="relative max-w-2xl mx-auto">
@@ -920,34 +920,25 @@
                       :style="cookPreviewTransformStyle()"
                     >
                       <div
-                        class="flex items-start gap-3 rounded-xl border p-4 shadow-sm transition-colors duration-300"
+                        class="rounded-xl border p-4 shadow-sm transition-colors duration-300"
                         :class="darkMode
                           ? 'bg-gray-800/70 border-gray-700'
                           : 'bg-white border-gray-200'"
                       >
-                        <div
-                          class="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-full font-bold text-sm"
-                          :class="darkMode
-                            ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40'
-                            : 'bg-orange-300 text-orange-700 border border-orange-400'"
-                          x-text="cookSwipePreviewStepIndex() + 1"
-                        ></div>
-                        <div class="flex-1 min-w-0">
-                          <p class="text-lg leading-relaxed" x-text="getCookStepAt(cookSwipePreviewStepIndex()).text"></p>
-                          <template x-if="getCookStepAt(cookSwipePreviewStepIndex()).settingsBadges?.length > 0">
-                            <div class="flex flex-wrap gap-2 mt-4">
-                              <template x-for="(badge, badgeIdx) in getCookStepAt(cookSwipePreviewStepIndex()).settingsBadges" :key="'pv-' + badgeIdx">
-                                <span
-                                  class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-semibold"
-                                  :class="darkMode
-                                    ? 'bg-orange-500/20 text-orange-200 border border-orange-500/40'
-                                    : 'bg-orange-100 text-orange-800 border border-orange-200'"
-                                  x-text="badge"
-                                ></span>
-                              </template>
-                            </div>
-                          </template>
-                        </div>
+                        <p class="text-lg leading-relaxed" x-text="getCookStepAt(cookSwipePreviewStepIndex()).text"></p>
+                        <template x-if="getCookStepAt(cookSwipePreviewStepIndex()).settingsBadges?.length > 0">
+                          <div class="flex flex-wrap gap-2 mt-4">
+                            <template x-for="(badge, badgeIdx) in getCookStepAt(cookSwipePreviewStepIndex()).settingsBadges" :key="'pv-' + badgeIdx">
+                              <span
+                                class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-semibold"
+                                :class="darkMode
+                                  ? 'bg-orange-500/20 text-orange-200 border border-orange-500/40'
+                                  : 'bg-orange-100 text-orange-800 border border-orange-200'"
+                                x-text="badge"
+                              ></span>
+                            </template>
+                          </div>
+                        </template>
                       </div>
                       <template x-if="getCookStepAt(cookSwipePreviewStepIndex()).image">
                         <img
@@ -968,19 +959,19 @@
                       :style="cookStepTransformStyle()"
                     >
                       <div
-                        class="flex items-start gap-3 md:gap-4 rounded-xl border p-4 md:p-6 shadow-sm transition-colors duration-300"
+                        class="rounded-xl border p-4 md:flex md:items-start md:gap-4 md:p-6 shadow-sm transition-colors duration-300"
                         :class="darkMode
                           ? 'bg-gray-800/70 border-gray-700'
                           : 'bg-white border-gray-200'"
                       >
                         <div
-                          class="flex-shrink-0 flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full font-bold text-sm md:text-base"
+                          class="hidden md:flex flex-shrink-0 items-center justify-center w-10 h-10 rounded-full font-bold text-base"
                           :class="darkMode
                             ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40'
                             : 'bg-orange-300 text-orange-700 border border-orange-400'"
                           x-text="cookStepIndex + 1"
                         ></div>
-                        <div class="flex-1 min-w-0">
+                        <div class="min-w-0 md:flex-1">
                           <p
                             class="text-lg md:text-xl leading-relaxed"
                             x-text="currentCookStep().text"

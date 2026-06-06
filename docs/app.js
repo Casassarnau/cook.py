@@ -44,6 +44,7 @@ function recipeApp() {
     cookLayoutIngredientsHeight: null,
     cookLayoutTransitionEnabled: false,
     cookLayoutResizeHandler: null,
+    cookStepContentOverflows: false,
     urlCopied: false,
     routePending: (() => {
       const hash = location.hash;
@@ -580,13 +581,8 @@ function recipeApp() {
       return ((this.cookStepIndex) / (total - 1)) * 100;
     },
 
-    isCompactCookStep() {
-      const step = this.currentCookStep();
-      if (!step) return true;
-      if (step.image) return false;
-      const textLen = (step.text || '').length;
-      const badgeCount = (step.settingsBadges || []).length;
-      return textLen <= 160 && badgeCount <= 2;
+    cookStepPanelOverflowClass() {
+      return this.cookStepContentOverflows ? ' overflow-y-auto' : ' overflow-hidden';
     },
 
     scheduleCookMobileLayout(enableTransition = true) {
@@ -603,6 +599,7 @@ function recipeApp() {
         this.cookLayoutStepHeight = null;
         this.cookLayoutIngredientsHeight = null;
         this.cookLayoutTransitionEnabled = false;
+        this.cookStepContentOverflows = false;
         return;
       }
 
@@ -615,28 +612,22 @@ function recipeApp() {
       if (totalH <= 0) return;
 
       const minIngredientsH = 128;
-      const maxIngredientsH = Math.round(totalH * 0.42);
       const panelPaddingY = 32;
+      const maxStepH = totalH - minIngredientsH;
 
-      let stepH;
-      if (this.isCompactCookStep()) {
-        const contentH = measureEl ? measureEl.offsetHeight : stepPanel.scrollHeight;
-        stepH = Math.min(contentH + panelPaddingY, totalH - minIngredientsH);
-      } else {
-        stepH = Math.max(totalH - maxIngredientsH, Math.round(totalH * 0.55));
-      }
-
+      const contentH = measureEl ? measureEl.offsetHeight : stepPanel.scrollHeight;
+      const naturalStepH = contentH + panelPaddingY;
+      let stepH = Math.min(naturalStepH, maxStepH);
       let ingredientsH = totalH - stepH;
-      if (!this.isCompactCookStep()) {
-        ingredientsH = Math.min(Math.max(ingredientsH, minIngredientsH), maxIngredientsH);
-        stepH = totalH - ingredientsH;
-      } else {
-        ingredientsH = Math.max(totalH - stepH, minIngredientsH);
-        stepH = totalH - ingredientsH;
+
+      if (ingredientsH < minIngredientsH) {
+        ingredientsH = minIngredientsH;
+        stepH = totalH - minIngredientsH;
       }
 
       this.cookLayoutStepHeight = Math.round(stepH);
       this.cookLayoutIngredientsHeight = Math.round(ingredientsH);
+      this.cookStepContentOverflows = naturalStepH > stepH;
       if (enableTransition && !this.prefersReducedMotion()) {
         this.cookLayoutTransitionEnabled = true;
       }
@@ -675,6 +666,7 @@ function recipeApp() {
       this.cookLayoutStepHeight = null;
       this.cookLayoutIngredientsHeight = null;
       this.cookLayoutTransitionEnabled = false;
+      this.cookStepContentOverflows = false;
       this.unbindCookMobileLayoutListeners();
     },
 
