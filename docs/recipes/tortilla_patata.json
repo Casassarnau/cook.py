@@ -33,25 +33,30 @@
             "es": "o más si son pequeñas",
             "cat": "o més si són petites",
             "sv": "eller mer om små"
-          }
+          },
+          "id": "potatoes"
         },
         {
           "ingredient": "onion",
-          "value": 2
+          "value": 2,
+          "id": "onion"
         },
         {
           "ingredient": "eggs",
-          "value": 4
+          "value": 4,
+          "id": "eggs"
         },
         {
           "ingredient": "olive_oil",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "olive_oil"
         },
         {
           "ingredient": "salt",
           "value": 0,
-          "unit": "to_taste"
+          "unit": "to_taste",
+          "id": "salt"
         }
       ]
     }
@@ -63,7 +68,11 @@
         "es": "Corta la cebolla en juliana y la patata en rodajas finas; cuanto más finas, más rápido se cocinarán.",
         "cat": "Talla la ceba a juliana i les patates a rodanxes fines; com més fines, més ràpid es cuinaran.",
         "sv": "Skär löken i tunna strimlor och potatisen i tunna skivor; ju tunnare, desto snabbare tillagas de."
-      }
+      },
+      "ingredients": [
+        "potatoes",
+        "onion"
+      ]
     },
     {
       "text": {
@@ -71,7 +80,13 @@
         "es": "Pon la patata y la cebolla en una sartén con sal y aceite suficiente para que no se pegue. Cocina a fuego medio. Si se pega, añade un poco más de aceite.",
         "cat": "Posa les patates i la ceba en una paella amb sal i prou oli perquè no s’enganxi. Cuina a foc mitjà. Si s’enganxa, afegeix una mica més d’oli.",
         "sv": "Lägg potatis och lök i en stekpanna med salt och tillräckligt med olivolja för att det inte ska fastna. Tillaga på medelvärme. Tillsätt mer olja vid behov."
-      }
+      },
+      "ingredients": [
+        "potatoes",
+        "onion",
+        "salt",
+        "olive_oil"
+      ]
     },
     {
       "text": {
@@ -79,7 +94,10 @@
         "es": "Mientras tanto, bate los huevos en un bol. Si ves que hay mucha patata y cebolla, añade más huevos.",
         "cat": "Mentrestant, bat els ous en un bol. Si veus que hi ha molta patata i ceba, afegeix més ous.",
         "sv": "Under tiden, vispa äggen i en skål. Om det är mycket potatis och lök, tillsätt fler ägg."
-      }
+      },
+      "ingredients": [
+        "eggs"
+      ]
     },
     {
       "text": {
@@ -87,7 +105,12 @@
         "es": "Cuando la patata esté pochada y empezando a dorarse, retírala y mézclala con el huevo batido.",
         "cat": "Quan la patata estigui tova i comenci a daurar-se, retira-la i barreja-la amb els ous batuts.",
         "sv": "När potatisen är mjuk och lätt gyllene, ta bort den från pannan och blanda med de vispade äggen."
-      }
+      },
+      "ingredients": [
+        "potatoes",
+        "onion",
+        "eggs"
+      ]
     },
     {
       "text": {
@@ -103,7 +126,10 @@
         "es": "Calienta una sartén engrasada, añade la mezcla, aplánala ligeramente y no la remuevas durante la cocción.",
         "cat": "Escalfa una paella engrasada, afegeix la barreja, aplana-la suaument i no la remenis durant la cocció.",
         "sv": "Värm en stekpanna i olja, tillsätt blandningen, platta till den försiktigt och rör inte under tillagningen."
-      }
+      },
+      "ingredients": [
+        "olive_oil"
+      ]
     },
     {
       "text": {

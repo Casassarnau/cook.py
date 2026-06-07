@@ -33,17 +33,20 @@
         {
           "ingredient": "water",
           "value": 50,
-          "unit": "g"
+          "unit": "g",
+          "id": "poolish_water"
         },
         {
           "ingredient": "flour",
           "value": 50,
-          "unit": "g"
+          "unit": "g",
+          "id": "poolish_flour"
         },
         {
           "ingredient": "dry_yeast",
           "value": 7,
-          "unit": "g"
+          "unit": "g",
+          "id": "poolish_yeast"
         }
       ]
     },
@@ -64,7 +67,8 @@
             "es": "tipo 00 o rústico",
             "cat": "tipus 00 o rústic",
             "sv": "typ 00 eller rustik"
-          }
+          },
+          "id": "dough_flour_00"
         },
         {
           "ingredient": "flour",
@@ -75,12 +79,14 @@
             "es": "rústica",
             "cat": "rústica",
             "sv": "rustik"
-          }
+          },
+          "id": "dough_flour_rustic"
         },
         {
           "ingredient": "water",
           "value": 275,
-          "unit": "g"
+          "unit": "g",
+          "id": "dough_water"
         },
         {
           "ingredient": "water",
@@ -91,22 +97,26 @@
             "es": "reservada para después",
             "cat": "reservada per després",
             "sv": "reserverat till senare"
-          }
+          },
+          "id": "dough_water_reserved"
         },
         {
           "ingredient": "extra_virgin_olive_oil",
           "value": 20,
-          "unit": "g"
+          "unit": "g",
+          "id": "dough_oil"
         },
         {
           "ingredient": "salt",
           "value": 10,
-          "unit": "g"
+          "unit": "g",
+          "id": "dough_salt"
         },
         {
           "ingredient": "sugar",
           "value": 4,
-          "unit": "g"
+          "unit": "g",
+          "id": "dough_sugar"
         }
       ]
     },
@@ -121,12 +131,14 @@
         {
           "ingredient": "sugar",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "topping_sugar"
         },
         {
           "ingredient": "extra_virgin_olive_oil",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "topping_oil"
         }
       ]
     },
@@ -147,12 +159,14 @@
             "es": "para la infusión",
             "cat": "per a la infusió",
             "sv": "för infusion"
-          }
+          },
+          "id": "glaze_water"
         },
         {
           "ingredient": "anise_seeds",
           "value": 0,
-          "unit": "to_taste"
+          "unit": "to_taste",
+          "id": "glaze_anise_seeds"
         },
         {
           "ingredient": "sugar",
@@ -163,7 +177,8 @@
             "es": "para el almíbar",
             "cat": "per a l'almívar",
             "sv": "till glasyren"
-          }
+          },
+          "id": "glaze_sugar"
         },
         {
           "ingredient": "anise_liqueur",
@@ -174,7 +189,8 @@
             "es": "alternativa: rebajado con agua",
             "cat": "alternativa: rebaixat amb aigua",
             "sv": "alternativ: utspätt med vatten"
-          }
+          },
+          "id": "glaze_anise_liqueur"
         }
       ]
     }
@@ -186,7 +202,12 @@
         "es": "El día anterior, prepara el poolish mezclando el agua, la harina y la levadura seca. Tápalo y déjalo en la nevera hasta el día siguiente.",
         "cat": "El dia anterior, prepara el poolish barrejant l'aigua, la farina i el llevat sec. Tapar-lo i deixar-lo a la nevera fins l'endemà.",
         "sv": "Dagen innan, förbered poolish genom att blanda vatten, mjöl och torrjäst. Täck och förvara i kylskåp till nästa dag."
-      }
+      },
+      "ingredients": [
+        "poolish_water",
+        "poolish_flour",
+        "poolish_yeast"
+      ]
     },
     {
       "text": {
@@ -206,7 +227,12 @@
           "mode": "knead",
           "time": 90
         }
-      }
+      },
+      "ingredients": [
+        "dough_flour_00",
+        "dough_flour_rustic",
+        "dough_water"
+      ]
     },
     {
       "text": {
@@ -226,7 +252,12 @@
           "mode": "knead",
           "time": 120
         }
-      }
+      },
+      "ingredients": [
+        "dough_water_reserved",
+        "dough_salt",
+        "dough_sugar"
+      ]
     },
     {
       "text": {
@@ -246,7 +277,10 @@
           "mode": "knead",
           "time": 180
         }
-      }
+      },
+      "ingredients": [
+        "dough_oil"
+      ]
     },
     {
       "text": {
@@ -278,7 +312,13 @@
         "es": "Mientras tanto, prepara el almíbar de anís: haz una infusión con poca agua y anís, y añade azúcar. También se puede hacer con licor de anís rebajado con agua.",
         "cat": "Mentrestant, prepara l'almívar d'anís: fes una infusió amb poca aigua i anís, i afegeix sucre. També es pot fer amb licor d'anís rebaixat amb aigua.",
         "sv": "Under tiden, förbered anisglasyren: gör en infusion med lite vatten och anisfrön, och tillsätt socker. Alternativt kan anislikör utspädas med vatten och sötas efter smak."
-      }
+      },
+      "ingredients": [
+        "glaze_water",
+        "glaze_anise_seeds",
+        "glaze_sugar",
+        "glaze_anise_liqueur"
+      ]
     },
     {
       "text": {
@@ -286,7 +326,11 @@
         "es": "Cuando la masa haya subido, espolvorea azúcar y aceite por encima. Precalienta el horno a 250 °C arriba y abajo (sin turbo) y hornéala hasta que se dore.",
         "cat": "Quan la massa hagi pujat, espolsa sucre i oli per damunt. Preescalfa el forn a 250 °C per dalt i per baix (sense turbo) i cou-la fins que es dauri.",
         "sv": "När degen har jäst, strö socker och ringla olja ovanpå. Förvärm ugnen till 250 °C upptill och nedtill (utan fläkt) och grädda tills den är gyllene."
-      }
+      },
+      "ingredients": [
+        "topping_sugar",
+        "topping_oil"
+      ]
     },
     {
       "text": {
@@ -294,7 +338,13 @@
         "es": "Nada más sacarla del horno, pincela el almíbar de anís por encima. Déjala templar un poco y disfruta.",
         "cat": "Tot just en treure-la del forn, pinzella l'almívar d'anís per damunt. Deixa-la refredar una mica i gaudeix.",
         "sv": "Strax när den kommer ut ur ugnen, pensla anisglasyren ovanpå. Låt svalna lite och njut."
-      }
+      },
+      "ingredients": [
+        "glaze_water",
+        "glaze_anise_seeds",
+        "glaze_sugar",
+        "glaze_anise_liqueur"
+      ]
     }
   ]
 }

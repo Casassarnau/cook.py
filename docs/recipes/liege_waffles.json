@@ -39,7 +39,8 @@
             "es": "de trigo; de fuerza o normal",
             "cat": "de blat; de força o normal",
             "sv": "vetemjöl; durum eller vetemjöl"
-          }
+          },
+          "id": "flour"
         },
         {
           "ingredient": "butter",
@@ -50,7 +51,8 @@
             "es": "en pomada, blanda",
             "cat": "en pomada, tova",
             "sv": "rumsvarm, mjuk"
-          }
+          },
+          "id": "butter"
         },
         {
           "ingredient": "greek_yogurt",
@@ -61,7 +63,8 @@
             "es": "natural",
             "cat": "natural",
             "sv": "naturell"
-          }
+          },
+          "id": "greek_yogurt"
         },
         {
           "ingredient": "eggs",
@@ -71,7 +74,8 @@
             "es": "grande (L)",
             "cat": "gran (L)",
             "sv": "stor (L)"
-          }
+          },
+          "id": "eggs"
         },
         {
           "ingredient": "milk",
@@ -82,22 +86,26 @@
             "es": "tibia",
             "cat": "tèbia",
             "sv": "ljummen"
-          }
+          },
+          "id": "milk"
         },
         {
           "ingredient": "dry_yeast",
           "value": 4,
-          "unit": "g"
+          "unit": "g",
+          "id": "dry_yeast"
         },
         {
           "ingredient": "salt",
           "value": 1,
-          "unit": "pinch"
+          "unit": "pinch",
+          "id": "salt"
         },
         {
           "ingredient": "vanilla_extract",
           "value": 0,
-          "unit": "to_taste"
+          "unit": "to_taste",
+          "id": "vanilla_extract"
         }
       ]
     },
@@ -112,7 +120,8 @@
         {
           "ingredient": "pearl_sugar",
           "value": 50,
-          "unit": "g"
+          "unit": "g",
+          "id": "pearl_sugar"
         }
       ]
     }
@@ -137,7 +146,11 @@
           "time": 120,
           "speed": 2
         }
-      }
+      },
+      "ingredients": [
+        "dry_yeast",
+        "milk"
+      ]
     },
     {
       "text": {
@@ -157,7 +170,13 @@
           "time": 30,
           "speed": 4
         }
-      }
+      },
+      "ingredients": [
+        "butter",
+        "greek_yogurt",
+        "eggs",
+        "vanilla_extract"
+      ]
     },
     {
       "text": {
@@ -177,7 +196,13 @@
           "mode": "knead",
           "time": 180
         }
-      }
+      },
+      "ingredients": [
+        "flour",
+        "milk",
+        "dry_yeast",
+        "salt"
+      ]
     },
     {
       "text": {
@@ -193,7 +218,10 @@
         "es": "El azúcar: pasada la hora, añade el azúcar perlado a la masa. Amasa solo lo necesario con las manos para repartirlo bien sin aplastar demasiado el azúcar.",
         "cat": "El sucre: passada l'hora, afegeix el sucre perlat a la massa. Amassa el just i necessari amb les mans per distribuir-lo bé sense aixafar gaire el sucre.",
         "sv": "Sockret: efter timmen, blanda i pärlsockret. Knåda bara så mycket som behövs för hand för att fördela det utan att krossa sockret för mycket."
-      }
+      },
+      "ingredients": [
+        "pearl_sugar"
+      ]
     },
     {
       "text": {

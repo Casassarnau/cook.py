@@ -37,61 +37,73 @@
         {
           "ingredient": "sugar",
           "value": 75,
-          "unit": "g"
+          "unit": "g",
+          "id": "sugar"
         },
         {
           "ingredient": "orange_zest",
           "value": 0,
-          "unit": "to_taste"
+          "unit": "to_taste",
+          "id": "orange_zest"
         },
         {
           "ingredient": "carrot",
           "value": 200,
-          "unit": "g"
+          "unit": "g",
+          "id": "carrot"
         },
         {
           "ingredient": "eggs",
-          "value": 2
+          "value": 2,
+          "id": "eggs"
         },
         {
           "ingredient": "sunflower_oil",
           "value": 120,
-          "unit": "g"
+          "unit": "g",
+          "id": "sunflower_oil"
         },
         {
           "ingredient": "flour",
           "value": 125,
-          "unit": "g"
+          "unit": "g",
+          "id": "flour"
         },
         {
           "ingredient": "baking_soda",
           "value": 1,
-          "unit": "tsp"
+          "unit": "tsp",
+          "id": "baking_soda"
         },
         {
           "ingredient": "baking_powder",
           "value": 1,
-          "unit": "tsp"
+          "unit": "tsp",
+          "id": "baking_powder"
         },
         {
           "ingredient": "cinnamon",
           "value": 1,
-          "unit": "tsp"
+          "unit": "tsp",
+          "id": "cinnamon"
         },
         {
           "ingredient": "nutmeg",
           "value": 0.5,
-          "unit": "tsp"
+          "unit": "tsp",
+          "id": "nutmeg"
         },
         {
           "ingredient": "cardamom",
           "value": 0.5,
-          "unit": "tsp"
+          "unit": "tsp",
+          "id": "cardamom"
         },
         {
           "ingredient": "salt",
           "value": 0.5,
-          "unit": "tsp"
+          "unit": "tsp",
+          "id": "salt"
         }
       ]
     },
@@ -112,17 +124,20 @@
             "es": "Philadelphia",
             "cat": "Philadelphia",
             "sv": "Philadelphia"
-          }
+          },
+          "id": "cream_cheese"
         },
         {
           "ingredient": "white_chocolate",
           "value": 50,
-          "unit": "g"
+          "unit": "g",
+          "id": "white_chocolate"
         },
         {
           "ingredient": "orange_juice",
           "value": 15,
-          "unit": "g"
+          "unit": "g",
+          "id": "orange_juice"
         },
         {
           "ingredient": "walnuts",
@@ -133,7 +148,8 @@
             "es": "troceadas, para decorar",
             "cat": "trossejades, per decorar",
             "sv": "hackade, för dekoration"
-          }
+          },
+          "id": "walnuts"
         }
       ]
     }
@@ -153,7 +169,11 @@
         "es": "Tritura la ralladura de naranja con el azúcar para que ayude a aromatizar más rápido.",
         "cat": "Tritura la ratlladura de taronja amb el sucre perquè ajudi a aromatitzar més ràpid.",
         "sv": "Krossa apelsinskalet med sockret för att hjälpa till att frigöra aromerna snabbare."
-      }
+      },
+      "ingredients": [
+        "sugar",
+        "orange_zest"
+      ]
     },
     {
       "text": {
@@ -161,7 +181,11 @@
         "es": "Añade los huevos y el aceite de girasol, luego bate hasta que esté bien incorporado.",
         "cat": "Afegeix els ous i l'oli de gira-sol, després batega fins que estigui ben incorporat.",
         "sv": "Tillsätt äggen och solrosoljan, vispa sedan tills det är väl inblandat."
-      }
+      },
+      "ingredients": [
+        "eggs",
+        "sunflower_oil"
+      ]
     },
     {
       "text": {
@@ -169,7 +193,16 @@
         "es": "En un bol aparte, mezcla la harina, las especias, la levadura y el bicarbonato, luego añádelo a la mezcla anterior hasta que sea homogéneo.",
         "cat": "En un bol a part, barreja la farina, les espècies, el llevat i el bicarbonat, després afegeix-ho a la barreja anterior fins que sigui homogeni.",
         "sv": "I en separat skål, blanda mjölet, kryddorna, bakpulvret och bikarbonatet, tillsätt sedan till den tidigare blandningen tills det är homogent."
-      }
+      },
+      "ingredients": [
+        "flour",
+        "baking_soda",
+        "baking_powder",
+        "cinnamon",
+        "nutmeg",
+        "cardamom",
+        "salt"
+      ]
     },
     {
       "text": {
@@ -177,7 +210,10 @@
         "es": "Ralla las zanahorias y añádelas. Con un minipimer, tritura un poco la mezcla para que no quede todo con zanahoria rallada pero sí que aún queden ralladuras visibles.",
         "cat": "Ratlla les pastanagues i afegeix-les. Amb un minipimer, tritura una mica la barreja perquè no quedi tot amb pastanaga ratllada però sí que encara quedin ratlladures visibles.",
         "sv": "Riv morötterna och tillsätt dem till blandningen. Använd en stavmixer för att delvis blanda blandningen så att det inte blir helt rivna morötter men fortfarande har synliga rivna bitar."
-      }
+      },
+      "ingredients": [
+        "carrot"
+      ]
     },
     {
       "text": {
@@ -185,7 +221,20 @@
         "es": "Ponlo en el molde y mételo en el horno precalentado por 1 hora.",
         "cat": "Posa-ho al motlle i fica-ho al forn preescalfat per 1 hora.",
         "sv": "Häll blandningen i den förberedda formen och grädda i den förvärmda ugnen i 1 timme."
-      }
+      },
+      "ingredients": [
+        "carrot",
+        "sugar",
+        "eggs",
+        "sunflower_oil",
+        "flour",
+        "baking_soda",
+        "baking_powder",
+        "cinnamon",
+        "nutmeg",
+        "cardamom",
+        "salt"
+      ]
     },
     {
       "text": {
@@ -202,7 +251,11 @@
         "es": "Mientras tanto, derrite el chocolate blanco y ponlo en un bol con el queso crema.",
         "cat": "Mentrestant, fong la xocolata blanca i posa-ho en un bol amb el formatge cremós.",
         "sv": "Under tiden, smält den vita chokladen och lägg den i en skål med gräddosten."
-      }
+      },
+      "ingredients": [
+        "white_chocolate",
+        "cream_cheese"
+      ]
     },
     {
       "text": {
@@ -210,7 +263,12 @@
         "es": "Una vez bien incorporado, añade el zumo de naranja y vuelve a mezclar.",
         "cat": "Un cop ben incorporat, afegeix el suc de taronja i torna a barrejar.",
         "sv": "När det är väl inblandat, tillsätt apelsinjuicen och blanda igen."
-      }
+      },
+      "ingredients": [
+        "white_chocolate",
+        "cream_cheese",
+        "orange_juice"
+      ]
     },
     {
       "text": {
@@ -219,7 +277,13 @@
         "cat": "Un cop el glaçat està fet i el pastís fred, talla el pastís per la meitat amb un ganivet i farceix amb glaçat l'interior. Afegeix nous trossejades al glaçat a la capa del mig. Cobreix la superfície amb glaçat i afegeix nous trossejades a dalt per decorar.",
         "sv": "När glasyren är klar och tårtan är kall, skär tårtan på mitten med en kniv och fyll insidan med glasyr. Tillsätt hackade valnötter till glasyren i mellanlagret. Täck ytan med glasyr och tillsätt hackade valnötter ovanpå för dekoration."
       },
-      "image": "/images/carrot_cake/filling.webp"
+      "image": "/images/carrot_cake/filling.webp",
+      "ingredients": [
+        "cream_cheese",
+        "white_chocolate",
+        "orange_juice",
+        "walnuts"
+      ]
     }
   ],
   "instructionsThermomix": [
@@ -241,7 +305,11 @@
       "settings": {
         "time": 20,
         "speed": 10
-      }
+      },
+      "ingredients": [
+        "sugar",
+        "orange_zest"
+      ]
     },
     {
       "text": {
@@ -253,7 +321,10 @@
       "settings": {
         "time": 5,
         "speed": 5
-      }
+      },
+      "ingredients": [
+        "carrot"
+      ]
     },
     {
       "text": {
@@ -265,7 +336,11 @@
       "settings": {
         "time": 30,
         "speed": 5
-      }
+      },
+      "ingredients": [
+        "eggs",
+        "sunflower_oil"
+      ]
     },
     {
       "text": {
@@ -277,7 +352,20 @@
       "settings": {
         "time": 3,
         "speed": 6
-      }
+      },
+      "ingredients": [
+        "flour",
+        "baking_soda",
+        "baking_powder",
+        "cinnamon",
+        "nutmeg",
+        "cardamom",
+        "salt",
+        "carrot",
+        "sugar",
+        "eggs",
+        "sunflower_oil"
+      ]
     },
     {
       "text": {
@@ -285,7 +373,20 @@
         "es": "Hornee en el horno precalentado durante 1 hora.",
         "cat": "Cou al forn preescalfat durant 1 hora.",
         "sv": "Grädda i den förvärmda ugnen i 1 timme."
-      }
+      },
+      "ingredients": [
+        "carrot",
+        "sugar",
+        "eggs",
+        "sunflower_oil",
+        "flour",
+        "baking_soda",
+        "baking_powder",
+        "cinnamon",
+        "nutmeg",
+        "cardamom",
+        "salt"
+      ]
     },
     {
       "text": {
@@ -306,7 +407,10 @@
       "settings": {
         "time": 8,
         "speed": 8
-      }
+      },
+      "ingredients": [
+        "white_chocolate"
+      ]
     },
     {
       "text": {
@@ -319,7 +423,10 @@
         "temperature": 50,
         "time": 60,
         "speed": 3
-      }
+      },
+      "ingredients": [
+        "white_chocolate"
+      ]
     },
     {
       "text": {
@@ -331,7 +438,12 @@
       "settings": {
         "time": 30,
         "speed": 3
-      }
+      },
+      "ingredients": [
+        "cream_cheese",
+        "orange_juice",
+        "white_chocolate"
+      ]
     },
     {
       "text": {
@@ -343,7 +455,12 @@
       "settings": {
         "time": 30,
         "speed": 4
-      }
+      },
+      "ingredients": [
+        "cream_cheese",
+        "orange_juice",
+        "white_chocolate"
+      ]
     },
     {
       "text": {
@@ -352,7 +469,13 @@
         "cat": "Un cop el glaçat està fet i el pastís fred, talla el pastís per la meitat amb un ganivet i farceix amb glaçat l'interior. Afegeix nous trossejades al glaçat a la capa del mig. Cobreix la superfície amb glaçat i afegeix nous trossejades a dalt per decorar.",
         "sv": "När glasyren är klar och tårtan är kall, skär tårtan på mitten med en kniv och fyll insidan med glasyr. Tillsätt hackade valnötter till glasyren i mellanlagret. Täck ytan med glasyr och tillsätt hackade valnötter ovanpå för dekoration."
       },
-      "image": "/images/carrot_cake/filling.webp"
+      "image": "/images/carrot_cake/filling.webp",
+      "ingredients": [
+        "cream_cheese",
+        "white_chocolate",
+        "orange_juice",
+        "walnuts"
+      ]
     }
   ]
 }

@@ -68,26 +68,31 @@
             "es": "puede ser sustituido por aceite de oliva",
             "cat": "pot ser substituït per oli d'oliva",
             "sv": "kan ersättas med olivolja"
-          }
+          },
+          "id": "bechamel_butter"
         },
         {
           "ingredient": "onion",
-          "value": 1
+          "value": 1,
+          "id": "bechamel_onion"
         },
         {
           "ingredient": "flour",
           "value": 80,
-          "unit": "g"
+          "unit": "g",
+          "id": "bechamel_flour"
         },
         {
           "ingredient": "milk",
           "value": 500,
-          "unit": "ml"
+          "unit": "ml",
+          "id": "bechamel_milk"
         },
         {
           "ingredient": "salt",
           "value": 0,
-          "unit": "to_taste"
+          "unit": "to_taste",
+          "id": "bechamel_salt"
         }
       ]
     },
@@ -103,43 +108,50 @@
           "ingredient": "ham",
           "value": 200,
           "unit": "g",
-          "onlyForVariation": "jamon"
+          "onlyForVariation": "jamon",
+          "id": "filling_ham"
         },
         {
           "ingredient": "chicken",
           "value": 200,
           "unit": "g",
-          "onlyForVariation": "pollo"
+          "onlyForVariation": "pollo",
+          "id": "filling_chicken"
         },
         {
           "ingredient": "mushrooms",
           "value": 200,
           "unit": "g",
-          "onlyForVariation": "setas"
+          "onlyForVariation": "setas",
+          "id": "filling_mushrooms"
         },
         {
           "ingredient": "olive_oil",
           "value": 0,
           "unit": "as_needed",
-          "onlyForVariation": "setas"
+          "onlyForVariation": "setas",
+          "id": "filling_oil"
         },
         {
           "ingredient": "butter",
           "value": 0,
           "unit": "to_taste",
-          "onlyForVariation": "setas"
+          "onlyForVariation": "setas",
+          "id": "filling_butter"
         },
         {
           "ingredient": "salt",
           "value": 0,
           "unit": "to_taste",
-          "onlyForVariation": "setas"
+          "onlyForVariation": "setas",
+          "id": "filling_salt"
         },
         {
           "ingredient": "white_pepper",
           "value": 0,
           "unit": "to_taste",
-          "onlyForVariation": "setas"
+          "onlyForVariation": "setas",
+          "id": "filling_pepper"
         }
       ]
     },
@@ -154,17 +166,20 @@
         {
           "ingredient": "flour",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "bread_flour"
         },
         {
           "ingredient": "eggs",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "bread_eggs"
         },
         {
           "ingredient": "panko",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "bread_panko"
         }
       ]
     },
@@ -179,7 +194,8 @@
         {
           "ingredient": "sunflower_oil",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "frying_oil"
         }
       ]
     }
@@ -192,7 +208,10 @@
         "cat": "Separa el greix del pernil de la carn i tritura la carn a trossos petits. Reservem.",
         "sv": "Separera fettet från skinkan och hacka köttet i små bitar. Ställ åt sidan."
       },
-      "onlyForVariation": "jamon"
+      "onlyForVariation": "jamon",
+      "ingredients": [
+        "filling_ham"
+      ]
     },
     {
       "text": {
@@ -202,7 +221,10 @@
         "sv": "Riv resterna av rost kyckling (t.ex. bröstkött) i fina trådar. Ju mer trådar du skapar, desto köttigare blir kroketten. Se till att inkludera rostningssaften för extra smak. Ställ åt sidan."
       },
       "onlyForVariation": "pollo",
-      "image": "/images/croquetas/1-pollo.webp"
+      "image": "/images/croquetas/1-pollo.webp",
+      "ingredients": [
+        "filling_chicken"
+      ]
     },
     {
       "text": {
@@ -211,7 +233,10 @@
         "cat": "Tallar els bolets a quadrats molt petits.",
         "sv": "Skär svampen i mycket små kvadrater."
       },
-      "onlyForVariation": "setas"
+      "onlyForVariation": "setas",
+      "ingredients": [
+        "filling_mushrooms"
+      ]
     },
     {
       "text": {
@@ -220,7 +245,14 @@
         "cat": "Salteja els bolets a foc alt amb oli d'oliva i quan ja estiguin daurats afegeix mantega perquè es torrin. Al final, afegim sal i pebre blanc. És molt important l'ordre per realçar el gust dels bolets. Reservem.",
         "sv": "Stek svampen på hög värme med olivolja. När den är guldgul, tillsätt smör för att rosta den. Slutligen, tillsätt salt och vitpeppar. Ordningen är mycket viktig för att förbättra smaken av svampen. Ställ åt sidan."
       },
-      "onlyForVariation": "setas"
+      "onlyForVariation": "setas",
+      "ingredients": [
+        "filling_mushrooms",
+        "filling_oil",
+        "filling_butter",
+        "filling_salt",
+        "filling_pepper"
+      ]
     },
     {
       "text": {
@@ -228,7 +260,10 @@
         "es": "Trocea una cebolla a dados muy pequeños.",
         "cat": "Talla una ceba a daus molt petits.",
         "sv": "Hacka löken i mycket små tärningar."
-      }
+      },
+      "ingredients": [
+        "bechamel_onion"
+      ]
     },
     {
       "text": {
@@ -237,7 +272,11 @@
         "cat": "En una olla gran afegir mantega amb el greix del pernil i quan estigui fosa afegeix la ceba tallada.",
         "sv": "I en stor kastrull, tillsätt smör med skinkfettet. När det är smält, tillsätt den hackade löken."
       },
-      "onlyForVariation": "jamon"
+      "onlyForVariation": "jamon",
+      "ingredients": [
+        "bechamel_butter",
+        "bechamel_onion"
+      ]
     },
     {
       "text": {
@@ -246,7 +285,11 @@
         "cat": "En una olla gran afegir mantega i quan estigui fosa afegeix la ceba tallada.",
         "sv": "I en stor kastrull, tillsätt smör. När det är smält, tillsätt den hackade löken."
       },
-      "onlyForVariation": "pollo"
+      "onlyForVariation": "pollo",
+      "ingredients": [
+        "bechamel_butter",
+        "bechamel_onion"
+      ]
     },
     {
       "text": {
@@ -255,7 +298,11 @@
         "cat": "En una olla gran afegir mantega i quan estigui fosa afegeix la ceba tallada.",
         "sv": "I en stor kastrull, tillsätt smör. När det är smält, tillsätt den hackade löken."
       },
-      "onlyForVariation": "setas"
+      "onlyForVariation": "setas",
+      "ingredients": [
+        "bechamel_butter",
+        "bechamel_onion"
+      ]
     },
     {
       "text": {
@@ -277,7 +324,11 @@
           "speed": 2
         }
       },
-      "image": "/images/croquetas/2.webp"
+      "image": "/images/croquetas/2.webp",
+      "ingredients": [
+        "bechamel_flour",
+        "bechamel_onion"
+      ]
     },
     {
       "text": {
@@ -298,7 +349,10 @@
           "time": 300,
           "speed": 2
         }
-      }
+      },
+      "ingredients": [
+        "bechamel_milk"
+      ]
     },
     {
       "text": {
@@ -319,7 +373,11 @@
           "time": 360,
           "speed": 4
         }
-      }
+      },
+      "ingredients": [
+        "bechamel_milk",
+        "bechamel_flour"
+      ]
     },
     {
       "text": {
@@ -341,7 +399,11 @@
           "speed": 3
         }
       },
-      "image": "/images/croquetas/3.webp"
+      "image": "/images/croquetas/3.webp",
+      "ingredients": [
+        "bechamel_milk",
+        "bechamel_flour"
+      ]
     },
     {
       "text": {
@@ -363,7 +425,13 @@
           "speed": 3
         }
       },
-      "image": "/images/croquetas/4.webp"
+      "image": "/images/croquetas/4.webp",
+      "ingredients": [
+        "filling_ham",
+        "filling_chicken",
+        "filling_mushrooms",
+        "bechamel_salt"
+      ]
     },
     {
       "text": {
@@ -380,7 +448,12 @@
         "es": "Preparas la estación de rebozado: un bol con harina, otro con huevo batido y otro con panko.",
         "cat": "Prepara l'estació de reboçat: un bol amb farina, un altre amb ou batut i un altre amb panko.",
         "sv": "Förbered paneringsstationen: en skål med mjöl, en annan med vispade ägg och en annan med panko."
-      }
+      },
+      "ingredients": [
+        "bread_flour",
+        "bread_eggs",
+        "bread_panko"
+      ]
     },
     {
       "text": {
@@ -396,7 +469,12 @@
         "es": "Rebozar cada croqueta: primero en harina, luego en huevo y luego en panko. Asegúrate de que cada croqueta esté cubierta uniformemente.",
         "cat": "Reboçar cada croqueta: primer en farina, després en ou i després en panko. Assegura't de que cada croqueta estigui coberta uniformement.",
         "sv": "Panera varje kroket: först i mjöl, sedan i vispade ägg och slutligen i panko. Se till att varje kroket är jämnt panerad."
-      }
+      },
+      "ingredients": [
+        "bread_flour",
+        "bread_eggs",
+        "bread_panko"
+      ]
     },
     {
       "text": {
@@ -412,7 +490,10 @@
         "es": "Para cocerlas poner una sartén con mucho aceite y freír hasta doradas. Si pones poco aceite ir girando las croquetas cuando estén doradas.",
         "cat": "Per coure-les posar una paella amb molt oli i fregir fins daurades. Si poses poc oli anar girant les croquetes quan estiguin daurades.",
         "sv": "För att laga kroketterna: Värm en stekpanna med mycket olja. Stek tills de är guldbruna. Om du använder mindre olja, vänd kroketterna när de är guldgula på ena sidan."
-      }
+      },
+      "ingredients": [
+        "frying_oil"
+      ]
     },
     {
       "text": {

@@ -34,17 +34,20 @@
         {
           "ingredient": "water",
           "value": 50,
-          "unit": "g"
+          "unit": "g",
+          "id": "poolish_water"
         },
         {
           "ingredient": "flour",
           "value": 50,
-          "unit": "g"
+          "unit": "g",
+          "id": "poolish_flour"
         },
         {
           "ingredient": "dry_yeast",
           "value": 7,
-          "unit": "g"
+          "unit": "g",
+          "id": "poolish_yeast"
         }
       ]
     },
@@ -65,7 +68,8 @@
             "es": "tipo 00",
             "cat": "tipus 00",
             "sv": "typ 00"
-          }
+          },
+          "id": "dough_flour_00"
         },
         {
           "ingredient": "flour",
@@ -76,12 +80,14 @@
             "es": "rústica, o tipo 00",
             "cat": "rústica, o tipus 00",
             "sv": "rustik, eller typ 00"
-          }
+          },
+          "id": "dough_flour_rustic"
         },
         {
           "ingredient": "water",
           "value": 250,
-          "unit": "g"
+          "unit": "g",
+          "id": "dough_water"
         },
         {
           "ingredient": "water",
@@ -92,22 +98,26 @@
             "es": "reservada para después",
             "cat": "reservada per després",
             "sv": "reserverat till senare"
-          }
+          },
+          "id": "dough_water_reserved"
         },
         {
           "ingredient": "extra_virgin_olive_oil",
           "value": 20,
-          "unit": "g"
+          "unit": "g",
+          "id": "dough_oil"
         },
         {
           "ingredient": "salt",
           "value": 10,
-          "unit": "g"
+          "unit": "g",
+          "id": "dough_salt"
         },
         {
           "ingredient": "sugar",
           "value": 4,
-          "unit": "g"
+          "unit": "g",
+          "id": "dough_sugar"
         }
       ]
     },
@@ -128,7 +138,8 @@
             "es": "al gusto",
             "cat": "al gust",
             "sv": "efter eget val"
-          }
+          },
+          "id": "toppings"
         }
       ]
     }
@@ -140,7 +151,12 @@
         "es": "El día anterior, prepara el poolish mezclando el agua, la harina y la levadura seca. Tápalo y déjalo en la nevera hasta el día siguiente.",
         "cat": "El dia anterior, prepara el poolish barrejant l'aigua, la farina i el llevat sec. Tapar-lo i deixar-lo a la nevera fins l'endemà.",
         "sv": "Dagen innan, förbered poolish genom att blanda vatten, mjöl och torrjäst. Täck och förvara i kylskåp till nästa dag."
-      }
+      },
+      "ingredients": [
+        "poolish_water",
+        "poolish_flour",
+        "poolish_yeast"
+      ]
     },
     {
       "text": {
@@ -160,7 +176,12 @@
           "mode": "knead",
           "time": 90
         }
-      }
+      },
+      "ingredients": [
+        "dough_flour_00",
+        "dough_flour_rustic",
+        "dough_water"
+      ]
     },
     {
       "text": {
@@ -180,7 +201,12 @@
           "mode": "knead",
           "time": 120
         }
-      }
+      },
+      "ingredients": [
+        "dough_water_reserved",
+        "dough_salt",
+        "dough_sugar"
+      ]
     },
     {
       "text": {
@@ -200,7 +226,10 @@
           "mode": "knead",
           "time": 180
         }
-      }
+      },
+      "ingredients": [
+        "dough_oil"
+      ]
     },
     {
       "text": {
@@ -224,7 +253,10 @@
         "es": "Aplana la masa, añade los ingredientes que desees y, cuando el horno esté a la máxima temperatura, mete la pizza en la parte de abajo del horno.",
         "cat": "Aplana la massa, afegeix els ingredients que vulguis i, quan el forn estigui a la màxima temperatura, posa la pizza a la part de baix del forn.",
         "sv": "Platta ut degen, lägg på önskade toppingar och när ugnen är på max temperatur, ställ pizzan på den nedre nivån."
-      }
+      },
+      "ingredients": [
+        "toppings"
+      ]
     },
     {
       "text": {

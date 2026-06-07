@@ -55,14 +55,8 @@
       .cook-step-slide-transition {
         transition: transform 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
-      .cook-mobile-layout-panel {
-        transition: height 320ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        min-height: 0;
-        flex-shrink: 0;
-      }
       @media (prefers-reduced-motion: reduce) {
         .cook-step-slide-transition { transition: none !important; }
-        .cook-mobile-layout-panel { transition: none !important; }
       }
     </style>
   </head>
@@ -824,6 +818,7 @@
         <div class="flex-1 min-h-0 flex flex-col md:flex-row">
           <!-- Desktop ingredients sidebar -->
           <aside
+            x-show="hasCookStepIngredients()"
             class="hidden md:flex md:flex-col md:w-80 lg:w-96 md:flex-shrink-0 border-r overflow-y-auto transition-colors duration-300"
             :class="darkMode ? 'border-gray-700 bg-gray-900/50' : 'border-gray-200 bg-white/80'"
           >
@@ -831,17 +826,17 @@
               <h3 class="text-lg font-semibold" x-text="getIngredientsTitle()"></h3>
             </div>
             <div class="p-4 space-y-4">
-              <template x-for="(group, groupIndex) in currentIngredients()" :key="'cook-d-' + groupIndex">
+              <template x-for="(group, groupIndex) in currentCookIngredients()" :key="'cook-d-' + groupIndex">
                 <div>
                   <template x-if="group.isGroup && group.groupName">
-                    <h4 class="text-sm font-semibold mb-2 px-1"
+                    <h4 class="text-base font-semibold mb-2 px-1"
                         :class="darkMode ? 'text-orange-300' : 'text-orange-600'"
                         x-text="group.groupName"></h4>
                   </template>
                   <ul class="space-y-2 list-none">
                     <template x-for="(item, index) in group.items" :key="'cook-d-' + groupIndex + '-' + index">
                       <li
-                        class="flex items-start gap-2.5 rounded-lg border p-2.5 text-sm font-medium transition-colors duration-300"
+                        class="flex items-start gap-2.5 rounded-lg border p-3 text-lg md:text-xl font-medium transition-colors duration-300"
                         :class="darkMode
                           ? 'bg-gray-800/60 border-gray-700'
                           : 'bg-gray-50 border-gray-200'"
@@ -902,14 +897,12 @@
               ›
             </button>
 
-            <!-- Mobile: step + ingredients stack -->
+            <!-- Mobile: swipeable step + ingredients stack -->
             <div id="cook-mobile-stack" class="flex-1 min-h-0 flex flex-col md:overflow-y-auto">
-              <!-- Step panel (mobile adaptive) -->
               <div
                 id="cook-step-panel"
-                class="px-4 py-4 md:flex-1 md:min-h-0 md:overflow-y-auto md:px-12 md:py-8 md:!h-auto"
-                :class="cookMobileLayoutPanelClass() + cookStepPanelOverflowClass()"
-                :style="cookStepPanelLayoutStyle()"
+                class="flex-1 min-h-0 px-4 py-4 md:flex-1 md:min-h-0 md:overflow-y-auto md:px-12 md:py-8 md:!h-auto"
+                :class="cookStepPanelOverflowClass()"
               >
                 <div id="cook-step-measure" class="relative max-w-2xl mx-auto">
                   <!-- Incoming step (peeks in from swipe direction) -->
@@ -947,6 +940,65 @@
                           class="mt-4 block w-full max-h-64 object-cover object-center rounded-xl border"
                           :class="darkMode ? 'border-gray-700' : 'border-gray-300'"
                         />
+                      </template>
+                      <template x-if="hasCookIngredientsAt(cookSwipePreviewStepIndex())">
+                        <div class="mt-4">
+                          <!-- Header/Title section -->
+                          <div 
+                            class="pb-2 border-b mb-3" 
+                            :class="darkMode ? 'border-gray-700' : 'border-gray-200'"
+                          >
+                            <h3 class="font-semibold text-lg" x-text="t('ingredients._')"></h3>
+                          </div>
+                      
+                          <!-- Ingredients Content Container -->
+                          <div class="space-y-2">
+                            <template x-for="(group, groupIndex) in getCookIngredientsAt(cookSwipePreviewStepIndex())" :key="'pv-ing-' + groupIndex">
+                              <div>
+                                <!-- Group Name Subtitle -->
+                                <template x-if="group.isGroup && group.groupName">
+                                  <h4 class="text-base font-semibold mb-1.5 px-1"
+                                      :class="darkMode ? 'text-orange-300' : 'text-orange-600'"
+                                      x-text="group.groupName"></h4>
+                                </template>
+                      
+                                <!-- Original Ingredient Box List -->
+                                <ul class="grid gap-1.5 list-none">
+                                  <template x-for="(item, index) in group.items" :key="'pv-ing-' + groupIndex + '-' + index">
+                                    <li
+                                      class="flex items-start gap-2 rounded-md border p-3 text-lg font-medium"
+                                      :class="darkMode
+                                        ? 'bg-gray-800/60 border-gray-700'
+                                        : 'bg-gray-50 border-gray-200'"
+                                    >
+                                      <!-- Original Emoji and Details markup completely untouched -->
+                                      <span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
+                                      <div class="flex-1 min-w-0">
+                                        <div class="flex items-baseline gap-1 flex-wrap">
+                                          <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.value" x-show="item.value"></span>
+                                          <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
+                                            <span class="flex items-baseline gap-1 flex-wrap">
+                                              <span x-text="item.name"></span>
+                                              <span x-text="item.unit"></span>
+                                            </span>
+                                          </template>
+                                          <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
+                                            <span class="flex items-baseline gap-1 flex-wrap">
+                                              <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.unit"></span>
+                                              <span x-text="item.connector" x-show="item.connector"></span>
+                                              <span x-text="item.name"></span>
+                                            </span>
+                                          </template>
+                                          <span x-text="item.text" x-show="item.text"></span>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </template>
+                                </ul>
+                              </div>
+                            </template>
+                          </div>
+                        </div>
                       </template>
                     </div>
                   </template>
@@ -1000,60 +1052,65 @@
                           :class="darkMode ? 'border-gray-700' : 'border-gray-300'"
                         />
                       </template>
-                    </div>
-                  </template>
-                </div>
-              </div>
-
-              <!-- Mobile ingredients panel (adaptive height) -->
-              <div
-                id="cook-ingredients-panel"
-                class="md:hidden flex flex-col border-t"
-                :class="cookMobileLayoutPanelClass() + ' ' + (darkMode ? 'border-gray-700 bg-gray-900/80' : 'border-gray-200 bg-white/90')"
-                :style="cookIngredientsPanelLayoutStyle()"
-              >
-                <div class="flex-shrink-0 px-3 py-2 border-b" :class="darkMode ? 'border-gray-700' : 'border-gray-200'">
-                  <h3 class="font-semibold text-sm" x-text="getIngredientsTitle()"></h3>
-                </div>
-                <div class="flex-1 min-h-0 overflow-y-auto px-2 pb-2 space-y-2">
-                  <template x-for="(group, groupIndex) in currentIngredients()" :key="'cook-m-' + groupIndex">
-                    <div>
-                      <template x-if="group.isGroup && group.groupName">
-                        <h4 class="text-sm font-semibold mb-1 px-1"
-                            :class="darkMode ? 'text-orange-300' : 'text-orange-600'"
-                            x-text="group.groupName"></h4>
-                      </template>
-                      <ul class="grid gap-1.5 list-none">
-                        <template x-for="(item, index) in group.items" :key="'cook-m-' + groupIndex + '-' + index">
-                          <li
-                            class="flex items-start gap-1.5 rounded-md border p-2.5 text-sm font-medium transition-colors duration-300"
-                            :class="darkMode
-                              ? 'bg-gray-800/60 border-gray-700'
-                              : 'bg-gray-50 border-gray-200'"
+                      <template x-if="hasCookStepIngredients()">
+                        <div class="mt-4 md:hidden">
+                          <!-- Header/Title section -->
+                          <div 
+                            class="pb-2 border-b mb-3" 
+                            :class="darkMode ? 'border-gray-700' : 'border-gray-200'"
                           >
-                            <span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
-                            <div class="flex-1 min-w-0">
-                              <div class="flex items-baseline gap-1 flex-wrap">
-                                <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.value" x-show="item.value"></span>
-                                <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
-                                  <span class="flex items-baseline gap-1 flex-wrap">
-                                    <span x-text="item.name"></span>
-                                    <span x-text="item.unit"></span>
-                                  </span>
+                            <h3 class="font-semibold text-lg" x-text="t('ingredients._')"></h3>
+                          </div>
+                      
+                          <!-- Ingredients Content Container -->
+                          <div class="space-y-2">
+                            <template x-for="(group, groupIndex) in currentCookIngredients()" :key="'cur-ing-' + groupIndex">
+                              <div>
+                                <!-- Group Name Subtitle -->
+                                <template x-if="group.isGroup && group.groupName">
+                                  <h4 class="text-base font-semibold mb-1.5 px-1"
+                                      :class="darkMode ? 'text-orange-300' : 'text-orange-600'"
+                                      x-text="group.groupName"></h4>
                                 </template>
-                                <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
-                                  <span class="flex items-baseline gap-1 flex-wrap">
-                                    <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.unit"></span>
-                                    <span x-text="item.connector" x-show="item.connector"></span>
-                                    <span x-text="item.name"></span>
-                                  </span>
-                                </template>
-                                <span x-text="item.text" x-show="item.text"></span>
+                      
+                                <!-- Original Ingredient Box List -->
+                                <ul class="grid gap-1.5 list-none">
+                                  <template x-for="(item, index) in group.items" :key="'cur-ing-' + groupIndex + '-' + index">
+                                    <li
+                                      class="flex items-start gap-2 rounded-md border p-3 text-lg font-medium"
+                                      :class="darkMode
+                                        ? 'bg-gray-800/60 border-gray-700'
+                                        : 'bg-gray-50 border-gray-200'"
+                                    >
+                                      <!-- Original Emoji and Details markup completely untouched -->
+                                      <span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
+                                      <div class="flex-1 min-w-0">
+                                        <div class="flex items-baseline gap-1 flex-wrap">
+                                          <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.value" x-show="item.value"></span>
+                                          <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
+                                            <span class="flex items-baseline gap-1 flex-wrap">
+                                              <span x-text="item.name"></span>
+                                              <span x-text="item.unit"></span>
+                                            </span>
+                                          </template>
+                                          <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
+                                            <span class="flex items-baseline gap-1 flex-wrap">
+                                              <span class="text-orange-600 dark:text-orange-400 font-semibold" x-text="item.unit"></span>
+                                              <span x-text="item.connector" x-show="item.connector"></span>
+                                              <span x-text="item.name"></span>
+                                            </span>
+                                          </template>
+                                          <span x-text="item.text" x-show="item.text"></span>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </template>
+                                </ul>
                               </div>
-                            </div>
-                          </li>
-                        </template>
-                      </ul>
+                            </template>
+                          </div>
+                        </div>
+                      </template>
                     </div>
                   </template>
                 </div>

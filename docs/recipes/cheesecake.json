@@ -57,12 +57,14 @@
         {
           "ingredient": "digestive_cookies",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "digestive_cookies"
         },
         {
           "ingredient": "butter",
           "value": 0,
-          "unit": "as_needed"
+          "unit": "as_needed",
+          "id": "base_butter"
         }
       ]
     },
@@ -83,7 +85,8 @@
             "es": "(Philadelphia)",
             "cat": "(Philadelphia)",
             "sv": "(Philadelphia)"
-          }
+          },
+          "id": "cream_cheese"
         },
         {
           "ingredient": "parmesan_cheese",
@@ -95,7 +98,8 @@
             "cat": "ratllat",
             "sv": "riven"
           },
-          "onlyForVariation": "classic"
+          "onlyForVariation": "classic",
+          "id": "parmesan_classic"
         },
         {
           "ingredient": "parmesan_cheese",
@@ -107,7 +111,8 @@
             "cat": "ratllat",
             "sv": "riven"
           },
-          "onlyForVariation": "blue"
+          "onlyForVariation": "blue",
+          "id": "parmesan_blue"
         },
         {
           "ingredient": "blue_cheese",
@@ -119,26 +124,31 @@
             "cat": "gorgonzola o roquefort",
             "sv": "gorgonzola eller roquefort"
           },
-          "onlyForVariation": "blue"
+          "onlyForVariation": "blue",
+          "id": "blue_cheese"
         },
         {
           "ingredient": "eggs",
-          "value": 2
+          "value": 2,
+          "id": "eggs"
         },
         {
           "ingredient": "heavy_cream",
           "value": 200,
-          "unit": "ml"
+          "unit": "ml",
+          "id": "heavy_cream"
         },
         {
           "ingredient": "sugar",
           "value": 75,
-          "unit": "g"
+          "unit": "g",
+          "id": "sugar"
         },
         {
           "ingredient": "flour",
           "value": 10,
-          "unit": "g"
+          "unit": "g",
+          "id": "flour"
         }
       ]
     }
@@ -150,7 +160,17 @@
         "es": "Lleva todos los ingredientes del relleno a temperatura ambiente.",
         "cat": "Porta tots els ingredients del farcit a temperatura ambient.",
         "sv": "Ta alla fyllningsingredienser till rumstemperatur."
-      }
+      },
+      "ingredients": [
+        "cream_cheese",
+        "parmesan_classic",
+        "parmesan_blue",
+        "blue_cheese",
+        "eggs",
+        "heavy_cream",
+        "sugar",
+        "flour"
+      ]
     },
     {
       "text": {
@@ -166,7 +186,11 @@
         "es": "Tritura las galletas Digestive con la mantequilla para hacer la base. Si no tienes batidora, pon las galletas en una bolsa y aplástalas con una sartén.",
         "cat": "Tritura les galetes Digestive amb la mantega per fer la base. Si no tens batedora, posa les galetes dins una bossa i aixafa-les amb una paella.",
         "sv": "Krossa Digestivekexen med smör för botten. Om du inte har en mixer, lägg kexen i en påse och krossa dem med en stekpanna."
-      }
+      },
+      "ingredients": [
+        "digestive_cookies",
+        "base_butter"
+      ]
     },
     {
       "text": {
@@ -174,7 +198,11 @@
         "es": "Presiona la mezcla firmemente en el molde usando un vaso de fondo plano.",
         "cat": "Prem la barreja fermament dins el motlle amb un got de fons pla.",
         "sv": "Pressa blandningen hårt i formen med ett glas med platt botten."
-      }
+      },
+      "ingredients": [
+        "digestive_cookies",
+        "base_butter"
+      ]
     },
     {
       "text": {
@@ -182,7 +210,11 @@
         "es": "Hornea la base durante 5 minutos (10 minutos si el horno no estaba bien caliente).",
         "cat": "Enforna la base 5 minuts (10 minuts si el forn no estava prou calent).",
         "sv": "Grädda botten i 5 minuter (10 minuter om ugnen inte är helt varm)."
-      }
+      },
+      "ingredients": [
+        "digestive_cookies",
+        "base_butter"
+      ]
     },
     {
       "text": {
@@ -190,7 +222,16 @@
         "es": "Mezcla todos los ingredientes excepto el Philadelphia con una batidora de mano. No levantes la batidora para evitar introducir aire.",
         "cat": "Barreja tots els ingredients excepte el Philadelphia amb una batedora de mà. No aixequis la batedora per evitar incorporar aire.",
         "sv": "Blanda alla ingredienser utom Philadelphia med en handmixer. Lyft inte mixern för att undvika att få in luft."
-      }
+      },
+      "ingredients": [
+        "eggs",
+        "heavy_cream",
+        "sugar",
+        "flour",
+        "parmesan_classic",
+        "parmesan_blue",
+        "blue_cheese"
+      ]
     },
     {
       "text": {
@@ -198,7 +239,10 @@
         "es": "En un bol aparte, ablanda el queso Philadelphia. Añade la mezcla poco a poco, mezclando suavemente para evitar grumos.",
         "cat": "En un bol a part, estova el formatge Philadelphia. Afegeix la barreja a poc a poc, barrejant suaument per evitar grumolls.",
         "sv": "I en separat skål, mjuka upp Philadelphiaosten. Tillsätt blandningen lite i taget och blanda försiktigt för att undvika klumpar."
-      }
+      },
+      "ingredients": [
+        "cream_cheese"
+      ]
     },
     {
       "text": {
@@ -206,7 +250,17 @@
         "es": "Vierte el relleno en el molde con cuidado para no dañar la base.",
         "cat": "Aboca el farcit al motlle amb cura per no malmetre la base.",
         "sv": "Häll fyllningen försiktigt i formen för att inte skada botten."
-      }
+      },
+      "ingredients": [
+        "cream_cheese",
+        "eggs",
+        "heavy_cream",
+        "sugar",
+        "flour",
+        "parmesan_classic",
+        "parmesan_blue",
+        "blue_cheese"
+      ]
     },
     {
       "text": {

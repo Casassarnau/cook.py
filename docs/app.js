@@ -554,7 +554,7 @@ function recipeApp() {
       });
     },
 
-    updateCookMobileLayout(enableTransition = true) {
+    updateCookMobileLayout() {
       if (!this.cookMode || !this.isCookMobileView()) {
         this.cookLayoutStepHeight = null;
         this.cookLayoutIngredientsHeight = null;
@@ -564,50 +564,22 @@ function recipeApp() {
       }
 
       const stack = document.getElementById('cook-mobile-stack');
-      const stepPanel = document.getElementById('cook-step-panel');
       const measureEl = document.getElementById('cook-step-measure');
-      if (!stack || !stepPanel) return;
+      if (!stack || !measureEl) return;
 
-      const totalH = stack.clientHeight;
-      if (totalH <= 0) return;
-
-      const minIngredientsH = 128;
+      this.cookLayoutStepHeight = null;
+      this.cookLayoutIngredientsHeight = null;
+      this.cookLayoutTransitionEnabled = false;
       const panelPaddingY = 32;
-      const maxStepH = totalH - minIngredientsH;
-
-      const contentH = measureEl ? measureEl.offsetHeight : stepPanel.scrollHeight;
-      const naturalStepH = contentH + panelPaddingY;
-      let stepH = Math.min(naturalStepH, maxStepH);
-      let ingredientsH = totalH - stepH;
-
-      if (ingredientsH < minIngredientsH) {
-        ingredientsH = minIngredientsH;
-        stepH = totalH - minIngredientsH;
-      }
-
-      this.cookLayoutStepHeight = Math.round(stepH);
-      this.cookLayoutIngredientsHeight = Math.round(ingredientsH);
-      this.cookStepContentOverflows = naturalStepH > stepH;
-      if (enableTransition && !this.prefersReducedMotion()) {
-        this.cookLayoutTransitionEnabled = true;
-      }
+      this.cookStepContentOverflows = measureEl.offsetHeight + panelPaddingY > stack.clientHeight;
     },
 
     cookStepPanelLayoutStyle() {
-      if (!this.isCookMobileView() || this.cookLayoutStepHeight == null) return '';
-      return `height: ${this.cookLayoutStepHeight}px`;
-    },
-
-    cookIngredientsPanelLayoutStyle() {
-      if (!this.isCookMobileView() || this.cookLayoutIngredientsHeight == null) return '';
-      return `height: ${this.cookLayoutIngredientsHeight}px`;
+      return '';
     },
 
     cookMobileLayoutPanelClass() {
-      if (!this.isCookMobileView() || !this.cookLayoutTransitionEnabled || this.prefersReducedMotion()) {
-        return '';
-      }
-      return 'cook-mobile-layout-panel';
+      return '';
     },
 
     bindCookMobileLayoutListeners() {
@@ -874,7 +846,7 @@ function recipeApp() {
         if (variant) chips.push(this.translateField(variant.name));
       }
       if (this.thermomixEnabled) chips.push(this.t('thermomix'));
-      const title = this.getIngredientsTitle();
+      const title = this.getIngredientsSubtitle();
       if (title && title !== this.t('ingredients._')) chips.push(title);
       return chips;
     },
@@ -963,10 +935,13 @@ function recipeApp() {
         ? step.thermomix.settings
         : (thermomixEnabled ? step.settings : null);
 
+      const ingredientIds = Array.isArray(step.ingredients) ? step.ingredients : null;
+
       return {
         text: this.translateField(textSource),
         image: step.image || null,
-        settingsBadges: this.formatThermomixSettings(settings)
+        settingsBadges: this.formatThermomixSettings(settings),
+        ingredientIds
       };
     },
 
@@ -1057,47 +1032,58 @@ function recipeApp() {
       return !!this.selectedRecipe.units; // Legacy support
     },
 
-    getIngredientsTitle() {
+    // 1. Helper function that ONLY calculates the "for 2 units / for 24 cm" part
+    getIngredientsSubtitle() {
       if (!this.selectedRecipe) return '';
 
       const portion = this.selectedRecipe.portion;
+      const forConnector = this.t('connectors.for');
 
       if (this.hasServings()) {
         const unit = portion?.unit || this.selectedRecipe.servings?.unit || 'servings';
         const unitText = this.t(`units.${unit}`);
-        const forConnector = this.t('connectors.for');
-        return `${this.t('ingredients._')} ${forConnector} ${this.currentServings} ${unitText}`;
-      } else if (this.hasUnits()) {
+        return `${forConnector} ${this.currentServings} ${unitText}`;
+      } 
+      
+      if (this.hasUnits()) {
         const unit = portion?.unit || this.selectedRecipe.units?.unit || 'unit';
-        const forConnector = this.t('connectors.for');
         const unitText = this.t(`units.${unit}`) || unit;
-        return `${this.t('ingredients._')} ${forConnector} ${this.currentUnits} ${unitText}`;
-      } else if (this.hasCircularArea()) {
+        return `${forConnector} ${this.currentUnits} ${unitText}`;
+      } 
+      
+      if (this.hasCircularArea()) {
         const unit = portion?.dimensions?.unit || 'cm';
         const unitText = this.t(`units.${unit}`);
-        const forConnector = this.t('connectors.for');
-        return `${this.t('ingredients._')} ${forConnector} ø ${this.currentDimensions.diameter} ${unitText} 🍰`;
-      } else if (this.hasRectangularArea()) {
+        return `${forConnector} ø ${this.currentDimensions.diameter} ${unitText} 🍰`;
+      } 
+      
+      if (this.hasRectangularArea()) {
         const unit = portion?.dimensions?.unit || 'cm';
         const unitText = this.t(`units.${unit}`);
-        const forConnector = this.t('connectors.for');
-        return `${this.t('ingredients._')} ${forConnector} ${this.currentDimensions.width}×${this.currentDimensions.height} ${unitText} 📐`;
-      } else if (this.hasDiameter()) {
+        return `${forConnector} ${this.currentDimensions.width}×${this.currentDimensions.height} ${unitText} 📐`;
+      } 
+      
+      if (this.hasDiameter()) {
         const unit = portion?.unit || this.selectedRecipe.diameter?.unit || 'cm';
         const unitText = this.t(`units.${unit}`);
-        const forConnector = this.t('connectors.for');
         const connector = this.t(`connectors.${unit}`);
         
-        // For circular measurements (cm), show diameter symbol
         if (unit === 'cm') {
-          return `${this.t('ingredients._')} ${forConnector} ø ${this.currentDiameter} ${unitText} 🍰`;
+          return `${forConnector} ø ${this.currentDiameter} ${unitText} 🍰`;
         } else {
-          // For other units (like pizza), show without diameter symbol
-          return `${this.t('ingredients._')} ${forConnector} ${this.currentDiameter} ${connector} ${unitText}`;
+          return `${forConnector} ${this.currentDiameter} ${connector} ${unitText}`;
         }
       }
+
+      return '';
+    },
+
+    // 3. Returns the FULL title (e.g., "Ingredients per a 4 racions")
+    getIngredientsTitle() {
+      const ingredientsLabel = this.t('ingredients._');
+      const portionText = this.getIngredientsSubtitle();
       
-      return this.t('ingredients._');
+      return portionText ? `${ingredientsLabel} ${portionText}` : ingredientsLabel;
     },
 
     incrementDimensions() {
@@ -1279,6 +1265,31 @@ function recipeApp() {
       }
     },
 
+    getCookIngredientsAt(index) {
+      const step = this.getCookStepAt(index);
+      if (!step?.ingredientIds?.length) return [];
+
+      const idSet = new Set(step.ingredientIds);
+      return this.currentIngredients()
+        .map(group => ({
+          ...group,
+          items: group.items.filter(item => item.id && idSet.has(item.id))
+        }))
+        .filter(group => group.items.length > 0);
+    },
+
+    hasCookIngredientsAt(index) {
+      return this.getCookIngredientsAt(index).length > 0;
+    },
+
+    currentCookIngredients() {
+      return this.getCookIngredientsAt(this.cookStepIndex);
+    },
+
+    hasCookStepIngredients() {
+      return this.hasCookIngredientsAt(this.cookStepIndex);
+    },
+
     processIngredientList(ingredients, variationKey, multiplier) {
       return ingredients
         .filter(e => {
@@ -1312,6 +1323,7 @@ function recipeApp() {
           }
           
           return {
+            id: e.id || null,
             emoji: emoji,
             value: displayValue,
             unit: displayUnit,

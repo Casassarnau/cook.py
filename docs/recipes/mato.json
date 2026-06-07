@@ -59,7 +59,8 @@
             "es": "fresca y entera",
             "cat": "fresca i sencera",
             "sv": "färsk och hel"
-          }
+          },
+          "id": "milk"
         },
         {
           "ingredient": "herbacol",
@@ -71,7 +72,8 @@
             "es": "pistilos secos",
             "cat": "pistils secs",
             "sv": "torkade pistiller"
-          }
+          },
+          "id": "herbacol"
         },
         {
           "ingredient": "water",
@@ -83,7 +85,8 @@
             "es": "templada, para el cuajo vegetal",
             "cat": "tèbia, per al quall vegetal",
             "sv": "ljummen, till vegetabilisk löpe"
-          }
+          },
+          "id": "herbacol_water"
         },
         {
           "ingredient": "lemon",
@@ -94,7 +97,8 @@
             "es": "solo el zumo",
             "cat": "només el suc",
             "sv": "endast saften"
-          }
+          },
+          "id": "lemon"
         }
       ]
     }
@@ -107,7 +111,11 @@
         "cat": "Prepara el quall vegetal: posa els brots d'herbacol en un morter amb l'aigua tèbia. Tritura'ls bé i deixa reposar 15–30 min fins que l'aigua prengui un color marró fosc. Cola el líquid amb un colador de malla fina (o una gasa), eixugant bé els brots. Aquest líquid és el teu quall.",
         "sv": "Förbered vegetabilisk löpe: lägg herbacol-pistillerna i en mortel med ljummet vatten. Krossa väl och låt vila 15–30 min tills vattnet blir mörk brungrön. Sila genom fin maska eller ostduk och pressa ut all vätska. Detta är din löpe."
       },
-      "onlyForVariation": "original"
+      "onlyForVariation": "original",
+      "ingredients": [
+        "herbacol",
+        "herbacol_water"
+      ]
     },
     {
       "text": {
@@ -115,7 +123,10 @@
         "es": "Pasteuriza y calienta la leche a 75°C en una olla a fuego suave, removiendo de vez en cuando, unos 8 minutos. No la hiervas.",
         "cat": "Pasteuritza i escalfa la llet a 75°C en una cassola a foc suau, remenant de tant en tant, uns 8 minuts. No la bullis.",
         "sv": "Pastörisera och värm mjölken till 75°C i en tjockbottnad kastrull på låg värme under omrörning, ca 8 minuter. Låt den inte koka."
-      }
+      },
+      "ingredients": [
+        "milk"
+      ]
     },
     {
       "text": {
@@ -124,7 +135,10 @@
         "cat": "Retira del foc i deixa refredar la llet fins a 37–40°C (uns 15–20 minuts). Important: no afegeixis el quall per sobre de 45°C o s'inactivarà.",
         "sv": "Ta bort från värmen och låt mjölken svalna till 37–40°C (ca 15–20 minuter). Viktigt: tillsätt inte löpen över 45°C — då inaktiveras den."
       },
-      "onlyForVariation": "original"
+      "onlyForVariation": "original",
+      "ingredients": [
+        "milk"
+      ]
     },
     {
       "text": {
@@ -133,7 +147,11 @@
         "cat": "Just després d'escalfar, afegeix el suc de mitja llimona i remena suaument uns 15 segons fins que quedi homogeni. No esperis que refredi la llet.",
         "sv": "Strax efter uppvärmningen, tillsätt saften från en halv citron och rör försiktigt i ca 15 sekunder. Vänta inte med att låta mjölken svalna."
       },
-      "onlyForVariation": "lemon"
+      "onlyForVariation": "lemon",
+      "ingredients": [
+        "lemon",
+        "milk"
+      ]
     },
     {
       "text": {
@@ -142,7 +160,12 @@
         "cat": "Afegeix el líquid de l'herbacol reservat i remena suaument uns 15 segons fins que quedi homogeni.",
         "sv": "Tillsätt den sparade herbacol-löpen och rör försiktigt i ca 15 sekunder tills den är jämnt blandad."
       },
-      "onlyForVariation": "original"
+      "onlyForVariation": "original",
+      "ingredients": [
+        "milk",
+        "herbacol",
+        "herbacol_water"
+      ]
     },
     {
       "text": {
@@ -150,7 +173,10 @@
         "es": "Tapar y dejar completamente quieto durante 1 hora para que cuaje. No muevas el recipiente.",
         "cat": "Tapar i deixar completament quiet durant 1 hora perquè es qualli. No moguis el recipient.",
         "sv": "Täck och låt stå helt stilla i 1 timme så mjölken stelnar. Flytta inte behållaren."
-      }
+      },
+      "ingredients": [
+        "milk"
+      ]
     },
     {
       "text": {
@@ -169,7 +195,11 @@
         "cat": "Prepara el quall vegetal: posa els brots d'herbacol en un morter amb l'aigua tèbia. Tritura'ls bé i deixa reposar 15–30 min fins que l'aigua prengui un color bru-verd fosc. Cola el líquid amb un colador de malla fina (o una gasa), eixugant bé els brots. Reserva aquest líquid.",
         "sv": "Förbered vegetabilisk löpe: lägg herbacol-pistillerna i en mortel med ljummet vatten. Krossa väl och låt vila 15–30 min. Sila och spara vätskan."
       },
-      "onlyForVariation": "original"
+      "onlyForVariation": "original",
+      "ingredients": [
+        "herbacol",
+        "herbacol_water"
+      ]
     },
     {
       "text": {
@@ -182,7 +212,10 @@
         "temperature": 75,
         "time": 480,
         "speed": 1
-      }
+      },
+      "ingredients": [
+        "milk"
+      ]
     },
     {
       "text": {
@@ -191,7 +224,10 @@
         "cat": "Retira el got de la base i treu la tapa. Deixa reposar sobre la encimera fins que la pantalla marqui 37°C o 40°C (solen ser uns 15–20 minuts). No afegeixis el quall per sobre de 45°C.",
         "sv": "Ta bort skålen från basen och lyft av locket. Låt vila på bänken tills displayen visar 37–40°C (ca 15–20 min). Tillsätt inte löpen över 45°C."
       },
-      "onlyForVariation": "original"
+      "onlyForVariation": "original",
+      "ingredients": [
+        "milk"
+      ]
     },
     {
       "text": {
@@ -204,7 +240,11 @@
       "settings": {
         "time": 15,
         "speed": 2
-      }
+      },
+      "ingredients": [
+        "lemon",
+        "milk"
+      ]
     },
     {
       "text": {
@@ -217,7 +257,12 @@
       "settings": {
         "time": 15,
         "speed": 2
-      }
+      },
+      "ingredients": [
+        "milk",
+        "herbacol",
+        "herbacol_water"
+      ]
     },
     {
       "text": {
@@ -225,7 +270,10 @@
         "es": "Deja el vaso cerrado en su base, tapado con un paño de cocina para mantener el calor residual. No muevas la máquina durante 1 hora.",
         "cat": "Deixa el got tancat a la base, tapat amb un drap de cuina per mantenir la calor residual. No moguis la màquina durant 1 hora.",
         "sv": "Låt skålen stå stängd på basen, täckt med en kökshandduk för att behålla värmen. Rör inte maskinen på 1 timme."
-      }
+      },
+      "ingredients": [
+        "milk"
+      ]
     },
     {
       "text": {

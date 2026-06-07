@@ -26,17 +26,20 @@
     {
       "ingredient": "milk",
       "value": 110,
-      "unit": "g"
+      "unit": "g",
+      "id": "milk"
     },
     {
       "ingredient": "dry_yeast",
       "value": 10,
-      "unit": "g"
+      "unit": "g",
+      "id": "dry_yeast"
     },
     {
       "ingredient": "olive_oil",
       "value": 30,
-      "unit": "g"
+      "unit": "g",
+      "id": "olive_oil"
     },
     {
       "ingredient": "eggs",
@@ -46,32 +49,38 @@
         "es": "separado en yema y clara",
         "cat": "separat en rovell i clara",
         "sv": "delat i gula och vita"
-      }
+      },
+      "id": "eggs"
     },
     {
       "ingredient": "vanilla_extract",
       "value": 1,
-      "unit": "tbsp"
+      "unit": "tbsp",
+      "id": "vanilla_extract"
     },
     {
       "ingredient": "strong_flour",
       "value": 250,
-      "unit": "g"
+      "unit": "g",
+      "id": "strong_flour"
     },
     {
       "ingredient": "sugar",
       "value": 40,
-      "unit": "g"
+      "unit": "g",
+      "id": "sugar"
     },
     {
       "ingredient": "dark_chocolate_chips",
       "value": 50,
-      "unit": "g"
+      "unit": "g",
+      "id": "dark_chocolate_chips"
     },
     {
       "ingredient": "salt",
       "value": 0,
-      "unit": "pinch"
+      "unit": "pinch",
+      "id": "salt"
     }
   ],
   "instructions": [
@@ -94,7 +103,11 @@
           "time": 60,
           "speed": 2
         }
-      }
+      },
+      "ingredients": [
+        "milk",
+        "dry_yeast"
+      ]
     },
     {
       "text": {
@@ -114,7 +127,15 @@
           "mode": "knead",
           "time": 180
         }
-      }
+      },
+      "ingredients": [
+        "olive_oil",
+        "eggs",
+        "vanilla_extract",
+        "strong_flour",
+        "sugar",
+        "salt"
+      ]
     },
     {
       "text": {
@@ -138,7 +159,10 @@
         "es": "Bolea cada trozo dando forma de bola e integrando parte de las pepitas de chocolate por dentro de la masa. Coloca los panecillos en una bandeja de horno forrada con papel de horno.",
         "cat": "Enbola cada tros donant forma de bola i integrant part de les pepites de xocolata per dins de la massa. Col·loca els panets en una col·lecció de forn coberta amb paper de forn.",
         "sv": "Forma varje bit till en boll och arbeta in en del av chokladknapparna i degen. Placera bullarna på en bakplåt med bakplåtspapper."
-      }
+      },
+      "ingredients": [
+        "dark_chocolate_chips"
+      ]
     },
     {
       "text": {
@@ -154,7 +178,11 @@
         "es": "Una vez leudados, usa un pincel de cocina para pintar los panecillos con las claras de huevo batidas para que queden brillantes, y luego coloca las pepitas de chocolate restantes por fuera.",
         "cat": "Un cop lleudats, usa un pinzell de cuina per pintar els panets amb les clares d'ou batudes perquè quedin brillants, i després col·loca les pepites de xocolata restants per fora.",
         "sv": "När de har jäst, använd en bakpensel för att pensla bullarna med den uppvispade äggvitan så att de blir glansiga, och tryck sedan fast resten av chokladknapparna på utsidan."
-      }
+      },
+      "ingredients": [
+        "eggs",
+        "dark_chocolate_chips"
+      ]
     },
     {
       "text": {

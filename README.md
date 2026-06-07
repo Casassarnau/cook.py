@@ -40,6 +40,7 @@ Here's the complete schema with all possible properties:
   },
   "ingredients": [
     {
+      "id": "unique_ingredient_id",
       "ingredient": "ingredient_key",
       "value": 250,
       "unit": "g",
@@ -57,6 +58,7 @@ Here's the complete schema with all possible properties:
       },
       "items": [
         {
+          "id": "unique_ingredient_id",
           "ingredient": "ingredient_key",
           "value": 250,
           "unit": "g",
@@ -73,6 +75,7 @@ Here's the complete schema with all possible properties:
         "es": "Texto de instrucción en español.",
         "cat": "Text d'instrucció en català."
       },
+      "ingredients": ["unique_ingredient_id"],
       "onlyForVariation": "variant_key",
       "onlyForMode": "classic",
       "image": "/images/steps/step_image.jpg",
@@ -179,6 +182,7 @@ Here's the complete schema with all possible properties:
 
 #### Ingredient Object Properties
 
+- **`id`** (string, required): Unique identifier within the recipe. Referenced by instruction steps for cook mode.
 - **`ingredient`** (string, required): Ingredient key from translations.
 - **`value`** (number, required): Quantity (use 0 for "as needed").
 - **`unit`** (string, optional): Unit key from translations (`g`, `kg`, `ml`, `l`, `servings`, `cm`, `as_needed`, `to_taste`).
@@ -197,6 +201,7 @@ Ingredients can be organized into groups for better readability:
 #### Instruction Object Properties
 
 - **`text`** (object, required): Instruction text in multiple languages.
+- **`ingredients`** (array, optional): List of ingredient `id` values used in this step. In cook mode, only these ingredients are shown for the current step. Omit or leave empty when no ingredients are needed.
 - **`onlyForVariation`** (string|array, optional): Show instruction only for specific variant(s).
 - **`onlyForMode`** (string|array, optional): Show instruction only for `"classic"` or `"thermomix"`. Omit to show in both modes.
 - **`image`** (string, optional): Step image path relative to `docs/` or full URL.
