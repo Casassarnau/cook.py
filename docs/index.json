@@ -300,6 +300,35 @@
   },
   {
     "title": {
+      "en": "Muffins",
+      "es": "Magdalenas",
+      "cat": "Magdalenes",
+      "sv": "Muffins"
+    },
+    "categories": [
+      "baking",
+      "thermomix"
+    ],
+    "path": "recipes/madgalenas.json",
+    "image": "/images/madgalenas/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "eggs",
+      "greek_yogurt",
+      "sugar",
+      "honey",
+      "sunflower_oil",
+      "lemon_zest",
+      "flour",
+      "rye_flour",
+      "baking_powder",
+      "salt",
+      "sugar"
+    ]
+  },
+  {
+    "title": {
       "en": "Spanish Potato Omelette",
       "es": "Tortilla de patatas",
       "cat": "Truita de patates",

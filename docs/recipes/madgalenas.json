@@ -1,0 +1,307 @@
+{
+  "title": {
+    "en": "Muffins",
+    "es": "Magdalenas",
+    "cat": "Magdalenes",
+    "sv": "Muffins"
+  },
+  "description": {
+    "en": "Traditional fluffy yogurt muffins with a touch of rye flour and honey for a deeper flavor and a rustic crust.",
+    "es": "Magdalenas tradicionales de yogur súper esponjosas, con un toque de harina de centeno y miel que les aporta un sabor más profundo y una costra rústica.",
+    "cat": "Magdalenes tradicionals de iogurt súper esponjoses, amb un toc de farina de sègol i mel que els aporta un sabor més profund i una crosta rústica.",
+    "sv": "Traditionella fluffiga yoghurtmuffins med en touch av rågmjöl och honung för djupare smak och en rustik yta."
+  },
+  "categories": [
+    "baking"
+  ],
+  "author": "Arnau",
+  "portion": {
+    "type": "units",
+    "value": 12
+  },
+  "image": "/images/madgalenas/main.webp",
+  "ingredients": [
+    {
+      "group": {
+        "en": "Base ingredients",
+        "es": "Ingredientes base",
+        "cat": "Ingredients base",
+        "sv": "Basredienser"
+      },
+      "items": [
+        {
+          "ingredient": "eggs",
+          "value": 3,
+          "text": {
+            "en": "room temperature",
+            "es": "a temperatura ambiente",
+            "cat": "a temperatura ambient",
+            "sv": "rumstempererade"
+          },
+          "id": "eggs"
+        },
+        {
+          "ingredient": "greek_yogurt",
+          "value": 150,
+          "unit": "g",
+          "text": {
+            "en": "room temperature",
+            "es": "a temperatura ambiente",
+            "cat": "a temperatura ambient",
+            "sv": "rumstempererad"
+          },
+          "id": "greek_yogurt"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 80,
+          "unit": "g",
+          "id": "sugar"
+        },
+        {
+          "ingredient": "honey",
+          "value": 2,
+          "unit": "tsp",
+          "id": "honey"
+        },
+        {
+          "ingredient": "sunflower_oil",
+          "value": 120,
+          "unit": "ml",
+          "text": {
+            "en": "or mild olive oil",
+            "es": "o de oliva suave",
+            "cat": "o d'oliva suau",
+            "sv": "eller mild olivolja"
+          },
+          "id": "sunflower_oil"
+        },
+        {
+          "ingredient": "lemon_zest",
+          "value": 0,
+          "unit": "to_taste",
+          "id": "lemon_zest"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Dry ingredients",
+        "es": "Ingredientes secos",
+        "cat": "Ingredients secs",
+        "sv": "Torra ingredienser"
+      },
+      "items": [
+        {
+          "ingredient": "flour",
+          "value": 140,
+          "unit": "g",
+          "text": {
+            "en": "wheat flour",
+            "es": "de trigo",
+            "cat": "de blat",
+            "sv": "vetemjöl"
+          },
+          "id": "flour"
+        },
+        {
+          "ingredient": "rye_flour",
+          "value": 80,
+          "unit": "g",
+          "id": "rye_flour"
+        },
+        {
+          "ingredient": "baking_powder",
+          "value": 8,
+          "unit": "g",
+          "id": "baking_powder"
+        },
+        {
+          "ingredient": "salt",
+          "value": 2,
+          "unit": "g",
+          "id": "salt"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Topping",
+        "es": "Topping",
+        "cat": "Topping",
+        "sv": "Topping"
+      },
+      "items": [
+        {
+          "ingredient": "sugar",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "to create a sugar crust",
+            "es": "para hacer costra",
+            "cat": "per fer crosta",
+            "sv": "för att göra en sockerpanna"
+          },
+          "id": "sugar_last"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Crack the room-temperature eggs into a deep bowl and beat them slightly with a hand mixer or whisk.",
+        "es": "Casca los huevos a temperatura ambiente en un recipiente hondo y empiézalos a batir ligeramente con una batidora de varillas.",
+        "cat": "Casca els ous a temperatura ambient en un recipient fondo i comença'ls a batre lleugerament amb una batedora de varilles.",
+        "sv": "Knäck de rumstempererade äggen i en djup skål och vispa dem lätt med en elvisp."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Place the butterfly whisk on the blades, add the room-temperature eggs and sugar into the mixing bowl.",
+          "es": "Coloca la mariposa en las cuchillas, añade los huevos a temperatura ambiente y el azúcar al vaso.",
+          "cat": "Col·loca la papallona a les cuixiles, afegeix els ous a temperatura ambient i el sucre al got.",
+          "sv": "Sätt i fjärilsvispen, tillsätt de rumstempererade äggen och sockret i mixerskålen."
+        }
+      },
+      "ingredients": [
+        "eggs"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the sugar and continue beating, increasing the speed gradually, for at least 5 minutes until the mixture turns pale, creamy, and doubles in volume.",
+        "es": "Añade el azúcar y sigue batiendo, incrementando la velocidad poco a poco, durante al menos 5 minutos hasta que la mezcla blanquee, esté cremosa y doble su volumen.",
+        "cat": "Afegeix el sucre i continua baten, incrementant la velocitat a poc a poc, durant almenys 5 minuts fins que la barreja blanquegi, estigui cremosa i dobli el seu volum.",
+        "sv": "Tillsätt sockret och fortsätt vispa, öka hastigheten gradvis i minst 5 minuter tills blandningen blir ljus, krämig och fördubblas i volym."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Beat to whip and volume up the mixture until it becomes pale and fluffy.",
+          "es": "Bate para blanquear y montar la mezcla hasta que esté cremosa y aumente de volumen.",
+          "cat": "Bat per blanquejar i muntar la barreja fins que estigui cremosa i augmenti de volum.",
+          "sv": "Vispa för att piska upp volymen på blandningen tills den blir ljus och fluffig."
+        },
+        "settings": {
+          "time": 300,
+          "speed": 4,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "sugar"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the Greek yogurt, honey, lemon zest, and oil. Beat for another 2 minutes until fully combined.",
+        "es": "Agrega el yogur griego, la miel, la ralladura de limón y el aceite, y sigue batiendo un par de minutos más para integrar bien.",
+        "cat": "Afegeix el iogurt grec, la mel, la ratlladura de llimona i l'oli, i continua baten un parell de minuts més per integrar-ho bé.",
+        "sv": "Tillsätt grekisk yoghurt, honung, citronskal och olja. Vispa i ytterligare 2 minuter tills allt är helt blandat."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Remove the butterfly whisk. Add the Greek yogurt, honey, lemon zest, and oil, then mix to combine.",
+          "es": "Retira la mariposa. Agrega el yogur griego, la miel, la ralladura de limón y el aceite, y mezcla para integrar.",
+          "cat": "Retira la papallona. Afegeix el iogurt grec, la mel, la ratlladura de llimona i l'oli, i barreja per integrar.",
+          "sv": "Ta bort fjärilsvispen. Tillsätt grekisk yoghurt, honung, citronskal och olja, blanda sedan ihop."
+        },
+        "settings": {
+          "time": 15,
+          "speed": 3.5,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "greek_yogurt",
+        "honey",
+        "lemon_zest",
+        "sunflower_oil"
+      ]
+    },
+    {
+      "text": {
+        "en": "In a separate bowl, mix the wheat flour, rye flour, baking powder, and salt using a whisk.",
+        "es": "Mezcla aparte con unas varillas la harina de trigo, la harina de centeno, la levadura y la sal.",
+        "cat": "Barreja a banda amb unes varilles la farina de blat, la farina de sègol, el llevat i la sal.",
+        "sv": "Blanda vetemjöl, rågmjöl, bakpulver och salt med en visp i en separat skål."
+      },
+      "onlyForMode": "classic",
+      "ingredients": [
+        "flour",
+        "rye_flour",
+        "baking_powder",
+        "salt"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the flour mixture in several batches to the main wet batter, stirring manually with a spatula between each addition. Finish by beating the entire batter with the electric mixer at medium speed for a few seconds to ensure it is homogeneous.",
+        "es": "Añade los ingredientes secos en varias tantas a la masa principal. Remueve manualmente entre cada adición, y termina batiendo la masa completa con la batidora a velocidad media unos segundos para homogeneizar.",
+        "cat": "Afegeix els ingredients secs en diverses tandes a la massa principal. Remena manualment entre cada addició, i acaba baten la massa completa amb la batedora a velocitat mitjana uns segons per homogeneïtzar.",
+        "sv": "Tillsätt mjölblandningen i flera omgångar i den blöta smeten, rör om manuellt med en slickepott mellan varje omgång. Avsluta med att vispa hela smeten med elvisp på medelhastighet i några sekunder för att få den jämn."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the wheat flour, rye flour, baking powder, and salt directly into the mixing bowl, then blend carefully.",
+          "es": "Añade la harina de trigo, la harina de centeno, la levadura y la sal directamente al vaso, y mezcla con cuidado.",
+          "cat": "Afegeix la farina de blat, la farina de sègol, el llevat i la sal directament al got, i barreja amb cura.",
+          "sv": "Tillsätt vetemjöl, rågmjöl, bakpulver och salt direkt i mixerskålen, blanda sedan försiktigt."
+        },
+        "settings": {
+          "time": 10,
+          "speed": 3,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "flour",
+        "rye_flour",
+        "baking_powder",
+        "salt"
+      ]
+    },
+    {
+      "text": {
+        "en": "Cover the batter and let it rest for at least 30 minutes in a cool place (or in the fridge if it's hot). If resting for several hours, remove from the fridge a bit before baking so it is not too cold.",
+        "es": "Tapa la masa y déjala reposar, como mínimo, 30 minutos en una zona fresca (o en la nevera si hace mucho calor). Si la dejas varias horas, sácala un rato antes de hornear para que pierda el frío excesivo.",
+        "cat": "Cobreix la massa i deixa-la reposar, com a mínim, 30 minuts en una zona fresca (o a la nevera si fa molt calor). Si la deixes diverses hores, treu-la un ratet abans d'enfornar perquè perdi el fred consumit.",
+        "sv": "Täck smeten och låt vila i minst 30 minuter på en sval plats (eller i kylskåp om det är varmt). Om den vilar i flera timmar, ta ut den en stund före gräddning så att den inte är för kall."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Pour the batter into a bowl, cover it, and let it rest for at least 30 minutes in a cool place (or in the fridge if it's hot). If resting for several hours, remove from the fridge a bit before baking so it is not too cold.",
+          "es": "Vierte la masa en un bol, tápala y déjala reposar, como mínimo, 30 minutos en una zona fresca (o en la nevera si hace mucho calor). Si la dejas varias horas, sácala un rato antes de hornear para que pierda el frío excesivo.",
+          "cat": "Aboca la massa a un bol, cobreix-la i deixa-la reposar, com a mínim, 30 minuts en una zona fresca (o a la nevera si fa molt calor). Si la deixes diverses hores, treu-la un ratet abans d'enfornar perquè perdi el fred consumit.",
+          "sv": "Häll smeten i en skål, täck den och låt vila i minst 30 minuter på en sval plats (eller i kylskåp om det är varmt). Om den vilar i flera timmar, ta ut den en stund före gräddning så att den inte är för kall."
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Preheat the oven to its maximum temperature, around 250°C (480°F), with top and bottom heat. Place paper liners into a rigid muffin tray.",
+        "es": "Precalienta el horno al máximo con calor arriba y abajo (unos 250ºC). Reparte las cápsulas de papel en moldes rígidos.",
+        "cat": "Preescalfa el forn al màxim amb calor dalt i baix (uns 250ºC). Reparteix les càpsules de paper en motlles rígids.",
+        "sv": "Ugnen förvärms till maximal temperatur, runt 250°C, med över- och undervärme. Placera pappersformar i en stadig muffinsplåt."
+      }
+    },
+    {
+      "text": {
+        "en": "Divide the batter into the liners, leaving about one finger-width space below the rim. Sprinkle sugar on top if you want a sweet crunchy crust.",
+        "es": "Reparte la masa en los moldes, dejando un dedo antes de llegar al borde. Si lo deseas, cubre con azúcar para hacer costra.",
+        "cat": "Reparteix la massa en els motlles, deixant un dit abans d'arribar a la vora. Si ho desitges, cobreix amb sucre per fer crosta.",
+        "sv": "Fördela smeten i formarna, lämna ungefär en fingerbredd till kanten. Strö över socker om du vill ha en krispig sockerpanna."
+      },
+      "ingredients": [
+        "sugar_last"
+      ]
+    },
+    {
+      "text": {
+        "en": "Bake in the oven and immediately lower the temperature to 220°C (430°F). If your oven is very strong or they brown too fast, lower to 200°C (400°F). Bake for about 15 minutes until golden. Let them rest slightly before transferring to a cooling rack.",
+        "es": "Introduce en el horno y baja la temperatura a 220ºC (o a 200ºC si el horno es muy potente o se tuestan rápido). Hornea durante unos 15 minutos hasta que estén doradas. Saca y espera un poco antes de desmoldar sobre una rejilla.",
+        "cat": "Introdueix al forn i baixa la temperatura a 220ºC (o a 200ºC si el forn és molt potent o es rosteixen ràpid). Enforna durant uns 15 minuts fins que estiguin daurades. Treu i espera un poc abans de desmotllar sobre una reixeta.",
+        "sv": "Ställ in i ugnen och sänk omedelbart temperaturen till 220°C (eller 200°C om ugnen är stark eller om de blir mörka för snabbt). Grädda i ca 15 minuter tills de är gyllenbruna. Låt svalna något innan du flyttar dem till ett galler."
+      }
+    }
+  ]
+}
