@@ -93,6 +93,30 @@
   },
   {
     "title": {
+      "en": "Carrot Cream",
+      "es": "Crema de zanahoria",
+      "cat": "Crema de pastanaga",
+      "sv": "Morotssoppa"
+    },
+    "categories": [
+      "mains",
+      "thermomix"
+    ],
+    "path": "recipes/crema_pastanaga.json",
+    "image": "/images/crema_pastanaga/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "carrot",
+      "potatoes",
+      "onion",
+      "extra_virgin_olive_oil",
+      "water",
+      "salt"
+    ]
+  },
+  {
+    "title": {
       "en": "Chocolate Chip Milk Bread Buns (Doowaps)",
       "es": "Pan de leche con chocolate (Doowaps)",
       "cat": "Pa de llet amb xocolata (Doowaps)",

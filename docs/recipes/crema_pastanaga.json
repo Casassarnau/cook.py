@@ -1,0 +1,160 @@
+{
+  "title": {
+    "en": "Carrot Cream",
+    "es": "Crema de zanahoria",
+    "cat": "Crema de pastanaga",
+    "sv": "Morotssoppa"
+  },
+  "description": {
+    "en": "A comforting, smooth, and healthy carrot cream soup perfect for any day.",
+    "es": "Una crema de zanahoria reconfortante, suave y saludable, perfecta para cualquier día.",
+    "cat": "Una crema de pastanaga reconfortant, suau i saludable, perfecta per a qualsevol dia.",
+    "sv": "En tröstrik, slät och hälsosam morotssoppa perfekt för alla dagar."
+  },
+  "author": "Arnau",
+  "image": "/images/crema_pastanaga/main.webp",
+  "categories": [
+    "mains"
+  ],
+  "portion": {
+    "type": "units",
+    "value": 4
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Main Ingredients",
+        "es": "Ingredientes principales",
+        "cat": "Ingredients principals",
+        "sv": "Huvudingredienser"
+      },
+      "items": [
+        {
+          "id": "soup_carrot",
+          "ingredient": "carrot",
+          "value": 600,
+          "unit": "g"
+        },
+        {
+          "id": "soup_potato",
+          "ingredient": "potatoes",
+          "value": 100,
+          "unit": "g"
+        },
+        {
+          "id": "soup_onion",
+          "ingredient": "onion",
+          "value": 100,
+          "unit": "g"
+        },
+        {
+          "id": "soup_olive_oil",
+          "ingredient": "extra_virgin_olive_oil",
+          "value": 40,
+          "unit": "g"
+        },
+        {
+          "id": "soup_water",
+          "ingredient": "water",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "until covered",
+            "es": "hasta cubrir",
+            "cat": "fins a cobrir",
+            "sv": "tills det täcker"
+          }
+        },
+        {
+          "id": "soup_salt",
+          "ingredient": "salt",
+          "value": 0,
+          "unit": "to_taste"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Dice the vegetables and place them in a cooking pot. Cover with water until they are almost submerged, add the extra virgin olive oil and salt, and bring to a boil. Cook over medium heat for 20 minutes.",
+        "es": "Añadimos las verduras a dados en una olla para hervir, cubrimos con agua hasta que casi cubra las verduras, añadimos el aceite de oliva virgen extra, sal y cocinamos durante 20 minutos.",
+        "cat": "Afegim les verdures a daus en una olla per bullir, cobrim amb aigua fins que gairebé cobreixi les verdures, afegim l'oli d'oliva verge extra, sal i cuinem durant 20 minuts.",
+        "sv": "Tärna grönsakerna och lägg dem i en kastrull. Täck med vatten tills grönsakerna nästan är under ytan, tillsätt extra jungfruolja och salt, och koka upp. Låt koka på medelvärme i 20 minuter."
+      },
+      "ingredients": [
+        "soup_carrot",
+        "soup_potato",
+        "soup_onion",
+        "soup_water",
+        "soup_olive_oil",
+        "soup_salt"
+      ],
+      "onlyForMode": "classic"
+    },
+    {
+      "text": {
+        "en": "Dice the vegetables and place them in the Thermomix bowl. Cover with water until they are almost submerged, add the extra virgin olive oil and salt. Cook for 20 minutes at 100°C and Speed 2.",
+        "es": "Añadimos las verduras a dados en la Thermomix, cubrimos con agua hasta que casi cubra las verduras, añadimos el aceite de oliva virgen extra, sal y cocinamos 20 minutos a Temperatura 100 y Velocidad 2.",
+        "cat": "Afegim les verdures a daus a la Thermomix, cobrim amb aigua fins que gairebé cobreixi les verdures, afegim l'oli d'oliva verge extra, sal i cuinem 20 minuts a Temperatura 100 i Velocitat 2.",
+        "sv": "Tärna grönsakerna och lägg dem i Thermomix-skålen. Täck med vatten tills grönsakerna nästan är under ytan, tillsätt extra jungfruolja och salt. Tillaga i 20 minuter på 100°C och hastighet 2."
+      },
+      "ingredients": [
+        "soup_carrot",
+        "soup_potato",
+        "soup_onion",
+        "soup_water",
+        "soup_olive_oil",
+        "soup_salt"
+      ],
+      "onlyForMode": "thermomix",
+      "thermomix": {
+        "text": {
+          "en": "Add diced vegetables, olive oil, salt, and water to the bowl. Cook 20 min / 100°C / speed 2.",
+          "es": "Añadir las verduras a dados, el aceite, la sal y el agua al vaso. Programar 20 min / 100°C / velocidad 2.",
+          "cat": "Afegir les verdures a daus, l'oli, la sal i l'aigua al got. Programar 20 min / 100°C / velocitat 2.",
+          "sv": "Tillsätt tärnade grönsaker, olivolja, salt och vatten i skålen. Kör 20 min / 100°C / hastighet 2."
+        },
+        "settings": {
+          "temperature": 100,
+          "time": 1200,
+          "speed": 2,
+          "rotation": "normal"
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "After cooking, wait for the temperature to drop slightly. Blend thoroughly with a hand immersion blender until smooth, and serve hot.",
+        "es": "Pasado ese tiempo, esperamos a que reduzca la temperatura un poco, trituramos con una batidora de mano hasta conseguir una textura fina y servimos bien caliente.",
+        "cat": "Passat aquest temps, esperem que redueixi la temperatura un xic, triturem amb una batedora de mà fins a aconseguir una textura fina i servim ben calent.",
+        "sv": "Efter kokningen, vänta tills temperaturen sjunker något. Mixa ordentligt med en stavmixer tills soppan är slät, och servera rykande het."
+      },
+      "ingredients": [],
+      "onlyForMode": "classic"
+    },
+    {
+      "text": {
+        "en": "After cooking, wait for the temperature to drop slightly. Blend for 4 minutes at Maximum Speed and serve hot.",
+        "es": "Pasado ese tiempo esperamos a que reduzca la temperatura un poco y trituramos cuatro minutos a Velocidad Máxima y servimos bien caliente.",
+        "cat": "Passat aquest temps esperem que redueixi la temperatura un xic i triturem quatre minuts a Velocitat Màxima i servim ben calent.",
+        "sv": "Efter kokningen, vänta tills temperaturen sjunker något. Mixa i 4 minuter på högsta hastighet och servera rykande het."
+      },
+      "ingredients": [],
+      "onlyForMode": "thermomix",
+      "thermomix": {
+        "text": {
+          "en": "Wait for the temperature to drop slightly, then blend for 4 min / speed 10.",
+          "es": "Esperar a que baje un poco la temperatura y triturar 4 min / velocidad 10.",
+          "cat": "Esperar que baixi un xic la temperatura i triturar 4 min / velocitat 10.",
+          "sv": "Vänta tills temperaturen sjunker något, mixa sedan 4 min / hastighet 10."
+        },
+        "settings": {
+          "time": 240,
+          "speed": "10",
+          "rotation": "normal"
+        }
+      }
+    }
+  ]
+}
