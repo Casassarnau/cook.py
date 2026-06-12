@@ -23,16 +23,6 @@ input[type='number'] {
   appearance: textfield;
 }
 
-#route-loading {
-  display: none;
-}
-html.route-pending #app-shell {
-  display: none;
-}
-html.route-pending #route-loading {
-  display: block;
-}
-
 .cook-step-swipe {
   touch-action: pan-y;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data="recipeApp()" x-init="init()" :class="{ dark: darkMode }">
+<html lang="en" class="bootstrap-pending app-loading" x-data="recipeApp()" x-init="init()" :class="{ dark: darkMode }">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,16 +11,146 @@
 
     <script>
       (function () {
-        if (localStorage.getItem('theme') === 'dark') {
-          document.documentElement.classList.add('dark');
-        }
+        var root = document.documentElement;
+        if (localStorage.getItem('theme') === 'dark') root.classList.add('dark');
         var hash = location.hash;
         if (hash.indexOf('#recipe=') === 0) {
           var recipe = new URLSearchParams(hash.slice(1)).get('recipe');
-          if (recipe) document.documentElement.classList.add('route-pending');
+          if (recipe) root.classList.add('route-pending');
         }
       })();
     </script>
+
+    <style id="critical-loading">
+      html { background-color: #bfdbfe; }
+      html.dark { background-color: #0f172a; }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background: linear-gradient(to bottom, #bae6fd, #bfdbfe, #c7d2fe);
+        color: #1e3a8a;
+      }
+      html.dark body {
+        background: linear-gradient(to bottom, #111827, #0f172a, #172554);
+        color: #f3f4f6;
+      }
+
+      :root {
+        --sk-base: rgb(148 163 184 / 0.82);
+        --sk-shine: rgb(255 255 255 / 0.92);
+      }
+      html.dark {
+        --sk-base: rgb(55 65 81 / 0.65);
+        --sk-shine: rgb(107 114 128 / 0.45);
+      }
+
+      .sk-block {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        background: var(--sk-base);
+      }
+      .sk-block::after {
+        content: '';
+        position: absolute;
+        inset: -40% -60%;
+        background: linear-gradient(105deg, transparent 38%, var(--sk-shine) 50%, transparent 62%);
+        animation: sk-shimmer 2.4s ease-in-out infinite;
+        filter: blur(12px);
+        will-change: transform;
+      }
+      @keyframes sk-shimmer {
+        0% { transform: translateX(-55%) rotate(8deg); }
+        100% { transform: translateX(55%) rotate(8deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .sk-block::after { animation: none; opacity: 0.35; }
+      }
+
+      #app-skeleton { display: block; }
+      html:not(.app-loading):not(.route-pending) #app-skeleton { display: none; }
+      html.app-loading #app-shell,
+      html.route-pending #app-shell { display: none; }
+      html.bootstrap-pending #component-header { display: none; }
+      html:not(.bootstrap-pending) .sk-header { display: none; }
+      html.route-pending .sk-home { display: none; }
+      html:not(.route-pending) .sk-recipe { display: none; }
+
+      .sk-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.25rem;
+      }
+      @media (min-width: 768px) { .sk-header { margin-bottom: 1.5rem; } }
+      .sk-header-title { height: 2rem; width: 7rem; border-radius: 0.5rem; }
+      @media (min-width: 768px) { .sk-header-title { height: 2.5rem; width: 9rem; } }
+      .sk-header-actions { display: flex; gap: 0.75rem; }
+      .sk-header-btn { height: 2.25rem; width: 2.75rem; border-radius: 0.5rem; }
+      .sk-header-btn--wide { width: 4.5rem; }
+
+      .sk-search-wrap { display: flex; justify-content: center; margin-bottom: 1.25rem; }
+      @media (min-width: 768px) { .sk-search-wrap { margin-bottom: 1.5rem; } }
+      .sk-search { height: 2.5rem; width: 100%; max-width: 50%; border-radius: 0.5rem; }
+
+      .sk-categories {
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 2.5rem;
+      }
+      @media (min-width: 768px) { .sk-categories { display: flex; } }
+      .sk-category { height: 2.5rem; width: 5.5rem; border-radius: 0.5rem; }
+      .sk-category--wide { width: 7rem; }
+
+      .sk-grid { display: grid; gap: 1.5rem; }
+      @media (min-width: 768px) { .sk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (min-width: 1024px) { .sk-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+      .sk-card { border-radius: 0.75rem; overflow: hidden; }
+      .sk-card-image { height: 10rem; border-radius: 0; }
+      .sk-card-body { padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+      .sk-card-title { height: 1.5rem; width: 72%; }
+      .sk-card-meta { height: 0.875rem; width: 45%; }
+      .sk-grid .sk-card:nth-child(1) .sk-block::after { animation-delay: 0s; }
+      .sk-grid .sk-card:nth-child(2) .sk-block::after { animation-delay: 0.12s; }
+      .sk-grid .sk-card:nth-child(3) .sk-block::after { animation-delay: 0.24s; }
+      .sk-grid .sk-card:nth-child(4) .sk-block::after { animation-delay: 0.36s; }
+      .sk-grid .sk-card:nth-child(5) .sk-block::after { animation-delay: 0.48s; }
+      .sk-grid .sk-card:nth-child(6) .sk-block::after { animation-delay: 0.6s; }
+
+      .sk-back { height: 1.25rem; width: 5rem; margin-bottom: 1rem; border-radius: 0.375rem; }
+      .sk-hero { height: 14rem; margin-bottom: 1rem; border-radius: 0.5rem; }
+      @media (min-width: 640px) { .sk-hero { height: 18rem; } }
+      @media (min-width: 768px) { .sk-hero { height: 24rem; } }
+      .sk-recipe-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+      }
+      .sk-recipe-titles { flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+      .sk-recipe-title { height: 2rem; width: 68%; }
+      @media (min-width: 768px) { .sk-recipe-title { height: 2.25rem; } }
+      .sk-recipe-author { height: 0.875rem; width: 38%; }
+      .sk-recipe-share { height: 2.5rem; width: 2.5rem; flex-shrink: 0; border-radius: 0.5rem; }
+      .sk-desc { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+      .sk-desc-line { height: 1rem; border-radius: 0.375rem; }
+      .sk-desc-line--full { width: 100%; }
+      .sk-desc-line--mid { width: 88%; }
+      .sk-desc-line--short { width: 62%; }
+      .sk-section-title { height: 1.5rem; width: 8rem; margin-bottom: 1rem; border-radius: 0.375rem; }
+      .sk-ingredient-row { height: 1.125rem; margin-bottom: 0.75rem; border-radius: 0.375rem; }
+      .sk-ingredient-row:nth-child(2) { width: 92%; }
+      .sk-ingredient-row:nth-child(3) { width: 78%; }
+      .sk-ingredient-row:nth-child(4) { width: 85%; }
+      .sk-ingredient-row:nth-child(5) { width: 70%; }
+      .sk-ingredient-row:nth-child(6) { width: 80%; }
+      .sk-steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+      .sk-step { height: 5.5rem; border-radius: 0.75rem; }
+      .sk-step--tall { height: 7rem; }
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -45,7 +175,61 @@
 
     <div class="max-w-5xl mx-auto px-4 py-5 md:p-6">
       <div id="component-header"></div>
-      <div id="component-route-loading"></div>
+      <div id="app-skeleton" aria-busy="true" aria-live="polite">
+        <div class="sk-header">
+          <div class="sk-block sk-header-title"></div>
+          <div class="sk-header-actions">
+            <div class="sk-block sk-header-btn"></div>
+            <div class="sk-block sk-header-btn sk-header-btn--wide"></div>
+          </div>
+        </div>
+        <div class="sk-home">
+          <div class="sk-search-wrap">
+            <div class="sk-block sk-search"></div>
+          </div>
+          <div class="sk-categories">
+            <div class="sk-block sk-category"></div>
+            <div class="sk-block sk-category"></div>
+            <div class="sk-block sk-category sk-category--wide"></div>
+            <div class="sk-block sk-category"></div>
+          </div>
+          <div class="sk-grid">
+            <div class="sk-card"><div class="sk-block sk-card-image"></div><div class="sk-card-body"><div class="sk-block sk-card-title"></div><div class="sk-block sk-card-meta"></div></div></div>
+            <div class="sk-card"><div class="sk-block sk-card-image"></div><div class="sk-card-body"><div class="sk-block sk-card-title"></div><div class="sk-block sk-card-meta"></div></div></div>
+            <div class="sk-card"><div class="sk-block sk-card-image"></div><div class="sk-card-body"><div class="sk-block sk-card-title"></div><div class="sk-block sk-card-meta"></div></div></div>
+            <div class="sk-card"><div class="sk-block sk-card-image"></div><div class="sk-card-body"><div class="sk-block sk-card-title"></div><div class="sk-block sk-card-meta"></div></div></div>
+            <div class="sk-card"><div class="sk-block sk-card-image"></div><div class="sk-card-body"><div class="sk-block sk-card-title"></div><div class="sk-block sk-card-meta"></div></div></div>
+            <div class="sk-card"><div class="sk-block sk-card-image"></div><div class="sk-card-body"><div class="sk-block sk-card-title"></div><div class="sk-block sk-card-meta"></div></div></div>
+          </div>
+        </div>
+        <div class="sk-recipe">
+          <div class="sk-block sk-back"></div>
+          <div class="sk-block sk-hero"></div>
+          <div class="sk-recipe-head">
+            <div class="sk-recipe-titles">
+              <div class="sk-block sk-recipe-title"></div>
+              <div class="sk-block sk-recipe-author"></div>
+            </div>
+            <div class="sk-block sk-recipe-share"></div>
+          </div>
+          <div class="sk-desc">
+            <div class="sk-block sk-desc-line sk-desc-line--full"></div>
+            <div class="sk-block sk-desc-line sk-desc-line--mid"></div>
+            <div class="sk-block sk-desc-line sk-desc-line--short"></div>
+          </div>
+          <div class="sk-block sk-section-title"></div>
+          <div class="sk-block sk-ingredient-row"></div>
+          <div class="sk-block sk-ingredient-row"></div>
+          <div class="sk-block sk-ingredient-row"></div>
+          <div class="sk-block sk-ingredient-row"></div>
+          <div class="sk-block sk-ingredient-row"></div>
+          <div class="sk-steps">
+            <div class="sk-block sk-step"></div>
+            <div class="sk-block sk-step sk-step--tall"></div>
+            <div class="sk-block sk-step"></div>
+          </div>
+        </div>
+      </div>
       <div id="component-app-shell"></div>
     </div>
 

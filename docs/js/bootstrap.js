@@ -2,7 +2,6 @@ const INCLUDE_RE = /<!-- @include ([^\s]+) -->/g;
 
 const HTML_COMPONENTS = [
   { slot: '#component-header', path: 'components/header.html' },
-  { slot: '#component-route-loading', path: 'components/route-loading.html' },
   { slot: '#component-app-shell', path: 'components/app-shell.html' },
   { slot: '#component-modals', path: 'components/modals.html' },
 ];
@@ -60,5 +59,6 @@ async function loadAlpine() {
     console.error('Failed to load HTML components:', err);
   }
 
+  document.documentElement.classList.remove('bootstrap-pending');
   await loadAlpine();
 })();

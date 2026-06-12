@@ -35,6 +35,7 @@ function recipeApp() {
         window.addEventListener('hashchange', () => this.handleRoute());
         await this.handleRoute();
         this.finishRoutePending();
+        document.documentElement.classList.remove('app-loading');
       },
     }
   );
