@@ -1,0 +1,156 @@
+<div>
+  <div x-data="{ isFilterOpen: false }">
+    <div class="flex justify-center mb-5 md:mb-6">
+      <div class="flex w-full md:w-1/2 gap-2">
+        <input
+          x-model="searchQuery"
+          type="text"
+          :placeholder="t('search_placeholder')"
+          class="w-full p-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 transition-colors duration-300"
+          :class="darkMode
+            ? 'bg-gray-800 border-gray-700 text-gray-100 placeholder-gray-400 focus:ring-orange-400'
+            : 'bg-gray-100 border border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-indigo-400'"
+        />
+
+        <button
+          @click="isFilterOpen = true"
+          type="button"
+          class="md:hidden p-2 rounded-lg shadow-sm border flex items-center justify-center transition-colors duration-300 focus:outline-none focus:ring-2"
+          :class="darkMode
+            ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 focus:ring-orange-400'
+            : 'bg-gray-100 border border-gray-300 text-gray-900 hover:bg-gray-200 focus:ring-indigo-400'"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="hidden md:flex flex-wrap justify-center gap-3 mb-10">
+      <template x-for="category in categories" :key="category">
+        <button
+          @click="filterCategory = category"
+          class="px-4 py-2 rounded-lg font-semibold shadow transition-colors duration-300"
+          :class="filterCategory === category ? (darkMode ? 'bg-orange-300 text-orange-900 hover:bg-orange-200' : 'bg-indigo-600 text-white') : darkMode ? 'bg-gray-800 border border-gray-600 text-gray-100 hover:bg-gray-700' : 'bg-gray-100 border border-gray-300 text-gray-900 hover:bg-white'"
+        >
+          <span x-text="t(`cat.${category}`)"></span>
+        </button>
+      </template>
+
+      <button
+        @click="filterCategory = ''"
+        class="px-4 py-2 rounded-lg font-semibold shadow-lg transition-colors duration-300"
+        :class="filterCategory === '' ? (darkMode ? 'bg-orange-300 text-orange-900 hover:bg-orange-200' : 'bg-indigo-500 text-white') : darkMode ? 'bg-gray-800 border border-gray-600 text-gray-100 hover:bg-gray-700' : 'bg-gray-100 border border-gray-300 text-gray-900 hover:bg-gray-200'"
+      >
+        <span x-text="t('all_categories')"></span>
+      </button>
+    </div>
+
+    <div
+      x-show="isFilterOpen"
+      x-data="bottomSheetDrag(() => { isFilterOpen = false })"
+      x-init="$watch('isFilterOpen', value => { if (!value) resetDrag() })"
+      class="fixed inset-0 z-50 md:hidden touch-none"
+      style="display: none;"
+      role="dialog"
+      aria-modal="true"
+      @pointermove.window="doDrag"
+      @pointerup.window="endDrag"
+    >
+      <div
+        x-show="isFilterOpen"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @click="isFilterOpen = false"
+        class="fixed inset-0 bg-black/50 backdrop-blur-xs"
+      ></div>
+
+      <div
+        x-show="isFilterOpen"
+        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter-start="translate-y-full"
+        x-transition:enter-end="translate-y-0"
+        x-transition:leave="transition ease-in duration-200 transform"
+        x-transition:leave-start="translate-y-0"
+        x-transition:leave-end="translate-y-full"
+        :style="panelTransform()"
+        :class="[
+          darkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-900',
+          isDragging ? '' : 'transition-transform duration-300 ease-out'
+        ]"
+        class="fixed inset-x-0 bottom-0 max-h-[85vh] rounded-t-2xl p-6 shadow-xl flex flex-col select-none"
+      >
+        <div
+          @pointerdown="initDrag"
+          class="w-full pt-2 pb-4 cursor-grab active:cursor-grabbing shrink-0 flex justify-center items-center"
+        >
+          <div class="w-12 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+        </div>
+
+        <div class="flex justify-between items-center mb-6 shrink-0">
+          <h3 class="text-xl font-bold">Filters</h3>
+          <button
+            @click="isFilterOpen = false"
+            class="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-3 overflow-y-auto pb-6 touch-pan-y">
+          <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Categories</p>
+
+          <button
+            @click="filterCategory = ''; isFilterOpen = false"
+            class="w-full text-left px-4 py-3 rounded-xl font-semibold shadow-sm transition-colors duration-200 flex justify-between items-center"
+            :class="filterCategory === '' ? (darkMode ? 'bg-orange-300 text-orange-900 hover:bg-orange-200' : 'bg-indigo-500 text-white') : darkMode ? 'bg-gray-800 border border-gray-700 hover:bg-gray-700' : 'bg-gray-50 border border-gray-200 hover:bg-gray-100'"
+          >
+            <span x-text="t('all_categories')"></span>
+            <span x-show="filterCategory === ''" class="font-bold">✓</span>
+          </button>
+
+          <template x-for="category in categories" :key="category">
+            <button
+              @click="filterCategory = category; isFilterOpen = false"
+              class="w-full text-left px-4 py-3 rounded-xl font-semibold shadow-sm transition-colors duration-200 flex justify-between items-center"
+              :class="filterCategory === category ? (darkMode ? 'bg-orange-300 text-orange-900 hover:bg-orange-200' : 'bg-indigo-600 text-white') : darkMode ? 'bg-gray-800 border border-gray-700 hover:bg-gray-700' : 'bg-gray-50 border border-gray-200 hover:bg-gray-100'"
+            >
+              <span x-text="t(`cat.${category}`)"></span>
+              <span x-show="filterCategory === category" class="font-bold">✓</span>
+            </button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <template x-for="item in filteredCards()" :key="item.path">
+      <a
+        :href="'#recipe=' + item.path.replace('recipes/', '').replace('.json', '')"
+        class="block rounded-xl shadow transition-colors duration-300 overflow-hidden"
+        :class="darkMode
+          ? 'bg-gray-800 text-gray-100 border border-gray-700 hover:shadow-gray-700'
+          : 'bg-gray-100 text-gray-900 border border-gray-300 hover:shadow-lg hover:bg-white'"
+      >
+        <div class="relative">
+          <img :src="getImageUrl(item.image, 'lower')" alt="" class="w-full h-40 object-cover" loading="lazy" />
+          <template x-if="item.development">
+            <!-- @include partials/development-badge-card.html -->
+          </template>
+        </div>
+        <div class="p-4">
+          <h2 class="text-xl font-bold mb-1" x-text="translateField(item.title)"></h2>
+          <p class="text-sm opacity-80" x-text="item.author ? '👩‍🍳 ' + item.author : ''"></p>
+        </div>
+      </a>
+    </template>
+  </div>
+</div>

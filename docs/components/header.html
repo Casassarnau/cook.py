@@ -1,0 +1,30 @@
+<!-- Header -->
+<div class="flex justify-between items-center mb-4 md:mb-6">
+  <h1 class="text-2xl md:text-4xl font-bold">Cook.py</h1>
+
+  <div class="flex items-center gap-3">
+    <button
+      @click="toggleDarkMode"
+      class="h-9 px-3 rounded-lg border font-semibold inline-flex items-center transition-colors duration-300 cursor-pointer"
+      :class="darkMode
+        ? 'bg-gray-800 border-gray-700 text-yellow-300 hover:bg-gray-700'
+        : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
+    >
+      <span x-text="darkMode ? '🌙' : '☀️'"></span>
+    </button>
+
+    <select
+      x-model="lang"
+      @change="loadTranslations()"
+      class="h-9 px-3 rounded-lg border font-semibold transition-colors duration-300 cursor-pointer"
+      :class="darkMode
+        ? 'bg-gray-800 border-gray-600 text-gray-100'
+        : 'bg-gray-100 border-gray-300 text-gray-900'"
+    >
+      <option value="en" x-text="t('lang.en')"></option>
+      <option value="cat" x-text="t('lang.cat')"></option>
+      <option value="es" x-text="t('lang.es')"></option>
+      <option value="sv" x-text="t('lang.sv')"></option>
+    </select>
+  </div>
+</div>

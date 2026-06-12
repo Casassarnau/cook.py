@@ -1,0 +1,39 @@
+<template x-if="showCookAdjustModal && cookMode">
+  <div
+    class="fixed inset-0 z-[70] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50"
+    @click.self="showCookAdjustModal = false"
+  >
+    <div
+      class="w-full sm:max-w-md rounded-t-2xl sm:rounded-2xl shadow-xl max-h-[85vh] overflow-y-auto"
+      :class="darkMode ? 'bg-gray-800' : 'bg-white'"
+    >
+      <div class="p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold" x-text="t('cook_adjust')"></h3>
+          <button
+            type="button"
+            @click="showCookAdjustModal = false"
+            class="p-1 rounded-lg transition-colors cursor-pointer"
+            :class="darkMode ? 'text-gray-400 hover:bg-gray-700' : 'text-gray-500 hover:bg-gray-100'"
+          >
+            ✕
+          </button>
+        </div>
+
+        <template x-if="hasVariants()">
+          <!-- @include partials/variant-select-labeled.html -->
+        </template>
+
+        <template x-if="hasServings() || hasUnits() || hasDiameter() || hasArea()">
+          <div class="mb-4">
+            <!-- @include partials/portion-stepper-cook-adjust.html -->
+          </div>
+        </template>
+
+        <template x-if="thermomixAvailable">
+          <!-- @include partials/thermomix-toggle-row.html -->
+        </template>
+      </div>
+    </div>
+  </div>
+</template>

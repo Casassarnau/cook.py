@@ -1,0 +1,20 @@
+<span class="flex-shrink-0" x-text="item.emoji" aria-hidden="true"></span>
+<div class="flex-1 min-w-0">
+  <div class="flex items-baseline gap-1 flex-wrap">
+    <span class="font-semibold" :class="darkMode ? 'text-orange-400' : 'text-indigo-700'" x-text="item.value" x-show="item.value"></span>
+    <template x-if="item.unitKey === 'as_needed' || item.unitKey === 'to_taste'">
+      <span class="flex items-baseline gap-1 flex-wrap">
+        <span x-text="item.name"></span>
+        <span x-text="item.unit"></span>
+      </span>
+    </template>
+    <template x-if="item.unitKey == null || (item.unitKey !== 'as_needed' && item.unitKey !== 'to_taste')">
+      <span class="flex items-baseline gap-1 flex-wrap">
+        <span class="font-semibold" :class="darkMode ? 'text-orange-400' : 'text-indigo-700'" x-text="item.unit"></span>
+        <span x-text="item.connector" x-show="item.connector"></span>
+        <span x-text="item.name"></span>
+      </span>
+    </template>
+    <span x-text="item.text" x-show="item.text"></span>
+  </div>
+</div>

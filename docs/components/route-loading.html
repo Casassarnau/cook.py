@@ -1,0 +1,14 @@
+<div
+  id="route-loading"
+  class="flex justify-center items-center py-24"
+  aria-busy="true"
+  aria-label="Loading recipe"
+>
+  <div
+    class="h-10 w-10 rounded-full border-4 animate-spin"
+    :class="darkMode
+      ? 'border-orange-500/30 border-t-orange-500'
+      : 'border-indigo-400/40 border-t-indigo-600'"
+    role="status"
+  ></div>
+</div>

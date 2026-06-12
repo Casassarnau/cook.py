@@ -1,0 +1,9 @@
+<div id="app-shell">
+  <template x-if="!routePending && !selectedRecipe">
+    <!-- @include home-view.html -->
+  </template>
+
+  <template x-if="!routePending && selectedRecipe">
+    <!-- @include recipe-detail.html -->
+  </template>
+</div>

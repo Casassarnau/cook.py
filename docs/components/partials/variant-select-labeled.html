@@ -1,0 +1,15 @@
+<div class="mb-4">
+  <label class="block text-sm font-medium mb-2" x-text="t('variation')"></label>
+  <select
+    x-model="selectedVariation"
+    @change="clampCookStepIndex(); updateURL()"
+    class="w-full h-10 px-3 rounded-lg font-medium cursor-pointer transition-colors duration-300 focus:outline-none"
+    :class="darkMode
+      ? 'bg-gray-700 border border-gray-600 text-white'
+      : 'bg-gray-100 border border-gray-300 text-gray-900'"
+  >
+    <template x-for="item in selectedRecipe.variants" :key="item.key">
+      <option :value="item.key" x-text="translateField(item.name)"></option>
+    </template>
+  </select>
+</div>
