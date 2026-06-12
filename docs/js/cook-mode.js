@@ -1,3 +1,5 @@
+const COOK_SLIDE_MS = 320;
+
 function recipeCookMode() {
   return {
     cookStepStorageKey(recipeName) {
@@ -216,7 +218,7 @@ function recipeCookMode() {
         this.cookSwipeOffset = 0;
         setTimeout(() => {
           this.cookSwipeTransition = false;
-        }, 280);
+        }, COOK_SLIDE_MS);
       } else {
         this.cookSwipeTransition = false;
         this.cookSwipeOffset = 0;
@@ -227,6 +229,18 @@ function recipeCookMode() {
       const panel = document.getElementById('cook-step-panel');
       const width = panel ? panel.offsetWidth : 0;
       return width > 0 ? width : window.innerWidth;
+    },
+
+    finishCookSwipeCommit(targetIndex) {
+      this.goToCookStep(targetIndex, { skipLayout: true });
+      this.cookAnimPreviewIndex = null;
+      this.cookPreviewOffset = 0;
+      this.cookSwipeOffset = 0;
+      this.cookSwipeTransition = false;
+      this.cookPreviewTransition = false;
+      this.cookSwipeAnimating = false;
+      this.cookSwipeActive = false;
+      this.scheduleCookMobileLayout();
     },
 
     commitCookSwipe(direction) {
@@ -246,43 +260,42 @@ function recipeCookMode() {
       }
 
       const width = this.getCookStepPanelWidth();
+      const startOffset = this.cookSwipeOffset;
+
       this.cookSwipeAnimating = true;
       this.cookAnimPreviewIndex = targetIndex;
-      this.cookSwipeTransition = true;
-      this.cookPreviewTransition = true;
+      this.cookSwipeTransition = false;
+      this.cookPreviewTransition = false;
 
       if (isPrev) {
-        this.cookPreviewOffset = -width + this.cookSwipeOffset;
+        this.cookPreviewOffset = -width + startOffset;
       } else {
-        this.cookPreviewOffset = width + this.cookSwipeOffset;
+        this.cookPreviewOffset = width + startOffset;
       }
 
-      requestAnimationFrame(() => {
-        this.cookSwipeOffset = isPrev ? width : -width;
-        this.cookPreviewOffset = 0;
+      // Paint the start frame, then enable transition, then animate to the end frame.
+      this.$nextTick(() => {
+        requestAnimationFrame(() => {
+          this.cookSwipeTransition = true;
+          this.cookPreviewTransition = true;
+          requestAnimationFrame(() => {
+            this.cookSwipeOffset = isPrev ? width : -width;
+            this.cookPreviewOffset = 0;
+          });
+        });
       });
 
-      setTimeout(() => {
-        this.goToCookStep(targetIndex, { skipLayout: true });
-        this.cookAnimPreviewIndex = null;
-        this.cookPreviewOffset = 0;
-        this.cookSwipeOffset = 0;
-        this.cookSwipeTransition = false;
-        this.cookPreviewTransition = false;
-        this.cookSwipeAnimating = false;
-        this.cookSwipeActive = false;
-        this.scheduleCookMobileLayout();
-      }, 280);
+      setTimeout(() => this.finishCookSwipeCommit(targetIndex), COOK_SLIDE_MS);
     },
 
     nextCookStep() {
-      if (this.cookStepIndex >= this.cookStepCount() - 1) return;
+      if (this.cookSwipeAnimating || this.cookStepIndex >= this.cookStepCount() - 1) return;
       if (this.isCookMobileView()) this.commitCookSwipe('next');
       else this.goToCookStep(this.cookStepIndex + 1);
     },
 
     prevCookStep() {
-      if (this.cookStepIndex <= 0) return;
+      if (this.cookSwipeAnimating || this.cookStepIndex <= 0) return;
       if (this.isCookMobileView()) this.commitCookSwipe('prev');
       else this.goToCookStep(this.cookStepIndex - 1);
     },

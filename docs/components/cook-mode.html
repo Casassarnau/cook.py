@@ -85,7 +85,7 @@
             <button
               type="button"
               @click="prevCookStep()"
-              :disabled="cookStepIndex === 0"
+              :disabled="cookStepIndex === 0 || cookSwipeAnimating"
               class="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full items-center justify-center text-2xl font-bold border shadow-lg transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
               :class="darkMode
                 ? 'bg-gray-800 border-gray-600 hover:bg-gray-700 text-gray-100'
@@ -97,7 +97,7 @@
             <button
               type="button"
               @click="nextCookStep()"
-              :disabled="cookStepIndex >= cookStepCount() - 1"
+              :disabled="cookStepIndex >= cookStepCount() - 1 || cookSwipeAnimating"
               class="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full items-center justify-center text-2xl font-bold border shadow-lg transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
               :class="darkMode
                 ? 'bg-gray-800 border-gray-600 hover:bg-gray-700 text-gray-100'
@@ -229,7 +229,7 @@
           <button
             type="button"
             @click="prevCookStep()"
-            :disabled="cookStepIndex === 0"
+            :disabled="cookStepIndex === 0 || cookSwipeAnimating"
             class="flex-1 h-12 rounded-xl font-semibold border transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
             :class="darkMode
               ? 'bg-gray-800 border-gray-600 hover:bg-gray-700'
@@ -240,7 +240,7 @@
           <button
             type="button"
             @click="nextCookStep()"
-            :disabled="cookStepIndex >= cookStepCount() - 1"
+            :disabled="cookStepIndex >= cookStepCount() - 1 || cookSwipeAnimating"
             class="flex-1 h-12 rounded-xl font-semibold transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
             :class="darkMode
               ? 'bg-orange-500 text-white hover:bg-orange-600 disabled:bg-orange-500/50'
