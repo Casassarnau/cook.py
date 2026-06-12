@@ -110,11 +110,13 @@ function recipeCookMode() {
       if (this.cookLayoutResizeHandler) return;
       this.cookLayoutResizeHandler = () => this.scheduleCookMobileLayout();
       window.addEventListener('resize', this.cookLayoutResizeHandler);
+      window.visualViewport?.addEventListener('resize', this.cookLayoutResizeHandler);
     },
 
     unbindCookMobileLayoutListeners() {
       if (!this.cookLayoutResizeHandler) return;
       window.removeEventListener('resize', this.cookLayoutResizeHandler);
+      window.visualViewport?.removeEventListener('resize', this.cookLayoutResizeHandler);
       this.cookLayoutResizeHandler = null;
     },
 

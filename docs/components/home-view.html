@@ -51,7 +51,7 @@
       x-show="isFilterOpen"
       x-data="bottomSheetDrag(() => { isFilterOpen = false })"
       x-init="$watch('isFilterOpen', value => { if (!value) resetDrag() })"
-      class="fixed inset-0 z-50 md:hidden touch-none"
+      class="vv-overlay z-50 md:hidden touch-none"
       style="display: none;"
       role="dialog"
       aria-modal="true"
@@ -67,7 +67,7 @@
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
         @click="isFilterOpen = false"
-        class="fixed inset-0 bg-black/50 backdrop-blur-xs"
+        class="vv-overlay bg-black/50 backdrop-blur-xs"
       ></div>
 
       <div
@@ -83,7 +83,7 @@
           darkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-900',
           isDragging ? '' : 'transition-transform duration-300 ease-out'
         ]"
-        class="fixed inset-x-0 bottom-0 max-h-[85vh] rounded-t-2xl p-6 shadow-xl flex flex-col select-none"
+        class="vv-bottom vv-bottom-bleed vv-max-h-85 rounded-t-2xl p-6 shadow-xl flex flex-col select-none"
       >
         <div
           @pointerdown="initDrag"

@@ -2,7 +2,8 @@
 <html lang="en" class="bootstrap-pending app-loading" x-data="recipeApp()" x-init="init()" :class="{ dark: darkMode }">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script src="js/viewport.js"></script>
     <title>Cook.py</title>
     <meta name="description" content="A minimal recipe book for your favorite homemade dishes." />
     <meta name="keywords" content="recipes, Arnau, Arnau Casas, Arnau Casas Saez" />
@@ -26,6 +27,7 @@
       html.dark { background-color: #0f172a; }
       body {
         min-height: 100vh;
+        min-height: 100dvh;
         margin: 0;
         background: linear-gradient(to bottom, #bae6fd, #bfdbfe, #c7d2fe);
         color: #1e3a8a;
@@ -167,7 +169,7 @@
       : 'bg-gradient-to-b from-sky-200 via-blue-200 to-indigo-200 text-blue-900'"
   >
     <div
-      class="fixed inset-0 -z-10 transition-colors duration-300"
+      class="vv-overlay -z-10 transition-colors duration-300"
       :class="darkMode
         ? 'bg-gradient-to-b from-gray-900 via-slate-900 to-blue-950'
         : 'bg-gradient-to-b from-sky-200 via-blue-200 to-indigo-200'"

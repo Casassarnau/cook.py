@@ -1,10 +1,10 @@
 <template x-if="showCookAdjustModal && cookMode">
   <div
-    class="fixed inset-0 z-[70] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50"
+    class="vv-overlay z-[70] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50"
     @click.self="showCookAdjustModal = false"
   >
     <div
-      class="w-full sm:max-w-md rounded-t-2xl sm:rounded-2xl shadow-xl max-h-[85vh] overflow-y-auto"
+      class="w-full sm:max-w-md rounded-t-2xl sm:rounded-2xl shadow-xl vv-max-h-85 overflow-y-auto"
       :class="darkMode ? 'bg-gray-800' : 'bg-white'"
     >
       <div class="p-5">

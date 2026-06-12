@@ -3,7 +3,7 @@
   x-show="showDimensionConfig && hasArea()"
   x-data="bottomSheetDrag(() => { showDimensionConfig = false }, { desktopModal: true })"
   x-init="$watch('showDimensionConfig', value => { if (!value) resetDrag() })"
-  class="fixed inset-0 z-50 max-md:touch-none"
+  class="vv-overlay z-50 max-md:touch-none"
   style="display: none;"
   role="dialog"
   aria-modal="true"
@@ -20,7 +20,7 @@
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
     @click="showDimensionConfig = false"
-    class="fixed inset-0 bg-black/50 backdrop-blur-xs pointer-events-auto"
+    class="vv-overlay bg-black/50 backdrop-blur-xs pointer-events-auto"
   ></div>
 
   <!-- Mobile: fixed bottom sheet (same pattern as filter drawer) -->
@@ -37,7 +37,7 @@
       darkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-900',
       isDragging ? '' : 'transition-transform duration-300 ease-out'
     ]"
-    class="md:hidden fixed inset-x-0 bottom-0 max-h-[90vh] rounded-t-2xl shadow-xl flex flex-col select-none pointer-events-auto"
+    class="md:hidden vv-bottom vv-bottom-bleed vv-max-h-90 rounded-t-2xl shadow-xl flex flex-col select-none pointer-events-auto"
     style="padding-bottom: max(1.5rem, env(safe-area-inset-bottom));"
   >
     <!-- @include partials/dimension-config-body.html -->
