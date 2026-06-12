@@ -1,0 +1,11 @@
+<div class="hidden sm:flex items-center justify-between mb-3">
+  <div class="flex items-center gap-3 min-w-0">
+    <h3 class="text-xl font-semibold" x-text="getIngredientsTitle()"></h3>
+    <template x-if="hasServings() || hasUnits() || hasDiameter() || hasArea()">
+      <!-- @include partials/portion-stepper-desktop.html -->
+    </template>
+  </div>
+  <template x-if="hasVariants()">
+    <!-- @include partials/variant-select-desktop.html -->
+  </template>
+</div>

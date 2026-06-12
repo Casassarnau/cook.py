@@ -5,7 +5,7 @@
   class="hidden sm:block h-9 px-3 rounded-lg font-medium cursor-pointer transition-colors duration-300 focus:outline-none"
   :class="darkMode
     ? 'bg-orange-300 text-orange-900 hover:bg-orange-200'
-    : 'bg-indigo-600 text-white hover:bg-indigo-500'"
+    : 'bg-orange-600 text-orange-50 hover:bg-orange-500'"
 >
   <template x-for="item in selectedRecipe.variants" :key="item.key">
     <option :value="item.key" x-text="translateField(item.name)"></option>

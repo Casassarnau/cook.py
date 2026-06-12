@@ -86,6 +86,50 @@ function recipePortions() {
       if (!this.selectedRecipe) return '';
 
       const portion = this.selectedRecipe.portion;
+      const forConnector = this.t('connectors.for');
+
+      if (this.hasServings()) {
+        const unit = portion?.unit || this.selectedRecipe.servings?.unit || 'servings';
+        const unitText = this.t(`units.${unit}`);
+        return `${forConnector} ${this.currentServings} ${unitText}`;
+      }
+
+      if (this.hasUnits()) {
+        const unit = portion?.unit || this.selectedRecipe.units?.unit || 'unit';
+        const unitText = this.t(`units.${unit}`) || unit;
+        return `${forConnector} ${this.currentUnits} ${unitText}`;
+      }
+
+      if (this.hasCircularArea()) {
+        const unit = portion?.dimensions?.unit || 'cm';
+        const unitText = this.t(`units.${unit}`);
+        return `${forConnector} ø ${this.currentDimensions.diameter} ${unitText} 🍰`;
+      }
+
+      if (this.hasRectangularArea()) {
+        const unit = portion?.dimensions?.unit || 'cm';
+        const unitText = this.t(`units.${unit}`);
+        return `${forConnector} ${this.currentDimensions.width}×${this.currentDimensions.height} ${unitText} 📐`;
+      }
+
+      if (this.hasDiameter()) {
+        const unit = portion?.unit || this.selectedRecipe.diameter?.unit || 'cm';
+        const unitText = this.t(`units.${unit}`);
+        const connector = this.t(`connectors.${unit}`);
+
+        if (unit === 'cm') {
+          return `${forConnector} ø ${this.currentDiameter} ${unitText} 🍰`;
+        }
+        return `${forConnector} ${this.currentDiameter} ${connector} ${unitText}`;
+      }
+
+      return '';
+    },
+
+    getPortionLabel() {
+      if (!this.selectedRecipe) return '';
+
+      const portion = this.selectedRecipe.portion;
 
       if (this.hasServings()) {
         const unit = portion?.unit || this.selectedRecipe.servings?.unit || 'servings';
@@ -126,8 +170,9 @@ function recipePortions() {
     },
 
     getIngredientsTitle() {
+      const ingredientsLabel = this.t('ingredients._');
       const portionText = this.getIngredientsSubtitle();
-      return portionText || this.t('ingredients._');
+      return portionText ? `${ingredientsLabel} ${portionText}` : ingredientsLabel;
     },
 
     incrementDimensions() {

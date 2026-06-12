@@ -55,17 +55,16 @@
         <!-- @include partials/variant-select-mobile.html -->
       </template>
 
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-3">
+      <div class="sm:hidden mb-3">
         <template x-if="hasServings() || hasUnits() || hasDiameter() || hasArea()">
           <!-- @include partials/portion-stepper-recipe.html -->
         </template>
         <template x-if="!hasServings() && !hasUnits() && !hasDiameter() && !hasArea()">
           <h3 class="text-xl font-semibold" x-text="t('ingredients._')"></h3>
         </template>
-        <template x-if="hasVariants()">
-          <!-- @include partials/variant-select-desktop.html -->
-        </template>
       </div>
+
+      <!-- @include partials/ingredients-header-desktop.html -->
 
       <!-- @include partials/ingredient-groups-recipe.html -->
     </div>
