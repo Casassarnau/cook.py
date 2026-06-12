@@ -1037,53 +1037,49 @@ function recipeApp() {
       if (!this.selectedRecipe) return '';
 
       const portion = this.selectedRecipe.portion;
-      const forConnector = this.t('connectors.for');
 
       if (this.hasServings()) {
         const unit = portion?.unit || this.selectedRecipe.servings?.unit || 'servings';
         const unitText = this.t(`units.${unit}`);
-        return `${forConnector} ${this.currentServings} ${unitText}`;
-      } 
-      
+        return `${this.currentServings} ${unitText}`;
+      }
+
       if (this.hasUnits()) {
         const unit = portion?.unit || this.selectedRecipe.units?.unit || 'unit';
         const unitText = this.t(`units.${unit}`) || unit;
-        return `${forConnector} ${this.currentUnits} ${unitText}`;
-      } 
-      
+        return `${this.currentUnits} ${unitText}`;
+      }
+
       if (this.hasCircularArea()) {
         const unit = portion?.dimensions?.unit || 'cm';
         const unitText = this.t(`units.${unit}`);
-        return `${forConnector} ø ${this.currentDimensions.diameter} ${unitText} 🍰`;
-      } 
-      
+        return `ø ${this.currentDimensions.diameter} ${unitText} 🍰`;
+      }
+
       if (this.hasRectangularArea()) {
         const unit = portion?.dimensions?.unit || 'cm';
         const unitText = this.t(`units.${unit}`);
-        return `${forConnector} ${this.currentDimensions.width}×${this.currentDimensions.height} ${unitText} 📐`;
-      } 
-      
+        return `${this.currentDimensions.width}×${this.currentDimensions.height} ${unitText} 📐`;
+      }
+
       if (this.hasDiameter()) {
         const unit = portion?.unit || this.selectedRecipe.diameter?.unit || 'cm';
         const unitText = this.t(`units.${unit}`);
         const connector = this.t(`connectors.${unit}`);
-        
+
         if (unit === 'cm') {
-          return `${forConnector} ø ${this.currentDiameter} ${unitText} 🍰`;
-        } else {
-          return `${forConnector} ${this.currentDiameter} ${connector} ${unitText}`;
+          return `ø ${this.currentDiameter} ${unitText} 🍰`;
         }
+        return `${this.currentDiameter} ${connector} ${unitText}`;
       }
 
       return '';
     },
 
-    // 3. Returns the FULL title (e.g., "Ingredients per a 4 racions")
+    // Returns portion label when adjustable, otherwise the generic "Ingredients" heading
     getIngredientsTitle() {
-      const ingredientsLabel = this.t('ingredients._');
       const portionText = this.getIngredientsSubtitle();
-      
-      return portionText ? `${ingredientsLabel} ${portionText}` : ingredientsLabel;
+      return portionText || this.t('ingredients._');
     },
 
     incrementDimensions() {
