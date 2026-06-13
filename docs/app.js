@@ -1,6 +1,5 @@
 function recipeApp() {
-  return Object.assign(
-    {},
+  return Object.assign({},
     recipeAppState(),
     recipeUtils(),
     recipeI18n(),
@@ -15,8 +14,7 @@ function recipeApp() {
     recipeThermomix(),
     recipeInstructions(),
     recipeCookMode(),
-    recipeSharing(),
-    {
+    recipeSharing(), {
       async init() {
         this.basePath =
           location.hostname === 'localhost' || location.hostname === '127.0.0.1' ? '' : '/cook.py';

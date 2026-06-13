@@ -1,4 +1,4 @@
-.venv/bin/python json_linter.py
+.venv/bin/python docs_formatter.py
 
 .venv/bin/python generate_images.py
 

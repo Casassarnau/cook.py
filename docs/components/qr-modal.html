@@ -1,51 +1,51 @@
     <!-- QR Code Modal -->
-    <template x-if="showQRModal">
-      <div 
-        class="vv-overlay z-50 flex items-center justify-center p-4 bg-black/50"
-        @click.self="showQRModal = false"
-      >
-        <div 
-          class="max-w-md w-full rounded-2xl shadow-xl transform transition-all border p-6"
-          :class="darkMode 
-            ? 'bg-gray-800 border-gray-700' 
-            : 'bg-white border-gray-200'"
+<template x-if="showQRModal">
+  <div
+    class="vv-overlay z-50 flex items-center justify-center p-4 bg-black/50"
+    @click.self="showQRModal = false"
+  >
+    <div
+      class="max-w-md w-full rounded-2xl shadow-xl transform transition-all border p-6"
+      :class="darkMode
+              ? 'bg-gray-800 border-gray-700'
+              : 'bg-white border-gray-200'"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-semibold"
+            :class="darkMode ? 'text-white' : 'text-gray-900'">
+          <span x-text="t('share_qr') || 'Share Recipe'"></span>
+        </h3>
+        <button
+          @click="showQRModal = false"
+          class="p-1 rounded-lg transition-colors cursor-pointer"
+          :class="darkMode
+                  ? 'text-gray-400 hover:bg-gray-700 hover:text-white'
+                  : 'text-gray-500 hover:bg-white hover:text-gray-900'"
         >
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-xl font-semibold" 
-                :class="darkMode ? 'text-white' : 'text-gray-900'">
-              <span x-text="t('share_qr') || 'Share Recipe'"></span>
-            </h3>
-            <button
-              @click="showQRModal = false"
-              class="p-1 rounded-lg transition-colors cursor-pointer"
-              :class="darkMode
-                ? 'text-gray-400 hover:bg-gray-700 hover:text-white'
-                : 'text-gray-500 hover:bg-white hover:text-gray-900'"
-            >
-              ✕
-            </button>
-          </div>
-          
-          <div class="flex flex-col items-center gap-4">
-            <div 
-              id="qrcode"
-              class="p-4 rounded-lg transition-colors duration-300"
-              :class="darkMode ? 'bg-gray-800' : 'bg-white'"
-            ></div>
-            <p class="text-sm text-center"
-               :class="darkMode ? 'text-gray-300' : 'text-gray-600'">
-              <span x-text="t('qr_instructions') || 'Scan this QR code to share the recipe'"></span>
-            </p>
-            <button
-              @click="copyRecipeUrl()"
-              class="w-full py-2 px-4 rounded-lg font-medium transition-colors cursor-pointer"
-              :class="darkMode
-                ? 'bg-orange-600 text-white hover:bg-orange-700'
-                : 'bg-indigo-600 text-white hover:bg-indigo-500'"
-            >
-              <span x-text="urlCopied ? (t('copied') || 'Copied!') : (canUseWebShare() ? (t('share') || 'Share') : (t('copy_url') || 'Copy URL'))"></span>
-            </button>
-          </div>
-        </div>
+          ✕
+        </button>
       </div>
-    </template>
+
+      <div class="flex flex-col items-center gap-4">
+        <div
+          id="qrcode"
+          class="p-4 rounded-lg transition-colors duration-300"
+          :class="darkMode ? 'bg-gray-800' : 'bg-white'"
+        ></div>
+        <p class="text-sm text-center"
+           :class="darkMode ? 'text-gray-300' : 'text-gray-600'">
+          <span x-text="t('qr_instructions') || 'Scan this QR code to share the recipe'"></span>
+        </p>
+        <button
+          @click="copyRecipeUrl()"
+          class="w-full py-2 px-4 rounded-lg font-medium transition-colors cursor-pointer"
+          :class="darkMode
+                  ? 'bg-orange-600 text-white hover:bg-orange-700'
+                  : 'bg-indigo-600 text-white hover:bg-indigo-500'"
+        >
+          <span x-text="urlCopied ? (t('copied') || 'Copied!') : (canUseWebShare() ? (t('share') || 'Share') : (t('copy_url') || 'Copy URL'))"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

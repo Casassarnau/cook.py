@@ -7,8 +7,8 @@
       @click="toggleDarkMode"
       class="h-9 px-3 rounded-lg border font-semibold inline-flex items-center transition-colors duration-300 cursor-pointer"
       :class="darkMode
-        ? 'bg-gray-800 border-gray-700 text-yellow-300 hover:bg-gray-700'
-        : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
+              ? 'bg-gray-800 border-gray-700 text-yellow-300 hover:bg-gray-700'
+              : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
     >
       <span x-text="darkMode ? '🌙' : '☀️'"></span>
     </button>
@@ -18,8 +18,8 @@
       @change="loadTranslations()"
       class="h-9 px-3 rounded-lg border font-semibold transition-colors duration-300 cursor-pointer"
       :class="darkMode
-        ? 'bg-gray-800 border-gray-600 text-gray-100'
-        : 'bg-gray-100 border-gray-300 text-gray-900'"
+              ? 'bg-gray-800 border-gray-600 text-gray-100'
+              : 'bg-gray-100 border-gray-300 text-gray-900'"
     >
       <option value="en" x-text="t('lang.en')"></option>
       <option value="cat" x-text="t('lang.cat')"></option>

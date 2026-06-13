@@ -5,15 +5,15 @@
       @click="hasArea() ? decrementDimensions() : decrementServings()"
       class="w-12 h-11 rounded-xl flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border shrink-0"
       :class="darkMode
-        ? 'bg-gray-700 border-gray-600 text-gray-100 hover:bg-gray-600 active:bg-gray-500'
-        : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
+              ? 'bg-gray-700 border-gray-600 text-gray-100 hover:bg-gray-600 active:bg-gray-500'
+              : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
       aria-label="Decrease"
     >−</button>
     <div
       class="flex-1 min-w-0 h-11 px-3 rounded-xl border flex items-center justify-center text-lg font-semibold truncate"
       :class="darkMode
-        ? 'bg-gray-800/60 border-gray-600 text-gray-100'
-        : 'bg-gray-50 border-gray-300 text-gray-900'"
+              ? 'bg-gray-800/60 border-gray-600 text-gray-100'
+              : 'bg-gray-50 border-gray-300 text-gray-900'"
       x-text="getIngredientsTitle()"
     ></div>
     <button
@@ -21,8 +21,8 @@
       @click="hasArea() ? incrementDimensions() : incrementServings()"
       class="w-12 h-11 rounded-xl flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border shrink-0"
       :class="darkMode
-        ? 'bg-gray-700 border-gray-600 text-gray-100 hover:bg-gray-600 active:bg-gray-500'
-        : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
+              ? 'bg-gray-700 border-gray-600 text-gray-100 hover:bg-gray-600 active:bg-gray-500'
+              : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
       aria-label="Increase"
     >+</button>
   </div>
@@ -32,8 +32,8 @@
     @click="openDimensionConfig(); showCookAdjustModal = false"
     class="w-12 h-11 rounded-xl flex items-center justify-center transition-colors cursor-pointer border shrink-0"
     :class="darkMode
-      ? 'bg-gray-700 border-gray-600 hover:bg-gray-600 active:bg-gray-500'
-      : 'bg-gray-100 border-gray-300 hover:bg-white active:bg-gray-200'"
+            ? 'bg-gray-700 border-gray-600 hover:bg-gray-600 active:bg-gray-500'
+            : 'bg-gray-100 border-gray-300 hover:bg-white active:bg-gray-200'"
     title="Configure dimensions"
     aria-label="Configure dimensions"
   >⚙️</button>

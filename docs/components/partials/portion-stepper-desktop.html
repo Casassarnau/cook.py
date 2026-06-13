@@ -4,8 +4,8 @@
     @click="hasArea() ? decrementDimensions() : decrementServings()"
     class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg transition-colors duration-300 cursor-pointer border"
     :class="darkMode
-      ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700'
-      : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
+            ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700'
+            : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
     aria-label="Decrease"
   >−</button>
   <button
@@ -13,8 +13,8 @@
     @click="hasArea() ? incrementDimensions() : incrementServings()"
     class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg transition-colors duration-300 cursor-pointer border"
     :class="darkMode
-      ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700'
-      : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
+            ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700'
+            : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
     aria-label="Increase"
   >+</button>
   <button
@@ -23,8 +23,8 @@
     @click="openDimensionConfig()"
     class="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer border"
     :class="darkMode
-      ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700'
-      : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
+            ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700'
+            : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white'"
     title="Configure dimensions"
     aria-label="Configure dimensions"
   >⚙️</button>

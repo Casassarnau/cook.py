@@ -1,24 +1,24 @@
     <!-- Recipe Image Lightbox -->
-    <template x-if="showImageModal && selectedRecipe">
-      <div
-        class="vv-overlay z-50 flex items-center justify-center p-4 bg-black/85"
-        @click.self="showImageModal = false"
-        @keydown.escape.window="showImageModal = false"
-      >
-        <button
-          type="button"
-          @click="showImageModal = false"
-          class="absolute top-4 right-4 p-1 cursor-pointer transition-opacity duration-200 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none"
-          :aria-label="t('close') || 'Close'"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
-            <path d="M18 6 6 18M6 6l12 12"/>
-          </svg>
-        </button>
-        <img
-          :src="getImageUrl(selectedRecipe.image)"
-          alt=""
-          class="max-w-full max-h-[90dvh] object-contain rounded-lg shadow-2xl"
-        />
-      </div>
-    </template>
+<template x-if="showImageModal && selectedRecipe">
+  <div
+    class="vv-overlay z-50 flex items-center justify-center p-4 bg-black/85"
+    @click.self="showImageModal = false"
+    @keydown.escape.window="showImageModal = false"
+  >
+    <button
+      type="button"
+      @click="showImageModal = false"
+      class="absolute top-4 right-4 p-1 cursor-pointer transition-opacity duration-200 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none"
+      :aria-label="t('close') || 'Close'"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <img
+      :src="getImageUrl(selectedRecipe.image)"
+      alt=""
+      class="max-w-full max-h-[90dvh] object-contain rounded-lg shadow-2xl"
+    />
+  </div>
+</template>

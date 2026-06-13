@@ -16,11 +16,10 @@ function recipeThermomix() {
     },
 
     matchesInstructionMode(step, thermomixEnabled, usesInlineThermomix) {
-      const modes = step.onlyForMode
-        ? Array.isArray(step.onlyForMode)
-          ? step.onlyForMode
-          : [step.onlyForMode]
-        : null;
+      const modes = step.onlyForMode ?
+        Array.isArray(step.onlyForMode) ?
+        step.onlyForMode : [step.onlyForMode] :
+        null;
 
       if (thermomixEnabled) {
         if (modes && !modes.includes('thermomix')) return false;

@@ -8,9 +8,9 @@ function recipeInstructions() {
         this.selectedRecipe.instructionsThermomix.length > 0;
       const usesInlineThermomix = !hasDedicatedThermomix;
       const raw =
-        thermomixEnabled && hasDedicatedThermomix
-          ? this.selectedRecipe.instructionsThermomix
-          : this.selectedRecipe.instructions || [];
+        thermomixEnabled && hasDedicatedThermomix ?
+        this.selectedRecipe.instructionsThermomix :
+        this.selectedRecipe.instructions || [];
 
       return raw
         .filter(e => {

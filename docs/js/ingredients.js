@@ -25,13 +25,11 @@ function recipeIngredients() {
         }));
       }
 
-      return [
-        {
-          isGroup: false,
-          groupName: null,
-          items: this.processIngredientList(raw, variationKey, multiplier),
-        },
-      ];
+      return [{
+        isGroup: false,
+        groupName: null,
+        items: this.processIngredientList(raw, variationKey, multiplier),
+      }, ];
     },
 
     getCookIngredientsAt(index) {

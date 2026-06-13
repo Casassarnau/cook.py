@@ -7,7 +7,9 @@ function bottomSheetScrollLock(locked) {
 }
 
 function bottomSheetDrag(onClose, options = {}) {
-  const { desktopModal = false, closeThreshold = 120 } = options;
+  const {
+    desktopModal = false, closeThreshold = 120
+  } = options;
 
   return {
     isDragging: false,

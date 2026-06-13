@@ -5,14 +5,19 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
-# === Step 0: Auto-lint and fix JSON files ===
-echo "🧹 Auto-linting and fixing JSON files in docs/recipes..."
-# Run the python script we created earlier
-python3 json_linter.py
+PYTHON="${REPO_ROOT}/.venv/bin/python"
+if [ ! -x "$PYTHON" ]; then
+  echo "❌ Virtual environment not found. Run ./setup.sh first." >&2
+  exit 1
+fi
+
+# === Step 0: Auto-format docs (JSON, HTML, JS, CSS) ===
+echo "🧹 Auto-formatting docs (JSON, HTML, JS, CSS)..."
+"$PYTHON" docs_formatter.py
 
 # === Step 1: Generate images ===
 echo "🖼️  Running image generation..."
-python3 generate_images.py
+"$PYTHON" generate_images.py
 
 # Stage image and JSON files only if they changed
 if ! git diff --quiet -- docs/images || ! git diff --cached --quiet -- docs/images; then
@@ -21,13 +26,13 @@ if ! git diff --quiet -- docs/images || ! git diff --cached --quiet -- docs/imag
 fi
 
 if ! git diff --quiet -- docs || ! git diff --cached --quiet -- docs; then
-  echo "📦 Staging updated JSON files..."
-  git add docs/**/*.json || true
+  echo "📦 Staging updated docs files..."
+  git add docs/**/*.json docs/**/*.html docs/**/*.js docs/**/*.css || true
 fi
 
 # === Step 2: Generate index ===
 echo "📚 Running index generation..."
-python3 generate_index.py
+"$PYTHON" generate_index.py
 
 # === Step 3: Handle index.json changes ===
 if ! git diff --quiet -- docs/index.json; then

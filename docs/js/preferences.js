@@ -15,7 +15,9 @@ function recipePreferences() {
           portion.shape = this.originalShape;
           const dims = this.originalDimensions || portion.dimensions || {};
           if (portion.shape === 'circular') {
-            this.currentDimensions = { diameter: dims.diameter || 15 };
+            this.currentDimensions = {
+              diameter: dims.diameter || 15
+            };
           } else {
             this.currentDimensions = {
               width: dims.width || 20,
@@ -55,7 +57,9 @@ function recipePreferences() {
           if (prefs.units !== undefined) this.currentUnits = prefs.units;
         } else if (portion?.type === 'area') {
           if (prefs.shape) portion.shape = prefs.shape;
-          if (prefs.dimensions) this.currentDimensions = { ...prefs.dimensions };
+          if (prefs.dimensions) this.currentDimensions = {
+            ...prefs.dimensions
+          };
         } else if (portion?.type === 'diameter' || recipe.diameter) {
           if (prefs.diameter !== undefined) this.currentDiameter = prefs.diameter;
         }
@@ -76,7 +80,9 @@ function recipePreferences() {
       } else if (portion?.type === 'units' || recipe.units) {
         prefs.units = this.currentUnits;
       } else if (portion?.type === 'area') {
-        prefs.dimensions = { ...this.currentDimensions };
+        prefs.dimensions = {
+          ...this.currentDimensions
+        };
         prefs.shape = portion.shape;
       } else if (portion?.type === 'diameter' || recipe.diameter) {
         prefs.diameter = this.currentDiameter;

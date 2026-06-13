@@ -15,7 +15,11 @@ function recipeAppState() {
     darkMode: false,
     basePath: '',
     currentServings: 4,
-    currentDimensions: { width: 20, height: 20, diameter: 15 },
+    currentDimensions: {
+      width: 20,
+      height: 20,
+      diameter: 15
+    },
     originalDimensions: null,
     originalShape: null,
     currentDiameter: 15,

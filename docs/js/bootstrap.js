@@ -1,10 +1,15 @@
 const INCLUDE_RE = /<!-- @include ([^\s]+) -->/g;
 
-const HTML_COMPONENTS = [
-  { slot: '#component-header', path: 'components/header.html' },
-  { slot: '#component-app-shell', path: 'components/app-shell.html' },
-  { slot: '#component-modals', path: 'components/modals.html' },
-];
+const HTML_COMPONENTS = [{
+  slot: '#component-header',
+  path: 'components/header.html'
+}, {
+  slot: '#component-app-shell',
+  path: 'components/app-shell.html'
+}, {
+  slot: '#component-modals',
+  path: 'components/modals.html'
+}, ];
 
 async function fetchComponent(path) {
   const res = await fetch(assetPath(path));
@@ -31,7 +36,10 @@ async function resolveIncludes(html) {
 
 async function loadHtmlComponents() {
   await Promise.all(
-    HTML_COMPONENTS.map(async ({ slot, path }) => {
+    HTML_COMPONENTS.map(async ({
+      slot,
+      path
+    }) => {
       const el = document.querySelector(slot);
       if (!el) return;
       const html = await resolveIncludes(await fetchComponent(path));

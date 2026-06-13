@@ -84,7 +84,9 @@ function recipeRouting() {
               const portion = this.selectedRecipe.portion;
               if (portion.type === 'area') {
                 this.originalShape = portion.shape;
-                this.originalDimensions = { ...portion.dimensions };
+                this.originalDimensions = {
+                  ...portion.dimensions
+                };
               }
             }
 

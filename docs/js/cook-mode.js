@@ -240,7 +240,9 @@ function recipeCookMode() {
     },
 
     finishCookSwipeCommit(targetIndex) {
-      this.goToCookStep(targetIndex, { skipLayout: true });
+      this.goToCookStep(targetIndex, {
+        skipLayout: true
+      });
       this.cookAnimPreviewIndex = null;
       this.cookPreviewOffset = 0;
       this.cookSwipeOffset = 0;

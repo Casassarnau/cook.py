@@ -37,8 +37,8 @@
         @click="setAreaShape('circular')"
         class="flex-1 p-4 rounded-xl border-2 transition-all cursor-pointer"
         :class="dimensionConfigShape === 'circular'
-          ? (darkMode ? 'border-orange-500 bg-orange-500/20' : 'border-indigo-600 bg-indigo-100')
-          : (darkMode ? 'border-gray-700 hover:border-gray-600' : 'border-gray-300 hover:border-gray-400')"
+                ? (darkMode ? 'border-orange-500 bg-orange-500/20' : 'border-indigo-600 bg-indigo-100')
+                : (darkMode ? 'border-gray-700 hover:border-gray-600' : 'border-gray-300 hover:border-gray-400')"
       >
         <div class="text-3xl mb-1">🍰</div>
         <div class="text-sm font-medium"
@@ -51,8 +51,8 @@
         @click="setAreaShape('rectangular')"
         class="flex-1 p-4 rounded-xl border-2 transition-all cursor-pointer"
         :class="dimensionConfigShape === 'rectangular'
-          ? (darkMode ? 'border-orange-500 bg-orange-500/20' : 'border-indigo-600 bg-indigo-100')
-          : (darkMode ? 'border-gray-700 hover:border-gray-600' : 'border-gray-300 hover:border-gray-400')"
+                ? (darkMode ? 'border-orange-500 bg-orange-500/20' : 'border-indigo-600 bg-indigo-100')
+                : (darkMode ? 'border-gray-700 hover:border-gray-600' : 'border-gray-300 hover:border-gray-400')"
       >
         <div class="text-3xl mb-1">📐</div>
         <div class="text-sm font-medium"
@@ -75,8 +75,8 @@
           @click="if (dimensionConfigDiameter > 1) dimensionConfigDiameter--"
           class="w-12 h-11 rounded-xl flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border shrink-0"
           :class="darkMode
-            ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
-            : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
+                  ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
+                  : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
           aria-label="Decrease"
         >−</button>
         <input
@@ -85,16 +85,16 @@
           min="1"
           class="flex-1 min-w-0 h-11 px-4 rounded-xl border text-center text-lg font-semibold"
           :class="darkMode
-            ? 'bg-gray-800 border-gray-700 text-white'
-            : 'bg-gray-100 border-gray-300 text-gray-900'"
+                  ? 'bg-gray-800 border-gray-700 text-white'
+                  : 'bg-gray-100 border-gray-300 text-gray-900'"
         />
         <button
           type="button"
           @click="dimensionConfigDiameter++"
           class="w-12 h-11 rounded-xl flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border shrink-0"
           :class="darkMode
-            ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
-            : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
+                  ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
+                  : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
           aria-label="Increase"
         >+</button>
       </div>
@@ -114,8 +114,8 @@
             @click="if (dimensionConfigWidth > 5) dimensionConfigWidth--"
             class="w-12 h-11 rounded-xl flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border shrink-0"
             :class="darkMode
-              ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
-              : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
+                    ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
+                    : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
             aria-label="Decrease"
           >−</button>
           <input
@@ -124,16 +124,16 @@
             min="5"
             class="flex-1 min-w-0 h-11 px-4 rounded-xl border text-center text-lg font-semibold"
             :class="darkMode
-              ? 'bg-gray-800 border-gray-700 text-white'
-              : 'bg-gray-100 border-gray-300 text-gray-900'"
+                    ? 'bg-gray-800 border-gray-700 text-white'
+                    : 'bg-gray-100 border-gray-300 text-gray-900'"
           />
           <button
             type="button"
             @click="dimensionConfigWidth++"
             class="w-12 h-11 rounded-xl flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border shrink-0"
             :class="darkMode
-              ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
-              : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
+                    ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
+                    : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
             aria-label="Increase"
           >+</button>
         </div>
@@ -149,8 +149,8 @@
             @click="if (dimensionConfigHeight > 5) dimensionConfigHeight--"
             class="w-12 h-11 rounded-xl flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border shrink-0"
             :class="darkMode
-              ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
-              : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
+                    ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
+                    : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
             aria-label="Decrease"
           >−</button>
           <input
@@ -159,16 +159,16 @@
             min="5"
             class="flex-1 min-w-0 h-11 px-4 rounded-xl border text-center text-lg font-semibold"
             :class="darkMode
-              ? 'bg-gray-800 border-gray-700 text-white'
-              : 'bg-gray-100 border-gray-300 text-gray-900'"
+                    ? 'bg-gray-800 border-gray-700 text-white'
+                    : 'bg-gray-100 border-gray-300 text-gray-900'"
           />
           <button
             type="button"
             @click="dimensionConfigHeight++"
             class="w-12 h-11 rounded-xl flex items-center justify-center font-bold text-lg transition-colors cursor-pointer border shrink-0"
             :class="darkMode
-              ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
-              : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
+                    ? 'bg-gray-800 border-gray-700 text-gray-100 hover:bg-gray-700 active:bg-gray-600'
+                    : 'bg-gray-100 border-gray-300 text-gray-900 hover:bg-white active:bg-gray-200'"
             aria-label="Increase"
           >+</button>
         </div>
@@ -183,8 +183,8 @@
     @click="showDimensionConfig = false"
     class="w-full sm:flex-1 h-12 rounded-xl font-medium transition-colors cursor-pointer"
     :class="darkMode
-      ? 'bg-gray-800 text-gray-200 hover:bg-gray-700 active:bg-gray-600'
-      : 'bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400'"
+            ? 'bg-gray-800 text-gray-200 hover:bg-gray-700 active:bg-gray-600'
+            : 'bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400'"
   >
     Cancel
   </button>
@@ -193,8 +193,8 @@
     @click="applyDimensionChanges()"
     class="w-full sm:flex-1 h-12 rounded-xl font-semibold transition-colors cursor-pointer"
     :class="darkMode
-      ? 'bg-orange-600 text-white hover:bg-orange-700 active:bg-orange-800'
-      : 'bg-indigo-600 text-white hover:bg-indigo-500 active:bg-indigo-700'"
+            ? 'bg-orange-600 text-white hover:bg-orange-700 active:bg-orange-800'
+            : 'bg-indigo-600 text-white hover:bg-indigo-500 active:bg-indigo-700'"
   >
     Apply
   </button>
