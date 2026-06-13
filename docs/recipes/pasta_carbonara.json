@@ -1,0 +1,177 @@
+{
+  "title": {
+    "en": "Pasta Carbonara",
+    "es": "Pasta carbonara",
+    "cat": "Pasta carbonara",
+    "sv": "Pasta carbonara"
+  },
+  "author": "Arnau",
+  "categories": [
+    "mains"
+  ],
+  "image": "/images/pasta_carbonara/main.webp",
+  "description": {
+    "en": "Classic Roman carbonara for two: silky egg-and-cheese sauce with crispy guanciale or bacon, finished off the heat so the eggs emulsify without scrambling.",
+    "es": "Carbonara clásica romana para dos: salsa sedosa de huevo y queso con guanciale o bacon crujiente, terminada fuera del fuego para que los huevos emulsionen sin cuajar.",
+    "cat": "Carbonara clàssica romana per dos: salsa sedosa d'ou i formatge amb guanciale o bacon cruixent, acabada fora del foc perquè els ous emulsionen sense quallar.",
+    "sv": "Klassisk romansk carbonara för två: silkeslen ägg- och ostås med krispig guanciale eller bacon, avslutad utan värme så att äggen emulgerar utan att stelna."
+  },
+  "portion": {
+    "type": "servings",
+    "value": 2,
+    "unit": "servings"
+  },
+  "ingredients": [
+    {
+      "id": "pasta",
+      "ingredient": "pasta",
+      "value": 250,
+      "unit": "g",
+      "text": {
+        "en": "of your choice",
+        "es": "al gusto",
+        "cat": "al gust",
+        "sv": "valfri sort"
+      }
+    },
+    {
+      "id": "cheese",
+      "ingredient": "pecorino_cheese",
+      "value": 40,
+      "unit": "g",
+      "text": {
+        "en": "or Parmesan",
+        "es": "o parmesano",
+        "cat": "o parmesà",
+        "sv": "eller parmesan"
+      }
+    },
+    {
+      "id": "black_pepper",
+      "ingredient": "black_pepper",
+      "value": 0,
+      "unit": "to_taste"
+    },
+    {
+      "id": "guanciale",
+      "ingredient": "guanciale",
+      "value": 100,
+      "unit": "g",
+      "text": {
+        "en": "or bacon",
+        "es": "o bacon",
+        "cat": "o bacon",
+        "sv": "eller bacon"
+      }
+    },
+    {
+      "id": "egg",
+      "ingredient": "eggs_single",
+      "value": 1
+    },
+    {
+      "id": "egg_yolk",
+      "ingredient": "egg_yolk_single",
+      "value": 1
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Put the pepper in the pan and toast it for 1 minute.",
+        "es": "Pon la pimienta en la sartén y tuesta 1 minuto.",
+        "cat": "Posa el pebre a la paella i torra 1 minut.",
+        "sv": "Lägg peppran i pannan och rosta den i 1 minut."
+      },
+      "ingredients": [
+        "black_pepper"
+      ]
+    },
+    {
+      "text": {
+        "en": "Transfer the pepper to a large bowl. Add the guanciale or bacon to the pan and let it brown.",
+        "es": "Pasa la pimienta a un bol grande. Añade el guanciale o el bacon a la sartén y deja que se dore.",
+        "cat": "Passa el pebre a un bol gran. Afegeix el guanciale o el bacon a la paella i deixa que es dauri.",
+        "sv": "Flytta peppran till en stor skål. Lägg guanciale eller bacon i pannan och låt det bli gyllenbrunt."
+      },
+      "ingredients": [
+        "black_pepper",
+        "guanciale"
+      ]
+    },
+    {
+      "text": {
+        "en": "Meanwhile, cook the pasta in a pot of salted water.",
+        "es": "Mientras tanto, cuece la pasta en una olla con agua salada.",
+        "cat": "Mentrestant, cou la pasta en una olla amb aigua salada.",
+        "sv": "Koka under tiden pastan i en kastrull med saltat vatten."
+      },
+      "ingredients": [
+        "pasta"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the egg and egg yolk to the bowl and beat them.",
+        "es": "Añade el huevo y la yema al bol y bátelos.",
+        "cat": "Afegeix l'ou i el rovell al bol i bateu-los.",
+        "sv": "Tillsätt ägget och äggulan i skålen och vispa dem."
+      },
+      "ingredients": [
+        "egg",
+        "egg_yolk",
+        "black_pepper"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the cheese and mix again with a whisk.",
+        "es": "Añade el queso y vuelve a mezclar con unas varillas.",
+        "cat": "Afegeix el formatge i torna a barrejar amb unes varetes.",
+        "sv": "Tillsätt osten och rör om igen med en visp."
+      },
+      "ingredients": [
+        "cheese",
+        "egg",
+        "egg_yolk"
+      ]
+    },
+    {
+      "text": {
+        "en": "When the guanciale or bacon is golden, pour the rendered fat into the bowl and whisk quickly so it emulsifies slightly. Add the meat back to the bowl.",
+        "es": "Cuando el guanciale o el bacon esté dorado, vierte la grasa en el bol y bate rápido con las varillas para que emulsione un poco. Añade el bacon.",
+        "cat": "Quan el guanciale o el bacon estigui daurat, aboca el greix al bol i bate ràpid amb les varetes perquè emulsioni un poc. Afegeix el bacon.",
+        "sv": "När guanciale eller bacon är gyllenbrunt, häll fettet i skålen och vispa snabbt så att det emulgerar lite. Lägg till köttet i skålen."
+      },
+      "ingredients": [
+        "guanciale",
+        "cheese",
+        "egg",
+        "egg_yolk"
+      ]
+    },
+    {
+      "text": {
+        "en": "When the pasta is al dente, drain it — it does not need to be fully dry — and quickly transfer it to the bowl. Mix fast so the sauce sets with the residual heat from the pasta.",
+        "es": "Cuando la pasta esté al dente, escúrrala — no hace falta que esté seca — y ponla rápido en el bol. Mezcla rápido para que la salsa se cueza con el calor residual de la pasta.",
+        "cat": "Quan la pasta estigui al dente, escorre-la — no cal que estigui seca — i posa-la ràpid al bol. Barreja ràpid perquè la salsa es cuï amb el calor residual de la pasta.",
+        "sv": "När pastan är al dente, häll av den — den behöver inte vara helt torr — och lägg den snabbt i skålen. Rör om hastigt så att såsen sätter sig med residualvärmen från pastan."
+      },
+      "ingredients": [
+        "pasta",
+        "guanciale",
+        "cheese",
+        "egg",
+        "egg_yolk"
+      ]
+    },
+    {
+      "text": {
+        "en": "Serve immediately — carbonara is best eaten hot and fresh. Enjoy!",
+        "es": "Sirve al momento — la carbonara se disfruta mejor caliente y recién hecha. ¡A comer!",
+        "cat": "Serveix al moment — la carbonara es gaude millor calenta i acabada de fer. Bon profit!",
+        "sv": "Servera direkt — carbonara är bäst varm och nygjord. Smaklig måltid!"
+      }
+    }
+  ]
+}

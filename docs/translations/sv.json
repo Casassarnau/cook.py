@@ -161,7 +161,13 @@
     "pearl_sugar": "pärlsocker",
     "anise_seeds": "anisfrön",
     "anise_liqueur": "anislikör",
-    "chufa": "jordmandlar"
+    "chufa": "jordmandlar",
+    "pasta": "pasta",
+    "pecorino_cheese": "pecorinoost",
+    "guanciale": "guanciale",
+    "bacon": "bacon",
+    "egg_yolk": "äggulor",
+    "egg_yolk_single": "äggula"
   },
   "units": {
     "g": "g",

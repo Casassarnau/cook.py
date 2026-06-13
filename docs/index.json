@@ -353,6 +353,29 @@
   },
   {
     "title": {
+      "en": "Pasta Carbonara",
+      "es": "Pasta carbonara",
+      "cat": "Pasta carbonara",
+      "sv": "Pasta carbonara"
+    },
+    "categories": [
+      "mains"
+    ],
+    "path": "recipes/pasta_carbonara.json",
+    "image": "/images/pasta_carbonara/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "pasta",
+      "pecorino_cheese",
+      "black_pepper",
+      "guanciale",
+      "eggs_single",
+      "egg_yolk_single"
+    ]
+  },
+  {
+    "title": {
       "en": "Spanish Potato Omelette",
       "es": "Tortilla de patatas",
       "cat": "Truita de patates",

@@ -161,7 +161,13 @@
     "pearl_sugar": "azúcar perlado",
     "anise_seeds": "anís",
     "anise_liqueur": "licor de anís",
-    "chufa": "chufas"
+    "chufa": "chufas",
+    "pasta": "pasta",
+    "pecorino_cheese": "queso pecorino",
+    "guanciale": "guanciale",
+    "bacon": "bacon",
+    "egg_yolk": "yemas de huevo",
+    "egg_yolk_single": "yema de huevo"
   },
   "units": {
     "g": "g",

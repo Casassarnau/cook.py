@@ -161,7 +161,13 @@
     "pearl_sugar": "pearl sugar",
     "anise_seeds": "anise seeds",
     "anise_liqueur": "anise liqueur",
-    "chufa": "tiger nuts (chufa)"
+    "chufa": "tiger nuts (chufa)",
+    "pasta": "pasta",
+    "pecorino_cheese": "Pecorino cheese",
+    "guanciale": "guanciale",
+    "bacon": "bacon",
+    "egg_yolk": "egg yolks",
+    "egg_yolk_single": "egg yolk"
   },
   "units": {
     "g": "g",

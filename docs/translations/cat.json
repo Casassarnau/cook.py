@@ -161,7 +161,13 @@
     "pearl_sugar": "sucre perlat",
     "anise_seeds": "anís",
     "anise_liqueur": "licor d'anís",
-    "chufa": "xufes"
+    "chufa": "xufes",
+    "pasta": "pasta",
+    "pecorino_cheese": "formatge pecorino",
+    "guanciale": "guanciale",
+    "bacon": "bacon",
+    "egg_yolk": "rovells d'ou",
+    "egg_yolk_single": "rovell d'ou"
   },
   "units": {
     "g": "g",
