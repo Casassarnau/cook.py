@@ -1,0 +1,111 @@
+{
+  "title": {
+    "en": "Tiger Nut Horchata (Horchata de Chufa)",
+    "es": "Horchata de chufa",
+    "cat": "Orxata de xufa",
+    "sv": "Horchata de chufa (jordmandeldryck)"
+  },
+  "author": "Arnau",
+  "categories": [
+    "drinks"
+  ],
+  "image": "/images/horchata_de_chufa/main.webp",
+  "description": {
+    "en": "Fresh, creamy Valencian-style tiger nut horchata made from soaked chufas. Best served ice-cold and consumed within a day or two.",
+    "es": "Horchata de chufa fresca y cremosa, al estilo valenciano. Mejor servida bien fría y consumida en uno o dos días.",
+    "cat": "Orxata de xufa fresca i cremosa, d'estil valencià. Millor servida ben freda i consumida en un o dos dies.",
+    "sv": "Färsk, krämig horchata de chufa i valenciansk stil. Serveras iskall och bör drickas inom en till två dagar."
+  },
+  "portion": {
+    "type": "servings",
+    "value": 4,
+    "unit": "servings"
+  },
+  "ingredients": [
+    {
+      "id": "chufa",
+      "ingredient": "chufa",
+      "value": 250,
+      "unit": "g"
+    },
+    {
+      "id": "water",
+      "ingredient": "water",
+      "value": 1,
+      "unit": "l",
+      "text": {
+        "en": "very cold",
+        "es": "muy fría",
+        "cat": "molt freda",
+        "sv": "mycket kallt"
+      }
+    },
+    {
+      "id": "sugar",
+      "ingredient": "sugar",
+      "value": 0,
+      "unit": "to_taste"
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Rinse the tiger nuts well and soak them covered in water for 1–2 days in the fridge. Meanwhile, keep the recipe water in the fridge so it is very cold when you blend.",
+        "es": "Limpia bien las chufas y déjalas en remojo cubiertas de agua durante 1 o 2 días en la nevera. Mientras tanto, guarda el agua de la receta en la nevera para tenerla muy fría.",
+        "cat": "Neteja bé les xufes i deixa-les en remull cobertes d'aigua durant 1 o 2 dies a la nevera. Mentrestant, guarda l'aigua de la recepta a la nevera per tenir-la molt freda.",
+        "sv": "Skölj jordmandlarna noggrant och blötlägg dem täckta med vatten i 1–2 dagar i kylskåpet. Förvara under tiden receptvattnet i kylskåpet så att det är riktigt kallt."
+      },
+      "ingredients": [
+        "chufa",
+        "water"
+      ]
+    },
+    {
+      "text": {
+        "en": "Drain the tiger nuts, discarding the soaking water. Put them in a food processor or powerful hand blender with part of the chilled water. Blend for 1 minute, stopping to scrape down the sides with a spatula. Add the remaining water and blend for another minute at a slower speed.",
+        "es": "Escurre las chufas desechando el agua del remojo. Colócalas en una procesadora de alimentos o minipimer potente con una parte del agua fría reservada. Tritura 1 minuto, parando para bajar los restos con una espátula. Añade el resto del agua y tritura 1 minuto más a velocidad más lenta.",
+        "cat": "Escorre les xufes descartant l'aigua del remull. Posa-les en una processadora d'aliments o minipimer potent amb una part de l'aigua freda reservada. Tritura 1 minut, aturant per baixar els restes amb una espàtula. Afegeix la resta de l'aigua i tritura 1 minut més a velocitat més lenta.",
+        "sv": "Häll av jordmandlarna och kasta blötläggningsvattnet. Lägg dem i en matberedare eller kraftig stavmixer med en del av det kylda vattnet. Mixa i 1 minut och skrapa ner sidorna med en spatla. Tillsätt resten av vattnet och mixa 1 minut till på lägre hastighet."
+      },
+      "ingredients": [
+        "chufa",
+        "water"
+      ],
+      "thermomix": {
+        "text": {
+          "en": "Drain the tiger nuts, discarding the soaking water. Put them in the Thermomix bowl with part of the chilled water. Blend 1 min / speed 10, stopping to scrape down the sides. Add the remaining water and blend 1 min / speed 6.",
+          "es": "Escurre las chufas desechando el agua del remojo. Colócalas en el vaso con una parte del agua fría reservada. Tritura 1 min / vel 10, parando para bajar los restos con la espátula. Añade el resto del agua y tritura 1 min / vel 6.",
+          "cat": "Escorre les xufes descartant l'aigua del remull. Posa-les al got amb una part de l'aigua freda reservada. Tritura 1 min / vel 10, aturant per baixar els restes amb l'espàtula. Afegeix la resta de l'aigua i tritura 1 min / vel 6.",
+          "sv": "Häll av jordmandlarna och kasta blötläggningsvattnet. Lägg dem i Thermomix-skålen med en del av det kylda vattnet. Mixa 1 min / hast 10 och skrapa ner sidorna. Tillsätt resten av vattnet och mixa 1 min / hast 6."
+        },
+        "settings": {
+          "time": 60,
+          "speed": 10
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Strain the mixture through a fine sieve — ideally a nut-milk bag or cloth coffee strainer. Press the tiger nut pulp firmly to extract as much flavor as possible.",
+        "es": "Pasa la mezcla por un colador fino; recomiendo un colador de tela para bebidas vegetales o de café. Presiona bien el bagazo de chufa para exprimir todo el sabor.",
+        "cat": "Passa la barreja per un colador fi; recomano un de tela per a begudes vegetals o de cafè. Prem bé el bagasse de xufa per extreure tot el sabor.",
+        "sv": "Sila blandningen genom ett finmaskigt durk — helst en nöt- eller växtmjölksduk eller kaffefilterduk. Pressa bagaset hårt för att få ut så mycket smak som möjligt."
+      },
+      "ingredients": [
+        "chufa",
+        "water"
+      ]
+    },
+    {
+      "text": {
+        "en": "Sweeten to taste with sugar, refrigerate, and serve very cold. Fresh horchata is heat-sensitive: drink it the same day or the next. Store it in the coldest part of the fridge. It can be frozen, but sediment settles at the bottom — shake well before serving.",
+        "es": "Endulza al gusto con azúcar, guarda en la nevera y sírvela bien fría. La horchata fresca es muy sensible al calor: consúmela el mismo día o al día siguiente. Guárdala en la parte más fría de la nevera. También se puede congelar, pero el sedimento se deposita en el fondo — agítala bien antes de servir.",
+        "cat": "Endolceix al gust amb sucre, guarda a la nevera i serveix-la ben freda. L'orxata fresca és molt sensible a la calor: consumeix-la el mateix dia o l'endemà. Guarda-la a la part més freda de la nevera. També es pot congelar, però el sediments es diposita al fons — sacseja-la bé abans de servir.",
+        "sv": "Söt efter smak med socker, kyl och servera mycket kall. Färsk horchata är känslig för värme: drick den samma dag eller dagen efter. Förvara i kylskåpets kallaste del. Den går att frysa, men sedimentet lägger sig på botten — skaka väl före servering."
+      },
+      "ingredients": [
+        "sugar"
+      ]
+    }
+  ]
+}

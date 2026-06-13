@@ -395,5 +395,26 @@
       "sugar",
       "butter"
     ]
+  },
+  {
+    "title": {
+      "en": "Tiger Nut Horchata (Horchata de Chufa)",
+      "es": "Horchata de chufa",
+      "cat": "Orxata de xufa",
+      "sv": "Horchata de chufa (jordmandeldryck)"
+    },
+    "categories": [
+      "drinks",
+      "thermomix"
+    ],
+    "path": "recipes/horchata_de_chufa.json",
+    "image": "/images/horchata_de_chufa/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "chufa",
+      "water",
+      "sugar"
+    ]
   }
 ]
