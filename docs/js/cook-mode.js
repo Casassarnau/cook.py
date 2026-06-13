@@ -10,7 +10,13 @@ function recipeCookMode() {
       const saved = sessionStorage.getItem(this.cookStepStorageKey(recipeName));
       if (saved == null) return 0;
       const index = parseInt(saved, 10);
-      return Number.isFinite(index) && index >= 0 ? index : 0;
+      if (!Number.isFinite(index) || index < 0) return 0;
+      const count = this.cookStepCount();
+      if (count > 0 && index >= count - 1) {
+        sessionStorage.removeItem(this.cookStepStorageKey(recipeName));
+        return 0;
+      }
+      return index;
     },
 
     saveCookStepIndex(recipeName, index) {

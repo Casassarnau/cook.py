@@ -27,7 +27,7 @@
       html.dark { background-color: #0f172a; }
       body {
         min-height: 100vh;
-        min-height: 100dvh;
+        min-height: 100svh;
         margin: 0;
         background: linear-gradient(to bottom, #bae6fd, #bfdbfe, #c7d2fe);
         color: #1e3a8a;
@@ -158,12 +158,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style type="text/tailwindcss">
       @custom-variant dark (&:where(.dark, .dark *));
+      @theme {
+        --spacing-cook-dock: calc(3.75rem + max(0.75rem, env(safe-area-inset-bottom)));
+      }
     </style>
     <link rel="stylesheet" href="css/app.css" />
   </head>
 
   <body
-    class="min-h-screen relative transition-colors duration-300"
+    class="min-h-svh relative transition-colors duration-300"
     :class="darkMode
       ? 'bg-gradient-to-b from-gray-900 via-slate-900 to-blue-950 text-gray-100'
       : 'bg-gradient-to-b from-sky-200 via-blue-200 to-indigo-200 text-blue-900'"
