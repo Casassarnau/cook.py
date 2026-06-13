@@ -2,14 +2,15 @@
 <div
   x-show="showDimensionConfig && hasArea()"
   x-data="bottomSheetDrag(() => { showDimensionConfig = false }, { desktopModal: true })"
-  x-init="$watch('showDimensionConfig', value => { if (!value) resetDrag() })"
-  class="vv-overlay z-50 max-md:touch-none"
+  x-init="$watch('showDimensionConfig', value => onOpenChange(value))"
+  class="vv-overlay z-50 max-md:touch-none overscroll-none"
   style="display: none;"
   role="dialog"
   aria-modal="true"
   aria-label="Configure Pan Dimensions"
   @pointermove.window="doDrag"
   @pointerup.window="endDrag"
+  @pointercancel.window="endDrag"
 >
   <div
     x-show="showDimensionConfig"

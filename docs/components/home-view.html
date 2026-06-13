@@ -50,13 +50,14 @@
     <div
       x-show="isFilterOpen"
       x-data="bottomSheetDrag(() => { isFilterOpen = false })"
-      x-init="$watch('isFilterOpen', value => { if (!value) resetDrag() })"
-      class="vv-overlay z-50 md:hidden touch-none"
+      x-init="$watch('isFilterOpen', value => onOpenChange(value))"
+      class="vv-overlay z-50 md:hidden touch-none overscroll-none"
       style="display: none;"
       role="dialog"
       aria-modal="true"
       @pointermove.window="doDrag"
       @pointerup.window="endDrag"
+      @pointercancel.window="endDrag"
     >
       <div
         x-show="isFilterOpen"
@@ -104,7 +105,7 @@
           </button>
         </div>
 
-        <div class="flex flex-col gap-3 overflow-y-auto pb-6 touch-pan-y">
+        <div class="flex flex-col gap-3 overflow-y-auto overscroll-contain pb-6 touch-pan-y">
           <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Categories</p>
 
           <button
