@@ -188,22 +188,33 @@
     "whole_wheat_pastry_flour": "harina integral"
   },
   "units": {
+    "as_needed": "según sea necesario",
+    "cm": "cm",
     "g": "g",
     "kg": "kg",
-    "ml": "ml",
     "l": "l",
-    "servings": "raciones",
-    "cm": "cm",
-    "as_needed": "según sea necesario",
+    "ml": "ml",
+    "pinch": {
+      "1": "pizca",
+      "1+": "pizcas"
+    },
+    "servings": {
+      "1": "ración",
+      "1+": "raciones"
+    },
+    "tbsp": {
+      "1": "cucharada",
+      "1+": "cucharadas"
+    },
     "to_taste": "al gusto",
-    "tsp": "cucharadita",
-    "tbsp": "cucharada",
-    "pizza": "pizza",
-    "waffle": "gofres",
-    "pan": "bandeja",
-    "unit": "unidades",
-    "unit_single": "unidad",
-    "pinch": "Una pizca"
+    "tsp": {
+      "1": "cucharadita",
+      "1+": "cucharaditas"
+    },
+    "unit": {
+      "1": "unidad",
+      "1+": "unidades"
+    }
   },
   "connectors": {
     "g": "de",
@@ -215,10 +226,8 @@
     "to_taste": "",
     "tsp": "de",
     "tbsp": "de",
-    "pizza": "",
-    "waffle": "",
-    "pan": "",
-    "for": "para",
-    "pinch": "de"
+    "unit": "",
+    "pinch": "de",
+    "for": "para"
   }
 }

@@ -57,7 +57,7 @@ function recipeIngredients() {
           return variationKey && allowed.includes(variationKey);
         })
         .map(e => {
-          const unit = e.unit ? this.t(`units.${e.unit}`) || e.unit : '';
+          const calculatedValue = e.value * multiplier;
           const connector = e.unit ? this.t(`connectors.${e.unit}`) || '' : '';
           const text = this.translateField(e.text);
           const emoji = this.getIngredientEmoji(e.ingredient);
@@ -69,13 +69,12 @@ function recipeIngredients() {
 
           if (e.value === 0) {
             displayValue = '';
-            displayUnit = unit;
+            displayUnit = e.unit ? this.unitName(e.unit) : '';
             displayConnector = connector;
             ingredientName = this.ingredientName(e.ingredient);
           } else {
-            const calculatedValue = e.value * multiplier;
             displayValue = this.formatValue(calculatedValue);
-            displayUnit = unit;
+            displayUnit = e.unit ? this.unitName(e.unit, calculatedValue) : '';
             displayConnector = connector;
             ingredientName = this.pluralizeIngredient(e.ingredient, calculatedValue, e.unit);
           }

@@ -90,31 +90,31 @@ function recipePortions() {
 
       if (this.hasServings()) {
         const unit = portion?.unit || this.selectedRecipe.servings?.unit || 'servings';
-        const unitText = this.t(`units.${unit}`);
+        const unitText = this.unitName(unit, this.currentServings);
         return `${forConnector} ${this.currentServings} ${unitText}`;
       }
 
       if (this.hasUnits()) {
         const unit = portion?.unit || this.selectedRecipe.units?.unit || 'unit';
-        const unitText = this.t(`units.${unit}`) || unit;
+        const unitText = this.unitName(unit, this.currentUnits);
         return `${forConnector} ${this.currentUnits} ${unitText}`;
       }
 
       if (this.hasCircularArea()) {
         const unit = portion?.dimensions?.unit || 'cm';
-        const unitText = this.t(`units.${unit}`);
+        const unitText = this.unitName(unit);
         return `${forConnector} ø ${this.currentDimensions.diameter} ${unitText} 🍰`;
       }
 
       if (this.hasRectangularArea()) {
         const unit = portion?.dimensions?.unit || 'cm';
-        const unitText = this.t(`units.${unit}`);
+        const unitText = this.unitName(unit);
         return `${forConnector} ${this.currentDimensions.width}×${this.currentDimensions.height} ${unitText} 📐`;
       }
 
       if (this.hasDiameter()) {
         const unit = portion?.unit || this.selectedRecipe.diameter?.unit || 'cm';
-        const unitText = this.t(`units.${unit}`);
+        const unitText = this.unitName(unit);
         const connector = this.t(`connectors.${unit}`);
 
         if (unit === 'cm') {
@@ -133,31 +133,31 @@ function recipePortions() {
 
       if (this.hasServings()) {
         const unit = portion?.unit || this.selectedRecipe.servings?.unit || 'servings';
-        const unitText = this.t(`units.${unit}`);
+        const unitText = this.unitName(unit, this.currentServings);
         return `${this.currentServings} ${unitText}`;
       }
 
       if (this.hasUnits()) {
         const unit = portion?.unit || this.selectedRecipe.units?.unit || 'unit';
-        const unitText = this.t(`units.${unit}`) || unit;
+        const unitText = this.unitName(unit, this.currentUnits);
         return `${this.currentUnits} ${unitText}`;
       }
 
       if (this.hasCircularArea()) {
         const unit = portion?.dimensions?.unit || 'cm';
-        const unitText = this.t(`units.${unit}`);
+        const unitText = this.unitName(unit);
         return `ø ${this.currentDimensions.diameter} ${unitText} 🍰`;
       }
 
       if (this.hasRectangularArea()) {
         const unit = portion?.dimensions?.unit || 'cm';
-        const unitText = this.t(`units.${unit}`);
+        const unitText = this.unitName(unit);
         return `${this.currentDimensions.width}×${this.currentDimensions.height} ${unitText} 📐`;
       }
 
       if (this.hasDiameter()) {
         const unit = portion?.unit || this.selectedRecipe.diameter?.unit || 'cm';
-        const unitText = this.t(`units.${unit}`);
+        const unitText = this.unitName(unit);
         const connector = this.t(`connectors.${unit}`);
 
         if (unit === 'cm') {

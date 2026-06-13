@@ -19,7 +19,7 @@
   "portion": {
     "type": "units",
     "value": 4,
-    "unit": "waffle"
+    "unit": "unit"
   },
   "ingredients": [
     {

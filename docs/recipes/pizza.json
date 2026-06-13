@@ -20,7 +20,7 @@
   "portion": {
     "type": "units",
     "value": 2,
-    "unit": "pizza"
+    "unit": "unit"
   },
   "ingredients": [
     {

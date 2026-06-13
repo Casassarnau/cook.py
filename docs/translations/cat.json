@@ -188,22 +188,33 @@
     "whole_wheat_pastry_flour": "farina integral"
   },
   "units": {
+    "as_needed": "segons calgui",
+    "cm": "cm",
     "g": "g",
     "kg": "kg",
-    "ml": "ml",
     "l": "l",
-    "servings": "racions",
-    "cm": "cm",
-    "as_needed": "segons calgui",
+    "ml": "ml",
+    "pinch": {
+      "1": "pèl",
+      "1+": "pessols"
+    },
+    "servings": {
+      "1": "ració",
+      "1+": "racions"
+    },
+    "tbsp": {
+      "1": "cullera",
+      "1+": "culleres"
+    },
     "to_taste": "al gust",
-    "tsp": "culleradeta",
-    "tbsp": "cullera",
-    "pizza": "pizza",
-    "waffle": "gofres",
-    "pan": "safata",
-    "unit": "unitats",
-    "unit_single": "unitat",
-    "pinch": "Un pèl"
+    "tsp": {
+      "1": "culleradeta",
+      "1+": "culleradetes"
+    },
+    "unit": {
+      "1": "unitat",
+      "1+": "unitats"
+    }
   },
   "connectors": {
     "g": "de",
@@ -215,10 +226,8 @@
     "to_taste": "",
     "tsp": "de",
     "tbsp": "de",
-    "pizza": "",
-    "waffle": "",
-    "pan": "",
-    "for": "per a",
-    "pinch": "de"
+    "unit": "",
+    "pinch": "de",
+    "for": "per a"
   }
 }

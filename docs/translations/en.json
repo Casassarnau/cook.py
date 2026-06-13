@@ -188,22 +188,27 @@
     "whole_wheat_pastry_flour": "whole wheat pastry flour"
   },
   "units": {
+    "as_needed": "as needed",
+    "cm": "cm",
     "g": "g",
     "kg": "kg",
-    "ml": "ml",
     "l": "l",
-    "servings": "servings",
-    "cm": "cm",
-    "as_needed": "as needed",
+    "ml": "ml",
+    "pinch": {
+      "1": "pinch",
+      "1+": "pinches"
+    },
+    "servings": {
+      "1": "serving",
+      "1+": "servings"
+    },
+    "tbsp": "tbsp",
     "to_taste": "to taste",
     "tsp": "tsp",
-    "tbsp": "tbsp",
-    "pizza": "pizza",
-    "waffle": "waffles",
-    "pan": "pan",
-    "unit": "units",
-    "unit_single": "unit",
-    "pinch": "A pinch"
+    "unit": {
+      "1": "unit",
+      "1+": "units"
+    }
   },
   "connectors": {
     "g": "of",
@@ -215,10 +220,8 @@
     "to_taste": "",
     "tsp": "of",
     "tbsp": "of",
-    "pizza": "",
-    "waffle": "",
-    "pan": "",
-    "for": "for",
-    "pinch": "of"
+    "unit": "",
+    "pinch": "of",
+    "for": "for"
   }
 }

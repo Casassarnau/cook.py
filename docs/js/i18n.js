@@ -32,22 +32,46 @@ function recipeI18n() {
       return this.emojis[ingredientKey] || '•';
     },
 
-    getIngredientTranslation(ingredientKey) {
-      return this.t(`ingredients.${ingredientKey}`, null);
-    },
-
-    resolveIngredientName(translation, value, unit) {
+    resolvePluralizedName(translation, useSingular) {
       if (typeof translation === 'string') return translation;
       if (translation && typeof translation === 'object') {
-        const useSingular = value === 1 && !unit;
-        return useSingular ? translation['1'] : translation['1+'];
+        const value = useSingular ? translation['1'] : translation['1+'];
+        return typeof value === 'string' ? value : null;
       }
       return null;
     },
 
-    ingredientName(ingredientKey, value = null, unit = null) {
+    formatLocalizedLabel(section, key, count = null) {
+      if (typeof key !== 'string') return '';
+      const translation = this.t(`${section}.${key}`, null);
+      if (count == null) {
+        return this.resolvePluralizedName(translation, false) ||
+          (typeof translation === 'string' ? translation : key);
+      }
+      return this.resolvePluralizedName(translation, Number(count) === 1) ||
+        (typeof translation === 'string' ? translation : key);
+    },
+
+    getIngredientTranslation(ingredientKey) {
+      return this.t(`ingredients.${ingredientKey}`, null);
+    },
+
+    getUnitTranslation(unitKey) {
+      return this.t(`units.${unitKey}`, null);
+    },
+
+    resolveIngredientName(translation, value, unitKey) {
+      const useSingular = value === 1 && !unitKey;
+      return this.resolvePluralizedName(translation, useSingular);
+    },
+
+    ingredientName(ingredientKey, value = null, unitKey = null) {
       const translation = this.getIngredientTranslation(ingredientKey);
-      return this.resolveIngredientName(translation, value, unit) || ingredientKey;
+      return this.resolveIngredientName(translation, value, unitKey) || ingredientKey;
+    },
+
+    unitName(unitKey, count = null) {
+      return this.formatLocalizedLabel('units', unitKey, count);
     },
 
     ingredientSearchNames(ingredientKey) {

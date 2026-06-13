@@ -182,22 +182,27 @@
     "whole_wheat_pastry_flour": "fullkornsmjöl"
   },
   "units": {
+    "as_needed": "efter behov",
+    "cm": "cm",
     "g": "g",
     "kg": "kg",
-    "ml": "ml",
     "l": "l",
-    "servings": "portioner",
-    "cm": "cm",
-    "as_needed": "efter behov",
+    "ml": "ml",
+    "pinch": {
+      "1": "nypa",
+      "1+": "nypor"
+    },
+    "servings": {
+      "1": "portion",
+      "1+": "portioner"
+    },
+    "tbsp": "msk",
     "to_taste": "efter smak",
     "tsp": "tsk",
-    "tbsp": "msk",
-    "pizza": "pizza",
-    "waffle": "våfflor",
-    "pan": "form",
-    "unit": "enheter",
-    "unit_single": "enhet",
-    "pinch": "En nypa"
+    "unit": {
+      "1": "enhet",
+      "1+": "enheter"
+    }
   },
   "connectors": {
     "g": "av",
@@ -209,10 +214,8 @@
     "to_taste": "",
     "tsp": "av",
     "tbsp": "av",
-    "pizza": "",
-    "waffle": "",
-    "pan": "",
-    "for": "för",
-    "pinch": "av"
+    "unit": "",
+    "pinch": "av",
+    "for": "för"
   }
 }
