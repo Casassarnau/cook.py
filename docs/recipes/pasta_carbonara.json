@@ -66,12 +66,12 @@
     },
     {
       "id": "egg",
-      "ingredient": "eggs_single",
+      "ingredient": "eggs",
       "value": 1
     },
     {
       "id": "egg_yolk",
-      "ingredient": "egg_yolk_single",
+      "ingredient": "egg_yolk",
       "value": 1
     }
   ],

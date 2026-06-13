@@ -1,15 +1,7 @@
 function recipeIngredients() {
   return {
     pluralizeIngredient(ingredientKey, value, unit) {
-      const useSingular = value === 1 && !unit;
-
-      if (useSingular) {
-        const singularKey = `${ingredientKey}_single`;
-        const singularName = this.t(`ingredients.${singularKey}`);
-        return singularName || this.t(`ingredients.${ingredientKey}`) || ingredientKey;
-      }
-
-      return this.t(`ingredients.${ingredientKey}`) || ingredientKey;
+      return this.ingredientName(ingredientKey, value, unit);
     },
 
     currentIngredients() {
@@ -79,7 +71,7 @@ function recipeIngredients() {
             displayValue = '';
             displayUnit = unit;
             displayConnector = connector;
-            ingredientName = this.t(`ingredients.${e.ingredient}`) || e.ingredient;
+            ingredientName = this.ingredientName(e.ingredient);
           } else {
             const calculatedValue = e.value * multiplier;
             displayValue = this.formatValue(calculatedValue);

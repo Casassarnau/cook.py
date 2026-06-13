@@ -31,5 +31,32 @@ function recipeI18n() {
     getIngredientEmoji(ingredientKey) {
       return this.emojis[ingredientKey] || '•';
     },
+
+    getIngredientTranslation(ingredientKey) {
+      return this.t(`ingredients.${ingredientKey}`, null);
+    },
+
+    resolveIngredientName(translation, value, unit) {
+      if (typeof translation === 'string') return translation;
+      if (translation && typeof translation === 'object') {
+        const useSingular = value === 1 && !unit;
+        return useSingular ? translation['1'] : translation['1+'];
+      }
+      return null;
+    },
+
+    ingredientName(ingredientKey, value = null, unit = null) {
+      const translation = this.getIngredientTranslation(ingredientKey);
+      return this.resolveIngredientName(translation, value, unit) || ingredientKey;
+    },
+
+    ingredientSearchNames(ingredientKey) {
+      const translation = this.getIngredientTranslation(ingredientKey);
+      if (typeof translation === 'string') return [translation];
+      if (translation && typeof translation === 'object') {
+        return [...new Set([translation['1'], translation['1+']].filter(Boolean))];
+      }
+      return [ingredientKey];
+    },
   };
 }

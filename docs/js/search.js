@@ -17,14 +17,7 @@ function recipeSearch() {
     matchesSearchTerms(recipe, searchTerms, isIngredientSearch) {
       if (isIngredientSearch) {
         const ingredientKeys = recipe.ingredient_keys || [];
-        const ingredientNames = ingredientKeys.flatMap(key => {
-          const names = [this.t(`ingredients.${key}`)];
-          const singular = this.t(`ingredients.${key}_single`, null);
-          if (singular && singular !== names[0]) {
-            names.push(singular);
-          }
-          return names;
-        });
+        const ingredientNames = ingredientKeys.flatMap(key => this.ingredientSearchNames(key));
         return searchTerms.every(term =>
           ingredientNames.some(key =>
             this.normalizeText(key).includes(this.normalizeText(term))
