@@ -61,7 +61,7 @@ function recipeI18n() {
     },
 
     resolveIngredientName(translation, value, unitKey) {
-      const useSingular = value === 1 && !unitKey;
+      const useSingular = value === 1 && (!unitKey || unitKey === 'unit');
       return this.resolvePluralizedName(translation, useSingular);
     },
 

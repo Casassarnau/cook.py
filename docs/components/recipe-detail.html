@@ -11,7 +11,13 @@
     </button>
 
     <div class="relative mb-4">
-      <img :src="getImageUrl(selectedRecipe.image, 'lower')" alt="" class="w-full h-56 sm:h-72 md:h-96 object-cover rounded-lg" loading="lazy" />
+      <img
+        :src="getImageUrl(selectedRecipe.image, 'lower')"
+        @error="handleImageError($event, 'lower')"
+        alt=""
+        class="w-full h-56 sm:h-72 md:h-96 object-cover rounded-lg"
+        loading="lazy"
+      />
       <button
         type="button"
         @click="showImageModal = true"
@@ -125,6 +131,7 @@
             <template x-if="step.image">
               <img
                 :src="getImageUrl(step.image, 'lower')"
+                @error="handleImageError($event, 'lower')"
                 alt="Step illustration"
                 class="block w-full max-h-96 sm:max-h-[28rem] md:max-h-[32rem] object-cover object-center"
                 :class="darkMode

@@ -74,7 +74,7 @@ function recipeIngredients() {
             ingredientName = this.ingredientName(e.ingredient);
           } else {
             displayValue = this.formatValue(calculatedValue);
-            displayUnit = e.unit ? this.unitName(e.unit, calculatedValue) : '';
+            displayUnit = e.unit && e.unit !== 'unit' ? this.unitName(e.unit, calculatedValue) : '';
             displayConnector = connector;
             ingredientName = this.pluralizeIngredient(e.ingredient, calculatedValue, e.unit);
           }

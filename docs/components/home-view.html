@@ -142,7 +142,13 @@
                 : 'bg-gray-100 text-gray-900 border border-gray-300 hover:shadow-lg hover:bg-white'"
       >
         <div class="relative">
-          <img :src="getImageUrl(item.image, 'lower')" alt="" class="w-full h-40 object-cover" loading="lazy" />
+          <img
+            :src="getImageUrl(item.image, 'lower')"
+            @error="handleImageError($event, 'lower')"
+            alt=""
+            class="w-full h-40 object-cover"
+            loading="lazy"
+          />
           <template x-if="item.development">
             <!-- @include partials/development-badge-card.html -->
           </template>

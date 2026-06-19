@@ -64,6 +64,7 @@
     "banana": "banana",
     "bean": "bean",
     "beers": "beers",
+    "bell_pepper": "bell pepper",
     "black_pepper": "ground black pepper",
     "blue_cheese": "blue cheese",
     "blueberry": "blueberry",
@@ -74,6 +75,7 @@
       "1": "carrot",
       "1+": "carrots"
     },
+    "cheese": "cheese",
     "cherry": "cherry",
     "chestnut": "chestnut",
     "chicken": "chicken",
@@ -88,6 +90,7 @@
       "1": "crushed tomato",
       "1+": "crushed tomatoes"
     },
+    "cucumber": "cucumber",
     "cupcake": "cupcake",
     "dango": "dango",
     "dark_chocolate_chips": "dark chocolate chips",
@@ -108,6 +111,7 @@
     "extra_virgin_olive_oil": "extra virgin olive oil",
     "flour": "flour",
     "fortune_cookie": "fortune cookie",
+    "garlic": "garlic",
     "fresh_cheese": "fresh cheese",
     "fresh_herbs": "fresh herbs",
     "fresh_mozzarella": {
@@ -179,13 +183,18 @@
     "tomato": "tomato",
     "unsweetened_cocoa_powder": "unsweetened cocoa powder",
     "vanilla_extract": "vanilla extract",
+    "vinegar": "vinegar",
     "waffle": "waffle",
     "walnut": "walnut",
     "walnuts": "walnuts",
     "water": "water",
     "white_chocolate": "white chocolate",
     "white_pepper": "white pepper",
-    "whole_wheat_pastry_flour": "whole wheat pastry flour"
+    "whole_wheat_pastry_flour": "whole wheat pastry flour",
+    "zucchini": {
+      "1": "zucchini",
+      "1+": "zucchinis"
+    }
   },
   "units": {
     "as_needed": "as needed",

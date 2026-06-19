@@ -1,0 +1,202 @@
+{
+  "title": {
+    "en": "Gazpacho",
+    "es": "Gazpacho",
+    "cat": "Gazpacho",
+    "sv": "Gazpacho"
+  },
+  "author": "Arnau",
+  "categories": [
+    "mains"
+  ],
+  "image": "/images/gazpacho/main.webp",
+  "description": {
+    "en": "Classic Andalusian cold tomato soup: fresh, tangy, and perfect for hot days. Best served well chilled.",
+    "es": "Gazpacho andaluz clásico: fresco, ácido y perfecto para los días calurosos. Mejor servido bien frío.",
+    "cat": "Gazpacho andalús clàssic: fresc, àcid i perfecte per als dies calorosos. Millor servit ben fred.",
+    "sv": "Klassisk andalusisk kall tomatsoppa: fräsch, syrlig och perfekt för varma dagar. Serveras väl kyld."
+  },
+  "portion": {
+    "type": "servings",
+    "value": 4,
+    "unit": "servings"
+  },
+  "ingredients": [
+    {
+      "id": "tomato",
+      "ingredient": "tomato",
+      "value": 1,
+      "unit": "kg",
+      "text": {
+        "en": "ripe",
+        "es": "maduro",
+        "cat": "madur",
+        "sv": "mogen"
+      }
+    },
+    {
+      "id": "garlic",
+      "ingredient": "garlic",
+      "value": 1,
+      "unit": "unit",
+      "text": {
+        "en": "clove",
+        "es": "diente",
+        "cat": "dent",
+        "sv": "klyfta"
+      }
+    },
+    {
+      "id": "bell_pepper",
+      "ingredient": "bell_pepper",
+      "value": 50,
+      "unit": "g",
+      "text": {
+        "en": "green or red",
+        "es": "verde o rojo",
+        "cat": "verd o vermell",
+        "sv": "grön eller röd"
+      }
+    },
+    {
+      "id": "onion",
+      "ingredient": "onion",
+      "value": 30,
+      "unit": "g"
+    },
+    {
+      "id": "cucumber",
+      "ingredient": "cucumber",
+      "value": 60,
+      "unit": "g"
+    },
+    {
+      "id": "vinegar",
+      "ingredient": "vinegar",
+      "value": 25,
+      "unit": "g"
+    },
+    {
+      "id": "salt",
+      "ingredient": "salt",
+      "value": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "olive_oil",
+      "ingredient": "olive_oil",
+      "value": 50,
+      "unit": "g"
+    },
+    {
+      "id": "water",
+      "ingredient": "water",
+      "value": 200,
+      "unit": "ml",
+      "text": {
+        "en": "cold or frozen",
+        "es": "fría o congelada",
+        "cat": "freda o congelada",
+        "sv": "kallt eller fruset"
+      }
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Quarter the tomatoes. Use the bell pepper without seeds. Peel the cucumber and remove the seeds.",
+        "es": "Trocea los tomates a cuartos. Usa el pimiento sin las pepitas. Pela el pepino y quita las semillas.",
+        "cat": "Talla els tomàquets a quarts. Fes servir el pebrot sense les llavors. Pela el cogombre i treu les llavors.",
+        "sv": "Skär tomaterna i kvartar. Använd paprikan utan kärnor. Skala gurkan och ta bort fröna."
+      },
+      "ingredients": [
+        "tomato",
+        "bell_pepper",
+        "cucumber"
+      ]
+    },
+    {
+      "text": {
+        "en": "Put all the ingredients except the olive oil in a food processor or powerful hand blender. Blend for about 30 seconds at medium speed.",
+        "es": "Pon todos los ingredientes menos el aceite en una procesadora de alimentos o minipimer potente. Tritura unos 30 segundos a velocidad media.",
+        "cat": "Posa tots els ingredients menys l'oli en una processadora d'aliments o minipimer potent. Tritura uns 30 segons a velocitat mitjana.",
+        "sv": "Lägg alla ingredienser utom olivoljan i en matberedare eller kraftig stavmixer. Mixa i cirka 30 sekunder på medelhastighet."
+      },
+      "ingredients": [
+        "tomato",
+        "garlic",
+        "bell_pepper",
+        "onion",
+        "cucumber",
+        "vinegar",
+        "salt",
+        "water"
+      ],
+      "thermomix": {
+        "text": {
+          "en": "Put all the ingredients except the olive oil in the Thermomix bowl. Blend 30 sec / speed 5.",
+          "es": "Pon todos los ingredientes menos el aceite en el vaso de la Thermomix. Tritura 30 seg / vel 5.",
+          "cat": "Posa tots els ingredients menys l'oli al got de la Thermomix. Tritura 30 seg / vel 5.",
+          "sv": "Lägg alla ingredienser utom olivoljan i Thermomix-skålen. Mixa 30 sek / hast 5."
+        },
+        "settings": {
+          "time": 30,
+          "speed": 5
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Blend for 3 minutes at high speed until smooth.",
+        "es": "A continuación, tritura 3 minutos a velocidad alta hasta que quede fino.",
+        "cat": "A continuació, tritura 3 minuts a velocitat alta fins que quedi fi.",
+        "sv": "Mixa sedan i 3 minuter på hög hastighet tills soppan är slät."
+      },
+      "ingredients": [],
+      "thermomix": {
+        "text": {
+          "en": "Blend 3 min / speed 10.",
+          "es": "A continuación, tritura 3 min / vel 10.",
+          "cat": "A continuació, tritura 3 min / vel 10.",
+          "sv": "Mixa sedan 3 min / hast 10."
+        },
+        "settings": {
+          "time": 180,
+          "speed": 10
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Add the olive oil and mix briefly until combined.",
+        "es": "Añade el aceite y mezcla unos segundos hasta integrarlo.",
+        "cat": "Afegeix l'oli i barreja uns segons fins integrar-lo.",
+        "sv": "Tillsätt olivoljan och mixa kort tills den är blandad."
+      },
+      "ingredients": [
+        "olive_oil"
+      ],
+      "thermomix": {
+        "text": {
+          "en": "Add the olive oil and mix 5 sec / speed 5.",
+          "es": "Añade el aceite y mezcla 5 seg / vel 5.",
+          "cat": "Afegeix l'oli i barreja 5 seg / vel 5.",
+          "sv": "Tillsätt olivoljan och mixa 5 sek / hast 5."
+        },
+        "settings": {
+          "time": 5,
+          "speed": 5
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Serve well chilled.",
+        "es": "Servir bien frío.",
+        "cat": "Servir ben fred.",
+        "sv": "Servera väl kyld."
+      },
+      "ingredients": []
+    }
+  ]
+}

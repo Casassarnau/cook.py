@@ -27,9 +27,19 @@ function recipeApp() {
           this.loadTranslations();
         });
 
+        this.loadHomeFilters();
+
         await this.loadTranslations();
         await this.loadEmojis();
         await this.loadIndex();
+
+        if (this.filterCategory && !this.categories.includes(this.filterCategory)) {
+          this.filterCategory = '';
+        }
+
+        this.$watch('searchQuery', () => this.saveHomeFilters());
+        this.$watch('filterCategory', () => this.saveHomeFilters());
+
         window.addEventListener('hashchange', () => this.handleRoute());
         await this.handleRoute();
         this.finishRoutePending();

@@ -147,6 +147,7 @@
                     <template x-if="getCookStepAt(cookSwipePreviewStepIndex()).image">
                       <img
                         :src="getImageUrl(getCookStepAt(cookSwipePreviewStepIndex()).image, 'lower')"
+                        @error="handleImageError($event, 'lower')"
                         alt=""
                         class="mt-4 block w-full max-h-64 object-cover object-center rounded-xl border"
                         :class="darkMode ? 'border-gray-700' : 'border-gray-300'"
@@ -204,6 +205,7 @@
                     <template x-if="currentCookStep().image">
                       <img
                         :src="getImageUrl(currentCookStep().image, 'lower')"
+                        @error="handleImageError($event, 'lower')"
                         alt=""
                         class="mt-4 block w-full max-h-64 md:max-h-96 object-cover object-center rounded-xl border"
                         :class="darkMode ? 'border-gray-700' : 'border-gray-300'"

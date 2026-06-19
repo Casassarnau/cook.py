@@ -1,10 +1,20 @@
+const ERROR_IMAGE = '/images/error.webp';
+
 function recipeUtils() {
   return {
     getImageUrl(path, type) {
+      let resolved = path || ERROR_IMAGE;
       if (type === 'lower') {
-        path = path.replace('.webp', '_lower.webp');
+        resolved = resolved.replace('.webp', '_lower.webp');
       }
-      return this.withBase(path);
+      return this.withBase(resolved);
+    },
+
+    handleImageError(event, lower = true) {
+      const img = event?.target;
+      if (!img) return;
+      img.onerror = null;
+      img.src = this.getImageUrl(ERROR_IMAGE, lower ? 'lower' : null);
     },
 
     withBase(path) {

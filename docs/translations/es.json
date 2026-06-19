@@ -64,6 +64,7 @@
     "banana": "plátano",
     "bean": "judía",
     "beers": "cervezas",
+    "bell_pepper": "pimiento",
     "black_pepper": "pimienta negra molida",
     "blue_cheese": "queso azul",
     "blueberry": "arándano",
@@ -74,6 +75,7 @@
       "1": "zanahoria",
       "1+": "zanahorias"
     },
+    "cheese": "queso",
     "cherry": "cereza",
     "chestnut": "castaña",
     "chicken": "pollo",
@@ -88,6 +90,7 @@
       "1": "tomate triturado",
       "1+": "tomates triturados"
     },
+    "cucumber": "pepino",
     "cupcake": "magdalena",
     "dango": "dango",
     "dark_chocolate_chips": "chips de chocolate negro",
@@ -108,6 +111,7 @@
     "extra_virgin_olive_oil": "aceite de oliva virgen extra",
     "flour": "harina",
     "fortune_cookie": "galleta de la fortuna",
+    "garlic": "ajo",
     "fresh_cheese": "queso fresco",
     "fresh_herbs": "hierbas frescas",
     "fresh_mozzarella": {
@@ -179,13 +183,18 @@
     "tomato": "tomate",
     "unsweetened_cocoa_powder": "cacao en polvo sin azúcar",
     "vanilla_extract": "extracto de vainilla",
+    "vinegar": "vinagre",
     "waffle": "gofre",
     "walnut": "nuez",
     "walnuts": "nueces",
     "water": "agua",
     "white_chocolate": "chocolate blanco",
     "white_pepper": "pimienta blanca",
-    "whole_wheat_pastry_flour": "harina integral"
+    "whole_wheat_pastry_flour": "harina integral",
+    "zucchini": {
+      "1": "calabacín",
+      "1+": "calabacines"
+    }
   },
   "units": {
     "as_needed": "según sea necesario",

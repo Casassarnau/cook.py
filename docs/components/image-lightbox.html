@@ -17,6 +17,7 @@
     </button>
     <img
       :src="getImageUrl(selectedRecipe.image)"
+      @error="handleImageError($event, false)"
       alt=""
       class="max-w-full max-h-[90dvh] object-contain rounded-lg shadow-2xl"
     />

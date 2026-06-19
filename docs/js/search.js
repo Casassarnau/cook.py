@@ -1,5 +1,27 @@
 function recipeSearch() {
+  const HOME_FILTERS_KEY = 'homeFilters';
+
   return {
+    loadHomeFilters() {
+      try {
+        const saved = sessionStorage.getItem(HOME_FILTERS_KEY);
+        if (!saved) return;
+
+        const prefs = JSON.parse(saved);
+        if (typeof prefs.searchQuery === 'string') this.searchQuery = prefs.searchQuery;
+        if (typeof prefs.filterCategory === 'string') this.filterCategory = prefs.filterCategory;
+      } catch (e) {
+        console.error('Failed to parse home filters:', e);
+      }
+    },
+
+    saveHomeFilters() {
+      sessionStorage.setItem(HOME_FILTERS_KEY, JSON.stringify({
+        searchQuery: this.searchQuery,
+        filterCategory: this.filterCategory,
+      }));
+    },
+
     isIngredientSearch(query) {
       const prefix = this.t('ingredients._') + ':';
       return query.toLowerCase().startsWith(prefix.toLowerCase());

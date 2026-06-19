@@ -6,10 +6,7 @@ function recipeThermomix() {
 
     toggleThermomix() {
       this.thermomixEnabled = !this.thermomixEnabled;
-      const recipeName = this.getRecipeName();
-      if (recipeName) {
-        this.saveThermomixPreference(recipeName, this.thermomixEnabled);
-      }
+      this.saveThermomixPreference(this.thermomixEnabled);
       if (this.cookMode) this.clampCookStepIndex();
       if (this.cookMode) this.scheduleCookMobileLayout();
       this.updateURL();

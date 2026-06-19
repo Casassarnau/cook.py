@@ -245,6 +245,33 @@
   },
   {
     "title": {
+      "en": "Gazpacho",
+      "es": "Gazpacho",
+      "cat": "Gazpacho",
+      "sv": "Gazpacho"
+    },
+    "categories": [
+      "mains",
+      "thermomix"
+    ],
+    "path": "recipes/gazpacho.json",
+    "image": "/images/gazpacho/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "tomato",
+      "garlic",
+      "bell_pepper",
+      "onion",
+      "cucumber",
+      "vinegar",
+      "salt",
+      "olive_oil",
+      "water"
+    ]
+  },
+  {
+    "title": {
       "en": "Homemade Pizza",
       "es": "Pizza Casera",
       "cat": "Pizza Casolana",
@@ -438,6 +465,31 @@
       "chufa",
       "water",
       "sugar"
+    ]
+  },
+  {
+    "title": {
+      "en": "Zucchini Cream",
+      "es": "Crema de calabacín",
+      "cat": "Crema de carbassó",
+      "sv": "Zucchinisoppa"
+    },
+    "categories": [
+      "mains",
+      "thermomix"
+    ],
+    "path": "recipes/crema_calabacin.json",
+    "image": "/images/crema_calabacin/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "zucchini",
+      "onion",
+      "potatoes",
+      "water",
+      "salt",
+      "olive_oil",
+      "cheese"
     ]
   }
 ]

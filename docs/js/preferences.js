@@ -104,10 +104,23 @@ function recipePreferences() {
       localStorage.setItem('variantPreferences', JSON.stringify(variantPrefs));
     },
 
-    saveThermomixPreference(recipeName, enabled) {
-      const prefs = JSON.parse(localStorage.getItem('thermomixPreferences') || '{}');
-      prefs[recipeName] = enabled;
-      localStorage.setItem('thermomixPreferences', JSON.stringify(prefs));
+    loadThermomixPreference() {
+      const stored = localStorage.getItem('thermomixEnabled');
+      if (stored !== null) return stored === 'true';
+
+      try {
+        const legacy = JSON.parse(localStorage.getItem('thermomixPreferences') || '{}');
+        if (legacy && typeof legacy === 'object') {
+          return Object.values(legacy).some(Boolean);
+        }
+      } catch (e) {
+        console.error('Failed to parse Thermomix preferences:', e);
+      }
+      return false;
+    },
+
+    saveThermomixPreference(enabled) {
+      localStorage.setItem('thermomixEnabled', enabled ? 'true' : 'false');
     },
   };
 }

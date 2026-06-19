@@ -111,10 +111,9 @@ function recipeRouting() {
             if (this.thermomixAvailable) {
               if (thermomixParam === '1') {
                 this.thermomixEnabled = true;
-                this.saveThermomixPreference(recipeName, true);
+                this.saveThermomixPreference(true);
               } else {
-                const thermomixPrefs = JSON.parse(localStorage.getItem('thermomixPreferences') || '{}');
-                this.thermomixEnabled = !!thermomixPrefs[recipeName];
+                this.thermomixEnabled = this.loadThermomixPreference();
               }
             } else {
               this.thermomixEnabled = false;

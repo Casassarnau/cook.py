@@ -1,0 +1,177 @@
+{
+  "title": {
+    "en": "Zucchini Cream",
+    "es": "Crema de calabacín",
+    "cat": "Crema de carbassó",
+    "sv": "Zucchinisoppa"
+  },
+  "description": {
+    "en": "A smooth and light zucchini cream soup, perfect served hot on any day.",
+    "es": "Una crema de calabacín suave y ligera, perfecta para servir caliente en cualquier día.",
+    "cat": "Una crema de carbassó suau i lleugera, perfecta per servir calenta en qualsevol dia.",
+    "sv": "En slät och lätt zucchinisoppa, perfekt att servera varm vilken dag som helst."
+  },
+  "author": "Arnau",
+  "image": "/images/crema_calabacin/main.webp",
+  "categories": [
+    "mains"
+  ],
+  "portion": {
+    "type": "servings",
+    "value": 4,
+    "unit": "servings"
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Main Ingredients",
+        "es": "Ingredientes principales",
+        "cat": "Ingredients principals",
+        "sv": "Huvudingredienser"
+      },
+      "items": [
+        {
+          "id": "soup_zucchini",
+          "ingredient": "zucchini",
+          "value": 1,
+          "unit": "kg"
+        },
+        {
+          "id": "soup_onion",
+          "ingredient": "onion",
+          "value": 1
+        },
+        {
+          "id": "soup_potato",
+          "ingredient": "potatoes",
+          "value": 1
+        },
+        {
+          "id": "soup_water",
+          "ingredient": "water",
+          "value": 500,
+          "unit": "ml"
+        },
+        {
+          "id": "soup_salt",
+          "ingredient": "salt",
+          "value": 1,
+          "unit": "tsp"
+        },
+        {
+          "id": "soup_oil",
+          "ingredient": "olive_oil",
+          "value": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "soup_cheese",
+          "ingredient": "cheese",
+          "value": 0,
+          "unit": "to_taste"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Wash and cut all the vegetables into chunks.",
+        "es": "Lava y corta todas las verduras a trozos.",
+        "cat": "Rentar i tallar totes les verdures a trossos.",
+        "sv": "Skölj och skär alla grönsaker i bitar."
+      },
+      "ingredients": [
+        "soup_zucchini",
+        "soup_onion",
+        "soup_potato"
+      ]
+    },
+    {
+      "text": {
+        "en": "Put the vegetables in a pot with the water and salt. Cook over medium heat for 20 minutes.",
+        "es": "Pon las verduras en una olla con el agua y la sal. Cocina a fuego medio durante 20 minutos.",
+        "cat": "Posa les verdures en una olla amb l'aigua i la sal. Cuina a foc mitjà durant 20 minuts.",
+        "sv": "Lägg grönsakerna i en kastrull med vatten och salt. Koka på medelvärme i 20 minuter."
+      },
+      "ingredients": [
+        "soup_zucchini",
+        "soup_onion",
+        "soup_potato",
+        "soup_water",
+        "soup_salt"
+      ],
+      "onlyForMode": "classic"
+    },
+    {
+      "text": {
+        "en": "Put the vegetables in the Thermomix bowl with the water and salt. Cook for 20 minutes at 100°C and spoon speed.",
+        "es": "Pon las verduras en el vaso de la Thermomix con el agua y la sal. Cocina 20 minutos a 100°C y velocidad cuchara.",
+        "cat": "Posa les verdures al got de la Thermomix amb l'aigua i la sal. Cuina 20 minuts a 100°C i velocitat cullera.",
+        "sv": "Lägg grönsakerna i Thermomix-skålen med vatten och salt. Tillaga i 20 minuter på 100°C och skedhastighet."
+      },
+      "ingredients": [
+        "soup_zucchini",
+        "soup_onion",
+        "soup_potato",
+        "soup_water",
+        "soup_salt"
+      ],
+      "onlyForMode": "thermomix",
+      "thermomix": {
+        "text": {
+          "en": "Add the vegetables, water, and salt to the bowl. Cook 20 min / 100°C / speed 2.",
+          "es": "Añadir las verduras, el agua y la sal al vaso. Programar 20 min / 100°C / velocidad 2.",
+          "cat": "Afegir les verdures, l'aigua i la sal al got. Programar 20 min / 100°C / velocitat 2.",
+          "sv": "Tillsätt grönsaker, vatten och salt i skålen. Kör 20 min / 100°C / hastighet 2."
+        },
+        "settings": {
+          "temperature": 100,
+          "time": 1200,
+          "speed": 2,
+          "rotation": "normal"
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Add the cheese to taste and the olive oil. Blend with a hand immersion blender until smooth. If it is too thick, add a little more water and serve hot.",
+        "es": "Agrega el queso al gusto y el aceite. Tritura con un minipimer hasta que quede fina. Si está demasiado espesa, añade un poco más de agua y sirve caliente.",
+        "cat": "Afegeix el formatge al gust i l'oli. Tritura amb un minipimer fins que quedi fina. Si està massa espessa, afegeix una mica més d'aigua i serveix calenta.",
+        "sv": "Tillsätt ost efter smak och olivoljan. Mixa med en stavmixer tills soppan är slät. Om den är för tjock, tillsätt lite mer vatten och servera varm."
+      },
+      "ingredients": [
+        "soup_cheese",
+        "soup_oil",
+        "soup_water"
+      ],
+      "onlyForMode": "classic"
+    },
+    {
+      "text": {
+        "en": "Add the cheese to taste and the olive oil. Blend for 2 minutes, starting at speed 5 and increasing every 20 seconds until speed 10. If it is too thick, add a little more water and serve hot.",
+        "es": "Agrega el queso al gusto y el aceite. Tritura 2 minutos empezando en velocidad 5 y subiendo cada 20 segundos hasta velocidad 10. Si está demasiado espesa, añade un poco más de agua y sirve caliente.",
+        "cat": "Afegeix el formatge al gust i l'oli. Tritura 2 minuts començant a velocitat 5 i pujant cada 20 segons fins a velocitat 10. Si està massa espessa, afegeix una mica més d'aigua i serveix calenta.",
+        "sv": "Tillsätt ost efter smak och olivoljan. Mixa i 2 minuter, börja på hastighet 5 och öka var 20:e sekund upp till hastighet 10. Om den är för tjock, tillsätt lite mer vatten och servera varm."
+      },
+      "ingredients": [
+        "soup_cheese",
+        "soup_oil",
+        "soup_water"
+      ],
+      "onlyForMode": "thermomix",
+      "thermomix": {
+        "text": {
+          "en": "Add the cheese and olive oil. Blend 2 min, starting at speed 5 and increasing every 20 sec up to speed 10.",
+          "es": "Añadir el queso y el aceite. Triturar 2 min, empezando en velocidad 5 y subiendo cada 20 seg hasta velocidad 10.",
+          "cat": "Afegir el formatge i l'oli. Triturar 2 min, començant a velocitat 5 i pujant cada 20 seg fins a velocitat 10.",
+          "sv": "Tillsätt osten och olivoljan. Mixa i 2 min, börja på hastighet 5 och öka var 20:e sekund upp till hastighet 10."
+        },
+        "settings": {
+          "time": 120,
+          "speed": 10
+        }
+      }
+    }
+  ]
+}

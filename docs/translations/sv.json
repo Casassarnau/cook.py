@@ -64,6 +64,7 @@
     "banana": "banan",
     "bean": "böna",
     "beers": "öl",
+    "bell_pepper": "paprika",
     "black_pepper": "svartpeppar",
     "blue_cheese": "blåmögelost",
     "blueberry": "blåbär",
@@ -74,6 +75,7 @@
       "1": "morot",
       "1+": "morötter"
     },
+    "cheese": "ost",
     "cherry": "körsbär",
     "chestnut": "kastanj",
     "chicken": "kyckling",
@@ -88,6 +90,7 @@
       "1": "krossad tomat",
       "1+": "krossade tomater"
     },
+    "cucumber": "gurka",
     "cupcake": "cupcake",
     "dango": "dango",
     "dark_chocolate_chips": "mörka chokladchips",
@@ -105,6 +108,7 @@
     "extra_virgin_olive_oil": "extra jungfruolivolja",
     "flour": "mjöl",
     "fortune_cookie": "lyckokaka",
+    "garlic": "vitlök",
     "fresh_cheese": "färskost",
     "fresh_herbs": "färska örter",
     "fresh_mozzarella": {
@@ -173,13 +177,18 @@
     "tomato": "tomat",
     "unsweetened_cocoa_powder": "osötat kakaopulver",
     "vanilla_extract": "vaniljextrakt",
+    "vinegar": "vinäger",
     "waffle": "våffla",
     "walnut": "valnöt",
     "walnuts": "valnötter",
     "water": "vatten",
     "white_chocolate": "vit choklad",
     "white_pepper": "vitpeppar",
-    "whole_wheat_pastry_flour": "fullkornsmjöl"
+    "whole_wheat_pastry_flour": "fullkornsmjöl",
+    "zucchini": {
+      "1": "zucchini",
+      "1+": "zucchinis"
+    }
   },
   "units": {
     "as_needed": "efter behov",
