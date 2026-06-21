@@ -134,6 +134,60 @@ function recipeCookMode() {
       this.unbindCookMobileLayoutListeners();
     },
 
+    isCookWakeLockSupported() {
+      return 'wakeLock' in navigator;
+    },
+
+    async acquireCookWakeLock() {
+      if (!this.isCookWakeLockSupported() || this.cookWakeLock) return;
+      try {
+        this.cookWakeLock = await navigator.wakeLock.request('screen');
+        this.cookWakeLock.addEventListener('release', () => {
+          this.cookWakeLock = null;
+        });
+      } catch {
+        this.cookWakeLock = null;
+      }
+    },
+
+    async releaseCookWakeLock() {
+      if (!this.cookWakeLock) return;
+      try {
+        await this.cookWakeLock.release();
+      } catch {
+        // Wake lock may already be released by the browser.
+      }
+      this.cookWakeLock = null;
+    },
+
+    bindCookWakeLockListeners() {
+      if (this.cookWakeLockVisibilityHandler) return;
+      this.cookWakeLockVisibilityHandler = () => {
+        if (document.visibilityState === 'visible' && this.cookMode) {
+          this.acquireCookWakeLock();
+        }
+      };
+      document.addEventListener('visibilitychange', this.cookWakeLockVisibilityHandler);
+    },
+
+    unbindCookWakeLockListeners() {
+      if (!this.cookWakeLockVisibilityHandler) return;
+      document.removeEventListener('visibilitychange', this.cookWakeLockVisibilityHandler);
+      this.cookWakeLockVisibilityHandler = null;
+    },
+
+    activateCookModeSession() {
+      this.bindCookWakeLockListeners();
+      this.acquireCookWakeLock();
+      this.bindCookMobileLayoutListeners();
+      this.scheduleCookMobileLayout(false);
+    },
+
+    deactivateCookModeSession() {
+      this.releaseCookWakeLock();
+      this.unbindCookWakeLockListeners();
+    },
+
     enterCookMode() {
       const recipeName = this.getRecipeName();
       if (!recipeName || this.cookStepCount() === 0) return;
@@ -142,8 +196,7 @@ function recipeCookMode() {
       this.resetCookSwipe();
       this.cookMode = true;
       document.body.classList.add('overflow-hidden');
-      this.bindCookMobileLayoutListeners();
-      this.scheduleCookMobileLayout(false);
+      this.activateCookModeSession();
       this.updateURL();
     },
 
@@ -151,6 +204,7 @@ function recipeCookMode() {
       this.cookMode = false;
       this.resetCookSwipe();
       this.resetCookMobileLayout();
+      this.deactivateCookModeSession();
       this.showCookAdjustModal = false;
       document.body.classList.remove('overflow-hidden');
       if (updateUrl) this.updateURL();

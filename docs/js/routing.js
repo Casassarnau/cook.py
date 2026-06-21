@@ -129,6 +129,7 @@ function recipeRouting() {
                 this.cookStepIndex = this.loadCookStepIndex(recipeName);
               }
               this.clampCookStepIndex();
+              this.activateCookModeSession();
             } else if (this.cookMode) {
               this.exitCookMode(false);
             }

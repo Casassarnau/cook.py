@@ -48,6 +48,8 @@ function recipeAppState() {
     cookLayoutIngredientsHeight: null,
     cookLayoutTransitionEnabled: false,
     cookLayoutResizeHandler: null,
+    cookWakeLock: null,
+    cookWakeLockVisibilityHandler: null,
     cookStepContentOverflows: false,
     urlCopied: false,
     routePending: (() => {
