@@ -403,6 +403,32 @@
   },
   {
     "title": {
+      "en": "Pulled Pork",
+      "es": "Pulled pork",
+      "cat": "Pulled pork",
+      "sv": "Pulled pork"
+    },
+    "categories": [
+      "mains"
+    ],
+    "path": "recipes/pulled_pork.json",
+    "image": "/images/pulled_pork/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "pork",
+      "salt",
+      "thyme",
+      "oregano",
+      "red_pepper",
+      "garlic_powder",
+      "parsley",
+      "gochujang",
+      "lemon"
+    ]
+  },
+  {
+    "title": {
       "en": "Spanish Potato Omelette",
       "es": "Tortilla de patatas",
       "cat": "Truita de patates",

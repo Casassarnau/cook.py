@@ -1,0 +1,188 @@
+{
+  "title": {
+    "en": "Pulled Pork",
+    "es": "Pulled pork",
+    "cat": "Pulled pork",
+    "sv": "Pulled pork"
+  },
+  "author": "Arnau",
+  "categories": [
+    "mains"
+  ],
+  "image": "/images/pulled_pork/main.webp",
+  "description": {
+    "en": "Slow-roasted pork marinated with herbs, sweet paprika, and gochujang, then shredded for tender pulled pork.",
+    "es": "Cerdo asado lentamente con hierbas, pimentón dulce y gochujang, desmenuzado para un pulled pork tierno.",
+    "cat": "Porc rostit a foc lent amb herbes, pebre vermell dolç i gochujang, desfet per a un pulled pork tendre.",
+    "sv": "Långsamt ugnsrostad fläskkött marinerad med örter, söt paprika och gochujang, sedan riven till mör pulled pork."
+  },
+  "portion": {
+    "type": "servings",
+    "value": 6,
+    "unit": "servings"
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Meat",
+        "es": "Carne",
+        "cat": "Carn",
+        "sv": "Kött"
+      },
+      "items": [
+        {
+          "ingredient": "pork",
+          "value": 1,
+          "unit": "kg",
+          "text": {
+            "en": "shoulder or similar cut for slow cooking",
+            "es": "paletilla o corte similar para cocción lenta",
+            "cat": "espatlla o tall similar per a cocció lenta",
+            "sv": "axelstek eller liknande stycke för långsam tillagning"
+          },
+          "id": "pork"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Marinade",
+        "es": "Marinado",
+        "cat": "Marinat",
+        "sv": "Marinad"
+      },
+      "items": [
+        {
+          "ingredient": "salt",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "salt"
+        },
+        {
+          "ingredient": "thyme",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "thyme"
+        },
+        {
+          "ingredient": "oregano",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "oregano"
+        },
+        {
+          "ingredient": "red_pepper",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "red_pepper"
+        },
+        {
+          "ingredient": "garlic_powder",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "garlic_powder"
+        },
+        {
+          "ingredient": "parsley",
+          "value": 0.5,
+          "unit": "tbsp",
+          "id": "parsley"
+        },
+        {
+          "ingredient": "gochujang",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "gochujang"
+        },
+        {
+          "ingredient": "lemon",
+          "value": 1,
+          "id": "lemon"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Dry the meat thoroughly with paper towels.",
+        "es": "Seca bien la carne con papel de cocina absorbente.",
+        "cat": "Asseca bé la carn amb paper de cuina absorbent.",
+        "sv": "Torka köttet noggrant med hushållspapper."
+      },
+      "ingredients": [
+        "pork"
+      ]
+    },
+    {
+      "text": {
+        "en": "Mix the salt, thyme, oregano, sweet paprika, garlic powder, parsley, gochujang, and lemon juice until you have a smooth marinade.",
+        "es": "Mezcla la sal, el tomillo, el orégano, el pimentón dulce, el ajo en polvo, el perejil, el gochujang y el zumo de limón hasta obtener un marinado homogéneo.",
+        "cat": "Barreja la sal, la farigola, l'orenga, el pebre vermell dolç, l'all en pols, el julivert, el gochujang i el suc de llimona fins obtenir un marinat homogeni.",
+        "sv": "Blanda salt, timjan, oregano, söt paprika, vitlökspulver, persilja, gochujang och citronsaft till en jämn marinad."
+      },
+      "ingredients": [
+        "salt",
+        "thyme",
+        "oregano",
+        "red_pepper",
+        "garlic_powder",
+        "parsley",
+        "gochujang",
+        "lemon"
+      ]
+    },
+    {
+      "text": {
+        "en": "Coat the entire piece of meat with the marinade and wrap it tightly in aluminum foil.",
+        "es": "Pinta toda la carne con el marinado y envuélvela bien en papel de aluminio.",
+        "cat": "Unta tota la peça de carn amb el marinat i embolica-la bé amb paper d'alumini.",
+        "sv": "Smörj in hela köttbiten med marinaden och linda in den ordentligt i aluminiumfolie."
+      },
+      "ingredients": [
+        "pork",
+        "salt",
+        "thyme",
+        "oregano",
+        "red_pepper",
+        "garlic_powder",
+        "parsley",
+        "gochujang",
+        "lemon"
+      ]
+    },
+    {
+      "text": {
+        "en": "Place the wrapped meat on a roasting tray with a little water at the bottom so it does not dry out during cooking.",
+        "es": "Colócala en una bandeja de horno con un poco de agua en el fondo para que no se seque.",
+        "cat": "Posa-la en una safata de forn amb una mica d'aigua al fons perquè no s'assequi.",
+        "sv": "Lägg det inlindade köttet i en ugnsform med lite vatten i botten så att det inte torkar under tillagningen."
+      },
+      "ingredients": [
+        "pork"
+      ]
+    },
+    {
+      "text": {
+        "en": "Bake in a preheated oven at 150°C for 3 hours and 30 minutes.",
+        "es": "Hornea en un horno precalentado a 150 °C durante 3 horas y media.",
+        "cat": "Enforna en un forn preescalfat a 150 °C durant 3 hores i mitja.",
+        "sv": "Grädda i en förvärmd ugn på 150 °C i 3 timmar och 30 minuter."
+      },
+      "ingredients": [
+        "pork"
+      ]
+    },
+    {
+      "text": {
+        "en": "Let it cool slightly, then shred the meat with two forks to make pulled pork.",
+        "es": "Déjalo enfriar un poco y desmenúzalo con dos tenedores para obtener pulled pork.",
+        "cat": "Deixa refredar una mica i desfés la carn amb dues forquilles per obtenir pulled pork.",
+        "sv": "Låt svalna något och riv köttet med två gafflar till pulled pork."
+      },
+      "ingredients": [
+        "pork"
+      ]
+    }
+  ]
+}

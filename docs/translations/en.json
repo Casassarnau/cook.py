@@ -112,6 +112,7 @@
     "flour": "flour",
     "fortune_cookie": "fortune cookie",
     "garlic": "garlic",
+    "garlic_powder": "garlic powder",
     "fresh_cheese": "fresh cheese",
     "fresh_herbs": "fresh herbs",
     "fresh_mozzarella": {
@@ -121,6 +122,7 @@
     "fries": "fries",
     "grape": "grape",
     "grated_gouda": "grated Gouda",
+    "gochujang": "gochujang",
     "greek_yogurt": "Greek yogurt",
     "guanciale": "guanciale",
     "ham": "Iberian cured ham",
@@ -156,6 +158,7 @@
     "panela_powder": "panela powder",
     "panko": "panko",
     "parmesan_cheese": "Parmesan cheese",
+    "parsley": "parsley",
     "pasta": "pasta",
     "pea": "pea",
     "peach": "peach",
@@ -164,6 +167,7 @@
     "pecorino_cheese": "Pecorino cheese",
     "pie": "pie",
     "pizza_toppings": "toppings",
+    "pork": "pork",
     "potatoes": {
       "1": "potato",
       "1+": "potatoes"
@@ -172,6 +176,7 @@
       "1": "raspberry",
       "1+": "raspberries"
     },
+    "red_pepper": "sweet paprika",
     "rye_flour": "rye flour",
     "salt": "salt",
     "strawberry": "strawberry",
@@ -180,6 +185,7 @@
     "sunflower_oil": "sunflower oil",
     "sushi": "sushi",
     "tamale": "tamale",
+    "thyme": "thyme",
     "tomato": "tomato",
     "unsweetened_cocoa_powder": "unsweetened cocoa powder",
     "vanilla_extract": "vanilla extract",
