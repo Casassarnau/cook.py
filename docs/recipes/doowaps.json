@@ -166,10 +166,14 @@
     },
     {
       "text": {
-        "en": "To help them rise a second time, put the buns into the oven and turn it on for just 2 minutes to make the interior warm. Turn it off, cover the buns with a clean cloth, and let them rise inside until they double in volume.",
-        "es": "Para el segundo leudado, mete los panecillos en el horno y enciéndelo solo 2 minutos para que el interior quede templado. Apágalo, cubre los panecillos con un paño limpio y déjalos leudar dentro hasta que dupliquen su volumen.",
-        "cat": "Per al segon lleudat, fica els panets al forn i encén-lo només 2 minuts perquè l'interior quedi tebi. Apaga'l, cobreix els panets amb un dany net i deixa'ls lleudar dins fins que dupliquin el seu volum.",
-        "sv": "För den andra jäsningen, sätt in bullarna i ugnen och slå på den i endast 2 minuter så att insidan blir varm. Stäng av ugnen, täck bullarna med en ren bakduk och låt dem jäsa där inne tills de har dubblat sin storlek."
+        "en": "For the second rise, put the buns in the turned-off oven and turn it on for 2 minutes to warm the interior. Turn off, cover with a cloth, and let rise until doubled.",
+        "es": "Para el segundo leudado, mete los panecillos en el horno apagado y enciéndelo solo 2 minutos para templar el interior. Apágalo, cubre con un paño y deja leudar hasta que dupliquen.",
+        "cat": "Per al segon lleudat, fica els panets al forn apagat i encén-lo només 2 minuts per escalfar l'interior. Apaga'l, cobreix amb un drap i deixa lleudar fins que dupliquin.",
+        "sv": "För andra jäsningen, sätt bullarna i avstängd ugn och slå på i 2 minuter för att värma insidan. Stäng av, täck med en duk och låt jäsa tills de fördubblats."
+      },
+      "oven": {
+        "time": 120,
+        "mode": "fan"
       }
     },
     {
@@ -186,10 +190,18 @@
     },
     {
       "text": {
-        "en": "Bake for 10 to 12 minutes at 180ºC with top and bottom heat, depending on the chosen size, or until they are golden brown. Time to eat!",
-        "es": "Hornea entre 10 y 12 minutos a 180ºC con calor arriba y abajo, según el tamaño elegido, o hasta que estén doraditos. ¡A comer!",
-        "cat": "Enforna entre 10 i 12 minuts a 180ºC amb calor a dalt i a baix, segons la mida triada, o fins que estiguin dauradets. A menjar!",
-        "sv": "Grädda i 10 till 12 minuter på 180ºC med över- och undervärme, beroende på vald storlek, eller tills de är gyllenbruna. Smaklig måltid!"
+        "en": "Bake 10–12 minutes, depending on size, until golden brown. Time to eat!",
+        "es": "Hornea 10–12 minutos, según el tamaño, hasta que estén doraditos. ¡A comer!",
+        "cat": "Enforna 10–12 minuts, segons la mida, fins que estiguin dauradets. A menjar!",
+        "sv": "Grädda 10–12 minuter, beroende på storlek, tills gyllenbruna. Smaklig måltid!"
+      },
+      "oven": {
+        "temperature": 180,
+        "time": 660,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       }
     }
   ]

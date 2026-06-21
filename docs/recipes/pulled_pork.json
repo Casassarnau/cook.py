@@ -164,10 +164,17 @@
     },
     {
       "text": {
-        "en": "Bake in a preheated oven at 150°C for 3 hours and 30 minutes.",
-        "es": "Hornea en un horno precalentado a 150 °C durante 3 horas y media.",
-        "cat": "Enforna en un forn preescalfat a 150 °C durant 3 hores i mitja.",
-        "sv": "Grädda i en förvärmd ugn på 150 °C i 3 timmar och 30 minuter."
+        "en": "Bake for 3 hours and 30 minutes.",
+        "es": "Hornea 3 horas y media.",
+        "cat": "Enforna 3 hores i mitja.",
+        "sv": "Grädda i 3 timmar och 30 minuter."
+      },
+      "oven": {
+        "temperature": 150,
+        "time": 12600,
+        "mode": [
+          "fan"
+        ]
       },
       "ingredients": [
         "pork"

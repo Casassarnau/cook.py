@@ -138,10 +138,17 @@
   "instructions": [
     {
       "text": {
-        "en": "Preheat oven to 175°C (350°F). Grease a 15 cm diameter circular cake pan or line it with parchment paper.",
-        "es": "Precalienta el horno a 175°C (350°F). Engrasa un molde circular de 15 cm de diámetro o fórralo con papel de hornear.",
-        "cat": "Preescalfa el forn a 175°C (350°F). Unta un motlle circular de 15 cm de diàmetre o fòrra'l amb paper d'forn.",
-        "sv": "Värm ugnen till 175°C (350°F). Smörj en cirkulär kakaform med 15 cm diameter eller lägg bakplåtspapper i den."
+        "en": "Preheat the oven. Grease a 15 cm diameter circular cake pan or line it with parchment paper.",
+        "es": "Precalienta el horno. Engrasa un molde circular de 15 cm de diámetro o fórralo con papel de hornear.",
+        "cat": "Preescalfa el forn. Unta un motlle circular de 15 cm de diàmetre o fòrra'l amb paper de forn.",
+        "sv": "Förvärm ugnen. Smörj en cirkulär kakaform med 15 cm diameter eller lägg bakplåtspapper i den."
+      },
+      "oven": {
+        "temperature": 175,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       }
     },
     {
@@ -233,10 +240,18 @@
     },
     {
       "text": {
-        "en": "Bake in the preheated oven for 20–25 minutes, or until a toothpick inserted into the center comes out with a few moist crumbs attached. The center should still be slightly soft.",
-        "es": "Hornea en el horno precalentado durante 20–25 minutos, o hasta que un palillo insertado en el centro salga con algunas migas húmedas adheridas. El centro debe seguir estando ligeramente blando.",
-        "cat": "Forna al forn preescalfat durant 20–25 minuts, o fins que un pal insertat al centre surti amb algunes engrunes humides adherides. El centre ha de seguir estant lleugerament tou.",
-        "sv": "Grädda i den förvärmda ugnen i 20–25 minuter, eller tills en tandpetare som stickas in i mitten kommer ut med några fuktiga smulor. Mitten ska fortfarande vara lite mjuk."
+        "en": "Bake for 20–25 minutes, or until a toothpick inserted into the center comes out with a few moist crumbs. The center should still be slightly soft.",
+        "es": "Hornea 20–25 minutos, o hasta que un palillo insertado en el centro salga con algunas migas húmedas. El centro debe seguir estando ligeramente blando.",
+        "cat": "Enforna 20–25 minuts, o fins que un pal insertat al centre surti amb algunes engrunes humides. El centre ha de seguir estant lleugerament tou.",
+        "sv": "Grädda i 20–25 minuter, eller tills en tandpetare i mitten kommer ut med några fuktiga smulor. Mitten ska fortfarande vara lite mjuk."
+      },
+      "oven": {
+        "temperature": 175,
+        "time": 1350,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       },
       "ingredients": [
         "butter",

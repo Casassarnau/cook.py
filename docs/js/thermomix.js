@@ -74,7 +74,7 @@ function recipeThermomix() {
       return {
         text: this.translateField(textSource),
         image: step.image || null,
-        settingsBadges: this.formatThermomixSettings(settings),
+        settingsBadges: this.formatInstructionBadges(step, settings),
         ingredientIds,
       };
     },

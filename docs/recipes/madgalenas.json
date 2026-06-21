@@ -278,10 +278,17 @@
     },
     {
       "text": {
-        "en": "Preheat the oven to its maximum temperature, around 250°C (480°F), with top and bottom heat. Place paper liners into a rigid muffin tray.",
-        "es": "Precalienta el horno al máximo con calor arriba y abajo (unos 250ºC). Reparte las cápsulas de papel en moldes rígidos.",
-        "cat": "Preescalfa el forn al màxim amb calor dalt i baix (uns 250ºC). Reparteix les càpsules de paper en motlles rígids.",
-        "sv": "Ugnen förvärms till maximal temperatur, runt 250°C, med över- och undervärme. Placera pappersformar i en stadig muffinsplåt."
+        "en": "Preheat the oven. Place paper liners into a rigid muffin tray.",
+        "es": "Precalienta el horno. Reparte las cápsulas de papel en moldes rígidos.",
+        "cat": "Preescalfa el forn. Reparteix les càpsules de paper en motlles rígids.",
+        "sv": "Förvärm ugnen. Placera pappersformar i en stadig muffinsplåt."
+      },
+      "oven": {
+        "temperature": 250,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       }
     },
     {
@@ -297,10 +304,18 @@
     },
     {
       "text": {
-        "en": "Bake in the oven and immediately lower the temperature to 220°C (430°F). If your oven is very strong or they brown too fast, lower to 200°C (400°F). Bake for about 15 minutes until golden. Let them rest slightly before transferring to a cooling rack.",
-        "es": "Introduce en el horno y baja la temperatura a 220ºC (o a 200ºC si el horno es muy potente o se tuestan rápido). Hornea durante unos 15 minutos hasta que estén doradas. Saca y espera un poco antes de desmoldar sobre una rejilla.",
-        "cat": "Introdueix al forn i baixa la temperatura a 220ºC (o a 200ºC si el forn és molt potent o es rosteixen ràpid). Enforna durant uns 15 minuts fins que estiguin daurades. Treu i espera un poc abans de desmotllar sobre una reixeta.",
-        "sv": "Ställ in i ugnen och sänk omedelbart temperaturen till 220°C (eller 200°C om ugnen är stark eller om de blir mörka för snabbt). Grädda i ca 15 minuter tills de är gyllenbruna. Låt svalna något innan du flyttar dem till ett galler."
+        "en": "Place in the oven and immediately lower the temperature (200°C if your oven runs hot). Bake about 15 minutes until golden, then let rest briefly before transferring to a rack.",
+        "es": "Introduce en el horno y baja inmediatamente la temperatura (200ºC si el horno es muy potente). Hornea unos 15 minutos hasta que estén doradas y deja reposar un poco antes de desmoldar.",
+        "cat": "Introdueix al forn i baixa immediatament la temperatura (200ºC si el forn és molt potent). Enforna uns 15 minuts fins que estiguin daurades i deixa reposar una mica abans de desmotllar.",
+        "sv": "Ställ in i ugnen och sänk omedelbart temperaturen (200°C om ugnen är stark). Grädda ca 15 minuter tills gyllenbruna och låt vila kort innan du flyttar dem till ett galler."
+      },
+      "oven": {
+        "temperature": 220,
+        "time": 900,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       }
     }
   ]

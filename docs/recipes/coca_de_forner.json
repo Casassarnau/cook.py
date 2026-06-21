@@ -300,10 +300,14 @@
     },
     {
       "text": {
-        "en": "Place the tray in the turned-off oven. Turn the oven on for only 2–3 minutes at the start to keep it warm, then leave the dough to rise for 2–3 hours.",
-        "es": "Mete la bandeja en el horno apagado. Enciende el horno solo 2–3 minutos al principio para que mantenga el calor, y deja que la masa suba 2–3 horas.",
+        "en": "Place the tray in the turned-off oven. Turn it on for 2–3 minutes to keep it warm, then leave the dough to rise for 2–3 hours.",
+        "es": "Mete la bandeja en el horno apagado. Enciéndelo solo 2–3 minutos al principio para que mantenga el calor, y deja que la masa suba 2–3 horas.",
         "cat": "Posa la safata al forn apagat. Encén el forn només 2–3 minuts al principi perquè mantingui la calor, i deixa que la massa pugi 2–3 hores.",
         "sv": "Ställ plåten i den avstängda ugnen. Sätt på ugnen bara 2–3 minuter i början så den håller värmen, och låt degen jäsa i 2–3 timmar."
+      },
+      "oven": {
+        "time": 150,
+        "mode": "fan"
       }
     },
     {
@@ -322,10 +326,17 @@
     },
     {
       "text": {
-        "en": "When the dough has risen, sprinkle sugar and drizzle oil on top. Preheat the oven to 250°C on both top and bottom (no fan) and bake until golden.",
-        "es": "Cuando la masa haya subido, espolvorea azúcar y aceite por encima. Precalienta el horno a 250 °C arriba y abajo (sin turbo) y hornéala hasta que se dore.",
-        "cat": "Quan la massa hagi pujat, espolsa sucre i oli per damunt. Preescalfa el forn a 250 °C per dalt i per baix (sense turbo) i cou-la fins que es dauri.",
-        "sv": "När degen har jäst, strö socker och ringla olja ovanpå. Förvärm ugnen till 250 °C upptill och nedtill (utan fläkt) och grädda tills den är gyllene."
+        "en": "When the dough has risen, sprinkle sugar and drizzle oil on top. Bake until golden.",
+        "es": "Cuando la masa haya subido, espolvorea azúcar y aceite por encima. Hornéala hasta que se dore.",
+        "cat": "Quan la massa hagi pujat, espolsa sucre i oli per damunt. Cou-la fins que es dauri.",
+        "sv": "När degen har jäst, strö socker och ringla olja ovanpå. Grädda tills den är gyllene."
+      },
+      "oven": {
+        "temperature": 250,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       },
       "ingredients": [
         "topping_sugar",

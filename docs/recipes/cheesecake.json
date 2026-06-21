@@ -174,10 +174,14 @@
     },
     {
       "text": {
-        "en": "Preheat a fan-assisted oven to 200°C (390°F).",
-        "es": "Precalienta el horno con ventilador a 200°C (390°F).",
-        "cat": "Preescalfa el forn amb ventilador a 200°C (390°F).",
-        "sv": "Värm en varmluftsugn till 200°C (390°F)."
+        "en": "Preheat the oven.",
+        "es": "Precalienta el horno.",
+        "cat": "Preescalfa el forn.",
+        "sv": "Förvärm ugnen."
+      },
+      "oven": {
+        "temperature": 200,
+        "mode": "fan"
       }
     },
     {
@@ -206,10 +210,15 @@
     },
     {
       "text": {
-        "en": "Bake the base for 5 minutes (10 minutes if the oven is not fully preheated).",
-        "es": "Hornea la base durante 5 minutos (10 minutos si el horno no estaba bien caliente).",
-        "cat": "Enforna la base 5 minuts (10 minuts si el forn no estava prou calent).",
-        "sv": "Grädda botten i 5 minuter (10 minuter om ugnen inte är helt varm)."
+        "en": "Bake the base for 5 minutes (10 if the oven was not fully preheated).",
+        "es": "Hornea la base 5 minutos (10 si el horno no estaba bien caliente).",
+        "cat": "Enforna la base 5 minuts (10 si el forn no estava prou calent).",
+        "sv": "Grädda botten i 5 minuter (10 om ugnen inte var helt varm)."
+      },
+      "oven": {
+        "temperature": 200,
+        "time": 300,
+        "mode": "fan"
       },
       "ingredients": [
         "digestive_cookies",
@@ -264,10 +273,31 @@
     },
     {
       "text": {
-        "en": "Bake for 10 minutes (or longer depending on the size of the cake). Then activate the top heat with ventilation and bake for another 10 minutes until nicely browned.",
-        "es": "Hornea durante 10 minutos (o más según el tamaño del pastel). Luego activa el calor superior con ventilación y hornea 10 minutos más hasta que esté bien dorado.",
-        "cat": "Enforna durant 10 minuts (o més segons la mida del pastís). Després activa el calor superior amb ventilació i enforna 10 minuts més fins que quedi ben daurat.",
-        "sv": "Grädda i 10 minuter (eller längre beroende på kakans storlek). Slå sedan på övervärme med fläkt och grädda ytterligare 10 minuter tills ytan är gyllene."
+        "en": "Bake the cheesecake for 10 minutes, or a little longer depending on size.",
+        "es": "Hornea el pastel 10 minutos, o un poco más según el tamaño.",
+        "cat": "Enforna el pastís 10 minuts, o una mica més segons la mida.",
+        "sv": "Grädda cheesecaken i 10 minuter, eller lite längre beroende på storlek."
+      },
+      "oven": {
+        "temperature": 200,
+        "time": 600,
+        "mode": "fan"
+      }
+    },
+    {
+      "text": {
+        "en": "Switch to top heat with fan and bake 10 minutes more until nicely browned.",
+        "es": "Activa el calor superior con ventilación y hornea 10 minutos más hasta que esté bien dorado.",
+        "cat": "Activa el calor superior amb ventilació i enforna 10 minuts més fins que quedi ben daurat.",
+        "sv": "Byt till övervärme med fläkt och grädda ytterligare 10 minuter tills ytan är gyllene."
+      },
+      "oven": {
+        "temperature": 200,
+        "time": 600,
+        "mode": [
+          "top",
+          "fan"
+        ]
       }
     },
     {

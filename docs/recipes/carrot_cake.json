@@ -157,10 +157,14 @@
   "instructions": [
     {
       "text": {
-        "en": "Preheat the oven to 180°C (356°F) with fan assistance.",
-        "es": "Precalienta el horno a 180°C (356°F) con ventilador.",
-        "cat": "Preescalfa el forn a 180°C (356°F) amb ventilador.",
-        "sv": "Värm ugnen till 180°C (356°F) med fläkt."
+        "en": "Preheat the oven.",
+        "es": "Precalienta el horno.",
+        "cat": "Preescalfa el forn.",
+        "sv": "Förvärm ugnen."
+      },
+      "oven": {
+        "temperature": 180,
+        "mode": "fan"
       }
     },
     {
@@ -217,10 +221,15 @@
     },
     {
       "text": {
-        "en": "Pour the mixture into the prepared mold and bake in the preheated oven for 1 hour.",
-        "es": "Ponlo en el molde y mételo en el horno precalentado por 1 hora.",
-        "cat": "Posa-ho al motlle i fica-ho al forn preescalfat per 1 hora.",
-        "sv": "Häll blandningen i den förberedda formen och grädda i den förvärmda ugnen i 1 timme."
+        "en": "Pour the mixture into the prepared mold and bake for 1 hour.",
+        "es": "Ponlo en el molde y hornéalo 1 hora.",
+        "cat": "Posa-ho al motlle i cou-lo al forn 1 hora.",
+        "sv": "Häll blandningen i den förberedda formen och grädda i 1 timme."
+      },
+      "oven": {
+        "temperature": 180,
+        "time": 3600,
+        "mode": "fan"
       },
       "ingredients": [
         "carrot",
@@ -289,10 +298,14 @@
   "instructionsThermomix": [
     {
       "text": {
-        "en": "Preheat the oven to 180°C (356°F) with fan assistance.",
-        "es": "Precalienta el horno a 180°C (356°F) con ventilador.",
-        "cat": "Preescalfa el forn a 180°C (356°F) amb ventilador.",
-        "sv": "Värm ugnen till 180°C (356°F) med fläkt."
+        "en": "Preheat the oven.",
+        "es": "Precalienta el horno.",
+        "cat": "Preescalfa el forn.",
+        "sv": "Förvärm ugnen."
+      },
+      "oven": {
+        "temperature": 180,
+        "mode": "fan"
       }
     },
     {
@@ -369,10 +382,15 @@
     },
     {
       "text": {
-        "en": "Bake in the preheated oven for 1 hour.",
-        "es": "Hornee en el horno precalentado durante 1 hora.",
-        "cat": "Cou al forn preescalfat durant 1 hora.",
-        "sv": "Grädda i den förvärmda ugnen i 1 timme."
+        "en": "Bake for 1 hour.",
+        "es": "Hornee 1 hora.",
+        "cat": "Cou al forn 1 hora.",
+        "sv": "Grädda i 1 timme."
+      },
+      "oven": {
+        "temperature": 180,
+        "time": 3600,
+        "mode": "fan"
       },
       "ingredients": [
         "carrot",

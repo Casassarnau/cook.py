@@ -241,18 +241,32 @@
     },
     {
       "text": {
-        "en": "Preheat the oven to maximum power on both top and bottom, without fan. If you have a pizza stone or steel, leave it inside from the start; otherwise, leave the tray you will use inside so it heats up.",
-        "es": "Precalienta el horno al máximo de potencia arriba y abajo, sin turbo. Si tienes una piedra o hierro de pizza, déjalo dentro desde el inicio; si no, deja la placa que usarás dentro para que se caliente.",
-        "cat": "Preescalfar el forn al màxim de potència per dalt i per baix, sense turbo. Si tens una pedra o ferro de pizza, deixa'l dins des de l'inici; si no, deixa la safata que faràs servir dins perquè s'escalfi.",
-        "sv": "Förvärm ugnen på max effekt upptill och nedtill, utan fläkt. Om du har en pizzasten eller stålplatta, låt den vara kvar inifrån början; annars låt plåten du ska använda stå kvar inne så den blir varm."
+        "en": "Preheat the oven to maximum. If you have a pizza stone or steel, leave it inside from the start; otherwise, leave the tray you will use inside so it heats up.",
+        "es": "Precalienta el horno al máximo. Si tienes una piedra o hierro de pizza, déjalo dentro desde el inicio; si no, deja la placa que usarás dentro para que se caliente.",
+        "cat": "Preescalfa el forn al màxim. Si tens una pedra o ferro de pizza, deixa'l dins des de l'inici; si no, deixa la safata que faràs servir dins perquè s'escalfi.",
+        "sv": "Förvärm ugnen på max. Om du har en pizzasten eller stålplatta, låt den vara kvar inifrån början; annars låt plåten du ska använda stå kvar inne så den blir varm."
+      },
+      "oven": {
+        "temperature": 250,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       }
     },
     {
       "text": {
-        "en": "Flatten the dough, add the toppings you want, and when the oven is at maximum temperature, place the pizza on the lower rack.",
-        "es": "Aplana la masa, añade los ingredientes que desees y, cuando el horno esté a la máxima temperatura, mete la pizza en la parte de abajo del horno.",
-        "cat": "Aplana la massa, afegeix els ingredients que vulguis i, quan el forn estigui a la màxima temperatura, posa la pizza a la part de baix del forn.",
-        "sv": "Platta ut degen, lägg på önskade toppingar och när ugnen är på max temperatur, ställ pizzan på den nedre nivån."
+        "en": "Flatten the dough, add the toppings you want, and when the oven is ready, place the pizza on the lower rack. Bake until golden.",
+        "es": "Aplana la masa, añade los ingredientes que desees y, cuando el horno esté listo, mete la pizza en la parte de abajo. Hornea hasta que se dore.",
+        "cat": "Aplana la massa, afegeix els ingredients que vulguis i, quan el forn estigui llest, posa la pizza a la part de baix. Enforna fins que es dauri.",
+        "sv": "Platta ut degen, lägg på önskade toppingar och när ugnen är klar, ställ pizzan på den nedre nivån. Grädda tills gyllene."
+      },
+      "oven": {
+        "temperature": 250,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       },
       "ingredients": [
         "toppings"
@@ -260,10 +274,10 @@
     },
     {
       "text": {
-        "en": "When golden, remove from the oven and enjoy.",
-        "es": "Cuando se haya dorado, sácalas y disfruta.",
-        "cat": "Quan s'hagi daurat, treu-la i gaudeix.",
-        "sv": "När den är gyllene, ta ut den och njut."
+        "en": "Remove from the oven and enjoy.",
+        "es": "Sácalas y disfruta.",
+        "cat": "Treu-la i gaudeix.",
+        "sv": "Ta ut och njut."
       }
     }
   ]

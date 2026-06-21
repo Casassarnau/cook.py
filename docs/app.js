@@ -12,6 +12,7 @@ function recipeApp() {
     recipeIngredients(),
     recipeVariants(),
     recipeThermomix(),
+    recipeOven(),
     recipeInstructions(),
     recipeCookMode(),
     recipeSharing(), {

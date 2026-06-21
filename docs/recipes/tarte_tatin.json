@@ -181,9 +181,16 @@
     },
     {
       "text": {
-        "en": "Preheat the oven to 180°C (350°F).",
-        "es": "Precalienta el horno a 180°C (350°F).",
-        "cat": "Preescalfa el forn a 180°C (350°F)."
+        "en": "Preheat the oven.",
+        "es": "Precalienta el horno.",
+        "cat": "Preescalfa el forn."
+      },
+      "oven": {
+        "temperature": 180,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       }
     },
     {
@@ -213,9 +220,17 @@
     },
     {
       "text": {
-        "en": "Bake the tart in the preheated oven for 25 minutes. If the pastry is not golden brown after this time, activate the top heating element of the oven and continue baking until the pastry is golden.",
-        "es": "Hornea la tarta en el horno precalentado durante 25 minutos. Si la masa no está dorada después de este tiempo, activa la parte superior del horno y continúa horneando hasta que la masa esté dorada.",
-        "cat": "Forna la coca al forn preescalfat durant 25 minuts. Si la massa no està daurada després d'aquest temps, activa la part superior del forn i continua fornant fins que la massa estigui daurada."
+        "en": "Bake the tart for 25 minutes. If the pastry is not golden yet, switch to top heat and continue until golden.",
+        "es": "Hornea la tarta 25 minutos. Si la masa no está dorada, activa el calor superior y continúa hasta que lo esté.",
+        "cat": "Forna la coca 25 minuts. Si la massa no està daurada, activa el calor superior i continua fins que ho estigui."
+      },
+      "oven": {
+        "temperature": 180,
+        "time": 1500,
+        "mode": [
+          "top",
+          "bottom"
+        ]
       },
       "ingredients": [
         "pastry_flour",

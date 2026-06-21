@@ -326,10 +326,14 @@
     },
     {
       "text": {
-        "en": "Bake in a preheated oven at 200°C with the upper grill on, until the surface is golden and gratinated.",
-        "es": "Hornea en un horno precalentado a 200 °C con el gratinador superior activado, hasta que la superficie esté dorada y gratinada.",
-        "cat": "Enforna en un forn preescalfat a 200 °C amb el gratinat superior activat, fins que la superfície estigui daurada i gratinada.",
-        "sv": "Grädda i en förvärmd ugn på 200°C med övre grillen på, tills ytan är guldgul och gratinerad."
+        "en": "Bake until the surface is golden and gratinated.",
+        "es": "Hornea hasta que la superficie esté dorada y gratinada.",
+        "cat": "Enforna fins que la superfície estigui daurada i gratinada.",
+        "sv": "Grädda tills ytan är guldgul och gratinerad."
+      },
+      "oven": {
+        "temperature": 200,
+        "mode": "top"
       },
       "onlyForVariation": "gratin"
     },
