@@ -56,6 +56,12 @@ function recipeRouting() {
       location.hash = '';
     },
 
+    goHomeAndClearFilters() {
+      this.searchQuery = '';
+      this.filterCategory = '';
+      this.goHome();
+    },
+
     async handleRoute() {
       const hash = location.hash;
       if (hash.startsWith('#recipe=')) {
