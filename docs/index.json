@@ -117,6 +117,39 @@
   },
   {
     "title": {
+      "en": "Chocolate Chip Cookies",
+      "es": "Galletas con Pepitas de Chocolate",
+      "cat": "Galetes amb Xips de Xocolata"
+    },
+    "categories": [
+      "desserts",
+      "baking"
+    ],
+    "path": "recipes/chocolate_chip_cookies.json",
+    "image": "/images/chocolate_chip_cookies/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "strong_flour",
+      "flour",
+      "salt",
+      "baking_soda",
+      "butter",
+      "water",
+      "brown_sugar",
+      "sugar",
+      "vanilla_extract",
+      "espresso_powder",
+      "eggs",
+      "egg_yolk",
+      "semi_sweet_chocolate_chips",
+      "dark_chocolate",
+      "flour",
+      "salt"
+    ]
+  },
+  {
+    "title": {
       "en": "Chocolate Chip Milk Bread Buns (Doowaps)",
       "es": "Pan de leche con chocolate (Doowaps)",
       "cat": "Pa de llet amb xocolata (Doowaps)",

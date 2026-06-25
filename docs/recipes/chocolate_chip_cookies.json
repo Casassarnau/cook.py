@@ -1,0 +1,359 @@
+{
+  "title": {
+    "en": "Chocolate Chip Cookies",
+    "es": "Galletas con Pepitas de Chocolate",
+    "cat": "Galetes amb Xips de Xocolata"
+  },
+  "author": "Arnau",
+  "categories": [
+    "desserts",
+    "baking"
+  ],
+  "image": "/images/chocolate_chip_cookies/main.webp",
+  "description": {
+    "en": "Chewy chocolate chip cookies made with brown butter, a mix of strong and all-purpose flour, and both semi-sweet chips and chopped dark chocolate. The dough rests overnight for deeper flavor.",
+    "es": "Galletas masticables con mantequilla avellanada, una mezcla de harina de fuerza y harina común, y pepitas semi-dulces junto con chocolate negro troceado. La masa reposa toda la noche para un sabor más intenso.",
+    "cat": "Galetes mastegables amb mantega avellana, una barreja de farina de força i farina comuna, i xips semi-dolces juntament amb xocolata negra trossejada. La massa reposa tota la nit per a un sabor més intens."
+  },
+  "portion": {
+    "type": "units",
+    "value": 18
+  },
+  "ingredients": [
+    {
+      "ingredient": "strong_flour",
+      "value": 125,
+      "unit": "g",
+      "id": "bread_flour"
+    },
+    {
+      "ingredient": "flour",
+      "value": 95,
+      "unit": "g",
+      "text": {
+        "en": "all-purpose",
+        "es": "harina común",
+        "cat": "farina comuna"
+      },
+      "id": "all_purpose_flour"
+    },
+    {
+      "ingredient": "salt",
+      "value": 10,
+      "unit": "g",
+      "id": "salt"
+    },
+    {
+      "ingredient": "baking_soda",
+      "value": 6,
+      "unit": "g",
+      "id": "baking_soda"
+    },
+    {
+      "ingredient": "butter",
+      "value": 225,
+      "unit": "g",
+      "text": {
+        "en": "unsalted",
+        "es": "sin sal",
+        "cat": "sense sal"
+      },
+      "id": "butter"
+    },
+    {
+      "ingredient": "water",
+      "value": 10,
+      "unit": "g",
+      "id": "water"
+    },
+    {
+      "ingredient": "brown_sugar",
+      "value": 220,
+      "unit": "g",
+      "text": {
+        "en": "dark",
+        "es": "moreno oscuro",
+        "cat": "moreno fosc"
+      },
+      "id": "brown_sugar"
+    },
+    {
+      "ingredient": "sugar",
+      "value": 100,
+      "unit": "g",
+      "text": {
+        "en": "white",
+        "es": "blanco",
+        "cat": "blanc"
+      },
+      "id": "white_sugar"
+    },
+    {
+      "ingredient": "vanilla_extract",
+      "value": 2,
+      "unit": "tsp",
+      "id": "vanilla_extract"
+    },
+    {
+      "ingredient": "espresso_powder",
+      "value": 1,
+      "unit": "tsp",
+      "id": "espresso_powder"
+    },
+    {
+      "ingredient": "eggs",
+      "value": 1,
+      "text": {
+        "en": "large",
+        "es": "grande",
+        "cat": "gran"
+      },
+      "id": "egg"
+    },
+    {
+      "ingredient": "egg_yolk",
+      "value": 1,
+      "text": {
+        "en": "large",
+        "es": "grande",
+        "cat": "gran"
+      },
+      "id": "egg_yolk"
+    },
+    {
+      "ingredient": "semi_sweet_chocolate_chips",
+      "value": 85,
+      "unit": "g",
+      "id": "semi_sweet_chips"
+    },
+    {
+      "ingredient": "dark_chocolate",
+      "value": 130,
+      "unit": "g",
+      "text": {
+        "en": "chopped",
+        "es": "troceado",
+        "cat": "trossejat"
+      },
+      "id": "dark_chocolate"
+    },
+    {
+      "ingredient": "flour",
+      "value": 0,
+      "unit": "as_needed",
+      "text": {
+        "en": "if the dough is too wet",
+        "es": "si la masa queda demasiado líquida",
+        "cat": "si la massa queda massa líquida"
+      },
+      "id": "extra_flour"
+    },
+    {
+      "ingredient": "salt",
+      "value": 0,
+      "unit": "to_taste",
+      "text": {
+        "en": "flaky sea salt, to sprinkle on top",
+        "es": "sal en escamas, para espolvorear por encima",
+        "cat": "sal en escates, per escampar per sobre"
+      },
+      "id": "flake_salt"
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Melt the butter in a pan over low heat, stirring constantly so it does not burn. If the butter foams heavily, remove it from the heat briefly, then return it to the pan once the foaming subsides. Stop when the butter smells nutty and has turned light brown.",
+        "es": "Derrite la mantequilla en una sartén a fuego bajo, removiendo constantemente para que no se queme. Si la mantequilla hace mucha espuma, retírala del fuego un momento y vuelve a ponerla cuando pase. Para cuando huela a avellana y la mantequilla se vea dorada.",
+        "cat": "Fon la mantega en una paella a foc baix, remenant constantment perquè no es cremi. Si la mantega fa molta escuma, treu-la del foc un moment i torna-la a posar quan passi. Para quan faci olor d'avellana i la mantega s'hagi enfosquit lleugerament."
+      },
+      "ingredients": [
+        "butter"
+      ]
+    },
+    {
+      "text": {
+        "en": "Let the brown butter cool completely.",
+        "es": "Deja enfriar completamente la mantequilla avellanada.",
+        "cat": "Deixa refredar completament la mantega avellana."
+      },
+      "ingredients": [
+        "butter"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the water, both sugars, vanilla extract, and espresso powder. Whisk with electric beaters for 2 minutes, or by hand until the mixture looks smooth and homogeneous.",
+        "es": "Añade el agua, los dos azúcares, la vainilla y el café en polvo. Bate con varillas eléctricas 2 minutos, o a mano hasta que la mezcla sea homogénea.",
+        "cat": "Afegeix l'aigua, els dos sucre, l'extracte de vainilla i el cafè en pols. Bateu amb batedores elèctriques 2 minuts, o a mà fins que la barreja sigui homogènia."
+      },
+      "ingredients": [
+        "water",
+        "brown_sugar",
+        "white_sugar",
+        "vanilla_extract",
+        "espresso_powder"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the egg and egg yolk and mix until fully incorporated.",
+        "es": "Añade el huevo y la yema y mezcla hasta que queden bien incorporados.",
+        "cat": "Afegeix l'ou i el rovell i barreja fins que quedin ben incorporats."
+      },
+      "ingredients": [
+        "egg",
+        "egg_yolk"
+      ]
+    },
+    {
+      "text": {
+        "en": "In another bowl, whisk together the strong flour, all-purpose flour, salt, and baking soda.",
+        "es": "En otro bol, mezcla la harina de fuerza, la harina común, la sal y el bicarbonato.",
+        "cat": "En un altre bol, barreja la farina de força, la farina comuna, la sal i el bicarbonat."
+      },
+      "ingredients": [
+        "bread_flour",
+        "all_purpose_flour",
+        "salt",
+        "baking_soda"
+      ]
+    },
+    {
+      "text": {
+        "en": "Fold the dry ingredients into the wet mixture until just combined. If the dough looks too wet, add a little extra flour.",
+        "es": "Incorpora los ingredientes secos a la mezcla húmeda sin trabajar en exceso. Si la masa queda demasiado líquida, añade un poco más de harina.",
+        "cat": "Incorpora els ingredients secs a la barreja humida sense treballar massa la massa. Si queda massa líquida, afegeix una mica més de farina."
+      },
+      "ingredients": [
+        "bread_flour",
+        "all_purpose_flour",
+        "salt",
+        "baking_soda",
+        "extra_flour"
+      ]
+    },
+    {
+      "text": {
+        "en": "Fold in the semi-sweet chocolate chips and the chopped dark chocolate.",
+        "es": "Incorpora las pepitas de chocolate semi-dulce y el chocolate negro troceado.",
+        "cat": "Incorpora les xips de xocolata semi-dolça i la xocolata negra trossejada."
+      },
+      "ingredients": [
+        "semi_sweet_chips",
+        "dark_chocolate"
+      ]
+    },
+    {
+      "text": {
+        "en": "Cover the dough and refrigerate overnight.",
+        "es": "Tapa la masa y déjala reposar en la nevera toda la noche.",
+        "cat": "Cobreix la massa i deixa-la reposar a la nevera tota la nit."
+      },
+      "ingredients": [
+        "bread_flour",
+        "all_purpose_flour",
+        "salt",
+        "baking_soda",
+        "butter",
+        "water",
+        "brown_sugar",
+        "white_sugar",
+        "vanilla_extract",
+        "espresso_powder",
+        "egg",
+        "egg_yolk",
+        "semi_sweet_chips",
+        "dark_chocolate",
+        "extra_flour"
+      ]
+    },
+    {
+      "text": {
+        "en": "Preheat the oven to 180°C with top and bottom heat.",
+        "es": "Precalienta el horno a 180°C con calor arriba y abajo.",
+        "cat": "Preescalfa el forn a 180°C amb calor amunt i avall."
+      },
+      "oven": {
+        "temperature": 180,
+        "mode": [
+          "top",
+          "bottom"
+        ]
+      }
+    },
+    {
+      "text": {
+        "en": "Scoop the dough into balls and place them on a baking sheet.",
+        "es": "Forma bolas con la masa y colócalas en una bandeja de horno.",
+        "cat": "Forma boles amb la massa i col·loca-les en una safata de forn."
+      },
+      "ingredients": [
+        "bread_flour",
+        "all_purpose_flour",
+        "salt",
+        "baking_soda",
+        "butter",
+        "water",
+        "brown_sugar",
+        "white_sugar",
+        "vanilla_extract",
+        "espresso_powder",
+        "egg",
+        "egg_yolk",
+        "semi_sweet_chips",
+        "dark_chocolate",
+        "extra_flour"
+      ]
+    },
+    {
+      "text": {
+        "en": "Bake for 12–14 minutes, depending on the size of your scoop. For completely flat cookies, drop the baking sheet firmly onto the counter a few times halfway through baking.",
+        "es": "Hornea 12–14 minutos, según el tamaño de la porción. Si prefieres galletas completamente planas, golpea la bandeja contra la mesa unas veces a mitad de cocción.",
+        "cat": "Enforna 12–14 minuts, segons la mida de la porció. Si prefereixes galetes completament planes, colpeja la safata contra la taula unes vegades a mitja cocció."
+      },
+      "oven": {
+        "temperature": 180,
+        "time": 780,
+        "mode": [
+          "top",
+          "bottom"
+        ]
+      },
+      "ingredients": [
+        "bread_flour",
+        "all_purpose_flour",
+        "salt",
+        "baking_soda",
+        "butter",
+        "water",
+        "brown_sugar",
+        "white_sugar",
+        "vanilla_extract",
+        "espresso_powder",
+        "egg",
+        "egg_yolk",
+        "semi_sweet_chips",
+        "dark_chocolate",
+        "extra_flour"
+      ]
+    },
+    {
+      "text": {
+        "en": "Let the cookies rest on the baking sheet for 2 minutes, then transfer them to a rack to cool.",
+        "es": "Deja reposar las galletas sobre la bandeja 2 minutos y pásalas a una rejilla para enfriar.",
+        "cat": "Deixa reposar les galetes sobre la safata 2 minuts i passa-les a una reixeta per refredar."
+      }
+    },
+    {
+      "text": {
+        "en": "Sprinkle flaky sea salt over the cookies before serving.",
+        "es": "Espolvorea sal en escamas por encima antes de servir.",
+        "cat": "Escampa sal en escates per sobre abans de servir."
+      },
+      "ingredients": [
+        "flake_salt"
+      ]
+    }
+  ]
+}
