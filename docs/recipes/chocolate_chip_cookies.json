@@ -28,13 +28,8 @@
     },
     {
       "ingredient": "flour",
-      "value": 95,
+      "value": 100,
       "unit": "g",
-      "text": {
-        "en": "all-purpose",
-        "es": "harina común",
-        "cat": "farina comuna"
-      },
       "id": "all_purpose_flour"
     },
     {
@@ -51,13 +46,8 @@
     },
     {
       "ingredient": "butter",
-      "value": 225,
+      "value": 200,
       "unit": "g",
-      "text": {
-        "en": "unsalted",
-        "es": "sin sal",
-        "cat": "sense sal"
-      },
       "id": "butter"
     },
     {
@@ -73,7 +63,7 @@
       "text": {
         "en": "dark",
         "es": "moreno oscuro",
-        "cat": "moreno fosc"
+        "cat": "morè fosc"
       },
       "id": "brown_sugar"
     },
