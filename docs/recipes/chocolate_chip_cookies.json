@@ -2,7 +2,8 @@
   "title": {
     "en": "Chocolate Chip Cookies",
     "es": "Galletas con Pepitas de Chocolate",
-    "cat": "Galetes amb Xips de Xocolata"
+    "cat": "Galetes amb Xips de Xocolata",
+    "sv": "Chocolate Chip-kakor"
   },
   "author": "Arnau",
   "categories": [
@@ -13,7 +14,8 @@
   "description": {
     "en": "Chewy chocolate chip cookies made with brown butter, a mix of strong and all-purpose flour, and both semi-sweet chips and chopped dark chocolate. The dough rests overnight for deeper flavor.",
     "es": "Galletas masticables con mantequilla avellanada, una mezcla de harina de fuerza y harina común, y pepitas semi-dulces junto con chocolate negro troceado. La masa reposa toda la noche para un sabor más intenso.",
-    "cat": "Galetes mastegables amb mantega avellana, una barreja de farina de força i farina comuna, i xips semi-dolces juntament amb xocolata negra trossejada. La massa reposa tota la nit per a un sabor més intens."
+    "cat": "Galetes mastegables amb mantega avellana, una barreja de farina de força i farina comuna, i xips semi-dolces juntament amb xocolata negra trossejada. La massa reposa tota la nit per a un sabor més intens.",
+    "sv": "Sega chocolate chip-kakor gjorda med brynt smör, en blandning av vetemjöl special och vanligt vetemjöl, samt både halvsöta chokladknappar och hackad mörk choklad. Degen vilar över natten för en djupare smak."
   },
   "portion": {
     "type": "units",
@@ -63,7 +65,8 @@
       "text": {
         "en": "dark",
         "es": "moreno oscuro",
-        "cat": "morè fosc"
+        "cat": "morè fosc",
+        "sv": "mörkt"
       },
       "id": "brown_sugar"
     },
@@ -74,7 +77,8 @@
       "text": {
         "en": "white",
         "es": "blanco",
-        "cat": "blanc"
+        "cat": "blanc",
+        "sv": "vitt"
       },
       "id": "white_sugar"
     },
@@ -96,7 +100,8 @@
       "text": {
         "en": "large",
         "es": "grande",
-        "cat": "gran"
+        "cat": "gran",
+        "sv": "stort"
       },
       "id": "egg"
     },
@@ -106,7 +111,8 @@
       "text": {
         "en": "large",
         "es": "grande",
-        "cat": "gran"
+        "cat": "gran",
+        "sv": "stor"
       },
       "id": "egg_yolk"
     },
@@ -123,7 +129,8 @@
       "text": {
         "en": "chopped",
         "es": "troceado",
-        "cat": "trossejat"
+        "cat": "trossejat",
+        "sv": "hackad"
       },
       "id": "dark_chocolate"
     },
@@ -134,7 +141,8 @@
       "text": {
         "en": "if the dough is too wet",
         "es": "si la masa queda demasiado líquida",
-        "cat": "si la massa queda massa líquida"
+        "cat": "si la massa queda massa líquida",
+        "sv": "om degen är för blöt"
       },
       "id": "extra_flour"
     },
@@ -145,7 +153,8 @@
       "text": {
         "en": "flaky sea salt, to sprinkle on top",
         "es": "sal en escamas, para espolvorear por encima",
-        "cat": "sal en escates, per escampar per sobre"
+        "cat": "sal en escates, per escampar per sobre",
+        "sv": "flingsalt, att strö över"
       },
       "id": "flake_salt"
     }
@@ -155,7 +164,8 @@
       "text": {
         "en": "Melt the butter in a pan over low heat, stirring constantly so it does not burn. If the butter foams heavily, remove it from the heat briefly, then return it to the pan once the foaming subsides. Stop when the butter smells nutty and has turned light brown.",
         "es": "Derrite la mantequilla en una sartén a fuego bajo, removiendo constantemente para que no se queme. Si la mantequilla hace mucha espuma, retírala del fuego un momento y vuelve a ponerla cuando pase. Para cuando huela a avellana y la mantequilla se vea dorada.",
-        "cat": "Fon la mantega en una paella a foc baix, remenant constantment perquè no es cremi. Si la mantega fa molta escuma, treu-la del foc un moment i torna-la a posar quan passi. Para quan faci olor d'avellana i la mantega s'hagi enfosquit lleugerament."
+        "cat": "Fon la mantega en una paella a foc baix, remenant constantment perquè no es cremi. Si la mantega fa molta escuma, treu-la del foc un moment i torna-la a posar quan passi. Para quan faci olor d'avellana i la mantega s'hagi enfosquit lleugerament.",
+        "sv": "Smält smöret i en kastrull på låg värme och rör hela tiden så att det inte bränns. Om smöret skummar kraftigt, ta bort det från värmen en kort stund och ställ tillbaka det när skummandet lagt sig. Sluta när smöret doftar nötigt och har fått en ljusbrun färg."
       },
       "ingredients": [
         "butter"
@@ -165,7 +175,8 @@
       "text": {
         "en": "Let the brown butter cool completely.",
         "es": "Deja enfriar completamente la mantequilla avellanada.",
-        "cat": "Deixa refredar completament la mantega avellana."
+        "cat": "Deixa refredar completament la mantega avellana.",
+        "sv": "Låt det brynta smöret svalna helt."
       },
       "ingredients": [
         "butter"
@@ -175,7 +186,8 @@
       "text": {
         "en": "Add the water, both sugars, vanilla extract, and espresso powder. Whisk with electric beaters for 2 minutes, or by hand until the mixture looks smooth and homogeneous.",
         "es": "Añade el agua, los dos azúcares, la vainilla y el café en polvo. Bate con varillas eléctricas 2 minutos, o a mano hasta que la mezcla sea homogénea.",
-        "cat": "Afegeix l'aigua, els dos sucre, l'extracte de vainilla i el cafè en pols. Bateu amb batedores elèctriques 2 minuts, o a mà fins que la barreja sigui homogènia."
+        "cat": "Afegeix l'aigua, els dos sucre, l'extracte de vainilla i el cafè en pols. Bateu amb batedores elèctriques 2 minuts, o a mà fins que la barreja sigui homogènia.",
+        "sv": "Tillsätt vattnet, båda sockerna, vaniljextraktet och espressopulvret. Vispa med elvisp i 2 minuter, eller för hand tills smeten ser slät och jämn ut."
       },
       "ingredients": [
         "water",
@@ -189,7 +201,8 @@
       "text": {
         "en": "Add the egg and egg yolk and mix until fully incorporated.",
         "es": "Añade el huevo y la yema y mezcla hasta que queden bien incorporados.",
-        "cat": "Afegeix l'ou i el rovell i barreja fins que quedin ben incorporats."
+        "cat": "Afegeix l'ou i el rovell i barreja fins que quedin ben incorporats.",
+        "sv": "Tillsätt ägget och äggulan och blanda tills allt är väl införlivat."
       },
       "ingredients": [
         "egg",
@@ -200,7 +213,8 @@
       "text": {
         "en": "In another bowl, whisk together the strong flour, all-purpose flour, salt, and baking soda.",
         "es": "En otro bol, mezcla la harina de fuerza, la harina común, la sal y el bicarbonato.",
-        "cat": "En un altre bol, barreja la farina de força, la farina comuna, la sal i el bicarbonat."
+        "cat": "En un altre bol, barreja la farina de força, la farina comuna, la sal i el bicarbonat.",
+        "sv": "Vispa ihop vetemjöl special, vanligt vetemjöl, salt och bikarbonat i en annan skål."
       },
       "ingredients": [
         "bread_flour",
@@ -213,7 +227,8 @@
       "text": {
         "en": "Fold the dry ingredients into the wet mixture until just combined. If the dough looks too wet, add a little extra flour.",
         "es": "Incorpora los ingredientes secos a la mezcla húmeda sin trabajar en exceso. Si la masa queda demasiado líquida, añade un poco más de harina.",
-        "cat": "Incorpora els ingredients secs a la barreja humida sense treballar massa la massa. Si queda massa líquida, afegeix una mica més de farina."
+        "cat": "Incorpora els ingredients secs a la barreja humida sense treballar massa la massa. Si queda massa líquida, afegeix una mica més de farina.",
+        "sv": "Vänd ner de torra ingredienserna i den våta smeten tills de precis blandats. Om degen ser för blöt ut, tillsätt lite extra mjöl."
       },
       "ingredients": [
         "bread_flour",
@@ -227,7 +242,8 @@
       "text": {
         "en": "Fold in the semi-sweet chocolate chips and the chopped dark chocolate.",
         "es": "Incorpora las pepitas de chocolate semi-dulce y el chocolate negro troceado.",
-        "cat": "Incorpora les xips de xocolata semi-dolça i la xocolata negra trossejada."
+        "cat": "Incorpora les xips de xocolata semi-dolça i la xocolata negra trossejada.",
+        "sv": "Vänd ner de halvsöta chokladknapparna och den hackade mörka chokladen."
       },
       "ingredients": [
         "semi_sweet_chips",
@@ -238,7 +254,8 @@
       "text": {
         "en": "Cover the dough and refrigerate overnight.",
         "es": "Tapa la masa y déjala reposar en la nevera toda la noche.",
-        "cat": "Cobreix la massa i deixa-la reposar a la nevera tota la nit."
+        "cat": "Cobreix la massa i deixa-la reposar a la nevera tota la nit.",
+        "sv": "Täck degen och låt den vila i kylen över natten."
       },
       "ingredients": [
         "bread_flour",
@@ -262,7 +279,8 @@
       "text": {
         "en": "Preheat the oven to 180°C with top and bottom heat.",
         "es": "Precalienta el horno a 180°C con calor arriba y abajo.",
-        "cat": "Preescalfa el forn a 180°C amb calor amunt i avall."
+        "cat": "Preescalfa el forn a 180°C amb calor amunt i avall.",
+        "sv": "Förvärm ugnen till 180°C med över- och undervärme."
       },
       "oven": {
         "temperature": 180,
@@ -276,7 +294,8 @@
       "text": {
         "en": "Scoop the dough into balls and place them on a baking sheet.",
         "es": "Forma bolas con la masa y colócalas en una bandeja de horno.",
-        "cat": "Forma boles amb la massa i col·loca-les en una safata de forn."
+        "cat": "Forma boles amb la massa i col·loca-les en una safata de forn.",
+        "sv": "Forma degen till bollar och lägg dem på en bakplåt."
       },
       "ingredients": [
         "bread_flour",
@@ -300,7 +319,8 @@
       "text": {
         "en": "Bake for 12–14 minutes, depending on the size of your scoop. For completely flat cookies, drop the baking sheet firmly onto the counter a few times halfway through baking.",
         "es": "Hornea 12–14 minutos, según el tamaño de la porción. Si prefieres galletas completamente planas, golpea la bandeja contra la mesa unas veces a mitad de cocción.",
-        "cat": "Enforna 12–14 minuts, segons la mida de la porció. Si prefereixes galetes completament planes, colpeja la safata contra la taula unes vegades a mitja cocció."
+        "cat": "Enforna 12–14 minuts, segons la mida de la porció. Si prefereixes galetes completament planes, colpeja la safata contra la taula unes vegades a mitja cocció.",
+        "sv": "Grädda i 12–14 minuter, beroende på storleken på bollarna. För helt platta kakor, släpp ner bakplåten bestämt mot bänken några gånger halvvägs genom gräddningen."
       },
       "oven": {
         "temperature": 180,
@@ -332,14 +352,16 @@
       "text": {
         "en": "Let the cookies rest on the baking sheet for 2 minutes, then transfer them to a rack to cool.",
         "es": "Deja reposar las galletas sobre la bandeja 2 minutos y pásalas a una rejilla para enfriar.",
-        "cat": "Deixa reposar les galetes sobre la safata 2 minuts i passa-les a una reixeta per refredar."
+        "cat": "Deixa reposar les galetes sobre la safata 2 minuts i passa-les a una reixeta per refredar.",
+        "sv": "Låt kakorna vila på plåten i 2 minuter och flytta dem sedan till ett galler för att svalna."
       }
     },
     {
       "text": {
         "en": "Sprinkle flaky sea salt over the cookies before serving.",
         "es": "Espolvorea sal en escamas por encima antes de servir.",
-        "cat": "Escampa sal en escates per sobre abans de servir."
+        "cat": "Escampa sal en escates per sobre abans de servir.",
+        "sv": "Strö flingsalt över kakorna innan servering."
       },
       "ingredients": [
         "flake_salt"
