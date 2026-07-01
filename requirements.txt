@@ -1,4 +1,0 @@
-Pillow
-cssbeautifier
-djhtml
-jsbeautifier

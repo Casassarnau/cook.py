@@ -5,19 +5,19 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
-PYTHON="${REPO_ROOT}/.venv/bin/python"
-if [ ! -x "$PYTHON" ]; then
-  echo "❌ Virtual environment not found. Run ./setup.sh first." >&2
+UV="${REPO_ROOT}/bin/uv"
+if [ ! -x "$UV" ]; then
+  echo "❌ Hermit environment not found. Run ./setup.sh first." >&2
   exit 1
 fi
 
 # === Step 0: Auto-format docs (JSON, HTML, JS, CSS) ===
 echo "🧹 Auto-formatting docs (JSON, HTML, JS, CSS)..."
-"$PYTHON" docs_formatter.py
+"$UV" run python docs_formatter.py
 
 # === Step 1: Generate images ===
 echo "🖼️  Running image generation..."
-"$PYTHON" generate_images.py
+"$UV" run python generate_images.py
 
 # Stage image and JSON files only if they changed
 if ! git diff --quiet -- docs/images || ! git diff --cached --quiet -- docs/images; then
@@ -32,7 +32,7 @@ fi
 
 # === Step 2: Generate index ===
 echo "📚 Running index generation..."
-"$PYTHON" generate_index.py
+"$UV" run python generate_index.py
 
 # === Step 3: Handle index.json changes ===
 if ! git diff --quiet -- docs/index.json; then
@@ -42,7 +42,7 @@ fi
 
 # === Step 4: Optional warning if staged but uncommitted ===
 if ! git diff --cached --quiet -- docs/index.json; then
-  echo "⚠️  docs/index.json has staged changes. Ensure it’s included in this commit." >&2
+  echo "⚠️  docs/index.json has staged changes. Ensure it's included in this commit." >&2
   # Uncomment next line to make it fail instead of warn
   # exit 1
 fi
