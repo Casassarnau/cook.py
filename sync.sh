@@ -1,5 +1,5 @@
-.venv/bin/python docs_formatter.py
+./bin/uv run python docs_formatter.py
 
-.venv/bin/python generate_images.py
+./bin/uv run python generate_images.py
 
-.venv/bin/python generate_index.py
+./bin/uv run python generate_index.py
