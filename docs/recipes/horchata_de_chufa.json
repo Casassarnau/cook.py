@@ -67,10 +67,7 @@
         "cat": "Escorre les xufes descartant l'aigua del remull. Posa-les en una processadora d'aliments o minipimer potent amb una part de l'aigua freda reservada. Tritura 1 minut, aturant per baixar els restes amb una espàtula. Afegeix la resta de l'aigua i tritura 1 minut més a velocitat més lenta.",
         "sv": "Häll av jordmandlarna och kasta blötläggningsvattnet. Lägg dem i en matberedare eller kraftig stavmixer med en del av det kylda vattnet. Mixa i 1 minut och skrapa ner sidorna med en spatla. Tillsätt resten av vattnet och mixa 1 minut till på lägre hastighet."
       },
-      "ingredients": [
-        "chufa",
-        "water"
-      ],
+      "ingredients": [],
       "thermomix": {
         "text": {
           "en": "Drain the tiger nuts, discarding the soaking water. Put them in the Thermomix bowl with part of the chilled water. Blend 1 min / speed 10, stopping to scrape down the sides. Add the remaining water and blend 1 min / speed 6.",
@@ -91,10 +88,7 @@
         "cat": "Passa la barreja per un colador fi; recomano un de tela per a begudes vegetals o de cafè. Prem bé el bagasse de xufa per extreure tot el sabor.",
         "sv": "Sila blandningen genom ett finmaskigt durk — helst en nöt- eller växtmjölksduk eller kaffefilterduk. Pressa bagaset hårt för att få ut så mycket smak som möjligt."
       },
-      "ingredients": [
-        "chufa",
-        "water"
-      ]
+      "ingredients": []
     },
     {
       "text": {

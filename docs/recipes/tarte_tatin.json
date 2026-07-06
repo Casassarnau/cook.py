@@ -107,8 +107,6 @@
         "cat": "Afegeix l'ou i barreja fins obtenir una massa homogènia. Tingues cura de no treballar massa la massa."
       },
       "ingredients": [
-        "pastry_flour",
-        "pastry_butter",
         "pastry_egg"
       ]
     },
@@ -118,11 +116,7 @@
         "es": "Coloca la masa en un bol, tápala con film transparente y refrigérala durante una hora.",
         "cat": "Col·loca la massa en un bol, cobreix-la amb paper film i refreda-la durant una hora."
       },
-      "ingredients": [
-        "pastry_flour",
-        "pastry_butter",
-        "pastry_egg"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -151,7 +145,6 @@
         "cat": "Un cop el sucre s'hagi fos (però no cremat), afegeix la mantega i remena fins que estigui completament incorporada."
       },
       "ingredients": [
-        "caramel_sugar",
         "caramel_butter"
       ]
     },
@@ -161,11 +154,7 @@
         "es": "Añade las manzanas al caramelo y cocínalas durante 20 minutos, dándoles la vuelta ocasionalmente para asegurar una cocción uniforme.",
         "cat": "Afegeix les pomes al caramel i cou-les durant 20 minuts, donant-los la volta ocasionalment per assegurar una cocció uniforme."
       },
-      "ingredients": [
-        "apple",
-        "caramel_sugar",
-        "caramel_butter"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -173,11 +162,7 @@
         "es": "Deja enfriar un poco el caramelo con las manzanas y luego transfiérelo a un molde circular de 15 cm de diámetro.",
         "cat": "Deixa refredar una mica el caramel amb les pomes i després transfereix-lo a un motlle circular de 15 cm de diàmetre."
       },
-      "ingredients": [
-        "apple",
-        "caramel_sugar",
-        "caramel_butter"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -199,11 +184,7 @@
         "es": "Saca la masa de la nevera. Estírala con un rodillo formando un círculo ligeramente más grande que el molde, con márgenes extra para doblar sobre los bordes.",
         "cat": "Treure la massa de la nevera. Estira-la amb un corró formant un cercle lleugerament més gran que el motlle, amb marges extres per doblegar sobre les vores."
       },
-      "ingredients": [
-        "pastry_flour",
-        "pastry_butter",
-        "pastry_egg"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -211,12 +192,7 @@
         "es": "Coloca la masa sobre las manzanas y mete los bordes hacia abajo del molde, creando una forma de bol. Esto evita que las manzanas se caigan cuando des la vuelta a la tarta más tarde.",
         "cat": "Col·loca la massa sobre les pomes i fica les vores cap avall del motlle, creant una forma de bol. Això evita que les pomes es caiguin quan donis la volta a la coca més tard."
       },
-      "ingredients": [
-        "pastry_flour",
-        "pastry_butter",
-        "pastry_egg",
-        "apple"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -232,12 +208,7 @@
           "bottom"
         ]
       },
-      "ingredients": [
-        "pastry_flour",
-        "pastry_butter",
-        "pastry_egg",
-        "apple"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -245,11 +216,7 @@
         "es": "Saca del horno y deja enfriar un poco. Voltea cuidadosamente la tarta sobre un plato de servir para revelar la parte superior de manzanas caramelizadas.",
         "cat": "Treure del forn i deixa refredar una mica. Volta acuradament la coca sobre un plat de servir per revelar la part superior de pomes caramelitzades."
       },
-      "ingredients": [
-        "apple",
-        "caramel_sugar",
-        "caramel_butter"
-      ]
+      "ingredients": []
     },
     {
       "text": {

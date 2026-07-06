@@ -231,19 +231,7 @@
         "time": 3600,
         "mode": "fan"
       },
-      "ingredients": [
-        "carrot",
-        "sugar",
-        "eggs",
-        "sunflower_oil",
-        "flour",
-        "baking_soda",
-        "baking_powder",
-        "cinnamon",
-        "nutmeg",
-        "cardamom",
-        "salt"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -274,8 +262,6 @@
         "sv": "När det är väl inblandat, tillsätt apelsinjuicen och blanda igen."
       },
       "ingredients": [
-        "white_chocolate",
-        "cream_cheese",
         "orange_juice"
       ]
     },
@@ -288,9 +274,6 @@
       },
       "image": "/images/carrot_cake/filling.webp",
       "ingredients": [
-        "cream_cheese",
-        "white_chocolate",
-        "orange_juice",
         "walnuts"
       ]
     }
@@ -373,11 +356,7 @@
         "cinnamon",
         "nutmeg",
         "cardamom",
-        "salt",
-        "carrot",
-        "sugar",
-        "eggs",
-        "sunflower_oil"
+        "salt"
       ]
     },
     {
@@ -392,19 +371,7 @@
         "time": 3600,
         "mode": "fan"
       },
-      "ingredients": [
-        "carrot",
-        "sugar",
-        "eggs",
-        "sunflower_oil",
-        "flour",
-        "baking_soda",
-        "baking_powder",
-        "cinnamon",
-        "nutmeg",
-        "cardamom",
-        "salt"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -442,9 +409,7 @@
         "time": 60,
         "speed": 3
       },
-      "ingredients": [
-        "white_chocolate"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -459,8 +424,7 @@
       },
       "ingredients": [
         "cream_cheese",
-        "orange_juice",
-        "white_chocolate"
+        "orange_juice"
       ]
     },
     {
@@ -474,11 +438,7 @@
         "time": 30,
         "speed": 4
       },
-      "ingredients": [
-        "cream_cheese",
-        "orange_juice",
-        "white_chocolate"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -489,9 +449,6 @@
       },
       "image": "/images/carrot_cake/filling.webp",
       "ingredients": [
-        "cream_cheese",
-        "white_chocolate",
-        "orange_juice",
         "walnuts"
       ]
     }

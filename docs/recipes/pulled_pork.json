@@ -139,17 +139,7 @@
         "cat": "Unta tota la peça de carn amb el marinat i embolica-la bé amb paper d'alumini.",
         "sv": "Smörj in hela köttbiten med marinaden och linda in den ordentligt i aluminiumfolie."
       },
-      "ingredients": [
-        "pork",
-        "salt",
-        "thyme",
-        "oregano",
-        "red_pepper",
-        "garlic_powder",
-        "parsley",
-        "gochujang",
-        "lemon"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -158,9 +148,7 @@
         "cat": "Posa-la en una safata de forn amb una mica d'aigua al fons perquè no s'assequi.",
         "sv": "Lägg det inlindade köttet i en ugnsform med lite vatten i botten så att det inte torkar under tillagningen."
       },
-      "ingredients": [
-        "pork"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -176,9 +164,7 @@
           "fan"
         ]
       },
-      "ingredients": [
-        "pork"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -187,9 +173,7 @@
         "cat": "Deixa refredar una mica i desfés la carn amb dues forquilles per obtenir pulled pork.",
         "sv": "Låt svalna något och riv köttet med två gafflar till pulled pork."
       },
-      "ingredients": [
-        "pork"
-      ]
+      "ingredients": []
     }
   ]
 }

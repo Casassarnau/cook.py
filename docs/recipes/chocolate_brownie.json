@@ -171,9 +171,7 @@
         "sv": "Tillsätt sockret i den smälta choklad- och smörblandningen och vispa tills det är väl inblandat."
       },
       "ingredients": [
-        "sugar",
-        "butter",
-        "chocolate_melt"
+        "sugar"
       ]
     },
     {
@@ -233,8 +231,6 @@
         "sv": "Häll smeten i den förberedda formen. Om du vill, strö färska hallon ovanpå för att lägga till syra och visuellt intresse."
       },
       "ingredients": [
-        "walnuts",
-        "chocolate_chips",
         "raspberry"
       ]
     },
@@ -253,21 +249,7 @@
           "bottom"
         ]
       },
-      "ingredients": [
-        "butter",
-        "chocolate_melt",
-        "sugar",
-        "eggs",
-        "cocoa_powder",
-        "flour",
-        "almond_flour",
-        "espresso_powder",
-        "salt",
-        "baking_powder",
-        "walnuts",
-        "chocolate_chips",
-        "raspberry"
-      ]
+      "ingredients": []
     }
   ]
 }

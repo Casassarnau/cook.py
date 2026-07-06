@@ -82,8 +82,6 @@
         "sv": "Lägg potatis och lök i en stekpanna med salt och tillräckligt med olivolja för att det inte ska fastna. Tillaga på medelvärme. Tillsätt mer olja vid behov."
       },
       "ingredients": [
-        "potatoes",
-        "onion",
         "salt",
         "olive_oil"
       ]
@@ -106,11 +104,7 @@
         "cat": "Quan la patata estigui tova i comenci a daurar-se, retira-la i barreja-la amb els ous batuts.",
         "sv": "När potatisen är mjuk och lätt gyllene, ta bort den från pannan och blanda med de vispade äggen."
       },
-      "ingredients": [
-        "potatoes",
-        "onion",
-        "eggs"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -127,9 +121,7 @@
         "cat": "Escalfa una paella engrasada, afegeix la barreja, aplana-la suaument i no la remenis durant la cocció.",
         "sv": "Värm en stekpanna i olja, tillsätt blandningen, platta till den försiktigt och rör inte under tillagningen."
       },
-      "ingredients": [
-        "olive_oil"
-      ]
+      "ingredients": []
     },
     {
       "text": {

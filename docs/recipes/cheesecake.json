@@ -203,10 +203,7 @@
         "cat": "Prem la barreja fermament dins el motlle amb un got de fons pla.",
         "sv": "Pressa blandningen hårt i formen med ett glas med platt botten."
       },
-      "ingredients": [
-        "digestive_cookies",
-        "base_butter"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -220,10 +217,7 @@
         "time": 300,
         "mode": "fan"
       },
-      "ingredients": [
-        "digestive_cookies",
-        "base_butter"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -232,15 +226,7 @@
         "cat": "Barreja tots els ingredients excepte el Philadelphia amb una batedora de mà. No aixequis la batedora per evitar incorporar aire.",
         "sv": "Blanda alla ingredienser utom Philadelphia med en handmixer. Lyft inte mixern för att undvika att få in luft."
       },
-      "ingredients": [
-        "eggs",
-        "heavy_cream",
-        "sugar",
-        "flour",
-        "parmesan_classic",
-        "parmesan_blue",
-        "blue_cheese"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -249,9 +235,7 @@
         "cat": "En un bol a part, estova el formatge Philadelphia. Afegeix la barreja a poc a poc, barrejant suaument per evitar grumolls.",
         "sv": "I en separat skål, mjuka upp Philadelphiaosten. Tillsätt blandningen lite i taget och blanda försiktigt för att undvika klumpar."
       },
-      "ingredients": [
-        "cream_cheese"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -260,16 +244,7 @@
         "cat": "Aboca el farcit al motlle amb cura per no malmetre la base.",
         "sv": "Häll fyllningen försiktigt i formen för att inte skada botten."
       },
-      "ingredients": [
-        "cream_cheese",
-        "eggs",
-        "heavy_cream",
-        "sugar",
-        "flour",
-        "parmesan_classic",
-        "parmesan_blue",
-        "blue_cheese"
-      ]
+      "ingredients": []
     },
     {
       "text": {

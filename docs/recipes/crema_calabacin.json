@@ -95,9 +95,6 @@
         "sv": "Lägg grönsakerna i en kastrull med vatten och salt. Koka på medelvärme i 20 minuter."
       },
       "ingredients": [
-        "soup_zucchini",
-        "soup_onion",
-        "soup_potato",
         "soup_water",
         "soup_salt"
       ],
@@ -111,9 +108,6 @@
         "sv": "Lägg grönsakerna i Thermomix-skålen med vatten och salt. Tillaga i 20 minuter på 100°C och skedhastighet."
       },
       "ingredients": [
-        "soup_zucchini",
-        "soup_onion",
-        "soup_potato",
         "soup_water",
         "soup_salt"
       ],
@@ -142,8 +136,7 @@
       },
       "ingredients": [
         "soup_cheese",
-        "soup_oil",
-        "soup_water"
+        "soup_oil"
       ],
       "onlyForMode": "classic"
     },
@@ -156,8 +149,7 @@
       },
       "ingredients": [
         "soup_cheese",
-        "soup_oil",
-        "soup_water"
+        "soup_oil"
       ],
       "onlyForMode": "thermomix",
       "thermomix": {

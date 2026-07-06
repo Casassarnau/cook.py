@@ -350,12 +350,7 @@
         "cat": "Tot just en treure-la del forn, pinzella l'almívar d'anís per damunt. Deixa-la refredar una mica i gaudeix.",
         "sv": "Strax när den kommer ut ur ugnen, pensla anisglasyren ovanpå. Låt svalna lite och njut."
       },
-      "ingredients": [
-        "glaze_water",
-        "glaze_anise_seeds",
-        "glaze_sugar",
-        "glaze_anise_liqueur"
-      ]
+      "ingredients": []
     }
   ]
 }

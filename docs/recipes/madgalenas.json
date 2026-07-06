@@ -253,12 +253,7 @@
           "rotation": "normal"
         }
       },
-      "ingredients": [
-        "flour",
-        "rye_flour",
-        "baking_powder",
-        "salt"
-      ]
+      "ingredients": []
     },
     {
       "text": {

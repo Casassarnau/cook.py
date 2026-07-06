@@ -294,6 +294,8 @@
     "development": false,
     "ingredient_keys": [
       "tomato",
+      "tomato",
+      "watermelon",
       "garlic",
       "bell_pepper",
       "onion",
@@ -301,6 +303,9 @@
       "vinegar",
       "salt",
       "olive_oil",
+      "olive_oil",
+      "olive_oil",
+      "water",
       "water"
     ]
   },

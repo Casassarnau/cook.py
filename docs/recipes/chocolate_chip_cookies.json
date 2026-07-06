@@ -178,9 +178,7 @@
         "cat": "Deixa refredar completament la mantega avellana.",
         "sv": "Låt det brynta smöret svalna helt."
       },
-      "ingredients": [
-        "butter"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -231,10 +229,6 @@
         "sv": "Vänd ner de torra ingredienserna i den våta smeten tills de precis blandats. Om degen ser för blöt ut, tillsätt lite extra mjöl."
       },
       "ingredients": [
-        "bread_flour",
-        "all_purpose_flour",
-        "salt",
-        "baking_soda",
         "extra_flour"
       ]
     },
@@ -257,23 +251,7 @@
         "cat": "Cobreix la massa i deixa-la reposar a la nevera tota la nit.",
         "sv": "Täck degen och låt den vila i kylen över natten."
       },
-      "ingredients": [
-        "bread_flour",
-        "all_purpose_flour",
-        "salt",
-        "baking_soda",
-        "butter",
-        "water",
-        "brown_sugar",
-        "white_sugar",
-        "vanilla_extract",
-        "espresso_powder",
-        "egg",
-        "egg_yolk",
-        "semi_sweet_chips",
-        "dark_chocolate",
-        "extra_flour"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -297,23 +275,7 @@
         "cat": "Forma boles amb la massa i col·loca-les en una safata de forn.",
         "sv": "Forma degen till bollar och lägg dem på en bakplåt."
       },
-      "ingredients": [
-        "bread_flour",
-        "all_purpose_flour",
-        "salt",
-        "baking_soda",
-        "butter",
-        "water",
-        "brown_sugar",
-        "white_sugar",
-        "vanilla_extract",
-        "espresso_powder",
-        "egg",
-        "egg_yolk",
-        "semi_sweet_chips",
-        "dark_chocolate",
-        "extra_flour"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -330,23 +292,7 @@
           "bottom"
         ]
       },
-      "ingredients": [
-        "bread_flour",
-        "all_purpose_flour",
-        "salt",
-        "baking_soda",
-        "butter",
-        "water",
-        "brown_sugar",
-        "white_sugar",
-        "vanilla_extract",
-        "espresso_powder",
-        "egg",
-        "egg_yolk",
-        "semi_sweet_chips",
-        "dark_chocolate",
-        "extra_flour"
-      ]
+      "ingredients": []
     },
     {
       "text": {

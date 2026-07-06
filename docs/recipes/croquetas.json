@@ -247,7 +247,6 @@
       },
       "onlyForVariation": "setas",
       "ingredients": [
-        "filling_mushrooms",
         "filling_oil",
         "filling_butter",
         "filling_salt",
@@ -274,8 +273,7 @@
       },
       "onlyForVariation": "jamon",
       "ingredients": [
-        "bechamel_butter",
-        "bechamel_onion"
+        "bechamel_butter"
       ]
     },
     {
@@ -287,8 +285,7 @@
       },
       "onlyForVariation": "pollo",
       "ingredients": [
-        "bechamel_butter",
-        "bechamel_onion"
+        "bechamel_butter"
       ]
     },
     {
@@ -300,8 +297,7 @@
       },
       "onlyForVariation": "setas",
       "ingredients": [
-        "bechamel_butter",
-        "bechamel_onion"
+        "bechamel_butter"
       ]
     },
     {
@@ -326,8 +322,7 @@
       },
       "image": "/images/croquetas/2.webp",
       "ingredients": [
-        "bechamel_flour",
-        "bechamel_onion"
+        "bechamel_flour"
       ]
     },
     {
@@ -374,10 +369,7 @@
           "speed": 4
         }
       },
-      "ingredients": [
-        "bechamel_milk",
-        "bechamel_flour"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -400,10 +392,7 @@
         }
       },
       "image": "/images/croquetas/3.webp",
-      "ingredients": [
-        "bechamel_milk",
-        "bechamel_flour"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -427,9 +416,6 @@
       },
       "image": "/images/croquetas/4.webp",
       "ingredients": [
-        "filling_ham",
-        "filling_chicken",
-        "filling_mushrooms",
         "bechamel_salt"
       ]
     },
@@ -470,11 +456,7 @@
         "cat": "Reboçar cada croqueta: primer en farina, després en ou i després en panko. Assegura't de que cada croqueta estigui coberta uniformement.",
         "sv": "Panera varje kroket: först i mjöl, sedan i vispade ägg och slutligen i panko. Se till att varje kroket är jämnt panerad."
       },
-      "ingredients": [
-        "bread_flour",
-        "bread_eggs",
-        "bread_panko"
-      ]
+      "ingredients": []
     },
     {
       "text": {

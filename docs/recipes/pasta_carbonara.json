@@ -95,7 +95,6 @@
         "sv": "Flytta peppran till en stor skål. Lägg guanciale eller bacon i pannan och låt det bli gyllenbrunt."
       },
       "ingredients": [
-        "black_pepper",
         "guanciale"
       ]
     },
@@ -119,8 +118,7 @@
       },
       "ingredients": [
         "egg",
-        "egg_yolk",
-        "black_pepper"
+        "egg_yolk"
       ]
     },
     {
@@ -131,9 +129,7 @@
         "sv": "Tillsätt osten och rör om igen med en visp."
       },
       "ingredients": [
-        "cheese",
-        "egg",
-        "egg_yolk"
+        "cheese"
       ]
     },
     {
@@ -143,12 +139,7 @@
         "cat": "Quan el guanciale o el bacon estigui daurat, aboca el greix al bol i bate ràpid amb les varetes perquè emulsioni un poc. Afegeix el bacon.",
         "sv": "När guanciale eller bacon är gyllenbrunt, häll fettet i skålen och vispa snabbt så att det emulgerar lite. Lägg till köttet i skålen."
       },
-      "ingredients": [
-        "guanciale",
-        "cheese",
-        "egg",
-        "egg_yolk"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -157,13 +148,7 @@
         "cat": "Quan la pasta estigui al dente, escorre-la — no cal que estigui seca — i posa-la ràpid al bol. Barreja ràpid perquè la salsa es cuï amb el calor residual de la pasta.",
         "sv": "När pastan är al dente, häll av den — den behöver inte vara helt torr — och lägg den snabbt i skålen. Rör om hastigt så att såsen sätter sig med residualvärmen från pastan."
       },
-      "ingredients": [
-        "pasta",
-        "guanciale",
-        "cheese",
-        "egg",
-        "egg_yolk"
-      ]
+      "ingredients": []
     },
     {
       "text": {

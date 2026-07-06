@@ -202,9 +202,7 @@
         "cat": "En una olla, cou la carn a foc mitjà, remenant i aixafant constantment perquè quedi esmicolada i no compacta.",
         "sv": "I en kastrull, stek köttet på medelvärme under ständig omrörning och pressning så att det förblir fint smulat istället för att bilda en fast klump."
       },
-      "ingredients": [
-        "minced_pork"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -213,9 +211,7 @@
         "cat": "Un cop la carn estigui cuita, retira-la del foc sense treure el greix. Un bon truc és posar-ho tot en un bol i tornar a afegir el greix líquid a l'olla.",
         "sv": "När köttet är tillagat, ta bort det från värmen utan att slänga fettet. Ett bra tips är att överföra allt till en skål och sedan hälla det flytande fettet tillbaka i kastrullen."
       },
-      "ingredients": [
-        "minced_pork"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -225,8 +221,6 @@
         "sv": "Tillsätt de hackade grönsakerna i kastrullen. Om nödvändigt, tillsätt en liten mängd olivolja."
       },
       "ingredients": [
-        "onion",
-        "carrot",
         "olive_oil"
       ]
     },
@@ -238,7 +232,6 @@
         "sv": "När löken ser genomskinlig ut men inte brunad, tillsätt den krossade tomaten."
       },
       "ingredients": [
-        "onion",
         "crushed_tomato"
       ]
     },
@@ -250,8 +243,7 @@
         "sv": "Tillsätt en nypa socker för att minska tomats surhet och justera kryddningen med salt efter smak."
       },
       "ingredients": [
-        "sugar",
-        "pork_salt"
+        "sugar"
       ]
     },
     {
@@ -261,11 +253,7 @@
         "cat": "Tapa l'olla i remena cada dos minuts per garantir una cocció homogènia.",
         "sv": "Täck kastrullen och rör varannan minut för att säkerställa jämn tillagning."
       },
-      "ingredients": [
-        "onion",
-        "carrot",
-        "crushed_tomato"
-      ]
+      "ingredients": []
     },
     {
       "text": {
@@ -275,9 +263,7 @@
         "sv": "När såsen inte längre smakar rå tomat, tillsätt det tillagade köttet och vattnet, och låt sjuda försiktigt."
       },
       "ingredients": [
-        "minced_pork",
-        "water",
-        "crushed_tomato"
+        "water"
       ]
     },
     {
@@ -298,9 +284,7 @@
         "cat": "Escorre la pasta i barreja-la bé amb la salsa bolonyesa.",
         "sv": "Häll av pastan och blanda den noggrant med bolognesesåsen."
       },
-      "ingredients": [
-        "macaroni"
-      ]
+      "ingredients": []
     },
     {
       "text": {
