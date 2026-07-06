@@ -1,6 +1,33 @@
 [
   {
     "title": {
+      "en": "Banana Bread",
+      "es": "Pan de Plátano",
+      "cat": "Pa de Plàtan",
+      "sv": "Bananbröd"
+    },
+    "categories": [
+      "desserts",
+      "baking"
+    ],
+    "path": "recipes/banana_bread.json",
+    "image": "/images/banana_bread/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "banana",
+      "olive_oil",
+      "greek_yogurt",
+      "sugar",
+      "eggs",
+      "flour",
+      "baking_powder",
+      "baking_soda",
+      "salt"
+    ]
+  },
+  {
+    "title": {
       "en": "Basque Cheesecake",
       "es": "Tarta de queso vasca",
       "cat": "Pastís de formatge basc",

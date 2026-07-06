@@ -1,0 +1,171 @@
+{
+  "title": {
+    "en": "Banana Bread",
+    "es": "Pan de Plátano",
+    "cat": "Pa de Plàtan",
+    "sv": "Bananbröd"
+  },
+  "author": "Arnau",
+  "categories": [
+    "desserts",
+    "baking"
+  ],
+  "image": "/images/banana_bread/main.webp",
+  "description": {
+    "en": "A moist banana bread made with very ripe bananas, olive oil, and yogurt. Best served with caramel syrup.",
+    "es": "Un pan de plátano húmedo elaborado con plátanos muy maduros, aceite de oliva y yogur. Ideal para servir con sirope de caramelo.",
+    "cat": "Un pa de plàtan humit elaborat amb plàtans molt madurs, oli d'oliva i iogurt. Ideal per servir amb xarop de caramel.",
+    "sv": "Ett saftigt bananbröd gjort med mycket mogna bananer, olivolja och yoghurt. Bäst serverat med karamellsirap."
+  },
+  "portion": {
+    "type": "area",
+    "shape": "rectangular",
+    "dimensions": {
+      "width": 30,
+      "height": 10,
+      "unit": "cm"
+    }
+  },
+  "ingredients": [
+    {
+      "ingredient": "banana",
+      "value": 2,
+      "text": {
+        "en": "very ripe",
+        "es": "muy maduros",
+        "cat": "molt madurs",
+        "sv": "mycket mogna"
+      },
+      "id": "banana"
+    },
+    {
+      "ingredient": "olive_oil",
+      "value": 40,
+      "unit": "g",
+      "id": "olive_oil"
+    },
+    {
+      "ingredient": "greek_yogurt",
+      "value": 35,
+      "unit": "g",
+      "id": "greek_yogurt"
+    },
+    {
+      "ingredient": "sugar",
+      "value": 100,
+      "unit": "g",
+      "id": "sugar"
+    },
+    {
+      "ingredient": "eggs",
+      "value": 2,
+      "id": "eggs"
+    },
+    {
+      "ingredient": "flour",
+      "value": 220,
+      "unit": "g",
+      "id": "flour"
+    },
+    {
+      "ingredient": "baking_powder",
+      "value": 8,
+      "unit": "g",
+      "id": "baking_powder"
+    },
+    {
+      "ingredient": "baking_soda",
+      "value": 2,
+      "unit": "g",
+      "id": "baking_soda"
+    },
+    {
+      "ingredient": "salt",
+      "value": 2,
+      "unit": "g",
+      "id": "salt"
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Preheat the oven.",
+        "es": "Precalienta el horno.",
+        "cat": "Preescalfa el forn.",
+        "sv": "Förvärm ugnen."
+      },
+      "oven": {
+        "temperature": 180,
+        "mode": [
+          "top",
+          "bottom"
+        ]
+      }
+    },
+    {
+      "text": {
+        "en": "Peel the bananas and mash them into a smooth paste.",
+        "es": "Pela los plátanos y tritúralos hasta obtener un puré homogéneo.",
+        "cat": "Pela els plàtans i tritura'ls fins obtenir un puré homogeni.",
+        "sv": "Skala bananerna och mosa dem till en slät puré."
+      },
+      "ingredients": [
+        "banana"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the olive oil, eggs, yogurt, and sugar to the banana puree. Mix until fully incorporated.",
+        "es": "Añade el aceite de oliva, los huevos, el yogur y el azúcar al puré de plátano. Mezcla hasta que esté todo bien incorporado.",
+        "cat": "Afegeix l'oli d'oliva, els ous, el iogurt i el sucre al puré de plàtan. Barreja fins que tot estigui ben incorporat.",
+        "sv": "Tillsätt olivoljan, äggen, yoghurten och sockret i bananpurén. Blanda tills allt är väl inblandat."
+      },
+      "ingredients": [
+        "olive_oil",
+        "eggs",
+        "greek_yogurt",
+        "sugar"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the flour, baking powder, baking soda, and salt. Mix until just combined.",
+        "es": "Añade la harina, la levadura química, el bicarbonato y la sal. Mezcla hasta que se integren.",
+        "cat": "Afegeix la farina, el llevat químic, el bicarbonat i la sal. Barreja fins que s'integrin.",
+        "sv": "Tillsätt mjölet, bakpulvret, bikarbonatet och saltet. Blanda tills det precis är kombinerat."
+      },
+      "ingredients": [
+        "flour",
+        "baking_powder",
+        "baking_soda",
+        "salt"
+      ]
+    },
+    {
+      "text": {
+        "en": "Pour the batter into the mold and bake for 45 minutes.",
+        "es": "Vierte la masa en el molde y hornéala durante 45 minutos.",
+        "cat": "Aboca la massa al motlle i cou-la al forn durant 45 minuts.",
+        "sv": "Häll smeten i formen och grädda i 45 minuter."
+      },
+      "oven": {
+        "temperature": 180,
+        "time": 2700,
+        "mode": [
+          "top",
+          "bottom"
+        ]
+      },
+      "ingredients": []
+    },
+    {
+      "text": {
+        "en": "Let the bread rest before serving. It can be enjoyed with caramel syrup.",
+        "es": "Deja reposar el pan antes de servir. Se puede disfrutar con sirope de caramelo.",
+        "cat": "Deixa reposar el pa abans de servir. Es pot gaudir amb xarop de caramel.",
+        "sv": "Låt brödet vila innan servering. Det kan njutas med karamellsirap."
+      },
+      "ingredients": []
+    }
+  ]
+}
