@@ -7,8 +7,8 @@
   },
   "author": "Arnau",
   "categories": [
-    "desserts",
-    "baking"
+    "baking",
+    "desserts"
   ],
   "image": "/images/banana_bread/main.webp",
   "description": {
@@ -28,6 +28,18 @@
   },
   "ingredients": [
     {
+      "ingredient": "baking_powder",
+      "value": 8,
+      "unit": "g",
+      "id": "baking_powder"
+    },
+    {
+      "ingredient": "baking_soda",
+      "value": 2,
+      "unit": "g",
+      "id": "baking_soda"
+    },
+    {
       "ingredient": "banana",
       "value": 2,
       "text": {
@@ -37,24 +49,6 @@
         "sv": "mycket mogna"
       },
       "id": "banana"
-    },
-    {
-      "ingredient": "olive_oil",
-      "value": 40,
-      "unit": "g",
-      "id": "olive_oil"
-    },
-    {
-      "ingredient": "greek_yogurt",
-      "value": 35,
-      "unit": "g",
-      "id": "greek_yogurt"
-    },
-    {
-      "ingredient": "sugar",
-      "value": 100,
-      "unit": "g",
-      "id": "sugar"
     },
     {
       "ingredient": "eggs",
@@ -68,22 +62,28 @@
       "id": "flour"
     },
     {
-      "ingredient": "baking_powder",
-      "value": 8,
+      "ingredient": "greek_yogurt",
+      "value": 35,
       "unit": "g",
-      "id": "baking_powder"
+      "id": "greek_yogurt"
     },
     {
-      "ingredient": "baking_soda",
-      "value": 2,
+      "ingredient": "olive_oil",
+      "value": 40,
       "unit": "g",
-      "id": "baking_soda"
+      "id": "olive_oil"
     },
     {
       "ingredient": "salt",
       "value": 2,
       "unit": "g",
       "id": "salt"
+    },
+    {
+      "ingredient": "sugar",
+      "value": 100,
+      "unit": "g",
+      "id": "sugar"
     }
   ],
   "instructions": [
@@ -121,9 +121,9 @@
         "sv": "Tillsätt olivoljan, äggen, yoghurten och sockret i bananpurén. Blanda tills allt är väl inblandat."
       },
       "ingredients": [
-        "olive_oil",
         "eggs",
         "greek_yogurt",
+        "olive_oil",
         "sugar"
       ]
     },
@@ -135,9 +135,9 @@
         "sv": "Tillsätt mjölet, bakpulvret, bikarbonatet och saltet. Blanda tills det precis är kombinerat."
       },
       "ingredients": [
-        "flour",
         "baking_powder",
         "baking_soda",
+        "flour",
         "salt"
       ]
     },

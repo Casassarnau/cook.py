@@ -26,22 +26,6 @@
       },
       "items": [
         {
-          "ingredient": "potatoes",
-          "value": 3,
-          "text": {
-            "en": "or more if small",
-            "es": "o más si son pequeñas",
-            "cat": "o més si són petites",
-            "sv": "eller mer om små"
-          },
-          "id": "potatoes"
-        },
-        {
-          "ingredient": "onion",
-          "value": 2,
-          "id": "onion"
-        },
-        {
           "ingredient": "eggs",
           "value": 4,
           "id": "eggs"
@@ -51,6 +35,22 @@
           "value": 0,
           "unit": "as_needed",
           "id": "olive_oil"
+        },
+        {
+          "ingredient": "onion",
+          "value": 2,
+          "id": "onion"
+        },
+        {
+          "ingredient": "potatoes",
+          "value": 3,
+          "text": {
+            "en": "or more if small",
+            "es": "o más si son pequeñas",
+            "cat": "o més si són petites",
+            "sv": "eller mer om små"
+          },
+          "id": "potatoes"
         },
         {
           "ingredient": "salt",
@@ -70,8 +70,8 @@
         "sv": "Skär löken i tunna strimlor och potatisen i tunna skivor; ju tunnare, desto snabbare tillagas de."
       },
       "ingredients": [
-        "potatoes",
-        "onion"
+        "onion",
+        "potatoes"
       ]
     },
     {
@@ -82,8 +82,8 @@
         "sv": "Lägg potatis och lök i en stekpanna med salt och tillräckligt med olivolja för att det inte ska fastna. Tillaga på medelvärme. Tillsätt mer olja vid behov."
       },
       "ingredients": [
-        "salt",
-        "olive_oil"
+        "olive_oil",
+        "salt"
       ]
     },
     {

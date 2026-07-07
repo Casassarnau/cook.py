@@ -8,8 +8,8 @@
   "author": "Arnau",
   "development": true,
   "categories": [
-    "desserts",
-    "baking"
+    "baking",
+    "desserts"
   ],
   "image": "/images/chocolate_brownie/main.webp",
   "description": {
@@ -28,69 +28,10 @@
   },
   "ingredients": [
     {
-      "ingredient": "butter",
-      "value": 30,
-      "unit": "g",
-      "id": "butter"
-    },
-    {
-      "ingredient": "dark_chocolate_chips",
-      "value": 30,
-      "unit": "g",
-      "text": {
-        "en": "chocolate at least 70% cacao",
-        "es": "chocolate al menos 70% cacao",
-        "cat": "xocolata almenys 70% cacau",
-        "sv": "choklad minst 70% kakao"
-      },
-      "id": "chocolate_melt"
-    },
-    {
-      "ingredient": "sugar",
-      "value": 70,
-      "unit": "g",
-      "id": "sugar"
-    },
-    {
-      "ingredient": "eggs",
-      "value": 1,
-      "id": "eggs"
-    },
-    {
-      "ingredient": "unsweetened_cocoa_powder",
-      "value": 20,
-      "unit": "g",
-      "id": "cocoa_powder"
-    },
-    {
-      "ingredient": "flour",
-      "value": 40,
-      "unit": "g",
-      "id": "flour"
-    },
-    {
       "ingredient": "almond_flour",
       "value": 40,
       "unit": "g",
       "id": "almond_flour"
-    },
-    {
-      "ingredient": "espresso_powder",
-      "value": 0.5,
-      "unit": "tsp",
-      "text": {
-        "en": "coffee powder",
-        "es": "café en polvo",
-        "cat": "cafè en pols",
-        "sv": "kaffepulver"
-      },
-      "id": "espresso_powder"
-    },
-    {
-      "ingredient": "salt",
-      "value": 0.5,
-      "unit": "tsp",
-      "id": "salt"
     },
     {
       "ingredient": "baking_powder",
@@ -99,16 +40,10 @@
       "id": "baking_powder"
     },
     {
-      "ingredient": "walnuts",
-      "value": 0,
-      "unit": "as_needed",
-      "text": {
-        "en": "chopped",
-        "es": "troceadas",
-        "cat": "trossejades",
-        "sv": "hackade"
-      },
-      "id": "walnuts"
+      "ingredient": "butter",
+      "value": 30,
+      "unit": "g",
+      "id": "butter"
     },
     {
       "ingredient": "dark_chocolate_chips",
@@ -123,6 +58,47 @@
       "id": "chocolate_chips"
     },
     {
+      "ingredient": "dark_chocolate_chips",
+      "value": 30,
+      "unit": "g",
+      "text": {
+        "en": "chocolate at least 70% cacao",
+        "es": "chocolate al menos 70% cacao",
+        "cat": "xocolata almenys 70% cacau",
+        "sv": "choklad minst 70% kakao"
+      },
+      "id": "chocolate_melt"
+    },
+    {
+      "ingredient": "unsweetened_cocoa_powder",
+      "value": 20,
+      "unit": "g",
+      "id": "cocoa_powder"
+    },
+    {
+      "ingredient": "eggs",
+      "value": 1,
+      "id": "eggs"
+    },
+    {
+      "ingredient": "espresso_powder",
+      "value": 0.5,
+      "unit": "tsp",
+      "text": {
+        "en": "coffee powder",
+        "es": "café en polvo",
+        "cat": "cafè en pols",
+        "sv": "kaffepulver"
+      },
+      "id": "espresso_powder"
+    },
+    {
+      "ingredient": "flour",
+      "value": 40,
+      "unit": "g",
+      "id": "flour"
+    },
+    {
       "ingredient": "raspberry",
       "value": 0,
       "unit": "as_needed",
@@ -133,6 +109,30 @@
         "sv": "valfritt, för att lägga till syra"
       },
       "id": "raspberry"
+    },
+    {
+      "ingredient": "salt",
+      "value": 0.5,
+      "unit": "tsp",
+      "id": "salt"
+    },
+    {
+      "ingredient": "sugar",
+      "value": 70,
+      "unit": "g",
+      "id": "sugar"
+    },
+    {
+      "ingredient": "walnuts",
+      "value": 0,
+      "unit": "as_needed",
+      "text": {
+        "en": "chopped",
+        "es": "troceadas",
+        "cat": "trossejades",
+        "sv": "hackade"
+      },
+      "id": "walnuts"
     }
   ],
   "instructions": [
@@ -193,11 +193,11 @@
         "sv": "Sikta ihop kakaopulvret, mjölet, espressopulvret, saltet och bakpulvret. Tillsätt i den våta blandningen och vik försiktigt tills det bara är kombinerat."
       },
       "ingredients": [
+        "baking_powder",
         "cocoa_powder",
-        "flour",
         "espresso_powder",
-        "salt",
-        "baking_powder"
+        "flour",
+        "salt"
       ]
     },
     {
@@ -219,8 +219,8 @@
         "sv": "Vik ner de hackade valnötterna och chokladbitarna."
       },
       "ingredients": [
-        "walnuts",
-        "chocolate_chips"
+        "chocolate_chips",
+        "walnuts"
       ]
     },
     {

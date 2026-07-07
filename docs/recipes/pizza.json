@@ -7,8 +7,8 @@
   },
   "author": "Arnau",
   "categories": [
-    "mains",
-    "baking"
+    "baking",
+    "mains"
   ],
   "image": "/images/pizza/main.webp",
   "description": {
@@ -23,34 +23,6 @@
     "unit": "unit"
   },
   "ingredients": [
-    {
-      "group": {
-        "en": "Poolish (day before)",
-        "es": "Poolish (día anterior)",
-        "cat": "Poolish (dia anterior)",
-        "sv": "Poolish (dagen innan)"
-      },
-      "items": [
-        {
-          "ingredient": "water",
-          "value": 50,
-          "unit": "g",
-          "id": "poolish_water"
-        },
-        {
-          "ingredient": "flour",
-          "value": 50,
-          "unit": "g",
-          "id": "poolish_flour"
-        },
-        {
-          "ingredient": "dry_yeast",
-          "value": 7,
-          "unit": "g",
-          "id": "poolish_yeast"
-        }
-      ]
-    },
     {
       "group": {
         "en": "Pizza Dough",
@@ -84,24 +56,6 @@
           "id": "dough_flour_rustic"
         },
         {
-          "ingredient": "water",
-          "value": 250,
-          "unit": "g",
-          "id": "dough_water"
-        },
-        {
-          "ingredient": "water",
-          "value": 35,
-          "unit": "g",
-          "text": {
-            "en": "reserved for later",
-            "es": "reservada para después",
-            "cat": "reservada per després",
-            "sv": "reserverat till senare"
-          },
-          "id": "dough_water_reserved"
-        },
-        {
           "ingredient": "extra_virgin_olive_oil",
           "value": 20,
           "unit": "g",
@@ -118,6 +72,52 @@
           "value": 4,
           "unit": "g",
           "id": "dough_sugar"
+        },
+        {
+          "ingredient": "water",
+          "value": 250,
+          "unit": "g",
+          "id": "dough_water"
+        },
+        {
+          "ingredient": "water",
+          "value": 35,
+          "unit": "g",
+          "text": {
+            "en": "reserved for later",
+            "es": "reservada para después",
+            "cat": "reservada per després",
+            "sv": "reserverat till senare"
+          },
+          "id": "dough_water_reserved"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Poolish (day before)",
+        "es": "Poolish (día anterior)",
+        "cat": "Poolish (dia anterior)",
+        "sv": "Poolish (dagen innan)"
+      },
+      "items": [
+        {
+          "ingredient": "flour",
+          "value": 50,
+          "unit": "g",
+          "id": "poolish_flour"
+        },
+        {
+          "ingredient": "water",
+          "value": 50,
+          "unit": "g",
+          "id": "poolish_water"
+        },
+        {
+          "ingredient": "dry_yeast",
+          "value": 7,
+          "unit": "g",
+          "id": "poolish_yeast"
         }
       ]
     },
@@ -153,8 +153,8 @@
         "sv": "Dagen innan, förbered poolish genom att blanda vatten, mjöl och torrjäst. Täck och förvara i kylskåp till nästa dag."
       },
       "ingredients": [
-        "poolish_water",
         "poolish_flour",
+        "poolish_water",
         "poolish_yeast"
       ]
     },
@@ -203,9 +203,9 @@
         }
       },
       "ingredients": [
-        "dough_water_reserved",
         "dough_salt",
-        "dough_sugar"
+        "dough_sugar",
+        "dough_water_reserved"
       ]
     },
     {

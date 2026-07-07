@@ -53,6 +53,34 @@
   "ingredients": [
     {
       "group": {
+        "en": "Breading Station",
+        "es": "Estación de Rebozado",
+        "cat": "Estació de Reboçat",
+        "sv": "Paneringsstation"
+      },
+      "items": [
+        {
+          "ingredient": "eggs",
+          "value": 0,
+          "unit": "as_needed",
+          "id": "bread_eggs"
+        },
+        {
+          "ingredient": "flour",
+          "value": 0,
+          "unit": "as_needed",
+          "id": "bread_flour"
+        },
+        {
+          "ingredient": "panko",
+          "value": 0,
+          "unit": "as_needed",
+          "id": "bread_panko"
+        }
+      ]
+    },
+    {
+      "group": {
         "en": "Béchamel Base",
         "es": "Base de Bechamel",
         "cat": "Base de Beixamel",
@@ -72,11 +100,6 @@
           "id": "bechamel_butter"
         },
         {
-          "ingredient": "onion",
-          "value": 1,
-          "id": "bechamel_onion"
-        },
-        {
           "ingredient": "flour",
           "value": 80,
           "unit": "g",
@@ -87,6 +110,11 @@
           "value": 500,
           "unit": "ml",
           "id": "bechamel_milk"
+        },
+        {
+          "ingredient": "onion",
+          "value": 1,
+          "id": "bechamel_onion"
         },
         {
           "ingredient": "salt",
@@ -105,11 +133,11 @@
       },
       "items": [
         {
-          "ingredient": "ham",
-          "value": 200,
-          "unit": "g",
-          "onlyForVariation": "jamon",
-          "id": "filling_ham"
+          "ingredient": "butter",
+          "value": 0,
+          "unit": "to_taste",
+          "onlyForVariation": "setas",
+          "id": "filling_butter"
         },
         {
           "ingredient": "chicken",
@@ -117,6 +145,13 @@
           "unit": "g",
           "onlyForVariation": "pollo",
           "id": "filling_chicken"
+        },
+        {
+          "ingredient": "ham",
+          "value": 200,
+          "unit": "g",
+          "onlyForVariation": "jamon",
+          "id": "filling_ham"
         },
         {
           "ingredient": "mushrooms",
@@ -133,11 +168,11 @@
           "id": "filling_oil"
         },
         {
-          "ingredient": "butter",
+          "ingredient": "white_pepper",
           "value": 0,
           "unit": "to_taste",
           "onlyForVariation": "setas",
-          "id": "filling_butter"
+          "id": "filling_pepper"
         },
         {
           "ingredient": "salt",
@@ -145,41 +180,6 @@
           "unit": "to_taste",
           "onlyForVariation": "setas",
           "id": "filling_salt"
-        },
-        {
-          "ingredient": "white_pepper",
-          "value": 0,
-          "unit": "to_taste",
-          "onlyForVariation": "setas",
-          "id": "filling_pepper"
-        }
-      ]
-    },
-    {
-      "group": {
-        "en": "Breading Station",
-        "es": "Estación de Rebozado",
-        "cat": "Estació de Reboçat",
-        "sv": "Paneringsstation"
-      },
-      "items": [
-        {
-          "ingredient": "flour",
-          "value": 0,
-          "unit": "as_needed",
-          "id": "bread_flour"
-        },
-        {
-          "ingredient": "eggs",
-          "value": 0,
-          "unit": "as_needed",
-          "id": "bread_eggs"
-        },
-        {
-          "ingredient": "panko",
-          "value": 0,
-          "unit": "as_needed",
-          "id": "bread_panko"
         }
       ]
     },
@@ -247,10 +247,10 @@
       },
       "onlyForVariation": "setas",
       "ingredients": [
-        "filling_oil",
         "filling_butter",
-        "filling_salt",
-        "filling_pepper"
+        "filling_oil",
+        "filling_pepper",
+        "filling_salt"
       ]
     },
     {
@@ -436,8 +436,8 @@
         "sv": "Förbered paneringsstationen: en skål med mjöl, en annan med vispade ägg och en annan med panko."
       },
       "ingredients": [
-        "bread_flour",
         "bread_eggs",
+        "bread_flour",
         "bread_panko"
       ]
     },

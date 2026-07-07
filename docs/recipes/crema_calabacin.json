@@ -31,10 +31,16 @@
       },
       "items": [
         {
-          "id": "soup_zucchini",
-          "ingredient": "zucchini",
-          "value": 1,
-          "unit": "kg"
+          "id": "soup_cheese",
+          "ingredient": "cheese",
+          "value": 0,
+          "unit": "to_taste"
+        },
+        {
+          "id": "soup_oil",
+          "ingredient": "olive_oil",
+          "value": 40,
+          "unit": "ml"
         },
         {
           "id": "soup_onion",
@@ -47,28 +53,22 @@
           "value": 1
         },
         {
-          "id": "soup_water",
-          "ingredient": "water",
-          "value": 500,
-          "unit": "ml"
-        },
-        {
           "id": "soup_salt",
           "ingredient": "salt",
           "value": 1,
           "unit": "tsp"
         },
         {
-          "id": "soup_oil",
-          "ingredient": "olive_oil",
-          "value": 40,
+          "id": "soup_water",
+          "ingredient": "water",
+          "value": 500,
           "unit": "ml"
         },
         {
-          "id": "soup_cheese",
-          "ingredient": "cheese",
-          "value": 0,
-          "unit": "to_taste"
+          "id": "soup_zucchini",
+          "ingredient": "zucchini",
+          "value": 1,
+          "unit": "kg"
         }
       ]
     }
@@ -82,9 +82,9 @@
         "sv": "Skölj och skär alla grönsaker i bitar."
       },
       "ingredients": [
-        "soup_zucchini",
         "soup_onion",
-        "soup_potato"
+        "soup_potato",
+        "soup_zucchini"
       ]
     },
     {
@@ -95,8 +95,8 @@
         "sv": "Lägg grönsakerna i en kastrull med vatten och salt. Koka på medelvärme i 20 minuter."
       },
       "ingredients": [
-        "soup_water",
-        "soup_salt"
+        "soup_salt",
+        "soup_water"
       ],
       "onlyForMode": "classic"
     },
@@ -108,8 +108,8 @@
         "sv": "Lägg grönsakerna i Thermomix-skålen med vatten och salt. Tillaga i 20 minuter på 100°C och skedhastighet."
       },
       "ingredients": [
-        "soup_water",
-        "soup_salt"
+        "soup_salt",
+        "soup_water"
       ],
       "onlyForMode": "thermomix",
       "thermomix": {

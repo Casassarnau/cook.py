@@ -23,16 +23,10 @@
   },
   "ingredients": [
     {
-      "id": "pasta",
-      "ingredient": "pasta",
-      "value": 250,
-      "unit": "g",
-      "text": {
-        "en": "of your choice",
-        "es": "al gusto",
-        "cat": "al gust",
-        "sv": "valfri sort"
-      }
+      "id": "black_pepper",
+      "ingredient": "black_pepper",
+      "value": 0,
+      "unit": "to_taste"
     },
     {
       "id": "cheese",
@@ -47,10 +41,14 @@
       }
     },
     {
-      "id": "black_pepper",
-      "ingredient": "black_pepper",
-      "value": 0,
-      "unit": "to_taste"
+      "id": "egg",
+      "ingredient": "eggs",
+      "value": 1
+    },
+    {
+      "id": "egg_yolk",
+      "ingredient": "egg_yolk",
+      "value": 1
     },
     {
       "id": "guanciale",
@@ -65,14 +63,16 @@
       }
     },
     {
-      "id": "egg",
-      "ingredient": "eggs",
-      "value": 1
-    },
-    {
-      "id": "egg_yolk",
-      "ingredient": "egg_yolk",
-      "value": 1
+      "id": "pasta",
+      "ingredient": "pasta",
+      "value": 250,
+      "unit": "g",
+      "text": {
+        "en": "of your choice",
+        "es": "al gusto",
+        "cat": "al gust",
+        "sv": "valfri sort"
+      }
     }
   ],
   "instructions": [

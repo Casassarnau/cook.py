@@ -29,6 +29,12 @@
       "unit": "g"
     },
     {
+      "id": "sugar",
+      "ingredient": "sugar",
+      "value": 0,
+      "unit": "to_taste"
+    },
+    {
       "id": "water",
       "ingredient": "water",
       "value": 1,
@@ -39,12 +45,6 @@
         "cat": "molt freda",
         "sv": "mycket kallt"
       }
-    },
-    {
-      "id": "sugar",
-      "ingredient": "sugar",
-      "value": 0,
-      "unit": "to_taste"
     }
   ],
   "instructions": [
