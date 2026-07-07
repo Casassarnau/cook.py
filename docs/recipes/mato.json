@@ -23,21 +23,21 @@
   },
   "variants": [
     {
-      "key": "original",
-      "name": {
-        "en": "Original (herbacol)",
-        "es": "Original (herbacol)",
-        "cat": "Original (herbacol)",
-        "sv": "Original (herbacol)"
-      }
-    },
-    {
       "key": "lemon",
       "name": {
         "en": "With lemon",
         "es": "Con limón",
         "cat": "Amb llimona",
         "sv": "Med citron"
+      }
+    },
+    {
+      "key": "original",
+      "name": {
+        "en": "Original (herbacol)",
+        "es": "Original (herbacol)",
+        "cat": "Original (herbacol)",
+        "sv": "Original (herbacol)"
       }
     }
   ],
@@ -50,18 +50,6 @@
         "sv": "Grundingredienser"
       },
       "items": [
-        {
-          "ingredient": "milk",
-          "value": 1,
-          "unit": "l",
-          "text": {
-            "en": "fresh and whole",
-            "es": "fresca y entera",
-            "cat": "fresca i sencera",
-            "sv": "färsk och hel"
-          },
-          "id": "milk"
-        },
         {
           "ingredient": "herbacol",
           "value": 1,
@@ -99,6 +87,18 @@
             "sv": "endast saften"
           },
           "id": "lemon"
+        },
+        {
+          "ingredient": "milk",
+          "value": 1,
+          "unit": "l",
+          "text": {
+            "en": "fresh and whole",
+            "es": "fresca y entera",
+            "cat": "fresca i sencera",
+            "sv": "färsk och hel"
+          },
+          "id": "milk"
         }
       ]
     }

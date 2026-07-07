@@ -8,8 +8,8 @@
   "author": "Arnau",
   "development": false,
   "categories": [
-    "desserts",
-    "baking"
+    "baking",
+    "desserts"
   ],
   "image": "/images/doowaps/main.webp",
   "description": {
@@ -24,22 +24,16 @@
   },
   "ingredients": [
     {
-      "ingredient": "milk",
-      "value": 110,
+      "ingredient": "dark_chocolate_chips",
+      "value": 50,
       "unit": "g",
-      "id": "milk"
+      "id": "dark_chocolate_chips"
     },
     {
       "ingredient": "dry_yeast",
       "value": 10,
       "unit": "g",
       "id": "dry_yeast"
-    },
-    {
-      "ingredient": "olive_oil",
-      "value": 30,
-      "unit": "g",
-      "id": "olive_oil"
     },
     {
       "ingredient": "eggs",
@@ -53,10 +47,22 @@
       "id": "eggs"
     },
     {
-      "ingredient": "vanilla_extract",
-      "value": 1,
-      "unit": "tbsp",
-      "id": "vanilla_extract"
+      "ingredient": "milk",
+      "value": 110,
+      "unit": "g",
+      "id": "milk"
+    },
+    {
+      "ingredient": "olive_oil",
+      "value": 30,
+      "unit": "g",
+      "id": "olive_oil"
+    },
+    {
+      "ingredient": "salt",
+      "value": 0,
+      "unit": "pinch",
+      "id": "salt"
     },
     {
       "ingredient": "strong_flour",
@@ -71,16 +77,10 @@
       "id": "sugar"
     },
     {
-      "ingredient": "dark_chocolate_chips",
-      "value": 50,
-      "unit": "g",
-      "id": "dark_chocolate_chips"
-    },
-    {
-      "ingredient": "salt",
-      "value": 0,
-      "unit": "pinch",
-      "id": "salt"
+      "ingredient": "vanilla_extract",
+      "value": 1,
+      "unit": "tbsp",
+      "id": "vanilla_extract"
     }
   ],
   "instructions": [
@@ -105,8 +105,8 @@
         }
       },
       "ingredients": [
-        "milk",
-        "dry_yeast"
+        "dry_yeast",
+        "milk"
       ]
     },
     {
@@ -129,12 +129,12 @@
         }
       },
       "ingredients": [
-        "olive_oil",
         "eggs",
-        "vanilla_extract",
+        "olive_oil",
+        "salt",
         "strong_flour",
         "sugar",
-        "salt"
+        "vanilla_extract"
       ]
     },
     {

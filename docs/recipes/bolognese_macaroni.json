@@ -51,6 +51,12 @@
       },
       "items": [
         {
+          "ingredient": "black_pepper",
+          "value": 0.5,
+          "unit": "g",
+          "id": "black_pepper"
+        },
+        {
           "ingredient": "minced_pork",
           "value": 500,
           "unit": "g",
@@ -61,68 +67,6 @@
           "value": 8,
           "unit": "g",
           "id": "pork_salt"
-        },
-        {
-          "ingredient": "black_pepper",
-          "value": 0.5,
-          "unit": "g",
-          "id": "black_pepper"
-        }
-      ]
-    },
-    {
-      "group": {
-        "en": "Sauce",
-        "es": "Salsa",
-        "cat": "Salsa",
-        "sv": "Sås"
-      },
-      "items": [
-        {
-          "ingredient": "onion",
-          "value": 1,
-          "id": "onion"
-        },
-        {
-          "ingredient": "carrot",
-          "value": 1,
-          "text": {
-            "en": "or 2 if small",
-            "es": "o 2 si son pequeñas",
-            "cat": "o 2 si són petites",
-            "sv": "eller 2 om små"
-          },
-          "id": "carrot"
-        },
-        {
-          "ingredient": "crushed_tomato",
-          "value": 250,
-          "unit": "g",
-          "id": "crushed_tomato"
-        },
-        {
-          "ingredient": "water",
-          "value": 50,
-          "unit": "g",
-          "id": "water"
-        },
-        {
-          "ingredient": "olive_oil",
-          "value": 0,
-          "unit": "as_needed",
-          "id": "olive_oil"
-        },
-        {
-          "ingredient": "sugar",
-          "value": 0,
-          "unit": "to_taste",
-          "text": {
-            "en": "to balance acidity",
-            "es": "para equilibrar la acidez",
-            "cat": "per equilibrar l'acidesa",
-            "sv": "för att balansera surheten"
-          },
-          "id": "sugar"
         }
       ]
     },
@@ -167,6 +111,62 @@
           "id": "parmesan_cheese"
         }
       ]
+    },
+    {
+      "group": {
+        "en": "Sauce",
+        "es": "Salsa",
+        "cat": "Salsa",
+        "sv": "Sås"
+      },
+      "items": [
+        {
+          "ingredient": "carrot",
+          "value": 1,
+          "text": {
+            "en": "or 2 if small",
+            "es": "o 2 si son pequeñas",
+            "cat": "o 2 si són petites",
+            "sv": "eller 2 om små"
+          },
+          "id": "carrot"
+        },
+        {
+          "ingredient": "crushed_tomato",
+          "value": 250,
+          "unit": "g",
+          "id": "crushed_tomato"
+        },
+        {
+          "ingredient": "olive_oil",
+          "value": 0,
+          "unit": "as_needed",
+          "id": "olive_oil"
+        },
+        {
+          "ingredient": "onion",
+          "value": 1,
+          "id": "onion"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 0,
+          "unit": "to_taste",
+          "text": {
+            "en": "to balance acidity",
+            "es": "para equilibrar la acidez",
+            "cat": "per equilibrar l'acidesa",
+            "sv": "för att balansera surheten"
+          },
+          "id": "sugar"
+        },
+        {
+          "ingredient": "water",
+          "value": 50,
+          "unit": "g",
+          "id": "water"
+        }
+      ]
     }
   ],
   "instructions": [
@@ -178,8 +178,8 @@
         "sv": "Hacka löken och moroten fint och ställ åt sidan."
       },
       "ingredients": [
-        "onion",
-        "carrot"
+        "carrot",
+        "onion"
       ]
     },
     {
@@ -190,9 +190,9 @@
         "sv": "Blanda fläskfärsen med salt och peppar, rör väl för att krydda jämnt."
       },
       "ingredients": [
+        "black_pepper",
         "minced_pork",
-        "pork_salt",
-        "black_pepper"
+        "pork_salt"
       ]
     },
     {

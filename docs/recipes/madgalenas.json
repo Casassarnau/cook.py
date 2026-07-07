@@ -53,16 +53,22 @@
           "id": "greek_yogurt"
         },
         {
-          "ingredient": "sugar",
-          "value": 80,
-          "unit": "g",
-          "id": "sugar"
-        },
-        {
           "ingredient": "honey",
           "value": 2,
           "unit": "tsp",
           "id": "honey"
+        },
+        {
+          "ingredient": "lemon_zest",
+          "value": 0,
+          "unit": "to_taste",
+          "id": "lemon_zest"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 80,
+          "unit": "g",
+          "id": "sugar"
         },
         {
           "ingredient": "sunflower_oil",
@@ -75,12 +81,6 @@
             "sv": "eller mild olivolja"
           },
           "id": "sunflower_oil"
-        },
-        {
-          "ingredient": "lemon_zest",
-          "value": 0,
-          "unit": "to_taste",
-          "id": "lemon_zest"
         }
       ]
     },
@@ -92,6 +92,12 @@
         "sv": "Torra ingredienser"
       },
       "items": [
+        {
+          "ingredient": "baking_powder",
+          "value": 8,
+          "unit": "g",
+          "id": "baking_powder"
+        },
         {
           "ingredient": "flour",
           "value": 140,
@@ -109,12 +115,6 @@
           "value": 80,
           "unit": "g",
           "id": "rye_flour"
-        },
-        {
-          "ingredient": "baking_powder",
-          "value": 8,
-          "unit": "g",
-          "id": "baking_powder"
         },
         {
           "ingredient": "salt",
@@ -227,9 +227,9 @@
       },
       "onlyForMode": "classic",
       "ingredients": [
+        "baking_powder",
         "flour",
         "rye_flour",
-        "baking_powder",
         "salt"
       ]
     },

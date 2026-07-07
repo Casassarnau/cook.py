@@ -7,8 +7,8 @@
   },
   "author": "Arnau",
   "categories": [
-    "desserts",
-    "baking"
+    "baking",
+    "desserts"
   ],
   "image": "/images/carrot_cake/main.webp",
   "description": {
@@ -35,39 +35,10 @@
       },
       "items": [
         {
-          "ingredient": "sugar",
-          "value": 75,
-          "unit": "g",
-          "id": "sugar"
-        },
-        {
-          "ingredient": "orange_zest",
-          "value": 0,
-          "unit": "to_taste",
-          "id": "orange_zest"
-        },
-        {
-          "ingredient": "carrot",
-          "value": 200,
-          "unit": "g",
-          "id": "carrot"
-        },
-        {
-          "ingredient": "eggs",
-          "value": 2,
-          "id": "eggs"
-        },
-        {
-          "ingredient": "sunflower_oil",
-          "value": 120,
-          "unit": "g",
-          "id": "sunflower_oil"
-        },
-        {
-          "ingredient": "flour",
-          "value": 125,
-          "unit": "g",
-          "id": "flour"
+          "ingredient": "baking_powder",
+          "value": 1,
+          "unit": "tsp",
+          "id": "baking_powder"
         },
         {
           "ingredient": "baking_soda",
@@ -76,10 +47,16 @@
           "id": "baking_soda"
         },
         {
-          "ingredient": "baking_powder",
-          "value": 1,
+          "ingredient": "cardamom",
+          "value": 0.5,
           "unit": "tsp",
-          "id": "baking_powder"
+          "id": "cardamom"
+        },
+        {
+          "ingredient": "carrot",
+          "value": 200,
+          "unit": "g",
+          "id": "carrot"
         },
         {
           "ingredient": "cinnamon",
@@ -88,22 +65,45 @@
           "id": "cinnamon"
         },
         {
+          "ingredient": "eggs",
+          "value": 2,
+          "id": "eggs"
+        },
+        {
+          "ingredient": "flour",
+          "value": 125,
+          "unit": "g",
+          "id": "flour"
+        },
+        {
           "ingredient": "nutmeg",
           "value": 0.5,
           "unit": "tsp",
           "id": "nutmeg"
         },
         {
-          "ingredient": "cardamom",
-          "value": 0.5,
-          "unit": "tsp",
-          "id": "cardamom"
+          "ingredient": "orange_zest",
+          "value": 0,
+          "unit": "to_taste",
+          "id": "orange_zest"
         },
         {
           "ingredient": "salt",
           "value": 0.5,
           "unit": "tsp",
           "id": "salt"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 75,
+          "unit": "g",
+          "id": "sugar"
+        },
+        {
+          "ingredient": "sunflower_oil",
+          "value": 120,
+          "unit": "g",
+          "id": "sunflower_oil"
         }
       ]
     },
@@ -128,12 +128,6 @@
           "id": "cream_cheese"
         },
         {
-          "ingredient": "white_chocolate",
-          "value": 50,
-          "unit": "g",
-          "id": "white_chocolate"
-        },
-        {
           "ingredient": "orange_juice",
           "value": 15,
           "unit": "g",
@@ -150,6 +144,12 @@
             "sv": "hackade, för dekoration"
           },
           "id": "walnuts"
+        },
+        {
+          "ingredient": "white_chocolate",
+          "value": 50,
+          "unit": "g",
+          "id": "white_chocolate"
         }
       ]
     }
@@ -175,8 +175,8 @@
         "sv": "Krossa apelsinskalet med sockret för att hjälpa till att frigöra aromerna snabbare."
       },
       "ingredients": [
-        "sugar",
-        "orange_zest"
+        "orange_zest",
+        "sugar"
       ]
     },
     {
@@ -199,12 +199,12 @@
         "sv": "I en separat skål, blanda mjölet, kryddorna, bakpulvret och bikarbonatet, tillsätt sedan till den tidigare blandningen tills det är homogent."
       },
       "ingredients": [
-        "flour",
-        "baking_soda",
         "baking_powder",
-        "cinnamon",
-        "nutmeg",
+        "baking_soda",
         "cardamom",
+        "cinnamon",
+        "flour",
+        "nutmeg",
         "salt"
       ]
     },
@@ -250,8 +250,8 @@
         "sv": "Under tiden, smält den vita chokladen och lägg den i en skål med gräddosten."
       },
       "ingredients": [
-        "white_chocolate",
-        "cream_cheese"
+        "cream_cheese",
+        "white_chocolate"
       ]
     },
     {

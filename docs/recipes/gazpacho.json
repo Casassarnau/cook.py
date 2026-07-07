@@ -43,6 +43,82 @@
   ],
   "ingredients": [
     {
+      "id": "bell_pepper",
+      "ingredient": "bell_pepper",
+      "value": 50,
+      "unit": "g",
+      "text": {
+        "en": "green or red",
+        "es": "verde o rojo",
+        "cat": "verd o vermell",
+        "sv": "grön eller röd"
+      }
+    },
+    {
+      "id": "cucumber",
+      "ingredient": "cucumber",
+      "value": 60,
+      "unit": "g"
+    },
+    {
+      "id": "garlic",
+      "ingredient": "garlic",
+      "value": 1,
+      "unit": "unit",
+      "text": {
+        "en": "clove",
+        "es": "diente",
+        "cat": "dent",
+        "sv": "klyfta"
+      }
+    },
+    {
+      "id": "olive_oil",
+      "ingredient": "olive_oil",
+      "value": 50,
+      "unit": "g",
+      "onlyForVariation": "watermelon"
+    },
+    {
+      "id": "olive_oil_finish",
+      "ingredient": "olive_oil",
+      "value": 25,
+      "unit": "g",
+      "onlyForVariation": "classic",
+      "text": {
+        "en": "remaining half",
+        "es": "la mitad restante",
+        "cat": "la meitat restant",
+        "sv": "resterande hälft"
+      }
+    },
+    {
+      "id": "olive_oil_start",
+      "ingredient": "olive_oil",
+      "value": 25,
+      "unit": "g",
+      "onlyForVariation": "classic",
+      "text": {
+        "en": "half, for blending",
+        "es": "la mitad, para triturar",
+        "cat": "la meitat, per triturar",
+        "sv": "hälften, för mixning"
+      }
+    },
+    {
+      "id": "onion",
+      "ingredient": "onion",
+      "value": 30,
+      "unit": "g",
+      "onlyForVariation": "classic"
+    },
+    {
+      "id": "salt",
+      "ingredient": "salt",
+      "value": 1,
+      "unit": "tsp"
+    },
+    {
       "id": "tomato_classic",
       "ingredient": "tomato",
       "value": 1,
@@ -69,99 +145,10 @@
       }
     },
     {
-      "id": "watermelon",
-      "ingredient": "watermelon",
-      "value": 500,
-      "unit": "g",
-      "onlyForVariation": "watermelon",
-      "text": {
-        "en": "seedless",
-        "es": "sin pepitas",
-        "cat": "sense llavors",
-        "sv": "kärnfri"
-      }
-    },
-    {
-      "id": "garlic",
-      "ingredient": "garlic",
-      "value": 1,
-      "unit": "unit",
-      "text": {
-        "en": "clove",
-        "es": "diente",
-        "cat": "dent",
-        "sv": "klyfta"
-      }
-    },
-    {
-      "id": "bell_pepper",
-      "ingredient": "bell_pepper",
-      "value": 50,
-      "unit": "g",
-      "text": {
-        "en": "green or red",
-        "es": "verde o rojo",
-        "cat": "verd o vermell",
-        "sv": "grön eller röd"
-      }
-    },
-    {
-      "id": "onion",
-      "ingredient": "onion",
-      "value": 30,
-      "unit": "g",
-      "onlyForVariation": "classic"
-    },
-    {
-      "id": "cucumber",
-      "ingredient": "cucumber",
-      "value": 60,
-      "unit": "g"
-    },
-    {
       "id": "vinegar",
       "ingredient": "vinegar",
       "value": 20,
       "unit": "g"
-    },
-    {
-      "id": "salt",
-      "ingredient": "salt",
-      "value": 1,
-      "unit": "tsp"
-    },
-    {
-      "id": "olive_oil_start",
-      "ingredient": "olive_oil",
-      "value": 25,
-      "unit": "g",
-      "onlyForVariation": "classic",
-      "text": {
-        "en": "half, for blending",
-        "es": "la mitad, para triturar",
-        "cat": "la meitat, per triturar",
-        "sv": "hälften, för mixning"
-      }
-    },
-    {
-      "id": "olive_oil_finish",
-      "ingredient": "olive_oil",
-      "value": 25,
-      "unit": "g",
-      "onlyForVariation": "classic",
-      "text": {
-        "en": "remaining half",
-        "es": "la mitad restante",
-        "cat": "la meitat restant",
-        "sv": "resterande hälft"
-      }
-    },
-    {
-      "id": "olive_oil",
-      "ingredient": "olive_oil",
-      "value": 50,
-      "unit": "g",
-      "onlyForVariation": "watermelon"
     },
     {
       "id": "water_classic",
@@ -188,6 +175,19 @@
         "cat": "freda o congelada",
         "sv": "kallt eller fruset"
       }
+    },
+    {
+      "id": "watermelon",
+      "ingredient": "watermelon",
+      "value": 500,
+      "unit": "g",
+      "onlyForVariation": "watermelon",
+      "text": {
+        "en": "seedless",
+        "es": "sin pepitas",
+        "cat": "sense llavors",
+        "sv": "kärnfri"
+      }
     }
   ],
   "instructions": [
@@ -200,9 +200,9 @@
       },
       "onlyForVariation": "classic",
       "ingredients": [
-        "tomato_classic",
         "bell_pepper",
-        "cucumber"
+        "cucumber",
+        "tomato_classic"
       ]
     },
     {
@@ -214,10 +214,10 @@
       },
       "onlyForVariation": "watermelon",
       "ingredients": [
-        "tomato_watermelon",
-        "watermelon",
         "bell_pepper",
-        "cucumber"
+        "cucumber",
+        "tomato_watermelon",
+        "watermelon"
       ]
     },
     {
@@ -230,11 +230,11 @@
       "onlyForVariation": "classic",
       "ingredients": [
         "garlic",
+        "olive_oil_start",
         "onion",
-        "vinegar",
         "salt",
-        "water_classic",
-        "olive_oil_start"
+        "vinegar",
+        "water_classic"
       ],
       "thermomix": {
         "text": {
@@ -259,8 +259,8 @@
       "onlyForVariation": "watermelon",
       "ingredients": [
         "garlic",
-        "vinegar",
         "salt",
+        "vinegar",
         "water_watermelon"
       ],
       "thermomix": {

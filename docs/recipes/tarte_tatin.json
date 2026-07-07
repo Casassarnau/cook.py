@@ -7,8 +7,8 @@
   "author": "Arnau",
   "development": true,
   "categories": [
-    "desserts",
-    "baking"
+    "baking",
+    "desserts"
   ],
   "image": "/images/tarte_tatin/main.webp",
   "description": {
@@ -27,37 +27,6 @@
   "ingredients": [
     {
       "group": {
-        "en": "Pastry",
-        "es": "Masa",
-        "cat": "Massa"
-      },
-      "items": [
-        {
-          "ingredient": "flour",
-          "value": 90,
-          "unit": "g",
-          "id": "pastry_flour"
-        },
-        {
-          "ingredient": "butter",
-          "value": 50,
-          "unit": "g",
-          "text": {
-            "en": "cold",
-            "es": "fría",
-            "cat": "freda"
-          },
-          "id": "pastry_butter"
-        },
-        {
-          "ingredient": "eggs",
-          "value": 1,
-          "id": "pastry_egg"
-        }
-      ]
-    },
-    {
-      "group": {
         "en": "Apple Filling",
         "es": "Relleno de Manzanas",
         "cat": "Farcit de Pomes"
@@ -74,16 +43,47 @@
           "id": "apple"
         },
         {
-          "ingredient": "sugar",
-          "value": 75,
-          "unit": "g",
-          "id": "caramel_sugar"
-        },
-        {
           "ingredient": "butter",
           "value": 30,
           "unit": "g",
           "id": "caramel_butter"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 75,
+          "unit": "g",
+          "id": "caramel_sugar"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Pastry",
+        "es": "Masa",
+        "cat": "Massa"
+      },
+      "items": [
+        {
+          "ingredient": "butter",
+          "value": 50,
+          "unit": "g",
+          "text": {
+            "en": "cold",
+            "es": "fría",
+            "cat": "freda"
+          },
+          "id": "pastry_butter"
+        },
+        {
+          "ingredient": "eggs",
+          "value": 1,
+          "id": "pastry_egg"
+        },
+        {
+          "ingredient": "flour",
+          "value": 90,
+          "unit": "g",
+          "id": "pastry_flour"
         }
       ]
     }
@@ -96,8 +96,8 @@
         "cat": "Barreja la farina amb la mantega freda fins que arribi a una consistència sorrenca. Utilitza les puntes dels dits o un tallador de massa per treballar la mantega a la farina."
       },
       "ingredients": [
-        "pastry_flour",
-        "pastry_butter"
+        "pastry_butter",
+        "pastry_flour"
       ]
     },
     {

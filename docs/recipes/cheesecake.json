@@ -7,8 +7,8 @@
   },
   "author": "Arnau",
   "categories": [
-    "desserts",
-    "baking"
+    "baking",
+    "desserts"
   ],
   "image": "/images/cheesecake/main.webp",
   "description": {
@@ -27,21 +27,21 @@
   },
   "variants": [
     {
-      "key": "classic",
-      "name": {
-        "en": "Classic",
-        "es": "Clásica",
-        "cat": "Clàssica",
-        "sv": "Klassisk"
-      }
-    },
-    {
       "key": "blue",
       "name": {
         "en": "Blue cheese",
         "es": "Queso azul",
         "cat": "Formatge blau",
         "sv": "Blåmögelost"
+      }
+    },
+    {
+      "key": "classic",
+      "name": {
+        "en": "Classic",
+        "es": "Clásica",
+        "cat": "Clàssica",
+        "sv": "Klassisk"
       }
     }
   ],
@@ -55,16 +55,16 @@
       },
       "items": [
         {
-          "ingredient": "digestive_cookies",
-          "value": 0,
-          "unit": "as_needed",
-          "id": "digestive_cookies"
-        },
-        {
           "ingredient": "butter",
           "value": 0,
           "unit": "as_needed",
           "id": "base_butter"
+        },
+        {
+          "ingredient": "digestive_cookies",
+          "value": 0,
+          "unit": "as_needed",
+          "id": "digestive_cookies"
         }
       ]
     },
@@ -76,6 +76,19 @@
         "sv": "Fyllning"
       },
       "items": [
+        {
+          "ingredient": "blue_cheese",
+          "value": 20,
+          "unit": "g",
+          "text": {
+            "en": "gorgonzola or roquefort",
+            "es": "gorgonzola o roquefort",
+            "cat": "gorgonzola o roquefort",
+            "sv": "gorgonzola eller roquefort"
+          },
+          "onlyForVariation": "blue",
+          "id": "blue_cheese"
+        },
         {
           "ingredient": "cream_cheese",
           "value": 300,
@@ -89,17 +102,21 @@
           "id": "cream_cheese"
         },
         {
-          "ingredient": "parmesan_cheese",
-          "value": 40,
+          "ingredient": "eggs",
+          "value": 2,
+          "id": "eggs"
+        },
+        {
+          "ingredient": "flour",
+          "value": 10,
           "unit": "g",
-          "text": {
-            "en": "grated",
-            "es": "rallado",
-            "cat": "ratllat",
-            "sv": "riven"
-          },
-          "onlyForVariation": "classic",
-          "id": "parmesan_classic"
+          "id": "flour"
+        },
+        {
+          "ingredient": "heavy_cream",
+          "value": 200,
+          "unit": "ml",
+          "id": "heavy_cream"
         },
         {
           "ingredient": "parmesan_cheese",
@@ -115,40 +132,23 @@
           "id": "parmesan_blue"
         },
         {
-          "ingredient": "blue_cheese",
-          "value": 20,
+          "ingredient": "parmesan_cheese",
+          "value": 40,
           "unit": "g",
           "text": {
-            "en": "gorgonzola or roquefort",
-            "es": "gorgonzola o roquefort",
-            "cat": "gorgonzola o roquefort",
-            "sv": "gorgonzola eller roquefort"
+            "en": "grated",
+            "es": "rallado",
+            "cat": "ratllat",
+            "sv": "riven"
           },
-          "onlyForVariation": "blue",
-          "id": "blue_cheese"
-        },
-        {
-          "ingredient": "eggs",
-          "value": 2,
-          "id": "eggs"
-        },
-        {
-          "ingredient": "heavy_cream",
-          "value": 200,
-          "unit": "ml",
-          "id": "heavy_cream"
+          "onlyForVariation": "classic",
+          "id": "parmesan_classic"
         },
         {
           "ingredient": "sugar",
           "value": 75,
           "unit": "g",
           "id": "sugar"
-        },
-        {
-          "ingredient": "flour",
-          "value": 10,
-          "unit": "g",
-          "id": "flour"
         }
       ]
     }
@@ -162,14 +162,14 @@
         "sv": "Ta alla fyllningsingredienser till rumstemperatur."
       },
       "ingredients": [
-        "cream_cheese",
-        "parmesan_classic",
-        "parmesan_blue",
         "blue_cheese",
+        "cream_cheese",
         "eggs",
+        "flour",
         "heavy_cream",
-        "sugar",
-        "flour"
+        "parmesan_blue",
+        "parmesan_classic",
+        "sugar"
       ]
     },
     {
@@ -192,8 +192,8 @@
         "sv": "Krossa Digestivekexen med smör för botten. Om du inte har en mixer, lägg kexen i en påse och krossa dem med en stekpanna."
       },
       "ingredients": [
-        "digestive_cookies",
-        "base_butter"
+        "base_butter",
+        "digestive_cookies"
       ]
     },
     {

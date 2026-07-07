@@ -31,18 +31,6 @@
       },
       "items": [
         {
-          "ingredient": "flour",
-          "value": 150,
-          "unit": "g",
-          "text": {
-            "en": "wheat; strong or all-purpose",
-            "es": "de trigo; de fuerza o normal",
-            "cat": "de blat; de força o normal",
-            "sv": "vetemjöl; durum eller vetemjöl"
-          },
-          "id": "flour"
-        },
-        {
           "ingredient": "butter",
           "value": 50,
           "unit": "g",
@@ -53,6 +41,35 @@
             "sv": "rumsvarm, mjuk"
           },
           "id": "butter"
+        },
+        {
+          "ingredient": "dry_yeast",
+          "value": 4,
+          "unit": "g",
+          "id": "dry_yeast"
+        },
+        {
+          "ingredient": "eggs",
+          "value": 1,
+          "text": {
+            "en": "large",
+            "es": "grande (L)",
+            "cat": "gran (L)",
+            "sv": "stor (L)"
+          },
+          "id": "eggs"
+        },
+        {
+          "ingredient": "flour",
+          "value": 150,
+          "unit": "g",
+          "text": {
+            "en": "wheat; strong or all-purpose",
+            "es": "de trigo; de fuerza o normal",
+            "cat": "de blat; de força o normal",
+            "sv": "vetemjöl; durum eller vetemjöl"
+          },
+          "id": "flour"
         },
         {
           "ingredient": "greek_yogurt",
@@ -67,17 +84,6 @@
           "id": "greek_yogurt"
         },
         {
-          "ingredient": "eggs",
-          "value": 1,
-          "text": {
-            "en": "large",
-            "es": "grande (L)",
-            "cat": "gran (L)",
-            "sv": "stor (L)"
-          },
-          "id": "eggs"
-        },
-        {
           "ingredient": "milk",
           "value": 30,
           "unit": "ml",
@@ -88,12 +94,6 @@
             "sv": "ljummen"
           },
           "id": "milk"
-        },
-        {
-          "ingredient": "dry_yeast",
-          "value": 4,
-          "unit": "g",
-          "id": "dry_yeast"
         },
         {
           "ingredient": "salt",
@@ -173,8 +173,8 @@
       },
       "ingredients": [
         "butter",
-        "greek_yogurt",
         "eggs",
+        "greek_yogurt",
         "vanilla_extract"
       ]
     },

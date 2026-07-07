@@ -24,6 +24,63 @@
   "ingredients": [
     {
       "group": {
+        "en": "Marinade",
+        "es": "Marinado",
+        "cat": "Marinat",
+        "sv": "Marinad"
+      },
+      "items": [
+        {
+          "ingredient": "garlic_powder",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "garlic_powder"
+        },
+        {
+          "ingredient": "gochujang",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "gochujang"
+        },
+        {
+          "ingredient": "lemon",
+          "value": 1,
+          "id": "lemon"
+        },
+        {
+          "ingredient": "oregano",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "oregano"
+        },
+        {
+          "ingredient": "parsley",
+          "value": 0.5,
+          "unit": "tbsp",
+          "id": "parsley"
+        },
+        {
+          "ingredient": "red_pepper",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "red_pepper"
+        },
+        {
+          "ingredient": "salt",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "salt"
+        },
+        {
+          "ingredient": "thyme",
+          "value": 1,
+          "unit": "tbsp",
+          "id": "thyme"
+        }
+      ]
+    },
+    {
+      "group": {
         "en": "Meat",
         "es": "Carne",
         "cat": "Carn",
@@ -41,63 +98,6 @@
             "sv": "axelstek eller liknande stycke för långsam tillagning"
           },
           "id": "pork"
-        }
-      ]
-    },
-    {
-      "group": {
-        "en": "Marinade",
-        "es": "Marinado",
-        "cat": "Marinat",
-        "sv": "Marinad"
-      },
-      "items": [
-        {
-          "ingredient": "salt",
-          "value": 1,
-          "unit": "tbsp",
-          "id": "salt"
-        },
-        {
-          "ingredient": "thyme",
-          "value": 1,
-          "unit": "tbsp",
-          "id": "thyme"
-        },
-        {
-          "ingredient": "oregano",
-          "value": 1,
-          "unit": "tbsp",
-          "id": "oregano"
-        },
-        {
-          "ingredient": "red_pepper",
-          "value": 1,
-          "unit": "tbsp",
-          "id": "red_pepper"
-        },
-        {
-          "ingredient": "garlic_powder",
-          "value": 1,
-          "unit": "tbsp",
-          "id": "garlic_powder"
-        },
-        {
-          "ingredient": "parsley",
-          "value": 0.5,
-          "unit": "tbsp",
-          "id": "parsley"
-        },
-        {
-          "ingredient": "gochujang",
-          "value": 1,
-          "unit": "tbsp",
-          "id": "gochujang"
-        },
-        {
-          "ingredient": "lemon",
-          "value": 1,
-          "id": "lemon"
         }
       ]
     }
@@ -122,14 +122,14 @@
         "sv": "Blanda salt, timjan, oregano, söt paprika, vitlökspulver, persilja, gochujang och citronsaft till en jämn marinad."
       },
       "ingredients": [
-        "salt",
-        "thyme",
-        "oregano",
-        "red_pepper",
         "garlic_powder",
-        "parsley",
         "gochujang",
-        "lemon"
+        "lemon",
+        "oregano",
+        "parsley",
+        "red_pepper",
+        "salt",
+        "thyme"
       ]
     },
     {

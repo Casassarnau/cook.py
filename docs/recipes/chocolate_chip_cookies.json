@@ -7,8 +7,8 @@
   },
   "author": "Arnau",
   "categories": [
-    "desserts",
-    "baking"
+    "baking",
+    "desserts"
   ],
   "image": "/images/chocolate_chip_cookies/main.webp",
   "description": {
@@ -23,22 +23,10 @@
   },
   "ingredients": [
     {
-      "ingredient": "strong_flour",
-      "value": 125,
-      "unit": "g",
-      "id": "bread_flour"
-    },
-    {
       "ingredient": "flour",
       "value": 100,
       "unit": "g",
       "id": "all_purpose_flour"
-    },
-    {
-      "ingredient": "salt",
-      "value": 10,
-      "unit": "g",
-      "id": "salt"
     },
     {
       "ingredient": "baking_soda",
@@ -47,16 +35,10 @@
       "id": "baking_soda"
     },
     {
-      "ingredient": "butter",
-      "value": 200,
+      "ingredient": "strong_flour",
+      "value": 125,
       "unit": "g",
-      "id": "butter"
-    },
-    {
-      "ingredient": "water",
-      "value": 10,
-      "unit": "g",
-      "id": "water"
+      "id": "bread_flour"
     },
     {
       "ingredient": "brown_sugar",
@@ -71,28 +53,22 @@
       "id": "brown_sugar"
     },
     {
-      "ingredient": "sugar",
-      "value": 100,
+      "ingredient": "butter",
+      "value": 200,
+      "unit": "g",
+      "id": "butter"
+    },
+    {
+      "ingredient": "dark_chocolate",
+      "value": 130,
       "unit": "g",
       "text": {
-        "en": "white",
-        "es": "blanco",
-        "cat": "blanc",
-        "sv": "vitt"
+        "en": "chopped",
+        "es": "troceado",
+        "cat": "trossejat",
+        "sv": "hackad"
       },
-      "id": "white_sugar"
-    },
-    {
-      "ingredient": "vanilla_extract",
-      "value": 2,
-      "unit": "tsp",
-      "id": "vanilla_extract"
-    },
-    {
-      "ingredient": "espresso_powder",
-      "value": 1,
-      "unit": "tsp",
-      "id": "espresso_powder"
+      "id": "dark_chocolate"
     },
     {
       "ingredient": "eggs",
@@ -117,22 +93,10 @@
       "id": "egg_yolk"
     },
     {
-      "ingredient": "semi_sweet_chocolate_chips",
-      "value": 85,
-      "unit": "g",
-      "id": "semi_sweet_chips"
-    },
-    {
-      "ingredient": "dark_chocolate",
-      "value": 130,
-      "unit": "g",
-      "text": {
-        "en": "chopped",
-        "es": "troceado",
-        "cat": "trossejat",
-        "sv": "hackad"
-      },
-      "id": "dark_chocolate"
+      "ingredient": "espresso_powder",
+      "value": 1,
+      "unit": "tsp",
+      "id": "espresso_powder"
     },
     {
       "ingredient": "flour",
@@ -157,6 +121,42 @@
         "sv": "flingsalt, att strö över"
       },
       "id": "flake_salt"
+    },
+    {
+      "ingredient": "salt",
+      "value": 10,
+      "unit": "g",
+      "id": "salt"
+    },
+    {
+      "ingredient": "semi_sweet_chocolate_chips",
+      "value": 85,
+      "unit": "g",
+      "id": "semi_sweet_chips"
+    },
+    {
+      "ingredient": "vanilla_extract",
+      "value": 2,
+      "unit": "tsp",
+      "id": "vanilla_extract"
+    },
+    {
+      "ingredient": "water",
+      "value": 10,
+      "unit": "g",
+      "id": "water"
+    },
+    {
+      "ingredient": "sugar",
+      "value": 100,
+      "unit": "g",
+      "text": {
+        "en": "white",
+        "es": "blanco",
+        "cat": "blanc",
+        "sv": "vitt"
+      },
+      "id": "white_sugar"
     }
   ],
   "instructions": [
@@ -188,11 +188,11 @@
         "sv": "Tillsätt vattnet, båda sockerna, vaniljextraktet och espressopulvret. Vispa med elvisp i 2 minuter, eller för hand tills smeten ser slät och jämn ut."
       },
       "ingredients": [
-        "water",
         "brown_sugar",
-        "white_sugar",
+        "espresso_powder",
         "vanilla_extract",
-        "espresso_powder"
+        "water",
+        "white_sugar"
       ]
     },
     {
@@ -215,10 +215,10 @@
         "sv": "Vispa ihop vetemjöl special, vanligt vetemjöl, salt och bikarbonat i en annan skål."
       },
       "ingredients": [
-        "bread_flour",
         "all_purpose_flour",
-        "salt",
-        "baking_soda"
+        "baking_soda",
+        "bread_flour",
+        "salt"
       ]
     },
     {
@@ -240,8 +240,8 @@
         "sv": "Vänd ner de halvsöta chokladknapparna och den hackade mörka chokladen."
       },
       "ingredients": [
-        "semi_sweet_chips",
-        "dark_chocolate"
+        "dark_chocolate",
+        "semi_sweet_chips"
       ]
     },
     {
