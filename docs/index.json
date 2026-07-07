@@ -495,6 +495,31 @@
   },
   {
     "title": {
+      "en": "Salmorejo",
+      "es": "Salmorejo",
+      "cat": "Salmorejo",
+      "sv": "Salmorejo"
+    },
+    "categories": [
+      "mains"
+    ],
+    "path": "recipes/salmorejo.json",
+    "image": "/images/salmorejo/main.webp",
+    "author": "Gerard",
+    "development": false,
+    "ingredient_keys": [
+      "tomato",
+      "bread",
+      "garlic",
+      "extra_virgin_olive_oil",
+      "vinegar",
+      "salt",
+      "ham",
+      "eggs"
+    ]
+  },
+  {
+    "title": {
       "en": "Spanish Potato Omelette",
       "es": "Tortilla de patatas",
       "cat": "Truita de patates",

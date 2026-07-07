@@ -1,0 +1,183 @@
+{
+  "title": {
+    "en": "Salmorejo",
+    "es": "Salmorejo",
+    "cat": "Salmorejo",
+    "sv": "Salmorejo"
+  },
+  "author": "Gerard",
+  "categories": [
+    "mains"
+  ],
+  "image": "/images/salmorejo/main.webp",
+  "description": {
+    "en": "A thick, creamy cold tomato soup from Córdoba, Andalusia. Thicker than gazpacho, made with bread as a natural thickener. Silky smooth and intensely flavored with olive oil and garlic. Top with jamón and hard-boiled egg for the full experience.",
+    "es": "Una sopa fría espesa y cremosa de tomate originaria de Córdoba, Andalucía. Más espesa que el gazpacho, hecha con pan como espesante natural. Textura sedosa y sabor intenso a aceite de oliva y ajo. Coronar con jamón y huevo duro para la experiencia completa.",
+    "cat": "Una sopa freda espessa i cremosa de tomàquet originària de Còrdova, Andalusia. Més espessa que el gaspatxo, feta amb pa com a espessidor natural. Textura sedosa i sabor intens d'oli d'oliva i all. Coronar amb pernil i ou dur per a l'experiència completa.",
+    "sv": "En tjock, krämig kall tomatsoppa från Córdoba, Andalusien. Tjockare än gazpacho, gjord med bröd som naturligt förtjockningsmedel. Silkeslen konsistens och intensiv smak av olivolja och vitlök. Toppa med skinka och hårdkokt ägg för den fullständiga upplevelsen."
+  },
+  "portion": {
+    "type": "servings",
+    "value": 4,
+    "unit": "servings"
+  },
+  "ingredients": [
+    {
+      "id": "tomatoes",
+      "ingredient": "tomato",
+      "value": 1,
+      "unit": "kg",
+      "text": {
+        "en": "ripe",
+        "es": "maduros",
+        "cat": "madurs",
+        "sv": "mogna"
+      }
+    },
+    {
+      "id": "bread",
+      "ingredient": "bread",
+      "value": 200,
+      "unit": "g",
+      "text": {
+        "en": "stale, crust removed",
+        "es": "del día anterior, sin corteza",
+        "cat": "del dia anterior, sense crosta",
+        "sv": "dagsgammalt, utan kanter"
+      }
+    },
+    {
+      "id": "garlic",
+      "ingredient": "garlic",
+      "value": 1,
+      "unit": "unit",
+      "text": {
+        "en": "small clove",
+        "es": "diente pequeño",
+        "cat": "dent petit",
+        "sv": "liten klyfta"
+      }
+    },
+    {
+      "id": "olive_oil",
+      "ingredient": "extra_virgin_olive_oil",
+      "value": 100,
+      "unit": "ml"
+    },
+    {
+      "id": "vinegar",
+      "ingredient": "vinegar",
+      "value": 20,
+      "unit": "ml",
+      "text": {
+        "en": "sherry vinegar",
+        "es": "vinagre de Jerez",
+        "cat": "vinagre de Xerès",
+        "sv": "sherryvinäger"
+      }
+    },
+    {
+      "id": "salt",
+      "ingredient": "salt",
+      "value": 0,
+      "unit": "to_taste"
+    },
+    {
+      "id": "ham_garnish",
+      "ingredient": "ham",
+      "value": 100,
+      "unit": "g",
+      "text": {
+        "en": "for garnish, diced",
+        "es": "para decorar, picado",
+        "cat": "per decorar, picat",
+        "sv": "för garnering, tärnad"
+      }
+    },
+    {
+      "id": "eggs_garnish",
+      "ingredient": "eggs",
+      "value": 2,
+      "text": {
+        "en": "hard-boiled, for garnish",
+        "es": "duros, para decorar",
+        "cat": "durs, per decorar",
+        "sv": "hårdkokta, för garnering"
+      }
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "If using stale bread, remove the crust and soak the bread in a bowl of cold water for 5 minutes until soft.",
+        "es": "Si usas pan del día anterior, quita la corteza y remoja el pan en un bol con agua fría durante 5 minutos hasta que se ablande.",
+        "cat": "Si uses pa del dia anterior, treu la crosta i remulla el pa en un bol amb aigua freda durant 5 minuts fins que s'estovi.",
+        "sv": "Om du använder dagsgammalt bröd, ta bort kanterna och blötlägg brödet i en skål med kallt vatten i 5 minuter tills det mjuknat."
+      },
+      "ingredients": ["bread"]
+    },
+    {
+      "text": {
+        "en": "Wash the tomatoes, roughly chop them, and add them to a blender. Drain the bread slightly and add it together with the garlic clove.",
+        "es": "Lava los tomates, trocéalos y añádelos a la batidora. Escurre ligeramente el pan y agrégalo junto con el diente de ajo.",
+        "cat": "Renta els tomàquets, trosseja'ls i afegeix-los a la batedora. Escorre lleugerament el pa i afegeix-lo juntament amb el dent d'all.",
+        "sv": "Tvätta tomaterna, grovhacka dem och lägg dem i en mixer. Krama ur brödet lätt och tillsätt det tillsammans med vitlöksklyftan."
+      },
+      "ingredients": ["tomatoes", "bread", "garlic"]
+    },
+    {
+      "text": {
+        "en": "Blend until you get a smooth purée.",
+        "es": "Tritura hasta obtener un puré suave.",
+        "cat": "Tritura fins a obtenir un puré suau.",
+        "sv": "Mixa tills du får en slät puré."
+      },
+      "ingredients": []
+    },
+    {
+      "text": {
+        "en": "With the blender running at low speed, slowly drizzle in the olive oil — just like making aioli — so the mixture emulsifies and becomes creamy.",
+        "es": "Con la batidora en marcha a velocidad baja, añade el aceite de oliva en un hilo fino — como si hicieras alioli — para que emulsione y quede cremoso.",
+        "cat": "Amb la batedora en marxa a velocitat baixa, afegeix l'oli d'oliva en un fil fi — com si fessis allioli — per que emulsion i quedi cremós.",
+        "sv": "Med mixern igång på låg hastighet, häll i olivoljan i en tunn stråle — precis som när du gör aioli — så att blandningen emulgerar och blir krämig."
+      },
+      "ingredients": ["olive_oil"]
+    },
+    {
+      "text": {
+        "en": "Add the sherry vinegar and salt to taste. Blend briefly to combine. Taste and adjust seasoning.",
+        "es": "Añade el vinagre de Jerez y sal al gusto. Mezcla brevemente. Prueba y ajusta el sazonado.",
+        "cat": "Afegeix el vinagre de Xerès i sal al gust. Barreja breument. Prova i ajusta l'assaonament.",
+        "sv": "Tillsätt sherryvinäger och salt efter smak. Mixa kort. Smaka av och justera kryddningen."
+      },
+      "ingredients": ["vinegar", "salt"]
+    },
+    {
+      "text": {
+        "en": "For an extra silky texture, pass the salmorejo through a fine strainer.",
+        "es": "Para una textura extra sedosa, pasa el salmorejo por un colador fino.",
+        "cat": "Per a una textura extra sedosa, passa el salmorejo per un colador fi.",
+        "sv": "För en extra silkeslen konsistens, sila salmorejon genom en finmaskig sil."
+      },
+      "ingredients": []
+    },
+    {
+      "text": {
+        "en": "Refrigerate for at least 2 hours (overnight is best) so the flavors meld and it becomes well chilled.",
+        "es": "Refrigera al menos 2 horas (mejor de un día para otro) para que los sabores se integren y esté bien frío.",
+        "cat": "Refrigera almenys 2 hores (millor d'un dia per l'altre) perquè els sabors s'integrin i estigui ben fred.",
+        "sv": "Kyl i minst 2 timmar (helst över natten) så att smakerna blandas och soppan blir ordentligt kyld."
+      },
+      "ingredients": []
+    },
+    {
+      "text": {
+        "en": "Serve cold, garnished with diced hard-boiled egg and chopped cured ham. Drizzle with a little extra olive oil.",
+        "es": "Servir bien frío, decorado con huevo duro picado y jamón picado. Rociar con un poco más de aceite de oliva.",
+        "cat": "Servir ben fred, decorat amb ou dur picat i pernil picat. Amanir amb una mica més d'oli d'oliva.",
+        "sv": "Servera väl kyld, garnerad med tärnat hårdkokt ägg och hackad skinka. Ringla över lite extra olivolja."
+      },
+      "ingredients": ["ham_garnish", "eggs_garnish"]
+    }
+  ]
+}
