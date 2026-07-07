@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify all JSON files are valid
+        run: |
+          echo "::group::Recipe JSONs"
+          for f in docs/recipes/*.json; do
+            python3 -m json.tool "$f" > /dev/null && echo "  ✓ $f" || { echo "  ✗ $f"; exit 1; }
+          done
+          echo "::endgroup::"
+          echo "::group::Translation JSONs"
+          for f in docs/translations/*.json; do
+            python3 -m json.tool "$f" > /dev/null && echo "  ✓ $f" || { echo "  ✗ $f"; exit 1; }
+          done
+          echo "::endgroup::"
+
+      - name: Regenerate index and check for changes
+        run: |
+          uv run python generate_index.py
+          if ! git diff --exit-code docs/index.json; then
+            echo "❌ docs/index.json is out of date — run 'uv run python generate_index.py' locally and commit the result."
+            exit 1
+          fi
+          echo "✅ Index is up to date."
+
+      - name: Check for stale generated images
+        run: |
+          echo "⚠️  Image generation requires source images — skipped in CI."
