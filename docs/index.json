@@ -333,24 +333,7 @@
       "olive_oil",
       "olive_oil",
       "water",
-      "water"
-    ]
-  },
-  {
-    "title": {
-      "en": "Gerard's Gazpacho",
-      "es": "Gazpacho de Gerard",
-      "cat": "Gaspatxo de Gerard",
-      "sv": "Gerards gazpacho"
-    },
-    "categories": [
-      "mains"
-    ],
-    "path": "recipes/gazpacho_gerard.json",
-    "image": "/images/gazpacho_gerard/main.webp",
-    "author": "Gerard",
-    "development": false,
-    "ingredient_keys": [
+      "water",
       "tomato",
       "cucumber",
       "bell_pepper",

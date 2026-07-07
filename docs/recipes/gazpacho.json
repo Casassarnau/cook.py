@@ -11,10 +11,10 @@
   ],
   "image": "/images/gazpacho/main.webp",
   "description": {
-    "en": "Classic Andalusian cold soup: fresh, tangy, and perfect for hot days. Also available with watermelon for a sweeter twist. Best served well chilled.",
-    "es": "Gazpacho andaluz clásico: fresco, ácido y perfecto para los días calurosos. También disponible con sandía para un toque más dulce. Mejor servido bien frío.",
-    "cat": "Gazpacho andalús clàssic: fresc, àcid i perfecte per als dies calorosos. També disponible amb síndria per a un toc més dolç. Millor servit ben fred.",
-    "sv": "Klassisk andalusisk kall soppa: fräsch, syrlig och perfekt för varma dagar. Finns även med vattenmelon för en sötare twist. Serveras väl kyld."
+    "en": "Classic Andalusian cold soup: fresh, tangy, and perfect for hot days. Also available with watermelon for a sweeter twist, or with bread for a thicker, creamier version (Gerard's style). Best served well chilled.",
+    "es": "Gazpacho andaluz clásico: fresco, ácido y perfecto para los días calurosos. También disponible con sandía para un toque más dulce, o con pan para una versión más espesa y cremosa (estilo Gerard). Mejor servido bien frío.",
+    "cat": "Gaspatxo andalús clàssic: fresc, àcid i perfecte per als dies calorosos. També disponible amb síndria per a un toc més dolç, o amb pa per a una versió més espessa i cremosa (estil Gerard). Millor servit ben fred.",
+    "sv": "Klassisk andalusisk kall soppa: fräsch, syrlig och perfekt för varma dagar. Finns även med vattenmelon för en sötare twist, eller med bröd för en tjockare, krämigare version (Gerards stil). Serveras väl kyld."
   },
   "portion": {
     "type": "servings",
@@ -38,6 +38,15 @@
         "es": "Con sandía",
         "cat": "Amb síndria",
         "sv": "Med vattenmelon"
+      }
+    },
+    {
+      "key": "gerard",
+      "name": {
+        "en": "Gerard's style (with bread)",
+        "es": "Estilo Gerard (con pan)",
+        "cat": "Estil Gerard (amb pa)",
+        "sv": "Gerards stil (med bröd)"
       }
     }
   ],
@@ -86,6 +95,7 @@
       "ingredient": "garlic",
       "value": 1,
       "unit": "unit",
+      "onlyForVariation": ["classic", "watermelon"],
       "text": {
         "en": "clove",
         "es": "diente",
@@ -98,6 +108,7 @@
       "ingredient": "bell_pepper",
       "value": 50,
       "unit": "g",
+      "onlyForVariation": ["classic", "watermelon"],
       "text": {
         "en": "green or red",
         "es": "verde o rojo",
@@ -116,19 +127,22 @@
       "id": "cucumber",
       "ingredient": "cucumber",
       "value": 60,
-      "unit": "g"
+      "unit": "g",
+      "onlyForVariation": ["classic", "watermelon"]
     },
     {
       "id": "vinegar",
       "ingredient": "vinegar",
       "value": 20,
-      "unit": "g"
+      "unit": "g",
+      "onlyForVariation": ["classic", "watermelon"]
     },
     {
       "id": "salt",
       "ingredient": "salt",
       "value": 1,
-      "unit": "tsp"
+      "unit": "tsp",
+      "onlyForVariation": ["classic", "watermelon"]
     },
     {
       "id": "olive_oil_start",
@@ -188,6 +202,102 @@
         "cat": "freda o congelada",
         "sv": "kallt eller fruset"
       }
+    },
+    {
+      "id": "gerard_tomato",
+      "ingredient": "tomato",
+      "value": 0.5,
+      "unit": "kg",
+      "onlyForVariation": "gerard",
+      "text": {
+        "en": "ripe, peeled (can use canned whole peeled tomatoes)",
+        "es": "maduros, pelados (puede ser una lata de tomates enteros pelados)",
+        "cat": "madurs, pelats (pot ser una llauna de tomàquets enters pelats)",
+        "sv": "mogna, skalade (kan vara konserverade hela skalade tomater)"
+      }
+    },
+    {
+      "id": "gerard_cucumber",
+      "ingredient": "cucumber",
+      "value": 0.5,
+      "onlyForVariation": "gerard",
+      "text": {
+        "en": "cut into large pieces",
+        "es": "cortado en trozos grandes",
+        "cat": "tallat a trossos grans",
+        "sv": "skuren i stora bitar"
+      }
+    },
+    {
+      "id": "gerard_bell_pepper",
+      "ingredient": "bell_pepper",
+      "value": 0.5,
+      "onlyForVariation": "gerard",
+      "text": {
+        "en": "green, cut into large pieces",
+        "es": "verde, cortado en trozos grandes",
+        "cat": "verd, tallat a trossos grans",
+        "sv": "grön, skuren i stora bitar"
+      }
+    },
+    {
+      "id": "gerard_bread",
+      "ingredient": "bread",
+      "value": 1,
+      "unit": "unit",
+      "onlyForVariation": "gerard",
+      "text": {
+        "en": "slice, soaked in water",
+        "es": "rebanada, mojada con agua",
+        "cat": "llesca, mullada amb aigua",
+        "sv": "skiva, blötlagd i vatten"
+      }
+    },
+    {
+      "id": "gerard_garlic",
+      "ingredient": "garlic",
+      "value": 1,
+      "unit": "unit",
+      "onlyForVariation": "gerard",
+      "text": {
+        "en": "clove, without the center germ",
+        "es": "diente, sin la parte del centro",
+        "cat": "dent, sense la part del centre",
+        "sv": "klyfta, utan den mittersta delen"
+      }
+    },
+    {
+      "id": "gerard_olive_oil",
+      "ingredient": "olive_oil",
+      "value": 0,
+      "unit": "as_needed",
+      "onlyForVariation": "gerard",
+      "text": {
+        "en": "generous amount, added slowly to emulsify",
+        "es": "cantidad generosa, añadido poco a poco para emulsionar",
+        "cat": "quantitat generosa, afegit a poc a poc per emulsionar",
+        "sv": "generös mängd, tillsatt långsamt för att emulgera"
+      }
+    },
+    {
+      "id": "gerard_vinegar",
+      "ingredient": "vinegar",
+      "value": 0,
+      "unit": "to_taste",
+      "onlyForVariation": "gerard",
+      "text": {
+        "en": "white vinegar",
+        "es": "vinagre blanco",
+        "cat": "vinagre blanc",
+        "sv": "vit vinäger"
+      }
+    },
+    {
+      "id": "gerard_salt",
+      "ingredient": "salt",
+      "value": 0,
+      "unit": "to_taste",
+      "onlyForVariation": "gerard"
     }
   ],
   "instructions": [
@@ -283,6 +393,7 @@
         "cat": "A continuació, tritura 3 minuts a velocitat alta fins que quedi fi.",
         "sv": "Mixa sedan i 3 minuter på hög hastighet tills soppan är slät."
       },
+      "onlyForVariation": ["classic", "watermelon"],
       "ingredients": [],
       "thermomix": {
         "text": {
@@ -344,6 +455,54 @@
           "speed": 5
         }
       }
+    },
+    {
+      "text": {
+        "en": "Soak the bread slice in a bowl of water until soft.",
+        "es": "Moja la rebanada de pan en un bol con agua hasta que se ablande.",
+        "cat": "Mulla la llesca de pa en un bol amb aigua fins que s'estovi.",
+        "sv": "Blötlägg brödskivan i en skål med vatten tills den mjuknar."
+      },
+      "onlyForVariation": "gerard",
+      "ingredients": ["gerard_bread"]
+    },
+    {
+      "text": {
+        "en": "Add all the ingredients to a blender except the olive oil: tomatoes, cucumber, green bell pepper, soaked bread, garlic, white vinegar, and salt. Blend until smooth.",
+        "es": "Pon todos los ingredientes en la batidora excepto el aceite de oliva: tomates, pepino, pimiento verde, pan mojado, ajo, vinagre blanco y sal. Tritura hasta que quede suave.",
+        "cat": "Posa tots els ingredients a la batedora excepte l'oli d'oliva: tomàquets, cogombre, pebrot verd, pa mullat, all, vinagre blanc i sal. Tritura fins que quedi suau.",
+        "sv": "Lägg alla ingredienser i mixern utom olivoljan: tomater, gurka, grön paprika, blött bröd, vitlök, vit vinäger och salt. Mixa tills det är slätt."
+      },
+      "onlyForVariation": "gerard",
+      "ingredients": [
+        "gerard_tomato",
+        "gerard_cucumber",
+        "gerard_bell_pepper",
+        "gerard_bread",
+        "gerard_garlic",
+        "gerard_vinegar",
+        "gerard_salt"
+      ]
+    },
+    {
+      "text": {
+        "en": "While the blender is running at low speed, gradually add the olive oil in a thin stream — just like making aioli — to emulsify. This gives it that silky, creamy texture.",
+        "es": "Con la batidora en marcha a velocidad baja, añade el aceite de oliva poco a poco en un hilo fino — como si hicieras alioli — para emulsionar. Esto le da esa textura sedosa y cremosa.",
+        "cat": "Amb la batedora en marxa a velocitat baixa, afegeix l'oli d'oliva a poc a poc en un fil fi — com si fessis allioli — per emulsionar. Això li dona aquesta textura sedosa i cremosa.",
+        "sv": "Med mixern igång på låg hastighet, tillsätt olivoljan gradvis i en tunn stråle — precis som när du gör aioli — för att emulgera. Detta ger den silkeslena, krämiga konsistensen."
+      },
+      "onlyForVariation": "gerard",
+      "ingredients": ["gerard_olive_oil"]
+    },
+    {
+      "text": {
+        "en": "Taste and adjust the salt and vinegar if needed.",
+        "es": "Prueba y ajusta la sal y el vinagre si es necesario.",
+        "cat": "Prova i ajusta la sal i el vinagre si cal.",
+        "sv": "Smaka av och justera salt och vinäger om det behövs."
+      },
+      "onlyForVariation": "gerard",
+      "ingredients": ["gerard_salt", "gerard_vinegar"]
     },
     {
       "text": {
