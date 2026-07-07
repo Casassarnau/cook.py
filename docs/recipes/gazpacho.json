@@ -71,13 +71,13 @@
     {
       "id": "garlic",
       "ingredient": "garlic",
-      "value": 2,
+      "value": 1,
       "unit": "unit",
       "text": {
-        "en": "cloves, without the center germ",
-        "es": "dientes, sin la parte del centro",
-        "cat": "dents, sense la part del centre",
-        "sv": "klyftor, utan den mittersta delen"
+        "en": "clove, without the center germ",
+        "es": "diente, sin la parte del centro",
+        "cat": "dent, sense la part del centre",
+        "sv": "klyfta, utan den mittersta delen"
       }
     },
     {
@@ -96,7 +96,13 @@
       "id": "vinegar",
       "ingredient": "vinegar",
       "value": 0,
-      "unit": "to_taste"
+      "unit": "to_taste",
+      "text": {
+        "en": "white vinegar",
+        "es": "vinagre blanco",
+        "cat": "vinagre blanc",
+        "sv": "vit vinäger"
+      }
     },
     {
       "id": "salt",
