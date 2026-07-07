@@ -1,0 +1,170 @@
+{
+  "title": {
+    "en": "Gerard's Gazpacho",
+    "es": "Gazpacho de Gerard",
+    "cat": "Gaspatxo de Gerard",
+    "sv": "Gerards gazpacho"
+  },
+  "author": "Gerard",
+  "categories": [
+    "mains"
+  ],
+  "image": "/images/gazpacho_gerard/main.webp",
+  "description": {
+    "en": "A simple homemade gazpacho with bread as a natural thickener. The oil is emulsified slowly — just like aioli — for an ultra-creamy finish. Straight from Gerard's kitchen, inspired by the TV3 Cuines recipe.",
+    "es": "Un gazpacho casero sencillo con pan como espesante natural. El aceite se emulsiona lentamente — como un alioli — para un acabado ultra cremoso. Directamente de la cocina de Gerard, inspirado en la receta de TV3 Cuines.",
+    "cat": "Un gaspatxo casolà senzill amb pa com a espessidor natural. L'oli s'emulsiona lentament — com un allioli — per a un acabat ultra cremós. Directament de la cuina de Gerard, inspirat en la recepta de TV3 Cuines.",
+    "sv": "En enkel hemlagad gazpacho med bröd som naturligt förtjockningsmedel. Oljan emulgeras långsamt — precis som aioli — för en ultrakrämig finish. Direkt från Gerards kök, inspirerad av TV3 Cuines recept."
+  },
+  "portion": {
+    "type": "servings",
+    "value": 4,
+    "unit": "servings"
+  },
+  "ingredients": [
+    {
+      "id": "tomatoes",
+      "ingredient": "tomato",
+      "value": 0.5,
+      "unit": "kg",
+      "text": {
+        "en": "ripe, peeled (can use canned whole peeled tomatoes)",
+        "es": "maduros, pelados (puede ser una lata de tomates enteros pelados)",
+        "cat": "madurs, pelats (pot ser una llauna de tomàquets enters pelats)",
+        "sv": "mogna, skalade (kan vara konserverade hela skalade tomater)"
+      }
+    },
+    {
+      "id": "cucumber",
+      "ingredient": "cucumber",
+      "value": 0.5,
+      "text": {
+        "en": "cut into large pieces",
+        "es": "cortado en trozos grandes",
+        "cat": "tallat a trossos grans",
+        "sv": "skuren i stora bitar"
+      }
+    },
+    {
+      "id": "bell_pepper",
+      "ingredient": "bell_pepper",
+      "value": 0.5,
+      "text": {
+        "en": "green, cut into large pieces",
+        "es": "verde, cortado en trozos grandes",
+        "cat": "verd, tallat a trossos grans",
+        "sv": "grön, skuren i stora bitar"
+      }
+    },
+    {
+      "id": "bread",
+      "ingredient": "bread",
+      "value": 1,
+      "unit": "unit",
+      "text": {
+        "en": "slice, soaked in water",
+        "es": "rebanada, mojada con agua",
+        "cat": "llesca, mullada amb aigua",
+        "sv": "skiva, blötlagd i vatten"
+      }
+    },
+    {
+      "id": "garlic",
+      "ingredient": "garlic",
+      "value": 1,
+      "unit": "unit",
+      "text": {
+        "en": "clove, without the center germ",
+        "es": "diente, sin la parte del centro",
+        "cat": "dent, sense la part del centre",
+        "sv": "klyfta, utan den mittersta delen"
+      }
+    },
+    {
+      "id": "olive_oil",
+      "ingredient": "olive_oil",
+      "value": 0,
+      "unit": "as_needed",
+      "text": {
+        "en": "generous amount, added slowly to emulsify",
+        "es": "cantidad generosa, añadido poco a poco para emulsionar",
+        "cat": "quantitat generosa, afegit a poc a poc per emulsionar",
+        "sv": "generös mängd, tillsatt långsamt för att emulgera"
+      }
+    },
+    {
+      "id": "vinegar",
+      "ingredient": "vinegar",
+      "value": 0,
+      "unit": "to_taste",
+      "text": {
+        "en": "white vinegar",
+        "es": "vinagre blanco",
+        "cat": "vinagre blanc",
+        "sv": "vit vinäger"
+      }
+    },
+    {
+      "id": "salt",
+      "ingredient": "salt",
+      "value": 0,
+      "unit": "to_taste"
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Soak the bread slice in a bowl of water until soft.",
+        "es": "Moja la rebanada de pan en un bol con agua hasta que se ablande.",
+        "cat": "Mulla la llesca de pa en un bol amb aigua fins que s'estovi.",
+        "sv": "Blötlägg brödskivan i en skål med vatten tills den mjuknar."
+      },
+      "ingredients": ["bread"]
+    },
+    {
+      "text": {
+        "en": "Add all the ingredients to a blender except the olive oil: tomatoes, cucumber, green bell pepper, soaked bread, garlic, white vinegar, and salt.",
+        "es": "Pon todos los ingredientes en la batidora excepto el aceite de oliva: tomates, pepino, pimiento verde, pan mojado, ajo, vinagre blanco y sal.",
+        "cat": "Posa tots els ingredients a la batedora excepte l'oli d'oliva: tomàquets, cogombre, pebrot verd, pa mullat, all, vinagre blanc i sal.",
+        "sv": "Lägg alla ingredienser i mixern utom olivoljan: tomater, gurka, grön paprika, blött bröd, vitlök, vit vinäger och salt."
+      },
+      "ingredients": ["tomatoes", "cucumber", "bell_pepper", "bread", "garlic", "vinegar", "salt"]
+    },
+    {
+      "text": {
+        "en": "Blend everything until smooth.",
+        "es": "Tritura todo hasta que quede suave.",
+        "cat": "Tritura-ho tot fins que quedi suau.",
+        "sv": "Mixa allt tills det är slätt."
+      },
+      "ingredients": []
+    },
+    {
+      "text": {
+        "en": "While the blender is running at low speed, gradually add the olive oil in a thin stream — just like making aioli — to emulsify. This gives it that silky, creamy texture.",
+        "es": "Con la batidora en marcha a velocidad baja, añade el aceite de oliva poco a poco en un hilo fino — como si hicieras alioli — para emulsionar. Esto le da esa textura sedosa y cremosa.",
+        "cat": "Amb la batedora en marxa a velocitat baixa, afegeix l'oli d'oliva a poc a poc en un fil fi — com si fessis allioli — per emulsionar. Això li dona aquesta textura sedosa i cremosa.",
+        "sv": "Med mixern igång på låg hastighet, tillsätt olivoljan gradvis i en tunn stråle — precis som när du gör aioli — för att emulgera. Detta ger den silkeslena, krämiga konsistensen."
+      },
+      "ingredients": ["olive_oil"]
+    },
+    {
+      "text": {
+        "en": "Taste and adjust the salt and vinegar if needed.",
+        "es": "Prueba y ajusta la sal y el vinagre si es necesario.",
+        "cat": "Prova i ajusta la sal i el vinagre si cal.",
+        "sv": "Smaka av och justera salt och vinäger om det behövs."
+      },
+      "ingredients": ["salt", "vinegar"]
+    },
+    {
+      "text": {
+        "en": "Refrigerate until well chilled before serving.",
+        "es": "Refrigera hasta que esté bien frío antes de servir.",
+        "cat": "Refrigera fins que estigui ben fred abans de servir.",
+        "sv": "Kyl tills den är ordentligt kall innan servering."
+      },
+      "ingredients": []
+    }
+  ]
+}

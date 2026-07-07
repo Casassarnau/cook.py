@@ -312,10 +312,42 @@
       "sv": "Gazpacho"
     },
     "categories": [
-      "mains"
+      "mains",
+      "thermomix"
     ],
     "path": "recipes/gazpacho.json",
     "image": "/images/gazpacho/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "tomato",
+      "tomato",
+      "watermelon",
+      "garlic",
+      "bell_pepper",
+      "onion",
+      "cucumber",
+      "vinegar",
+      "salt",
+      "olive_oil",
+      "olive_oil",
+      "olive_oil",
+      "water",
+      "water"
+    ]
+  },
+  {
+    "title": {
+      "en": "Gerard's Gazpacho",
+      "es": "Gazpacho de Gerard",
+      "cat": "Gaspatxo de Gerard",
+      "sv": "Gerards gazpacho"
+    },
+    "categories": [
+      "mains"
+    ],
+    "path": "recipes/gazpacho_gerard.json",
+    "image": "/images/gazpacho_gerard/main.webp",
     "author": "Gerard",
     "development": false,
     "ingredient_keys": [
