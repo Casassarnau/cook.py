@@ -1,1 +1,1 @@
-python3 -m http.server -d docs 8000
+./bin/uv run python -m http.server -d docs 8000

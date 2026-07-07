@@ -1,0 +1,11 @@
+[project]
+name = "cook-py"
+version = "0"
+description = "Static recipe book powered by HTML + Alpine.js."
+requires-python = ">=3.13"
+dependencies = [
+    "Pillow",
+    "cssbeautifier",
+    "djhtml",
+    "jsbeautifier",
+]
