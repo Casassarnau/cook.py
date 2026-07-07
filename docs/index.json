@@ -312,28 +312,21 @@
       "sv": "Gazpacho"
     },
     "categories": [
-      "mains",
-      "thermomix"
+      "mains"
     ],
     "path": "recipes/gazpacho.json",
     "image": "/images/gazpacho/main.webp",
-    "author": "Arnau",
+    "author": "Gerard",
     "development": false,
     "ingredient_keys": [
       "tomato",
-      "tomato",
-      "watermelon",
-      "garlic",
-      "bell_pepper",
-      "onion",
       "cucumber",
+      "bell_pepper",
+      "bread",
+      "garlic",
+      "olive_oil",
       "vinegar",
-      "salt",
-      "olive_oil",
-      "olive_oil",
-      "olive_oil",
-      "water",
-      "water"
+      "salt"
     ]
   },
   {
@@ -491,31 +484,6 @@
       "parsley",
       "gochujang",
       "lemon"
-    ]
-  },
-  {
-    "title": {
-      "en": "Salmorejo",
-      "es": "Salmorejo",
-      "cat": "Salmorejo",
-      "sv": "Salmorejo"
-    },
-    "categories": [
-      "mains"
-    ],
-    "path": "recipes/salmorejo.json",
-    "image": "/images/salmorejo/main.webp",
-    "author": "Gerard",
-    "development": false,
-    "ingredient_keys": [
-      "tomato",
-      "bread",
-      "garlic",
-      "extra_virgin_olive_oil",
-      "vinegar",
-      "salt",
-      "ham",
-      "eggs"
     ]
   },
   {
