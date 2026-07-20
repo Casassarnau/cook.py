@@ -98,6 +98,10 @@
       "1+": "crushed tomatoes"
     },
     "cucumber": "cucumber",
+    "cuajada": {
+      "1": "packet of junket powder (cuajada)",
+      "1+": "packets of junket powder (cuajada)"
+    },
     "cupcake": "cupcake",
     "dango": "dango",
     "dark_chocolate": "dark chocolate",
@@ -143,6 +147,7 @@
     "lentil": "lentil",
     "lime": "lime",
     "macaroni": "macaroni",
+    "mato": "mató (Catalan fresh cheese)",
     "meatball": "meatball",
     "melting_cheese": "cheese that melts easily",
     "milk": "milk",

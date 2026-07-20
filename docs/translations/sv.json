@@ -98,6 +98,10 @@
       "1+": "krossade tomater"
     },
     "cucumber": "gurka",
+    "cuajada": {
+      "1": "påse junketpulver (cuajada)",
+      "1+": "påsar junketpulver (cuajada)"
+    },
     "cupcake": "cupcake",
     "dango": "dango",
     "dark_chocolate_chips": "mörka chokladchips",
@@ -139,6 +143,7 @@
     "lentil": "lins",
     "lime": "lime",
     "macaroni": "makaroner",
+    "mato": "mató (katalansk färskost)",
     "meatball": "köttbulle",
     "melting_cheese": "ost som smälter lätt",
     "milk": "mjölk",

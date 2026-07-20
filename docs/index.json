@@ -417,6 +417,31 @@
   },
   {
     "title": {
+      "en": "Mató Flan",
+      "es": "Flan de mató",
+      "cat": "Flam de mató",
+      "sv": "Mató-flan"
+    },
+    "categories": [
+      "desserts",
+      "baking"
+    ],
+    "path": "recipes/flan_de_mato.json",
+    "image": "/images/flan_de_mato/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "sugar",
+      "water",
+      "sugar",
+      "heavy_cream",
+      "mato",
+      "cuajada",
+      "milk"
+    ]
+  },
+  {
+    "title": {
       "en": "Muffins",
       "es": "Magdalenas",
       "cat": "Magdalenes",

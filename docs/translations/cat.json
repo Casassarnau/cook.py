@@ -98,6 +98,10 @@
       "1+": "tomàquets triturats"
     },
     "cucumber": "cogombre",
+    "cuajada": {
+      "1": "sobre de cuajada",
+      "1+": "sobres de cuajada"
+    },
     "cupcake": "magdalena",
     "dango": "dango",
     "dark_chocolate": "xocolata negra",
@@ -143,6 +147,7 @@
     "lentil": "llentia",
     "lime": "llima",
     "macaroni": "macarrons",
+    "mato": "mató",
     "meatball": "mandonguilla",
     "melting_cheese": "formatge que es fongui bé",
     "milk": "llet",

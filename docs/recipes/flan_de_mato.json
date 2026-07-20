@@ -1,0 +1,230 @@
+{
+  "title": {
+    "en": "Mató Flan",
+    "es": "Flan de mató",
+    "cat": "Flam de mató",
+    "sv": "Mató-flan"
+  },
+  "author": "Arnau",
+  "categories": [
+    "desserts",
+    "baking"
+  ],
+  "image": "/images/flan_de_mato/main.webp",
+  "description": {
+    "en": "A silky Catalan flan made with mató fresh cheese, cream, and a light caramel. Baked in a bain-marie and chilled overnight for the best texture.",
+    "es": "Un flan catalán sedoso de mató, nata y un caramelo ligero. Se cuece al baño María y se deja enfriar toda la noche para conseguir la mejor textura.",
+    "cat": "Un flam català sedós de mató, nata i un caramel lleuger. Es cou al bany maria i es deixa refredar tota la nit per aconseguir la millor textura.",
+    "sv": "En silkig katalansk flan med mató-färskost, grädde och lätt karamell. Tillagas i vattenbad och kyls över natten för bästa konsistens."
+  },
+  "portion": {
+    "type": "units",
+    "value": 8
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Caramel",
+        "es": "Caramelo",
+        "cat": "Caramel",
+        "sv": "Karamell"
+      },
+      "items": [
+        {
+          "ingredient": "sugar",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "enough to coat the bottom of each ramekin",
+            "es": "la suficiente para cubrir el fondo de cada flanera",
+            "cat": "la suficient per cobrir el fons de cada flamer",
+            "sv": "tillräckligt för att täcka botten i varje form"
+          },
+          "id": "caramel_sugar"
+        },
+        {
+          "ingredient": "water",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "a few drops per ramekin",
+            "es": "unas gotas por flanera",
+            "cat": "unes gotes per flamer",
+            "sv": "några droppar per form"
+          },
+          "id": "water"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Flan mixture",
+        "es": "Mezcla del flan",
+        "cat": "Barreja del flam",
+        "sv": "Flansmet"
+      },
+      "items": [
+        {
+          "ingredient": "sugar",
+          "value": 120,
+          "unit": "g",
+          "id": "sugar"
+        },
+        {
+          "ingredient": "heavy_cream",
+          "value": 250,
+          "unit": "g",
+          "id": "heavy_cream"
+        },
+        {
+          "ingredient": "mato",
+          "value": 250,
+          "unit": "g",
+          "id": "mato"
+        },
+        {
+          "ingredient": "cuajada",
+          "value": 1,
+          "id": "cuajada"
+        },
+        {
+          "ingredient": "milk",
+          "value": 300,
+          "unit": "g",
+          "id": "milk"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Add enough sugar to coat the bottom of each of the 8 ramekins, and a few drops of water.",
+        "es": "Pon suficiente azúcar para cubrir el fondo de cada una de las 8 flaneras, y unas gotas de agua.",
+        "cat": "Posa prou sucre per cobrir el fons de cadascuna de les 8 flameres, i unes gotes d'aigua.",
+        "sv": "Tillsätt tillräckligt med socker för att täcka botten i var och en av de 8 formarna, plus några droppar vatten."
+      },
+      "ingredients": [
+        "caramel_sugar",
+        "water"
+      ]
+    },
+    {
+      "text": {
+        "en": "Place the ramekins in the oven at 200°C until the sugar melts and turns into a golden caramel.",
+        "es": "Introduce las flaneras en el horno a 200°C hasta que el azúcar se derrita y se torne un caramelo dorado.",
+        "cat": "Introdueix les flameres al forn a 200°C fins que el sucre es fongui i es torni un caramel daurat.",
+        "sv": "Sätt in formarna i ugnen på 200°C tills sockret smälter och blir gyllenbrun karamell."
+      },
+      "oven": {
+        "temperature": 200,
+        "mode": "fan"
+      }
+    },
+    {
+      "text": {
+        "en": "Remove the ramekins from the oven and lower the temperature to 180°C.",
+        "es": "Saca las flaneras del horno y baja la temperatura a 180°C.",
+        "cat": "Treu les flameres del forn i baixa la temperatura a 180°C.",
+        "sv": "Ta ut formarna ur ugnen och sänk temperaturen till 180°C."
+      },
+      "oven": {
+        "temperature": 180,
+        "mode": "fan"
+      }
+    },
+    {
+      "text": {
+        "en": "Let the caramel cool and set in the ramekins.",
+        "es": "Deja enfriar el caramelo para que quede fijo en las flaneras.",
+        "cat": "Deixa refredar el caramel perquè quedi fix a les flameres.",
+        "sv": "Låt karamellen svalna och stelna i formarna."
+      }
+    },
+    {
+      "text": {
+        "en": "Meanwhile, put the sugar, cream, mató, and junket powder in a bowl.",
+        "es": "Mientras tanto, pon el azúcar, la nata, el mató y la cuajada en un bol.",
+        "cat": "Mentrestant, posa el sucre, la nata, el mató i la quallada en un bol.",
+        "sv": "Under tiden, lägg socker, grädde, mató och junketpulver i en skål."
+      },
+      "ingredients": [
+        "sugar",
+        "heavy_cream",
+        "mato",
+        "cuajada"
+      ]
+    },
+    {
+      "text": {
+        "en": "Mix with a hand mixer until fully combined. Keep the beaters submerged so you incorporate as little air as possible.",
+        "es": "Mezcla con una batidora de mano hasta que quede bien integrado. Mantén las varillas sumergidas para incorporar la menor cantidad de aire posible.",
+        "cat": "Barreja amb una batedora de mà fins que quedi ben integrat. Mantén les varetes submergides per incorporar la menor quantitat d'aire possible.",
+        "sv": "Blanda med elvisp tills allt är jämnt. Håll visparna nedsänkta så att så lite luft som möjligt blandas in."
+      }
+    },
+    {
+      "text": {
+        "en": "Add the milk and mix again until smooth, still avoiding whipping air into the mixture.",
+        "es": "Añade la leche y mezcla de nuevo hasta obtener una textura homogénea, sin incorporar aire.",
+        "cat": "Afegeix la llet i barreja de nou fins obtenir una textura homogènia, sense incorporar aire.",
+        "sv": "Tillsätt mjölken och blanda igen till en jämn smet, fortfarande utan att slå in luft."
+      },
+      "ingredients": [
+        "milk"
+      ]
+    },
+    {
+      "text": {
+        "en": "Pour the mixture into the caramelized ramekins. Tip: hold a spoon over the caramel and pour onto it so the mixture does not disturb the caramel.",
+        "es": "Vierte la mezcla en las flaneras caramelizadas. Consejo: coloca una cuchara sobre el caramelo y vierte encima para que no se mezcle con el caramelo.",
+        "cat": "Aboca la barreja a les flameres caramel·litzades. Pots posar una cullera al fons perquè no es barreji amb el caramel.",
+        "sv": "Häll smeten i de karamelliserade formarna. Tips: håll en sked över karamellen och häll på den så att smeten inte blandas med karamellen."
+      }
+    },
+    {
+      "text": {
+        "en": "Place the ramekins in a deep roasting pan and pour hot water halfway up the sides (bain-marie).",
+        "es": "Coloca las flaneras en una bandeja honda y añade agua caliente hasta la mitad (baño María).",
+        "cat": "Col·loca les flameres en una safata fonda i afegeix aigua calenta fins a la meitat (bany maria).",
+        "sv": "Ställ formarna i en djup ugnsform och häll på hett vatten till halv höjd (vattenbad)."
+      }
+    },
+    {
+      "text": {
+        "en": "Bake at 180°C for about 25 minutes, until just set.",
+        "es": "Hornea a 180°C unos 25 minutos, hasta que estén cuajados.",
+        "cat": "Cou a 180°C uns 25 minuts, fins que estiguin quallats.",
+        "sv": "Grädda i 180°C i ca 25 minuter, tills de precis har stelnat."
+      },
+      "oven": {
+        "temperature": 180,
+        "mode": "fan"
+      }
+    },
+    {
+      "text": {
+        "en": "Remove from the oven and let cool to room temperature.",
+        "es": "Saca del horno y deja enfriar a temperatura ambiente.",
+        "cat": "Treu del forn i deixa refredar a temperatura ambient.",
+        "sv": "Ta ut ur ugnen och låt svalna till rumstemperatur."
+      }
+    },
+    {
+      "text": {
+        "en": "Refrigerate overnight.",
+        "es": "Refrigera toda la noche.",
+        "cat": "Refrigera tota la nit.",
+        "sv": "Kyl över natten."
+      }
+    },
+    {
+      "text": {
+        "en": "To serve, run a knife around the edge and invert onto a plate.",
+        "es": "Para servir, pasa un cuchillo por el borde y desmolda sobre un plato.",
+        "cat": "Per servir, passa un ganivet pel cantó i desmotlla sobre un plat.",
+        "sv": "Vid servering, kör en kniv runt kanten och stjälp upp på tallrik."
+      }
+    }
+  ]
+}

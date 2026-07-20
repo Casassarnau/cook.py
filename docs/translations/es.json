@@ -98,6 +98,10 @@
       "1+": "tomates triturados"
     },
     "cucumber": "pepino",
+    "cuajada": {
+      "1": "sobre de cuajada",
+      "1+": "sobres de cuajada"
+    },
     "cupcake": "magdalena",
     "dango": "dango",
     "dark_chocolate": "chocolate negro",
@@ -143,6 +147,7 @@
     "lentil": "lenteja",
     "lime": "lima",
     "macaroni": "macarrones",
+    "mato": "mató",
     "meatball": "albóndiga",
     "melting_cheese": "queso que funda fácilmente",
     "milk": "leche",
