@@ -12,7 +12,9 @@ function recipeAppState() {
     lang: 'en',
     translations: {},
     emojis: {},
-    ingredientRecipes: {},
+    ingredientRecipes: {
+      mato: 'mato',
+    },
     darkMode: false,
     basePath: '',
     currentServings: 4,

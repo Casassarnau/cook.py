@@ -19,7 +19,7 @@ When mapping categories, ingredients, and units, you MUST use the string keys de
 
 ### 3. Ingredients Object Array
 Break down the ingredients list into functional logical blocks (`group`). Each group contains an `items` array. For each item inside `items`:
-- `ingredient`: The snake_case string key identifier matched from the dictionary above. If a homemade recipe exists for that ingredient, also add `ingredient_key → recipe_slug` in `docs/ingredient_recipes.json` so the UI can link to it.
+- `ingredient`: The snake_case string key identifier matched from the dictionary above. If a homemade recipe exists for that ingredient, also add `ingredient_key → recipe_slug` in `docs/js/state.js` (`ingredientRecipes`) so the UI can link to it.
 - `value`: Numerical value (use `0` if the unit is `as_needed` or `to_taste`).
 - `unit`: A valid key from the units list. Omit the key entirely if it's a plain item count.
 - `text`: (Optional) Localized extra notes (e.g., `{"en": "grated", "es": "rallado", "cat": "ratllat", "sv": "riven"}`).

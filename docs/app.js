@@ -30,10 +30,11 @@ function recipeApp() {
 
         this.loadHomeFilters();
 
-        await this.loadTranslations();
-        await this.loadEmojis();
-        await this.loadIngredientRecipes();
-        await this.loadIndex();
+        await Promise.all([
+          this.loadTranslations(),
+          this.loadEmojis(),
+          this.loadIndex(),
+        ]);
 
         if (this.filterCategory && !this.categories.includes(this.filterCategory)) {
           this.filterCategory = '';

@@ -7,16 +7,6 @@ function recipeData() {
       this.categories = [...new Set(allCategories)];
     },
 
-    async loadIngredientRecipes() {
-      try {
-        const res = await fetch(this.withBase('ingredient_recipes.json'));
-        this.ingredientRecipes = await res.json();
-      } catch {
-        console.warn('No ingredient_recipes.json found');
-        this.ingredientRecipes = {};
-      }
-    },
-
     async fetchRecipeByName(recipeName) {
       const item = this.index.find(i => i.path === `recipes/${recipeName}.json`);
       if (!item) return null;
