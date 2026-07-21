@@ -12,6 +12,7 @@ function recipeAppState() {
     lang: 'en',
     translations: {},
     emojis: {},
+    ingredientRecipes: {},
     darkMode: false,
     basePath: '',
     currentServings: 4,

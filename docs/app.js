@@ -32,6 +32,7 @@ function recipeApp() {
 
         await this.loadTranslations();
         await this.loadEmojis();
+        await this.loadIngredientRecipes();
         await this.loadIndex();
 
         if (this.filterCategory && !this.categories.includes(this.filterCategory)) {

@@ -49,6 +49,20 @@ function recipeIngredients() {
       return this.hasCookIngredientsAt(this.cookStepIndex);
     },
 
+    getIngredientRecipeSlug(ingredientKey) {
+      const slug = this.ingredientRecipes?.[ingredientKey];
+      if (!slug) return null;
+      const currentSlug = this.getActiveRecipeSlug?.() || this.getRecipeName?.();
+      if (currentSlug && currentSlug === slug) return null;
+      return slug;
+    },
+
+    getIngredientRecipeTitle(recipeSlug) {
+      if (!recipeSlug || !this.index?.length) return '';
+      const item = this.index.find(i => i.path === `recipes/${recipeSlug}.json`);
+      return item ? this.translateField(item.title) : '';
+    },
+
     processIngredientList(ingredients, variationKey, multiplier) {
       return ingredients
         .filter(e => {
@@ -61,6 +75,7 @@ function recipeIngredients() {
           const connector = e.unit ? this.t(`connectors.${e.unit}`) || '' : '';
           const text = this.translateField(e.text);
           const emoji = this.getIngredientEmoji(e.ingredient);
+          const recipeSlug = this.getIngredientRecipeSlug(e.ingredient);
 
           let displayValue = '';
           let displayUnit = '';
@@ -81,6 +96,7 @@ function recipeIngredients() {
 
           return {
             id: e.id || null,
+            key: e.ingredient,
             emoji: emoji,
             value: displayValue,
             unit: displayUnit,
@@ -88,6 +104,8 @@ function recipeIngredients() {
             connector: displayConnector,
             name: ingredientName,
             text: text,
+            recipeSlug: recipeSlug,
+            recipeTitle: recipeSlug ? this.getIngredientRecipeTitle(recipeSlug) : '',
           };
         });
     },

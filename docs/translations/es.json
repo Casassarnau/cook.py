@@ -55,6 +55,7 @@
   "cook_prev": "Anterior",
   "cook_next": "Siguiente",
   "cook_adjust": "Ajustar",
+  "ingredient_recipe": "Receta",
   "ingredients": {
     "_": "Ingredientes",
     "almond": "almendra",

@@ -55,6 +55,7 @@
   "cook_prev": "Föregående",
   "cook_next": "Nästa",
   "cook_adjust": "Justera",
+  "ingredient_recipe": "Recept",
   "ingredients": {
     "_": "Ingredienser",
     "almond": "mandel",
