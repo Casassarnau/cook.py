@@ -520,6 +520,28 @@
   },
   {
     "title": {
+      "en": "Raspberry Jam",
+      "es": "Mermelada de frambuesa",
+      "cat": "Mermelada de gerds",
+      "sv": "Hallonmarmelad"
+    },
+    "categories": [
+      "desserts",
+      "thermomix"
+    ],
+    "path": "recipes/mermelada_de_gerds.json",
+    "image": "/images/mermelada_de_gerds/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "raspberry",
+      "sugar",
+      "lemon",
+      "apple"
+    ]
+  },
+  {
+    "title": {
       "en": "Spanish Potato Omelette",
       "es": "Tortilla de patatas",
       "cat": "Truita de patates",

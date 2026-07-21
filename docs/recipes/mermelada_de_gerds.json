@@ -1,0 +1,189 @@
+{
+  "title": {
+    "en": "Raspberry Jam",
+    "es": "Mermelada de frambuesa",
+    "cat": "Mermelada de gerds",
+    "sv": "Hallonmarmelad"
+  },
+  "author": "Arnau",
+  "categories": [
+    "desserts"
+  ],
+  "image": "/images/mermelada_de_gerds/main.webp",
+  "development": false,
+  "description": {
+    "en": "Homemade raspberry jam with apple and lemon. Soft and fruity; cook a little longer if you want a thicker set.",
+    "es": "Mermelada de frambuesa casera con manzana y limón. Suave y afrutada; cocina un poco más si la quieres más espesa.",
+    "cat": "Mermelada de gerds casolana amb poma i llimona. Suau i afruitada; cuina una mica més si la vols més espessa.",
+    "sv": "Hemgjord hallonmarmelad med äpple och citron. Mjuk och fruktig; koka lite längre om du vill ha den tjockare."
+  },
+  "portion": {
+    "type": "units",
+    "value": 1,
+    "unit": "unit"
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Ingredients",
+        "es": "Ingredientes",
+        "cat": "Ingredients",
+        "sv": "Ingredienser"
+      },
+      "items": [
+        {
+          "ingredient": "raspberry",
+          "value": 400,
+          "unit": "g",
+          "id": "raspberries"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 200,
+          "unit": "g",
+          "id": "sugar"
+        },
+        {
+          "ingredient": "lemon",
+          "value": 1,
+          "text": {
+            "en": "juice",
+            "es": "zumo",
+            "cat": "suc",
+            "sv": "saft"
+          },
+          "id": "lemon"
+        },
+        {
+          "ingredient": "apple",
+          "value": 1,
+          "text": {
+            "en": "peeled and cut into chunks",
+            "es": "pelada y cortada a trozos",
+            "cat": "pelada i tallada a trossos",
+            "sv": "skalat och skuret i bitar"
+          },
+          "id": "apple"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Peel the apple and cut it into chunks. Squeeze the lemon.",
+        "es": "Pela la manzana y córtala a trozos. Exprime el limón.",
+        "cat": "Pela la poma i tallala a trossos. Exprimeix la llimona.",
+        "sv": "Skala äpplet och skär det i bitar. Pressa citronen."
+      },
+      "ingredients": [
+        "apple",
+        "lemon"
+      ]
+    },
+    {
+      "text": {
+        "en": "Put the raspberries, sugar, lemon juice, and apple into a blender jar or pot suitable for blending.",
+        "es": "Pon las frambuesas, el azúcar, el zumo de limón y la manzana en un vaso o recipiente apto para triturar.",
+        "cat": "Posa els gerds, el sucre, el suc de llimona i la poma en un got o recipient apte per triturar.",
+        "sv": "Lägg hallon, socker, citronsaft och äpple i en mixerbunke eller kastrull som går att mixa i."
+      },
+      "ingredients": [
+        "raspberries",
+        "sugar",
+        "lemon",
+        "apple"
+      ],
+      "onlyForMode": "classic"
+    },
+    {
+      "text": {
+        "en": "Put the raspberries, sugar, lemon juice, and apple into the Thermomix bowl.",
+        "es": "Pon las frambuesas, el azúcar, el zumo de limón y la manzana en el vaso de la Thermomix.",
+        "cat": "Posa els gerds, el sucre, el suc de llimona i la poma al got de la Thermomix.",
+        "sv": "Lägg hallon, socker, citronsaft och äpple i Thermomix-skålen."
+      },
+      "ingredients": [
+        "raspberries",
+        "sugar",
+        "lemon",
+        "apple"
+      ],
+      "onlyForMode": "thermomix"
+    },
+    {
+      "text": {
+        "en": "Blend for about 10 seconds until you get a smooth paste.",
+        "es": "Tritura unos 10 segundos hasta que quede una pasta homogénea.",
+        "cat": "Tritura-ho uns 10 segons fins que quedi una pasta homogènia.",
+        "sv": "Mixa i cirka 10 sekunder tills det blir en slät pasta."
+      },
+      "ingredients": [],
+      "onlyForMode": "classic"
+    },
+    {
+      "text": {
+        "en": "Blend 10 seconds at speed 10 until you get a smooth paste.",
+        "es": "Tritura 10 segundos a velocidad 10 hasta que quede una pasta homogénea.",
+        "cat": "Tritura-ho 10 segons a velocitat 10 fins que quedi una pasta homogènia.",
+        "sv": "Mixa 10 sekunder på hastighet 10 tills det blir en slät pasta."
+      },
+      "ingredients": [],
+      "onlyForMode": "thermomix",
+      "thermomix": {
+        "text": {
+          "en": "Blend 10 sec / speed 10 until smooth.",
+          "es": "Triturar 10 s / velocidad 10 hasta obtener una pasta.",
+          "cat": "Triturar 10 s / velocitat 10 fins a obtenir una pasta.",
+          "sv": "Mixa 10 sek / hastighet 10 tills pastan är slät."
+        },
+        "settings": {
+          "time": 10,
+          "speed": 10
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Cook over low heat for 30 minutes, stirring from time to time so it does not stick.",
+        "es": "Cocina a fuego bajo durante 30 minutos, removiendo de vez en cuando para que no se pegue.",
+        "cat": "Cuina a foc baix durant 30 minuts, remenant de tant en tant perquè no s'enganxi.",
+        "sv": "Koka på låg värme i 30 minuter och rör om då och då så det inte bränner vid."
+      },
+      "ingredients": [],
+      "onlyForMode": "classic"
+    },
+    {
+      "text": {
+        "en": "Cook 30 minutes on Varoma at speed 1.",
+        "es": "Cocina 30 minutos en modo Varoma a velocidad 1.",
+        "cat": "Cuina 30 minuts en mode Varoma a velocitat 1.",
+        "sv": "Tillaga 30 minuter på Varoma vid hastighet 1."
+      },
+      "ingredients": [],
+      "onlyForMode": "thermomix",
+      "thermomix": {
+        "text": {
+          "en": "Cook 30 min / Varoma / speed 1.",
+          "es": "Cocinar 30 min / Varoma / velocidad 1.",
+          "cat": "Cuinar 30 min / Varoma / velocitat 1.",
+          "sv": "Tillaga 30 min / Varoma / hastighet 1."
+        },
+        "settings": {
+          "time": 1800,
+          "speed": 1,
+          "mode": "varoma"
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Let it rest and check the texture with a spoon once the jam has cooled a little. Cook a bit longer if it is still too runny.",
+        "es": "Deja reposar y prueba la textura con una cuchara cuando la mermelada se haya enfriado un poco. Cocina más tiempo si hace falta.",
+        "cat": "Deixa reposar i prova la textura amb una cullera quan la mermelada s'hagi refredat una mica. Cuina més temps si cal.",
+        "sv": "Låt vila och kontrollera konsistensen med en sked när marmeladen svalnat lite. Koka längre vid behov."
+      },
+      "ingredients": []
+    }
+  ]
+}
