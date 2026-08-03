@@ -335,6 +335,7 @@
   "caster_sugar": "🍬",
   "icing_sugar": "🍬",
   "powdered_sugar": "🍬",
+  "jam": "🫙",
   "confectioners_sugar": "🍬",
   "vegetable_oil": "🫗",
   "sunflower_oil": "🫗",
@@ -392,6 +393,7 @@
   "pecorino_cheese": "🧀",
   "zucchini": "🥒",
   "guanciale": "🥓",
+  "egg_white": "🥚",
   "egg_yolk": "🥚",
   "egg_yolk_single": "🥚"
 }

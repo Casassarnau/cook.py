@@ -113,6 +113,10 @@
     "doughnut": "rosquilla",
     "dry_yeast": "llevat sec de flequer",
     "dumpling": "empanadilla",
+    "egg_white": {
+      "1": "clara d'ou",
+      "1+": "clares d'ou"
+    },
     "egg_yolk": {
       "1": "rovell d'ou",
       "1+": "rovells d'ou"
@@ -144,6 +148,7 @@
     "heavy_cream": "nata líquida",
     "herbacol": "brots d'herbacol",
     "honey": "mel",
+    "jam": "melmelada",
     "lemon": "llimona",
     "lemon_zest": "ralladura de llimona",
     "lentil": "llentia",
@@ -187,6 +192,7 @@
       "1": "patata",
       "1+": "patates"
     },
+    "powdered_sugar": "sucre glas",
     "raspberry": {
       "1": "gerd",
       "1+": "gerds"

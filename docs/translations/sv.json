@@ -106,12 +106,17 @@
     },
     "cupcake": "cupcake",
     "dango": "dango",
+    "dark_chocolate": "mörk choklad",
     "dark_chocolate_chips": "mörka chokladchips",
     "digestive_cookies": "Digestive-kex",
     "donut": "munk",
     "doughnut": "munk",
     "dry_yeast": "torrjäst",
     "dumpling": "knyte",
+    "egg_white": {
+      "1": "äggvita",
+      "1+": "äggvitor"
+    },
     "egg_yolk": {
       "1": "äggula",
       "1+": "äggulor"
@@ -140,6 +145,7 @@
     "heavy_cream": "vispgrädde",
     "herbacol": "herbacol (vild krokus)",
     "honey": "honung",
+    "jam": "marmelad",
     "lemon": "citron",
     "lemon_zest": "citronskal",
     "lentil": "lins",
@@ -183,6 +189,7 @@
       "1": "potatis",
       "1+": "potatisar"
     },
+    "powdered_sugar": "florsocker",
     "raspberry": "hallon",
     "red_pepper": "söt paprika",
     "rye_flour": "rågmjöl",

@@ -113,6 +113,10 @@
     "doughnut": "doughnut",
     "dry_yeast": "dry yeast",
     "dumpling": "dumpling",
+    "egg_white": {
+      "1": "egg white",
+      "1+": "egg whites"
+    },
     "egg_yolk": {
       "1": "egg yolk",
       "1+": "egg yolks"
@@ -144,6 +148,7 @@
     "heavy_cream": "heavy cream",
     "herbacol": "wild crocus pistils (herbacol)",
     "honey": "honey",
+    "jam": "jam",
     "lemon": "lemon",
     "lemon_zest": "lemon zest",
     "lentil": "lentil",
@@ -187,6 +192,7 @@
       "1": "potato",
       "1+": "potatoes"
     },
+    "powdered_sugar": "powdered sugar",
     "raspberry": {
       "1": "raspberry",
       "1+": "raspberries"

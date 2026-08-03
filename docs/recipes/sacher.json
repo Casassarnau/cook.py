@@ -1,0 +1,521 @@
+{
+  "title": {
+    "en": "Sachertorte",
+    "es": "Tarta Sacher",
+    "cat": "Pastís Sacher",
+    "sv": "Sachertårta"
+  },
+  "author": "Arnau",
+  "development": true,
+  "categories": [
+    "desserts",
+    "baking"
+  ],
+  "image": "/images/sacher/main.webp",
+  "description": {
+    "en": "Classic Austrian chocolate cake with jam and a shiny dark chocolate glaze. Dense, moist crumb for a 15 cm tin, with Thermomix and classic methods. Apricot or raspberry jam both work well.",
+    "es": "Clásica tarta austriaca de chocolate con mermelada y un glaseado brillante de chocolate negro. Migaja densa y húmeda para molde de 15 cm, con método Thermomix y clásico. Queda muy bien con mermelada de albaricoque o de frambuesa.",
+    "cat": "Clàssic pastís austríac de xocolata amb melmelada i un glacejat brillant de xocolata negra. Molla densa i humida per a motlle de 15 cm, amb mètode Thermomix i clàssic. Queda molt bé amb melmelada d'albercoc o de gerds.",
+    "sv": "Klassisk österrikisk chokladtårta med marmelad och blank mörk chokladglasyr. Tät, saftig smula till en 15 cm form, med Thermomix- och klassisk metod. Både aprikos- och hallonmarmelad fungerar bra."
+  },
+  "portion": {
+    "type": "area",
+    "shape": "circular",
+    "dimensions": {
+      "diameter": 15,
+      "unit": "cm"
+    }
+  },
+  "ingredients": [
+    {
+      "group": {
+        "en": "Cake",
+        "es": "Bizcocho",
+        "cat": "Bescuit",
+        "sv": "Tårta"
+      },
+      "items": [
+        {
+          "ingredient": "dark_chocolate",
+          "value": 75,
+          "unit": "g",
+          "text": {
+            "en": "70% cacao",
+            "es": "70% cacao",
+            "cat": "70% cacau",
+            "sv": "70% kakao"
+          },
+          "id": "cake_chocolate"
+        },
+        {
+          "ingredient": "egg_yolk",
+          "value": 3,
+          "id": "egg_yolks"
+        },
+        {
+          "ingredient": "egg_white",
+          "value": 3,
+          "id": "egg_whites"
+        },
+        {
+          "ingredient": "butter",
+          "value": 65,
+          "unit": "g",
+          "id": "butter"
+        },
+        {
+          "ingredient": "flour",
+          "value": 65,
+          "unit": "g",
+          "text": {
+            "en": "tipo 00",
+            "es": "tipo 00",
+            "cat": "tipus 00",
+            "sv": "tipo 00"
+          },
+          "id": "flour"
+        },
+        {
+          "ingredient": "powdered_sugar",
+          "value": 20,
+          "unit": "g",
+          "id": "powdered_sugar"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 70,
+          "unit": "g",
+          "id": "sugar"
+        },
+        {
+          "ingredient": "vanilla_extract",
+          "value": 0.5,
+          "unit": "tsp",
+          "id": "vanilla"
+        },
+        {
+          "ingredient": "salt",
+          "value": 1,
+          "unit": "pinch",
+          "id": "salt"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Jam filling and coating",
+        "es": "Relleno y cobertura de mermelada",
+        "cat": "Farcit i cobertura de melmelada",
+        "sv": "Marmeladfyllning och beläggning"
+      },
+      "items": [
+        {
+          "ingredient": "jam",
+          "value": 100,
+          "unit": "g",
+          "text": {
+            "en": "apricot or raspberry",
+            "es": "de albaricoque o frambuesa",
+            "cat": "d'albercoc o gerds",
+            "sv": "aprikos eller hallon"
+          },
+          "id": "jam"
+        },
+        {
+          "ingredient": "water",
+          "value": 1,
+          "unit": "tbsp",
+          "text": {
+            "en": "hot, just enough to thin the jam",
+            "es": "caliente, solo lo justo para fluidificar la mermelada",
+            "cat": "calenta, només el just per fluidificar la melmelada",
+            "sv": "varmt, precis så det tunnar ut marmeladen"
+          },
+          "id": "jam_water"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Chocolate glaze",
+        "es": "Glaseado de chocolate",
+        "cat": "Glacejat de xocolata",
+        "sv": "Chokladglasyr"
+      },
+      "items": [
+        {
+          "ingredient": "dark_chocolate",
+          "value": 80,
+          "unit": "g",
+          "text": {
+            "en": "70% cacao",
+            "es": "70% cacao",
+            "cat": "70% cacau",
+            "sv": "70% kakao"
+          },
+          "id": "glaze_chocolate"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 40,
+          "unit": "g",
+          "id": "glaze_sugar"
+        },
+        {
+          "ingredient": "water",
+          "value": 40,
+          "unit": "ml",
+          "id": "glaze_water"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "text": {
+        "en": "Preheat the oven to 180°C (top and bottom heat). Grease a 15 cm round tin and line the base with baking paper.",
+        "es": "Precalienta el horno a 180°C (arriba y abajo). Engrasa un molde redondo de 15 cm y forra la base con papel de hornear.",
+        "cat": "Preescalfa el forn a 180°C (amunt i avall). Engreixa un motlle rodó de 15 cm i forra la base amb paper de forn.",
+        "sv": "Förvärm ugnen till 180°C (över- och undervärme). Smörj en rund 15 cm form och klä botten med bakplåtspapper."
+      },
+      "oven": {
+        "temperature": 180,
+        "mode": [
+          "top",
+          "bottom"
+        ]
+      }
+    },
+    {
+      "text": {
+        "en": "Put the egg whites in a clean, grease-free bowl. Beat with a hand mixer or whisk until they turn white and foamy, with soft peaks starting to form.",
+        "es": "Pon las claras en un bol limpio y sin grasa. Bátelas con batidora de varillas o a mano hasta que blanqueen y hagan espuma, formando picos blandos.",
+        "cat": "Posa les clares en un bol net i sense greix. Bateu-les amb batedora de varetes o a mà fins que blanquegin i facin escuma, formant pics tous.",
+        "sv": "Lägg äggvitorna i en ren, fettfri skål. Vispa med elvisp eller handvisp tills de blir vita och skummiga och börjar forma mjuka toppar."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Fit the butterfly whisk. Add the egg whites to the mixing bowl and whip until foamy and white.",
+          "es": "Coloca las varillas (mariposa). Añade las claras al vaso y bátalas hasta que hagan espuma y blanqueen.",
+          "cat": "Col·loca les varetes (papallona). Afegeix les clares al got i bateu-les fins que facin escuma i blanquegin.",
+          "sv": "Sätt i fjärilsvispen. Tillsätt äggvitorna i mixerskålen och vispa tills de blir skummiga och vita."
+        },
+        "settings": {
+          "time": 180,
+          "speed": 3,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "egg_whites"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the sugar gradually while beating. Continue until the whites hold stiff peaks (meringue): glossy, firm, and they do not fall when you tip the bowl.",
+        "es": "Añade el azúcar poco a poco mientras bates. Continúa hasta punto de nieve firme: brillantes, firmes y que no caigan al inclinar el bol.",
+        "cat": "Afegeix el sucre a poc a poc mentre bates. Continua fins a punt de neu ferm: brillants, fermes i que no caiguin en inclinar el bol.",
+        "sv": "Tillsätt sockret gradvis under vispning. Fortsätt tills äggvitorna bildar styva toppar: blanka, fasta och de faller inte när du tippar skålen."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the sugar and continue whipping with the butterfly until stiff peaks form.",
+          "es": "Añade el azúcar y sigue batiendo con las varillas hasta punto de nieve firme.",
+          "cat": "Afegeix el sucre i continua baten amb les varetes fins a punt de neu ferm.",
+          "sv": "Tillsätt sockret och fortsätt vispa med fjärilsvispen tills styva toppar bildas."
+        },
+        "settings": {
+          "time": 180,
+          "speed": 3,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "sugar"
+      ]
+    },
+    {
+      "text": {
+        "en": "Transfer the whipped whites to a clean bowl and keep them in the fridge while you make the chocolate base.",
+        "es": "Pasa las claras montadas a un bol limpio y guárdalas en la nevera mientras preparas la base de chocolate.",
+        "cat": "Passa les clares muntades a un bol net i guarda-les a la nevera mentre prepares la base de xocolata.",
+        "sv": "Flytta de vispade äggvitorna till en ren skål och ställ dem i kylen medan du gör chokladbasen."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Transfer the whipped whites to a clean bowl and refrigerate. Remove the butterfly whisk from the mixing bowl.",
+          "es": "Pasa las claras montadas a un bol limpio y mételas en la nevera. Retira las varillas del vaso.",
+          "cat": "Passa les clares muntades a un bol net i posa-les a la nevera. Retira les varetes del got.",
+          "sv": "Flytta de vispade äggvitorna till en ren skål och kyl. Ta bort fjärilsvispen från mixerskålen."
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Chop the chocolate into small pieces so it melts evenly.",
+        "es": "Trocea el chocolate en trozos pequeños para que se funda de forma uniforme.",
+        "cat": "Trosseja la xocolata en trossos petits perquè es fongui de forma uniforme.",
+        "sv": "Hacka chokladen i små bitar så att den smälter jämnt."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Put the chocolate in the mixing bowl and chop it.",
+          "es": "Pon el chocolate en el vaso y trocéalo.",
+          "cat": "Posa la xocolata al got i trosseja-la.",
+          "sv": "Lägg chokladen i mixerskålen och hacka den."
+        },
+        "settings": {
+          "time": 10,
+          "speed": 8,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "cake_chocolate"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the butter to the chocolate. Melt gently over a bain-marie or on very low heat, stirring until smooth and fully melted. Do not let it boil.",
+        "es": "Añade la mantequilla al chocolate. Funde suavemente al baño María o a fuego muy bajo, removiendo hasta que quede liso y completamente derretido. No dejes que hierva.",
+        "cat": "Afegeix la mantega a la xocolata. Fong-la suaument al bany maria o a foc molt baix, remenant fins que quedi llisa i totalment fosa. No deixis que bulli.",
+        "sv": "Tillsätt smöret till chokladen. Smält försiktigt över vattenbad eller på mycket låg värme under omrörning tills blandningen är slät och helt smält. Låt den inte koka."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the butter. Cook until melted and smooth. Scrape everything down to the bottom; if any chocolate remains unmelted, cook 1 minute more with the same settings.",
+          "es": "Añade la mantequilla. Cocina hasta que esté fundida y lisa. Empuja todo hacia el fondo; si aún queda chocolate sin fundir, cocina 1 minuto más con los mismos parámetros.",
+          "cat": "Afegeix la mantega. Cuina fins que estigui fosa i llisa. Empeny-ho tot cap al fons; si encara queda xocolata sense fondre, cuina 1 minut més amb els mateixos paràmetres.",
+          "sv": "Tillsätt smöret. Tillaga tills det är smält och slätt. Skrapa ner allt till botten; om choklad fortfarande är osmält, kör 1 minut till med samma inställningar."
+        },
+        "settings": {
+          "temperature": 50,
+          "time": 150,
+          "speed": 2,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "butter"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the powdered sugar, vanilla extract, and salt. Mix until fully combined and smooth.",
+        "es": "Añade el azúcar glas, el extracto de vainilla y la pizca de sal. Mezcla hasta que esté bien integrado y liso.",
+        "cat": "Afegeix el sucre glas, l'extracte de vainilla i el pessic de sal. Barreja fins que quedi ben integrat i llis.",
+        "sv": "Tillsätt florsocker, vaniljextrakt och nypan salt. Blanda tills allt är jämnt och slätt."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the powdered sugar, vanilla extract, and salt. Mix until smooth.",
+          "es": "Añade el azúcar glas, el extracto de vainilla y la sal. Mezcla hasta que quede liso.",
+          "cat": "Afegeix el sucre glas, l'extracte de vainilla i la sal. Barreja fins que quedi llis.",
+          "sv": "Tillsätt florsocker, vaniljextrakt och salt. Blanda tills det är slätt."
+        },
+        "settings": {
+          "time": 120,
+          "speed": 3,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "powdered_sugar",
+        "vanilla",
+        "salt"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the egg yolks one at a time. Mix each yolk in gently with a spatula or on low speed until fully incorporated before adding the next. Do not beat vigorously—you want an emulsion, not air beaten out of the base.",
+        "es": "Añade las yemas de una en una. Integra cada yema con suavidad con espátula o a velocidad baja hasta que esté incorporada antes de añadir la siguiente. No bates con fuerza: buscas emulsionar, no meter aire de más.",
+        "cat": "Afegeix els rovells un a un. Integra cada rovell suaument amb espàtula o a velocitat baixa fins que estigui incorporat abans d'afegir el següent. No bateguis amb força: vols emulsionar, no treure aire de la base.",
+        "sv": "Tillsätt äggulorna en i taget. Rör försiktigt ner varje äggula med slickepott eller på låg hastighet tills den är inarbetad innan nästa. Vispa inte hårt—du vill emulgera, inte slå in luft."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Fit the butterfly whisk. Program 2 minutes at speed 3 and drop in the yolks one by one through the lid opening, waiting until each is incorporated before the next.",
+          "es": "Coloca las varillas (mariposa). Programa 2 minutos a velocidad 3 e introduce las yemas de una en una por el hueco de la tapa, esperando a que cada una se incorpore antes de la siguiente.",
+          "cat": "Col·loca les varetes (papallona). Programa 2 minuts a velocitat 3 i tira els rovells un a un pel forat de la tapa, esperant que cadascun s'incorpori abans del següent.",
+          "sv": "Sätt i fjärilsvispen. Programmera 2 minuter på hastighet 3 och tillsätt äggulorna en i taget genom locköppningen; vänta tills varje är inarbetad innan nästa."
+        },
+        "settings": {
+          "time": 120,
+          "speed": 3,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "egg_yolks"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add about half of the whipped egg whites. Fold gently with a spatula from the bottom up, turning the bowl as you go, until mostly combined. Stop as soon as you no longer see large pockets of white.",
+        "es": "Añade aproximadamente la mitad de las claras montadas. Incorpora con suavidad con espátula de abajo arriba, girando el bol, hasta que esté casi unido. Para en cuanto no veas bolsas grandes de clara.",
+        "cat": "Afegeix aproximadament la meitat de les clares muntades. Incorpora suaument amb espàtula de baix a dalt, girant el bol, fins que estigui gairebé unit. Para així que no vegis bosses grans de clara.",
+        "sv": "Tillsätt ungefär hälften av de vispade äggvitorna. Vänd försiktigt ner med slickepott underifrån och upp, vrid skålen, tills det mesta är blandat. Stoppa så fort du inte ser stora vita fickor."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add about half of the whipped egg whites and mix briefly just to combine.",
+          "es": "Añade aproximadamente la mitad de las claras montadas y mezcla unos segundos solo para integrar.",
+          "cat": "Afegeix aproximadament la meitat de les clares muntades i barreja uns segons només per integrar.",
+          "sv": "Tillsätt ungefär hälften av de vispade äggvitorna och blanda kort bara för att blanda ihop."
+        },
+        "settings": {
+          "time": 5,
+          "speed": 4,
+          "rotation": "normal"
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Sift in the flour. Fold gently with the spatula until no dry streaks remain. Do not overmix.",
+        "es": "Añade la harina tamizada. Incorpora con suavidad con la espátula hasta que no queden restos secos. No mezcles en exceso.",
+        "cat": "Afegeix la farina tamisada. Incorpora suaument amb l'espàtula fins que no quedin restes seques. No barregis en excés.",
+        "sv": "Sikta i mjölet. Vänd försiktigt med slickepotten tills inga torra stråk syns. Blanda inte för mycket."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the flour and mix briefly just to combine.",
+          "es": "Añade la harina y mezcla unos segundos solo para integrar.",
+          "cat": "Afegeix la farina i barreja uns segons només per integrar.",
+          "sv": "Tillsätt mjölet och blanda kort bara för att blanda ihop."
+        },
+        "settings": {
+          "time": 5,
+          "speed": 4,
+          "rotation": "normal"
+        }
+      },
+      "ingredients": [
+        "flour"
+      ]
+    },
+    {
+      "text": {
+        "en": "Add the remaining egg whites. Fold gently until the batter is even. If any streaks remain, finish by hand with the spatula—never beat hard or you will lose volume.",
+        "es": "Añade el resto de las claras. Incorpora con suavidad hasta que la masa sea uniforme. Si quedan vetas, termina a mano con la espátula: nunca bates con fuerza o perderás volumen.",
+        "cat": "Afegeix la resta de les clares. Incorpora suaument fins que la massa sigui uniforme. Si queden ratlles, acaba a mà amb l'espàtula: mai bateguis amb força o perdràs volum.",
+        "sv": "Tillsätt resten av äggvitorna. Vänd försiktigt tills smeten är jämn. Om det finns stråk kvar, avsluta för hand med slickepott—vispa aldrig hårt eller så förlorar du volym."
+      },
+      "thermomix": {
+        "text": {
+          "en": "Add the remaining egg whites and mix briefly. If the batter is not fully even, finish folding gently by hand with a spatula.",
+          "es": "Añade el resto de las claras y mezcla unos segundos. Si la masa no está del todo uniforme, termina incorporando a mano con espátula con suavidad.",
+          "cat": "Afegeix la resta de les clares i barreja uns segons. Si la massa no està del tot uniforme, acaba incorporant a mà amb espàtula suaument.",
+          "sv": "Tillsätt resten av äggvitorna och blanda kort. Om smeten inte är helt jämn, avsluta med att vända försiktigt för hand med slickepott."
+        },
+        "settings": {
+          "time": 5,
+          "speed": 4,
+          "rotation": "normal"
+        }
+      }
+    },
+    {
+      "text": {
+        "en": "Pour the batter into the prepared tin and smooth the top. Bake for about 35 minutes, until a skewer inserted in the centre comes out with a few moist crumbs (not wet batter).",
+        "es": "Vierte la masa en el molde preparado y alisa la superficie. Hornea unos 35 minutos, hasta que un palillo en el centro salga con algunas migas húmedas (no masa cruda).",
+        "cat": "Aboca la massa al motlle preparat i allisa la superfície. Enforna uns 35 minuts, fins que un escuradents al centre surti amb algunes engrunes humides (no massa crua).",
+        "sv": "Häll smeten i den förberedda formen och jämna till ytan. Grädda ca 35 minuter, tills en sticka i mitten kommer ut med några fuktiga smulor (inte våt smet)."
+      },
+      "oven": {
+        "temperature": 180,
+        "time": 2100,
+        "mode": [
+          "top",
+          "bottom"
+        ]
+      }
+    },
+    {
+      "text": {
+        "en": "Turn the cake out of the tin and leave it on a rack until completely cool to room temperature.",
+        "es": "Desmolda el bizcocho y déjalo en una rejilla hasta que esté completamente a temperatura ambiente.",
+        "cat": "Desmotlla el bescuit i deixa'l en una reixeta fins que estigui completament a temperatura ambient.",
+        "sv": "Stjälp upp tårtan ur formen och låt den svalna helt till rumstemperatur på ett galler."
+      }
+    },
+    {
+      "text": {
+        "en": "Once cold, level the top with a serrated knife: trim off the dry upper crust. Leaving that crust on stops the jam from soaking into the cake and making it moist.",
+        "es": "Cuando esté frío, nivela la parte superior con un cuchillo de sierra: quita la costra seca de arriba. Si la dejas, la mermelada no penetra bien y el pastel no se humedece.",
+        "cat": "Quan estigui fred, nivella la part superior amb un ganivet de serra: treu la crosta seca de dalt. Si la deixes, la melmelada no penetra bé i el pastís no s'humiteja.",
+        "sv": "När den är kall, jämna till ovansidan med ett vågtandat knivblad: skär bort den torra skorpan. Om skorpan sitter kvar suger marmeladen inte in och tårtan blir mindre saftig."
+      }
+    },
+    {
+      "text": {
+        "en": "Warm the jam with the hot water in a small pan over low heat, stirring until it is looser and brushable. Use only a little water so it thins without becoming watery.",
+        "es": "Calienta la mermelada con el agua caliente en un cazo a fuego bajo, removiendo hasta que quede más líquida y fácil de untar. Usa poca agua: solo para fluidificarla, no para aguada.",
+        "cat": "Escalfa la melmelada amb l'aigua calenta en un cassó a foc baix, remenant fins que quedi més líquida i fàcil d'untar. Usa poca aigua: només per fluidificar-la, no per aigualar-la.",
+        "sv": "Värm marmeladen med det heta vattnet i en kastrull på låg värme under omrörning tills den blir lösare och lätt att pensla. Använd bara lite vatten så den tunnas utan att bli vattnig."
+      },
+      "ingredients": [
+        "jam",
+        "jam_water"
+      ]
+    },
+    {
+      "text": {
+        "en": "Slice the cake horizontally into two even layers. Spread a generous layer of jam on the bottom half, replace the top, then coat the top and sides with the remaining jam so the whole cake is sealed and moistened.",
+        "es": "Corta el bizcocho por la mitad en dos capas iguales. Unta una capa generosa de mermelada en la mitad inferior, tapa con la superior y cubre también la parte de arriba y los laterales con el resto de mermelada para sellar y humedecer todo el pastel.",
+        "cat": "Talla el bescuit per la meitat en dues capes iguals. Unta una capa generosa de melmelada a la meitat inferior, tapa amb la superior i cobreix també dalt i els laterals amb la resta de melmelada per segellar i humitejar tot el pastís.",
+        "sv": "Skär tårtan horisontellt i två jämna lager. Bre ett generöst lager marmelad på undre halvan, lägg på den övre, och pensla sedan även ovansida och sidor med resten av marmeladen så hela tårtan tätas och fuktas."
+      },
+      "ingredients": [
+        "jam"
+      ]
+    },
+    {
+      "text": {
+        "en": "Chill the cake in the fridge for at least a few hours (overnight is ideal) so the jam sets into the crumb before glazing.",
+        "es": "Mete el pastel en la nevera al menos unas horas (idealmente toda la noche) para que la mermelada asiente en la miga antes del glaseado.",
+        "cat": "Posa el pastís a la nevera almenys unes hores (idealment tota la nit) perquè la melmelada assenti a la molla abans del glacejat.",
+        "sv": "Kyl tårtan i kylen i minst några timmar (gärna över natten) så att marmeladen sätter sig i smulan innan glasyren."
+      }
+    },
+    {
+      "text": {
+        "en": "For the glaze, chop the chocolate into small pieces and put them in a heatproof bowl.",
+        "es": "Para el glaseado, trocea el chocolate en trozos pequeños y ponlo en un bol resistente al calor.",
+        "cat": "Per al glacejat, trosseja la xocolata en trossos petits i posa-la en un bol resistent a la calor.",
+        "sv": "Till glasyren, hacka chokladen i små bitar och lägg dem i en värmetålig skål."
+      },
+      "ingredients": [
+        "glaze_chocolate"
+      ]
+    },
+    {
+      "text": {
+        "en": "In a small pan, heat the sugar with the water until it boils. Let it bubble gently for 1 minute to make a light syrup.",
+        "es": "En un cazo pequeño, calienta el azúcar con el agua hasta que hierva. Déjalo burbujear suavemente 1 minuto para hacer un almíbar ligero.",
+        "cat": "En un cassó petit, escalfa el sucre amb l'aigua fins que bulli. Deixa'l bombollejar suaument 1 minut per fer un almívar lleuger.",
+        "sv": "I en liten kastrull, hettar du upp socker och vatten tills det kokar. Låt det sjuda försiktigt i 1 minut till en lätt sirap."
+      },
+      "ingredients": [
+        "glaze_sugar",
+        "glaze_water"
+      ]
+    },
+    {
+      "text": {
+        "en": "Pour the hot syrup over the chopped chocolate. Do not stir for 1–2 minutes so the chocolate softens evenly and does not seize.",
+        "es": "Vierte el almíbar caliente sobre el chocolate troceado. No remuevas durante 1–2 minutos para que el chocolate se ablande de forma uniforme y no se agarrote.",
+        "cat": "Aboca l'almívar calent sobre la xocolata trossejada. No remenis durant 1–2 minuts perquè la xocolata s'estovi de forma uniforme i no s'agrumolli.",
+        "sv": "Häll den heta sirapen över den hackade chokladen. Rör inte om i 1–2 minuter så chokladen mjuknar jämnt och inte klumpar sig."
+      }
+    },
+    {
+      "text": {
+        "en": "Stir very gently with a spatula until the glaze is smooth and glossy. Pour it over the cold cake, letting it run down the sides. Smooth lightly if needed and leave to set before serving.",
+        "es": "Remueve con mucho cuidado con una espátula hasta que el glaseado quede liso y brillante. Vierte sobre el pastel frío, dejando que escurra por los laterales. Alisa un poco si hace falta y deja cuajar antes de servir.",
+        "cat": "Remena amb molt de compte amb una espàtula fins que el glacejat quedi llis i brillant. Aboca'l sobre el pastís fred, deixant que escorri pels laterals. Allisa una mica si cal i deixa cuajar abans de servir.",
+        "sv": "Rör mycket försiktigt med en slickepott tills glasyren är slät och blank. Häll den över den kalla tårtan och låt den rinna ner längs sidorna. Jämna till lätt vid behov och låt stelna före servering."
+      }
+    }
+  ]
+}

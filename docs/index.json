@@ -368,6 +368,28 @@
   },
   {
     "title": {
+      "en": "Jam",
+      "es": "Mermelada",
+      "cat": "Melmelada",
+      "sv": "Marmelad"
+    },
+    "categories": [
+      "desserts",
+      "thermomix"
+    ],
+    "path": "recipes/mermelada.json",
+    "image": "/images/mermelada/main.webp",
+    "author": "Arnau",
+    "development": false,
+    "ingredient_keys": [
+      "raspberry",
+      "sugar",
+      "lemon",
+      "apple"
+    ]
+  },
+  {
+    "title": {
       "en": "Liège-style Waffles",
       "es": "Gofres estilo Lieja",
       "cat": "Gofres de Lieja",
@@ -520,24 +542,35 @@
   },
   {
     "title": {
-      "en": "Raspberry Jam",
-      "es": "Mermelada de frambuesa",
-      "cat": "Mermelada de gerds",
-      "sv": "Hallonmarmelad"
+      "en": "Sachertorte",
+      "es": "Tarta Sacher",
+      "cat": "Pastís Sacher",
+      "sv": "Sachertårta"
     },
     "categories": [
       "desserts",
+      "baking",
       "thermomix"
     ],
-    "path": "recipes/mermelada_de_gerds.json",
-    "image": "/images/mermelada_de_gerds/main.webp",
+    "path": "recipes/sacher.json",
+    "image": "/images/sacher/main.webp",
     "author": "Arnau",
-    "development": false,
+    "development": true,
     "ingredient_keys": [
-      "raspberry",
+      "dark_chocolate",
+      "egg_yolk",
+      "egg_white",
+      "butter",
+      "flour",
+      "powdered_sugar",
       "sugar",
-      "lemon",
-      "apple"
+      "vanilla_extract",
+      "salt",
+      "jam",
+      "water",
+      "dark_chocolate",
+      "sugar",
+      "water"
     ]
   },
   {

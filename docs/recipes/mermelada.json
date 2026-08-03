@@ -1,21 +1,21 @@
 {
   "title": {
-    "en": "Raspberry Jam",
-    "es": "Mermelada de frambuesa",
-    "cat": "Mermelada de gerds",
-    "sv": "Hallonmarmelad"
+    "en": "Jam",
+    "es": "Mermelada",
+    "cat": "Melmelada",
+    "sv": "Marmelad"
   },
   "author": "Arnau",
   "categories": [
     "desserts"
   ],
-  "image": "/images/mermelada_de_gerds/main.webp",
+  "image": "/images/mermelada/main.webp",
   "development": false,
   "description": {
-    "en": "Homemade raspberry jam with apple and lemon. Soft and fruity; cook a little longer if you want a thicker set.",
-    "es": "Mermelada de frambuesa casera con manzana y limón. Suave y afrutada; cocina un poco más si la quieres más espesa.",
-    "cat": "Mermelada de gerds casolana amb poma i llimona. Suau i afruitada; cuina una mica més si la vols més espessa.",
-    "sv": "Hemgjord hallonmarmelad med äpple och citron. Mjuk och fruktig; koka lite längre om du vill ha den tjockare."
+    "en": "Homemade jam with fruit, apple, and lemon. Soft and fruity; cook a little longer if you want a thicker set.",
+    "es": "Mermelada casera con fruta, manzana y limón. Suave y afrutada; cocina un poco más si la quieres más espesa.",
+    "cat": "Melmelada casolana amb fruita, poma i llimona. Suau i afruitada; cuina una mica més si la vols més espessa.",
+    "sv": "Hemgjord marmelad med frukt, äpple och citron. Mjuk och fruktig; koka lite längre om du vill ha den tjockare."
   },
   "portion": {
     "type": "units",

@@ -14,6 +14,7 @@ function recipeAppState() {
     emojis: {},
     ingredientRecipes: {
       mato: 'mato',
+      jam: 'mermelada',
     },
     darkMode: false,
     basePath: '',
