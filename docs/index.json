@@ -555,7 +555,7 @@
     "path": "recipes/sacher.json",
     "image": "/images/sacher/main.webp",
     "author": "Arnau",
-    "development": true,
+    "development": false,
     "ingredient_keys": [
       "dark_chocolate",
       "egg_yolk",
