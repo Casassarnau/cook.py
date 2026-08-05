@@ -45,28 +45,20 @@ input[type='number'] {
 }
 
 /*
- * visualViewport helpers (set in js/viewport.js):
- * --vvh / --vv-top for full-screen overlays; --vv-bottom for keyboard inset only.
+ * Fixed UI is pinned to the layout viewport so mobile chrome / gesture bars /
+ * virtual keyboards do not shift bottom docks and full-screen overlays.
+ * Use svh (not dvh) so max-heights stay stable when dynamic UI toggles.
  */
-:root {
-  --vvh: 100svh;
-  --vv-top: 0px;
-  --vv-bottom: 0px;
-}
-
 .vv-overlay {
   position: fixed;
-  left: 0;
-  right: 0;
-  top: var(--vv-top);
-  height: var(--vvh);
+  inset: 0;
 }
 
 .vv-bottom {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: var(--vv-bottom);
+  bottom: 0;
 }
 
 /* Paint past the layout viewport bottom to hide scroll gaps on iOS */
@@ -82,11 +74,11 @@ input[type='number'] {
 }
 
 .vv-max-h-85 {
-  max-height: min(85dvh, calc(var(--vvh) * 0.85));
+  max-height: 85svh;
 }
 
 .vv-max-h-90 {
-  max-height: min(90dvh, calc(var(--vvh) * 0.9));
+  max-height: 90svh;
 }
 
 .safe-area-pb {
