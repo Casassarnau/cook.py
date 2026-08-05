@@ -45,26 +45,14 @@ input[type='number'] {
 }
 
 /*
- * Mobile browser chrome (URL bar) expands/collapses the layout viewport.
- * Lock interactive overlays to 100svh and offset bottom docks by
- * (dvh - svh) so they keep a stable size and screen position.
- * Decorative fills use 100lvh (also stable) to cover the full screen.
+ * Fixed overlays/docks pin to the layout viewport (inset/bottom: 0).
+ * interactive-widget=overlays-content + VirtualKeyboard API keep the
+ * keyboard from resizing that viewport. Max-heights use svh so sheets
+ * do not resize when the URL bar toggles.
  */
 .vv-overlay {
   position: fixed;
   inset: 0;
-  /* fallback when svh is unsupported */
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: auto;
-  height: 100%;
-  height: 100svh;
-}
-
-.vv-overlay-fill {
-  height: 100%;
-  height: 100lvh;
 }
 
 .vv-bottom {
@@ -72,12 +60,9 @@ input[type='number'] {
   left: 0;
   right: 0;
   bottom: 0;
-  /* Cancel layout growth when the URL bar collapses (dvh grows, svh stays put). */
-  bottom: calc(100dvh - 100svh);
 }
 
-/* Cover the gap below the svh box when chrome collapses, plus iOS overscroll */
-.vv-overlay:not(.vv-overlay-fill)::after,
+/* Paint past the layout viewport bottom to hide iOS overscroll gaps */
 .vv-bottom-bleed::after {
   content: '';
   position: absolute;
@@ -85,7 +70,6 @@ input[type='number'] {
   right: 0;
   top: 100%;
   height: 120px;
-  height: calc(100lvh - 100svh + 120px);
   background: inherit;
   pointer-events: none;
 }
