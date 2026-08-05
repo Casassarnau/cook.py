@@ -45,13 +45,26 @@ input[type='number'] {
 }
 
 /*
- * Fixed UI is pinned to the layout viewport so mobile chrome / gesture bars /
- * virtual keyboards do not shift bottom docks and full-screen overlays.
- * Use svh (not dvh) so max-heights stay stable when dynamic UI toggles.
+ * Mobile browser chrome (URL bar) expands/collapses the layout viewport.
+ * Lock interactive overlays to 100svh and offset bottom docks by
+ * (dvh - svh) so they keep a stable size and screen position.
+ * Decorative fills use 100lvh (also stable) to cover the full screen.
  */
 .vv-overlay {
   position: fixed;
   inset: 0;
+  /* fallback when svh is unsupported */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: auto;
+  height: 100%;
+  height: 100svh;
+}
+
+.vv-overlay-fill {
+  height: 100%;
+  height: 100lvh;
 }
 
 .vv-bottom {
@@ -59,9 +72,12 @@ input[type='number'] {
   left: 0;
   right: 0;
   bottom: 0;
+  /* Cancel layout growth when the URL bar collapses (dvh grows, svh stays put). */
+  bottom: calc(100dvh - 100svh);
 }
 
-/* Paint past the layout viewport bottom to hide scroll gaps on iOS */
+/* Cover the gap below the svh box when chrome collapses, plus iOS overscroll */
+.vv-overlay:not(.vv-overlay-fill)::after,
 .vv-bottom-bleed::after {
   content: '';
   position: absolute;
@@ -69,15 +85,18 @@ input[type='number'] {
   right: 0;
   top: 100%;
   height: 120px;
+  height: calc(100lvh - 100svh + 120px);
   background: inherit;
   pointer-events: none;
 }
 
 .vv-max-h-85 {
+  max-height: 85vh;
   max-height: 85svh;
 }
 
 .vv-max-h-90 {
+  max-height: 90vh;
   max-height: 90svh;
 }
 
