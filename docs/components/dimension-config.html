@@ -39,7 +39,7 @@
             isDragging ? '' : 'transition-transform duration-300 ease-out'
             ]"
     class="md:hidden vv-bottom vv-bottom-bleed vv-max-h-90 rounded-t-2xl shadow-xl flex flex-col select-none pointer-events-auto"
-    style="padding-bottom: max(1.5rem, env(safe-area-inset-bottom));"
+    style="padding-bottom: max(1.5rem, var(--safe-area-bottom, env(safe-area-inset-bottom, 0px)));"
   >
     <!-- @include partials/dimension-config-body.html -->
   </div>

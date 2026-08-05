@@ -159,7 +159,7 @@
     <style type="text/tailwindcss">
       @custom-variant dark (&:where(.dark, .dark *));
       @theme {
-        --spacing-cook-dock: calc(3.75rem + max(0.75rem, env(safe-area-inset-bottom)));
+        --spacing-cook-dock: calc(3.75rem + max(0.75rem, var(--safe-area-bottom, env(safe-area-inset-bottom, 0px))));
       }
     </style>
     <link rel="stylesheet" href="css/app.css" />

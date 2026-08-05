@@ -47,15 +47,18 @@ input[type='number'] {
 /*
  * Fixed overlays/docks pin to the layout viewport (inset/bottom: 0).
  * interactive-widget=overlays-content + VirtualKeyboard API keep the
- * keyboard from resizing that viewport on Chromium. Max-heights use svh
- * so sheets do not resize when the URL bar toggles.
+ * keyboard from resizing that viewport on Chromium.
  *
- * .vv-pin (Firefox Android): override to follow visualViewport — see viewport.js.
+ * --safe-area-bottom is frozen in viewport.js so docks keep a constant
+ * height while Firefox's dynamic toolbar toggles.
+ *
+ * .vv-pin is applied only while the keyboard is open on Firefox Android.
  */
 :root {
   --vv-top: 0px;
   --vvh: 100%;
   --vv-bottom: 0px;
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .vv-overlay {
@@ -113,5 +116,5 @@ input[type='number'] {
 }
 
 .safe-area-pb {
-  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  padding-bottom: max(0.75rem, var(--safe-area-bottom));
 }

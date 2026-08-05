@@ -1,14 +1,20 @@
 /**
- * Chromium: interactive-widget=overlays-content + VirtualKeyboard API keep
- * the layout viewport stable, so position:fixed bottom UI does not jump.
+ * Keep fixed bottom UI stable across mobile browser chrome.
  *
- * Firefox Android (no VirtualKeyboard API) still moves visualViewport when
- * the dynamic toolbar animates. Tracking those intermediate sizes causes
- * flicker — especially while scrolling. Instead, freeze a stable pin after
- * load and only re-pin for the virtual keyboard (large inset) or orientation
- * changes.
+ * - Chromium: interactive-widget=overlays-content + VirtualKeyboard API.
+ * - Firefox Android: env(safe-area-inset-bottom) grows/shrinks with the
+ *   dynamic toolbar, so docks look taller at the page top. Lock it to 0
+ *   and rely on the constant .safe-area-pb minimum padding instead.
+ * - Firefox Android: never pin to visualViewport for the toolbar (flickers).
+ *   Only pin while the virtual keyboard is open.
  */
 (function stabilizeMobileViewport() {
+  const root = document.documentElement;
+  const KEYBOARD_INSET_MIN = 120;
+  const EPSILON = 0.5;
+  const isFirefoxAndroid =
+    /Android/i.test(navigator.userAgent) && /Firefox/i.test(navigator.userAgent);
+
   try {
     if ('virtualKeyboard' in navigator) {
       navigator.virtualKeyboard.overlaysContent = true;
@@ -17,25 +23,36 @@
     // API may be present but reject writes in some WebViews.
   }
 
+  function readSafeAreaPx() {
+    const probe = document.createElement('div');
+    probe.style.cssText =
+      'position:absolute;left:0;top:0;visibility:hidden;pointer-events:none;' +
+      'padding-bottom:env(safe-area-inset-bottom,0px)';
+    root.appendChild(probe);
+    const px = parseFloat(getComputedStyle(probe).paddingBottom) || 0;
+    probe.remove();
+    return px;
+  }
+
+  function lockSafeArea() {
+    // Firefox Android's live env() tracks the toolbar — freeze a constant.
+    const px = isFirefoxAndroid ? 0 : readSafeAreaPx();
+    root.style.setProperty('--safe-area-bottom', `${px}px`);
+  }
+
+  lockSafeArea();
+  window.addEventListener('orientationchange', () => {
+    setTimeout(lockSafeArea, 200);
+  });
+
   const vv = window.visualViewport;
-  const needsVisualViewportPin =
+  const needsKeyboardPin =
     vv &&
     /Android/i.test(navigator.userAgent) &&
     !('virtualKeyboard' in navigator);
 
-  if (!needsVisualViewportPin) return;
+  if (!needsKeyboardPin) return;
 
-  const root = document.documentElement;
-  root.classList.add('vv-pin');
-
-  const KEYBOARD_INSET_MIN = 120;
-  const EPSILON = 0.5;
-
-  let stable = {
-    top: 0,
-    height: 0,
-    bottom: 0
-  };
   let keyboardOpen = false;
   let keyboardTimer = null;
   let applied = {
@@ -63,83 +80,53 @@
     ) {
       return;
     }
-
     applied = next;
     root.style.setProperty('--vv-top', `${next.top}px`);
     root.style.setProperty('--vvh', `${next.height}px`);
     root.style.setProperty('--vv-bottom', `${next.bottom}px`);
   }
 
-  function captureStable() {
-    const raw = readRaw();
-    // Prefer the smaller visible height (toolbar expanded) so docks stay
-    // clear of a bottom toolbar without updating during collapse.
-    if (!stable.height || raw.height < stable.height) {
-      stable = {
-        top: raw.top,
-        height: raw.height,
-        bottom: raw.bottom < 8 ? 0 : raw.bottom,
-      };
-    } else if (raw.bottom > stable.bottom && raw.bottom < KEYBOARD_INSET_MIN) {
-      stable = {
-        ...stable,
-        bottom: raw.bottom
-      };
-    }
-    return stable;
+  function openKeyboardPin() {
+    keyboardOpen = true;
+    root.classList.add('vv-pin');
+    apply(readRaw());
   }
 
-  function restoreStable() {
+  function closeKeyboardPin() {
+    if (!keyboardOpen && !root.classList.contains('vv-pin')) return;
     keyboardOpen = false;
-    apply(captureStable());
+    root.classList.remove('vv-pin');
+    applied = {
+      top: NaN,
+      height: NaN,
+      bottom: NaN
+    };
   }
 
   function onViewportChange() {
-    const raw = readRaw();
+    const bottom = Math.max(0, window.innerHeight - vv.offsetTop - vv.height);
 
-    if (raw.bottom >= KEYBOARD_INSET_MIN) {
-      keyboardOpen = true;
+    if (bottom >= KEYBOARD_INSET_MIN) {
       clearTimeout(keyboardTimer);
-      // Keyboard resize can emit a few steps — settle briefly.
       keyboardTimer = setTimeout(() => {
         keyboardTimer = null;
-        apply(readRaw());
+        openKeyboardPin();
       }, 50);
       return;
     }
 
-    if (keyboardOpen) {
-      clearTimeout(keyboardTimer);
-      keyboardTimer = null;
-      restoreStable();
-      return;
-    }
-
-    // Dynamic toolbar only: learn a stable expanded-chrome size once, but
-    // do not apply intermediate animation frames (those cause the flicker).
-    captureStable();
-  }
-
-  function onOrientationChange() {
-    stable = {
-      top: 0,
-      height: 0,
-      bottom: 0
-    };
-    keyboardOpen = false;
     clearTimeout(keyboardTimer);
     keyboardTimer = null;
-    setTimeout(() => {
-      apply(captureStable());
-    }, 200);
+    closeKeyboardPin();
   }
-
-  apply(captureStable());
-  // Re-sample shortly after load — the toolbar state can settle after paint.
-  setTimeout(() => apply(captureStable()), 300);
 
   vv.addEventListener('resize', onViewportChange);
   vv.addEventListener('scroll', onViewportChange);
   window.addEventListener('resize', onViewportChange);
-  window.addEventListener('orientationchange', onOrientationChange);
+  window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+      lockSafeArea();
+      closeKeyboardPin();
+    }, 200);
+  });
 })();
