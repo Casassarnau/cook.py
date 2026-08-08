@@ -36,9 +36,9 @@
           "unit": "g"
         },
         {
-          "id": "soup_potato",
-          "ingredient": "potatoes",
-          "value": 100,
+          "id": "soup_olive_oil",
+          "ingredient": "extra_virgin_olive_oil",
+          "value": 40,
           "unit": "g"
         },
         {
@@ -48,10 +48,16 @@
           "unit": "g"
         },
         {
-          "id": "soup_olive_oil",
-          "ingredient": "extra_virgin_olive_oil",
-          "value": 40,
+          "id": "soup_potato",
+          "ingredient": "potatoes",
+          "value": 100,
           "unit": "g"
+        },
+        {
+          "id": "soup_salt",
+          "ingredient": "salt",
+          "value": 0,
+          "unit": "to_taste"
         },
         {
           "id": "soup_water",
@@ -64,12 +70,6 @@
             "cat": "fins a cobrir",
             "sv": "tills det täcker"
           }
-        },
-        {
-          "id": "soup_salt",
-          "ingredient": "salt",
-          "value": 0,
-          "unit": "to_taste"
         }
       ]
     }
@@ -84,11 +84,11 @@
       },
       "ingredients": [
         "soup_carrot",
-        "soup_potato",
-        "soup_onion",
-        "soup_water",
         "soup_olive_oil",
-        "soup_salt"
+        "soup_onion",
+        "soup_potato",
+        "soup_salt",
+        "soup_water"
       ],
       "onlyForMode": "classic"
     },
@@ -101,11 +101,11 @@
       },
       "ingredients": [
         "soup_carrot",
-        "soup_potato",
-        "soup_onion",
-        "soup_water",
         "soup_olive_oil",
-        "soup_salt"
+        "soup_onion",
+        "soup_potato",
+        "soup_salt",
+        "soup_water"
       ],
       "onlyForMode": "thermomix",
       "thermomix": {

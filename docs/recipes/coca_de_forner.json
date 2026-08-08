@@ -7,8 +7,8 @@
   },
   "author": "Arnau",
   "categories": [
-    "desserts",
-    "baking"
+    "baking",
+    "desserts"
   ],
   "image": "/images/coca_de_forner/main.webp",
   "description": {
@@ -24,29 +24,53 @@
   "ingredients": [
     {
       "group": {
-        "en": "Poolish (day before)",
-        "es": "Poolish (día anterior)",
-        "cat": "Poolish (dia anterior)",
-        "sv": "Poolish (dagen innan)"
+        "en": "Anise glaze (after baking)",
+        "es": "Almíbar de anís (después de hornear)",
+        "cat": "Almívar d'anís (després de coure)",
+        "sv": "Anisglasyr (efter gräddning)"
       },
       "items": [
         {
+          "ingredient": "anise_liqueur",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "alternative: diluted with water",
+            "es": "alternativa: rebajado con agua",
+            "cat": "alternativa: rebaixat amb aigua",
+            "sv": "alternativ: utspätt med vatten"
+          },
+          "id": "glaze_anise_liqueur"
+        },
+        {
+          "ingredient": "anise_seeds",
+          "value": 0,
+          "unit": "to_taste",
+          "id": "glaze_anise_seeds"
+        },
+        {
+          "ingredient": "sugar",
+          "value": 0,
+          "unit": "as_needed",
+          "text": {
+            "en": "for the glaze",
+            "es": "para el almíbar",
+            "cat": "per a l'almívar",
+            "sv": "till glasyren"
+          },
+          "id": "glaze_sugar"
+        },
+        {
           "ingredient": "water",
           "value": 50,
-          "unit": "g",
-          "id": "poolish_water"
-        },
-        {
-          "ingredient": "flour",
-          "value": 50,
-          "unit": "g",
-          "id": "poolish_flour"
-        },
-        {
-          "ingredient": "dry_yeast",
-          "value": 7,
-          "unit": "g",
-          "id": "poolish_yeast"
+          "unit": "ml",
+          "text": {
+            "en": "for infusion",
+            "es": "para la infusión",
+            "cat": "per a la infusió",
+            "sv": "för infusion"
+          },
+          "id": "glaze_water"
         }
       ]
     },
@@ -83,24 +107,6 @@
           "id": "dough_flour_rustic"
         },
         {
-          "ingredient": "water",
-          "value": 275,
-          "unit": "g",
-          "id": "dough_water"
-        },
-        {
-          "ingredient": "water",
-          "value": 35,
-          "unit": "g",
-          "text": {
-            "en": "reserved for later",
-            "es": "reservada para después",
-            "cat": "reservada per després",
-            "sv": "reserverat till senare"
-          },
-          "id": "dough_water_reserved"
-        },
-        {
           "ingredient": "extra_virgin_olive_oil",
           "value": 20,
           "unit": "g",
@@ -117,6 +123,52 @@
           "value": 4,
           "unit": "g",
           "id": "dough_sugar"
+        },
+        {
+          "ingredient": "water",
+          "value": 275,
+          "unit": "g",
+          "id": "dough_water"
+        },
+        {
+          "ingredient": "water",
+          "value": 35,
+          "unit": "g",
+          "text": {
+            "en": "reserved for later",
+            "es": "reservada para después",
+            "cat": "reservada per després",
+            "sv": "reserverat till senare"
+          },
+          "id": "dough_water_reserved"
+        }
+      ]
+    },
+    {
+      "group": {
+        "en": "Poolish (day before)",
+        "es": "Poolish (día anterior)",
+        "cat": "Poolish (dia anterior)",
+        "sv": "Poolish (dagen innan)"
+      },
+      "items": [
+        {
+          "ingredient": "flour",
+          "value": 50,
+          "unit": "g",
+          "id": "poolish_flour"
+        },
+        {
+          "ingredient": "water",
+          "value": 50,
+          "unit": "g",
+          "id": "poolish_water"
+        },
+        {
+          "ingredient": "dry_yeast",
+          "value": 7,
+          "unit": "g",
+          "id": "poolish_yeast"
         }
       ]
     },
@@ -129,68 +181,16 @@
       },
       "items": [
         {
-          "ingredient": "sugar",
-          "value": 0,
-          "unit": "as_needed",
-          "id": "topping_sugar"
-        },
-        {
           "ingredient": "extra_virgin_olive_oil",
           "value": 0,
           "unit": "as_needed",
           "id": "topping_oil"
-        }
-      ]
-    },
-    {
-      "group": {
-        "en": "Anise glaze (after baking)",
-        "es": "Almíbar de anís (después de hornear)",
-        "cat": "Almívar d'anís (després de coure)",
-        "sv": "Anisglasyr (efter gräddning)"
-      },
-      "items": [
-        {
-          "ingredient": "water",
-          "value": 50,
-          "unit": "ml",
-          "text": {
-            "en": "for infusion",
-            "es": "para la infusión",
-            "cat": "per a la infusió",
-            "sv": "för infusion"
-          },
-          "id": "glaze_water"
-        },
-        {
-          "ingredient": "anise_seeds",
-          "value": 0,
-          "unit": "to_taste",
-          "id": "glaze_anise_seeds"
         },
         {
           "ingredient": "sugar",
           "value": 0,
           "unit": "as_needed",
-          "text": {
-            "en": "for the glaze",
-            "es": "para el almíbar",
-            "cat": "per a l'almívar",
-            "sv": "till glasyren"
-          },
-          "id": "glaze_sugar"
-        },
-        {
-          "ingredient": "anise_liqueur",
-          "value": 0,
-          "unit": "as_needed",
-          "text": {
-            "en": "alternative: diluted with water",
-            "es": "alternativa: rebajado con agua",
-            "cat": "alternativa: rebaixat amb aigua",
-            "sv": "alternativ: utspätt med vatten"
-          },
-          "id": "glaze_anise_liqueur"
+          "id": "topping_sugar"
         }
       ]
     }
@@ -204,8 +204,8 @@
         "sv": "Dagen innan, förbered poolish genom att blanda vatten, mjöl och torrjäst. Täck och förvara i kylskåp till nästa dag."
       },
       "ingredients": [
-        "poolish_water",
         "poolish_flour",
+        "poolish_water",
         "poolish_yeast"
       ]
     },
@@ -254,9 +254,9 @@
         }
       },
       "ingredients": [
-        "dough_water_reserved",
         "dough_salt",
-        "dough_sugar"
+        "dough_sugar",
+        "dough_water_reserved"
       ]
     },
     {
@@ -318,10 +318,10 @@
         "sv": "Under tiden, förbered anisglasyren: gör en infusion med lite vatten och anisfrön, och tillsätt socker. Alternativt kan anislikör utspädas med vatten och sötas efter smak."
       },
       "ingredients": [
-        "glaze_water",
+        "glaze_anise_liqueur",
         "glaze_anise_seeds",
         "glaze_sugar",
-        "glaze_anise_liqueur"
+        "glaze_water"
       ]
     },
     {
@@ -339,8 +339,8 @@
         ]
       },
       "ingredients": [
-        "topping_sugar",
-        "topping_oil"
+        "topping_oil",
+        "topping_sugar"
       ]
     },
     {
